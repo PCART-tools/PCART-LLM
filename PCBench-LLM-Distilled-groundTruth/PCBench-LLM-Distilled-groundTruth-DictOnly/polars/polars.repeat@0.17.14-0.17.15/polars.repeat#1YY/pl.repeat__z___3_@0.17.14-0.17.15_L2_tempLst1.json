@@ -1,0 +1,13 @@
+[
+  {
+    "(value, 0)": {
+      "typeChange": "PythonLiteral|None"
+    },
+    "(n, 1)": {},
+    "(eager, 3)": {},
+    "(dtype, 3)": {
+      "addKey": "dtype=None"
+    },
+    "(name, 4)": {}
+  }
+]

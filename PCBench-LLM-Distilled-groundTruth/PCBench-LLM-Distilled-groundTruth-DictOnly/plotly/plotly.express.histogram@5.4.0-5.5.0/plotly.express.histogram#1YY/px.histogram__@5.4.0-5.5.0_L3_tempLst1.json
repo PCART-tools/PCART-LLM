@@ -1,0 +1,50 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(color, 3)": {},
+    "(pattern_shape, 4)": {},
+    "(facet_row, 5)": {},
+    "(facet_col, 6)": {},
+    "(facet_col_wrap, 7)": {},
+    "(facet_row_spacing, 8)": {},
+    "(facet_col_spacing, 9)": {},
+    "(hover_name, 10)": {},
+    "(hover_data, 11)": {},
+    "(animation_frame, 12)": {},
+    "(animation_group, 13)": {},
+    "(category_orders, 14)": {},
+    "(labels, 15)": {},
+    "(color_discrete_sequence, 16)": {},
+    "(color_discrete_map, 17)": {},
+    "(pattern_shape_sequence, 18)": {},
+    "(pattern_shape_map, 19)": {},
+    "(marginal, 20)": {},
+    "(opacity, 21)": {},
+    "(orientation, 22)": {},
+    "(barmode, 23)": {},
+    "(barnorm, 24)": {},
+    "(histnorm, 25)": {},
+    "(log_x, 26)": {},
+    "(log_y, 27)": {},
+    "(range_x, 28)": {},
+    "(range_y, 29)": {},
+    "(histfunc, 30)": {},
+    "(cumulative, 31)": {},
+    "(nbins, 32)": {},
+    "(title, 33)": {
+      "posChange": 34,
+      "replace": "text_auto=False"
+    },
+    "(template, 34)": {
+      "posChange": 35
+    },
+    "(width, 35)": {
+      "posChange": 36
+    },
+    "(height, 36)": {
+      "posChange": 37
+    }
+  }
+]

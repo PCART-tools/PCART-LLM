@@ -1,0 +1,20 @@
+[
+  {
+    "(name, 0)": {},
+    "(context_settings, 1)": {},
+    "(callback, 2)": {},
+    "(params, 3)": {},
+    "(help, 4)": {},
+    "(epilog, 5)": {},
+    "(short_help, 6)": {},
+    "(options_metavar, 7)": {},
+    "(add_help_option, 8)": {},
+    "(hidden, 9)": {
+      "posChange": 10,
+      "replace": "no_args_is_help=False"
+    },
+    "(deprecated, 10)": {
+      "posChange": 11
+    }
+  }
+]

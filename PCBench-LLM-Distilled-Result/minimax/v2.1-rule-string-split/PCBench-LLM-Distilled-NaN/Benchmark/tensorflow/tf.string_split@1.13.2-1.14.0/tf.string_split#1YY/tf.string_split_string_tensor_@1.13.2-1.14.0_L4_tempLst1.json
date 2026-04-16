@@ -1,0 +1,54 @@
+{
+    "context": {
+        "callAPI": "tf.string_split(string_tensor)",
+        "currentVersion": "1.13.2",
+        "targetVersion": "1.14.0",
+        "fileRelativePath": "tf.string_split#1YY/string_splitYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.string_split@1.13.2-1.14.0/tf.string_split#1YY/string_splitYY.json",
+        "apiCall": "tf.string_split(string_tensor)",
+        "oldVersion": "tensorflow@1.13.2",
+        "newVersion": "tensorflow@1.14.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tensorflow.string_split",
+            "match": {
+                "tensorflow.python.ops.string_ops.string_split": [
+                    "(source,delimiter='',skip_empty=True)"
+                ],
+                "tensorflow.python.ops.gen_string_ops.string_split": []
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "tensorflow.string_split",
+            "match": {
+                "tensorflow.python.ops.string_ops.string_split": [
+                    "(source,sep=None,skip_empty=True,delimiter=None)"
+                ],
+                "tensorflow.python.ops.gen_string_ops.string_split": [],
+                "tensorflow.python.ops.ragged.ragged_string_ops.string_split": [
+                    "(source,sep=None,skip_empty=True,delimiter=None,result_type='SparseTensor',name=None)"
+                ],
+                "tensorflow.python.ragged.ragged_string_ops.string_split": [
+                    "(source,sep=None,skip_empty=True,delimiter=None,result_type='SparseTensor',name=None)"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(source, 0)": {},
+                "(delimiter, 1)": {
+                    "posChange": 3,
+                    "replace": "sep"
+                },
+                "(skip_empty, 2)": {}
+            },
+            "targetOvPara": "(source,sep=None,skip_empty=True,delimiter=None)"
+        }
+    ]
+}

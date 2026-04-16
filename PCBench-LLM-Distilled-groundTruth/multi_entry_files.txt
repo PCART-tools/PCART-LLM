@@ -1,0 +1,8 @@
+4	polars/polars.Expr.str.starts_with@0.16.18-0.17.0/polars.Expr.str.starts_with#1YY/a.str.starts_with__app__@0.16.18-0.17.0_L3_tempLst1.json
+4	polars/polars.Expr.str.ends_with@0.16.18-0.17.0/polars.Expr.str.ends_with#1YY/a.str.ends_with__go__@0.16.18-0.17.0_L3_tempLst1.json
+4	polars/polars.Expr.str.contains@0.16.18-0.17.0/polars.Expr.str.contains#1YY/a.str.contains__AA__@0.16.18-0.17.0_L3_tempLst1.json
+2	scipy/scipy.stats.rv_discrete.expect@0.16.1-0.17.0/scipy.stats.rv_discrete.expect#1YY/custom_distribution.expect__@0.16.1-0.17.0_L6_tempLst1.json
+2	polars/polars.expr.str.strptime@0.17.15-0.18.0/polars.expr.str.strptime#1YY/a.str.strptime_pl.Date_@0.17.15-0.18.0_L4_tempLst1.json
+2	polars/polars.Expr.str.strip@0.16.18-0.17.0/polars.Expr.str.strip#1YY/context.str.strip__@0.16.18-0.17.0_L4_tempLst1.json
+2	polars/polars.Expr.str.rjust@0.16.18-0.17.0/polars.Expr.str.rjust#1YY/context.str.rjust_10_@0.16.18-0.17.0_L4_tempLst1.json
+2	polars/polars.Expr.str.ljust@0.16.18-0.17.0/polars.Expr.str.ljust#1YY/context.str.ljust_10_@0.16.18-0.17.0_L4_tempLst1.json

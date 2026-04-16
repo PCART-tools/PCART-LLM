@@ -1,0 +1,21 @@
+[
+  {
+    "(renderable, 0)": {},
+    "(box, 1)": {},
+    "(expand, 2)": {
+      "pos2key": "expand"
+    },
+    "(style, 3)": {
+      "pos2key": "style"
+    },
+    "(safe_box, 3)": {
+      "addKey": "safe_box=True"
+    },
+    "(width, 4)": {
+      "pos2key": "width"
+    },
+    "(padding, 5)": {
+      "pos2key": "padding"
+    }
+  }
+]

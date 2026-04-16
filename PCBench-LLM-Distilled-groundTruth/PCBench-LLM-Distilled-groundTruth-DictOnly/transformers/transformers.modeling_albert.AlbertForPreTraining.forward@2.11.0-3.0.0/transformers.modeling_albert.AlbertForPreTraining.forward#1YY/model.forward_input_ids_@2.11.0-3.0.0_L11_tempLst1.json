@@ -1,0 +1,20 @@
+[
+  {
+    "(input_ids, 0)": {},
+    "(attention_mask, 1)": {},
+    "(token_type_ids, 2)": {},
+    "(position_ids, 3)": {},
+    "(head_mask, 4)": {},
+    "(inputs_embeds, 5)": {},
+    "(masked_lm_labels, 6)": {
+      "rename": "labels"
+    },
+    "(sentence_order_label, 7)": {},
+    "(output_attentions, 8)": {
+      "addPos": "output_attentions=None"
+    },
+    "(output_hidden_states, 9)": {
+      "addPos": "output_hidden_states=None"
+    }
+  }
+]

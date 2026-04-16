@@ -1,0 +1,40 @@
+[
+  {
+    "(n_clusters, 0)": {},
+    "(eigen_solver, 1)": {},
+    "(random_state, 2)": {
+      "posChange": 3,
+      "replace": "n_components=None"
+    },
+    "(n_init, 3)": {
+      "posChange": 4
+    },
+    "(gamma, 4)": {
+      "posChange": 5
+    },
+    "(affinity, 5)": {
+      "posChange": 6
+    },
+    "(n_neighbors, 6)": {
+      "posChange": 7
+    },
+    "(eigen_tol, 7)": {
+      "posChange": 8
+    },
+    "(assign_labels, 8)": {
+      "posChange": 9
+    },
+    "(degree, 9)": {
+      "posChange": 10
+    },
+    "(coef0, 10)": {
+      "posChange": 11
+    },
+    "(kernel_params, 11)": {
+      "posChange": 12
+    },
+    "(n_jobs, 12)": {
+      "posChange": 13
+    }
+  }
+]

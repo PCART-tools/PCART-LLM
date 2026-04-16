@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sklearn/cluster.SpectralCoclustering@0.22.2-0.23.0/cluster.SpectralCoclustering#1YY",
+    "runCommand": "python SpectralCoclusteringYY.py",
+    "runFilePath": "",
+    "libName": "sklearn",
+    "currentVersion": "0.22.2",
+    "targetVersion": "0.23.0",
+    "currentEnv": "/envs/sklearn0.22.2",
+    "targetEnv": "/envs/sklearn0.23.0"
+}

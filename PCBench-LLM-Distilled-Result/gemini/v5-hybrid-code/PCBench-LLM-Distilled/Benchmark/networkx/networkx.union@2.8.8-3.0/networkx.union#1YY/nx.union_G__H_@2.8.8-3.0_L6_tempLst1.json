@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "nx.union(G, H)",
+        "currentVersion": "2.8.8",
+        "targetVersion": "3.0",
+        "fileRelativePath": "networkx.union#1YY/unionYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/networkx.union@2.8.8-3.0/networkx.union#1YY/unionYY.json",
+        "apiCall": "nx.union(G, H)",
+        "oldVersion": "networkx@2.8.8",
+        "newVersion": "networkx@3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.union",
+            "error": "",
+            "internalPath": "networkx.algorithms.operators.binary",
+            "docstring": "Combine graphs G and H. The names of nodes must be unique.\n\nA name collision between the graphs will raise an exception.\n\nA renaming facility is provided to avoid name collisions.\n\n\nParameters\n----------\nG, H : graph\n   A NetworkX graph\n\nrename : tuple , default=(None, None)\n   Node names of G and H can be changed by specifying the tuple\n   rename=('G-','H-') (for example).  Node \"u\" in G is then renamed\n   \"G-u\" and \"v\" in H is renamed \"H-v\".\n\nname : string\n   Specify the name for the union graph\n\n   .. deprecated:: 2.7\n       This is deprecated and will be removed in version v3.0.\n\nReturns\n-------\nU : A union graph with the same type as G.\n\nSee Also\n--------\ncompose\n:func:`~networkx.Graph.update`\ndisjoint_union\n\nNotes\n-----\nTo combine graphs that have common nodes, consider compose(G, H)\nor the method, Graph.update().\n\ndisjoint_union() is similar to union() except that it avoids name clashes\nby relabeling the nodes with sequential integers.\n\nEdge and node attributes are propagated from G and H to the union graph.\nGraph attributes are also propagated, but if they are present in both G and H,\nthen the value from H is used.\n\nExamples\n--------\n>>> G = nx.Graph([(0, 1), (0, 2), (1, 2)])\n>>> H = nx.Graph([(0, 1), (0, 3), (1, 3), (1, 2)])\n>>> U = nx.union(G, H, rename=(\"G\", \"H\"))\n>>> U.nodes\nNodeView(('G0', 'G1', 'G2', 'H0', 'H1', 'H3', 'H2'))\n>>> U.edges\nEdgeView([('G0', 'G1'), ('G0', 'G2'), ('G1', 'G2'), ('H0', 'H1'), ('H0', 'H3'), ('H1', 'H3'), ('H1', 'H2')])",
+            "sourceCode": "def union(G, H, rename=(None, None), name=None):\n    \"\"\"Combine graphs G and H. The names of nodes must be unique.\n\n    A name collision between the graphs will raise an exception.\n\n    A renaming facility is provided to avoid name collisions.\n\n\n    Parameters\n    ----------\n    G, H : graph\n       A NetworkX graph\n\n    rename : tuple , default=(None, None)\n       Node names of G and H can be changed by specifying the tuple\n       rename=('G-','H-') (for example).  Node \"u\" in G is then renamed\n       \"G-u\" and \"v\" in H is renamed \"H-v\".\n\n    name : string\n       Specify the name for the union graph\n\n       .. deprecated:: 2.7\n           This is deprecated and will be removed in version v3.0.\n\n    Returns\n    -------\n    U : A union graph with the same type as G.\n\n    See Also\n    --------\n    compose\n    :func:`~networkx.Graph.update`\n    disjoint_union\n\n    Notes\n    -----\n    To combine graphs that have common nodes, consider compose(G, H)\n    or the method, Graph.update().\n\n    disjoint_union() is similar to union() except that it avoids name clashes\n    by relabeling the nodes with sequential integers.\n\n    Edge and node attributes are propagated from G and H to the union graph.\n    Graph attributes are also propagated, but if they are present in both G and H,\n    then the value from H is used.\n\n    Examples\n    --------\n    >>> G = nx.Graph([(0, 1), (0, 2), (1, 2)])\n    >>> H = nx.Graph([(0, 1), (0, 3), (1, 3), (1, 2)])\n    >>> U = nx.union(G, H, rename=(\"G\", \"H\"))\n    >>> U.nodes\n    NodeView(('G0', 'G1', 'G2', 'H0', 'H1', 'H3', 'H2'))\n    >>> U.edges\n    EdgeView([('G0', 'G1'), ('G0', 'G2'), ('G1', 'G2'), ('H0', 'H1'), ('H0', 'H3'), ('H1', 'H3'), ('H1', 'H2')])\n\n\n    \"\"\"\n    if name is not None:\n        import warnings\n\n        warnings.warn(\n            \"name parameter is deprecated and will be removed in version 3.0\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n\n    return nx.union_all([G, H], rename)\n",
+            "match": "(G, H, rename=(None, None), name=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.union",
+            "error": "",
+            "internalPath": "networkx.algorithms.operators.binary",
+            "docstring": "Combine graphs G and H. The names of nodes must be unique.\n\nA name collision between the graphs will raise an exception.\n\nA renaming facility is provided to avoid name collisions.\n\n\nParameters\n----------\nG, H : graph\n   A NetworkX graph\n\nrename : iterable , optional\n   Node names of G and H can be changed by specifying the tuple\n   rename=('G-','H-') (for example).  Node \"u\" in G is then renamed\n   \"G-u\" and \"v\" in H is renamed \"H-v\".\n\nReturns\n-------\nU : A union graph with the same type as G.\n\nSee Also\n--------\ncompose\n:func:`~networkx.Graph.update`\ndisjoint_union\n\nNotes\n-----\nTo combine graphs that have common nodes, consider compose(G, H)\nor the method, Graph.update().\n\ndisjoint_union() is similar to union() except that it avoids name clashes\nby relabeling the nodes with sequential integers.\n\nEdge and node attributes are propagated from G and H to the union graph.\nGraph attributes are also propagated, but if they are present in both G and H,\nthen the value from H is used.\n\nExamples\n--------\n>>> G = nx.Graph([(0, 1), (0, 2), (1, 2)])\n>>> H = nx.Graph([(0, 1), (0, 3), (1, 3), (1, 2)])\n>>> U = nx.union(G, H, rename=(\"G\", \"H\"))\n>>> U.nodes\nNodeView(('G0', 'G1', 'G2', 'H0', 'H1', 'H3', 'H2'))\n>>> U.edges\nEdgeView([('G0', 'G1'), ('G0', 'G2'), ('G1', 'G2'), ('H0', 'H1'), ('H0', 'H3'), ('H1', 'H3'), ('H1', 'H2')])",
+            "sourceCode": "def union(G, H, rename=()):\n    \"\"\"Combine graphs G and H. The names of nodes must be unique.\n\n    A name collision between the graphs will raise an exception.\n\n    A renaming facility is provided to avoid name collisions.\n\n\n    Parameters\n    ----------\n    G, H : graph\n       A NetworkX graph\n\n    rename : iterable , optional\n       Node names of G and H can be changed by specifying the tuple\n       rename=('G-','H-') (for example).  Node \"u\" in G is then renamed\n       \"G-u\" and \"v\" in H is renamed \"H-v\".\n\n    Returns\n    -------\n    U : A union graph with the same type as G.\n\n    See Also\n    --------\n    compose\n    :func:`~networkx.Graph.update`\n    disjoint_union\n\n    Notes\n    -----\n    To combine graphs that have common nodes, consider compose(G, H)\n    or the method, Graph.update().\n\n    disjoint_union() is similar to union() except that it avoids name clashes\n    by relabeling the nodes with sequential integers.\n\n    Edge and node attributes are propagated from G and H to the union graph.\n    Graph attributes are also propagated, but if they are present in both G and H,\n    then the value from H is used.\n\n    Examples\n    --------\n    >>> G = nx.Graph([(0, 1), (0, 2), (1, 2)])\n    >>> H = nx.Graph([(0, 1), (0, 3), (1, 3), (1, 2)])\n    >>> U = nx.union(G, H, rename=(\"G\", \"H\"))\n    >>> U.nodes\n    NodeView(('G0', 'G1', 'G2', 'H0', 'H1', 'H3', 'H2'))\n    >>> U.edges\n    EdgeView([('G0', 'G1'), ('G0', 'G2'), ('G1', 'G2'), ('H0', 'H1'), ('H0', 'H3'), ('H1', 'H3'), ('H1', 'H2')])\n\n\n    \"\"\"\n    return nx.union_all([G, H], rename)\n",
+            "match": "(G, H, rename=())",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(H, 1)": {},
+                "(rename, 2)": {},
+                "(name, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(G, H, rename=())"
+        }
+    ]
+}

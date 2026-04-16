@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "tornado.autoreload.start()",
+        "currentVersion": "4.5.3",
+        "targetVersion": "5.0",
+        "fileRelativePath": "tornado.autoreload.start#1YY/startYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.autoreload.start@4.5.3-5.0/tornado.autoreload.start#1YY/startYY.json",
+        "apiCall": "tornado.autoreload.start()",
+        "oldVersion": "tornado@4.5.3",
+        "newVersion": "tornado@5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.autoreload.start",
+            "error": "",
+            "internalPath": "tornado.autoreload",
+            "docstring": "Begins watching source files for changes.\n\n.. versionchanged:: 4.1\n   The ``io_loop`` argument is deprecated.",
+            "sourceCode": "def start(io_loop=None, check_time=500):\n    \"\"\"Begins watching source files for changes.\n\n    .. versionchanged:: 4.1\n       The ``io_loop`` argument is deprecated.\n    \"\"\"\n    io_loop = io_loop or ioloop.IOLoop.current()\n    if io_loop in _io_loops:\n        return\n    _io_loops[io_loop] = True\n    if len(_io_loops) > 1:\n        gen_log.warning(\"tornado.autoreload started more than once in the same process\")\n    modify_times = {}\n    callback = functools.partial(_reload_on_update, modify_times)\n    scheduler = ioloop.PeriodicCallback(callback, check_time, io_loop=io_loop)\n    scheduler.start()\n",
+            "match": "(io_loop=None, check_time=500)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "tornado.autoreload.start",
+            "error": "",
+            "internalPath": "tornado.autoreload",
+            "docstring": "Begins watching source files for changes.\n\n.. versionchanged:: 5.0\n   The ``io_loop`` argument (deprecated since version 4.1) has been removed.",
+            "sourceCode": "def start(check_time=500):\n    \"\"\"Begins watching source files for changes.\n\n    .. versionchanged:: 5.0\n       The ``io_loop`` argument (deprecated since version 4.1) has been removed.\n    \"\"\"\n    io_loop = ioloop.IOLoop.current()\n    if io_loop in _io_loops:\n        return\n    _io_loops[io_loop] = True\n    if len(_io_loops) > 1:\n        gen_log.warning(\"tornado.autoreload started more than once in the same process\")\n    modify_times = {}\n    callback = functools.partial(_reload_on_update, modify_times)\n    scheduler = ioloop.PeriodicCallback(callback, check_time)\n    scheduler.start()\n",
+            "match": "(check_time=500)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(io_loop, 0)": {
+                    "delete": 1
+                },
+                "(check_time, 1)": {
+                    "posChange": 0
+                }
+            },
+            "targetOvPara": "(check_time=500)"
+        }
+    ]
+}

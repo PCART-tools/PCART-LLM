@@ -1,0 +1,59 @@
+{
+    "context": {
+        "callAPI": "context.str.ljust(10)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.str.ljust#1YY/ljustYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.str.ljust@0.16.18-0.17.0/polars.Expr.str.ljust#1YY/ljustYY.json",
+        "apiCall": "context.str.ljust(10)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.str.ljust",
+            "match": {
+                "polars.series.string.StringNameSpace.ljust": [
+                    "(self,width:int,fillchar:str='')->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.ljust": [
+                    "(self,width:int,fillchar:str='')->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "polars.col.str.ljust",
+            "match": {
+                "polars.series.string.StringNameSpace.ljust": [
+                    "(self,width:int,fill_char:str='')->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.ljust": [
+                    "(self,width:int,fill_char:str='')->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(width, 0)": {},
+                "(fillchar, 1)": {
+                    "rename": "fill_char"
+                }
+            },
+            "targetOvPara": "(self,width:int,fill_char:str='')->Series"
+        },
+        {
+            "repairDict": {
+                "(width, 0)": {},
+                "(fillchar, 1)": {
+                    "rename": "fill_char"
+                }
+            },
+            "targetOvPara": "(self,width:int,fill_char:str='')->Expr"
+        }
+    ]
+}

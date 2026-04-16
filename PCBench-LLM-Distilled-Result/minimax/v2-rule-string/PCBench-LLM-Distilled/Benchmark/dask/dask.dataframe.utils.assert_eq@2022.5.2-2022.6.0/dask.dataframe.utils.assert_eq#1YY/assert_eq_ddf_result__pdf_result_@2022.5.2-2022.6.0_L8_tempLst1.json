@@ -1,0 +1,52 @@
+{
+    "context": {
+        "callAPI": "assert_eq(ddf_result, pdf_result)",
+        "currentVersion": "2022.5.2",
+        "targetVersion": "2022.6.0",
+        "fileRelativePath": "dask.dataframe.utils.assert_eq#1YY/assert_eqYY.py",
+        "lineNum": "8",
+        "config": "PCBench-LLM-Distilled/Benchmark/dask/dask.dataframe.utils.assert_eq@2022.5.2-2022.6.0/dask.dataframe.utils.assert_eq#1YY/assert_eqYY.json",
+        "apiCall": "assert_eq(ddf_result, pdf_result)",
+        "oldVersion": "dask@2022.5.2",
+        "newVersion": "dask@2022.6.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "dask.dataframe.utils.assert_eq",
+            "error": "",
+            "internalPath": "dask.dataframe.utils",
+            "docstring": "",
+            "sourceCode": "def assert_eq(\n    a,\n    b,\n    check_names=True,\n    check_dtype=True,\n    check_divisions=True,\n    check_index=True,\n    scheduler=\"sync\",\n    **kwargs,\n):\n    if check_divisions:\n        assert_divisions(a, scheduler=scheduler)\n        assert_divisions(b, scheduler=scheduler)\n        if hasattr(a, \"divisions\") and hasattr(b, \"divisions\"):\n            at = type(np.asarray(a.divisions).tolist()[0])  # numpy to python\n            bt = type(np.asarray(b.divisions).tolist()[0])  # scalar conversion\n            assert at == bt, (at, bt)\n    assert_sane_keynames(a)\n    assert_sane_keynames(b)\n    a = _check_dask(\n        a, check_names=check_names, check_dtypes=check_dtype, scheduler=scheduler\n    )\n    b = _check_dask(\n        b, check_names=check_names, check_dtypes=check_dtype, scheduler=scheduler\n    )\n    if hasattr(a, \"to_pandas\"):\n        a = a.to_pandas()\n    if hasattr(b, \"to_pandas\"):\n        b = b.to_pandas()\n    if isinstance(a, (pd.DataFrame, pd.Series)):\n        a = _maybe_sort(a, check_index)\n        b = _maybe_sort(b, check_index)\n    if not check_index:\n        a = a.reset_index(drop=True)\n        b = b.reset_index(drop=True)\n    if isinstance(a, pd.DataFrame):\n        tm.assert_frame_equal(\n            a, b, check_names=check_names, check_dtype=check_dtype, **kwargs\n        )\n    elif isinstance(a, pd.Series):\n        tm.assert_series_equal(\n            a, b, check_names=check_names, check_dtype=check_dtype, **kwargs\n        )\n    elif isinstance(a, pd.Index):\n        tm.assert_index_equal(a, b, exact=check_dtype, **kwargs)\n    else:\n        if a == b:\n            return True\n        else:\n            if np.isnan(a):\n                assert np.isnan(b)\n            else:\n                assert np.allclose(a, b)\n    return True\n",
+            "match": "(a, b, check_names=True, check_dtype=True, check_divisions=True, check_index=True, scheduler='sync', **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "dask.dataframe.utils.assert_eq",
+            "error": "",
+            "internalPath": "dask.dataframe.utils",
+            "docstring": "",
+            "sourceCode": "def assert_eq(\n    a,\n    b,\n    check_names=True,\n    check_dtype=True,\n    check_divisions=True,\n    check_index=True,\n    sort_results=True,\n    scheduler=\"sync\",\n    **kwargs,\n):\n    if check_divisions:\n        assert_divisions(a, scheduler=scheduler)\n        assert_divisions(b, scheduler=scheduler)\n        if hasattr(a, \"divisions\") and hasattr(b, \"divisions\"):\n            at = type(np.asarray(a.divisions).tolist()[0])  # numpy to python\n            bt = type(np.asarray(b.divisions).tolist()[0])  # scalar conversion\n            assert at == bt, (at, bt)\n    assert_sane_keynames(a)\n    assert_sane_keynames(b)\n    a = _check_dask(\n        a, check_names=check_names, check_dtypes=check_dtype, scheduler=scheduler\n    )\n    b = _check_dask(\n        b, check_names=check_names, check_dtypes=check_dtype, scheduler=scheduler\n    )\n    if hasattr(a, \"to_pandas\"):\n        a = a.to_pandas()\n    if hasattr(b, \"to_pandas\"):\n        b = b.to_pandas()\n    if isinstance(a, (pd.DataFrame, pd.Series)) and sort_results:\n        a = _maybe_sort(a, check_index)\n        b = _maybe_sort(b, check_index)\n    if not check_index:\n        a = a.reset_index(drop=True)\n        b = b.reset_index(drop=True)\n    if isinstance(a, pd.DataFrame):\n        tm.assert_frame_equal(\n            a, b, check_names=check_names, check_dtype=check_dtype, **kwargs\n        )\n    elif isinstance(a, pd.Series):\n        tm.assert_series_equal(\n            a, b, check_names=check_names, check_dtype=check_dtype, **kwargs\n        )\n    elif isinstance(a, pd.Index):\n        tm.assert_index_equal(a, b, exact=check_dtype, **kwargs)\n    else:\n        if a == b:\n            return True\n        else:\n            if np.isnan(a):\n                assert np.isnan(b)\n            else:\n                assert np.allclose(a, b)\n    return True\n",
+            "match": "(a, b, check_names=True, check_dtype=True, check_divisions=True, check_index=True, sort_results=True, scheduler='sync', **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(a, 0)": {},
+                "(b, 1)": {},
+                "(check_names, 2)": {},
+                "(check_dtype, 3)": {},
+                "(check_divisions, 4)": {},
+                "(check_index, 5)": {},
+                "(sort_results, 6)": {
+                    "addPos": "sort_results=True"
+                },
+                "(scheduler, 6)": {
+                    "posChange": 7
+                }
+            },
+            "targetOvPara": "(a, b, check_names=True, check_dtype=True, check_divisions=True, check_index=True, sort_results=True, scheduler='sync', **kwargs)"
+        }
+    ]
+}

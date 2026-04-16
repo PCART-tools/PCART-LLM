@@ -1,0 +1,31 @@
+[
+  {
+    "(excel_writer, 0)": {},
+    "(sheet_name, 1)": {},
+    "(na_rep, 2)": {},
+    "(float_format, 3)": {},
+    "(columns, 4)": {},
+    "(header, 5)": {},
+    "(index, 6)": {},
+    "(index_label, 7)": {},
+    "(startrow, 8)": {},
+    "(startcol, 9)": {},
+    "(engine, 10)": {},
+    "(merge_cells, 11)": {},
+    "(encoding, 12)": {
+      "delete": 1
+    },
+    "(inf_rep, 13)": {
+      "posChange": 12
+    },
+    "(verbose, 14)": {
+      "delete": 1
+    },
+    "(freeze_panes, 15)": {
+      "posChange": 13
+    },
+    "(storage_options, 16)": {
+      "posChange": 14
+    }
+  }
+]

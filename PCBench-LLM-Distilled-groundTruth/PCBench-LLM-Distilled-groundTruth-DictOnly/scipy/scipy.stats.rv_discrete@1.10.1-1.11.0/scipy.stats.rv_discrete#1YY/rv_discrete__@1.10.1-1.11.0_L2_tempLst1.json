@@ -1,0 +1,19 @@
+[
+  {
+    "(a, 0)": {},
+    "(b, 1)": {},
+    "(name, 2)": {},
+    "(badvalue, 3)": {},
+    "(moment_tol, 4)": {},
+    "(values, 5)": {},
+    "(inc, 6)": {},
+    "(longname, 7)": {},
+    "(shapes, 8)": {},
+    "(extradoc, 9)": {
+      "delete": 1
+    },
+    "(seed, 10)": {
+      "posChange": 9
+    }
+  }
+]

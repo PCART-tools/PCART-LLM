@@ -1,0 +1,45 @@
+{
+    "context": {
+        "callAPI": "tornado.netutil.add_accept_handler(sock, accept_handler)",
+        "currentVersion": "4.5.3",
+        "targetVersion": "5.0",
+        "fileRelativePath": "tornado.netutil.add_accept_handler#1YY/add_accept_handlerYY.py",
+        "lineNum": "9",
+        "config": "PCBench-LLM-Distilled/Benchmark/tornado/tornado.netutil.add_accept_handler@4.5.3-5.0/tornado.netutil.add_accept_handler#1YY/add_accept_handlerYY.json",
+        "apiCall": "tornado.netutil.add_accept_handler(sock, accept_handler)",
+        "oldVersion": "tornado@4.5.3",
+        "newVersion": "tornado@5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.netutil.add_accept_handler",
+            "match": {
+                "tornado.netutil.add_accept_handler": [
+                    "(sock,callback,io_loop=None)"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "tornado.netutil.add_accept_handler",
+            "match": {
+                "tornado.netutil.add_accept_handler": [
+                    "(sock,callback)"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(sock, 0)": {},
+                "(callback, 1)": {},
+                "(io_loop, 2)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(sock,callback)"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.genfromtxt@1.9.3-1.10.0/numpy.genfromtxt#1YY",
+    "runCommand": "python genfromtxtYY.py",
+    "runFilePath": "",
+    "libName": "numpy",
+    "currentVersion": "1.9.3",
+    "targetVersion": "1.10.0",
+    "currentEnv": "/envs/numpy1.9.3",
+    "targetEnv": "/envs/numpy1.10.0"
+}

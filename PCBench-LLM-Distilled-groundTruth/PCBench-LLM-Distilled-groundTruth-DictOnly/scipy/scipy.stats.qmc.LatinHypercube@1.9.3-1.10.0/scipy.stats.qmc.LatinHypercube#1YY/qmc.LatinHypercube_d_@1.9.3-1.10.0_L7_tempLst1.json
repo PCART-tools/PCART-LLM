@@ -1,0 +1,14 @@
+[
+  {
+    "(d, 0)": {},
+    "(centered, 2)": {},
+    "(strength, 3)": {},
+    "(scramble, 3)": {
+      "addKey": "scramble=True"
+    },
+    "(optimization, 4)": {
+      "typeChange": "\"Optional[Literal[('random-cd','lloyd')]]\""
+    },
+    "(seed, 5)": {}
+  }
+]

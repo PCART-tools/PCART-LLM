@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "nx.spectral_layout(G)",
+        "currentVersion": "1.5",
+        "targetVersion": "1.6",
+        "fileRelativePath": "spectral_layout#1YY/spectral_layoutYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/spectral_layout@1.5-1.6/spectral_layout#1YY/spectral_layoutYY.json",
+        "apiCall": "nx.spectral_layout(G)",
+        "oldVersion": "networkx@1.5",
+        "newVersion": "networkx@1.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.spectral_layout",
+            "error": "",
+            "internalPath": "networkx.drawing.layout",
+            "docstring": "Position nodes using the eigenvectors of the graph Laplacian. \n\nParameters\n----------\nG : NetworkX graph \n\ndim : int \n   Dimension of layout\n\nweighted : boolean\n    If True, use edge weights in layout \n\nscale : float\n    Scale factor for positions \n\nReturns\n-------\ndict : \n   A dictionary of positions keyed by node\n\nExamples\n--------\n>>> G=nx.path_graph(4)\n>>> pos=nx.spectral_layout(G)\n\nNotes\n-----\nDirected graphs will be considered as unidrected graphs when\npositioning the nodes.\n\nFor larger graphs (>500 nodes) this will use the SciPy sparse\neigenvalue solver (ARPACK).",
+            "sourceCode": "def spectral_layout(G,dim=2,weighted=True,scale=1):\n    \"\"\"Position nodes using the eigenvectors of the graph Laplacian. \n\n    Parameters\n    ----------\n    G : NetworkX graph \n\n    dim : int \n       Dimension of layout\n\n    weighted : boolean\n        If True, use edge weights in layout \n\n    scale : float\n        Scale factor for positions \n\n    Returns\n    -------\n    dict : \n       A dictionary of positions keyed by node\n\n    Examples\n    --------\n    >>> G=nx.path_graph(4)\n    >>> pos=nx.spectral_layout(G)\n\n    Notes\n    -----\n    Directed graphs will be considered as unidrected graphs when\n    positioning the nodes.\n\n    For larger graphs (>500 nodes) this will use the SciPy sparse\n    eigenvalue solver (ARPACK).\n    \"\"\"\n    # handle some special cases that break the eigensolvers\n    try:\n        import numpy as np\n    except ImportError:\n        raise ImportError(\"spectral_layout() requires numpy: http://scipy.org/ \")\n    if len(G)<=2:\n        if len(G)==0:\n            pos=np.array([])\n        elif len(G)==1:\n            pos=np.array([[1,1]])\n        else:\n            pos=np.array([[0,0.5],[1,0.5]])\n        return dict(list(zip(G,pos)))\n    try:\n        # Sparse matrix \n        if len(G)< 500:  # dense solver is faster for small graphs\n            raise ValueError\n        A=nx.to_scipy_sparse_matrix(G)\n        # Symmetrize directed graphs\n        if G.is_directed():\n            A=A+np.transpose(A)\n        pos=_sparse_spectral(A,dim=dim,weighted=weighted)\n    except (ImportError,ValueError):\n        # Dense matrix\n        A=nx.to_numpy_matrix(G)\n        # Symmetrize directed graphs\n        if G.is_directed():\n            A=A+np.transpose(A)\n        pos=_spectral(A,dim=dim,weighted=weighted)\n\n    pos=_rescale_layout(pos,scale=scale)\n    return dict(list(zip(G,pos)))\n",
+            "match": "(G, dim=2, weighted=True, scale=1)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.spectral_layout",
+            "error": "",
+            "internalPath": "networkx.drawing.layout",
+            "docstring": "Position nodes using the eigenvectors of the graph Laplacian. \n\nParameters\n----------\nG : NetworkX graph \n\ndim : int \n   Dimension of layout\n\nweight : string or None   optional (default='weight')\n    The edge attribute that holds the numerical value used for \n    the edge weight.  If None, then all edge weights are 1.\n\nscale : float\n    Scale factor for positions \n\nReturns\n-------\ndict : \n   A dictionary of positions keyed by node\n\nExamples\n--------\n>>> G=nx.path_graph(4)\n>>> pos=nx.spectral_layout(G)\n\nNotes\n-----\nDirected graphs will be considered as unidrected graphs when\npositioning the nodes.\n\nFor larger graphs (>500 nodes) this will use the SciPy sparse\neigenvalue solver (ARPACK).",
+            "sourceCode": "def spectral_layout(G, dim=2, weight='weight', scale=1):\n    \"\"\"Position nodes using the eigenvectors of the graph Laplacian. \n\n    Parameters\n    ----------\n    G : NetworkX graph \n\n    dim : int \n       Dimension of layout\n\n    weight : string or None   optional (default='weight')\n        The edge attribute that holds the numerical value used for \n        the edge weight.  If None, then all edge weights are 1.\n\n    scale : float\n        Scale factor for positions \n\n    Returns\n    -------\n    dict : \n       A dictionary of positions keyed by node\n\n    Examples\n    --------\n    >>> G=nx.path_graph(4)\n    >>> pos=nx.spectral_layout(G)\n\n    Notes\n    -----\n    Directed graphs will be considered as unidrected graphs when\n    positioning the nodes.\n\n    For larger graphs (>500 nodes) this will use the SciPy sparse\n    eigenvalue solver (ARPACK).\n    \"\"\"\n    # handle some special cases that break the eigensolvers\n    try:\n        import numpy as np\n    except ImportError:\n        raise ImportError(\"spectral_layout() requires numpy: http://scipy.org/ \")\n    if len(G)<=2:\n        if len(G)==0:\n            pos=np.array([])\n        elif len(G)==1:\n            pos=np.array([[1,1]])\n        else:\n            pos=np.array([[0,0.5],[1,0.5]])\n        return dict(zip(G,pos))\n    try:\n        # Sparse matrix \n        if len(G)< 500:  # dense solver is faster for small graphs\n            raise ValueError\n        A=nx.to_scipy_sparse_matrix(G, weight=weight)\n        # Symmetrize directed graphs\n        if G.is_directed():\n            A=A+np.transpose(A)\n        pos=_sparse_spectral(A,dim)\n    except (ImportError,ValueError):\n        # Dense matrix\n        A=nx.to_numpy_matrix(G, weight=weight)\n        # Symmetrize directed graphs\n        if G.is_directed():\n            A=A+np.transpose(A)\n        pos=_spectral(A,dim)\n\n    pos=_rescale_layout(pos,scale)\n    return dict(zip(G,pos))\n",
+            "match": "(G, dim=2, weight='weight', scale=1)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(dim, 1)": {},
+                "(weighted, 2)": {
+                    "delete": 1,
+                    "replace": "weight"
+                },
+                "(scale, 3)": {}
+            },
+            "targetOvPara": "(G, dim=2, weight='weight', scale=1)"
+        }
+    ]
+}

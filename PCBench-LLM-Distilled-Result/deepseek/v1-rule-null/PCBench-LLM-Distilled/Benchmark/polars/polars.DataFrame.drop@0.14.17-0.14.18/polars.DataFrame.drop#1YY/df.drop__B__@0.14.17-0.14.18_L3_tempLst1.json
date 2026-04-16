@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "df.drop('B')",
+        "currentVersion": "0.14.17",
+        "targetVersion": "0.14.18",
+        "fileRelativePath": "polars.DataFrame.drop#1YY/dropYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.DataFrame.drop@0.14.17-0.14.18/polars.DataFrame.drop#1YY/dropYY.json",
+        "apiCall": "df.drop('B')",
+        "oldVersion": "polars@0.14.17",
+        "newVersion": "polars@0.14.18",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.drop",
+            "error": "",
+            "internalPath": "polars.internals.dataframe.frame",
+            "docstring": "Remove column from DataFrame and return as new.\n\nParameters\n----------\nname\n    Column(s) to drop.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6.0, 7.0, 8.0],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.drop(\"ham\")\nshape: (3, 2)\n┌─────┬─────┐\n│ foo ┆ bar │\n│ --- ┆ --- │\n│ i64 ┆ f64 │\n╞═════╪═════╡\n│ 1   ┆ 6.0 │\n├╌╌╌╌╌┼╌╌╌╌╌┤\n│ 2   ┆ 7.0 │\n├╌╌╌╌╌┼╌╌╌╌╌┤\n│ 3   ┆ 8.0 │\n└─────┴─────┘",
+            "sourceCode": "    def drop(self: DF, name: str | list[str]) -> DF:\n        \"\"\"\n        Remove column from DataFrame and return as new.\n\n        Parameters\n        ----------\n        name\n            Column(s) to drop.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6.0, 7.0, 8.0],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.drop(\"ham\")\n        shape: (3, 2)\n        ┌─────┬─────┐\n        │ foo ┆ bar │\n        │ --- ┆ --- │\n        │ i64 ┆ f64 │\n        ╞═════╪═════╡\n        │ 1   ┆ 6.0 │\n        ├╌╌╌╌╌┼╌╌╌╌╌┤\n        │ 2   ┆ 7.0 │\n        ├╌╌╌╌╌┼╌╌╌╌╌┤\n        │ 3   ┆ 8.0 │\n        └─────┴─────┘\n\n        \"\"\"\n        if isinstance(name, list):\n            df = self.clone()\n\n            for n in name:\n                df._df.drop_in_place(n)\n            return df\n\n        return self._from_pydf(self._df.drop(name))\n",
+            "match": "(name: 'str | list[str]') -> 'DF'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.drop",
+            "error": "",
+            "internalPath": "polars.utils",
+            "docstring": "Remove column from DataFrame and return as new.\n\nParameters\n----------\ncolumns\n    Column(s) to drop.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6.0, 7.0, 8.0],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.drop(\"ham\")\nshape: (3, 2)\n┌─────┬─────┐\n│ foo ┆ bar │\n│ --- ┆ --- │\n│ i64 ┆ f64 │\n╞═════╪═════╡\n│ 1   ┆ 6.0 │\n├╌╌╌╌╌┼╌╌╌╌╌┤\n│ 2   ┆ 7.0 │\n├╌╌╌╌╌┼╌╌╌╌╌┤\n│ 3   ┆ 8.0 │\n└─────┴─────┘",
+            "sourceCode": "    @deprecated_alias(name=\"columns\")\n    def drop(self: DF, columns: str | list[str]) -> DF:\n        \"\"\"\n        Remove column from DataFrame and return as new.\n\n        Parameters\n        ----------\n        columns\n            Column(s) to drop.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6.0, 7.0, 8.0],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.drop(\"ham\")\n        shape: (3, 2)\n        ┌─────┬─────┐\n        │ foo ┆ bar │\n        │ --- ┆ --- │\n        │ i64 ┆ f64 │\n        ╞═════╪═════╡\n        │ 1   ┆ 6.0 │\n        ├╌╌╌╌╌┼╌╌╌╌╌┤\n        │ 2   ┆ 7.0 │\n        ├╌╌╌╌╌┼╌╌╌╌╌┤\n        │ 3   ┆ 8.0 │\n        └─────┴─────┘\n\n        \"\"\"\n        if isinstance(columns, list):\n            df = self.clone()\n\n            for n in columns:\n                df._df.drop_in_place(n)\n            return df\n\n        return self._from_pydf(self._df.drop(columns))\n",
+            "match": "(columns: 'str | list[str]') -> 'DF'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(name, 0)": {
+                    "rename": "columns"
+                },
+                "(columns, 0)": {
+                    "addPos": "columns"
+                }
+            },
+            "targetOvPara": "(columns: 'str | list[str]') -> 'DF'"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.GramSchmidt@0.7.6.1-1.0/sympy.GramSchmidt#1YY",
+    "runCommand": "python GramSchmidtYY.py",
+    "runFilePath": "",
+    "libName": "sympy",
+    "currentVersion": "0.7.6.1",
+    "targetVersion": "1.0",
+    "currentEnv": "/envs/sympy0.7.6.1",
+    "targetEnv": "/envs/sympy1.0"
+}

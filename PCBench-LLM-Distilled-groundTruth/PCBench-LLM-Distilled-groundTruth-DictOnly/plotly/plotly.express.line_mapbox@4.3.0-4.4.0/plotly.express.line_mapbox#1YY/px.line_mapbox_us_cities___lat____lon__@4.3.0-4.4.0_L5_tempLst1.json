@@ -1,0 +1,34 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(lat, 1)": {},
+    "(lon, 2)": {},
+    "(color, 3)": {},
+    "(text, 4)": {},
+    "(hover_name, 5)": {},
+    "(hover_data, 6)": {},
+    "(custom_data, 7)": {},
+    "(line_group, 8)": {},
+    "(animation_frame, 9)": {},
+    "(animation_group, 10)": {},
+    "(category_orders, 11)": {},
+    "(labels, 12)": {},
+    "(color_discrete_sequence, 13)": {},
+    "(color_discrete_map, 14)": {},
+    "(zoom, 15)": {},
+    "(title, 16)": {
+      "posChange": 18,
+      "replace": "center=None"
+    },
+    "(template, 17)": {
+      "posChange": 19,
+      "replace": "mapbox_style=None"
+    },
+    "(width, 18)": {
+      "posChange": 20
+    },
+    "(height, 19)": {
+      "posChange": 21
+    }
+  }
+]

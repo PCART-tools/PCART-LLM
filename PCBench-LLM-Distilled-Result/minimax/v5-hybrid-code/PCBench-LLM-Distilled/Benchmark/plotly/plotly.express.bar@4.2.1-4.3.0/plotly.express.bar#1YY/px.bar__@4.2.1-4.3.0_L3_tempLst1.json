@@ -1,0 +1,131 @@
+{
+    "context": {
+        "callAPI": "px.bar()",
+        "currentVersion": "4.2.1",
+        "targetVersion": "4.3.0",
+        "fileRelativePath": "plotly.express.bar#1YY/barYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/plotly/plotly.express.bar@4.2.1-4.3.0/plotly.express.bar#1YY/barYY.json",
+        "apiCall": "px.bar()",
+        "oldVersion": "plotly@4.2.1",
+        "newVersion": "plotly@4.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "plotly.express.bar",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a bar plot, each row of `data_frame` is represented as a rectangular mark.\n    \nArguments:\n    data_frame: A `pandas.DataFrame`, or a `NumPy` array or a dictionary which are tranformed internally to `pandas.DataFrame`. This argument needsto be passed for column names (and not keyword names) to be used.\n    x: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the x axis in cartesian coordinates. For horizontal `histogram`s, these values are used as inputs to `histfunc`.\n    y: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the y axis in cartesian coordinates. For vertical `histogram`s, these values are used as inputs to `histfunc`.\n    color: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign color to marks.\n    facet_row: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the vertical direction.\n    facet_col: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the horizontal direction.\n    hover_name: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like appear in bold in the hover tooltip.\n    hover_data: (list of string or int: names of columns in `data_frame`, or pandas Series, or array_like objects) Values from these columns appear as extra data in the hover tooltip.\n    custom_data: (list of string or int: names of columns in `data_frame`, or pandas Series, or array_like objects) Values from these columns are extra data, to be used in widgets or Dash callbacks for example. This data is not user-visible but is included in events emitted by the figure (lasso selection etc.)\n    text: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like appear in the figure as text labels.\n    error_x: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to size x-axis error bars. If `error_x_minus` is `None`, error bars will be symmetrical, otherwise `error_x` is used for the positive direction only.\n    error_x_minus: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to size x-axis error bars in the negative direction. Ignored if `error_x` is `None`.\n    error_y: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to size y-axis error bars. If `error_y_minus` is `None`, error bars will be symmetrical, otherwise `error_y` is used for the positive direction only.\n    error_y_minus: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to size y-axis error bars in the negative direction. Ignored if `error_y` is `None`.\n    animation_frame: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to animation frames.\n    animation_group: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to provide object-constancy across animation frames: rows with matching `animation_group`s will be treated as if they describe the same object in each frame.\n    category_orders: (dict with string keys and list-of-string values, default `{}`) By default, in Python 3.6+, the order of categorical values in axes, legends and facets depends on the order in which these values are first encountered in `data_frame` (and no order is guaranteed by default in Python below 3.6). This parameter is used to force a specific ordering of values per column. The keys of this dict should correspond to column names, and the values should be lists of strings corresponding to the specific display order desired.\n    labels: (dict with string keys and string values, default `{}`) By default, column names are used in the figure for axis titles, legend entries and hovers. This parameter allows this to be overridden. The keys of this dict should correspond to column names, and the values should correspond to the desired label to be displayed.\n    color_discrete_sequence: (list of valid CSS-color strings) When `color` is set and the values in the corresponding column are not numeric, values in that column are assigned colors by cycling through `color_discrete_sequence` in the order described in `category_orders`, unless the value of `color` is a key in `color_discrete_map`. Various useful color sequences are available in the `plotly_express.colors` submodules, specifically `plotly_express.colors.qualitative`.\n    color_discrete_map: (dict with string keys and values that are valid CSS-color strings, default `{}`) Used to override `color_discrete_sequence` to assign a specific colors to marks corresponding with specific values. Keys in `color_discrete_map` should be values in the column denoted by `color`.\n    color_continuous_scale: (list of valid CSS-color strings) This list is used to build a continuous color scale when the column denoted by `color` contains numeric data. Various useful color scales are available in the `plotly_express.colors` submodules, specifically `plotly_express.colors.sequential`, `plotly_express.colors.diverging` and `plotly_express.colors.cyclical`.\n    range_color: (2-element list of numbers) If provided, overrides auto-scaling on the continuous color scale.\n    color_continuous_midpoint: (number, defaults to `None`) If set, computes the bounds of the continuous color scale to have the desired midpoint. Setting this value is recommended when using `plotly_express.colors.diverging` color scales as the inputs to `color_continuous_scale`.\n    opacity: (number, between 0 and 1) Sets the opacity for markers.\n    orientation: (string, one of `'h'` for horizontal or `'v'` for vertical) Default is `'v'`.\n    barmode: (string, one of `'group'`, `'overlay'` or `'relative'`. Default is `'relative'`) In `'relative'` mode, bars are stacked above zero for positive values and below zero for negative values. In `'overlay'` mode, bars are drawn on top of one another. In `'group'` mode, bars are placed beside each other.\n    log_x: (boolean, default `False`) If `True`, the x-axis is log-scaled in cartesian coordinates.\n    log_y: (boolean, default `False`) If `True`, the y-axis is log-scaled in cartesian coordinates.\n    range_x: (2-element list of numbers) If provided, overrides auto-scaling on the x-axis in cartesian coordinates.\n    range_y: (2-element list of numbers) If provided, overrides auto-scaling on the y-axis in cartesian coordinates.\n    title: (string) The figure title.\n    template: (string or Plotly.py template object) The figure template name or definition.\n    width: (integer, default `None`) The figure width in pixels.\n    height: (integer, default `600`) The figure height in pixels.\nReturns:\n    A `Figure` object.",
+            "sourceCode": "def bar(\n    data_frame=None,\n    x=None,\n    y=None,\n    color=None,\n    facet_row=None,\n    facet_col=None,\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    text=None,\n    error_x=None,\n    error_x_minus=None,\n    error_y=None,\n    error_y_minus=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders={},\n    labels={},\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    color_continuous_scale=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    opacity=None,\n    orientation=\"v\",\n    barmode=\"relative\",\n    log_x=False,\n    log_y=False,\n    range_x=None,\n    range_y=None,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a bar plot, each row of `data_frame` is represented as a rectangular mark.\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Bar,\n        trace_patch=dict(orientation=orientation, textposition=\"auto\"),\n        layout_patch=dict(barmode=barmode),\n    )\n",
+            "match": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, hover_name=None, hover_data=None, custom_data=None, text=None, error_x=None, error_x_minus=None, error_y=None, error_y_minus=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, opacity=None, orientation='v', barmode='relative', log_x=False, log_y=False, range_x=None, range_y=None, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "plotly.express.bar",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a bar plot, each row of `data_frame` is represented as a rectangular\n    mark.\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword names)\n    to be used. Array-like and dict are tranformed internally to a pandas\n    DataFrame.\nx: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the x axis in cartesian coordinates. For horizontal\n    histograms, these values are used as inputs to `histfunc`.\ny: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the y axis in cartesian coordinates. For vertical\n    histograms, these values are used as inputs to `histfunc`.\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\nfacet_row: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to facetted subplots in the vertical direction.\nfacet_col: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to facetted subplots in the horizontal direction.\nfacet_col_wrap: int\n    Maximum number of facet columns. Wraps the column variable at this width,\n    so that the column facets span multiple rows. Ignored if 0, and forced to\n    0 if `facet_row` or a `marginal` is set.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or array_like\n    objects Values from these columns appear as extra data in the hover\n    tooltip.\ncustom_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or array_like\n    objects Values from these columns are extra data, to be used in widgets\n    or Dash callbacks for example. This data is not user-visible but is\n    included in events emitted by the figure (lasso selection etc.)\ntext: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in the\n    figure as text labels.\nerror_x: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to size\n    x-axis error bars. If `error_x_minus` is `None`, error bars will be\n    symmetrical, otherwise `error_x` is used for the positive direction only.\nerror_x_minus: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to size\n    x-axis error bars in the negative direction. Ignored if `error_x` is\n    `None`.\nerror_y: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to size\n    y-axis error bars. If `error_y_minus` is `None`, error bars will be\n    symmetrical, otherwise `error_y` is used for the positive direction only.\nerror_y_minus: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to size\n    y-axis error bars in the negative direction. Ignored if `error_y` is\n    `None`.\nanimation_frame: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to animation frames.\nanimation_group: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    provide object-constancy across animation frames: rows with matching\n    `animation_group`s will be treated as if they describe the same object in\n    each frame.\ncategory_orders: dict with str keys and list of str values (default `{}`)\n    By default, in Python 3.6+, the order of categorical values in axes,\n    legends and facets depends on the order in which these values are first\n    encountered in `data_frame` (and no order is guaranteed by default in\n    Python below 3.6). This parameter is used to force a specific ordering of\n    values per column. The keys of this dict should correspond to column\n    names, and the values should be lists of strings corresponding to the\n    specific display order desired.\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The keys\n    of this dict should correspond to column names, and the values should\n    correspond to the desired label to be displayed.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that column\n    are assigned colors by cycling through `color_discrete_sequence` in the\n    order described in `category_orders`, unless the value of `color` is a\n    key in `color_discrete_map`. Various useful color sequences are available\n    in the `plotly_express.colors` submodules, specifically\n    `plotly_express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`.\ncolor_continuous_scale: list of str\n    Strings should define valid CSS-colors This list is used to build a\n    continuous color scale when the column denoted by `color` contains\n    numeric data. Various useful color scales are available in the\n    `plotly_express.colors` submodules, specifically\n    `plotly_express.colors.sequential`, `plotly_express.colors.diverging` and\n    `plotly_express.colors.cyclical`.\nrange_color: list of two numbers\n    If provided, overrides auto-scaling on the continuous color scale.\ncolor_continuous_midpoint: number (default `None`)\n    If set, computes the bounds of the continuous color scale to have the\n    desired midpoint. Setting this value is recommended when using\n    `plotly_express.colors.diverging` color scales as the inputs to\n    `color_continuous_scale`.\nopacity: float\n    Value between 0 and 1. Sets the opacity for markers.\norientation: str (default `'v'`)\n    One of `'h'` for horizontal or `'v'` for vertical)\nbarmode: str (default `'relative'`)\n    One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode, bars\n    are stacked above zero for positive values and below zero for negative\n    values. In `'overlay'` mode, bars are drawn on top of one another. In\n    `'group'` mode, bars are placed beside each other.\nlog_x: boolean (default `False`)\n    If `True`, the x-axis is log-scaled in cartesian coordinates.\nlog_y: boolean (default `False`)\n    If `True`, the y-axis is log-scaled in cartesian coordinates.\nrange_x: list of two numbers\n    If provided, overrides auto-scaling on the x-axis in cartesian\n    coordinates.\nrange_y: list of two numbers\n    If provided, overrides auto-scaling on the y-axis in cartesian\n    coordinates.\ntitle: str\n    The figure title.\ntemplate: or dict or plotly.graph_objects.layout.Template instance\n    The figure template name or definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `600`)\n    The figure height in pixels.\n\nReturns\n-------\n    A `Figure` object.",
+            "sourceCode": "def bar(\n    data_frame=None,\n    x=None,\n    y=None,\n    color=None,\n    facet_row=None,\n    facet_col=None,\n    facet_col_wrap=0,\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    text=None,\n    error_x=None,\n    error_x_minus=None,\n    error_y=None,\n    error_y_minus=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders={},\n    labels={},\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    color_continuous_scale=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    opacity=None,\n    orientation=\"v\",\n    barmode=\"relative\",\n    log_x=False,\n    log_y=False,\n    range_x=None,\n    range_y=None,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a bar plot, each row of `data_frame` is represented as a rectangular\n    mark.\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Bar,\n        trace_patch=dict(orientation=orientation, textposition=\"auto\"),\n        layout_patch=dict(barmode=barmode),\n    )\n",
+            "match": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, facet_col_wrap=0, hover_name=None, hover_data=None, custom_data=None, text=None, error_x=None, error_x_minus=None, error_y=None, error_y_minus=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, opacity=None, orientation='v', barmode='relative', log_x=False, log_y=False, range_x=None, range_y=None, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(data_frame, 0)": {},
+                "(x, 1)": {},
+                "(y, 2)": {},
+                "(color, 3)": {},
+                "(facet_row, 4)": {},
+                "(facet_col, 5)": {},
+                "(hover_name, 6)": {
+                    "posChange": 7,
+                    "replace": "facet_col_wrap=0"
+                },
+                "(hover_data, 7)": {
+                    "posChange": 8
+                },
+                "(custom_data, 8)": {
+                    "posChange": 9
+                },
+                "(text, 9)": {
+                    "posChange": 10
+                },
+                "(error_x, 10)": {
+                    "posChange": 11
+                },
+                "(error_x_minus, 11)": {
+                    "posChange": 12
+                },
+                "(error_y, 12)": {
+                    "posChange": 13
+                },
+                "(error_y_minus, 13)": {
+                    "posChange": 14
+                },
+                "(animation_frame, 14)": {
+                    "posChange": 15
+                },
+                "(animation_group, 15)": {
+                    "posChange": 16
+                },
+                "(category_orders, 16)": {
+                    "posChange": 17
+                },
+                "(labels, 17)": {
+                    "posChange": 18
+                },
+                "(color_discrete_sequence, 18)": {
+                    "posChange": 19
+                },
+                "(color_discrete_map, 19)": {
+                    "posChange": 20
+                },
+                "(color_continuous_scale, 20)": {
+                    "posChange": 21
+                },
+                "(range_color, 21)": {
+                    "posChange": 22
+                },
+                "(color_continuous_midpoint, 22)": {
+                    "posChange": 23
+                },
+                "(opacity, 23)": {
+                    "posChange": 24
+                },
+                "(orientation, 24)": {
+                    "posChange": 25
+                },
+                "(barmode, 25)": {
+                    "posChange": 26
+                },
+                "(log_x, 26)": {
+                    "posChange": 27
+                },
+                "(log_y, 27)": {
+                    "posChange": 28
+                },
+                "(range_x, 28)": {
+                    "posChange": 29
+                },
+                "(range_y, 29)": {
+                    "posChange": 30
+                },
+                "(title, 30)": {
+                    "posChange": 31
+                },
+                "(template, 31)": {
+                    "posChange": 32
+                },
+                "(width, 32)": {
+                    "posChange": 33
+                },
+                "(height, 33)": {
+                    "posChange": 34
+                }
+            },
+            "targetOvPara": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, facet_col_wrap=0, hover_name=None, hover_data=None, custom_data=None, text=None, error_x=None, error_x_minus=None, error_y=None, error_y_minus=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, opacity=None, orientation='v', barmode='relative', log_x=False, log_y=False, range_x=None, range_y=None, title=None, template=None, width=None, height=None)"
+        }
+    ]
+}

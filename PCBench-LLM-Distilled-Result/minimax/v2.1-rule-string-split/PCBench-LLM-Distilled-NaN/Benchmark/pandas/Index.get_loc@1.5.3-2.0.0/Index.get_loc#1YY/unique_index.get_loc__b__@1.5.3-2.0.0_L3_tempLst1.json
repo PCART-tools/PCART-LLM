@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "unique_index.get_loc('b')",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Index.get_loc#1YY/get_locYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.get_loc@1.5.3-2.0.0/Index.get_loc#1YY/get_locYY.json",
+        "apiCall": "unique_index.get_loc('b')",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Index.get_loc",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Get integer location, slice or boolean mask for requested label.\n\nParameters\n----------\nkey : label\nmethod : {None, 'pad'/'ffill', 'backfill'/'bfill', 'nearest'}, optional\n    * default: exact matches only.\n    * pad / ffill: find the PREVIOUS index value if no exact match.\n    * backfill / bfill: use NEXT index value if no exact match\n    * nearest: use the NEAREST index value if no exact match. Tied\n      distances are broken by preferring the larger index value.\n\n    .. deprecated:: 1.4\n        Use index.get_indexer([item], method=...) instead.\n\ntolerance : int or float, optional\n    Maximum distance from index value for inexact matches. The value of\n    the index at the matching location must satisfy the equation\n    ``abs(index[loc] - key) <= tolerance``.\n\nReturns\n-------\nloc : int if unique index, slice if monotonic index, else mask\n\nExamples\n--------\n>>> unique_index = pd.Index(list('abc'))\n>>> unique_index.get_loc('b')\n1\n\n>>> monotonic_index = pd.Index(list('abbc'))\n>>> monotonic_index.get_loc('b')\nslice(1, 3, None)\n\n>>> non_monotonic_index = pd.Index(list('abcb'))\n>>> non_monotonic_index.get_loc('b')\narray([False,  True, False,  True])",
+            "sourceCode": "    def get_loc(self, key, method=None, tolerance=None):\n        \"\"\"\n        Get integer location, slice or boolean mask for requested label.\n\n        Parameters\n        ----------\n        key : label\n        method : {None, 'pad'/'ffill', 'backfill'/'bfill', 'nearest'}, optional\n            * default: exact matches only.\n            * pad / ffill: find the PREVIOUS index value if no exact match.\n            * backfill / bfill: use NEXT index value if no exact match\n            * nearest: use the NEAREST index value if no exact match. Tied\n              distances are broken by preferring the larger index value.\n\n            .. deprecated:: 1.4\n                Use index.get_indexer([item], method=...) instead.\n\n        tolerance : int or float, optional\n            Maximum distance from index value for inexact matches. The value of\n            the index at the matching location must satisfy the equation\n            ``abs(index[loc] - key) <= tolerance``.\n\n        Returns\n        -------\n        loc : int if unique index, slice if monotonic index, else mask\n\n        Examples\n        --------\n        >>> unique_index = pd.Index(list('abc'))\n        >>> unique_index.get_loc('b')\n        1\n\n        >>> monotonic_index = pd.Index(list('abbc'))\n        >>> monotonic_index.get_loc('b')\n        slice(1, 3, None)\n\n        >>> non_monotonic_index = pd.Index(list('abcb'))\n        >>> non_monotonic_index.get_loc('b')\n        array([False,  True, False,  True])\n        \"\"\"\n        if method is None:\n            if tolerance is not None:\n                raise ValueError(\n                    \"tolerance argument only valid if using pad, \"\n                    \"backfill or nearest lookups\"\n                )\n            casted_key = self._maybe_cast_indexer(key)\n            try:\n                return self._engine.get_loc(casted_key)\n            except KeyError as err:\n                raise KeyError(key) from err\n            except TypeError:\n                # If we have a listlike key, _check_indexing_error will raise\n                #  InvalidIndexError. Otherwise we fall through and re-raise\n                #  the TypeError.\n                self._check_indexing_error(key)\n                raise\n\n        # GH#42269\n        warnings.warn(\n            f\"Passing method to {type(self).__name__}.get_loc is deprecated \"\n            \"and will raise in a future version. Use \"\n            \"index.get_indexer([item], method=...) instead.\",\n            FutureWarning,\n            stacklevel=find_stack_level(),\n        )\n\n        if is_scalar(key) and isna(key) and not self.hasnans:\n            raise KeyError(key)\n\n        if tolerance is not None:\n            tolerance = self._convert_tolerance(tolerance, np.asarray(key))\n\n        indexer = self.get_indexer([key], method=method, tolerance=tolerance)\n        if indexer.ndim > 1 or indexer.size > 1:\n            raise TypeError(\"get_loc requires scalar valued input\")\n        loc = indexer.item()\n        if loc == -1:\n            raise KeyError(key)\n        return loc\n",
+            "match": "(key, method=None, tolerance=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Index.get_loc",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Get integer location, slice or boolean mask for requested label.\n\nParameters\n----------\nkey : label\n\nReturns\n-------\nint if unique index, slice if monotonic index, else mask\n\nExamples\n--------\n>>> unique_index = pd.Index(list('abc'))\n>>> unique_index.get_loc('b')\n1\n\n>>> monotonic_index = pd.Index(list('abbc'))\n>>> monotonic_index.get_loc('b')\nslice(1, 3, None)\n\n>>> non_monotonic_index = pd.Index(list('abcb'))\n>>> non_monotonic_index.get_loc('b')\narray([False,  True, False,  True])",
+            "sourceCode": "    def get_loc(self, key):\n        \"\"\"\n        Get integer location, slice or boolean mask for requested label.\n\n        Parameters\n        ----------\n        key : label\n\n        Returns\n        -------\n        int if unique index, slice if monotonic index, else mask\n\n        Examples\n        --------\n        >>> unique_index = pd.Index(list('abc'))\n        >>> unique_index.get_loc('b')\n        1\n\n        >>> monotonic_index = pd.Index(list('abbc'))\n        >>> monotonic_index.get_loc('b')\n        slice(1, 3, None)\n\n        >>> non_monotonic_index = pd.Index(list('abcb'))\n        >>> non_monotonic_index.get_loc('b')\n        array([False,  True, False,  True])\n        \"\"\"\n        casted_key = self._maybe_cast_indexer(key)\n        try:\n            return self._engine.get_loc(casted_key)\n        except KeyError as err:\n            raise KeyError(key) from err\n        except TypeError:\n            # If we have a listlike key, _check_indexing_error will raise\n            #  InvalidIndexError. Otherwise we fall through and re-raise\n            #  the TypeError.\n            self._check_indexing_error(key)\n            raise\n",
+            "match": "(key)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(key, 0)": {},
+                "(method, 1)": {
+                    "delete": 1
+                },
+                "(tolerance, 2)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(key)"
+        }
+    ]
+}

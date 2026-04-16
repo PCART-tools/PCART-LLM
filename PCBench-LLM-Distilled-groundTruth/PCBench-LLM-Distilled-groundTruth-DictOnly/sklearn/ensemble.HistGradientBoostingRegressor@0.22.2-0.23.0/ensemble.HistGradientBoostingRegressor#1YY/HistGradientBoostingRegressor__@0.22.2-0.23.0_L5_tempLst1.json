@@ -1,0 +1,53 @@
+[
+  {
+    "(loss, 0)": {},
+    "(learning_rate, 1)": {
+      "pos2key": "learning_rate"
+    },
+    "(max_iter, 2)": {
+      "pos2key": "max_iter"
+    },
+    "(max_leaf_nodes, 3)": {
+      "pos2key": "max_leaf_nodes"
+    },
+    "(max_depth, 4)": {
+      "pos2key": "max_depth"
+    },
+    "(min_samples_leaf, 5)": {
+      "pos2key": "min_samples_leaf"
+    },
+    "(l2_regularization, 6)": {
+      "pos2key": "l2_regularization"
+    },
+    "(max_bins, 7)": {
+      "pos2key": "max_bins"
+    },
+    "(warm_start, 8)": {
+      "pos2key": "warm_start"
+    },
+    "(scoring, 9)": {
+      "pos2key": "scoring"
+    },
+    "(monotonic_cst, 9)": {
+      "addKey": "monotonic_cst=None"
+    },
+    "(validation_fraction, 10)": {
+      "pos2key": "validation_fraction"
+    },
+    "(n_iter_no_change, 11)": {
+      "pos2key": "n_iter_no_change"
+    },
+    "(early_stopping, 11)": {
+      "addKey": "early_stopping='auto'"
+    },
+    "(tol, 12)": {
+      "pos2key": "tol"
+    },
+    "(verbose, 13)": {
+      "pos2key": "verbose"
+    },
+    "(random_state, 14)": {
+      "pos2key": "random_state"
+    }
+  }
+]

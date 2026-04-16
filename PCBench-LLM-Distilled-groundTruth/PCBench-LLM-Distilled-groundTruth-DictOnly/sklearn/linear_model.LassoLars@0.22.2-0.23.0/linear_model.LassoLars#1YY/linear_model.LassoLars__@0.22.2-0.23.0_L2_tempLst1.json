@@ -1,0 +1,38 @@
+[
+  {
+    "(alpha, 0)": {},
+    "(fit_intercept, 1)": {
+      "pos2key": "fit_intercept"
+    },
+    "(verbose, 2)": {
+      "pos2key": "verbose"
+    },
+    "(normalize, 3)": {
+      "pos2key": "normalize"
+    },
+    "(precompute, 4)": {
+      "pos2key": "precompute"
+    },
+    "(max_iter, 5)": {
+      "pos2key": "max_iter"
+    },
+    "(eps, 6)": {
+      "pos2key": "eps"
+    },
+    "(copy_X, 7)": {
+      "pos2key": "copy_X"
+    },
+    "(fit_path, 8)": {
+      "pos2key": "fit_path"
+    },
+    "(positive, 9)": {
+      "pos2key": "positive"
+    },
+    "(jitter, 11)": {
+      "addKey": "jitter=None"
+    },
+    "(random_state, 12)": {
+      "addKey": "random_state=None"
+    }
+  }
+]

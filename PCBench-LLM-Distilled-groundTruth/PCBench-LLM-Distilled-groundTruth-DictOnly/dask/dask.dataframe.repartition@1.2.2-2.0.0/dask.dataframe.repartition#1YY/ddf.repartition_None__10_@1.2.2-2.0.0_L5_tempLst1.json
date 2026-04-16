@@ -1,0 +1,13 @@
+[
+  {
+    "(divisions, 0)": {},
+    "(npartitions, 1)": {},
+    "(freq, 2)": {
+      "posChange": 3,
+      "replace": "partition_size=None"
+    },
+    "(force, 3)": {
+      "posChange": 4
+    }
+  }
+]

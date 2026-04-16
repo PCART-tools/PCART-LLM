@@ -1,0 +1,13 @@
+[
+  {
+    "(reuse_timeout, 1)": {
+      "rename": "keepalive_timeout"
+    },
+    "(conn_timeout, 2)": {},
+    "(share_cookies, 3)": {},
+    "(loop, 4)": {},
+    "(force_close, 4)": {
+      "addKey": "force_close=False"
+    }
+  }
+]

@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "Rule()",
+        "currentVersion": "2.3.1",
+        "targetVersion": "3.0.0",
+        "fileRelativePath": "Rule#1YY/RuleYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/rich/Rule@2.3.1-3.0.0/Rule#1YY/RuleYY.json",
+        "apiCall": "Rule()",
+        "oldVersion": "rich@2.3.1",
+        "newVersion": "rich@3.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "rich.rule.Rule",
+            "error": "",
+            "internalPath": "rich.rule",
+            "docstring": "A console renderable to draw a horizontal rule (line).\n\nArgs:\n    title (Union[str, Text], optional): Text to render in the rule. Defaults to \"\".\n    character (str, optional): Character used to draw the line. Defaults to \"─\".",
+            "sourceCode": "class Rule(JupyterMixin):\n    \"\"\"A console renderable to draw a horizontal rule (line).\n    \n    Args:\n        title (Union[str, Text], optional): Text to render in the rule. Defaults to \"\".\n        character (str, optional): Character used to draw the line. Defaults to \"─\".\n    \"\"\"\n\n    def __init__(\n        self,\n        title: Union[str, Text] = \"\",\n        character: str = None,\n        style: Union[str, Style] = \"rule.line\",\n    ) -> None:\n        if character and cell_len(character) != 1:\n            raise ValueError(\"'character' argument must have a cell width of 1\")\n        self.title = title\n        self.character = character\n        self.style = style\n\n    def __repr__(self) -> str:\n        return f\"Rule({self.title!r}, {self.character!r})\"\n\n    def __rich_console__(\n        self, console: Console, options: ConsoleOptions\n    ) -> RenderResult:\n        width = options.max_width\n\n        character = \"-\" if console.legacy_windows else (self.character or \"─\")\n\n        if not self.title:\n            yield Text(character * width, self.style)\n        else:\n            if isinstance(self.title, Text):\n                title_text = self.title\n            else:\n                title_text = console.render_str(self.title, style=\"rule.text\")\n\n            if cell_len(title_text.plain) > width - 4:\n                title_text.truncate(width - 4, overflow=\"ellipsis\")\n\n            title_text.plain = title_text.plain.replace(\"\\n\", \" \")\n            title_text = title_text.tabs_to_spaces()\n            rule_text = Text()\n            center = (width - cell_len(title_text.plain)) // 2\n            rule_text.append(character * (center - 1) + \" \", self.style)\n            rule_text.append(title_text)\n            rule_text.append(\n                \" \" + character * (width - cell_len(rule_text.plain) - 1), self.style\n            )\n            yield rule_text\n",
+            "match": "(title: Union[str, rich.text.Text] = '', character: str = None, style: Union[str, rich.style.Style] = 'rule.line') -> None",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "rich.rule.Rule",
+            "error": "",
+            "internalPath": "rich.rule",
+            "docstring": "A console renderable to draw a horizontal rule (line).\n\nArgs:\n    title (Union[str, Text], optional): Text to render in the rule. Defaults to \"\".\n    character (str, optional): Character used to draw the line. Defaults to \"─\".",
+            "sourceCode": "class Rule(JupyterMixin):\n    \"\"\"A console renderable to draw a horizontal rule (line).\n    \n    Args:\n        title (Union[str, Text], optional): Text to render in the rule. Defaults to \"\".\n        character (str, optional): Character used to draw the line. Defaults to \"─\".\n    \"\"\"\n\n    def __init__(\n        self,\n        title: Union[str, Text] = \"\",\n        *,\n        character: str = None,\n        style: Union[str, Style] = \"rule.line\",\n    ) -> None:\n        if character and cell_len(character) != 1:\n            raise ValueError(\"'character' argument must have a cell width of 1\")\n        self.title = title\n        self.character = character\n        self.style = style\n\n    def __repr__(self) -> str:\n        return f\"Rule({self.title!r}, {self.character!r})\"\n\n    def __rich_console__(\n        self, console: Console, options: ConsoleOptions\n    ) -> RenderResult:\n        width = options.max_width\n\n        character = self.character or \"─\"\n\n        if not self.title:\n            yield Text(character * width, self.style)\n        else:\n            if isinstance(self.title, Text):\n                title_text = self.title\n            else:\n                title_text = console.render_str(self.title, style=\"rule.text\")\n\n            if cell_len(title_text.plain) > width - 4:\n                title_text.truncate(width - 4, overflow=\"ellipsis\")\n\n            title_text.plain = title_text.plain.replace(\"\\n\", \" \")\n            title_text = title_text.tabs_to_spaces()\n            rule_text = Text()\n            center = (width - cell_len(title_text.plain)) // 2\n            rule_text.append(character * (center - 1) + \" \", self.style)\n            rule_text.append(title_text)\n            rule_text.append(\n                \" \" + character * (width - cell_len(rule_text.plain) - 1), self.style\n            )\n            yield rule_text\n",
+            "match": "(title: Union[str, rich.text.Text] = '', *, character: str = None, style: Union[str, rich.style.Style] = 'rule.line') -> None",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(title, 0)": {},
+                "(character, 1)": {
+                    "pos2key": "character"
+                },
+                "(style, 2)": {
+                    "pos2key": "style"
+                }
+            },
+            "targetOvPara": "(title: Union[str, rich.text.Text] = '', *, character: str = None, style: Union[str, rich.style.Style] = 'rule.line') -> None"
+        }
+    ]
+}

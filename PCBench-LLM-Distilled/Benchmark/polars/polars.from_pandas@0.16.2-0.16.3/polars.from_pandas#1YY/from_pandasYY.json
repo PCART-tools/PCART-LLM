@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.from_pandas@0.16.2-0.16.3/polars.from_pandas#1YY",
+    "runCommand": "python from_pandasYY.py",
+    "runFilePath": "",
+    "libName": "polars",
+    "currentVersion": "0.16.2",
+    "targetVersion": "0.16.3",
+    "currentEnv": "/envs/polars0.16.2",
+    "targetEnv": "/envs/polars0.16.3"
+}

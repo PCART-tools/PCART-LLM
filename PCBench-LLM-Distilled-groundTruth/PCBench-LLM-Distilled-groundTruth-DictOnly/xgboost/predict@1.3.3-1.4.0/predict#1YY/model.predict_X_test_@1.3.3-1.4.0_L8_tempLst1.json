@@ -1,0 +1,14 @@
+[
+  {
+    "(data, 0)": {
+      "rename": "X"
+    },
+    "(output_margin, 1)": {},
+    "(ntree_limit, 2)": {},
+    "(validate_features, 3)": {},
+    "(base_margin, 4)": {},
+    "(iteration_range, 5)": {
+      "addPos": "iteration_range=None"
+    }
+  }
+]

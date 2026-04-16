@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "create_model('DynamicModel')",
+        "currentVersion": "1.4",
+        "targetVersion": "1.5",
+        "fileRelativePath": "pydantic.main.create_model#1YY/create_modelYY.py",
+        "lineNum": "13",
+        "config": "PCBench-LLM-Distilled/Benchmark/pydantic/pydantic.main.create_model@1.4-1.5/pydantic.main.create_model#1YY/create_modelYY.json",
+        "apiCall": "create_model('DynamicModel')",
+        "oldVersion": "pydantic@1.4",
+        "newVersion": "pydantic@1.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pydantic.create_model",
+            "error": "",
+            "internalPath": "pydantic.create_model",
+            "docstring": "Dynamically create a model.\n:param model_name: name of the created model\n:param __config__: config class to use for the new model\n:param __base__: base class for the new model to inherit from\n:param __validators__: a dict of method names and @validator class methods\n:param **field_definitions: fields of the model (or extra fields if a base is supplied) in the format\n    `<name>=(<type>, <default default>)` or `<name>=<default value> eg. `foobar=(str, ...)` or `foobar=123`",
+            "match": "(model_name:'unicode', *, __config__:Type[pydantic.main.BaseConfig]=None, __base__:Type[pydantic.main.BaseModel]=None, __module__:Union[str, NoneType]=None, __validators__:Dict[str, classmethod]=None, **field_definitions:Any) -> Type[pydantic.main.BaseModel]",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pydantic.create_model",
+            "error": "",
+            "internalPath": "pydantic.main",
+            "docstring": "Dynamically create a model.\n:param __model_name: name of the created model\n:param __config__: config class to use for the new model\n:param __base__: base class for the new model to inherit from\n:param __validators__: a dict of method names and @validator class methods\n:param **field_definitions: fields of the model (or extra fields if a base is supplied) in the format\n    `<name>=(<type>, <default default>)` or `<name>=<default value> eg. `foobar=(str, ...)` or `foobar=123`",
+            "sourceCode": "def create_model(\n    __model_name: str,\n    *,\n    __config__: Type[BaseConfig] = None,\n    __base__: Type[BaseModel] = None,\n    __module__: Optional[str] = None,\n    __validators__: Dict[str, classmethod] = None,\n    **field_definitions: Any,\n) -> Type[BaseModel]:\n    \"\"\"\n    Dynamically create a model.\n    :param __model_name: name of the created model\n    :param __config__: config class to use for the new model\n    :param __base__: base class for the new model to inherit from\n    :param __validators__: a dict of method names and @validator class methods\n    :param **field_definitions: fields of the model (or extra fields if a base is supplied) in the format\n        `<name>=(<type>, <default default>)` or `<name>=<default value> eg. `foobar=(str, ...)` or `foobar=123`\n    \"\"\"\n    if __base__:\n        if __config__ is not None:\n            raise ConfigError('to avoid confusion __config__ and __base__ cannot be used together')\n    else:\n        __base__ = BaseModel\n\n    fields = {}\n    annotations = {}\n\n    for f_name, f_def in field_definitions.items():\n        if not is_valid_field(f_name):\n            warnings.warn(f'fields may not start with an underscore, ignoring \"{f_name}\"', RuntimeWarning)\n        if isinstance(f_def, tuple):\n            try:\n                f_annotation, f_value = f_def\n            except ValueError as e:\n                raise ConfigError(\n                    'field definitions should either be a tuple of (<type>, <default>) or just a '\n                    'default value, unfortunately this means tuples as '\n                    'default values are not allowed'\n                ) from e\n        else:\n            f_annotation, f_value = None, f_def\n\n        if f_annotation:\n            annotations[f_name] = f_annotation\n        fields[f_name] = f_value\n\n    namespace: 'DictStrAny' = {'__annotations__': annotations, '__module__': __module__}\n    if __validators__:\n        namespace.update(__validators__)\n    namespace.update(fields)\n    if __config__:\n        namespace['Config'] = inherit_config(__config__, BaseConfig)\n\n    return type(__model_name, (__base__,), namespace)\n",
+            "match": "(__model_name:str, *, __config__:Type[pydantic.main.BaseConfig]=None, __base__:Type[pydantic.main.BaseModel]=None, __module__:Union[str, NoneType]=None, __validators__:Dict[str, classmethod]=None, **field_definitions:Any) -> Type[pydantic.main.BaseModel]",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(model_name, 0)": {
+                    "rename": "__model_name"
+                },
+                "(__config__, 2)": {},
+                "(__base__, 3)": {},
+                "(__module__, 4)": {},
+                "(__validators__, 5)": {}
+            },
+            "targetOvPara": "(__model_name:str, *, __config__:Type[pydantic.main.BaseConfig]=None, __base__:Type[pydantic.main.BaseModel]=None, __module__:Union[str, NoneType]=None, __validators__:Dict[str, classmethod]=None, **field_definitions:Any) -> Type[pydantic.main.BaseModel]"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "pl.read_json('./output.json')",
+        "currentVersion": "0.15.18",
+        "targetVersion": "0.16.1",
+        "fileRelativePath": "polars.read_json#1YY/read_jsonYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.read_json@0.15.18-0.16.1/polars.read_json#1YY/read_jsonYY.json",
+        "apiCall": "pl.read_json('./output.json')",
+        "oldVersion": "polars@0.15.18",
+        "newVersion": "polars@0.16.1",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.read_json",
+            "error": "",
+            "internalPath": "polars.utils",
+            "docstring": "Read into a DataFrame from a JSON file.\n\nParameters\n----------\nfile\n    Path to a file or a file-like object.\njson_lines\n    Deprecated argument. Toggle between `JSON` and `NDJSON` format.\n\nSee Also\n--------\nread_ndjson",
+            "sourceCode": "@deprecated_alias(source=\"file\")\ndef read_json(file: str | Path | IOBase, json_lines: bool | None = None) -> DataFrame:\n    \"\"\"\n    Read into a DataFrame from a JSON file.\n\n    Parameters\n    ----------\n    file\n        Path to a file or a file-like object.\n    json_lines\n        Deprecated argument. Toggle between `JSON` and `NDJSON` format.\n\n    See Also\n    --------\n    read_ndjson\n\n    \"\"\"\n    if json_lines is not None:\n        warn(\n            \"`json_lines` argument for `read_json` will be removed in a future version.\"\n            \" Remove the argument or use `pl.read_ndjson`.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n    else:\n        json_lines = False\n\n    if json_lines:\n        return read_ndjson(file)\n\n    return DataFrame._read_json(file)\n",
+            "match": "(file: 'str | Path | IOBase', json_lines: 'bool | None' = None) -> 'DataFrame'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.read_json",
+            "error": "",
+            "internalPath": "polars.io",
+            "docstring": "Read into a DataFrame from a JSON file.\n\nParameters\n----------\nfile\n    Path to a file or a file-like object.\n\nSee Also\n--------\nread_ndjson",
+            "sourceCode": "def read_json(file: str | Path | IOBase) -> DataFrame:\n    \"\"\"\n    Read into a DataFrame from a JSON file.\n\n    Parameters\n    ----------\n    file\n        Path to a file or a file-like object.\n\n    See Also\n    --------\n    read_ndjson\n\n    \"\"\"\n    return DataFrame._read_json(file)\n",
+            "match": "(file: 'str | Path | IOBase') -> 'DataFrame'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(file, 0)": {},
+                "(json_lines, 1)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(file: 'str | Path | IOBase') -> 'DataFrame'"
+        }
+    ]
+}

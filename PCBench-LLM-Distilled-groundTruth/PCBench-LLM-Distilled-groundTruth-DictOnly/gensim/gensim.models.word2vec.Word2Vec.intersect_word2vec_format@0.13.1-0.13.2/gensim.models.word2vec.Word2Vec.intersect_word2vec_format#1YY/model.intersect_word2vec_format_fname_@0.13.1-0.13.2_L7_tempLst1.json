@@ -1,0 +1,15 @@
+[
+  {
+    "(fname, 0)": {},
+    "(binary, 1)": {
+      "posChange": 2,
+      "replace": "lockf=0.0"
+    },
+    "(encoding, 2)": {
+      "posChange": 3
+    },
+    "(unicode_errors, 3)": {
+      "posChange": 4
+    }
+  }
+]

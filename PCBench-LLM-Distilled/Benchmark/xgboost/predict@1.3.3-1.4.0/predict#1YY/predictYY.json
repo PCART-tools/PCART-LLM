@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/xgboost/predict@1.3.3-1.4.0/predict#1YY",
+    "runCommand": "python predictYY.py",
+    "runFilePath": "",
+    "libName": "xgboost",
+    "currentVersion": "1.3.3",
+    "targetVersion": "1.4.0",
+    "currentEnv": "/envs/xgboost1.3.3",
+    "targetEnv": "/envs/xgboost1.4.0"
+}

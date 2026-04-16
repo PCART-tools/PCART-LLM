@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.gridspec.GridSpec@2.1.2-2.2.0/matplotlib.gridspec.GridSpec#1YY",
+    "runCommand": "python GridSpecYY.py",
+    "runFilePath": "",
+    "libName": "matplotlib",
+    "currentVersion": "2.1.2",
+    "targetVersion": "2.2.0",
+    "currentEnv": "/envs/matplotlib2.1.2",
+    "targetEnv": "/envs/matplotlib2.2.0"
+}

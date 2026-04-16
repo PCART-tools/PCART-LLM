@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "pl.from_pandas(pdf)",
+        "currentVersion": "0.16.2",
+        "targetVersion": "0.16.3",
+        "fileRelativePath": "polars.from_pandas#1YY/from_pandasYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.from_pandas@0.16.2-0.16.3/polars.from_pandas#1YY/from_pandasYY.json",
+        "apiCall": "pl.from_pandas(pdf)",
+        "oldVersion": "polars@0.16.2",
+        "newVersion": "polars@0.16.3",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.from_pandas",
+            "error": "",
+            "internalPath": "polars.convert",
+            "docstring": "Construct a Polars DataFrame or Series from a pandas DataFrame or Series.\n\nThis operation clones data.\n\nThis requires that :mod:`pandas` and :mod:`pyarrow` are installed.\n\nParameters\n----------\ndf: :class:`pandas.DataFrame`, :class:`pandas.Series`, :class:`pandas.DatetimeIndex`\n    Data represented as a pandas DataFrame, Series, or DatetimeIndex.\nrechunk : bool, default True\n    Make sure that all data is in contiguous memory.\nnan_to_none : bool, default True\n    If data contains `NaN` values PyArrow will convert the ``NaN`` to ``None``\nschema_overrides : dict, default None\n    Support override of inferred types for one or more columns.\n\nReturns\n-------\n:class:`DataFrame`\n\nExamples\n--------\nConstructing a :class:`DataFrame` from a :class:`pandas.DataFrame`:\n\n>>> import pandas as pd\n>>> pd_df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=[\"a\", \"b\", \"c\"])\n>>> df = pl.from_pandas(pd_df)\n>>> df\n    shape: (2, 3)\n┌─────┬─────┬─────┐\n│ a   ┆ b   ┆ c   │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ i64 │\n╞═════╪═════╪═════╡\n│ 1   ┆ 2   ┆ 3   │\n│ 4   ┆ 5   ┆ 6   │\n└─────┴─────┴─────┘\n\nConstructing a Series from a :class:`pd.Series`:\n\n>>> import pandas as pd\n>>> pd_series = pd.Series([1, 2, 3], name=\"pd\")\n>>> df = pl.from_pandas(pd_series)\n>>> df\nshape: (3,)\nSeries: 'pd' [i64]\n[\n    1\n    2\n    3\n]",
+            "sourceCode": "def from_pandas(\n    df: pd.DataFrame | pd.Series | pd.DatetimeIndex,\n    rechunk: bool = True,\n    nan_to_none: bool = True,\n    schema_overrides: SchemaDict | None = None,\n) -> DataFrame | Series:\n    \"\"\"\n    Construct a Polars DataFrame or Series from a pandas DataFrame or Series.\n\n    This operation clones data.\n\n    This requires that :mod:`pandas` and :mod:`pyarrow` are installed.\n\n    Parameters\n    ----------\n    df: :class:`pandas.DataFrame`, :class:`pandas.Series`, :class:`pandas.DatetimeIndex`\n        Data represented as a pandas DataFrame, Series, or DatetimeIndex.\n    rechunk : bool, default True\n        Make sure that all data is in contiguous memory.\n    nan_to_none : bool, default True\n        If data contains `NaN` values PyArrow will convert the ``NaN`` to ``None``\n    schema_overrides : dict, default None\n        Support override of inferred types for one or more columns.\n\n    Returns\n    -------\n    :class:`DataFrame`\n\n    Examples\n    --------\n    Constructing a :class:`DataFrame` from a :class:`pandas.DataFrame`:\n\n    >>> import pandas as pd\n    >>> pd_df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=[\"a\", \"b\", \"c\"])\n    >>> df = pl.from_pandas(pd_df)\n    >>> df\n        shape: (2, 3)\n    ┌─────┬─────┬─────┐\n    │ a   ┆ b   ┆ c   │\n    │ --- ┆ --- ┆ --- │\n    │ i64 ┆ i64 ┆ i64 │\n    ╞═════╪═════╪═════╡\n    │ 1   ┆ 2   ┆ 3   │\n    │ 4   ┆ 5   ┆ 6   │\n    └─────┴─────┴─────┘\n\n    Constructing a Series from a :class:`pd.Series`:\n\n    >>> import pandas as pd\n    >>> pd_series = pd.Series([1, 2, 3], name=\"pd\")\n    >>> df = pl.from_pandas(pd_series)\n    >>> df\n    shape: (3,)\n    Series: 'pd' [i64]\n    [\n        1\n        2\n        3\n    ]\n\n    \"\"\"\n    if isinstance(df, (pd.Series, pd.DatetimeIndex)):\n        return Series._from_pandas(\"\", df, nan_to_none=nan_to_none)\n    elif isinstance(df, pd.DataFrame):\n        return DataFrame._from_pandas(\n            df,\n            rechunk=rechunk,\n            nan_to_none=nan_to_none,\n            schema_overrides=schema_overrides,\n        )\n    else:\n        raise ValueError(f\"Expected pandas DataFrame or Series, got {type(df)}.\")\n",
+            "match": "(df: 'pd.DataFrame | pd.Series | pd.DatetimeIndex', rechunk: 'bool' = True, nan_to_none: 'bool' = True, schema_overrides: 'SchemaDict | None' = None) -> 'DataFrame | Series'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.from_pandas",
+            "error": "",
+            "internalPath": "polars.utils",
+            "docstring": "Construct a Polars DataFrame or Series from a pandas DataFrame or Series.\n\nThis operation clones data.\n\nThis requires that :mod:`pandas` and :mod:`pyarrow` are installed.\n\nParameters\n----------\ndf: :class:`pandas.DataFrame`, :class:`pandas.Series`, :class:`pandas.DatetimeIndex`\n    Data represented as a pandas DataFrame, Series, or DatetimeIndex.\nrechunk : bool, default True\n    Make sure that all data is in contiguous memory.\nnan_to_null : bool, default True\n    If data contains `NaN` values PyArrow will convert the ``NaN`` to ``None``\nschema_overrides : dict, default None\n    Support override of inferred types for one or more columns.\n\nReturns\n-------\n:class:`DataFrame`\n\nExamples\n--------\nConstructing a :class:`DataFrame` from a :class:`pandas.DataFrame`:\n\n>>> import pandas as pd\n>>> pd_df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=[\"a\", \"b\", \"c\"])\n>>> df = pl.from_pandas(pd_df)\n>>> df\n    shape: (2, 3)\n┌─────┬─────┬─────┐\n│ a   ┆ b   ┆ c   │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ i64 │\n╞═════╪═════╪═════╡\n│ 1   ┆ 2   ┆ 3   │\n│ 4   ┆ 5   ┆ 6   │\n└─────┴─────┴─────┘\n\nConstructing a Series from a :class:`pd.Series`:\n\n>>> import pandas as pd\n>>> pd_series = pd.Series([1, 2, 3], name=\"pd\")\n>>> df = pl.from_pandas(pd_series)\n>>> df\nshape: (3,)\nSeries: 'pd' [i64]\n[\n    1\n    2\n    3\n]",
+            "sourceCode": "@deprecated_alias(nan_to_none=\"nan_to_null\")\ndef from_pandas(\n    df: pd.DataFrame | pd.Series | pd.DatetimeIndex,\n    rechunk: bool = True,\n    nan_to_null: bool = True,\n    schema_overrides: SchemaDict | None = None,\n) -> DataFrame | Series:\n    \"\"\"\n    Construct a Polars DataFrame or Series from a pandas DataFrame or Series.\n\n    This operation clones data.\n\n    This requires that :mod:`pandas` and :mod:`pyarrow` are installed.\n\n    Parameters\n    ----------\n    df: :class:`pandas.DataFrame`, :class:`pandas.Series`, :class:`pandas.DatetimeIndex`\n        Data represented as a pandas DataFrame, Series, or DatetimeIndex.\n    rechunk : bool, default True\n        Make sure that all data is in contiguous memory.\n    nan_to_null : bool, default True\n        If data contains `NaN` values PyArrow will convert the ``NaN`` to ``None``\n    schema_overrides : dict, default None\n        Support override of inferred types for one or more columns.\n\n    Returns\n    -------\n    :class:`DataFrame`\n\n    Examples\n    --------\n    Constructing a :class:`DataFrame` from a :class:`pandas.DataFrame`:\n\n    >>> import pandas as pd\n    >>> pd_df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=[\"a\", \"b\", \"c\"])\n    >>> df = pl.from_pandas(pd_df)\n    >>> df\n        shape: (2, 3)\n    ┌─────┬─────┬─────┐\n    │ a   ┆ b   ┆ c   │\n    │ --- ┆ --- ┆ --- │\n    │ i64 ┆ i64 ┆ i64 │\n    ╞═════╪═════╪═════╡\n    │ 1   ┆ 2   ┆ 3   │\n    │ 4   ┆ 5   ┆ 6   │\n    └─────┴─────┴─────┘\n\n    Constructing a Series from a :class:`pd.Series`:\n\n    >>> import pandas as pd\n    >>> pd_series = pd.Series([1, 2, 3], name=\"pd\")\n    >>> df = pl.from_pandas(pd_series)\n    >>> df\n    shape: (3,)\n    Series: 'pd' [i64]\n    [\n        1\n        2\n        3\n    ]\n\n    \"\"\"\n    if isinstance(df, (pd.Series, pd.DatetimeIndex)):\n        return Series._from_pandas(\"\", df, nan_to_null=nan_to_null)\n    elif isinstance(df, pd.DataFrame):\n        return DataFrame._from_pandas(\n            df,\n            rechunk=rechunk,\n            nan_to_null=nan_to_null,\n            schema_overrides=schema_overrides,\n        )\n    else:\n        raise ValueError(f\"Expected pandas DataFrame or Series, got {type(df)}.\")\n",
+            "match": "(df: 'pd.DataFrame | pd.Series | pd.DatetimeIndex', rechunk: 'bool' = True, nan_to_null: 'bool' = True, schema_overrides: 'SchemaDict | None' = None) -> 'DataFrame | Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(df, 0)": {},
+                "(rechunk, 1)": {},
+                "(nan_to_none, 2)": {
+                    "rename": "nan_to_null"
+                },
+                "(schema_overrides, 3)": {}
+            },
+            "targetOvPara": "(df: 'pd.DataFrame | pd.Series | pd.DatetimeIndex', rechunk: 'bool' = True, nan_to_null: 'bool' = True, schema_overrides: 'SchemaDict | None' = None) -> 'DataFrame | Series'"
+        }
+    ]
+}

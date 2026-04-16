@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/transformers/transformers.modeling_albert.AlbertForPreTraining.forward@2.11.0-3.0.0/transformers.modeling_albert.AlbertForPreTraining.forward#1YY",
+    "runCommand": "python forwardYY.py",
+    "runFilePath": "",
+    "libName": "transformers",
+    "currentVersion": "2.11.0",
+    "targetVersion": "3.0.0",
+    "currentEnv": "/envs/transformers2.11.0",
+    "targetEnv": "/envs/transformers3.0.0"
+}

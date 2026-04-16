@@ -1,0 +1,27 @@
+[
+  {
+    "(url, 0)": {},
+    "(data, 2)": {
+      "delete": 1
+    },
+    "(files, 3)": {
+      "delete": 1
+    },
+    "(json, 4)": {
+      "delete": 1
+    },
+    "(params, 5)": {
+      "typeChange": "Union[ForwardRef('QueryParams'),Mapping[str,Union[str,int,float,bool,NoneType,Sequence[Union[str,int,float,bool,NoneType]]]],List[Tuple[str,Union[str,int,float,bool,NoneType]]],str]"
+    },
+    "(headers, 6)": {},
+    "(cookies, 7)": {},
+    "(stream, 8)": {},
+    "(auth, 9)": {},
+    "(allow_redirects, 10)": {},
+    "(cert, 11)": {},
+    "(verify, 12)": {},
+    "(timeout, 13)": {},
+    "(trust_env, 14)": {},
+    "(proxies, 15)": {}
+  }
+]

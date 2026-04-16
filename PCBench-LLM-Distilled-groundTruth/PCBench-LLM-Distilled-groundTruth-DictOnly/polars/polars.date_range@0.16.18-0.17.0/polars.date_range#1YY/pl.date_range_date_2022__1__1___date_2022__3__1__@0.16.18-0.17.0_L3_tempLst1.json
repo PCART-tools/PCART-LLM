@@ -1,0 +1,16 @@
+[
+  {
+    "(low, 0)": {
+      "rename": "start"
+    },
+    "(high, 1)": {
+      "rename": "end"
+    },
+    "(interval, 2)": {},
+    "(lazy, 4)": {},
+    "(closed, 5)": {},
+    "(name, 6)": {},
+    "(time_unit, 7)": {},
+    "(time_zone, 8)": {}
+  }
+]

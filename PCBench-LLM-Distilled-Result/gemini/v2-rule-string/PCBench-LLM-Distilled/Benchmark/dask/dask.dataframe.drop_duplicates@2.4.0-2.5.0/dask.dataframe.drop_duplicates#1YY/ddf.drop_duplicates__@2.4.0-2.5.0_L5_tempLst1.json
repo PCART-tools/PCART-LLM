@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "ddf.drop_duplicates()",
+        "currentVersion": "2.4.0",
+        "targetVersion": "2.5.0",
+        "fileRelativePath": "dask.dataframe.drop_duplicates#1YY/drop_duplicatesYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/dask/dask.dataframe.drop_duplicates@2.4.0-2.5.0/dask.dataframe.drop_duplicates#1YY/drop_duplicatesYY.json",
+        "apiCall": "ddf.drop_duplicates()",
+        "oldVersion": "dask@2.4.0",
+        "newVersion": "dask@2.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "dask.dataframe.from_pandas.drop_duplicates",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Return DataFrame with duplicate rows removed, optionally only\nconsidering certain columns.\n\nThis docstring was copied from pandas.core.frame.DataFrame.drop_duplicates. \n\nSome inconsistencies with the Dask version may exist.\n\nParameters\n----------\nsubset : column label or sequence of labels, optional  (Not supported in Dask)\n    Only consider certain columns for identifying duplicates, by\n    default use all of the columns\nkeep : {'first', 'last', False}, default 'first'  (Not supported in Dask)\n    - ``first`` : Drop duplicates except for the first occurrence.\n    - ``last`` : Drop duplicates except for the last occurrence.\n    - False : Drop all duplicates.\ninplace : boolean, default False  (Not supported in Dask)\n    Whether to drop duplicates in place or to return a copy\n\nReturns\n-------\ndeduplicated : DataFrame",
+            "sourceCode": "    @derived_from(pd.DataFrame)\n    def drop_duplicates(self, split_every=None, split_out=1, **kwargs):\n        # Let pandas error on bad inputs\n        self._meta_nonempty.drop_duplicates(**kwargs)\n        if \"subset\" in kwargs and kwargs[\"subset\"] is not None:\n            split_out_setup = split_out_on_cols\n            split_out_setup_kwargs = {\"cols\": kwargs[\"subset\"]}\n        else:\n            split_out_setup = split_out_setup_kwargs = None\n\n        if kwargs.get(\"keep\", True) is False:\n            raise NotImplementedError(\"drop_duplicates with keep=False\")\n\n        chunk = M.drop_duplicates\n        return aca(\n            self,\n            chunk=chunk,\n            aggregate=chunk,\n            meta=self._meta,\n            token=\"drop-duplicates\",\n            split_every=split_every,\n            split_out=split_out,\n            split_out_setup=split_out_setup,\n            split_out_setup_kwargs=split_out_setup_kwargs,\n            **kwargs\n        )\n",
+            "match": "(split_every=None, split_out=1, **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "dask.dataframe.from_pandas.drop_duplicates",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Return DataFrame with duplicate rows removed, optionally only\nconsidering certain columns.\n\nThis docstring was copied from pandas.core.frame.DataFrame.drop_duplicates. \n\nSome inconsistencies with the Dask version may exist.\n\nParameters\n----------\nsubset : column label or sequence of labels, optional\n    Only consider certain columns for identifying duplicates, by\n    default use all of the columns\nkeep : {'first', 'last', False}, default 'first'  (Not supported in Dask)\n    - ``first`` : Drop duplicates except for the first occurrence.\n    - ``last`` : Drop duplicates except for the last occurrence.\n    - False : Drop all duplicates.\ninplace : boolean, default False  (Not supported in Dask)\n    Whether to drop duplicates in place or to return a copy\n\nReturns\n-------\ndeduplicated : DataFrame",
+            "sourceCode": "    @derived_from(pd.DataFrame)\n    def drop_duplicates(self, subset=None, split_every=None, split_out=1, **kwargs):\n        if subset is not None:\n            # Let pandas error on bad inputs\n            self._meta_nonempty.drop_duplicates(subset=subset, **kwargs)\n            kwargs[\"subset\"] = subset\n            split_out_setup = split_out_on_cols\n            split_out_setup_kwargs = {\"cols\": subset}\n        else:\n            self._meta_nonempty.drop_duplicates(**kwargs)\n            split_out_setup = split_out_setup_kwargs = None\n\n        if kwargs.get(\"keep\", True) is False:\n            raise NotImplementedError(\"drop_duplicates with keep=False\")\n\n        chunk = M.drop_duplicates\n        return aca(\n            self,\n            chunk=chunk,\n            aggregate=chunk,\n            meta=self._meta,\n            token=\"drop-duplicates\",\n            split_every=split_every,\n            split_out=split_out,\n            split_out_setup=split_out_setup,\n            split_out_setup_kwargs=split_out_setup_kwargs,\n            **kwargs\n        )\n",
+            "match": "(subset=None, split_every=None, split_out=1, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(split_every, 0)": {
+                    "posChange": 1
+                },
+                "(subset, 0)": {
+                    "addPos": "subset=None"
+                },
+                "(split_out, 1)": {
+                    "posChange": 2
+                }
+            },
+            "targetOvPara": "(subset=None, split_every=None, split_out=1, **kwargs)"
+        }
+    ]
+}

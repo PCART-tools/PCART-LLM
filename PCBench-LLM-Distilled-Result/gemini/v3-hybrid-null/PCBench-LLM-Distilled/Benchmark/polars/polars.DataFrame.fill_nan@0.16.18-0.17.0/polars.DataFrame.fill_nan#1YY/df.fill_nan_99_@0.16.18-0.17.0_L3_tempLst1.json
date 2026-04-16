@@ -1,0 +1,43 @@
+{
+    "context": {
+        "callAPI": "df.fill_nan(99)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.DataFrame.fill_nan#1YY/fill_nanYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.DataFrame.fill_nan@0.16.18-0.17.0/polars.DataFrame.fill_nan#1YY/fill_nanYY.json",
+        "apiCall": "df.fill_nan(99)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.fill_nan",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Fill floating point NaN values by an Expression evaluation.\n\nParameters\n----------\nfill_value\n    Value to fill NaN with.\n\nReturns\n-------\n    DataFrame with NaN replaced with fill_value\n\nWarnings\n--------\nNote that floating point NaNs (Not a Number) are not missing values!\nTo replace missing values, use :func:`fill_null`.\n\nSee Also\n--------\nfill_null\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [1.5, 2, float(\"NaN\"), 4],\n...         \"b\": [0.5, 4, float(\"NaN\"), 13],\n...     }\n... )\n>>> df.fill_nan(99)\nshape: (4, 2)\n┌──────┬──────┐\n│ a    ┆ b    │\n│ ---  ┆ ---  │\n│ f64  ┆ f64  │\n╞══════╪══════╡\n│ 1.5  ┆ 0.5  │\n│ 2.0  ┆ 4.0  │\n│ 99.0 ┆ 99.0 │\n│ 4.0  ┆ 13.0 │\n└──────┴──────┘",
+            "sourceCode": "    def fill_nan(self, fill_value: Expr | int | float | None) -> Self:\n        \"\"\"\n        Fill floating point NaN values by an Expression evaluation.\n\n        Parameters\n        ----------\n        fill_value\n            Value to fill NaN with.\n\n        Returns\n        -------\n            DataFrame with NaN replaced with fill_value\n\n        Warnings\n        --------\n        Note that floating point NaNs (Not a Number) are not missing values!\n        To replace missing values, use :func:`fill_null`.\n\n        See Also\n        --------\n        fill_null\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"a\": [1.5, 2, float(\"NaN\"), 4],\n        ...         \"b\": [0.5, 4, float(\"NaN\"), 13],\n        ...     }\n        ... )\n        >>> df.fill_nan(99)\n        shape: (4, 2)\n        ┌──────┬──────┐\n        │ a    ┆ b    │\n        │ ---  ┆ ---  │\n        │ f64  ┆ f64  │\n        ╞══════╪══════╡\n        │ 1.5  ┆ 0.5  │\n        │ 2.0  ┆ 4.0  │\n        │ 99.0 ┆ 99.0 │\n        │ 4.0  ┆ 13.0 │\n        └──────┴──────┘\n\n        \"\"\"\n        return self._from_pydf(\n            self.lazy().fill_nan(fill_value).collect(no_optimization=True)._df\n        )\n",
+            "match": "(fill_value: 'Expr | int | float | None') -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.fill_nan",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Fill floating point NaN values by an Expression evaluation.\n\nParameters\n----------\nvalue\n    Value to fill NaN with.\n\nReturns\n-------\n    DataFrame with NaN replaced with fill_value\n\nWarnings\n--------\nNote that floating point NaNs (Not a Number) are not missing values!\nTo replace missing values, use :func:`fill_null`.\n\nSee Also\n--------\nfill_null\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [1.5, 2, float(\"NaN\"), 4],\n...         \"b\": [0.5, 4, float(\"NaN\"), 13],\n...     }\n... )\n>>> df.fill_nan(99)\nshape: (4, 2)\n┌──────┬──────┐\n│ a    ┆ b    │\n│ ---  ┆ ---  │\n│ f64  ┆ f64  │\n╞══════╪══════╡\n│ 1.5  ┆ 0.5  │\n│ 2.0  ┆ 4.0  │\n│ 99.0 ┆ 99.0 │\n│ 4.0  ┆ 13.0 │\n└──────┴──────┘",
+            "sourceCode": "    def fill_nan(self, value: Expr | int | float | None) -> Self:\n        \"\"\"\n        Fill floating point NaN values by an Expression evaluation.\n\n        Parameters\n        ----------\n        value\n            Value to fill NaN with.\n\n        Returns\n        -------\n            DataFrame with NaN replaced with fill_value\n\n        Warnings\n        --------\n        Note that floating point NaNs (Not a Number) are not missing values!\n        To replace missing values, use :func:`fill_null`.\n\n        See Also\n        --------\n        fill_null\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"a\": [1.5, 2, float(\"NaN\"), 4],\n        ...         \"b\": [0.5, 4, float(\"NaN\"), 13],\n        ...     }\n        ... )\n        >>> df.fill_nan(99)\n        shape: (4, 2)\n        ┌──────┬──────┐\n        │ a    ┆ b    │\n        │ ---  ┆ ---  │\n        │ f64  ┆ f64  │\n        ╞══════╪══════╡\n        │ 1.5  ┆ 0.5  │\n        │ 2.0  ┆ 4.0  │\n        │ 99.0 ┆ 99.0 │\n        │ 4.0  ┆ 13.0 │\n        └──────┴──────┘\n\n        \"\"\"\n        return self._from_pydf(\n            self.lazy().fill_nan(value).collect(no_optimization=True)._df\n        )\n",
+            "match": "(value: 'Expr | int | float | None') -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(fill_value, 0)": {
+                    "rename": "value"
+                }
+            },
+            "targetOvPara": "(value: 'Expr | int | float | None') -> 'Self'"
+        }
+    ]
+}

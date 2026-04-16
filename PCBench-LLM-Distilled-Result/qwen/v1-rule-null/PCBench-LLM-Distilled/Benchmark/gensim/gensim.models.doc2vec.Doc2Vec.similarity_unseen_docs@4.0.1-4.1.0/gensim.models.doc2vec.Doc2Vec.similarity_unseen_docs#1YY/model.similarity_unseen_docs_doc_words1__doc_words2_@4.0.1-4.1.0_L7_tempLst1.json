@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "model.similarity_unseen_docs(doc_words1, doc_words2)",
+        "currentVersion": "4.0.1",
+        "targetVersion": "4.1.0",
+        "fileRelativePath": "gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs#1YY/similarity_unseen_docsYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs#1YY/similarity_unseen_docsYY.json",
+        "apiCall": "model.similarity_unseen_docs(doc_words1, doc_words2)",
+        "oldVersion": "gensim@4.0.1",
+        "newVersion": "gensim@4.1.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs",
+            "error": "",
+            "internalPath": "gensim.models.doc2vec",
+            "docstring": "Compute cosine similarity between two post-bulk out of training documents.\n\nParameters\n----------\nmodel : :class:`~gensim.models.doc2vec.Doc2Vec`\n    An instance of a trained `Doc2Vec` model.\ndoc_words1 : list of str\n    Input document.\ndoc_words2 : list of str\n    Input document.\nalpha : float, optional\n    The initial learning rate.\nmin_alpha : float, optional\n    Learning rate will linearly drop to `min_alpha` as training progresses.\nsteps : int, optional\n    Number of epoch to train the new document.\n\nReturns\n-------\nfloat\n    The cosine similarity between `doc_words1` and `doc_words2`.",
+            "sourceCode": "    def similarity_unseen_docs(self, doc_words1, doc_words2, alpha=None, min_alpha=None, steps=None):\n        \"\"\"Compute cosine similarity between two post-bulk out of training documents.\n\n        Parameters\n        ----------\n        model : :class:`~gensim.models.doc2vec.Doc2Vec`\n            An instance of a trained `Doc2Vec` model.\n        doc_words1 : list of str\n            Input document.\n        doc_words2 : list of str\n            Input document.\n        alpha : float, optional\n            The initial learning rate.\n        min_alpha : float, optional\n            Learning rate will linearly drop to `min_alpha` as training progresses.\n        steps : int, optional\n            Number of epoch to train the new document.\n\n        Returns\n        -------\n        float\n            The cosine similarity between `doc_words1` and `doc_words2`.\n\n        \"\"\"\n        d1 = self.infer_vector(doc_words=doc_words1, alpha=alpha, min_alpha=min_alpha, steps=steps)\n        d2 = self.infer_vector(doc_words=doc_words2, alpha=alpha, min_alpha=min_alpha, steps=steps)\n        return np.dot(matutils.unitvec(d1), matutils.unitvec(d2))\n",
+            "match": "(doc_words1, doc_words2, alpha=None, min_alpha=None, steps=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs",
+            "error": "",
+            "internalPath": "gensim.models.doc2vec",
+            "docstring": "Compute cosine similarity between two post-bulk out of training documents.\n\nParameters\n----------\nmodel : :class:`~gensim.models.doc2vec.Doc2Vec`\n    An instance of a trained `Doc2Vec` model.\ndoc_words1 : list of str\n    Input document.\ndoc_words2 : list of str\n    Input document.\nalpha : float, optional\n    The initial learning rate.\nmin_alpha : float, optional\n    Learning rate will linearly drop to `min_alpha` as training progresses.\nepochs : int, optional\n    Number of epoch to train the new document.\n\nReturns\n-------\nfloat\n    The cosine similarity between `doc_words1` and `doc_words2`.",
+            "sourceCode": "    def similarity_unseen_docs(self, doc_words1, doc_words2, alpha=None, min_alpha=None, epochs=None):\n        \"\"\"Compute cosine similarity between two post-bulk out of training documents.\n\n        Parameters\n        ----------\n        model : :class:`~gensim.models.doc2vec.Doc2Vec`\n            An instance of a trained `Doc2Vec` model.\n        doc_words1 : list of str\n            Input document.\n        doc_words2 : list of str\n            Input document.\n        alpha : float, optional\n            The initial learning rate.\n        min_alpha : float, optional\n            Learning rate will linearly drop to `min_alpha` as training progresses.\n        epochs : int, optional\n            Number of epoch to train the new document.\n\n        Returns\n        -------\n        float\n            The cosine similarity between `doc_words1` and `doc_words2`.\n\n        \"\"\"\n        d1 = self.infer_vector(doc_words=doc_words1, alpha=alpha, min_alpha=min_alpha, epochs=epochs)\n        d2 = self.infer_vector(doc_words=doc_words2, alpha=alpha, min_alpha=min_alpha, epochs=epochs)\n        return np.dot(matutils.unitvec(d1), matutils.unitvec(d2))\n",
+            "match": "(doc_words1, doc_words2, alpha=None, min_alpha=None, epochs=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(doc_words1, 0)": {},
+                "(doc_words2, 1)": {},
+                "(alpha, 2)": {},
+                "(min_alpha, 3)": {},
+                "(steps, 4)": {
+                    "delete": 1,
+                    "replace": "epochs"
+                }
+            },
+            "targetOvPara": "(doc_words1, doc_words2, alpha=None, min_alpha=None, epochs=None)"
+        }
+    ]
+}

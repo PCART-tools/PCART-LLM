@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.svm.SVC@0.21.3-0.22/sklearn.svm.SVC#1YY",
+    "runCommand": "python SVCYY.py",
+    "runFilePath": "",
+    "libName": "sklearn",
+    "currentVersion": "0.21.3",
+    "targetVersion": "0.22",
+    "currentEnv": "/envs/sklearn0.21.3",
+    "targetEnv": "/envs/sklearn0.22"
+}

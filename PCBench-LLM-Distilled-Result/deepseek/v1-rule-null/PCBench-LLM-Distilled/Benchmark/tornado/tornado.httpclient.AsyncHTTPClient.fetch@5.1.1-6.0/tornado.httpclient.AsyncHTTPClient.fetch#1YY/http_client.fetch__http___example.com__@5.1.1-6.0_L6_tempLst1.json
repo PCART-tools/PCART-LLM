@@ -1,0 +1,51 @@
+{
+    "context": {
+        "callAPI": "http_client.fetch('http://example.com')",
+        "currentVersion": "5.1.1",
+        "targetVersion": "6.0",
+        "fileRelativePath": "tornado.httpclient.AsyncHTTPClient.fetch#1YY/fetchYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/tornado/tornado.httpclient.AsyncHTTPClient.fetch@5.1.1-6.0/tornado.httpclient.AsyncHTTPClient.fetch#1YY/fetchYY.json",
+        "apiCall": "http_client.fetch('http://example.com')",
+        "oldVersion": "tornado@5.1.1",
+        "newVersion": "tornado@6.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.httpclient.AsyncHTTPClient.fetch",
+            "match": {
+                "tornado.httpclient.AsyncHTTPClient.fetch": [
+                    "(self,request,callback=None,raise_error=True,**kwargs)"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "tornado.httpclient.AsyncHTTPClient.fetch",
+            "match": {
+                "tornado.httpclient.AsyncHTTPClient.fetch": [
+                    "(self,request:Union[str,'HTTPRequest'],raise_error:bool=True,**kwargs:Any)->Awaitable['HTTPResponse']"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(request, 0)": {
+                    "typeChange": "Union[str,'HTTPRequest']"
+                },
+                "(callback, 1)": {
+                    "delete": 1,
+                    "replace": "raise_error"
+                },
+                "(raise_error, 2)": {
+                    "typeChange": "bool",
+                    "posChange": 1
+                }
+            },
+            "targetOvPara": "(self,request:Union[str,'HTTPRequest'],raise_error:bool=True,**kwargs:Any)->Awaitable['HTTPResponse']"
+        }
+    ]
+}

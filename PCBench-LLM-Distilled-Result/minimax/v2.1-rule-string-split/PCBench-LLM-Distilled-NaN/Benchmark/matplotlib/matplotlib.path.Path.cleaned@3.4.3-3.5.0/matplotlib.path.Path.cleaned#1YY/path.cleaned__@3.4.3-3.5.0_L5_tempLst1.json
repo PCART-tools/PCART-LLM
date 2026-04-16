@@ -1,0 +1,61 @@
+{
+    "context": {
+        "callAPI": "path.cleaned()",
+        "currentVersion": "3.4.3",
+        "targetVersion": "3.5.0",
+        "fileRelativePath": "matplotlib.path.Path.cleaned#1YY/cleanedYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.path.Path.cleaned@3.4.3-3.5.0/matplotlib.path.Path.cleaned#1YY/cleanedYY.json",
+        "apiCall": "path.cleaned()",
+        "oldVersion": "matplotlib@3.4.3",
+        "newVersion": "matplotlib@3.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.path.Path.cleaned",
+            "error": "",
+            "internalPath": "matplotlib._api.deprecation",
+            "docstring": "Return a new Path with vertices and codes cleaned according to the\nparameters.\n\nSee Also\n--------\nPath.iter_segments : for details of the keyword arguments.",
+            "sourceCode": "    @_api.delete_parameter(\"3.3\", \"quantize\")\n    def cleaned(self, transform=None, remove_nans=False, clip=None,\n                quantize=False, simplify=False, curves=False,\n                stroke_width=1.0, snap=False, sketch=None):\n        \"\"\"\n        Return a new Path with vertices and codes cleaned according to the\n        parameters.\n\n        See Also\n        --------\n        Path.iter_segments : for details of the keyword arguments.\n        \"\"\"\n        vertices, codes = _path.cleanup_path(\n            self, transform, remove_nans, clip, snap, stroke_width, simplify,\n            curves, sketch)\n        pth = Path._fast_from_codes_and_verts(vertices, codes, self)\n        if not simplify:\n            pth._should_simplify = False\n        return pth\n",
+            "match": "(transform=None, remove_nans=False, clip=None, quantize=<deprecated parameter>, simplify=False, curves=False, stroke_width=1.0, snap=False, sketch=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.path.Path.cleaned",
+            "error": "",
+            "internalPath": "matplotlib.path",
+            "docstring": "Return a new Path with vertices and codes cleaned according to the\nparameters.\n\nSee Also\n--------\nPath.iter_segments : for details of the keyword arguments.",
+            "sourceCode": "    def cleaned(self, transform=None, remove_nans=False, clip=None,\n                *, simplify=False, curves=False,\n                stroke_width=1.0, snap=False, sketch=None):\n        \"\"\"\n        Return a new Path with vertices and codes cleaned according to the\n        parameters.\n\n        See Also\n        --------\n        Path.iter_segments : for details of the keyword arguments.\n        \"\"\"\n        vertices, codes = _path.cleanup_path(\n            self, transform, remove_nans, clip, snap, stroke_width, simplify,\n            curves, sketch)\n        pth = Path._fast_from_codes_and_verts(vertices, codes, self)\n        if not simplify:\n            pth._should_simplify = False\n        return pth\n",
+            "match": "(transform=None, remove_nans=False, clip=None, *, simplify=False, curves=False, stroke_width=1.0, snap=False, sketch=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(transform, 0)": {},
+                "(remove_nans, 1)": {},
+                "(clip, 2)": {},
+                "(quantize, 3)": {
+                    "delete": 1
+                },
+                "(simplify, 4)": {
+                    "pos2key": "simplify"
+                },
+                "(curves, 5)": {
+                    "pos2key": "curves"
+                },
+                "(stroke_width, 6)": {
+                    "pos2key": "stroke_width"
+                },
+                "(snap, 7)": {
+                    "pos2key": "snap"
+                },
+                "(sketch, 8)": {
+                    "pos2key": "sketch"
+                }
+            },
+            "targetOvPara": "(transform=None, remove_nans=False, clip=None, *, simplify=False, curves=False, stroke_width=1.0, snap=False, sketch=None)"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "context": {
+        "callAPI": "a.str.starts_with('app')",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.str.starts_with#1YY/starts_withYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.starts_with@0.16.18-0.17.0/polars.Expr.str.starts_with#1YY/starts_withYY.json",
+        "apiCall": "a.str.starts_with('app')",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.str.starts_with",
+            "match": {
+                "polars.series.string.StringNameSpace.starts_with": [
+                    "(self,sub:str|Expr)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.starts_with": [
+                    "(self,sub:bytes)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.starts_with": [
+                    "(self,sub:str|Expr)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.starts_with": [
+                    "(self,sub:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "polars.col.str.starts_with",
+            "match": {
+                "polars.series.string.StringNameSpace.starts_with": [
+                    "(self,prefix:str|Expr)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.starts_with": [
+                    "(self,prefix:bytes)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.starts_with": [
+                    "(self,prefix:str|Expr)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.starts_with": [
+                    "(self,prefix:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "prefix"
+                }
+            },
+            "targetOvPara": "(self,prefix:str|Expr)->Series"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "prefix"
+                }
+            },
+            "targetOvPara": "(self,prefix:bytes)->Series"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "prefix"
+                }
+            },
+            "targetOvPara": "(self,prefix:str|Expr)->Expr"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "prefix"
+                }
+            },
+            "targetOvPara": "(self,prefix:bytes)->Expr"
+        }
+    ]
+}

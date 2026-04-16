@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "expm(A)",
+        "currentVersion": "0.19.1",
+        "targetVersion": "1.0.0",
+        "fileRelativePath": "scipy.linalg.expm#1YY/expmYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.linalg.expm@0.19.1-1.0.0/scipy.linalg.expm#1YY/expmYY.json",
+        "apiCall": "expm(A)",
+        "oldVersion": "scipy@0.19.1",
+        "newVersion": "scipy@1.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "scipy.linalg.expm",
+            "error": "",
+            "internalPath": "scipy.linalg.matfuncs",
+            "docstring": "Compute the matrix exponential using Pade approximation.\n\nParameters\n----------\nA : (N, N) array_like or sparse matrix\n    Matrix to be exponentiated.\n\nReturns\n-------\nexpm : (N, N) ndarray\n    Matrix exponential of `A`.\n\nReferences\n----------\n.. [1] Awad H. Al-Mohy and Nicholas J. Higham (2009)\n       \"A New Scaling and Squaring Algorithm for the Matrix Exponential.\"\n       SIAM Journal on Matrix Analysis and Applications.\n       31 (3). pp. 970-989. ISSN 1095-7162\n\nExamples\n--------\n>>> from scipy.linalg import expm, sinm, cosm\n\nMatrix version of the formula exp(0) = 1:\n\n>>> expm(np.zeros((2,2)))\narray([[ 1.,  0.],\n       [ 0.,  1.]])\n\nEuler's identity (exp(i*theta) = cos(theta) + i*sin(theta))\napplied to a matrix:\n\n>>> a = np.array([[1.0, 2.0], [-1.0, 3.0]])\n>>> expm(1j*a)\narray([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n       [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n>>> cosm(a) + 1j*sinm(a)\narray([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n       [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])",
+            "sourceCode": "def expm(A, q=None):\n    \"\"\"\n    Compute the matrix exponential using Pade approximation.\n\n    Parameters\n    ----------\n    A : (N, N) array_like or sparse matrix\n        Matrix to be exponentiated.\n\n    Returns\n    -------\n    expm : (N, N) ndarray\n        Matrix exponential of `A`.\n\n    References\n    ----------\n    .. [1] Awad H. Al-Mohy and Nicholas J. Higham (2009)\n           \"A New Scaling and Squaring Algorithm for the Matrix Exponential.\"\n           SIAM Journal on Matrix Analysis and Applications.\n           31 (3). pp. 970-989. ISSN 1095-7162\n\n    Examples\n    --------\n    >>> from scipy.linalg import expm, sinm, cosm\n\n    Matrix version of the formula exp(0) = 1:\n\n    >>> expm(np.zeros((2,2)))\n    array([[ 1.,  0.],\n           [ 0.,  1.]])\n\n    Euler's identity (exp(i*theta) = cos(theta) + i*sin(theta))\n    applied to a matrix:\n\n    >>> a = np.array([[1.0, 2.0], [-1.0, 3.0]])\n    >>> expm(1j*a)\n    array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n           [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n    >>> cosm(a) + 1j*sinm(a)\n    array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n           [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n\n    \"\"\"\n    if q is not None:\n        msg = \"argument q=... in scipy.linalg.expm is deprecated.\" \n        warnings.warn(msg, DeprecationWarning)\n    # Input checking and conversion is provided by sparse.linalg.expm().\n    import scipy.sparse.linalg\n    return scipy.sparse.linalg.expm(A)\n",
+            "match": "(A, q=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "scipy.linalg.expm",
+            "error": "",
+            "internalPath": "scipy.linalg.matfuncs",
+            "docstring": "Compute the matrix exponential using Pade approximation.\n\nParameters\n----------\nA : (N, N) array_like or sparse matrix\n    Matrix to be exponentiated.\n\nReturns\n-------\nexpm : (N, N) ndarray\n    Matrix exponential of `A`.\n\nReferences\n----------\n.. [1] Awad H. Al-Mohy and Nicholas J. Higham (2009)\n       \"A New Scaling and Squaring Algorithm for the Matrix Exponential.\"\n       SIAM Journal on Matrix Analysis and Applications.\n       31 (3). pp. 970-989. ISSN 1095-7162\n\nExamples\n--------\n>>> from scipy.linalg import expm, sinm, cosm\n\nMatrix version of the formula exp(0) = 1:\n\n>>> expm(np.zeros((2,2)))\narray([[ 1.,  0.],\n       [ 0.,  1.]])\n\nEuler's identity (exp(i*theta) = cos(theta) + i*sin(theta))\napplied to a matrix:\n\n>>> a = np.array([[1.0, 2.0], [-1.0, 3.0]])\n>>> expm(1j*a)\narray([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n       [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n>>> cosm(a) + 1j*sinm(a)\narray([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n       [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])",
+            "sourceCode": "def expm(A):\n    \"\"\"\n    Compute the matrix exponential using Pade approximation.\n\n    Parameters\n    ----------\n    A : (N, N) array_like or sparse matrix\n        Matrix to be exponentiated.\n\n    Returns\n    -------\n    expm : (N, N) ndarray\n        Matrix exponential of `A`.\n\n    References\n    ----------\n    .. [1] Awad H. Al-Mohy and Nicholas J. Higham (2009)\n           \"A New Scaling and Squaring Algorithm for the Matrix Exponential.\"\n           SIAM Journal on Matrix Analysis and Applications.\n           31 (3). pp. 970-989. ISSN 1095-7162\n\n    Examples\n    --------\n    >>> from scipy.linalg import expm, sinm, cosm\n\n    Matrix version of the formula exp(0) = 1:\n\n    >>> expm(np.zeros((2,2)))\n    array([[ 1.,  0.],\n           [ 0.,  1.]])\n\n    Euler's identity (exp(i*theta) = cos(theta) + i*sin(theta))\n    applied to a matrix:\n\n    >>> a = np.array([[1.0, 2.0], [-1.0, 3.0]])\n    >>> expm(1j*a)\n    array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n           [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n    >>> cosm(a) + 1j*sinm(a)\n    array([[ 0.42645930+1.89217551j, -2.13721484-0.97811252j],\n           [ 1.06860742+0.48905626j, -1.71075555+0.91406299j]])\n\n    \"\"\"\n    # Input checking and conversion is provided by sparse.linalg.expm().\n    import scipy.sparse.linalg\n    return scipy.sparse.linalg.expm(A)\n",
+            "match": "(A)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(A, 0)": {},
+                "(q, 1)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(A)"
+        }
+    ]
+}

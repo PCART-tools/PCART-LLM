@@ -1,0 +1,11 @@
+[
+  {
+    "(variables, 0)": {},
+    "(degree, 1)": {
+      "rename": "max_degree"
+    },
+    "(min_degree, 2)": {
+      "addPos": "min_degree=0"
+    }
+  }
+]

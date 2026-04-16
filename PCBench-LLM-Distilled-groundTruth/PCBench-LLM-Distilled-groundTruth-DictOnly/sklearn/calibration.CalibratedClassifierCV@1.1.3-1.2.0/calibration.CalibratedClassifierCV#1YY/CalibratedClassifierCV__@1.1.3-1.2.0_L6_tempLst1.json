@@ -1,0 +1,12 @@
+[
+  {
+    "(base_estimator, 0)": {
+      "replace": "estimator=None",
+      "pos2key": "base_estimator"
+    },
+    "(method, 2)": {},
+    "(cv, 3)": {},
+    "(n_jobs, 4)": {},
+    "(ensemble, 5)": {}
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.figure_factory.create_choropleth@2.4.1-2.5.0/plotly.figure_factory.create_choropleth#1YY",
+    "runCommand": "python create_choroplethYY.py",
+    "runFilePath": "",
+    "libName": "plotly",
+    "currentVersion": "2.4.1",
+    "targetVersion": "2.5.0",
+    "currentEnv": "/envs/plotly2.4.1",
+    "targetEnv": "/envs/plotly2.5.0"
+}

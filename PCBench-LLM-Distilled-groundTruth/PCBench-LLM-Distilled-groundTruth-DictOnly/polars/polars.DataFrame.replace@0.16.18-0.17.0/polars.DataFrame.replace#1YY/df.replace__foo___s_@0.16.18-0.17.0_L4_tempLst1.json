@@ -1,0 +1,8 @@
+[
+  {
+    "(column, 0)": {},
+    "(new_col, 1)": {
+      "rename": "new_column"
+    }
+  }
+]

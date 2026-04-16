@@ -1,0 +1,32 @@
+[
+  {
+    "(rule, 0)": {},
+    "(axis, 1)": {},
+    "(closed, 2)": {},
+    "(label, 3)": {},
+    "(convention, 4)": {},
+    "(kind, 5)": {},
+    "(loffset, 6)": {
+      "delete": 1
+    },
+    "(base, 7)": {
+      "delete": 1
+    },
+    "(on, 8)": {
+      "posChange": 6
+    },
+    "(level, 9)": {
+      "posChange": 7
+    },
+    "(origin, 10)": {
+      "posChange": 8
+    },
+    "(offset, 11)": {
+      "posChange": 9
+    },
+    "(group_keys, 12)": {
+      "typeChange": "bool",
+      "posChange": 10
+    }
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "(n_samples, 0)": {},
+    "(n_features, 1)": {},
+    "(centers, 2)": {
+      "pos2key": "centers"
+    },
+    "(cluster_std, 3)": {
+      "pos2key": "cluster_std"
+    },
+    "(center_box, 4)": {
+      "pos2key": "center_box"
+    },
+    "(shuffle, 5)": {
+      "pos2key": "shuffle"
+    },
+    "(random_state, 6)": {
+      "pos2key": "random_state"
+    },
+    "(return_centers, 8)": {
+      "addKey": "return_centers=False"
+    }
+  }
+]

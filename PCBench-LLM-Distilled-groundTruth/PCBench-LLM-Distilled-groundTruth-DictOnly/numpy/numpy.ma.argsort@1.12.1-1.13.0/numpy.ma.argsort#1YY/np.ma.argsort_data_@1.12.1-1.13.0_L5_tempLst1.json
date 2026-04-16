@@ -1,0 +1,12 @@
+[
+  {
+    "(a, 0)": {},
+    "(axis, 1)": {},
+    "(kind, 2)": {},
+    "(order, 3)": {},
+    "(fill_value, 4)": {
+      "posChange": 5,
+      "replace": "endwith=True"
+    }
+  }
+]

@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "df.write_json()",
+        "currentVersion": "0.15.18",
+        "targetVersion": "0.16.1",
+        "fileRelativePath": "polars.DataFrame.write_json#1YY/write_jsonYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.write_json@0.15.18-0.16.1/polars.DataFrame.write_json#1YY/write_jsonYY.json",
+        "apiCall": "df.write_json()",
+        "oldVersion": "polars@0.15.18",
+        "newVersion": "polars@0.16.1",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.write_json",
+            "error": "",
+            "internalPath": "polars.internals.dataframe.frame",
+            "docstring": "Serialize to JSON representation.\n\nParameters\n----------\nfile\n    File path to which the result should be written. If set to ``None``\n    (default), the output is returned as a string instead.\npretty\n    Pretty serialize json.\nrow_oriented\n    Write to row oriented json. This is slower, but more common.\njson_lines\n    Deprecated argument. Toggle between `JSON` and `NDJSON` format.\nto_string\n    Deprecated argument. Ignore file argument and return a string.\n\nSee Also\n--------\nDataFrame.write_ndjson\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...     }\n... )\n>>> df.write_json()\n'{\"columns\":[{\"name\":\"foo\",\"datatype\":\"Int64\",\"values\":[1,2,3]},{\"name\":\"bar\",\"datatype\":\"Int64\",\"values\":[6,7,8]}]}'\n>>> df.write_json(row_oriented=True)\n'[{\"foo\":1,\"bar\":6},{\"foo\":2,\"bar\":7},{\"foo\":3,\"bar\":8}]'",
+            "sourceCode": "    def write_json(\n        self,\n        file: IOBase | str | Path | None = None,\n        pretty: bool = False,\n        row_oriented: bool = False,\n        json_lines: bool | None = None,\n        *,\n        to_string: bool | None = None,\n    ) -> str | None:\n        \"\"\"\n        Serialize to JSON representation.\n\n        Parameters\n        ----------\n        file\n            File path to which the result should be written. If set to ``None``\n            (default), the output is returned as a string instead.\n        pretty\n            Pretty serialize json.\n        row_oriented\n            Write to row oriented json. This is slower, but more common.\n        json_lines\n            Deprecated argument. Toggle between `JSON` and `NDJSON` format.\n        to_string\n            Deprecated argument. Ignore file argument and return a string.\n\n        See Also\n        --------\n        DataFrame.write_ndjson\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...     }\n        ... )\n        >>> df.write_json()\n        '{\"columns\":[{\"name\":\"foo\",\"datatype\":\"Int64\",\"values\":[1,2,3]},{\"name\":\"bar\",\"datatype\":\"Int64\",\"values\":[6,7,8]}]}'\n        >>> df.write_json(row_oriented=True)\n        '[{\"foo\":1,\"bar\":6},{\"foo\":2,\"bar\":7},{\"foo\":3,\"bar\":8}]'\n\n        \"\"\"\n        if json_lines is not None:\n            warnings.warn(\n                \"`json_lines` argument for `DataFrame.write_json` will be removed in a\"\n                \" future version. Remove the argument or use `DataFrame.write_ndjson`.\",\n                DeprecationWarning,\n                stacklevel=2,\n            )\n        else:\n            json_lines = False\n\n        if to_string is not None:\n            warnings.warn(\n                \"`to_string` argument for `DataFrame.write_json` will be removed in a\"\n                \" future version. Remove the argument and set `file=None`.\",\n                DeprecationWarning,\n                stacklevel=2,\n            )\n        else:\n            to_string = False\n\n        if isinstance(file, (str, Path)):\n            file = normalise_filepath(file)\n        to_string_io = (file is not None) and isinstance(file, StringIO)\n        if to_string or file is None or to_string_io:\n            with BytesIO() as buf:\n                self._df.write_json(buf, pretty, row_oriented, json_lines)\n                json_bytes = buf.getvalue()\n\n            json_str = json_bytes.decode(\"utf8\")\n            if to_string_io:\n                file.write(json_str)  # type: ignore[union-attr]\n            else:\n                return json_str\n        else:\n            self._df.write_json(file, pretty, row_oriented, json_lines)\n        return None\n",
+            "match": "(file: 'IOBase | str | Path | None' = None, pretty: 'bool' = False, row_oriented: 'bool' = False, json_lines: 'bool | None' = None, *, to_string: 'bool | None' = None) -> 'str | None'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.write_json",
+            "error": "",
+            "internalPath": "polars.internals.dataframe.frame",
+            "docstring": "Serialize to JSON representation.\n\nParameters\n----------\nfile\n    File path to which the result should be written. If set to ``None``\n    (default), the output is returned as a string instead.\npretty\n    Pretty serialize json.\nrow_oriented\n    Write to row oriented json. This is slower, but more common.\n\nSee Also\n--------\nDataFrame.write_ndjson\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...     }\n... )\n>>> df.write_json()\n'{\"columns\":[{\"name\":\"foo\",\"datatype\":\"Int64\",\"values\":[1,2,3]},{\"name\":\"bar\",\"datatype\":\"Int64\",\"values\":[6,7,8]}]}'\n>>> df.write_json(row_oriented=True)\n'[{\"foo\":1,\"bar\":6},{\"foo\":2,\"bar\":7},{\"foo\":3,\"bar\":8}]'",
+            "sourceCode": "    def write_json(\n        self,\n        file: IOBase | str | Path | None = None,\n        pretty: bool = False,\n        row_oriented: bool = False,\n    ) -> str | None:\n        \"\"\"\n        Serialize to JSON representation.\n\n        Parameters\n        ----------\n        file\n            File path to which the result should be written. If set to ``None``\n            (default), the output is returned as a string instead.\n        pretty\n            Pretty serialize json.\n        row_oriented\n            Write to row oriented json. This is slower, but more common.\n\n        See Also\n        --------\n        DataFrame.write_ndjson\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...     }\n        ... )\n        >>> df.write_json()\n        '{\"columns\":[{\"name\":\"foo\",\"datatype\":\"Int64\",\"values\":[1,2,3]},{\"name\":\"bar\",\"datatype\":\"Int64\",\"values\":[6,7,8]}]}'\n        >>> df.write_json(row_oriented=True)\n        '[{\"foo\":1,\"bar\":6},{\"foo\":2,\"bar\":7},{\"foo\":3,\"bar\":8}]'\n\n        \"\"\"\n        if isinstance(file, (str, Path)):\n            file = normalise_filepath(file)\n        to_string_io = (file is not None) and isinstance(file, StringIO)\n        if file is None or to_string_io:\n            with BytesIO() as buf:\n                self._df.write_json(buf, pretty, row_oriented)\n                json_bytes = buf.getvalue()\n\n            json_str = json_bytes.decode(\"utf8\")\n            if to_string_io:\n                file.write(json_str)  # type: ignore[union-attr]\n            else:\n                return json_str\n        else:\n            self._df.write_json(file, pretty, row_oriented)\n        return None\n",
+            "match": "(file: 'IOBase | str | Path | None' = None, pretty: 'bool' = False, row_oriented: 'bool' = False) -> 'str | None'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(file, 0)": {},
+                "(pretty, 1)": {},
+                "(row_oriented, 2)": {},
+                "(json_lines, 3)": {
+                    "delete": 1
+                },
+                "(to_string, 5)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(file: 'IOBase | str | Path | None' = None, pretty: 'bool' = False, row_oriented: 'bool' = False) -> 'str | None'"
+        }
+    ]
+}

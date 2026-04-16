@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/fastapi/fastapi.encoders.jsonable_encoder@0.60.2-0.61.0/fastapi.encoders.jsonable_encoder#1YY",
+    "runCommand": "python jsonable_encoderYY.py",
+    "runFilePath": "",
+    "libName": "fastapi",
+    "currentVersion": "0.60.2",
+    "targetVersion": "0.61.0",
+    "currentEnv": "/envs/fastapi0.60.2",
+    "targetEnv": "/envs/fastapi0.61.0"
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(color, 3)": {},
+    "(pattern_shape, 4)": {},
+    "(facet_row, 5)": {},
+    "(facet_col, 6)": {},
+    "(facet_col_wrap, 7)": {},
+    "(facet_row_spacing, 8)": {},
+    "(facet_col_spacing, 9)": {},
+    "(hover_name, 10)": {},
+    "(hover_data, 11)": {},
+    "(custom_data, 12)": {},
+    "(text, 13)": {},
+    "(base, 14)": {},
+    "(error_x, 15)": {},
+    "(error_x_minus, 16)": {},
+    "(error_y, 17)": {},
+    "(error_y_minus, 18)": {},
+    "(animation_frame, 19)": {},
+    "(animation_group, 20)": {},
+    "(category_orders, 21)": {},
+    "(labels, 22)": {},
+    "(color_discrete_sequence, 23)": {},
+    "(color_discrete_map, 24)": {},
+    "(color_continuous_scale, 25)": {},
+    "(pattern_shape_sequence, 26)": {},
+    "(pattern_shape_map, 27)": {},
+    "(range_color, 28)": {},
+    "(color_continuous_midpoint, 29)": {},
+    "(opacity, 30)": {},
+    "(orientation, 31)": {},
+    "(barmode, 32)": {},
+    "(log_x, 33)": {},
+    "(log_y, 34)": {},
+    "(range_x, 35)": {},
+    "(range_y, 36)": {},
+    "(title, 37)": {
+      "posChange": 38,
+      "replace": "text_auto=False"
+    },
+    "(template, 38)": {
+      "posChange": 39
+    },
+    "(width, 39)": {
+      "posChange": 40
+    },
+    "(height, 40)": {
+      "posChange": 41
+    }
+  }
+]

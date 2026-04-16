@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "df.shift_and_fill(1, 0)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.DataFrame.shift_and_fill#1NN/shift_and_fillNN.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.shift_and_fill@0.16.18-0.17.0/polars.DataFrame.shift_and_fill#1NN/shift_and_fillNN.json",
+        "apiCall": "df.shift_and_fill(1, 0)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.shift_and_fill",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Shift the values by a given period and fill the resulting null values.\n\nParameters\n----------\nperiods\n    Number of places to shift (may be negative).\nfill_value\n    fill None values with this value.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.shift_and_fill(periods=1, fill_value=0)\nshape: (3, 3)\n┌─────┬─────┬─────┐\n│ foo ┆ bar ┆ ham │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ str │\n╞═════╪═════╪═════╡\n│ 0   ┆ 0   ┆ 0   │\n│ 1   ┆ 6   ┆ a   │\n│ 2   ┆ 7   ┆ b   │\n└─────┴─────┴─────┘",
+            "sourceCode": "    def shift_and_fill(self, periods: int, fill_value: int | str | float) -> Self:\n        \"\"\"\n        Shift the values by a given period and fill the resulting null values.\n\n        Parameters\n        ----------\n        periods\n            Number of places to shift (may be negative).\n        fill_value\n            fill None values with this value.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.shift_and_fill(periods=1, fill_value=0)\n        shape: (3, 3)\n        ┌─────┬─────┬─────┐\n        │ foo ┆ bar ┆ ham │\n        │ --- ┆ --- ┆ --- │\n        │ i64 ┆ i64 ┆ str │\n        ╞═════╪═════╪═════╡\n        │ 0   ┆ 0   ┆ 0   │\n        │ 1   ┆ 6   ┆ a   │\n        │ 2   ┆ 7   ┆ b   │\n        └─────┴─────┴─────┘\n\n        \"\"\"\n        return self._from_pydf(\n            self.lazy()\n            .shift_and_fill(periods, fill_value)\n            .collect(no_optimization=True)\n            ._df\n        )\n",
+            "match": "(periods: 'int', fill_value: 'int | str | float') -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.shift_and_fill",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Shift the values by a given period and fill the resulting null values.\n\nParameters\n----------\nfill_value\n    fill None values with this value.\nperiods\n    Number of places to shift (may be negative).\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.shift_and_fill(periods=1, fill_value=0)\nshape: (3, 3)\n┌─────┬─────┬─────┐\n│ foo ┆ bar ┆ ham │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ str │\n╞═════╪═════╪═════╡\n│ 0   ┆ 0   ┆ 0   │\n│ 1   ┆ 6   ┆ a   │\n│ 2   ┆ 7   ┆ b   │\n└─────┴─────┴─────┘",
+            "sourceCode": "    def shift_and_fill(\n        self,\n        fill_value: int | str | float,\n        *,\n        periods: int = 1,\n    ) -> Self:\n        \"\"\"\n        Shift the values by a given period and fill the resulting null values.\n\n        Parameters\n        ----------\n        fill_value\n            fill None values with this value.\n        periods\n            Number of places to shift (may be negative).\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.shift_and_fill(periods=1, fill_value=0)\n        shape: (3, 3)\n        ┌─────┬─────┬─────┐\n        │ foo ┆ bar ┆ ham │\n        │ --- ┆ --- ┆ --- │\n        │ i64 ┆ i64 ┆ str │\n        ╞═════╪═════╪═════╡\n        │ 0   ┆ 0   ┆ 0   │\n        │ 1   ┆ 6   ┆ a   │\n        │ 2   ┆ 7   ┆ b   │\n        └─────┴─────┴─────┘\n\n        \"\"\"\n        return self._from_pydf(\n            self.lazy()\n            .shift_and_fill(fill_value=fill_value, periods=periods)\n            .collect(no_optimization=True)\n            ._df\n        )\n",
+            "match": "(fill_value: 'int | str | float', *, periods: 'int' = 1) -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(periods, 0)": {
+                    "pos2key": "periods"
+                },
+                "(fill_value, 1)": {
+                    "posChange": 0
+                }
+            },
+            "targetOvPara": "(fill_value: 'int | str | float', *, periods: 'int' = 1) -> 'Self'"
+        }
+    ]
+}

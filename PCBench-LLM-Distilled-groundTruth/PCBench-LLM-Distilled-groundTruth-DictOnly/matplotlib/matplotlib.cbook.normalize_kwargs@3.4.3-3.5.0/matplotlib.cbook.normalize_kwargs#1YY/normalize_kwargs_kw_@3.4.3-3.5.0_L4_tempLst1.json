@@ -1,0 +1,15 @@
+[
+  {
+    "(kw, 0)": {},
+    "(alias_mapping, 1)": {},
+    "(required, 2)": {
+      "delete": 1
+    },
+    "(forbidden, 3)": {
+      "delete": 1
+    },
+    "(allowed, 4)": {
+      "delete": 1
+    }
+  }
+]

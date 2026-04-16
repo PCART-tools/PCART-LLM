@@ -1,0 +1,9 @@
+[
+  {
+    "(G, 0)": {},
+    "(v, 1)": {},
+    "(weighted_edges, 2)": {
+      "rename": "weight"
+    }
+  }
+]

@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "nx.set_node_attributes(G, 'color', values)",
+        "currentVersion": "1.11",
+        "targetVersion": "2.0",
+        "fileRelativePath": "set_node_attributes#1NN/set_node_attributesNN.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/networkx/set_node_attributes@1.11-2.0/set_node_attributes#1NN/set_node_attributesNN.json",
+        "apiCall": "nx.set_node_attributes(G, 'color', values)",
+        "oldVersion": "networkx@1.11",
+        "newVersion": "networkx@2.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.set_node_attributes",
+            "error": "",
+            "internalPath": "networkx.classes.function",
+            "docstring": "Set node attributes from dictionary of nodes and values\n\nParameters\n----------\nG : NetworkX Graph\n\nname : string\n   Attribute name\n\nvalues: dict\n   Dictionary of attribute values keyed by node. If `values` is not a\n   dictionary, then it is treated as a single attribute value that is then\n   applied to every node in `G`.\n\nExamples\n--------\n>>> G = nx.path_graph(3)\n>>> bb = nx.betweenness_centrality(G)\n>>> nx.set_node_attributes(G, 'betweenness', bb)\n>>> G.node[1]['betweenness']\n1.0",
+            "sourceCode": "def set_node_attributes(G, name, values):\n    \"\"\"Set node attributes from dictionary of nodes and values\n\n    Parameters\n    ----------\n    G : NetworkX Graph\n\n    name : string\n       Attribute name\n\n    values: dict\n       Dictionary of attribute values keyed by node. If `values` is not a\n       dictionary, then it is treated as a single attribute value that is then\n       applied to every node in `G`.\n\n    Examples\n    --------\n    >>> G = nx.path_graph(3)\n    >>> bb = nx.betweenness_centrality(G)\n    >>> nx.set_node_attributes(G, 'betweenness', bb)\n    >>> G.node[1]['betweenness']\n    1.0\n    \"\"\"\n    try:\n        values.items\n    except AttributeError:\n        # Treat `value` as the attribute value for each node.\n        values = dict(zip(G.nodes(), [values] * len(G)))\n\n    for node, value in values.items():\n        G.node[node][name] = value\n",
+            "match": "(G, name, values)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.set_node_attributes",
+            "error": "",
+            "internalPath": "networkx.classes.function",
+            "docstring": "Sets node attributes from a given value or dictionary of values.\n\nParameters\n----------\nG : NetworkX Graph\n\nvalues : scalar value, dict-like\n    What the node attribute should be set to.  If `values` is\n    not a dictionary, then it is treated as a single attribute value\n    that is then applied to every node in `G`.  This means that if\n    you provide a mutable object, like a list, updates to that object\n    will be reflected in the node attribute for each edge.  The attribute\n    name will be `name`.\n\n    If `values` is a dict or a dict of dict, the corresponding node's\n    attributes will be updated to `values`.\n\nname : string (optional, default=None)\n    Name of the node attribute to set if values is a scalar.\n\nExamples\n--------\nAfter computing some property of the nodes of a graph, you may want\nto assign a node attribute to store the value of that property for\neach node::\n\n    >>> G = nx.path_graph(3)\n    >>> bb = nx.betweenness_centrality(G)\n    >>> isinstance(bb, dict)\n    True\n    >>> nx.set_node_attributes(G, bb, 'betweenness')\n    >>> G.nodes[1]['betweenness']\n    1.0\n\nIf you provide a list as the second argument, updates to the list\nwill be reflected in the node attribute for each node::\n\n    >>> G = nx.path_graph(3)\n    >>> labels = []\n    >>> nx.set_node_attributes(G, labels, 'labels')\n    >>> labels.append('foo')\n    >>> G.nodes[0]['labels']\n    ['foo']\n    >>> G.nodes[1]['labels']\n    ['foo']\n    >>> G.nodes[2]['labels']\n    ['foo']\n\nIf you provide a dictionary of dictionaries as the second argument,\nthe entire dictionary will be used to update node attributes::\n\n    >>> G = nx.path_graph(3)\n    >>> attrs = {0: {'attr1': 20, 'attr2': 'nothing'}, 1: {'attr2': 3}}\n    >>> nx.set_node_attributes(G, attrs)\n    >>> G.nodes[0]['attr1']\n    20\n    >>> G.nodes[0]['attr2']\n    'nothing'\n    >>> G.nodes[1]['attr2']\n    3\n    >>> G.nodes[2]\n    {}",
+            "sourceCode": "def set_node_attributes(G, values, name=None):\n    \"\"\"Sets node attributes from a given value or dictionary of values.\n\n    Parameters\n    ----------\n    G : NetworkX Graph\n\n    values : scalar value, dict-like\n        What the node attribute should be set to.  If `values` is\n        not a dictionary, then it is treated as a single attribute value\n        that is then applied to every node in `G`.  This means that if\n        you provide a mutable object, like a list, updates to that object\n        will be reflected in the node attribute for each edge.  The attribute\n        name will be `name`.\n\n        If `values` is a dict or a dict of dict, the corresponding node's\n        attributes will be updated to `values`.\n\n    name : string (optional, default=None)\n        Name of the node attribute to set if values is a scalar.\n\n    Examples\n    --------\n    After computing some property of the nodes of a graph, you may want\n    to assign a node attribute to store the value of that property for\n    each node::\n\n        >>> G = nx.path_graph(3)\n        >>> bb = nx.betweenness_centrality(G)\n        >>> isinstance(bb, dict)\n        True\n        >>> nx.set_node_attributes(G, bb, 'betweenness')\n        >>> G.nodes[1]['betweenness']\n        1.0\n\n    If you provide a list as the second argument, updates to the list\n    will be reflected in the node attribute for each node::\n\n        >>> G = nx.path_graph(3)\n        >>> labels = []\n        >>> nx.set_node_attributes(G, labels, 'labels')\n        >>> labels.append('foo')\n        >>> G.nodes[0]['labels']\n        ['foo']\n        >>> G.nodes[1]['labels']\n        ['foo']\n        >>> G.nodes[2]['labels']\n        ['foo']\n\n    If you provide a dictionary of dictionaries as the second argument,\n    the entire dictionary will be used to update node attributes::\n\n        >>> G = nx.path_graph(3)\n        >>> attrs = {0: {'attr1': 20, 'attr2': 'nothing'}, 1: {'attr2': 3}}\n        >>> nx.set_node_attributes(G, attrs)\n        >>> G.nodes[0]['attr1']\n        20\n        >>> G.nodes[0]['attr2']\n        'nothing'\n        >>> G.nodes[1]['attr2']\n        3\n        >>> G.nodes[2]\n        {}\n\n    \"\"\"\n    # Set node attributes based on type of `values`\n    if name is not None:  # `values` must not be a dict of dict\n        try:  # `values` is a dict\n            for n, v in values.items():\n                try:\n                    G.nodes[n][name] = values[n]\n                except KeyError:\n                    pass\n        except AttributeError:  # `values` is a constant\n            for n in G:\n                G.nodes[n][name] = values\n    else:  # `values` must be dict of dict\n        for n, d in values.items():\n            try:\n                G.nodes[n].update(d)\n            except KeyError:\n                pass\n",
+            "match": "(G, values, name=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(name, 1)": {
+                    "posChange": 2
+                },
+                "(values, 2)": {
+                    "posChange": 1
+                }
+            },
+            "targetOvPara": "(G, values, name=None)"
+        }
+    ]
+}

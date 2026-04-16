@@ -1,0 +1,15 @@
+[
+  {
+    "(G, 0)": {},
+    "(source, 1)": {},
+    "(target, 2)": {},
+    "(nodelist, 3)": {},
+    "(dtype, 4)": {},
+    "(order, 5)": {
+      "delete": 1
+    },
+    "(edge_key, 6)": {
+      "posChange": 5
+    }
+  }
+]

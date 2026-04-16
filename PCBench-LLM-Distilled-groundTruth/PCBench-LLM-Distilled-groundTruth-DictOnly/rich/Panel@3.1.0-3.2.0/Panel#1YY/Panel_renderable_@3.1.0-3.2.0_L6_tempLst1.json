@@ -1,0 +1,16 @@
+[
+  {
+    "(renderable, 0)": {},
+    "(box, 1)": {},
+    "(safe_box, 3)": {},
+    "(expand, 4)": {},
+    "(style, 5)": {
+      "typeChange": "Union[str,ForwardRef('Style')]"
+    },
+    "(width, 6)": {},
+    "(border_style, 6)": {
+      "addKey": "border_style='none'"
+    },
+    "(padding, 7)": {}
+  }
+]

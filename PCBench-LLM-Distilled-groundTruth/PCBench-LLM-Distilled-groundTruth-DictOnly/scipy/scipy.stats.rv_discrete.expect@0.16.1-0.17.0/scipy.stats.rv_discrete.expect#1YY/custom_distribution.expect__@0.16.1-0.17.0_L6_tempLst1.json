@@ -1,0 +1,49 @@
+[
+  {
+    "(func, 0)": {},
+    "(args, 1)": {},
+    "(loc, 2)": {},
+    "(scale, 3)": {
+      "delete": 1
+    },
+    "(lb, 4)": {
+      "posChange": 3
+    },
+    "(ub, 5)": {
+      "posChange": 4
+    },
+    "(conditional, 6)": {
+      "posChange": 5,
+      "replace": "maxcount=1000"
+    },
+    "(tolerance, 7)": {
+      "addPos": "tolerance=1e-10"
+    },
+    "(chunksize, 8)": {
+      "addPos": "chunksize=32"
+    }
+  },
+  {
+    "(func, 0)": {},
+    "(lb, 1)": {
+      "posChange": 3,
+      "replace": "args=()"
+    },
+    "(ub, 2)": {
+      "posChange": 4,
+      "replace": "loc=0"
+    },
+    "(conditional, 3)": {
+      "posChange": 5
+    },
+    "(maxcount, 6)": {
+      "addPos": "maxcount=1000"
+    },
+    "(tolerance, 7)": {
+      "addPos": "tolerance=1e-10"
+    },
+    "(chunksize, 8)": {
+      "addPos": "chunksize=32"
+    }
+  }
+]

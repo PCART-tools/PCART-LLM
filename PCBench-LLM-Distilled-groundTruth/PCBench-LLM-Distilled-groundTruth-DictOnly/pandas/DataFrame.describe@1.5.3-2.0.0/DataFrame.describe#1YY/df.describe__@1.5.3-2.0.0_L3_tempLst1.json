@@ -1,0 +1,10 @@
+[
+  {
+    "(percentiles, 0)": {},
+    "(include, 1)": {},
+    "(exclude, 2)": {},
+    "(datetime_is_numeric, 3)": {
+      "delete": 1
+    }
+  }
+]

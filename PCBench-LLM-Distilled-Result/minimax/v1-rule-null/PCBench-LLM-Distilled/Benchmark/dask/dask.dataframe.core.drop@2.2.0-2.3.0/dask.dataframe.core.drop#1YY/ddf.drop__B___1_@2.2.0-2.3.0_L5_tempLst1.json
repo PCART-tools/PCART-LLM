@@ -1,0 +1,52 @@
+{
+    "context": {
+        "callAPI": "ddf.drop('B', 1)",
+        "currentVersion": "2.2.0",
+        "targetVersion": "2.3.0",
+        "fileRelativePath": "dask.dataframe.core.drop#1YY/dropYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/dask/dask.dataframe.core.drop@2.2.0-2.3.0/dask.dataframe.core.drop#1YY/dropYY.json",
+        "apiCall": "ddf.drop('B', 1)",
+        "oldVersion": "dask@2.2.0",
+        "newVersion": "dask@2.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "dask.dataframe.from_pandas.drop",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Drop specified labels from rows or columns.\n\nThis docstring was copied from pandas.core.frame.DataFrame.drop. \n\nSome inconsistencies with the Dask version may exist.\n\nRemove rows or columns by specifying label names and corresponding\naxis, or by specifying directly index or column names. When using a\nmulti-index, labels on different levels can be removed by specifying\nthe level.\n\nParameters\n----------\nlabels : single label or list-like\n    Index or column labels to drop.\naxis : {0 or 'index', 1 or 'columns'}, default 0\n    Whether to drop labels from the index (0 or 'index') or\n    columns (1 or 'columns').\nindex, columns : single label or list-like\n    Alternative to specifying axis (``labels, axis=1``\n    is equivalent to ``columns=labels``).\n\n    .. versionadded:: 0.21.0\nlevel : int or level name, optional  (Not supported in Dask)\n    For MultiIndex, level from which the labels will be removed.\ninplace : bool, default False  (Not supported in Dask)\n    If True, do operation inplace and return None.\nerrors : {'ignore', 'raise'}, default 'raise'\n    If 'ignore', suppress error and only existing labels are\n    dropped.\n\nReturns\n-------\ndropped : pandas.DataFrame\n\nRaises\n------\nKeyError\n    If none of the labels are found in the selected axis\n\nSee Also\n--------\nDataFrame.loc : Label-location based indexer for selection by label.\nDataFrame.dropna : Return DataFrame with labels on given axis omitted\n    where (all or any) data are missing.\nDataFrame.drop_duplicates : Return DataFrame with duplicate rows\n    removed, optionally only considering certain columns.\nSeries.drop : Return Series with specified index labels removed.\n\nExamples\n--------\n>>> df = pd.DataFrame(np.arange(12).reshape(3,4),  # doctest: +SKIP\n...                   columns=['A', 'B', 'C', 'D'])\n>>> df  # doctest: +SKIP\n   A  B   C   D\n0  0  1   2   3\n1  4  5   6   7\n2  8  9  10  11\n\nDrop columns\n\n>>> df.drop(['B', 'C'], axis=1)  # doctest: +SKIP\n   A   D\n0  0   3\n1  4   7\n2  8  11\n\n>>> df.drop(columns=['B', 'C'])  # doctest: +SKIP\n   A   D\n0  0   3\n1  4   7\n2  8  11\n\nDrop a row by index\n\n>>> df.drop([0, 1])  # doctest: +SKIP\n   A  B   C   D\n2  8  9  10  11\n\nDrop columns and/or rows of MultiIndex DataFrame\n\n>>> midx = pd.MultiIndex(levels=[['lama', 'cow', 'falcon'],  # doctest: +SKIP\n...                              ['speed', 'weight', 'length']],\n...                      codes=[[0, 0, 0, 1, 1, 1, 2, 2, 2],\n...                             [0, 1, 2, 0, 1, 2, 0, 1, 2]])\n>>> df = pd.DataFrame(index=midx, columns=['big', 'small'],  # doctest: +SKIP\n...                   data=[[45, 30], [200, 100], [1.5, 1], [30, 20],\n...                         [250, 150], [1.5, 0.8], [320, 250],\n...                         [1, 0.8], [0.3,0.2]])\n>>> df  # doctest: +SKIP\n                big     small\nlama    speed   45.0    30.0\n        weight  200.0   100.0\n        length  1.5     1.0\ncow     speed   30.0    20.0\n        weight  250.0   150.0\n        length  1.5     0.8\nfalcon  speed   320.0   250.0\n        weight  1.0     0.8\n        length  0.3     0.2\n\n>>> df.drop(index='cow', columns='small')  # doctest: +SKIP\n                big\nlama    speed   45.0\n        weight  200.0\n        length  1.5\nfalcon  speed   320.0\n        weight  1.0\n        length  0.3\n\n>>> df.drop(index='length', level=1)  # doctest: +SKIP\n                big     small\nlama    speed   45.0    30.0\n        weight  200.0   100.0\ncow     speed   30.0    20.0\n        weight  250.0   150.0\nfalcon  speed   320.0   250.0\n        weight  1.0     0.8",
+            "sourceCode": "    @derived_from(pd.DataFrame)\n    def drop(self, labels, axis=0, errors=\"raise\"):\n        axis = self._validate_axis(axis)\n        if axis == 1:\n            return self.map_partitions(M.drop, labels, axis=axis, errors=errors)\n        raise NotImplementedError(\"Drop currently only works for axis=1\")\n",
+            "match": "(labels, axis=0, errors='raise')",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "dask.dataframe.from_pandas.drop",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Drop specified labels from rows or columns.\n\nThis docstring was copied from pandas.core.frame.DataFrame.drop. \n\nSome inconsistencies with the Dask version may exist.\n\nRemove rows or columns by specifying label names and corresponding\naxis, or by specifying directly index or column names. When using a\nmulti-index, labels on different levels can be removed by specifying\nthe level.\n\nParameters\n----------\nlabels : single label or list-like\n    Index or column labels to drop.\naxis : {0 or 'index', 1 or 'columns'}, default 0\n    Whether to drop labels from the index (0 or 'index') or\n    columns (1 or 'columns').\nindex, columns : single label or list-like\n    Alternative to specifying axis (``labels, axis=1``\n    is equivalent to ``columns=labels``).\n\n    .. versionadded:: 0.21.0\nlevel : int or level name, optional  (Not supported in Dask)\n    For MultiIndex, level from which the labels will be removed.\ninplace : bool, default False  (Not supported in Dask)\n    If True, do operation inplace and return None.\nerrors : {'ignore', 'raise'}, default 'raise'\n    If 'ignore', suppress error and only existing labels are\n    dropped.\n\nReturns\n-------\ndropped : pandas.DataFrame\n\nRaises\n------\nKeyError\n    If none of the labels are found in the selected axis\n\nSee Also\n--------\nDataFrame.loc : Label-location based indexer for selection by label.\nDataFrame.dropna : Return DataFrame with labels on given axis omitted\n    where (all or any) data are missing.\nDataFrame.drop_duplicates : Return DataFrame with duplicate rows\n    removed, optionally only considering certain columns.\nSeries.drop : Return Series with specified index labels removed.\n\nExamples\n--------\n>>> df = pd.DataFrame(np.arange(12).reshape(3,4),  # doctest: +SKIP\n...                   columns=['A', 'B', 'C', 'D'])\n>>> df  # doctest: +SKIP\n   A  B   C   D\n0  0  1   2   3\n1  4  5   6   7\n2  8  9  10  11\n\nDrop columns\n\n>>> df.drop(['B', 'C'], axis=1)  # doctest: +SKIP\n   A   D\n0  0   3\n1  4   7\n2  8  11\n\n>>> df.drop(columns=['B', 'C'])  # doctest: +SKIP\n   A   D\n0  0   3\n1  4   7\n2  8  11\n\nDrop a row by index\n\n>>> df.drop([0, 1])  # doctest: +SKIP\n   A  B   C   D\n2  8  9  10  11\n\nDrop columns and/or rows of MultiIndex DataFrame\n\n>>> midx = pd.MultiIndex(levels=[['lama', 'cow', 'falcon'],  # doctest: +SKIP\n...                              ['speed', 'weight', 'length']],\n...                      codes=[[0, 0, 0, 1, 1, 1, 2, 2, 2],\n...                             [0, 1, 2, 0, 1, 2, 0, 1, 2]])\n>>> df = pd.DataFrame(index=midx, columns=['big', 'small'],  # doctest: +SKIP\n...                   data=[[45, 30], [200, 100], [1.5, 1], [30, 20],\n...                         [250, 150], [1.5, 0.8], [320, 250],\n...                         [1, 0.8], [0.3,0.2]])\n>>> df  # doctest: +SKIP\n                big     small\nlama    speed   45.0    30.0\n        weight  200.0   100.0\n        length  1.5     1.0\ncow     speed   30.0    20.0\n        weight  250.0   150.0\n        length  1.5     0.8\nfalcon  speed   320.0   250.0\n        weight  1.0     0.8\n        length  0.3     0.2\n\n>>> df.drop(index='cow', columns='small')  # doctest: +SKIP\n                big\nlama    speed   45.0\n        weight  200.0\n        length  1.5\nfalcon  speed   320.0\n        weight  1.0\n        length  0.3\n\n>>> df.drop(index='length', level=1)  # doctest: +SKIP\n                big     small\nlama    speed   45.0    30.0\n        weight  200.0   100.0\ncow     speed   30.0    20.0\n        weight  250.0   150.0\nfalcon  speed   320.0   250.0\n        weight  1.0     0.8",
+            "sourceCode": "    @derived_from(pd.DataFrame)\n    def drop(self, labels=None, axis=0, columns=None, errors=\"raise\"):\n        axis = self._validate_axis(axis)\n        if (axis == 1) or (columns is not None):\n            return self.map_partitions(\n                M.drop, labels=labels, axis=axis, columns=columns, errors=errors\n            )\n        raise NotImplementedError(\n            \"Drop currently only works for axis=1 or when columns is not None\"\n        )\n",
+            "match": "(labels=None, axis=0, columns=None, errors='raise')",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(labels, 0)": {},
+                "(axis, 1)": {},
+                "(errors, 2)": {
+                    "delete": 1,
+                    "replace": "columns"
+                },
+                "(columns, 2)": {
+                    "addPos": "columns"
+                },
+                "(errors, 3)": {
+                    "posChange": 3
+                }
+            },
+            "targetOvPara": "(labels=None, axis=0, columns=None, errors='raise')"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "(A, 0)": {},
+    "(b, 1)": {},
+    "(x0, 2)": {},
+    "(shift, 3)": {},
+    "(tol, 4)": {},
+    "(maxiter, 5)": {},
+    "(xtype, 6)": {
+      "delete": 1
+    },
+    "(M, 7)": {
+      "posChange": 6
+    },
+    "(callback, 8)": {
+      "posChange": 7
+    },
+    "(show, 9)": {
+      "posChange": 8
+    },
+    "(check, 10)": {
+      "posChange": 9
+    }
+  }
+]

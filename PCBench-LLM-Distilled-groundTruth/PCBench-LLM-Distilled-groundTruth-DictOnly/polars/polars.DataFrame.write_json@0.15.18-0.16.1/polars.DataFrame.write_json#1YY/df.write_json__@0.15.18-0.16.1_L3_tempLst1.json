@@ -1,0 +1,13 @@
+[
+  {
+    "(file, 0)": {},
+    "(pretty, 1)": {},
+    "(row_oriented, 2)": {},
+    "(json_lines, 3)": {
+      "delete": 1
+    },
+    "(to_string, 5)": {
+      "delete": 1
+    }
+  }
+]

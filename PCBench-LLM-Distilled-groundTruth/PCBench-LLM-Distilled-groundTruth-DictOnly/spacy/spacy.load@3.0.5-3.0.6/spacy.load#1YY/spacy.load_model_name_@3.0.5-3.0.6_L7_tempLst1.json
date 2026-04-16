@@ -1,0 +1,17 @@
+[
+  {
+    "(name, 0)": {},
+    "(disable, 1)": {
+      "pos2key": "disable"
+    },
+    "(exclude, 2)": {
+      "pos2key": "exclude"
+    },
+    "(vocab, 2)": {
+      "addKey": "vocab=True"
+    },
+    "(config, 3)": {
+      "pos2key": "config"
+    }
+  }
+]

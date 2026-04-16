@@ -1,0 +1,12 @@
+[
+  {
+    "(ticks, 0)": {},
+    "(update_ticks, 1)": {
+      "delete": 1
+    },
+    "(labels, 2)": {
+      "pos2key": "labels"
+    },
+    "(minor, 4)": {}
+  }
+]

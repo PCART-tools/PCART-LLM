@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.isneginf@1.12.1-1.13.0/numpy.isneginf#1YY",
+    "runCommand": "python isneginfYY.py",
+    "runFilePath": "",
+    "libName": "numpy",
+    "currentVersion": "1.12.1",
+    "targetVersion": "1.13.0",
+    "currentEnv": "/envs/numpy1.12.1",
+    "targetEnv": "/envs/numpy1.13.0"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "(a, 0)": {},
+    "(q, 1)": {},
+    "(axis, 2)": {},
+    "(out, 3)": {},
+    "(overwrite_input, 4)": {},
+    "(interpolation, 5)": {
+      "replace": "method='linear'",
+      "pos2key": "interpolation"
+    },
+    "(keepdims, 6)": {}
+  }
+]

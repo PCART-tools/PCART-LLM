@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/httpx/Response@0.17.1-0.18.0/Response#1YY",
+    "runCommand": "python ResponseYY.py",
+    "runFilePath": "",
+    "libName": "httpx",
+    "currentVersion": "0.17.1",
+    "targetVersion": "0.18.0",
+    "currentEnv": "/envs/httpx0.17.1",
+    "targetEnv": "/envs/httpx0.18.0"
+}

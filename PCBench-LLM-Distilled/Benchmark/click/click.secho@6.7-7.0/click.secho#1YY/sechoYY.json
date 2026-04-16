@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/click/click.secho@6.7-7.0/click.secho#1YY",
+    "runCommand": "python sechoYY.py",
+    "runFilePath": "",
+    "libName": "click",
+    "currentVersion": "6.7",
+    "targetVersion": "7.0",
+    "currentEnv": "/envs/click6.7",
+    "targetEnv": "/envs/click7.0"
+}

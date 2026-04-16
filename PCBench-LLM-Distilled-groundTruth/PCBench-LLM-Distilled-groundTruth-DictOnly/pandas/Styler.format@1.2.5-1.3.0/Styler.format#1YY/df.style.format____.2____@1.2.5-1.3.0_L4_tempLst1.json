@@ -1,0 +1,21 @@
+[
+  {
+    "(formatter, 0)": {},
+    "(subset, 1)": {},
+    "(na_rep, 2)": {
+      "typeChange": "str|None"
+    },
+    "(precision, 3)": {
+      "addPos": "precision=None"
+    },
+    "(decimal, 4)": {
+      "addPos": "decimal='.'"
+    },
+    "(thousands, 5)": {
+      "addPos": "thousands=None"
+    },
+    "(escape, 6)": {
+      "addPos": "escape=None"
+    }
+  }
+]

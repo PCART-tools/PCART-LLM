@@ -1,0 +1,15 @@
+[
+  {
+    "(window, 0)": {},
+    "(min_periods, 1)": {},
+    "(center, 2)": {},
+    "(win_type, 3)": {},
+    "(on, 4)": {},
+    "(axis, 5)": {},
+    "(closed, 6)": {},
+    "(method, 7)": {
+      "posChange": 8,
+      "replace": "step=None"
+    }
+  }
+]

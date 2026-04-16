@@ -1,0 +1,11 @@
+[
+  {
+    "(doc_words1, 0)": {},
+    "(doc_words2, 1)": {},
+    "(alpha, 2)": {},
+    "(min_alpha, 3)": {},
+    "(steps, 4)": {
+      "rename": "epochs"
+    }
+  }
+]

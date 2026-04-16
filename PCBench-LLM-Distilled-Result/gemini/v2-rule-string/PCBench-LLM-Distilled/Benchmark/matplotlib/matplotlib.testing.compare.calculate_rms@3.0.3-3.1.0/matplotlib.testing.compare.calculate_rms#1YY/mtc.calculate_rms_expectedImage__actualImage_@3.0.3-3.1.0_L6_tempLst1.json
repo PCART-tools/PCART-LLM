@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "mtc.calculate_rms(expectedImage, actualImage)",
+        "currentVersion": "3.0.3",
+        "targetVersion": "3.1.0",
+        "fileRelativePath": "matplotlib.testing.compare.calculate_rms#1YY/calculate_rmsYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.testing.compare.calculate_rms@3.0.3-3.1.0/matplotlib.testing.compare.calculate_rms#1YY/calculate_rmsYY.json",
+        "apiCall": "mtc.calculate_rms(expectedImage, actualImage)",
+        "oldVersion": "matplotlib@3.0.3",
+        "newVersion": "matplotlib@3.1.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.testing.compare.calculate_rms",
+            "error": "",
+            "internalPath": "matplotlib.testing.compare",
+            "docstring": "Calculate the per-pixel errors, then compute the root mean square error.",
+            "sourceCode": "def calculate_rms(expectedImage, actualImage):\n    \"Calculate the per-pixel errors, then compute the root mean square error.\"\n    if expectedImage.shape != actualImage.shape:\n        raise ImageComparisonFailure(\n            \"Image sizes do not match expected size: {} \"\n            \"actual size {}\".format(expectedImage.shape, actualImage.shape))\n    # Convert to float to avoid overflowing finite integer types.\n    return np.sqrt(((expectedImage - actualImage).astype(float) ** 2).mean())\n",
+            "match": "(expectedImage, actualImage)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.testing.compare.calculate_rms",
+            "error": "",
+            "internalPath": "matplotlib.testing.compare",
+            "docstring": "Calculate the per-pixel errors, then compute the root mean square error.",
+            "sourceCode": "def calculate_rms(expected_image, actual_image):\n    \"Calculate the per-pixel errors, then compute the root mean square error.\"\n    if expected_image.shape != actual_image.shape:\n        raise ImageComparisonFailure(\n            \"Image sizes do not match expected size: {} \"\n            \"actual size {}\".format(expected_image.shape, actual_image.shape))\n    # Convert to float to avoid overflowing finite integer types.\n    return np.sqrt(((expected_image - actual_image).astype(float) ** 2).mean())\n",
+            "match": "(expected_image, actual_image)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(expectedImage, 0)": {
+                    "rename": "expected_image"
+                },
+                "(actualImage, 1)": {
+                    "rename": "actual_image"
+                }
+            },
+            "targetOvPara": "(expected_image, actual_image)"
+        }
+    ]
+}

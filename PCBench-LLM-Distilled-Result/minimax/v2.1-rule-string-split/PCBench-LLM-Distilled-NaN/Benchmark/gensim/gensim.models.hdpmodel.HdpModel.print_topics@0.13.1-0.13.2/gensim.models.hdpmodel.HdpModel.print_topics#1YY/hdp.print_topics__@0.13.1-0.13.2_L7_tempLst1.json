@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "hdp.print_topics()",
+        "currentVersion": "0.13.1",
+        "targetVersion": "0.13.2",
+        "fileRelativePath": "gensim.models.hdpmodel.HdpModel.print_topics#1YY/print_topicsYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.hdpmodel.HdpModel.print_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.print_topics#1YY/print_topicsYY.json",
+        "apiCall": "hdp.print_topics()",
+        "oldVersion": "gensim@0.13.1",
+        "newVersion": "gensim@0.13.2",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "gensim.models.HdpModel.print_topics",
+            "error": "",
+            "internalPath": "gensim.models.hdpmodel",
+            "docstring": "Alias for `show_topics()` that prints the `topn` most\nprobable words for `topics` number of topics to log.\nSet `topics=-1` to print all topics.",
+            "sourceCode": "    def print_topics(self, topics=20, topn=20):\n        \"\"\"Alias for `show_topics()` that prints the `topn` most\n        probable words for `topics` number of topics to log.\n        Set `topics=-1` to print all topics.\"\"\"\n        return self.show_topics(topics=topics, topn=topn, log=True)\n",
+            "match": "(topics=20, topn=20)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "gensim.models.HdpModel.print_topics",
+            "error": "",
+            "internalPath": "gensim.models.hdpmodel",
+            "docstring": "Alias for `show_topics()` that prints the `num_words` most\nprobable words for `topics` number of topics to log.\nSet `topics=-1` to print all topics.",
+            "sourceCode": "    def print_topics(self, num_topics=20, num_words=20):\n        \"\"\"Alias for `show_topics()` that prints the `num_words` most\n        probable words for `topics` number of topics to log.\n        Set `topics=-1` to print all topics.\"\"\"\n        return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)\n",
+            "match": "(num_topics=20, num_words=20)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(topics, 0)": {
+                    "rename": "num_topics"
+                },
+                "(topn, 1)": {
+                    "rename": "num_words"
+                }
+            },
+            "targetOvPara": "(num_topics=20, num_words=20)"
+        }
+    ]
+}

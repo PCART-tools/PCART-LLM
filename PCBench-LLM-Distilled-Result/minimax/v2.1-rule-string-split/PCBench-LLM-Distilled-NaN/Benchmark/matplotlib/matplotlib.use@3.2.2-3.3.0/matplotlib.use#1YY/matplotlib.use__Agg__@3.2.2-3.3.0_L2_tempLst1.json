@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "matplotlib.use('Agg')",
+        "currentVersion": "3.2.2",
+        "targetVersion": "3.3.0",
+        "fileRelativePath": "matplotlib.use#1YY/useYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.use@3.2.2-3.3.0/matplotlib.use#1YY/useYY.json",
+        "apiCall": "matplotlib.use('Agg')",
+        "oldVersion": "matplotlib@3.2.2",
+        "newVersion": "matplotlib@3.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.use",
+            "error": "",
+            "internalPath": "matplotlib.cbook.deprecation",
+            "docstring": "Select the backend used for rendering and GUI integration.\n\nParameters\n----------\nbackend : str\n    The backend to switch to.  This can either be one of the standard\n    backend names, which are case-insensitive:\n\n    - interactive backends:\n      GTK3Agg, GTK3Cairo, MacOSX, nbAgg,\n      Qt4Agg, Qt4Cairo, Qt5Agg, Qt5Cairo,\n      TkAgg, TkCairo, WebAgg, WX, WXAgg, WXCairo\n\n    - non-interactive backends:\n      agg, cairo, pdf, pgf, ps, svg, template\n\n    or a string of the form: ``module://my.module.name``.\n\nwarn : bool, optional, default: False\n    If True and not *force*, emit a warning if a failure-to-switch\n    `ImportError` has been suppressed.  This parameter is deprecated.\n\nforce : bool, optional, default: True\n    If True (the default), raise an `ImportError` if the backend cannot be\n    set up (either because it fails to import, or because an incompatible\n    GUI interactive framework is already running); if False, ignore the\n    failure.\n\nSee Also\n--------\n:ref:`backends`\nmatplotlib.get_backend",
+            "sourceCode": "@cbook._rename_parameter(\"3.1\", \"arg\", \"backend\")\n@cbook._delete_parameter(\"3.1\", \"warn\")\ndef use(backend, warn=False, force=True):\n    \"\"\"\n    Select the backend used for rendering and GUI integration.\n\n    Parameters\n    ----------\n    backend : str\n        The backend to switch to.  This can either be one of the standard\n        backend names, which are case-insensitive:\n\n        - interactive backends:\n          GTK3Agg, GTK3Cairo, MacOSX, nbAgg,\n          Qt4Agg, Qt4Cairo, Qt5Agg, Qt5Cairo,\n          TkAgg, TkCairo, WebAgg, WX, WXAgg, WXCairo\n\n        - non-interactive backends:\n          agg, cairo, pdf, pgf, ps, svg, template\n\n        or a string of the form: ``module://my.module.name``.\n\n    warn : bool, optional, default: False\n        If True and not *force*, emit a warning if a failure-to-switch\n        `ImportError` has been suppressed.  This parameter is deprecated.\n\n    force : bool, optional, default: True\n        If True (the default), raise an `ImportError` if the backend cannot be\n        set up (either because it fails to import, or because an incompatible\n        GUI interactive framework is already running); if False, ignore the\n        failure.\n\n    See Also\n    --------\n    :ref:`backends`\n    matplotlib.get_backend\n    \"\"\"\n    name = validate_backend(backend)\n    if dict.__getitem__(rcParams, 'backend') == name:\n        # Nothing to do if the requested backend is already set\n        pass\n    else:\n        # Update both rcParams and rcDefaults so restoring the defaults later\n        # with rcdefaults won't change the backend.  This is a bit of overkill\n        # as 'backend' is already in style.core.STYLE_BLACKLIST, but better to\n        # be safe.\n        rcParams['backend'] = rcParamsDefault['backend'] = name\n        try:\n            from matplotlib import pyplot as plt\n            plt.switch_backend(name)\n        except ImportError as exc:\n            if force:\n                raise\n            if warn:\n                cbook._warn_external(\n                    f\"Failed to switch backend to {backend}: {exc}\")\n",
+            "match": "(backend, warn=<deprecated parameter>, force=True)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.use",
+            "error": "",
+            "internalPath": "matplotlib.__init__",
+            "docstring": "Select the backend used for rendering and GUI integration.\n\nParameters\n----------\nbackend : str\n    The backend to switch to.  This can either be one of the standard\n    backend names, which are case-insensitive:\n\n    - interactive backends:\n      GTK3Agg, GTK3Cairo, MacOSX, nbAgg,\n      Qt4Agg, Qt4Cairo, Qt5Agg, Qt5Cairo,\n      TkAgg, TkCairo, WebAgg, WX, WXAgg, WXCairo\n\n    - non-interactive backends:\n      agg, cairo, pdf, pgf, ps, svg, template\n\n    or a string of the form: ``module://my.module.name``.\n\nforce : bool, default: True\n    If True (the default), raise an `ImportError` if the backend cannot be\n    set up (either because it fails to import, or because an incompatible\n    GUI interactive framework is already running); if False, ignore the\n    failure.\n\nSee Also\n--------\n:ref:`backends`\nmatplotlib.get_backend",
+            "sourceCode": "def use(backend, *, force=True):\n    \"\"\"\n    Select the backend used for rendering and GUI integration.\n\n    Parameters\n    ----------\n    backend : str\n        The backend to switch to.  This can either be one of the standard\n        backend names, which are case-insensitive:\n\n        - interactive backends:\n          GTK3Agg, GTK3Cairo, MacOSX, nbAgg,\n          Qt4Agg, Qt4Cairo, Qt5Agg, Qt5Cairo,\n          TkAgg, TkCairo, WebAgg, WX, WXAgg, WXCairo\n\n        - non-interactive backends:\n          agg, cairo, pdf, pgf, ps, svg, template\n\n        or a string of the form: ``module://my.module.name``.\n\n    force : bool, default: True\n        If True (the default), raise an `ImportError` if the backend cannot be\n        set up (either because it fails to import, or because an incompatible\n        GUI interactive framework is already running); if False, ignore the\n        failure.\n\n    See Also\n    --------\n    :ref:`backends`\n    matplotlib.get_backend\n    \"\"\"\n    name = validate_backend(backend)\n    # we need to use the base-class method here to avoid (prematurely)\n    # resolving the \"auto\" backend setting\n    if dict.__getitem__(rcParams, 'backend') == name:\n        # Nothing to do if the requested backend is already set\n        pass\n    else:\n        # if pyplot is not already imported, do not import it.  Doing\n        # so may trigger a `plt.switch_backend` to the _default_ backend\n        # before we get a chance to change to the one the user just requested\n        plt = sys.modules.get('matplotlib.pyplot')\n        # if pyplot is imported, then try to change backends\n        if plt is not None:\n            try:\n                # we need this import check here to re-raise if the\n                # user does not have the libraries to support their\n                # chosen backend installed.\n                plt.switch_backend(name)\n            except ImportError:\n                if force:\n                    raise\n        # if we have not imported pyplot, then we can set the rcParam\n        # value which will be respected when the user finally imports\n        # pyplot\n        else:\n            rcParams['backend'] = backend\n    # if the user has asked for a given backend, do not helpfully\n    # fallback\n    rcParams['backend_fallback'] = False\n",
+            "match": "(backend, *, force=True)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(backend, 0)": {},
+                "(warn, 1)": {
+                    "delete": 1
+                },
+                "(force, 2)": {
+                    "pos2key": "force"
+                }
+            },
+            "targetOvPara": "(backend, *, force=True)"
+        }
+    ]
+}

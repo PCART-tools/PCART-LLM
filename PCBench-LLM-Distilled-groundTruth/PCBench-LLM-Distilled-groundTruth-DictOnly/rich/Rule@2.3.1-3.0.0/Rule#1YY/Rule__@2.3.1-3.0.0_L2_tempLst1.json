@@ -1,0 +1,11 @@
+[
+  {
+    "(title, 0)": {},
+    "(character, 1)": {
+      "pos2key": "character"
+    },
+    "(style, 2)": {
+      "pos2key": "style"
+    }
+  }
+]

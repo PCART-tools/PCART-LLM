@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+.uv-cache/
+**/.uv-cache/
+__pycache__/
+**/__pycache__/

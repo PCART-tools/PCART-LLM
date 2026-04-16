@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "line.equation()",
+        "currentVersion": "1.11.1",
+        "targetVersion": "1.12",
+        "fileRelativePath": "sympy.geometry.Line3D.equation#1YY/equationYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.geometry.Line3D.equation@1.11.1-1.12/sympy.geometry.Line3D.equation#1YY/equationYY.json",
+        "apiCall": "line.equation()",
+        "oldVersion": "sympy@1.11.1",
+        "newVersion": "sympy@1.12",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "sympy.geometry.Line3D.equation",
+            "error": "",
+            "internalPath": "sympy.geometry.line",
+            "docstring": "Return the equations that define the line in 3D.\n\nParameters\n==========\n\nx : str, optional\n    The name to use for the x-axis, default value is 'x'.\ny : str, optional\n    The name to use for the y-axis, default value is 'y'.\nz : str, optional\n    The name to use for the z-axis, default value is 'z'.\nk : str, optional\n    .. deprecated:: 1.2\n       The ``k`` flag is deprecated. It does nothing.\n\nReturns\n=======\n\nequation : Tuple of simultaneous equations\n\nExamples\n========\n\n>>> from sympy import Point3D, Line3D, solve\n>>> from sympy.abc import x, y, z\n>>> p1, p2 = Point3D(1, 0, 0), Point3D(5, 3, 0)\n>>> l1 = Line3D(p1, p2)\n>>> eq = l1.equation(x, y, z); eq\n(-3*x + 4*y + 3, z)\n>>> solve(eq.subs(z, 0), (x, y, z))\n{x: 4*y/3 + 1}",
+            "sourceCode": "    def equation(self, x='x', y='y', z='z', k=None):\n        \"\"\"Return the equations that define the line in 3D.\n\n        Parameters\n        ==========\n\n        x : str, optional\n            The name to use for the x-axis, default value is 'x'.\n        y : str, optional\n            The name to use for the y-axis, default value is 'y'.\n        z : str, optional\n            The name to use for the z-axis, default value is 'z'.\n        k : str, optional\n            .. deprecated:: 1.2\n               The ``k`` flag is deprecated. It does nothing.\n\n        Returns\n        =======\n\n        equation : Tuple of simultaneous equations\n\n        Examples\n        ========\n\n        >>> from sympy import Point3D, Line3D, solve\n        >>> from sympy.abc import x, y, z\n        >>> p1, p2 = Point3D(1, 0, 0), Point3D(5, 3, 0)\n        >>> l1 = Line3D(p1, p2)\n        >>> eq = l1.equation(x, y, z); eq\n        (-3*x + 4*y + 3, z)\n        >>> solve(eq.subs(z, 0), (x, y, z))\n        {x: 4*y/3 + 1}\n\n        \"\"\"\n        if k is not None:\n            sympy_deprecation_warning(\n                \"\"\"\n                The 'k' argument to Line3D.equation() is deprecated. Is\n                currently has no effect, so it may be omitted.\n                \"\"\",\n                deprecated_since_version=\"1.2\",\n                active_deprecations_target='deprecated-line3d-equation-k',\n            )\n        x, y, z, k = [_symbol(i, real=True) for i in (x, y, z, 'k')]\n        p1, p2 = self.points\n        d1, d2, d3 = p1.direction_ratio(p2)\n        x1, y1, z1 = p1\n        eqs = [-d1*k + x - x1, -d2*k + y - y1, -d3*k + z - z1]\n        # eliminate k from equations by solving first eq with k for k\n        for i, e in enumerate(eqs):\n            if e.has(k):\n                kk = solve(eqs[i], k)[0]\n                eqs.pop(i)\n                break\n        return Tuple(*[i.subs(k, kk).as_numer_denom()[0] for i in eqs])\n",
+            "match": "(x='x', y='y', z='z', k=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "sympy.geometry.Line3D.equation",
+            "error": "",
+            "internalPath": "sympy.geometry.line",
+            "docstring": "Return the equations that define the line in 3D.\n\nParameters\n==========\n\nx : str, optional\n    The name to use for the x-axis, default value is 'x'.\ny : str, optional\n    The name to use for the y-axis, default value is 'y'.\nz : str, optional\n    The name to use for the z-axis, default value is 'z'.\n\nReturns\n=======\n\nequation : Tuple of simultaneous equations\n\nExamples\n========\n\n>>> from sympy import Point3D, Line3D, solve\n>>> from sympy.abc import x, y, z\n>>> p1, p2 = Point3D(1, 0, 0), Point3D(5, 3, 0)\n>>> l1 = Line3D(p1, p2)\n>>> eq = l1.equation(x, y, z); eq\n(-3*x + 4*y + 3, z)\n>>> solve(eq.subs(z, 0), (x, y, z))\n{x: 4*y/3 + 1}",
+            "sourceCode": "    def equation(self, x='x', y='y', z='z'):\n        \"\"\"Return the equations that define the line in 3D.\n\n        Parameters\n        ==========\n\n        x : str, optional\n            The name to use for the x-axis, default value is 'x'.\n        y : str, optional\n            The name to use for the y-axis, default value is 'y'.\n        z : str, optional\n            The name to use for the z-axis, default value is 'z'.\n\n        Returns\n        =======\n\n        equation : Tuple of simultaneous equations\n\n        Examples\n        ========\n\n        >>> from sympy import Point3D, Line3D, solve\n        >>> from sympy.abc import x, y, z\n        >>> p1, p2 = Point3D(1, 0, 0), Point3D(5, 3, 0)\n        >>> l1 = Line3D(p1, p2)\n        >>> eq = l1.equation(x, y, z); eq\n        (-3*x + 4*y + 3, z)\n        >>> solve(eq.subs(z, 0), (x, y, z))\n        {x: 4*y/3 + 1}\n        \"\"\"\n        x, y, z, k = [_symbol(i, real=True) for i in (x, y, z, 'k')]\n        p1, p2 = self.points\n        d1, d2, d3 = p1.direction_ratio(p2)\n        x1, y1, z1 = p1\n        eqs = [-d1*k + x - x1, -d2*k + y - y1, -d3*k + z - z1]\n        # eliminate k from equations by solving first eq with k for k\n        for i, e in enumerate(eqs):\n            if e.has(k):\n                kk = solve(eqs[i], k)[0]\n                eqs.pop(i)\n                break\n        return Tuple(*[i.subs(k, kk).as_numer_denom()[0] for i in eqs])\n",
+            "match": "(x='x', y='y', z='z')",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(x, 0)": {},
+                "(y, 1)": {},
+                "(z, 2)": {},
+                "(k, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(x='x', y='y', z='z')"
+        }
+    ]
+}

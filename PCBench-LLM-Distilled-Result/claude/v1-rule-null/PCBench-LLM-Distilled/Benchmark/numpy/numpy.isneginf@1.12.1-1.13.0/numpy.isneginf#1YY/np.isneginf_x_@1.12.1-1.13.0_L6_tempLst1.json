@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "np.isneginf(x)",
+        "currentVersion": "1.12.1",
+        "targetVersion": "1.13.0",
+        "fileRelativePath": "numpy.isneginf#1YY/isneginfYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/numpy/numpy.isneginf@1.12.1-1.13.0/numpy.isneginf#1YY/isneginfYY.json",
+        "apiCall": "np.isneginf(x)",
+        "oldVersion": "numpy@1.12.1",
+        "newVersion": "numpy@1.13.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "numpy.isneginf",
+            "error": "",
+            "internalPath": "numpy.lib.ufunclike",
+            "docstring": "Test element-wise for negative infinity, return result as bool array.\n\nParameters\n----------\nx : array_like\n    The input array.\ny : array_like, optional\n    A boolean array with the same shape and type as `x` to store the\n    result.\n\nReturns\n-------\ny : ndarray\n    A boolean array with the same dimensions as the input.\n    If second argument is not supplied then a numpy boolean array is\n    returned with values True where the corresponding element of the\n    input is negative infinity and values False where the element of\n    the input is not negative infinity.\n\n    If a second argument is supplied the result is stored there. If the\n    type of that array is a numeric type the result is represented as\n    zeros and ones, if the type is boolean then as False and True. The\n    return value `y` is then a reference to that array.\n\nSee Also\n--------\nisinf, isposinf, isnan, isfinite\n\nNotes\n-----\nNumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic\n(IEEE 754).\n\nErrors result if the second argument is also supplied when x is a scalar\ninput, or if first and second arguments have different shapes.\n\nExamples\n--------\n>>> np.isneginf(np.NINF)\narray(True, dtype=bool)\n>>> np.isneginf(np.inf)\narray(False, dtype=bool)\n>>> np.isneginf(np.PINF)\narray(False, dtype=bool)\n>>> np.isneginf([-np.inf, 0., np.inf])\narray([ True, False, False], dtype=bool)\n\n>>> x = np.array([-np.inf, 0., np.inf])\n>>> y = np.array([2, 2, 2])\n>>> np.isneginf(x, y)\narray([1, 0, 0])\n>>> y\narray([1, 0, 0])",
+            "sourceCode": "def isneginf(x, y=None):\n    \"\"\"\n    Test element-wise for negative infinity, return result as bool array.\n\n    Parameters\n    ----------\n    x : array_like\n        The input array.\n    y : array_like, optional\n        A boolean array with the same shape and type as `x` to store the\n        result.\n\n    Returns\n    -------\n    y : ndarray\n        A boolean array with the same dimensions as the input.\n        If second argument is not supplied then a numpy boolean array is\n        returned with values True where the corresponding element of the\n        input is negative infinity and values False where the element of\n        the input is not negative infinity.\n\n        If a second argument is supplied the result is stored there. If the\n        type of that array is a numeric type the result is represented as\n        zeros and ones, if the type is boolean then as False and True. The\n        return value `y` is then a reference to that array.\n\n    See Also\n    --------\n    isinf, isposinf, isnan, isfinite\n\n    Notes\n    -----\n    NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic\n    (IEEE 754).\n\n    Errors result if the second argument is also supplied when x is a scalar\n    input, or if first and second arguments have different shapes.\n\n    Examples\n    --------\n    >>> np.isneginf(np.NINF)\n    array(True, dtype=bool)\n    >>> np.isneginf(np.inf)\n    array(False, dtype=bool)\n    >>> np.isneginf(np.PINF)\n    array(False, dtype=bool)\n    >>> np.isneginf([-np.inf, 0., np.inf])\n    array([ True, False, False], dtype=bool)\n\n    >>> x = np.array([-np.inf, 0., np.inf])\n    >>> y = np.array([2, 2, 2])\n    >>> np.isneginf(x, y)\n    array([1, 0, 0])\n    >>> y\n    array([1, 0, 0])\n\n    \"\"\"\n    if y is None:\n        x = nx.asarray(x)\n        y = nx.empty(x.shape, dtype=nx.bool_)\n    nx.logical_and(nx.isinf(x), nx.signbit(x), y)\n    return y\n",
+            "match": "(x, y=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "numpy.isneginf",
+            "error": "",
+            "internalPath": "numpy.lib.ufunclike",
+            "docstring": "Test element-wise for negative infinity, return result as bool array.\n\nParameters\n----------\nx : array_like\n    The input array.\nout : array_like, optional\n    A boolean array with the same shape and type as `x` to store the\n    result.\n\nReturns\n-------\nout : ndarray\n    A boolean array with the same dimensions as the input.\n    If second argument is not supplied then a numpy boolean array is\n    returned with values True where the corresponding element of the\n    input is negative infinity and values False where the element of\n    the input is not negative infinity.\n\n    If a second argument is supplied the result is stored there. If the\n    type of that array is a numeric type the result is represented as\n    zeros and ones, if the type is boolean then as False and True. The\n    return value `out` is then a reference to that array.\n\nSee Also\n--------\nisinf, isposinf, isnan, isfinite\n\nNotes\n-----\nNumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic\n(IEEE 754).\n\nErrors result if the second argument is also supplied when x is a scalar\ninput, or if first and second arguments have different shapes.\n\nExamples\n--------\n>>> np.isneginf(np.NINF)\narray(True, dtype=bool)\n>>> np.isneginf(np.inf)\narray(False, dtype=bool)\n>>> np.isneginf(np.PINF)\narray(False, dtype=bool)\n>>> np.isneginf([-np.inf, 0., np.inf])\narray([ True, False, False], dtype=bool)\n\n>>> x = np.array([-np.inf, 0., np.inf])\n>>> y = np.array([2, 2, 2])\n>>> np.isneginf(x, y)\narray([1, 0, 0])\n>>> y\narray([1, 0, 0])",
+            "sourceCode": "@_deprecate_out_named_y\ndef isneginf(x, out=None):\n    \"\"\"\n    Test element-wise for negative infinity, return result as bool array.\n\n    Parameters\n    ----------\n    x : array_like\n        The input array.\n    out : array_like, optional\n        A boolean array with the same shape and type as `x` to store the\n        result.\n\n    Returns\n    -------\n    out : ndarray\n        A boolean array with the same dimensions as the input.\n        If second argument is not supplied then a numpy boolean array is\n        returned with values True where the corresponding element of the\n        input is negative infinity and values False where the element of\n        the input is not negative infinity.\n\n        If a second argument is supplied the result is stored there. If the\n        type of that array is a numeric type the result is represented as\n        zeros and ones, if the type is boolean then as False and True. The\n        return value `out` is then a reference to that array.\n\n    See Also\n    --------\n    isinf, isposinf, isnan, isfinite\n\n    Notes\n    -----\n    NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic\n    (IEEE 754).\n\n    Errors result if the second argument is also supplied when x is a scalar\n    input, or if first and second arguments have different shapes.\n\n    Examples\n    --------\n    >>> np.isneginf(np.NINF)\n    array(True, dtype=bool)\n    >>> np.isneginf(np.inf)\n    array(False, dtype=bool)\n    >>> np.isneginf(np.PINF)\n    array(False, dtype=bool)\n    >>> np.isneginf([-np.inf, 0., np.inf])\n    array([ True, False, False], dtype=bool)\n\n    >>> x = np.array([-np.inf, 0., np.inf])\n    >>> y = np.array([2, 2, 2])\n    >>> np.isneginf(x, y)\n    array([1, 0, 0])\n    >>> y\n    array([1, 0, 0])\n\n    \"\"\"\n    return nx.logical_and(nx.isinf(x), nx.signbit(x), out)\n",
+            "match": "(x, out=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(x, 0)": {},
+                "(y, 1)": {
+                    "replace": "out=None"
+                }
+            },
+            "targetOvPara": "(x, out=None)"
+        }
+    ]
+}

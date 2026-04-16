@@ -1,0 +1,19 @@
+[
+  {
+    "(start_time, 0)": {},
+    "(end_time, 1)": {},
+    "(include_start, 2)": {
+      "delete": 1
+    },
+    "(include_end, 3)": {
+      "delete": 1
+    },
+    "(inclusive, 4)": {
+      "typeChange": "IntervalClosedType",
+      "posChange": 2
+    },
+    "(axis, 5)": {
+      "posChange": 3
+    }
+  }
+]

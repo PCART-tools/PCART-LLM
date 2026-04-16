@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.read_parquet@2022.4.1-2022.4.2/dask.dataframe.read_parquet#1YY",
+    "runCommand": "python read_parquetYY.py",
+    "runFilePath": "",
+    "libName": "dask",
+    "currentVersion": "2022.4.1",
+    "targetVersion": "2022.4.2",
+    "currentEnv": "/envs/dask2022.4.1",
+    "targetEnv": "/envs/dask2022.4.2"
+}

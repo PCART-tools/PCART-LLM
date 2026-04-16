@@ -1,0 +1,15 @@
+[
+  {
+    "(estimator, 0)": {},
+    "(step, 1)": {},
+    "(cv, 2)": {},
+    "(scoring, 3)": {},
+    "(estimator_params, 4)": {
+      "delete": 1
+    },
+    "(verbose, 5)": {
+      "posChange": 4,
+      "replace": "n_jobs=1"
+    }
+  }
+]

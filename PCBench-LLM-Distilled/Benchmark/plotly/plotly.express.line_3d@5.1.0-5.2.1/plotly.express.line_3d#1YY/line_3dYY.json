@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_3d@5.1.0-5.2.1/plotly.express.line_3d#1YY",
+    "runCommand": "python line_3dYY.py",
+    "runFilePath": "",
+    "libName": "plotly",
+    "currentVersion": "5.1.0",
+    "targetVersion": "5.2.1",
+    "currentEnv": "/envs/plotly5.1.0",
+    "targetEnv": "/envs/plotly5.2.1"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "(file_pattern, 0)": {},
+    "(batch_size, 1)": {},
+    "(column_names, 2)": {},
+    "(column_defaults, 3)": {},
+    "(label_name, 4)": {},
+    "(select_columns, 5)": {},
+    "(field_delim, 6)": {},
+    "(use_quote_delim, 7)": {},
+    "(na_value, 8)": {},
+    "(header, 9)": {},
+    "(num_epochs, 10)": {},
+    "(shuffle, 11)": {},
+    "(shuffle_buffer_size, 12)": {},
+    "(shuffle_seed, 13)": {},
+    "(prefetch_buffer_size, 14)": {},
+    "(num_parallel_reads, 15)": {},
+    "(num_parallel_parser_calls, 16)": {
+      "delete": 1
+    },
+    "(sloppy, 17)": {
+      "posChange": 16
+    },
+    "(num_rows_for_inference, 18)": {
+      "posChange": 17,
+      "replace": "compression_type=None"
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "(featurewise_center, 0)": {},
+    "(samplewise_center, 1)": {},
+    "(featurewise_std_normalization, 2)": {},
+    "(samplewise_std_normalization, 3)": {},
+    "(zca_whitening, 4)": {},
+    "(zca_epsilon, 5)": {},
+    "(rotation_range, 6)": {},
+    "(width_shift_range, 7)": {},
+    "(height_shift_range, 8)": {},
+    "(shear_range, 9)": {
+      "posChange": 10,
+      "replace": "brightness_range=None"
+    },
+    "(zoom_range, 10)": {
+      "posChange": 11
+    },
+    "(channel_shift_range, 11)": {
+      "posChange": 12
+    },
+    "(fill_mode, 12)": {
+      "posChange": 13
+    },
+    "(cval, 13)": {
+      "posChange": 14
+    },
+    "(horizontal_flip, 14)": {
+      "posChange": 15
+    },
+    "(vertical_flip, 15)": {
+      "posChange": 16
+    },
+    "(rescale, 16)": {
+      "posChange": 17
+    },
+    "(preprocessing_function, 17)": {
+      "posChange": 18
+    },
+    "(data_format, 18)": {
+      "posChange": 19
+    },
+    "(validation_split, 20)": {
+      "addPos": "validation_split=0.0"
+    }
+  }
+]

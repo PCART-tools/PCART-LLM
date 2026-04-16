@@ -1,0 +1,12 @@
+[
+  {
+    "(from_logits, 0)": {},
+    "(reduction, 1)": {
+      "posChange": 2,
+      "replace": "ignore_class=None"
+    },
+    "(name, 2)": {
+      "posChange": 3
+    }
+  }
+]

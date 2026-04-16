@@ -1,0 +1,63 @@
+{
+    "context": {
+        "callAPI": "delete('https://example.com/resource')",
+        "currentVersion": "0.7.4",
+        "targetVersion": "0.7.5",
+        "fileRelativePath": "httpx.delete#1YY/deleteYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/httpx/httpx.delete@0.7.4-0.7.5/httpx.delete#1YY/deleteYY.json",
+        "apiCall": "delete('https://example.com/resource')",
+        "oldVersion": "httpx@0.7.4",
+        "newVersion": "httpx@0.7.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "httpx.delete",
+            "error": "",
+            "internalPath": "httpx.api",
+            "docstring": "",
+            "sourceCode": "def delete(\n    url: URLTypes,\n    *,\n    data: RequestData = None,\n    files: RequestFiles = None,\n    json: typing.Any = None,\n    params: QueryParamTypes = None,\n    headers: HeaderTypes = None,\n    cookies: CookieTypes = None,\n    stream: bool = False,\n    auth: AuthTypes = None,\n    allow_redirects: bool = True,\n    cert: CertTypes = None,\n    verify: VerifyTypes = True,\n    timeout: TimeoutTypes = None,\n    trust_env: bool = None,\n    proxies: ProxiesTypes = None,\n) -> Response:\n    return request(\n        \"DELETE\",\n        url,\n        data=data,\n        files=files,\n        json=json,\n        params=params,\n        headers=headers,\n        cookies=cookies,\n        stream=stream,\n        auth=auth,\n        allow_redirects=allow_redirects,\n        cert=cert,\n        verify=verify,\n        timeout=timeout,\n        trust_env=trust_env,\n    )\n",
+            "match": "(url: Union[ForwardRef('URL'), str], *, data: Union[dict, str, bytes, Iterator[bytes]] = None, files: Dict[str, Union[IO[~AnyStr], Tuple[str, IO[~AnyStr]], Tuple[str, IO[~AnyStr], str]]] = None, json: Any = None, params: Union[ForwardRef('QueryParams'), Mapping[str, Union[str, int, float, bool, NoneType]], List[Tuple[str, Union[str, int, float, bool, NoneType]]], str] = None, headers: Union[ForwardRef('Headers'), Dict[~AnyStr, ~AnyStr], List[Tuple[~AnyStr, ~AnyStr]]] = None, cookies: Union[ForwardRef('Cookies'), http.cookiejar.CookieJar, Dict[str, str]] = None, stream: bool = False, auth: Union[Tuple[Union[str, bytes], Union[str, bytes]], Callable[[ForwardRef('AsyncRequest')], ForwardRef('AsyncRequest')], ForwardRef('BaseMiddleware')] = None, allow_redirects: bool = True, cert: Union[str, Tuple[str, str], Tuple[str, str, str]] = None, verify: Union[str, bool, ssl.SSLContext] = True, timeout: Union[float, Tuple[float, float, float], ForwardRef('TimeoutConfig')] = None, trust_env: bool = None, proxies: Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher'), Dict[Union[ForwardRef('URL'), str], Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher')]]] = None) -> httpx.models.Response",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "httpx.delete",
+            "error": "",
+            "internalPath": "httpx.api",
+            "docstring": "",
+            "sourceCode": "def delete(\n    url: URLTypes,\n    *,\n    params: QueryParamTypes = None,\n    headers: HeaderTypes = None,\n    cookies: CookieTypes = None,\n    stream: bool = False,\n    auth: AuthTypes = None,\n    allow_redirects: bool = True,\n    cert: CertTypes = None,\n    verify: VerifyTypes = True,\n    timeout: TimeoutTypes = None,\n    trust_env: bool = None,\n    proxies: ProxiesTypes = None,\n) -> Response:\n    return request(\n        \"DELETE\",\n        url,\n        params=params,\n        headers=headers,\n        cookies=cookies,\n        stream=stream,\n        auth=auth,\n        allow_redirects=allow_redirects,\n        cert=cert,\n        verify=verify,\n        timeout=timeout,\n        trust_env=trust_env,\n    )\n",
+            "match": "(url: Union[ForwardRef('URL'), str], *, params: Union[ForwardRef('QueryParams'), Mapping[str, Union[str, int, float, bool, NoneType, Sequence[Union[str, int, float, bool, NoneType]]]], List[Tuple[str, Union[str, int, float, bool, NoneType]]], str] = None, headers: Union[ForwardRef('Headers'), Dict[~AnyStr, ~AnyStr], List[Tuple[~AnyStr, ~AnyStr]]] = None, cookies: Union[ForwardRef('Cookies'), http.cookiejar.CookieJar, Dict[str, str]] = None, stream: bool = False, auth: Union[Tuple[Union[str, bytes], Union[str, bytes]], Callable[[ForwardRef('AsyncRequest')], ForwardRef('AsyncRequest')], ForwardRef('BaseMiddleware')] = None, allow_redirects: bool = True, cert: Union[str, Tuple[str, str], Tuple[str, str, str]] = None, verify: Union[str, bool, ssl.SSLContext] = True, timeout: Union[float, Tuple[float, float, float], ForwardRef('TimeoutConfig')] = None, trust_env: bool = None, proxies: Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher'), Dict[Union[ForwardRef('URL'), str], Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher')]]] = None) -> httpx.models.Response",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(url, 0)": {},
+                "(data, 2)": {
+                    "delete": 1
+                },
+                "(files, 3)": {
+                    "delete": 1
+                },
+                "(json, 4)": {
+                    "delete": 1
+                },
+                "(params, 5)": {
+                    "typeChange": "Union[ForwardRef('QueryParams'),Mapping[str,Union[str,int,float,bool,NoneType,Sequence[Union[str,int,float,bool,NoneType]]]],List[Tuple[str,Union[str,int,float,bool,NoneType]]],str]"
+                },
+                "(headers, 6)": {},
+                "(cookies, 7)": {},
+                "(stream, 8)": {},
+                "(auth, 9)": {},
+                "(allow_redirects, 10)": {},
+                "(cert, 11)": {},
+                "(verify, 12)": {},
+                "(timeout, 13)": {},
+                "(trust_env, 14)": {},
+                "(proxies, 15)": {}
+            },
+            "targetOvPara": "(url: Union[ForwardRef('URL'), str], *, params: Union[ForwardRef('QueryParams'), Mapping[str, Union[str, int, float, bool, NoneType, Sequence[Union[str, int, float, bool, NoneType]]]], List[Tuple[str, Union[str, int, float, bool, NoneType]]], str] = None, headers: Union[ForwardRef('Headers'), Dict[~AnyStr, ~AnyStr], List[Tuple[~AnyStr, ~AnyStr]]] = None, cookies: Union[ForwardRef('Cookies'), http.cookiejar.CookieJar, Dict[str, str]] = None, stream: bool = False, auth: Union[Tuple[Union[str, bytes], Union[str, bytes]], Callable[[ForwardRef('AsyncRequest')], ForwardRef('AsyncRequest')], ForwardRef('BaseMiddleware')] = None, allow_redirects: bool = True, cert: Union[str, Tuple[str, str], Tuple[str, str, str]] = None, verify: Union[str, bool, ssl.SSLContext] = True, timeout: Union[float, Tuple[float, float, float], ForwardRef('TimeoutConfig')] = None, trust_env: bool = None, proxies: Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher'), Dict[Union[ForwardRef('URL'), str], Union[ForwardRef('URL'), str, ForwardRef('AsyncDispatcher')]]] = None) -> httpx.models.Response"
+        }
+    ]
+}

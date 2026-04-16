@@ -1,0 +1,14 @@
+[
+  {
+    "(console, 0)": {},
+    "(overflow, 1)": {},
+    "(crop, 2)": {},
+    "(indent_guides, 3)": {},
+    "(max_length, 4)": {},
+    "(max_string, 5)": {},
+    "(expand_all, 6)": {
+      "posChange": 7,
+      "replace": "max_depth=None"
+    }
+  }
+]

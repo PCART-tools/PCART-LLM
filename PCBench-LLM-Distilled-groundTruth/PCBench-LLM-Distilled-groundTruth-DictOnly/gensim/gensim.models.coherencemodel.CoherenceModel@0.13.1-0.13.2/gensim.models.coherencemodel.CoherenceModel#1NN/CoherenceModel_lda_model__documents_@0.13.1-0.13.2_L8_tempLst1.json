@@ -1,0 +1,24 @@
+[
+  {
+    "(model, 0)": {},
+    "(texts, 1)": {
+      "posChange": 2,
+      "replace": "topics=None"
+    },
+    "(corpus, 2)": {
+      "posChange": 3
+    },
+    "(dictionary, 3)": {
+      "posChange": 4
+    },
+    "(coherence, 4)": {
+      "posChange": 6
+    },
+    "(window_size, 5)": {
+      "addPos": "window_size=None"
+    },
+    "(topn, 7)": {
+      "addPos": "topn=10"
+    }
+  }
+]

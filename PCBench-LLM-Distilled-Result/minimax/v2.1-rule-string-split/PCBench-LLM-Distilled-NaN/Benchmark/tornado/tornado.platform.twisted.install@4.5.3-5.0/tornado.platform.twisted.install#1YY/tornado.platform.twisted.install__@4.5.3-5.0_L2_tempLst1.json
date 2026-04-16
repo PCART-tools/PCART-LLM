@@ -1,0 +1,43 @@
+{
+    "context": {
+        "callAPI": "tornado.platform.twisted.install()",
+        "currentVersion": "4.5.3",
+        "targetVersion": "5.0",
+        "fileRelativePath": "tornado.platform.twisted.install#1YY/installYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.platform.twisted.install@4.5.3-5.0/tornado.platform.twisted.install#1YY/installYY.json",
+        "apiCall": "tornado.platform.twisted.install()",
+        "oldVersion": "tornado@4.5.3",
+        "newVersion": "tornado@5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.platform.twisted.install",
+            "error": "",
+            "internalPath": "tornado.platform.twisted",
+            "docstring": "Install this package as the default Twisted reactor.\n\n``install()`` must be called very early in the startup process,\nbefore most other twisted-related imports. Conversely, because it\ninitializes the `.IOLoop`, it cannot be called before\n`.fork_processes` or multi-process `~.TCPServer.start`. These\nconflicting requirements make it difficult to use `.TornadoReactor`\nin multi-process mode, and an external process manager such as\n``supervisord`` is recommended instead.\n\n.. versionchanged:: 4.1\n   The ``io_loop`` argument is deprecated.",
+            "sourceCode": "def install(io_loop=None):\n    \"\"\"Install this package as the default Twisted reactor.\n\n    ``install()`` must be called very early in the startup process,\n    before most other twisted-related imports. Conversely, because it\n    initializes the `.IOLoop`, it cannot be called before\n    `.fork_processes` or multi-process `~.TCPServer.start`. These\n    conflicting requirements make it difficult to use `.TornadoReactor`\n    in multi-process mode, and an external process manager such as\n    ``supervisord`` is recommended instead.\n\n    .. versionchanged:: 4.1\n       The ``io_loop`` argument is deprecated.\n\n    \"\"\"\n    if not io_loop:\n        io_loop = tornado.ioloop.IOLoop.current()\n    reactor = TornadoReactor(io_loop)\n    from twisted.internet.main import installReactor  # type: ignore\n    installReactor(reactor)\n    return reactor\n",
+            "match": "(io_loop=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "tornado.platform.twisted.install",
+            "error": "",
+            "internalPath": "tornado.platform.twisted",
+            "docstring": "Install this package as the default Twisted reactor.\n\n``install()`` must be called very early in the startup process,\nbefore most other twisted-related imports. Conversely, because it\ninitializes the `.IOLoop`, it cannot be called before\n`.fork_processes` or multi-process `~.TCPServer.start`. These\nconflicting requirements make it difficult to use `.TornadoReactor`\nin multi-process mode, and an external process manager such as\n``supervisord`` is recommended instead.\n\n.. versionchanged:: 5.0\n   The ``io_loop`` argument (deprecated since version 4.1) has been removed.",
+            "sourceCode": "def install():\n    \"\"\"Install this package as the default Twisted reactor.\n\n    ``install()`` must be called very early in the startup process,\n    before most other twisted-related imports. Conversely, because it\n    initializes the `.IOLoop`, it cannot be called before\n    `.fork_processes` or multi-process `~.TCPServer.start`. These\n    conflicting requirements make it difficult to use `.TornadoReactor`\n    in multi-process mode, and an external process manager such as\n    ``supervisord`` is recommended instead.\n\n    .. versionchanged:: 5.0\n       The ``io_loop`` argument (deprecated since version 4.1) has been removed.\n\n    \"\"\"\n    reactor = TornadoReactor()\n    from twisted.internet.main import installReactor  # type: ignore\n    installReactor(reactor)\n    return reactor\n",
+            "match": "()",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(io_loop, 0)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "()"
+        }
+    ]
+}

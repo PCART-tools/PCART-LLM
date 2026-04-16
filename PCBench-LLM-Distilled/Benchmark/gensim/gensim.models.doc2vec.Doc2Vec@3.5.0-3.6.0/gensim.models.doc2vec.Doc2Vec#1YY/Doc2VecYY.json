@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec@3.5.0-3.6.0/gensim.models.doc2vec.Doc2Vec#1YY",
+    "runCommand": "python Doc2VecYY.py",
+    "runFilePath": "",
+    "libName": "gensim",
+    "currentVersion": "3.5.0",
+    "targetVersion": "3.6.0",
+    "currentEnv": "/envs/gensim3.5.0",
+    "targetEnv": "/envs/gensim3.6.0"
+}

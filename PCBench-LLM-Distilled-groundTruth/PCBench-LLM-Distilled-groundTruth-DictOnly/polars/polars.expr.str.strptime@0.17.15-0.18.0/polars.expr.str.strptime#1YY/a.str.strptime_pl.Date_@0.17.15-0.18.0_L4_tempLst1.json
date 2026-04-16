@@ -1,0 +1,24 @@
+[
+  {
+    "(dtype, 0)": {},
+    "(format, 1)": {},
+    "(strict, 3)": {},
+    "(exact, 4)": {},
+    "(cache, 5)": {},
+    "(utc, 6)": {},
+    "(tz_aware, 7)": {
+      "delete": 1
+    }
+  },
+  {
+    "(dtype, 0)": {},
+    "(format, 1)": {},
+    "(strict, 3)": {},
+    "(exact, 4)": {},
+    "(cache, 5)": {},
+    "(utc, 6)": {},
+    "(tz_aware, 7)": {
+      "delete": 1
+    }
+  }
+]

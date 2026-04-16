@@ -1,0 +1,17 @@
+[
+  {
+    "(level, 0)": {
+      "typeChange": "IndexLabel"
+    },
+    "(drop, 1)": {},
+    "(inplace, 2)": {},
+    "(col_level, 3)": {},
+    "(col_fill, 4)": {},
+    "(allow_duplicates, 5)": {
+      "addPos": "allow_duplicates=<no_default>"
+    },
+    "(names, 6)": {
+      "addPos": "names=None"
+    }
+  }
+]

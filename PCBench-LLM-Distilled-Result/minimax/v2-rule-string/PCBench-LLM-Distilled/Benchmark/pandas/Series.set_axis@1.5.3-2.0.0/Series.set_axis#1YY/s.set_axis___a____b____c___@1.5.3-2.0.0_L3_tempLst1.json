@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "s.set_axis(['a', 'b', 'c'])",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Series.set_axis#1YY/set_axisYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/Series.set_axis@1.5.3-2.0.0/Series.set_axis#1YY/set_axisYY.json",
+        "apiCall": "s.set_axis(['a', 'b', 'c'])",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Series.set_axis",
+            "error": "",
+            "internalPath": "pandas.util._decorators",
+            "docstring": "Assign desired index to given axis.\n\nIndexes for row labels can be changed by assigning\na list-like or Index.\n\nParameters\n----------\nlabels : list-like, Index\n    The values for the new index.\n\naxis : {0 or 'index'}, default 0\n    The axis to update. The value 0 identifies the rows. For `Series`\n    this parameter is unused and defaults to 0.\n\ninplace : bool, default False\n    Whether to return a new Series instance.\n\n    .. deprecated:: 1.5.0\n\ncopy : bool, default True\n    Whether to make a copy of the underlying data.\n\n    .. versionadded:: 1.5.0\n\nReturns\n-------\nrenamed : Series or None\n    An object of type Series or None if ``inplace=True``.\n\nSee Also\n--------\nSeries.rename_axis : Alter the name of the index.\n\n        Examples\n        --------\n        >>> s = pd.Series([1, 2, 3])\n        >>> s\n        0    1\n        1    2\n        2    3\n        dtype: int64\n\n        >>> s.set_axis(['a', 'b', 'c'], axis=0)\n        a    1\n        b    2\n        c    3\n        dtype: int64",
+            "sourceCode": "    @deprecate_nonkeyword_arguments(version=None, allowed_args=[\"self\", \"labels\"])\n    @Appender(\n        \"\"\"\n        Examples\n        --------\n        >>> s = pd.Series([1, 2, 3])\n        >>> s\n        0    1\n        1    2\n        2    3\n        dtype: int64\n\n        >>> s.set_axis(['a', 'b', 'c'], axis=0)\n        a    1\n        b    2\n        c    3\n        dtype: int64\n    \"\"\"\n    )\n    @Substitution(\n        **_shared_doc_kwargs,\n        extended_summary_sub=\"\",\n        axis_description_sub=\"\",\n        see_also_sub=\"\",\n    )\n    @Appender(NDFrame.set_axis.__doc__)\n    def set_axis(  # type: ignore[override]\n        self,\n        labels,\n        axis: Axis = 0,\n        inplace: bool | lib.NoDefault = lib.no_default,\n        copy: bool | lib.NoDefault = lib.no_default,\n    ) -> Series | None:\n        return super().set_axis(labels, axis=axis, inplace=inplace, copy=copy)\n",
+            "match": "(labels, *, axis: 'Axis' = 0, inplace: 'bool | lib.NoDefault' = <no_default>, copy: 'bool | lib.NoDefault' = <no_default>) -> 'Series | None'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Series.set_axis",
+            "error": "",
+            "internalPath": "pandas.core.series",
+            "docstring": "Assign desired index to given axis.\n\nIndexes for row labels can be changed by assigning\na list-like or Index.\n\nParameters\n----------\nlabels : list-like, Index\n    The values for the new index.\n\naxis : {0 or 'index'}, default 0\n    The axis to update. The value 0 identifies the rows. For `Series`\n    this parameter is unused and defaults to 0.\n\ncopy : bool, default True\n    Whether to make a copy of the underlying data.\n\n    .. versionadded:: 1.5.0\n\nReturns\n-------\nSeries\n    An object of type Series.\n\nSee Also\n--------\nSeries.rename_axis : Alter the name of the index.\n\n        Examples\n        --------\n        >>> s = pd.Series([1, 2, 3])\n        >>> s\n        0    1\n        1    2\n        2    3\n        dtype: int64\n\n        >>> s.set_axis(['a', 'b', 'c'], axis=0)\n        a    1\n        b    2\n        c    3\n        dtype: int64",
+            "sourceCode": "    @Appender(\n        \"\"\"\n        Examples\n        --------\n        >>> s = pd.Series([1, 2, 3])\n        >>> s\n        0    1\n        1    2\n        2    3\n        dtype: int64\n\n        >>> s.set_axis(['a', 'b', 'c'], axis=0)\n        a    1\n        b    2\n        c    3\n        dtype: int64\n    \"\"\"\n    )\n    @Substitution(\n        **_shared_doc_kwargs,\n        extended_summary_sub=\"\",\n        axis_description_sub=\"\",\n        see_also_sub=\"\",\n    )\n    @Appender(NDFrame.set_axis.__doc__)\n    def set_axis(\n        self,\n        labels,\n        *,\n        axis: Axis = 0,\n        copy: bool | None = None,\n    ) -> Series:\n        return super().set_axis(labels, axis=axis, copy=copy)\n",
+            "match": "(labels, *, axis: 'Axis' = 0, copy: 'bool | None' = None) -> 'Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(labels, 0)": {},
+                "(axis, 2)": {},
+                "(inplace, 3)": {
+                    "delete": 1
+                },
+                "(copy, 4)": {
+                    "typeChange": "'bool|None'",
+                    "posChange": 3
+                }
+            },
+            "targetOvPara": "(labels, *, axis: 'Axis' = 0, copy: 'bool | None' = None) -> 'Series'"
+        }
+    ]
+}

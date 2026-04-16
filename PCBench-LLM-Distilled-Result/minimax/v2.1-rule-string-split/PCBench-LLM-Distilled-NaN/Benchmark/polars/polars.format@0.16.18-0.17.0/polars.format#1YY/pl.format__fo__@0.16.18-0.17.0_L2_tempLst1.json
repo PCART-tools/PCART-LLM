@@ -1,0 +1,43 @@
+{
+    "context": {
+        "callAPI": "pl.format('fo')",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.format#1YY/formatYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.format@0.16.18-0.17.0/polars.format#1YY/formatYY.json",
+        "apiCall": "pl.format('fo')",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.format",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Format expressions as a string.\n\nParameters\n----------\nfstring\n    A string that with placeholders.\n    For example: \"hello_{}\" or \"{}_world\nargs\n    Expression(s) that fill the placeholders\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [\"a\", \"b\", \"c\"],\n...         \"b\": [1, 2, 3],\n...     }\n... )\n>>> df.select(\n...     [\n...         pl.format(\"foo_{}_bar_{}\", pl.col(\"a\"), \"b\").alias(\"fmt\"),\n...     ]\n... )\nshape: (3, 1)\n┌─────────────┐\n│ fmt         │\n│ ---         │\n│ str         │\n╞═════════════╡\n│ foo_a_bar_1 │\n│ foo_b_bar_2 │\n│ foo_c_bar_3 │\n└─────────────┘",
+            "sourceCode": "def format(fstring: str, *args: Expr | str) -> Expr:\n    \"\"\"\n    Format expressions as a string.\n\n    Parameters\n    ----------\n    fstring\n        A string that with placeholders.\n        For example: \"hello_{}\" or \"{}_world\n    args\n        Expression(s) that fill the placeholders\n\n    Examples\n    --------\n    >>> df = pl.DataFrame(\n    ...     {\n    ...         \"a\": [\"a\", \"b\", \"c\"],\n    ...         \"b\": [1, 2, 3],\n    ...     }\n    ... )\n    >>> df.select(\n    ...     [\n    ...         pl.format(\"foo_{}_bar_{}\", pl.col(\"a\"), \"b\").alias(\"fmt\"),\n    ...     ]\n    ... )\n    shape: (3, 1)\n    ┌─────────────┐\n    │ fmt         │\n    │ ---         │\n    │ str         │\n    ╞═════════════╡\n    │ foo_a_bar_1 │\n    │ foo_b_bar_2 │\n    │ foo_c_bar_3 │\n    └─────────────┘\n\n    \"\"\"\n    if fstring.count(\"{}\") != len(args):\n        raise ValueError(\"number of placeholders should equal the number of arguments\")\n\n    exprs = []\n\n    arguments = iter(args)\n    for i, s in enumerate(fstring.split(\"{}\")):\n        if i > 0:\n            e = expr_to_lit_or_expr(next(arguments), str_to_lit=False)\n            exprs.append(e)\n\n        if len(s) > 0:\n            exprs.append(lit(s))\n\n    return concat_str(exprs, separator=\"\")\n",
+            "match": "(fstring: 'str', *args: 'Expr | str') -> 'Expr'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.format",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Format expressions as a string.\n\nParameters\n----------\nf_string\n    A string that with placeholders.\n    For example: \"hello_{}\" or \"{}_world\nargs\n    Expression(s) that fill the placeholders\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [\"a\", \"b\", \"c\"],\n...         \"b\": [1, 2, 3],\n...     }\n... )\n>>> df.select(\n...     [\n...         pl.format(\"foo_{}_bar_{}\", pl.col(\"a\"), \"b\").alias(\"fmt\"),\n...     ]\n... )\nshape: (3, 1)\n┌─────────────┐\n│ fmt         │\n│ ---         │\n│ str         │\n╞═════════════╡\n│ foo_a_bar_1 │\n│ foo_b_bar_2 │\n│ foo_c_bar_3 │\n└─────────────┘",
+            "sourceCode": "def format(f_string: str, *args: Expr | str) -> Expr:\n    \"\"\"\n    Format expressions as a string.\n\n    Parameters\n    ----------\n    f_string\n        A string that with placeholders.\n        For example: \"hello_{}\" or \"{}_world\n    args\n        Expression(s) that fill the placeholders\n\n    Examples\n    --------\n    >>> df = pl.DataFrame(\n    ...     {\n    ...         \"a\": [\"a\", \"b\", \"c\"],\n    ...         \"b\": [1, 2, 3],\n    ...     }\n    ... )\n    >>> df.select(\n    ...     [\n    ...         pl.format(\"foo_{}_bar_{}\", pl.col(\"a\"), \"b\").alias(\"fmt\"),\n    ...     ]\n    ... )\n    shape: (3, 1)\n    ┌─────────────┐\n    │ fmt         │\n    │ ---         │\n    │ str         │\n    ╞═════════════╡\n    │ foo_a_bar_1 │\n    │ foo_b_bar_2 │\n    │ foo_c_bar_3 │\n    └─────────────┘\n\n    \"\"\"\n    if f_string.count(\"{}\") != len(args):\n        raise ValueError(\"number of placeholders should equal the number of arguments\")\n\n    exprs = []\n\n    arguments = iter(args)\n    for i, s in enumerate(f_string.split(\"{}\")):\n        if i > 0:\n            e = expr_to_lit_or_expr(next(arguments), str_to_lit=False)\n            exprs.append(e)\n\n        if len(s) > 0:\n            exprs.append(lit(s))\n\n    return concat_str(exprs, separator=\"\")\n",
+            "match": "(f_string: 'str', *args: 'Expr | str') -> 'Expr'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(fstring, 0)": {
+                    "rename": "f_string"
+                }
+            },
+            "targetOvPara": "(f_string: 'str', *args: 'Expr | str') -> 'Expr'"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "context": {
+        "callAPI": "install()",
+        "currentVersion": "7.0.0",
+        "targetVersion": "7.1.0",
+        "fileRelativePath": "traceback.install#1YY/installYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/rich/traceback.install@7.0.0-7.1.0/traceback.install#1YY/installYY.json",
+        "apiCall": "install()",
+        "oldVersion": "rich@7.0.0",
+        "newVersion": "rich@7.1.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "rich.traceback.install",
+            "error": "",
+            "internalPath": "rich.traceback",
+            "docstring": "Install a rich traceback handler.\n\nOnce installed, any tracebacks will be printed with syntax highlighting and rich formatting.\n\n\nArgs:\n    console (Optional[Console], optional): Console to write exception to. Default uses internal Console instance.\n    width (Optional[int], optional): Width (in characters) of traceback. Defaults to 100.\n    line_numbers (bool, optional): Enable line numbers.\n    extra_lines (int, optional): Extra lines of code. Defaults to 3.\n    theme (Optional[str], optional): Pygments theme to use in traceback. Defaults to ``None`` which will pick\n        a theme appropriate for the platform.\n    word_wrap(bool, optional): Enable word wrapping of long lines. Defaults to False.\n\nReturns:\n    Callable: The previous exception handler that was replaced",
+            "sourceCode": "def install(\n    *,\n    console: Console = None,\n    width: Optional[int] = 100,\n    line_numbers: bool = True,\n    extra_lines: int = 3,\n    theme: Optional[str] = None,\n    word_wrap: bool = False,\n) -> Callable:\n    \"\"\"Install a rich traceback handler.\n\n    Once installed, any tracebacks will be printed with syntax highlighting and rich formatting.\n\n\n    Args:\n        console (Optional[Console], optional): Console to write exception to. Default uses internal Console instance.\n        width (Optional[int], optional): Width (in characters) of traceback. Defaults to 100.\n        line_numbers (bool, optional): Enable line numbers.\n        extra_lines (int, optional): Extra lines of code. Defaults to 3.\n        theme (Optional[str], optional): Pygments theme to use in traceback. Defaults to ``None`` which will pick\n            a theme appropriate for the platform.\n        word_wrap(bool, optional): Enable word wrapping of long lines. Defaults to False.\n\n    Returns:\n        Callable: The previous exception handler that was replaced\n\n    \"\"\"\n    traceback_console = Console(file=sys.stderr) if console is None else console\n\n    def excepthook(\n        type_: Type[BaseException],\n        value: BaseException,\n        traceback: TracebackType,\n    ) -> None:\n        traceback_console.print(\n            Traceback.from_exception(\n                type_,\n                value,\n                traceback,\n                width=width,\n                extra_lines=extra_lines,\n                theme=theme,\n                word_wrap=word_wrap,\n            )\n        )\n\n    old_excepthook = sys.excepthook\n    sys.excepthook = excepthook\n    return old_excepthook\n",
+            "match": "(*, console: rich.console.Console = None, width: Union[int, NoneType] = 100, line_numbers: bool = True, extra_lines: int = 3, theme: Union[str, NoneType] = None, word_wrap: bool = False) -> Callable",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "rich.traceback.install",
+            "error": "",
+            "internalPath": "rich.traceback",
+            "docstring": "Install a rich traceback handler.\n\nOnce installed, any tracebacks will be printed with syntax highlighting and rich formatting.\n\n\nArgs:\n    console (Optional[Console], optional): Console to write exception to. Default uses internal Console instance.\n    width (Optional[int], optional): Width (in characters) of traceback. Defaults to 100.\n    extra_lines (int, optional): Extra lines of code. Defaults to 3.\n    theme (Optional[str], optional): Pygments theme to use in traceback. Defaults to ``None`` which will pick\n        a theme appropriate for the platform.\n    word_wrap(bool, optional): Enable word wrapping of long lines. Defaults to False.\n\nReturns:\n    Callable: The previous exception handler that was replaced.",
+            "sourceCode": "def install(\n    *,\n    console: Console = None,\n    width: Optional[int] = 100,\n    extra_lines: int = 3,\n    theme: Optional[str] = None,\n    word_wrap: bool = False,\n) -> Callable:\n    \"\"\"Install a rich traceback handler.\n\n    Once installed, any tracebacks will be printed with syntax highlighting and rich formatting.\n\n\n    Args:\n        console (Optional[Console], optional): Console to write exception to. Default uses internal Console instance.\n        width (Optional[int], optional): Width (in characters) of traceback. Defaults to 100.\n        extra_lines (int, optional): Extra lines of code. Defaults to 3.\n        theme (Optional[str], optional): Pygments theme to use in traceback. Defaults to ``None`` which will pick\n            a theme appropriate for the platform.\n        word_wrap(bool, optional): Enable word wrapping of long lines. Defaults to False.\n\n    Returns:\n        Callable: The previous exception handler that was replaced.\n\n    \"\"\"\n    traceback_console = Console(file=sys.stderr) if console is None else console\n\n    def excepthook(\n        type_: Type[BaseException],\n        value: BaseException,\n        traceback: TracebackType,\n    ) -> None:\n        traceback_console.print(\n            Traceback.from_exception(\n                type_,\n                value,\n                traceback,\n                width=width,\n                extra_lines=extra_lines,\n                theme=theme,\n                word_wrap=word_wrap,\n            )\n        )\n\n    old_excepthook = sys.excepthook\n    sys.excepthook = excepthook\n    return old_excepthook\n",
+            "match": "(*, console: rich.console.Console = None, width: Union[int, NoneType] = 100, extra_lines: int = 3, theme: Union[str, NoneType] = None, word_wrap: bool = False) -> Callable",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(console, 1)": {},
+                "(width, 2)": {},
+                "(line_numbers, 3)": {
+                    "delete": 1
+                },
+                "(extra_lines, 4)": {
+                    "posChange": 3
+                },
+                "(theme, 5)": {
+                    "posChange": 4
+                },
+                "(word_wrap, 6)": {
+                    "posChange": 5
+                }
+            },
+            "targetOvPara": "(*, console: rich.console.Console = None, width: Union[int, NoneType] = 100, extra_lines: int = 3, theme: Union[str, NoneType] = None, word_wrap: bool = False) -> Callable"
+        }
+    ]
+}

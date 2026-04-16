@@ -1,0 +1,21 @@
+[
+  {
+    "(cmap, 0)": {},
+    "(low, 1)": {},
+    "(high, 2)": {},
+    "(axis, 3)": {
+      "typeChange": "Axis|None"
+    },
+    "(subset, 4)": {},
+    "(text_color_threshold, 5)": {},
+    "(vmin, 6)": {
+      "typeChange": "float|None"
+    },
+    "(vmax, 7)": {
+      "typeChange": "float|None"
+    },
+    "(gmap, 8)": {
+      "addPos": "gmap=None"
+    }
+  }
+]

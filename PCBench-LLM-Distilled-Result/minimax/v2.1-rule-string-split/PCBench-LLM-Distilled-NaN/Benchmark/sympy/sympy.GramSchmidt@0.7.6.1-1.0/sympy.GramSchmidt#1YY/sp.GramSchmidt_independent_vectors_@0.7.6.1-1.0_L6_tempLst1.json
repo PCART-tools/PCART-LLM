@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "sp.GramSchmidt(independent_vectors)",
+        "currentVersion": "0.7.6.1",
+        "targetVersion": "1.0",
+        "fileRelativePath": "sympy.GramSchmidt#1YY/GramSchmidtYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.GramSchmidt@0.7.6.1-1.0/sympy.GramSchmidt#1YY/GramSchmidtYY.json",
+        "apiCall": "sp.GramSchmidt(independent_vectors)",
+        "oldVersion": "sympy@0.7.6.1",
+        "newVersion": "sympy@1.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "sympy.GramSchmidt",
+            "error": "",
+            "internalPath": "sympy.matrices.dense",
+            "docstring": "Apply the Gram-Schmidt process to a set of vectors.\n\nsee: http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process",
+            "sourceCode": "def GramSchmidt(vlist, orthog=False):\n    \"\"\"\n    Apply the Gram-Schmidt process to a set of vectors.\n\n    see: http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process\n    \"\"\"\n    out = []\n    m = len(vlist)\n    for i in range(m):\n        tmp = vlist[i]\n        for j in range(i):\n            tmp -= vlist[i].project(out[j])\n        if not tmp.values():\n            raise ValueError(\n                \"GramSchmidt: vector set not linearly independent\")\n        out.append(tmp)\n    if orthog:\n        for i in range(len(out)):\n            out[i] = out[i].normalized()\n    return out\n",
+            "match": "(vlist, orthog=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "sympy.GramSchmidt",
+            "error": "",
+            "internalPath": "sympy.matrices.dense",
+            "docstring": "Apply the Gram-Schmidt process to a set of vectors.\n\nsee: http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process",
+            "sourceCode": "def GramSchmidt(vlist, orthonormal=False):\n    \"\"\"\n    Apply the Gram-Schmidt process to a set of vectors.\n\n    see: http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process\n    \"\"\"\n    out = []\n    m = len(vlist)\n    for i in range(m):\n        tmp = vlist[i]\n        for j in range(i):\n            tmp -= vlist[i].project(out[j])\n        if not tmp.values():\n            raise ValueError(\n                \"GramSchmidt: vector set not linearly independent\")\n        out.append(tmp)\n    if orthonormal:\n        for i in range(len(out)):\n            out[i] = out[i].normalized()\n    return out\n",
+            "match": "(vlist, orthonormal=False)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(vlist, 0)": {},
+                "(orthog, 1)": {
+                    "rename": "orthonormal"
+                }
+            },
+            "targetOvPara": "(vlist, orthonormal=False)"
+        }
+    ]
+}

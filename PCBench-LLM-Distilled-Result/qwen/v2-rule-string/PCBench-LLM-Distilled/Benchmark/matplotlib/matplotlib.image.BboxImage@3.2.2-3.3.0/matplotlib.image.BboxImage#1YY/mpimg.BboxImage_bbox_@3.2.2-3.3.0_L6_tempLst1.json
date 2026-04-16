@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "mpimg.BboxImage(bbox)",
+        "currentVersion": "3.2.2",
+        "targetVersion": "3.3.0",
+        "fileRelativePath": "matplotlib.image.BboxImage#1YY/BboxImageYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.image.BboxImage@3.2.2-3.3.0/matplotlib.image.BboxImage#1YY/BboxImageYY.json",
+        "apiCall": "mpimg.BboxImage(bbox)",
+        "oldVersion": "matplotlib@3.2.2",
+        "newVersion": "matplotlib@3.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.image.BboxImage",
+            "error": "",
+            "internalPath": "matplotlib.image",
+            "docstring": "The Image class whose size is determined by the given bbox.",
+            "sourceCode": "class BboxImage(_ImageBase):\n    \"\"\"The Image class whose size is determined by the given bbox.\"\"\"\n\n    @cbook._delete_parameter(\"3.1\", \"interp_at_native\")\n    def __init__(self, bbox,\n                 cmap=None,\n                 norm=None,\n                 interpolation=None,\n                 origin=None,\n                 filternorm=1,\n                 filterrad=4.0,\n                 resample=False,\n                 interp_at_native=True,\n                 **kwargs\n                 ):\n        \"\"\"\n        cmap is a colors.Colormap instance\n        norm is a colors.Normalize instance to map luminance to 0-1\n\n        kwargs are an optional list of Artist keyword args\n        \"\"\"\n        super().__init__(\n            None,\n            cmap=cmap,\n            norm=norm,\n            interpolation=interpolation,\n            origin=origin,\n            filternorm=filternorm,\n            filterrad=filterrad,\n            resample=resample,\n            **kwargs\n        )\n\n        self.bbox = bbox\n        self._interp_at_native = interp_at_native\n        self._transform = IdentityTransform()\n\n    @cbook.deprecated(\"3.1\")\n    @property\n    def interp_at_native(self):\n        return self._interp_at_native\n\n    def get_transform(self):\n        return self._transform\n\n    def get_window_extent(self, renderer=None):\n        if renderer is None:\n            renderer = self.get_figure()._cachedRenderer\n\n        if isinstance(self.bbox, BboxBase):\n            return self.bbox\n        elif callable(self.bbox):\n            return self.bbox(renderer)\n        else:\n            raise ValueError(\"unknown type of bbox\")\n\n    def contains(self, mouseevent):\n        \"\"\"Test whether the mouse event occurred within the image.\"\"\"\n        inside, info = self._default_contains(mouseevent)\n        if inside is not None:\n            return inside, info\n\n        if not self.get_visible():  # or self.get_figure()._renderer is None:\n            return False, {}\n\n        x, y = mouseevent.x, mouseevent.y\n        inside = self.get_window_extent().contains(x, y)\n\n        return inside, {}\n\n    def make_image(self, renderer, magnification=1.0, unsampled=False):\n        # docstring inherited\n        width, height = renderer.get_canvas_width_height()\n        bbox_in = self.get_window_extent(renderer).frozen()\n        bbox_in._points /= [width, height]\n        bbox_out = self.get_window_extent(renderer)\n        clip = Bbox([[0, 0], [width, height]])\n        self._transform = BboxTransform(Bbox([[0, 0], [1, 1]]), clip)\n        return self._make_image(\n            self._A,\n            bbox_in, bbox_out, clip, magnification, unsampled=unsampled)\n",
+            "match": "(bbox, cmap=None, norm=None, interpolation=None, origin=None, filternorm=1, filterrad=4.0, resample=False, interp_at_native=<deprecated parameter>, **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.image.BboxImage",
+            "error": "",
+            "internalPath": "matplotlib.image",
+            "docstring": "The Image class whose size is determined by the given bbox.",
+            "sourceCode": "class BboxImage(_ImageBase):\n    \"\"\"The Image class whose size is determined by the given bbox.\"\"\"\n\n    def __init__(self, bbox,\n                 cmap=None,\n                 norm=None,\n                 interpolation=None,\n                 origin=None,\n                 filternorm=True,\n                 filterrad=4.0,\n                 resample=False,\n                 **kwargs\n                 ):\n        \"\"\"\n        cmap is a colors.Colormap instance\n        norm is a colors.Normalize instance to map luminance to 0-1\n\n        kwargs are an optional list of Artist keyword args\n        \"\"\"\n        super().__init__(\n            None,\n            cmap=cmap,\n            norm=norm,\n            interpolation=interpolation,\n            origin=origin,\n            filternorm=filternorm,\n            filterrad=filterrad,\n            resample=resample,\n            **kwargs\n        )\n\n        self.bbox = bbox\n        self._transform = IdentityTransform()\n\n    def get_transform(self):\n        return self._transform\n\n    def get_window_extent(self, renderer=None):\n        if renderer is None:\n            renderer = self.get_figure()._cachedRenderer\n\n        if isinstance(self.bbox, BboxBase):\n            return self.bbox\n        elif callable(self.bbox):\n            return self.bbox(renderer)\n        else:\n            raise ValueError(\"Unknown type of bbox\")\n\n    def contains(self, mouseevent):\n        \"\"\"Test whether the mouse event occurred within the image.\"\"\"\n        inside, info = self._default_contains(mouseevent)\n        if inside is not None:\n            return inside, info\n\n        if not self.get_visible():  # or self.get_figure()._renderer is None:\n            return False, {}\n\n        x, y = mouseevent.x, mouseevent.y\n        inside = self.get_window_extent().contains(x, y)\n\n        return inside, {}\n\n    def make_image(self, renderer, magnification=1.0, unsampled=False):\n        # docstring inherited\n        width, height = renderer.get_canvas_width_height()\n        bbox_in = self.get_window_extent(renderer).frozen()\n        bbox_in._points /= [width, height]\n        bbox_out = self.get_window_extent(renderer)\n        clip = Bbox([[0, 0], [width, height]])\n        self._transform = BboxTransform(Bbox([[0, 0], [1, 1]]), clip)\n        return self._make_image(\n            self._A,\n            bbox_in, bbox_out, clip, magnification, unsampled=unsampled)\n",
+            "match": "(bbox, cmap=None, norm=None, interpolation=None, origin=None, filternorm=True, filterrad=4.0, resample=False, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(bbox, 0)": {},
+                "(cmap, 1)": {},
+                "(norm, 2)": {},
+                "(interpolation, 3)": {},
+                "(origin, 4)": {},
+                "(filternorm, 5)": {
+                    "typeChange": "bool"
+                },
+                "(filterrad, 6)": {},
+                "(resample, 7)": {},
+                "(interp_at_native, 8)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(bbox, cmap=None, norm=None, interpolation=None, origin=None, filternorm=True, filterrad=4.0, resample=False, **kwargs)"
+        }
+    ]
+}

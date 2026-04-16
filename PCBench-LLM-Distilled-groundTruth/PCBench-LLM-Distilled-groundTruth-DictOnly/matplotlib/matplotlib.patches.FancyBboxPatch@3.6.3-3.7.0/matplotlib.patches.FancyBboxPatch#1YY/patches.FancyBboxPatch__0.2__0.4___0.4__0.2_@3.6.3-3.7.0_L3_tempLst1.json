@@ -1,0 +1,13 @@
+[
+  {
+    "(xy, 0)": {},
+    "(width, 1)": {},
+    "(height, 2)": {},
+    "(boxstyle, 3)": {},
+    "(bbox_transmuter, 4)": {
+      "delete": 1
+    },
+    "(mutation_scale, 6)": {},
+    "(mutation_aspect, 7)": {}
+  }
+]

@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "pl.repeat('z', 3)",
+        "currentVersion": "0.17.14",
+        "targetVersion": "0.17.15",
+        "fileRelativePath": "polars.repeat#1YY/repeatYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.repeat@0.17.14-0.17.15/polars.repeat#1YY/repeatYY.json",
+        "apiCall": "pl.repeat('z', 3)",
+        "oldVersion": "polars@0.17.14",
+        "newVersion": "polars@0.17.15",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.repeat",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Repeat a single value n times.\n\nParameters\n----------\nvalue\n    Value to repeat.\nn\n    repeat `n` times\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\nname\n    Only used in `eager` mode. As expression, use `alias`",
+            "sourceCode": "def repeat(\n    value: float | int | str | bool | date | datetime | time | timedelta | None,\n    n: Expr | int,\n    *,\n    eager: bool = False,\n    name: str | None = None,\n) -> Expr | Series:\n    \"\"\"\n    Repeat a single value n times.\n\n    Parameters\n    ----------\n    value\n        Value to repeat.\n    n\n        repeat `n` times\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n    name\n        Only used in `eager` mode. As expression, use `alias`\n\n    \"\"\"\n    if eager:\n        if name is None:\n            name = \"\"\n        dtype = py_type_to_dtype(type(value))\n        if (\n            dtype == Int64\n            and isinstance(value, int)\n            and -(2**31) <= value <= 2**31 - 1\n        ):\n            dtype = Int32\n        s = pl.Series._repeat(name, value, n, dtype)  # type: ignore[arg-type]\n        return s\n    else:\n        if isinstance(n, int):\n            n = lit(n)\n        return wrap_expr(plr.repeat(value, n._pyexpr))\n",
+            "match": "(value: 'float | int | str | bool | date | datetime | time | timedelta | None', n: 'Expr | int', *, eager: 'bool' = False, name: 'str | None' = None) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.repeat",
+            "error": "",
+            "internalPath": "polars.functions.repeat",
+            "docstring": "Construct a column of length `n` filled with the given value.\n\nParameters\n----------\nvalue\n    Value to repeat.\nn\n    Length of the resulting column.\ndtype\n    Data type of the resulting column. If set to ``None`` (default), data type is\n    inferred from the given value. Defaults to Int32 for integer values, unless\n    Int64 is required to fit the given value. Defaults to Float64 for float values.\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\nname\n    Name of the resulting column.\n\n    .. deprecated:: 0.17.15\n        This argument is deprecated. Use the ``alias`` method instead.\n\nNotes\n-----\nIf you want to construct a column in lazy mode and do not need a pre-determined\nlength, use :func:`lit` instead.\n\nSee Also\n--------\nlit\n\nExamples\n--------\nConstruct a column with a repeated value in a lazy context.\n\n>>> pl.select(pl.repeat(\"z\", n=3)).to_series()\nshape: (3,)\nSeries: 'repeat' [str]\n[\n        \"z\"\n        \"z\"\n        \"z\"\n]\n\nGenerate a Series directly by setting ``eager=True``.\n\n>>> pl.repeat(3, n=3, dtype=pl.Int8, eager=True)\nshape: (3,)\nSeries: 'repeat' [i8]\n[\n        3\n        3\n        3\n]",
+            "sourceCode": "def repeat(\n    value: PythonLiteral | None,\n    n: Expr | int,\n    *,\n    dtype: PolarsDataType | None = None,\n    eager: bool = False,\n    name: str | None = None,\n) -> Expr | Series:\n    \"\"\"\n    Construct a column of length `n` filled with the given value.\n\n    Parameters\n    ----------\n    value\n        Value to repeat.\n    n\n        Length of the resulting column.\n    dtype\n        Data type of the resulting column. If set to ``None`` (default), data type is\n        inferred from the given value. Defaults to Int32 for integer values, unless\n        Int64 is required to fit the given value. Defaults to Float64 for float values.\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n    name\n        Name of the resulting column.\n\n        .. deprecated:: 0.17.15\n            This argument is deprecated. Use the ``alias`` method instead.\n\n    Notes\n    -----\n    If you want to construct a column in lazy mode and do not need a pre-determined\n    length, use :func:`lit` instead.\n\n    See Also\n    --------\n    lit\n\n    Examples\n    --------\n    Construct a column with a repeated value in a lazy context.\n\n    >>> pl.select(pl.repeat(\"z\", n=3)).to_series()\n    shape: (3,)\n    Series: 'repeat' [str]\n    [\n            \"z\"\n            \"z\"\n            \"z\"\n    ]\n\n    Generate a Series directly by setting ``eager=True``.\n\n    >>> pl.repeat(3, n=3, dtype=pl.Int8, eager=True)\n    shape: (3,)\n    Series: 'repeat' [i8]\n    [\n            3\n            3\n            3\n    ]\n\n    \"\"\"\n    if name is not None:\n        warnings.warn(\n            \"the `name` argument is deprecated. Use the `alias` method instead.\",\n            DeprecationWarning,\n            stacklevel=find_stacklevel(),\n        )\n\n    if eager:\n        if not isinstance(n, int):\n            raise TypeError(\n                \"`n` must be an integer when using `repeat` in an eager context.\"\n            )\n        series = wrap_s(plr.repeat_eager(value, n, dtype))\n        if name is not None:\n            series = series.alias(name)\n        return series\n    else:\n        if isinstance(n, int):\n            n = F.lit(n)\n        expr = wrap_expr(plr.repeat_lazy(value, n._pyexpr, dtype))\n        if name is not None:\n            expr = expr.alias(name)\n        return expr\n",
+            "match": "(value: 'PythonLiteral | None', n: 'Expr | int', *, dtype: 'PolarsDataType | None' = None, eager: 'bool' = False, name: 'str | None' = None) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(value, 0)": {
+                    "typeChange": "'PythonLiteral|None'"
+                },
+                "(n, 1)": {},
+                "(eager, 3)": {
+                    "posChange": 4
+                },
+                "(dtype, 3)": {
+                    "addKey": "dtype=None"
+                },
+                "(name, 4)": {
+                    "posChange": 5
+                }
+            },
+            "targetOvPara": "(value: 'PythonLiteral | None', n: 'Expr | int', *, dtype: 'PolarsDataType | None' = None, eager: 'bool' = False, name: 'str | None' = None) -> 'Expr | Series'"
+        }
+    ]
+}

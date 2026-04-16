@@ -1,0 +1,39 @@
+[
+  {
+    "(sentences, 0)": {},
+    "(corpus_file, 1)": {},
+    "(sg, 2)": {},
+    "(hs, 3)": {},
+    "(size, 4)": {
+      "rename": "vector_size"
+    },
+    "(alpha, 5)": {},
+    "(window, 6)": {},
+    "(min_count, 7)": {},
+    "(max_vocab_size, 8)": {},
+    "(word_ngrams, 9)": {},
+    "(sample, 10)": {},
+    "(seed, 11)": {},
+    "(workers, 12)": {},
+    "(min_alpha, 13)": {},
+    "(negative, 14)": {},
+    "(ns_exponent, 15)": {},
+    "(cbow_mean, 16)": {},
+    "(hashfxn, 17)": {},
+    "(iter, 18)": {
+      "rename": "epochs"
+    },
+    "(null_word, 19)": {},
+    "(min_n, 20)": {},
+    "(max_n, 21)": {},
+    "(sorted_vocab, 22)": {},
+    "(bucket, 23)": {},
+    "(trim_rule, 24)": {},
+    "(batch_words, 25)": {},
+    "(callbacks, 26)": {},
+    "(compatible_hash, 27)": {
+      "delete": 1,
+      "replace": "max_final_vocab=None"
+    }
+  }
+]

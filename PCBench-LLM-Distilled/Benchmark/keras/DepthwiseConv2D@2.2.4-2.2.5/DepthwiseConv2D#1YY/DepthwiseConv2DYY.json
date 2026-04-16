@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/keras/DepthwiseConv2D@2.2.4-2.2.5/DepthwiseConv2D#1YY",
+    "runCommand": "python DepthwiseConv2DYY.py",
+    "runFilePath": "",
+    "libName": "keras",
+    "currentVersion": "2.2.4",
+    "targetVersion": "2.2.5",
+    "currentEnv": "/envs/keras2.2.4",
+    "targetEnv": "/envs/keras2.2.5"
+}

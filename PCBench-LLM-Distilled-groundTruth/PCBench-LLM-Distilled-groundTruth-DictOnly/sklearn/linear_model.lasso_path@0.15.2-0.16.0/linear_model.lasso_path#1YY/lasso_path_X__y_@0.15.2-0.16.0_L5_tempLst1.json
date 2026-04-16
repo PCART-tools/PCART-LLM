@@ -1,0 +1,31 @@
+[
+  {
+    "(X, 0)": {},
+    "(y, 1)": {},
+    "(eps, 2)": {},
+    "(n_alphas, 3)": {},
+    "(alphas, 4)": {},
+    "(precompute, 5)": {},
+    "(Xy, 6)": {},
+    "(fit_intercept, 7)": {
+      "delete": 1
+    },
+    "(normalize, 8)": {
+      "delete": 1
+    },
+    "(copy_X, 9)": {
+      "posChange": 7
+    },
+    "(coef_init, 10)": {
+      "posChange": 8,
+      "replace": "return_n_iter=False"
+    },
+    "(verbose, 11)": {
+      "posChange": 9,
+      "replace": "positive=False"
+    },
+    "(return_models, 12)": {
+      "delete": 1
+    }
+  }
+]

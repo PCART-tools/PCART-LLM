@@ -1,0 +1,12 @@
+[
+  {
+    "(base_estimator, 0)": {
+      "replace": "estimator=None",
+      "pos2key": "base_estimator"
+    },
+    "(n_estimators, 2)": {},
+    "(learning_rate, 3)": {},
+    "(algorithm, 4)": {},
+    "(random_state, 5)": {}
+  }
+]

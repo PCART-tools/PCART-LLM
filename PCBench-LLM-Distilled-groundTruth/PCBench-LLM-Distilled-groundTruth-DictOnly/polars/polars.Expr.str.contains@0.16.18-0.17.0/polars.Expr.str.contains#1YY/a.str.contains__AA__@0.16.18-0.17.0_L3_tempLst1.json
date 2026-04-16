@@ -1,0 +1,30 @@
+[
+  {
+    "(pattern, 0)": {},
+    "(literal, 1)": {
+      "pos2key": "literal"
+    },
+    "(strict, 2)": {
+      "pos2key": "strict"
+    }
+  },
+  {
+    "(lit, 0)": {
+      "rename": "literal"
+    }
+  },
+  {
+    "(pattern, 0)": {},
+    "(literal, 1)": {
+      "pos2key": "literal"
+    },
+    "(strict, 2)": {
+      "pos2key": "strict"
+    }
+  },
+  {
+    "(lit, 0)": {
+      "rename": "literal"
+    }
+  }
+]

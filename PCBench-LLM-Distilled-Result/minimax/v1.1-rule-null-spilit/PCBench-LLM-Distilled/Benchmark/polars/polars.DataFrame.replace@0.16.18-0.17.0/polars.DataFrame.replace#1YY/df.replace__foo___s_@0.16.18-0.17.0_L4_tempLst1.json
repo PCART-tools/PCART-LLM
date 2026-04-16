@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "df.replace('foo', s)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.DataFrame.replace#1YY/replaceYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.DataFrame.replace@0.16.18-0.17.0/polars.DataFrame.replace#1YY/replaceYY.json",
+        "apiCall": "df.replace('foo', s)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.replace",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Replace a column by a new Series.\n\nParameters\n----------\ncolumn\n    Column to replace.\nnew_col\n    New column to insert.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [1, 2, 3], \"bar\": [4, 5, 6]})\n>>> s = pl.Series([10, 20, 30])\n>>> df.replace(\"foo\", s)  # works in-place!\nshape: (3, 2)\n┌─────┬─────┐\n│ foo ┆ bar │\n│ --- ┆ --- │\n│ i64 ┆ i64 │\n╞═════╪═════╡\n│ 10  ┆ 4   │\n│ 20  ┆ 5   │\n│ 30  ┆ 6   │\n└─────┴─────┘",
+            "sourceCode": "    def replace(self, column: str, new_col: Series) -> Self:\n        \"\"\"\n        Replace a column by a new Series.\n\n        Parameters\n        ----------\n        column\n            Column to replace.\n        new_col\n            New column to insert.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [1, 2, 3], \"bar\": [4, 5, 6]})\n        >>> s = pl.Series([10, 20, 30])\n        >>> df.replace(\"foo\", s)  # works in-place!\n        shape: (3, 2)\n        ┌─────┬─────┐\n        │ foo ┆ bar │\n        │ --- ┆ --- │\n        │ i64 ┆ i64 │\n        ╞═════╪═════╡\n        │ 10  ┆ 4   │\n        │ 20  ┆ 5   │\n        │ 30  ┆ 6   │\n        └─────┴─────┘\n\n        \"\"\"\n        self._df.replace(column, new_col._s)\n        return self\n",
+            "match": "(column: 'str', new_col: 'Series') -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.replace",
+            "error": "",
+            "internalPath": "polars.dataframe.frame",
+            "docstring": "Replace a column by a new Series.\n\nParameters\n----------\ncolumn\n    Column to replace.\nnew_column\n    New column to insert.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [1, 2, 3], \"bar\": [4, 5, 6]})\n>>> s = pl.Series([10, 20, 30])\n>>> df.replace(\"foo\", s)  # works in-place!\nshape: (3, 2)\n┌─────┬─────┐\n│ foo ┆ bar │\n│ --- ┆ --- │\n│ i64 ┆ i64 │\n╞═════╪═════╡\n│ 10  ┆ 4   │\n│ 20  ┆ 5   │\n│ 30  ┆ 6   │\n└─────┴─────┘",
+            "sourceCode": "    def replace(self, column: str, new_column: Series) -> Self:\n        \"\"\"\n        Replace a column by a new Series.\n\n        Parameters\n        ----------\n        column\n            Column to replace.\n        new_column\n            New column to insert.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [1, 2, 3], \"bar\": [4, 5, 6]})\n        >>> s = pl.Series([10, 20, 30])\n        >>> df.replace(\"foo\", s)  # works in-place!\n        shape: (3, 2)\n        ┌─────┬─────┐\n        │ foo ┆ bar │\n        │ --- ┆ --- │\n        │ i64 ┆ i64 │\n        ╞═════╪═════╡\n        │ 10  ┆ 4   │\n        │ 20  ┆ 5   │\n        │ 30  ┆ 6   │\n        └─────┴─────┘\n\n        \"\"\"\n        self._df.replace(column, new_column._s)\n        return self\n",
+            "match": "(column: 'str', new_column: 'Series') -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(column, 0)": {},
+                "(new_col, 1)": {
+                    "rename": "new_column"
+                }
+            },
+            "targetOvPara": "(column: 'str', new_column: 'Series') -> 'Self'"
+        }
+    ]
+}

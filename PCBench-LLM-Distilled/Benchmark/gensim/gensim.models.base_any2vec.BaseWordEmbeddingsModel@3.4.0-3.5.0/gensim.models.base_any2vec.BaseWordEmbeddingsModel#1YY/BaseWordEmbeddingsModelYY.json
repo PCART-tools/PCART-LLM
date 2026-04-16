@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.base_any2vec.BaseWordEmbeddingsModel@3.4.0-3.5.0/gensim.models.base_any2vec.BaseWordEmbeddingsModel#1YY",
+    "runCommand": "python BaseWordEmbeddingsModelYY.py",
+    "runFilePath": "",
+    "libName": "gensim",
+    "currentVersion": "3.4.0",
+    "targetVersion": "3.5.0",
+    "currentEnv": "/envs/gensim3.4.0",
+    "targetEnv": "/envs/gensim3.5.0"
+}

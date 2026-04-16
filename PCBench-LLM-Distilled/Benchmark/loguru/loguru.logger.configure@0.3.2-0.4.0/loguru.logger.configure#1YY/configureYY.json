@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/loguru/loguru.logger.configure@0.3.2-0.4.0/loguru.logger.configure#1YY",
+    "runCommand": "python configureYY.py",
+    "runFilePath": "",
+    "libName": "loguru",
+    "currentVersion": "0.3.2",
+    "targetVersion": "0.4.0",
+    "currentEnv": "/envs/loguru0.3.2",
+    "targetEnv": "/envs/loguru0.4.0"
+}

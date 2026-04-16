@@ -1,0 +1,35 @@
+[
+  {
+    "(C, 0)": {},
+    "(fit_intercept, 1)": {},
+    "(n_iter, 2)": {
+      "posChange": 12,
+      "replace": "max_iter=None"
+    },
+    "(shuffle, 3)": {
+      "posChange": 4,
+      "replace": "tol=None"
+    },
+    "(verbose, 4)": {
+      "posChange": 5
+    },
+    "(loss, 5)": {
+      "posChange": 6
+    },
+    "(n_jobs, 6)": {
+      "posChange": 7
+    },
+    "(random_state, 7)": {
+      "posChange": 8
+    },
+    "(warm_start, 8)": {
+      "posChange": 9
+    },
+    "(class_weight, 9)": {
+      "posChange": 10
+    },
+    "(average, 11)": {
+      "addPos": "average=False"
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "(start, 0)": {},
+    "(end, 1)": {},
+    "(periods, 2)": {},
+    "(freq, 3)": {},
+    "(tz, 4)": {},
+    "(normalize, 5)": {},
+    "(name, 6)": {},
+    "(closed, 7)": {
+      "delete": 1
+    },
+    "(inclusive, 8)": {
+      "typeChange": "IntervalClosedType",
+      "posChange": 7
+    },
+    "(unit, 9)": {
+      "addKey": "unit=None"
+    }
+  }
+]

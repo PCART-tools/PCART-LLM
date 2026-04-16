@@ -1,0 +1,10 @@
+[
+  {
+    "(df, 0)": {},
+    "(rechunk, 1)": {},
+    "(nan_to_none, 2)": {
+      "rename": "nan_to_null"
+    },
+    "(schema_overrides, 3)": {}
+  }
+]

@@ -1,0 +1,69 @@
+{
+    "context": {
+        "callAPI": "gridspec.GridSpec(2, 2)",
+        "currentVersion": "2.1.2",
+        "targetVersion": "2.2.0",
+        "fileRelativePath": "matplotlib.gridspec.GridSpec#1YY/GridSpecYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.gridspec.GridSpec@2.1.2-2.2.0/matplotlib.gridspec.GridSpec#1YY/GridSpecYY.json",
+        "apiCall": "gridspec.GridSpec(2, 2)",
+        "oldVersion": "matplotlib@2.1.2",
+        "newVersion": "matplotlib@2.2.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.gridspec.GridSpec",
+            "error": "",
+            "internalPath": "matplotlib.gridspec",
+            "docstring": "A class that specifies the geometry of the grid that a subplot\nwill be placed. The location of grid is determined by similar way\nas the SubplotParams.",
+            "sourceCode": "class GridSpec(GridSpecBase):\n    \"\"\"\n    A class that specifies the geometry of the grid that a subplot\n    will be placed. The location of grid is determined by similar way\n    as the SubplotParams.\n    \"\"\"\n\n    def __init__(self, nrows, ncols,\n                 left=None, bottom=None, right=None, top=None,\n                 wspace=None, hspace=None,\n                 width_ratios=None, height_ratios=None):\n        \"\"\"\n        The number of rows and number of columns of the\n        grid need to be set. Optionally, the subplot layout parameters\n        (e.g., left, right, etc.) can be tuned.\n        \"\"\"\n        self.left = left\n        self.bottom = bottom\n        self.right = right\n        self.top = top\n        self.wspace = wspace\n        self.hspace = hspace\n\n        GridSpecBase.__init__(self, nrows, ncols,\n                              width_ratios=width_ratios,\n                              height_ratios=height_ratios)\n\n    _AllowedKeys = [\"left\", \"bottom\", \"right\", \"top\", \"wspace\", \"hspace\"]\n\n    def update(self, **kwargs):\n        \"\"\"\n        Update the current values.  If any kwarg is None, default to\n        the current value, if set, otherwise to rc.\n        \"\"\"\n\n        for k, v in six.iteritems(kwargs):\n            if k in self._AllowedKeys:\n                setattr(self, k, v)\n            else:\n                raise AttributeError(\"%s is unknown keyword\" % (k,))\n\n        from matplotlib import _pylab_helpers\n        from matplotlib.axes import SubplotBase\n        for figmanager in six.itervalues(_pylab_helpers.Gcf.figs):\n            for ax in figmanager.canvas.figure.axes:\n                # copied from Figure.subplots_adjust\n                if not isinstance(ax, SubplotBase):\n                    # Check if sharing a subplots axis\n                    if isinstance(ax._sharex, SubplotBase):\n                        if ax._sharex.get_subplotspec().get_gridspec() == self:\n                            ax._sharex.update_params()\n                            ax.set_position(ax._sharex.figbox)\n                    elif isinstance(ax._sharey, SubplotBase):\n                        if ax._sharey.get_subplotspec().get_gridspec() == self:\n                            ax._sharey.update_params()\n                            ax.set_position(ax._sharey.figbox)\n                else:\n                    ss = ax.get_subplotspec().get_topmost_subplotspec()\n                    if ss.get_gridspec() == self:\n                        ax.update_params()\n                        ax.set_position(ax.figbox)\n\n    def get_subplot_params(self, fig=None):\n        \"\"\"\n        return a dictionary of subplot layout parameters. The default\n        parameters are from rcParams unless a figure attribute is set.\n        \"\"\"\n        from matplotlib.figure import SubplotParams\n        if fig is None:\n            kw = {k: rcParams[\"figure.subplot.\"+k] for k in self._AllowedKeys}\n            subplotpars = SubplotParams(**kw)\n        else:\n            subplotpars = copy.copy(fig.subplotpars)\n\n        update_kw = {k: getattr(self, k) for k in self._AllowedKeys}\n        subplotpars.update(**update_kw)\n\n        return subplotpars\n\n    def locally_modified_subplot_params(self):\n        return [k for k in self._AllowedKeys if getattr(self, k)]\n\n    def tight_layout(self, fig, renderer=None,\n                     pad=1.08, h_pad=None, w_pad=None, rect=None):\n        \"\"\"\n        Adjust subplot parameters to give specified padding.\n\n        Parameters\n        ----------\n\n        pad : float\n            Padding between the figure edge and the edges of subplots, as a\n            fraction of the font-size.\n        h_pad, w_pad : float, optional\n            Padding (height/width) between edges of adjacent subplots.\n            Defaults to ``pad_inches``.\n        rect : tuple of 4 floats, optional\n            (left, bottom, right, top) rectangle in normalized figure\n            coordinates that the whole subplots area (including labels) will\n            fit into.  Default is (0, 0, 1, 1).\n        \"\"\"\n\n        from .tight_layout import (\n            get_renderer, get_subplotspec_list, get_tight_layout_figure)\n\n        subplotspec_list = get_subplotspec_list(fig.axes, grid_spec=self)\n        if None in subplotspec_list:\n            warnings.warn(\"This figure includes Axes that are not compatible \"\n                          \"with tight_layout, so results might be incorrect.\")\n\n        if renderer is None:\n            renderer = get_renderer(fig)\n\n        kwargs = get_tight_layout_figure(\n            fig, fig.axes, subplotspec_list, renderer,\n            pad=pad, h_pad=h_pad, w_pad=w_pad, rect=rect)\n        self.update(**kwargs)\n",
+            "match": "(nrows, ncols, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.gridspec.GridSpec",
+            "error": "",
+            "internalPath": "matplotlib.gridspec",
+            "docstring": "A class that specifies the geometry of the grid that a subplot\nwill be placed. The location of grid is determined by similar way\nas the SubplotParams.",
+            "sourceCode": "class GridSpec(GridSpecBase):\n    \"\"\"\n    A class that specifies the geometry of the grid that a subplot\n    will be placed. The location of grid is determined by similar way\n    as the SubplotParams.\n    \"\"\"\n\n    def __init__(self, nrows, ncols, figure=None,\n                 left=None, bottom=None, right=None, top=None,\n                 wspace=None, hspace=None,\n                 width_ratios=None, height_ratios=None):\n        \"\"\"\n        The number of rows and number of columns of the grid need to be set.\n        Optionally, the subplot layout parameters (e.g., left, right, etc.)\n        can be tuned.\n\n        Parameters\n        ----------\n        nrows : int\n            Number of rows in grid.\n\n        ncols : int\n            Number or columns in grid.\n\n        Notes\n        -----\n        See `~.figure.SubplotParams` for descriptions of the layout parameters.\n        \"\"\"\n        self.left = left\n        self.bottom = bottom\n        self.right = right\n        self.top = top\n        self.wspace = wspace\n        self.hspace = hspace\n        self.figure = figure\n\n        GridSpecBase.__init__(self, nrows, ncols,\n                              width_ratios=width_ratios,\n                              height_ratios=height_ratios)\n\n        if (self.figure is None) or not self.figure.get_constrained_layout():\n            self._layoutbox = None\n        else:\n            self.figure.init_layoutbox()\n            self._layoutbox = layoutbox.LayoutBox(\n                parent=self.figure._layoutbox,\n                name='gridspec' + layoutbox.seq_id(),\n                artist=self)\n        # by default the layoutbox for a gridsepc will fill a figure.\n        # but this can change below if the gridspec is created from a\n        # subplotspec. (GridSpecFromSubplotSpec)\n\n    _AllowedKeys = [\"left\", \"bottom\", \"right\", \"top\", \"wspace\", \"hspace\"]\n\n    def __getstate__(self):\n        state = self.__dict__\n        try:\n            state.pop('_layoutbox')\n        except KeyError:\n            pass\n        return state\n\n    def __setstate__(self, state):\n        self.__dict__ = state\n        # layoutboxes don't survive pickling...\n        self._layoutbox = None\n\n    def update(self, **kwargs):\n        \"\"\"\n        Update the current values.  If any kwarg is None, default to\n        the current value, if set, otherwise to rc.\n        \"\"\"\n\n        for k, v in six.iteritems(kwargs):\n            if k in self._AllowedKeys:\n                setattr(self, k, v)\n            else:\n                raise AttributeError(\"%s is unknown keyword\" % (k,))\n\n        for figmanager in six.itervalues(_pylab_helpers.Gcf.figs):\n            for ax in figmanager.canvas.figure.axes:\n                # copied from Figure.subplots_adjust\n                if not isinstance(ax, mpl.axes.SubplotBase):\n                    # Check if sharing a subplots axis\n                    if isinstance(ax._sharex, mpl.axes.SubplotBase):\n                        if ax._sharex.get_subplotspec().get_gridspec() == self:\n                            ax._sharex.update_params()\n                            ax._set_position(ax._sharex.figbox)\n                    elif isinstance(ax._sharey, mpl.axes.SubplotBase):\n                        if ax._sharey.get_subplotspec().get_gridspec() == self:\n                            ax._sharey.update_params()\n                            ax._set_position(ax._sharey.figbox)\n                else:\n                    ss = ax.get_subplotspec().get_topmost_subplotspec()\n                    if ss.get_gridspec() == self:\n                        ax.update_params()\n                        ax._set_position(ax.figbox)\n\n    def get_subplot_params(self, figure=None, fig=None):\n        \"\"\"\n        Return a dictionary of subplot layout parameters. The default\n        parameters are from rcParams unless a figure attribute is set.\n        \"\"\"\n        if fig is not None:\n            warnings.warn(\"the 'fig' kwarg is deprecated \"\n                          \"use 'figure' instead\", mplDeprecation)\n        if figure is None:\n            figure = fig\n\n        if figure is None:\n            kw = {k: rcParams[\"figure.subplot.\"+k] for k in self._AllowedKeys}\n            subplotpars = mpl.figure.SubplotParams(**kw)\n        else:\n            subplotpars = copy.copy(figure.subplotpars)\n\n        update_kw = {k: getattr(self, k) for k in self._AllowedKeys}\n        subplotpars.update(**update_kw)\n\n        return subplotpars\n\n    def locally_modified_subplot_params(self):\n        return [k for k in self._AllowedKeys if getattr(self, k)]\n\n    def tight_layout(self, figure, renderer=None,\n                     pad=1.08, h_pad=None, w_pad=None, rect=None):\n        \"\"\"\n        Adjust subplot parameters to give specified padding.\n\n        Parameters\n        ----------\n\n        pad : float\n            Padding between the figure edge and the edges of subplots, as a\n            fraction of the font-size.\n        h_pad, w_pad : float, optional\n            Padding (height/width) between edges of adjacent subplots.\n            Defaults to ``pad_inches``.\n        rect : tuple of 4 floats, optional\n            (left, bottom, right, top) rectangle in normalized figure\n            coordinates that the whole subplots area (including labels) will\n            fit into.  Default is (0, 0, 1, 1).\n        \"\"\"\n\n        subplotspec_list = tight_layout.get_subplotspec_list(\n            figure.axes, grid_spec=self)\n        if None in subplotspec_list:\n            warnings.warn(\"This figure includes Axes that are not compatible \"\n                          \"with tight_layout, so results might be incorrect.\")\n\n        if renderer is None:\n            renderer = tight_layout.get_renderer(figure)\n\n        kwargs = tight_layout.get_tight_layout_figure(\n            figure, figure.axes, subplotspec_list, renderer,\n            pad=pad, h_pad=h_pad, w_pad=w_pad, rect=rect)\n        self.update(**kwargs)\n",
+            "match": "(nrows, ncols, figure=None, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(nrows, 0)": {},
+                "(ncols, 1)": {},
+                "(left, 2)": {
+                    "posChange": 3
+                },
+                "(figure, 2)": {
+                    "addPos": "figure=None"
+                },
+                "(bottom, 3)": {
+                    "posChange": 4
+                },
+                "(right, 4)": {
+                    "posChange": 5
+                },
+                "(top, 5)": {
+                    "posChange": 6
+                },
+                "(wspace, 6)": {
+                    "posChange": 7
+                },
+                "(hspace, 7)": {
+                    "posChange": 8
+                },
+                "(width_ratios, 8)": {
+                    "posChange": 9
+                },
+                "(height_ratios, 9)": {
+                    "posChange": 10
+                }
+            },
+            "targetOvPara": "(nrows, ncols, figure=None, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)"
+        }
+    ]
+}

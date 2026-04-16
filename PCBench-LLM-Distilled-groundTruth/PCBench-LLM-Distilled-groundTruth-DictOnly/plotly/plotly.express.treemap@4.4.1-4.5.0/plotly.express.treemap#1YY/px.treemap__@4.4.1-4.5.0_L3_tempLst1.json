@@ -1,0 +1,58 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(names, 1)": {},
+    "(values, 2)": {},
+    "(parents, 3)": {},
+    "(ids, 4)": {},
+    "(color, 5)": {
+      "posChange": 6,
+      "replace": "path=None"
+    },
+    "(color_continuous_scale, 6)": {
+      "posChange": 7
+    },
+    "(range_color, 7)": {
+      "posChange": 8
+    },
+    "(color_continuous_midpoint, 8)": {
+      "posChange": 9
+    },
+    "(color_discrete_sequence, 9)": {
+      "posChange": 10
+    },
+    "(color_discrete_map, 10)": {
+      "posChange": 11
+    },
+    "(hover_name, 11)": {
+      "posChange": 12
+    },
+    "(hover_data, 12)": {
+      "posChange": 13
+    },
+    "(custom_data, 13)": {
+      "posChange": 14
+    },
+    "(labels, 14)": {
+      "posChange": 15
+    },
+    "(title, 15)": {
+      "posChange": 16
+    },
+    "(template, 16)": {
+      "posChange": 17
+    },
+    "(width, 17)": {
+      "posChange": 18
+    },
+    "(height, 18)": {
+      "posChange": 19
+    },
+    "(branchvalues, 19)": {
+      "posChange": 20
+    },
+    "(maxdepth, 20)": {
+      "posChange": 21
+    }
+  }
+]

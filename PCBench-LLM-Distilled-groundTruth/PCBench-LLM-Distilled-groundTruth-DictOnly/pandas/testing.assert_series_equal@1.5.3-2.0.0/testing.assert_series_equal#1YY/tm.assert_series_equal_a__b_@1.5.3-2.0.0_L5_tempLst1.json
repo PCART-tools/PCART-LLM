@@ -1,0 +1,44 @@
+[
+  {
+    "(left, 0)": {},
+    "(right, 1)": {},
+    "(check_dtype, 2)": {},
+    "(check_index_type, 3)": {},
+    "(check_series_type, 4)": {},
+    "(check_less_precise, 5)": {
+      "delete": 1
+    },
+    "(check_names, 6)": {
+      "posChange": 5
+    },
+    "(check_exact, 7)": {
+      "posChange": 6
+    },
+    "(check_datetimelike_compat, 8)": {
+      "posChange": 7
+    },
+    "(check_categorical, 9)": {
+      "posChange": 8
+    },
+    "(check_category_order, 10)": {
+      "posChange": 9
+    },
+    "(check_freq, 11)": {
+      "posChange": 10
+    },
+    "(check_flags, 12)": {
+      "posChange": 11
+    },
+    "(rtol, 13)": {
+      "posChange": 12
+    },
+    "(atol, 14)": {
+      "posChange": 13
+    },
+    "(obj, 15)": {
+      "posChange": 14
+    },
+    "(check_index, 17)": {},
+    "(check_like, 18)": {}
+  }
+]

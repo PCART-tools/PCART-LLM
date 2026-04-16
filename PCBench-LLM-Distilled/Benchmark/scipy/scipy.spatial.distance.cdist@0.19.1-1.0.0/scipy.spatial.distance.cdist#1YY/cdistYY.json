@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.spatial.distance.cdist@0.19.1-1.0.0/scipy.spatial.distance.cdist#1YY",
+    "runCommand": "python cdistYY.py",
+    "runFilePath": "",
+    "libName": "scipy",
+    "currentVersion": "0.19.1",
+    "targetVersion": "1.0.0",
+    "currentEnv": "/envs/scipy0.19.1",
+    "targetEnv": "/envs/scipy1.0.0"
+}

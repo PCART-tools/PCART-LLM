@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/httpx/URL@0.13.3-0.14.0/URL#1YY",
+    "runCommand": "python URLYY.py",
+    "runFilePath": "",
+    "libName": "httpx",
+    "currentVersion": "0.13.3",
+    "targetVersion": "0.14.0",
+    "currentEnv": "/envs/httpx0.13.3",
+    "targetEnv": "/envs/httpx0.14.0"
+}

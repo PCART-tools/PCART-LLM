@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.platform.twisted.TornadoReactor@4.5.3-5.0/tornado.platform.twisted.TornadoReactor#1YY",
+    "runCommand": "python TornadoReactorYY.py",
+    "runFilePath": "",
+    "libName": "tornado",
+    "currentVersion": "4.5.3",
+    "targetVersion": "5.0",
+    "currentEnv": "/envs/tornado4.5.3",
+    "targetEnv": "/envs/tornado5.0"
+}

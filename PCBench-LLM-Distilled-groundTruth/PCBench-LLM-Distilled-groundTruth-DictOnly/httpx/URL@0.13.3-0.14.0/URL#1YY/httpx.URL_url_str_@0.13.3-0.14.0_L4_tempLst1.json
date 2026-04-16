@@ -1,0 +1,11 @@
+[
+  {
+    "(url, 0)": {},
+    "(allow_relative, 1)": {
+      "delete": 1
+    },
+    "(params, 2)": {
+      "posChange": 1
+    }
+  }
+]

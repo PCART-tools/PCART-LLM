@@ -1,0 +1,16 @@
+[
+  {
+    "(offset, 0)": {},
+    "(shadow_rgbFace, 1)": {},
+    "(alpha, 2)": {},
+    "(patch_alpha, 3)": {
+      "delete": 1
+    },
+    "(rho, 4)": {
+      "posChange": 3
+    },
+    "(offset_xy, 5)": {
+      "delete": 1
+    }
+  }
+]

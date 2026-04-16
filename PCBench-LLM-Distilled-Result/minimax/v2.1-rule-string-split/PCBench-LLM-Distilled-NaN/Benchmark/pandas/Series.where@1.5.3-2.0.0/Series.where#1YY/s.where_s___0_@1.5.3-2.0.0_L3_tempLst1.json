@@ -1,0 +1,51 @@
+{
+    "context": {
+        "callAPI": "s.where(s > 0)",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Series.where#1YY/whereYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.where@1.5.3-2.0.0/Series.where#1YY/whereYY.json",
+        "apiCall": "s.where(s > 0)",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Series.where",
+            "error": "",
+            "internalPath": "pandas.util._decorators",
+            "docstring": "Replace values where the condition is False.\n\nParameters\n----------\ncond : bool Series/DataFrame, array-like, or callable\n    Where `cond` is True, keep the original value. Where\n    False, replace with corresponding value from `other`.\n    If `cond` is callable, it is computed on the Series/DataFrame and\n    should return boolean Series/DataFrame or array. The callable must\n    not change input Series/DataFrame (though pandas doesn't check it).\nother : scalar, Series/DataFrame, or callable\n    Entries where `cond` is False are replaced with\n    corresponding value from `other`.\n    If other is callable, it is computed on the Series/DataFrame and\n    should return scalar or Series/DataFrame. The callable must not\n    change input Series/DataFrame (though pandas doesn't check it).\ninplace : bool, default False\n    Whether to perform the operation in place on the data.\naxis : int, default None\n    Alignment axis if needed. For `Series` this parameter is\n    unused and defaults to 0.\nlevel : int, default None\n    Alignment level if needed.\nerrors : str, {'raise', 'ignore'}, default 'raise'\n    Note that currently this parameter won't affect\n    the results and will always coerce to a suitable dtype.\n\n    - 'raise' : allow exceptions to be raised.\n    - 'ignore' : suppress exceptions. On error return original object.\n\n    .. deprecated:: 1.5.0\n       This argument had no effect.\n\ntry_cast : bool, default None\n    Try to cast the result back to the input type (if possible).\n\n    .. deprecated:: 1.3.0\n        Manually cast back if necessary.\n\nReturns\n-------\nSame type as caller or None if ``inplace=True``.\n\nSee Also\n--------\n:func:`DataFrame.mask` : Return an object of same shape as\n    self.\n\nNotes\n-----\nThe where method is an application of the if-then idiom. For each\nelement in the calling DataFrame, if ``cond`` is ``True`` the\nelement is used; otherwise the corresponding element from the DataFrame\n``other`` is used. If the axis of ``other`` does not align with axis of\n``cond`` Series/DataFrame, the misaligned index positions will be filled with\nFalse.\n\nThe signature for :func:`DataFrame.where` differs from\n:func:`numpy.where`. Roughly ``df1.where(m, df2)`` is equivalent to\n``np.where(m, df1, df2)``.\n\nFor further details and examples see the ``where`` documentation in\n:ref:`indexing <indexing.where_mask>`.\n\nThe dtype of the object takes precedence. The fill value is casted to\nthe object's dtype, if this can be done losslessly.\n\nExamples\n--------\n>>> s = pd.Series(range(5))\n>>> s.where(s > 0)\n0    NaN\n1    1.0\n2    2.0\n3    3.0\n4    4.0\ndtype: float64\n>>> s.mask(s > 0)\n0    0.0\n1    NaN\n2    NaN\n3    NaN\n4    NaN\ndtype: float64\n\n>>> s = pd.Series(range(5))\n>>> t = pd.Series([True, False])\n>>> s.where(t, 99)\n0     0\n1    99\n2    99\n3    99\n4    99\ndtype: int64\n>>> s.mask(t, 99)\n0    99\n1     1\n2    99\n3    99\n4    99\ndtype: int64\n\n>>> s.where(s > 1, 10)\n0    10\n1    10\n2    2\n3    3\n4    4\ndtype: int64\n>>> s.mask(s > 1, 10)\n0     0\n1     1\n2    10\n3    10\n4    10\ndtype: int64\n\n>>> df = pd.DataFrame(np.arange(10).reshape(-1, 2), columns=['A', 'B'])\n>>> df\n   A  B\n0  0  1\n1  2  3\n2  4  5\n3  6  7\n4  8  9\n>>> m = df % 3 == 0\n>>> df.where(m, -df)\n   A  B\n0  0 -1\n1 -2  3\n2 -4 -5\n3  6 -7\n4 -8  9\n>>> df.where(m, -df) == np.where(m, df, -df)\n      A     B\n0  True  True\n1  True  True\n2  True  True\n3  True  True\n4  True  True\n>>> df.where(m, -df) == df.mask(~m, -df)\n      A     B\n0  True  True\n1  True  True\n2  True  True\n3  True  True\n4  True  True",
+            "sourceCode": "    @deprecate_kwarg(old_arg_name=\"errors\", new_arg_name=None)\n    @deprecate_nonkeyword_arguments(\n        version=None, allowed_args=[\"self\", \"cond\", \"other\"]\n    )\n    def where(  # type: ignore[override]\n        self,\n        cond,\n        other=lib.no_default,\n        inplace: bool = False,\n        axis: Axis | None = None,\n        level: Level = None,\n        errors: IgnoreRaise | lib.NoDefault = lib.no_default,\n        try_cast: bool | lib.NoDefault = lib.no_default,\n    ) -> Series | None:\n        return super().where(\n            cond,\n            other,\n            inplace=inplace,\n            axis=axis,\n            level=level,\n            try_cast=try_cast,\n        )\n",
+            "match": "(cond, other=<no_default>, *, inplace: 'bool' = False, axis: 'Axis | None' = None, level: 'Level' = None, errors: 'IgnoreRaise | lib.NoDefault' = <no_default>, try_cast: 'bool | lib.NoDefault' = <no_default>) -> 'Series | None'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Series.where",
+            "error": "",
+            "internalPath": "pandas.core.series",
+            "docstring": "Replace values where the condition is False.\n\nParameters\n----------\ncond : bool Series/DataFrame, array-like, or callable\n    Where `cond` is True, keep the original value. Where\n    False, replace with corresponding value from `other`.\n    If `cond` is callable, it is computed on the Series/DataFrame and\n    should return boolean Series/DataFrame or array. The callable must\n    not change input Series/DataFrame (though pandas doesn't check it).\nother : scalar, Series/DataFrame, or callable\n    Entries where `cond` is False are replaced with\n    corresponding value from `other`.\n    If other is callable, it is computed on the Series/DataFrame and\n    should return scalar or Series/DataFrame. The callable must not\n    change input Series/DataFrame (though pandas doesn't check it).\n    If not specified, entries will be filled with the corresponding\n    NULL value (``np.nan`` for numpy dtypes, ``pd.NA`` for extension\n    dtypes).\ninplace : bool, default False\n    Whether to perform the operation in place on the data.\naxis : int, default None\n    Alignment axis if needed. For `Series` this parameter is\n    unused and defaults to 0.\nlevel : int, default None\n    Alignment level if needed.\n\nReturns\n-------\nSame type as caller or None if ``inplace=True``.\n\nSee Also\n--------\n:func:`DataFrame.mask` : Return an object of same shape as\n    self.\n\nNotes\n-----\nThe where method is an application of the if-then idiom. For each\nelement in the calling DataFrame, if ``cond`` is ``True`` the\nelement is used; otherwise the corresponding element from the DataFrame\n``other`` is used. If the axis of ``other`` does not align with axis of\n``cond`` Series/DataFrame, the misaligned index positions will be filled with\nFalse.\n\nThe signature for :func:`DataFrame.where` differs from\n:func:`numpy.where`. Roughly ``df1.where(m, df2)`` is equivalent to\n``np.where(m, df1, df2)``.\n\nFor further details and examples see the ``where`` documentation in\n:ref:`indexing <indexing.where_mask>`.\n\nThe dtype of the object takes precedence. The fill value is casted to\nthe object's dtype, if this can be done losslessly.\n\nExamples\n--------\n>>> s = pd.Series(range(5))\n>>> s.where(s > 0)\n0    NaN\n1    1.0\n2    2.0\n3    3.0\n4    4.0\ndtype: float64\n>>> s.mask(s > 0)\n0    0.0\n1    NaN\n2    NaN\n3    NaN\n4    NaN\ndtype: float64\n\n>>> s = pd.Series(range(5))\n>>> t = pd.Series([True, False])\n>>> s.where(t, 99)\n0     0\n1    99\n2    99\n3    99\n4    99\ndtype: int64\n>>> s.mask(t, 99)\n0    99\n1     1\n2    99\n3    99\n4    99\ndtype: int64\n\n>>> s.where(s > 1, 10)\n0    10\n1    10\n2    2\n3    3\n4    4\ndtype: int64\n>>> s.mask(s > 1, 10)\n0     0\n1     1\n2    10\n3    10\n4    10\ndtype: int64\n\n>>> df = pd.DataFrame(np.arange(10).reshape(-1, 2), columns=['A', 'B'])\n>>> df\n   A  B\n0  0  1\n1  2  3\n2  4  5\n3  6  7\n4  8  9\n>>> m = df % 3 == 0\n>>> df.where(m, -df)\n   A  B\n0  0 -1\n1 -2  3\n2 -4 -5\n3  6 -7\n4 -8  9\n>>> df.where(m, -df) == np.where(m, df, -df)\n      A     B\n0  True  True\n1  True  True\n2  True  True\n3  True  True\n4  True  True\n>>> df.where(m, -df) == df.mask(~m, -df)\n      A     B\n0  True  True\n1  True  True\n2  True  True\n3  True  True\n4  True  True",
+            "sourceCode": "    def where(\n        self,\n        cond,\n        other=lib.no_default,\n        *,\n        inplace: bool = False,\n        axis: Axis | None = None,\n        level: Level = None,\n    ) -> Series | None:\n        return super().where(\n            cond,\n            other,\n            inplace=inplace,\n            axis=axis,\n            level=level,\n        )\n",
+            "match": "(cond, other=<no_default>, *, inplace: 'bool' = False, axis: 'Axis | None' = None, level: 'Level' = None) -> 'Series | None'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(cond, 0)": {},
+                "(other, 1)": {},
+                "(inplace, 3)": {},
+                "(axis, 4)": {},
+                "(level, 5)": {},
+                "(errors, 6)": {
+                    "delete": 1
+                },
+                "(try_cast, 7)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(cond, other=<no_default>, *, inplace: 'bool' = False, axis: 'Axis | None' = None, level: 'Level' = None) -> 'Series | None'"
+        }
+    ]
+}

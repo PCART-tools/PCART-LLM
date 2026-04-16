@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "ddf.repartition(None, 10)",
+        "currentVersion": "1.2.2",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "dask.dataframe.repartition#1YY/repartitionYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/dask/dask.dataframe.repartition@1.2.2-2.0.0/dask.dataframe.repartition#1YY/repartitionYY.json",
+        "apiCall": "ddf.repartition(None, 10)",
+        "oldVersion": "dask@1.2.2",
+        "newVersion": "dask@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "dask.dataframe.from_pandas.repartition",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Repartition dataframe along new divisions\n\nParameters\n----------\ndivisions : list, optional\n    List of partitions to be used. If specified npartitions will be\n    ignored.\nnpartitions : int, optional\n    Number of partitions of output. Only used if divisions isn't\n    specified.\nfreq : str, pd.Timedelta\n    A period on which to partition timeseries data like ``'7D'`` or\n    ``'12h'`` or ``pd.Timedelta(hours=12)``.  Assumes a datetime index.\nforce : bool, default False\n    Allows the expansion of the existing divisions.\n    If False then the new divisions lower and upper bounds must be\n    the same as the old divisions.\n\nExamples\n--------\n>>> df = df.repartition(npartitions=10)  # doctest: +SKIP\n>>> df = df.repartition(divisions=[0, 5, 10, 20])  # doctest: +SKIP\n>>> df = df.repartition(freq='7d')  # doctest: +SKIP",
+            "sourceCode": "    def repartition(self, divisions=None, npartitions=None, freq=None, force=False):\n        \"\"\" Repartition dataframe along new divisions\n\n        Parameters\n        ----------\n        divisions : list, optional\n            List of partitions to be used. If specified npartitions will be\n            ignored.\n        npartitions : int, optional\n            Number of partitions of output. Only used if divisions isn't\n            specified.\n        freq : str, pd.Timedelta\n            A period on which to partition timeseries data like ``'7D'`` or\n            ``'12h'`` or ``pd.Timedelta(hours=12)``.  Assumes a datetime index.\n        force : bool, default False\n            Allows the expansion of the existing divisions.\n            If False then the new divisions lower and upper bounds must be\n            the same as the old divisions.\n\n        Examples\n        --------\n        >>> df = df.repartition(npartitions=10)  # doctest: +SKIP\n        >>> df = df.repartition(divisions=[0, 5, 10, 20])  # doctest: +SKIP\n        >>> df = df.repartition(freq='7d')  # doctest: +SKIP\n        \"\"\"\n        if npartitions is not None and divisions is not None:\n            warnings.warn(\"When providing both npartitions and divisions to \"\n                          \"repartition only npartitions is used.\")\n\n        if npartitions is not None:\n            return repartition_npartitions(self, npartitions)\n        elif divisions is not None:\n            return repartition(self, divisions, force=force)\n        elif freq is not None:\n            return repartition_freq(self, freq=freq)\n        else:\n            raise ValueError(\n                \"Provide either divisions= or npartitions= to repartition\")\n",
+            "match": "(divisions=None, npartitions=None, freq=None, force=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "dask.dataframe.from_pandas.repartition",
+            "error": "",
+            "internalPath": "dask.dataframe.core",
+            "docstring": "Repartition dataframe along new divisions\n\nParameters\n----------\ndivisions : list, optional\n    List of partitions to be used. Only used if npartitions and\n    partition_size isn't specified.\nnpartitions : int, optional\n    Number of partitions of output. Only used if partition_size\n    isn't specified.\npartition_size: int or string, optional\n    Max number of bytes of memory for each partition. Use numbers or\n    strings like 5MB. If specified npartitions and divisions will be\n    ignored.\n\n    .. warning::\n\n       This keyword argument triggers computation to determine\n       the memory size of each partition, which may be expensive.\n\nfreq : str, pd.Timedelta\n    A period on which to partition timeseries data like ``'7D'`` or\n    ``'12h'`` or ``pd.Timedelta(hours=12)``.  Assumes a datetime index.\nforce : bool, default False\n    Allows the expansion of the existing divisions.\n    If False then the new divisions lower and upper bounds must be\n    the same as the old divisions.\n\nNotes\n-----\nExactly one of `divisions`, `npartitions`, `partition_size`, or `freq`\nshould be specified. A ``ValueError`` will be raised when that is\nnot the case.\n\nExamples\n--------\n>>> df = df.repartition(npartitions=10)  # doctest: +SKIP\n>>> df = df.repartition(divisions=[0, 5, 10, 20])  # doctest: +SKIP\n>>> df = df.repartition(freq='7d')  # doctest: +SKIP",
+            "sourceCode": "    def repartition(\n        self,\n        divisions=None,\n        npartitions=None,\n        partition_size=None,\n        freq=None,\n        force=False,\n    ):\n        \"\"\" Repartition dataframe along new divisions\n\n        Parameters\n        ----------\n        divisions : list, optional\n            List of partitions to be used. Only used if npartitions and\n            partition_size isn't specified.\n        npartitions : int, optional\n            Number of partitions of output. Only used if partition_size\n            isn't specified.\n        partition_size: int or string, optional\n            Max number of bytes of memory for each partition. Use numbers or\n            strings like 5MB. If specified npartitions and divisions will be\n            ignored.\n\n            .. warning::\n\n               This keyword argument triggers computation to determine\n               the memory size of each partition, which may be expensive.\n\n        freq : str, pd.Timedelta\n            A period on which to partition timeseries data like ``'7D'`` or\n            ``'12h'`` or ``pd.Timedelta(hours=12)``.  Assumes a datetime index.\n        force : bool, default False\n            Allows the expansion of the existing divisions.\n            If False then the new divisions lower and upper bounds must be\n            the same as the old divisions.\n\n        Notes\n        -----\n        Exactly one of `divisions`, `npartitions`, `partition_size`, or `freq`\n        should be specified. A ``ValueError`` will be raised when that is\n        not the case.\n\n        Examples\n        --------\n        >>> df = df.repartition(npartitions=10)  # doctest: +SKIP\n        >>> df = df.repartition(divisions=[0, 5, 10, 20])  # doctest: +SKIP\n        >>> df = df.repartition(freq='7d')  # doctest: +SKIP\n        \"\"\"\n        if (\n            sum(\n                [\n                    partition_size is not None,\n                    divisions is not None,\n                    npartitions is not None,\n                    freq is not None,\n                ]\n            )\n            != 1\n        ):\n            raise ValueError(\n                \"Please provide exactly one of ``npartitions=``, ``freq=``, \"\n                \"``divisisions=``, ``partitions_size=`` keyword arguments\"\n            )\n\n        if partition_size is not None:\n            return repartition_size(self, partition_size)\n        elif npartitions is not None:\n            return repartition_npartitions(self, npartitions)\n        elif divisions is not None:\n            return repartition(self, divisions, force=force)\n        elif freq is not None:\n            return repartition_freq(self, freq=freq)\n",
+            "match": "(divisions=None, npartitions=None, partition_size=None, freq=None, force=False)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(divisions, 0)": {},
+                "(npartitions, 1)": {},
+                "(freq, 2)": {
+                    "posChange": 3,
+                    "replace": "partition_size=None"
+                },
+                "(force, 3)": {
+                    "posChange": 4
+                }
+            },
+            "targetOvPara": "(divisions=None, npartitions=None, partition_size=None, freq=None, force=False)"
+        }
+    ]
+}

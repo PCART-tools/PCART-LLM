@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "model.predict(X_test)",
+        "currentVersion": "1.3.3",
+        "targetVersion": "1.4.0",
+        "fileRelativePath": "predict#1YY/predictYY.py",
+        "lineNum": "8",
+        "config": "PCBench-LLM-Distilled/Benchmark/xgboost/predict@1.3.3-1.4.0/predict#1YY/predictYY.json",
+        "apiCall": "model.predict(X_test)",
+        "oldVersion": "xgboost@1.3.3",
+        "newVersion": "xgboost@1.4.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "xgboost.XGBClassifier.predict",
+            "error": "",
+            "internalPath": "xgboost.sklearn",
+            "docstring": "Predict with `data`.\n\n.. note:: This function is not thread safe.\n\n  For each booster object, predict can only be called from one thread.\n  If you want to run prediction using multiple thread, call\n  ``xgb.copy()`` to make copies of model object and then call\n  ``predict()``.\n\n  .. code-block:: python\n\n    preds = bst.predict(dtest, ntree_limit=num_round)\n\nParameters\n----------\ndata : array_like\n    Feature matrix.\noutput_margin : bool\n    Whether to output the raw untransformed margin value.\nntree_limit : int\n    Limit number of trees in the prediction; defaults to\n    best_ntree_limit if defined (i.e. it has been trained with early\n    stopping), otherwise 0 (use all trees).\nvalidate_features : bool\n    When this is True, validate that the Booster's and data's\n    feature_names are identical.  Otherwise, it is assumed that the\n    feature_names are the same.\n\nReturns\n-------\nprediction : numpy array",
+            "sourceCode": "    def predict(self, data, output_margin=False, ntree_limit=None,\n                validate_features=True, base_margin=None):\n        \"\"\"\n        Predict with `data`.\n\n        .. note:: This function is not thread safe.\n\n          For each booster object, predict can only be called from one thread.\n          If you want to run prediction using multiple thread, call\n          ``xgb.copy()`` to make copies of model object and then call\n          ``predict()``.\n\n          .. code-block:: python\n\n            preds = bst.predict(dtest, ntree_limit=num_round)\n\n        Parameters\n        ----------\n        data : array_like\n            Feature matrix.\n        output_margin : bool\n            Whether to output the raw untransformed margin value.\n        ntree_limit : int\n            Limit number of trees in the prediction; defaults to\n            best_ntree_limit if defined (i.e. it has been trained with early\n            stopping), otherwise 0 (use all trees).\n        validate_features : bool\n            When this is True, validate that the Booster's and data's\n            feature_names are identical.  Otherwise, it is assumed that the\n            feature_names are the same.\n\n        Returns\n        -------\n        prediction : numpy array\n        \"\"\"\n        test_dmatrix = DMatrix(data, base_margin=base_margin,\n                               missing=self.missing, nthread=self.n_jobs)\n        if ntree_limit is None:\n            ntree_limit = getattr(self, \"best_ntree_limit\", 0)\n        class_probs = self.get_booster().predict(\n            test_dmatrix,\n            output_margin=output_margin,\n            ntree_limit=ntree_limit,\n            validate_features=validate_features)\n        if output_margin:\n            # If output_margin is active, simply return the scores\n            return class_probs\n\n        if len(class_probs.shape) > 1:\n            column_indexes = np.argmax(class_probs, axis=1)\n        else:\n            column_indexes = np.repeat(0, class_probs.shape[0])\n            column_indexes[class_probs > 0.5] = 1\n\n        if hasattr(self, '_le'):\n            return self._le.inverse_transform(column_indexes)\n        return column_indexes\n",
+            "match": "(data, output_margin=False, ntree_limit=None, validate_features=True, base_margin=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "xgboost.XGBClassifier.predict",
+            "error": "",
+            "internalPath": "xgboost.sklearn",
+            "docstring": "Predict with `X`.\n\n.. note:: This function is only thread safe for `gbtree` and `dart`.\n\nParameters\n----------\nX : array_like\n    Data to predict with\noutput_margin : bool\n    Whether to output the raw untransformed margin value.\nntree_limit : int\n    Deprecated, use `iteration_range` instead.\nvalidate_features : bool\n    When this is True, validate that the Booster's and data's feature_names are\n    identical.  Otherwise, it is assumed that the feature_names are the same.\nbase_margin : array_like\n    Margin added to prediction.\niteration_range :\n    Specifies which layer of trees are used in prediction.  For example, if a\n    random forest is trained with 100 rounds.  Specifying `iteration_range=(10,\n    20)`, then only the forests built during [10, 20) (half open set) rounds are\n    used in this prediction.\n\n    .. versionadded:: 1.4.0\nReturns\n-------\nprediction : numpy array",
+            "sourceCode": "    def predict(\n        self,\n        X,\n        output_margin=False,\n        ntree_limit=None,\n        validate_features=True,\n        base_margin=None,\n        iteration_range: Optional[Tuple[int, int]] = None,\n    ):\n        class_probs = super().predict(\n            X=X,\n            output_margin=output_margin,\n            ntree_limit=ntree_limit,\n            validate_features=validate_features,\n            base_margin=base_margin,\n            iteration_range=iteration_range,\n        )\n        if output_margin:\n            # If output_margin is active, simply return the scores\n            return class_probs\n\n        if len(class_probs.shape) > 1:\n            # turns softprob into softmax\n            column_indexes = np.argmax(class_probs, axis=1)\n        else:\n            # turns soft logit into class label\n            column_indexes = np.repeat(0, class_probs.shape[0])\n            column_indexes[class_probs > 0.5] = 1\n\n        if hasattr(self, '_le'):\n            return self._le.inverse_transform(column_indexes)\n        return column_indexes\n",
+            "match": "(X, output_margin=False, ntree_limit=None, validate_features=True, base_margin=None, iteration_range: Union[Tuple[int, int], NoneType] = None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(data, 0)": {
+                    "rename": "X"
+                },
+                "(output_margin, 1)": {},
+                "(ntree_limit, 2)": {
+                    "typeChange": "Union[Tuple[int,int],NoneType]",
+                    "replace": "iteration_range"
+                },
+                "(validate_features, 3)": {},
+                "(base_margin, 4)": {},
+                "(iteration_range, 5)": {
+                    "addPos": "iteration_range"
+                }
+            },
+            "targetOvPara": "(X, output_margin=False, ntree_limit=None, validate_features=True, base_margin=None, iteration_range: Union[Tuple[int, int], NoneType] = None)"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "(A, 0)": {},
+    "(permc_spec, 1)": {},
+    "(diag_pivot_thresh, 2)": {},
+    "(drop_tol, 3)": {
+      "delete": 1
+    },
+    "(relax, 4)": {
+      "posChange": 3
+    },
+    "(panel_size, 5)": {
+      "posChange": 4
+    },
+    "(options, 6)": {
+      "posChange": 5
+    }
+  }
+]

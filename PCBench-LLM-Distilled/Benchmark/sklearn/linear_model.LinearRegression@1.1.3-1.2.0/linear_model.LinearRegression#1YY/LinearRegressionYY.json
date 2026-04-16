@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.LinearRegression@1.1.3-1.2.0/linear_model.LinearRegression#1YY",
+    "runCommand": "python LinearRegressionYY.py",
+    "runFilePath": "",
+    "libName": "sklearn",
+    "currentVersion": "1.1.3",
+    "targetVersion": "1.2.0",
+    "currentEnv": "/envs/sklearn1.1.3",
+    "targetEnv": "/envs/sklearn1.2.0"
+}

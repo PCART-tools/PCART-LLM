@@ -1,0 +1,22 @@
+[
+  {
+    "(path, 0)": {},
+    "(columns, 1)": {},
+    "(filters, 2)": {},
+    "(categories, 3)": {},
+    "(index, 4)": {},
+    "(storage_options, 5)": {},
+    "(engine, 6)": {},
+    "(gather_statistics, 7)": {
+      "rename": "calculate_divisions"
+    },
+    "(ignore_metadata_file, 8)": {},
+    "(metadata_task_size, 9)": {},
+    "(split_row_groups, 10)": {},
+    "(chunksize, 11)": {},
+    "(aggregate_files, 12)": {},
+    "(parquet_file_extension, 13)": {
+      "addPos": "parquet_file_extension=('.parq','.parquet','.pq')"
+    }
+  }
+]

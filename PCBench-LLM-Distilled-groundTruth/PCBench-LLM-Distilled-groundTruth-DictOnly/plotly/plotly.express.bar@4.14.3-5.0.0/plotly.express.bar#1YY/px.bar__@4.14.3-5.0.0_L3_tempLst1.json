@@ -1,0 +1,113 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(color, 3)": {},
+    "(facet_row, 4)": {
+      "posChange": 5,
+      "replace": "pattern_shape=None"
+    },
+    "(facet_col, 5)": {
+      "posChange": 6
+    },
+    "(facet_col_wrap, 6)": {
+      "posChange": 7
+    },
+    "(facet_row_spacing, 7)": {
+      "posChange": 8
+    },
+    "(facet_col_spacing, 8)": {
+      "posChange": 9
+    },
+    "(hover_name, 9)": {
+      "posChange": 10
+    },
+    "(hover_data, 10)": {
+      "posChange": 11
+    },
+    "(custom_data, 11)": {
+      "posChange": 12
+    },
+    "(text, 12)": {
+      "posChange": 13
+    },
+    "(base, 13)": {
+      "posChange": 14
+    },
+    "(error_x, 14)": {
+      "posChange": 15
+    },
+    "(error_x_minus, 15)": {
+      "posChange": 16
+    },
+    "(error_y, 16)": {
+      "posChange": 17
+    },
+    "(error_y_minus, 17)": {
+      "posChange": 18
+    },
+    "(animation_frame, 18)": {
+      "posChange": 19
+    },
+    "(animation_group, 19)": {
+      "posChange": 20
+    },
+    "(category_orders, 20)": {
+      "posChange": 21
+    },
+    "(labels, 21)": {
+      "posChange": 22
+    },
+    "(color_discrete_sequence, 22)": {
+      "posChange": 23
+    },
+    "(color_discrete_map, 23)": {
+      "posChange": 24
+    },
+    "(color_continuous_scale, 24)": {
+      "posChange": 25
+    },
+    "(range_color, 25)": {
+      "posChange": 28
+    },
+    "(color_continuous_midpoint, 26)": {
+      "posChange": 29,
+      "replace": "pattern_shape_sequence=None"
+    },
+    "(opacity, 27)": {
+      "posChange": 30,
+      "replace": "pattern_shape_map=None"
+    },
+    "(orientation, 28)": {
+      "posChange": 31
+    },
+    "(barmode, 29)": {
+      "posChange": 32
+    },
+    "(log_x, 30)": {
+      "posChange": 33
+    },
+    "(log_y, 31)": {
+      "posChange": 34
+    },
+    "(range_x, 32)": {
+      "posChange": 35
+    },
+    "(range_y, 33)": {
+      "posChange": 36
+    },
+    "(title, 34)": {
+      "posChange": 37
+    },
+    "(template, 35)": {
+      "posChange": 38
+    },
+    "(width, 36)": {
+      "posChange": 39
+    },
+    "(height, 37)": {
+      "posChange": 40
+    }
+  }
+]

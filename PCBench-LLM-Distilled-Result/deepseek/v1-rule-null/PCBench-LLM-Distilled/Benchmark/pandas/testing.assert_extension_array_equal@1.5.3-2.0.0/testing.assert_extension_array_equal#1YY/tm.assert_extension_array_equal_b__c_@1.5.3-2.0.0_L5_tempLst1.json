@@ -1,0 +1,61 @@
+{
+    "context": {
+        "callAPI": "tm.assert_extension_array_equal(b, c)",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "testing.assert_extension_array_equal#1YY/assert_extension_array_equalYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/testing.assert_extension_array_equal@1.5.3-2.0.0/testing.assert_extension_array_equal#1YY/assert_extension_array_equalYY.json",
+        "apiCall": "tm.assert_extension_array_equal(b, c)",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.testing.assert_extension_array_equal",
+            "error": "",
+            "internalPath": "pandas._testing.asserters",
+            "docstring": "Check that left and right ExtensionArrays are equal.\n\nParameters\n----------\nleft, right : ExtensionArray\n    The two arrays to compare.\ncheck_dtype : bool, default True\n    Whether to check if the ExtensionArray dtypes are identical.\nindex_values : numpy.ndarray, default None\n    Optional index (shared by both left and right), used in output.\ncheck_less_precise : bool or int, default False\n    Specify comparison precision. Only used when check_exact is False.\n    5 digits (False) or 3 digits (True) after decimal points are compared.\n    If int, then specify the digits to compare.\n\n    .. deprecated:: 1.1.0\n       Use `rtol` and `atol` instead to define relative/absolute\n       tolerance, respectively. Similar to :func:`math.isclose`.\ncheck_exact : bool, default False\n    Whether to compare number exactly.\nrtol : float, default 1e-5\n    Relative tolerance. Only used when check_exact is False.\n\n    .. versionadded:: 1.1.0\natol : float, default 1e-8\n    Absolute tolerance. Only used when check_exact is False.\n\n    .. versionadded:: 1.1.0\n\nNotes\n-----\nMissing values are checked separately from valid values.\nA mask of missing values is computed for each and checked to match.\nThe remaining all-valid values are cast to object dtype and checked.\n\nExamples\n--------\n>>> from pandas import testing as tm\n>>> a = pd.Series([1, 2, 3, 4])\n>>> b, c = a.array, a.array\n>>> tm.assert_extension_array_equal(b, c)",
+            "sourceCode": "def assert_extension_array_equal(\n    left,\n    right,\n    check_dtype: bool | Literal[\"equiv\"] = True,\n    index_values=None,\n    check_less_precise=no_default,\n    check_exact=False,\n    rtol: float = 1.0e-5,\n    atol: float = 1.0e-8,\n) -> None:\n    \"\"\"\n    Check that left and right ExtensionArrays are equal.\n\n    Parameters\n    ----------\n    left, right : ExtensionArray\n        The two arrays to compare.\n    check_dtype : bool, default True\n        Whether to check if the ExtensionArray dtypes are identical.\n    index_values : numpy.ndarray, default None\n        Optional index (shared by both left and right), used in output.\n    check_less_precise : bool or int, default False\n        Specify comparison precision. Only used when check_exact is False.\n        5 digits (False) or 3 digits (True) after decimal points are compared.\n        If int, then specify the digits to compare.\n\n        .. deprecated:: 1.1.0\n           Use `rtol` and `atol` instead to define relative/absolute\n           tolerance, respectively. Similar to :func:`math.isclose`.\n    check_exact : bool, default False\n        Whether to compare number exactly.\n    rtol : float, default 1e-5\n        Relative tolerance. Only used when check_exact is False.\n\n        .. versionadded:: 1.1.0\n    atol : float, default 1e-8\n        Absolute tolerance. Only used when check_exact is False.\n\n        .. versionadded:: 1.1.0\n\n    Notes\n    -----\n    Missing values are checked separately from valid values.\n    A mask of missing values is computed for each and checked to match.\n    The remaining all-valid values are cast to object dtype and checked.\n\n    Examples\n    --------\n    >>> from pandas import testing as tm\n    >>> a = pd.Series([1, 2, 3, 4])\n    >>> b, c = a.array, a.array\n    >>> tm.assert_extension_array_equal(b, c)\n    \"\"\"\n    if check_less_precise is not no_default:\n        warnings.warn(\n            \"The 'check_less_precise' keyword in testing.assert_*_equal \"\n            \"is deprecated and will be removed in a future version. \"\n            \"You can stop passing 'check_less_precise' to silence this warning.\",\n            FutureWarning,\n            stacklevel=find_stack_level(),\n        )\n        rtol = atol = _get_tol_from_less_precise(check_less_precise)\n\n    assert isinstance(left, ExtensionArray), \"left is not an ExtensionArray\"\n    assert isinstance(right, ExtensionArray), \"right is not an ExtensionArray\"\n    if check_dtype:\n        assert_attr_equal(\"dtype\", left, right, obj=\"ExtensionArray\")\n\n    if (\n        isinstance(left, DatetimeLikeArrayMixin)\n        and isinstance(right, DatetimeLikeArrayMixin)\n        and type(right) == type(left)\n    ):\n        # Avoid slow object-dtype comparisons\n        # np.asarray for case where we have a np.MaskedArray\n        assert_numpy_array_equal(\n            np.asarray(left.asi8), np.asarray(right.asi8), index_values=index_values\n        )\n        return\n\n    left_na = np.asarray(left.isna())\n    right_na = np.asarray(right.isna())\n    assert_numpy_array_equal(\n        left_na, right_na, obj=\"ExtensionArray NA mask\", index_values=index_values\n    )\n\n    left_valid = left[~left_na].to_numpy(dtype=object)\n    right_valid = right[~right_na].to_numpy(dtype=object)\n    if check_exact:\n        assert_numpy_array_equal(\n            left_valid, right_valid, obj=\"ExtensionArray\", index_values=index_values\n        )\n    else:\n        _testing.assert_almost_equal(\n            left_valid,\n            right_valid,\n            check_dtype=bool(check_dtype),\n            rtol=rtol,\n            atol=atol,\n            obj=\"ExtensionArray\",\n            index_values=index_values,\n        )\n",
+            "match": "(left, right, check_dtype: \"bool | Literal['equiv']\" = True, index_values=None, check_less_precise=<no_default>, check_exact=False, rtol: 'float' = 1e-05, atol: 'float' = 1e-08) -> 'None'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.testing.assert_extension_array_equal",
+            "error": "",
+            "internalPath": "pandas._testing.asserters",
+            "docstring": "Check that left and right ExtensionArrays are equal.\n\nParameters\n----------\nleft, right : ExtensionArray\n    The two arrays to compare.\ncheck_dtype : bool, default True\n    Whether to check if the ExtensionArray dtypes are identical.\nindex_values : numpy.ndarray, default None\n    Optional index (shared by both left and right), used in output.\ncheck_exact : bool, default False\n    Whether to compare number exactly.\nrtol : float, default 1e-5\n    Relative tolerance. Only used when check_exact is False.\n\n    .. versionadded:: 1.1.0\natol : float, default 1e-8\n    Absolute tolerance. Only used when check_exact is False.\n\n    .. versionadded:: 1.1.0\nobj : str, default 'ExtensionArray'\n    Specify object name being compared, internally used to show appropriate\n    assertion message.\n\n    .. versionadded:: 2.0.0\n\nNotes\n-----\nMissing values are checked separately from valid values.\nA mask of missing values is computed for each and checked to match.\nThe remaining all-valid values are cast to object dtype and checked.\n\nExamples\n--------\n>>> from pandas import testing as tm\n>>> a = pd.Series([1, 2, 3, 4])\n>>> b, c = a.array, a.array\n>>> tm.assert_extension_array_equal(b, c)",
+            "sourceCode": "def assert_extension_array_equal(\n    left,\n    right,\n    check_dtype: bool | Literal[\"equiv\"] = True,\n    index_values=None,\n    check_exact: bool = False,\n    rtol: float = 1.0e-5,\n    atol: float = 1.0e-8,\n    obj: str = \"ExtensionArray\",\n) -> None:\n    \"\"\"\n    Check that left and right ExtensionArrays are equal.\n\n    Parameters\n    ----------\n    left, right : ExtensionArray\n        The two arrays to compare.\n    check_dtype : bool, default True\n        Whether to check if the ExtensionArray dtypes are identical.\n    index_values : numpy.ndarray, default None\n        Optional index (shared by both left and right), used in output.\n    check_exact : bool, default False\n        Whether to compare number exactly.\n    rtol : float, default 1e-5\n        Relative tolerance. Only used when check_exact is False.\n\n        .. versionadded:: 1.1.0\n    atol : float, default 1e-8\n        Absolute tolerance. Only used when check_exact is False.\n\n        .. versionadded:: 1.1.0\n    obj : str, default 'ExtensionArray'\n        Specify object name being compared, internally used to show appropriate\n        assertion message.\n\n        .. versionadded:: 2.0.0\n\n    Notes\n    -----\n    Missing values are checked separately from valid values.\n    A mask of missing values is computed for each and checked to match.\n    The remaining all-valid values are cast to object dtype and checked.\n\n    Examples\n    --------\n    >>> from pandas import testing as tm\n    >>> a = pd.Series([1, 2, 3, 4])\n    >>> b, c = a.array, a.array\n    >>> tm.assert_extension_array_equal(b, c)\n    \"\"\"\n    assert isinstance(left, ExtensionArray), \"left is not an ExtensionArray\"\n    assert isinstance(right, ExtensionArray), \"right is not an ExtensionArray\"\n    if check_dtype:\n        assert_attr_equal(\"dtype\", left, right, obj=f\"Attributes of {obj}\")\n\n    if (\n        isinstance(left, DatetimeLikeArrayMixin)\n        and isinstance(right, DatetimeLikeArrayMixin)\n        and type(right) == type(left)\n    ):\n        # Avoid slow object-dtype comparisons\n        # np.asarray for case where we have a np.MaskedArray\n        assert_numpy_array_equal(\n            np.asarray(left.asi8),\n            np.asarray(right.asi8),\n            index_values=index_values,\n            obj=obj,\n        )\n        return\n\n    left_na = np.asarray(left.isna())\n    right_na = np.asarray(right.isna())\n    assert_numpy_array_equal(\n        left_na, right_na, obj=f\"{obj} NA mask\", index_values=index_values\n    )\n\n    left_valid = left[~left_na].to_numpy(dtype=object)\n    right_valid = right[~right_na].to_numpy(dtype=object)\n    if check_exact:\n        assert_numpy_array_equal(\n            left_valid, right_valid, obj=obj, index_values=index_values\n        )\n    else:\n        _testing.assert_almost_equal(\n            left_valid,\n            right_valid,\n            check_dtype=bool(check_dtype),\n            rtol=rtol,\n            atol=atol,\n            obj=obj,\n            index_values=index_values,\n        )\n",
+            "match": "(left, right, check_dtype: \"bool | Literal['equiv']\" = True, index_values=None, check_exact: 'bool' = False, rtol: 'float' = 1e-05, atol: 'float' = 1e-08, obj: 'str' = 'ExtensionArray') -> 'None'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(left, 0)": {},
+                "(right, 1)": {},
+                "(check_dtype, 2)": {},
+                "(index_values, 3)": {},
+                "(check_less_precise, 4)": {
+                    "delete": 1,
+                    "replace": "check_exact"
+                },
+                "(check_exact, 5)": {
+                    "typeChange": "'bool'",
+                    "posChange": 4
+                },
+                "(rtol, 6)": {
+                    "posChange": 5
+                },
+                "(atol, 7)": {
+                    "posChange": 6
+                },
+                "(obj, 7)": {
+                    "addPos": "obj='ExtensionArray'"
+                }
+            },
+            "targetOvPara": "(left, right, check_dtype: \"bool | Literal['equiv']\" = True, index_values=None, check_exact: 'bool' = False, rtol: 'float' = 1e-05, atol: 'float' = 1e-08, obj: 'str' = 'ExtensionArray') -> 'None'"
+        }
+    ]
+}

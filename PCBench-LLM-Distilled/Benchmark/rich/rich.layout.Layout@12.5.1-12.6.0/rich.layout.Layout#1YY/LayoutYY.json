@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/rich/rich.layout.Layout@12.5.1-12.6.0/rich.layout.Layout#1YY",
+    "runCommand": "python LayoutYY.py",
+    "runFilePath": "",
+    "libName": "rich",
+    "currentVersion": "12.5.1",
+    "targetVersion": "12.6.0",
+    "currentEnv": "/envs/rich12.5.1",
+    "targetEnv": "/envs/rich12.6.0"
+}

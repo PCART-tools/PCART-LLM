@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "nx.average_shortest_path_length(G)",
+        "currentVersion": "1.4",
+        "targetVersion": "1.5",
+        "fileRelativePath": "average_shortest_path_length#1YY/average_shortest_path_lengthYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/average_shortest_path_length@1.4-1.5/average_shortest_path_length#1YY/average_shortest_path_lengthYY.json",
+        "apiCall": "nx.average_shortest_path_length(G)",
+        "oldVersion": "networkx@1.4",
+        "newVersion": "networkx@1.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.average_shortest_path_length",
+            "error": "",
+            "internalPath": "networkx.algorithms.shortest_paths.generic",
+            "docstring": "Return the average shortest path length.\n\nThe average shortest path length is\n\n.. math::\n\n   a =\\sum_{s,t \\in V} \\frac{d(s, t)}{n(n-1)}\n\nwhere :math:`V` is the set of nodes in :math:`G`,\n:math:`d(s, t)` is the shortest path from :math:`s` to :math:`t`,\nand :math:`n` is the number of nodes in :math:`G`.\n\nParameters\n----------\nG : NetworkX graph\n\nweighted : bool, optional, default=False \n   If True use edge weights on path. \n\nRaises\n------\nNetworkXError:\n   if the graph is not connected.\n\nExamples\n--------\n>>> G=nx.path_graph(5)\n>>> print(nx.average_shortest_path_length(G))\n2.0\n\nFor disconnected graphs you can compute the average shortest path\nlength for each component:\n>>> G=nx.Graph([(1,2),(3,4)])\n>>> for g in nx.connected_component_subgraphs(G): \n...     print(nx.average_shortest_path_length(g))\n1.0\n1.0\n\nNotes\n-----\nIf weighted=True and the graph has no 'weight' edge attribute\nthe value 1 will be used.",
+            "sourceCode": "def average_shortest_path_length(G,weighted=False):\n    \"\"\" Return the average shortest path length.\n\n    The average shortest path length is\n\n    .. math::\n\n       a =\\\\sum_{s,t \\\\in V} \\\\frac{d(s, t)}{n(n-1)}\n\n    where :math:`V` is the set of nodes in :math:`G`,\n    :math:`d(s, t)` is the shortest path from :math:`s` to :math:`t`,\n    and :math:`n` is the number of nodes in :math:`G`.\n\n    Parameters\n    ----------\n    G : NetworkX graph\n\n    weighted : bool, optional, default=False \n       If True use edge weights on path. \n\n    Raises\n    ------\n    NetworkXError:\n       if the graph is not connected.\n\n    Examples\n    --------\n    >>> G=nx.path_graph(5)\n    >>> print(nx.average_shortest_path_length(G))\n    2.0\n\n    For disconnected graphs you can compute the average shortest path\n    length for each component:\n    >>> G=nx.Graph([(1,2),(3,4)])\n    >>> for g in nx.connected_component_subgraphs(G): \n    ...     print(nx.average_shortest_path_length(g))\n    1.0\n    1.0\n\n    Notes\n    -----\n    If weighted=True and the graph has no 'weight' edge attribute\n    the value 1 will be used.\n\n    \"\"\"\n    if weighted:\n        path_length=nx.single_source_dijkstra_path_length\n    else:\n        path_length=nx.single_source_shortest_path_length\n    if G.is_directed():\n        if not nx.is_weakly_connected(G):\n            raise nx.NetworkXError(\"Graph is not connected.\")\n    else:\n        if not nx.is_connected(G):\n            raise nx.NetworkXError(\"Graph is not connected.\")\n    avg=0.0\n    n=len(G)\n    for node in G:\n        l=list(path_length(G,node).values())\n        avg+=sum(l)\n    return avg/(n*(n-1))\n",
+            "match": "(G, weighted=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.average_shortest_path_length",
+            "error": "",
+            "internalPath": "networkx.algorithms.shortest_paths.generic",
+            "docstring": "Return the average shortest path length.\n\nThe average shortest path length is\n\n.. math::\n\n   a =\\sum_{s,t \\in V} \\frac{d(s, t)}{n(n-1)}\n\nwhere `V` is the set of nodes in `G`,\n`d(s, t)` is the shortest path from `s` to `t`,\nand `n` is the number of nodes in `G`.\n\nParameters\n----------\nG : NetworkX graph\n\nweight : None, True or string, optional (default = None)\n   If None, every edge has weight/distance/cost 1.\n   If True, use the 'weight' edge attribute as the edge weight.\n   If a string, use this edge attribute as the edge weight.\n   Any edge attribute not present defaults to 1.\n\nRaises\n------\nNetworkXError:\n   if the graph is not connected.\n\nExamples\n--------\n>>> G=nx.path_graph(5)\n>>> print(nx.average_shortest_path_length(G))\n2.0\n\nFor disconnected graphs you can compute the average shortest path\nlength for each component:\n>>> G=nx.Graph([(1,2),(3,4)])\n>>> for g in nx.connected_component_subgraphs(G): \n...     print(nx.average_shortest_path_length(g))\n1.0\n1.0",
+            "sourceCode": "def average_shortest_path_length(G, weight=None):\n    r\"\"\"Return the average shortest path length.\n\n    The average shortest path length is\n\n    .. math::\n\n       a =\\sum_{s,t \\in V} \\frac{d(s, t)}{n(n-1)}\n\n    where `V` is the set of nodes in `G`,\n    `d(s, t)` is the shortest path from `s` to `t`,\n    and `n` is the number of nodes in `G`.\n\n    Parameters\n    ----------\n    G : NetworkX graph\n\n    weight : None, True or string, optional (default = None)\n       If None, every edge has weight/distance/cost 1.\n       If True, use the 'weight' edge attribute as the edge weight.\n       If a string, use this edge attribute as the edge weight.\n       Any edge attribute not present defaults to 1.\n\n    Raises\n    ------\n    NetworkXError:\n       if the graph is not connected.\n\n    Examples\n    --------\n    >>> G=nx.path_graph(5)\n    >>> print(nx.average_shortest_path_length(G))\n    2.0\n\n    For disconnected graphs you can compute the average shortest path\n    length for each component:\n    >>> G=nx.Graph([(1,2),(3,4)])\n    >>> for g in nx.connected_component_subgraphs(G): \n    ...     print(nx.average_shortest_path_length(g))\n    1.0\n    1.0\n\n    \"\"\"\n    if G.is_directed():\n        if not nx.is_weakly_connected(G):\n            raise nx.NetworkXError(\"Graph is not connected.\")\n    else:\n        if not nx.is_connected(G):\n            raise nx.NetworkXError(\"Graph is not connected.\")\n    avg=0.0\n    if weight is None:\n        for node in G:\n            path_length=nx.single_source_shortest_path_length(G, node)\n            avg += sum(path_length.values())\n    else:\n        if weight is True: weight='weight'\n        for node in G:\n            path_length=nx.single_source_dijkstra_path_length(G, node, weight=weight)\n            avg += sum(path_length.values())\n    n=len(G)\n    return avg/(n*(n-1))\n",
+            "match": "(G, weight=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(weighted, 1)": {
+                    "rename": "weight"
+                }
+            },
+            "targetOvPara": "(G, weight=None)"
+        }
+    ]
+}

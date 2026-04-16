@@ -1,0 +1,27 @@
+[
+  {
+    "(n_iter, 0)": {},
+    "(tol, 1)": {},
+    "(alpha_1, 2)": {},
+    "(alpha_2, 3)": {},
+    "(lambda_1, 4)": {},
+    "(lambda_2, 5)": {},
+    "(compute_score, 6)": {
+      "posChange": 8,
+      "replace": "alpha_init=None"
+    },
+    "(fit_intercept, 7)": {
+      "posChange": 9,
+      "replace": "lambda_init=None"
+    },
+    "(normalize, 8)": {
+      "posChange": 10
+    },
+    "(copy_X, 9)": {
+      "posChange": 11
+    },
+    "(verbose, 10)": {
+      "posChange": 12
+    }
+  }
+]

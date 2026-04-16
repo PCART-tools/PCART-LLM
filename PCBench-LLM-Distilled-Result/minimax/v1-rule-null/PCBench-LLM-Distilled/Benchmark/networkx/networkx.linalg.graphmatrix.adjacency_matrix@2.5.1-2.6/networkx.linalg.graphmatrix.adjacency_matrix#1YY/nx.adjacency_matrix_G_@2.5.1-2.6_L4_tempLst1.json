@@ -1,0 +1,52 @@
+{
+    "context": {
+        "callAPI": "nx.adjacency_matrix(G)",
+        "currentVersion": "2.5.1",
+        "targetVersion": "2.6",
+        "fileRelativePath": "networkx.linalg.graphmatrix.adjacency_matrix#1YY/adjacency_matrixYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/networkx.linalg.graphmatrix.adjacency_matrix@2.5.1-2.6/networkx.linalg.graphmatrix.adjacency_matrix#1YY/adjacency_matrixYY.json",
+        "apiCall": "nx.adjacency_matrix(G)",
+        "oldVersion": "networkx@2.5.1",
+        "newVersion": "networkx@2.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.adjacency_matrix",
+            "error": "",
+            "internalPath": "networkx.linalg.graphmatrix",
+            "docstring": "Returns adjacency matrix of G.\n\nParameters\n----------\nG : graph\n   A NetworkX graph\n\nnodelist : list, optional\n   The rows and columns are ordered according to the nodes in nodelist.\n   If nodelist is None, then the ordering is produced by G.nodes().\n\nweight : string or None, optional (default='weight')\n   The edge data key used to provide each value in the matrix.\n   If None, then each edge has weight 1.\n\nReturns\n-------\nA : SciPy sparse matrix\n  Adjacency matrix representation of G.\n\nNotes\n-----\nFor directed graphs, entry i,j corresponds to an edge from i to j.\n\nIf you want a pure Python adjacency matrix representation try\nnetworkx.convert.to_dict_of_dicts which will return a\ndictionary-of-dictionaries format that can be addressed as a\nsparse matrix.\n\nFor MultiGraph/MultiDiGraph with parallel edges the weights are summed.\nSee `to_numpy_array` for other options.\n\nThe convention used for self-loop edges in graphs is to assign the\ndiagonal matrix entry value to the edge weight attribute\n(or the number 1 if the edge has no weight attribute).  If the\nalternate convention of doubling the edge weight is desired the\nresulting Scipy sparse matrix can be modified as follows:\n\n>>> import scipy as sp\n>>> G = nx.Graph([(1, 1)])\n>>> A = nx.adjacency_matrix(G)\n>>> print(A.todense())\n[[1]]\n>>> A.setdiag(A.diagonal() * 2)\n>>> print(A.todense())\n[[2]]\n\nSee Also\n--------\nto_numpy_array\nto_scipy_sparse_matrix\nto_dict_of_dicts\nadjacency_spectrum",
+            "sourceCode": "def adjacency_matrix(G, nodelist=None, weight=\"weight\"):\n    \"\"\"Returns adjacency matrix of G.\n\n    Parameters\n    ----------\n    G : graph\n       A NetworkX graph\n\n    nodelist : list, optional\n       The rows and columns are ordered according to the nodes in nodelist.\n       If nodelist is None, then the ordering is produced by G.nodes().\n\n    weight : string or None, optional (default='weight')\n       The edge data key used to provide each value in the matrix.\n       If None, then each edge has weight 1.\n\n    Returns\n    -------\n    A : SciPy sparse matrix\n      Adjacency matrix representation of G.\n\n    Notes\n    -----\n    For directed graphs, entry i,j corresponds to an edge from i to j.\n\n    If you want a pure Python adjacency matrix representation try\n    networkx.convert.to_dict_of_dicts which will return a\n    dictionary-of-dictionaries format that can be addressed as a\n    sparse matrix.\n\n    For MultiGraph/MultiDiGraph with parallel edges the weights are summed.\n    See `to_numpy_array` for other options.\n\n    The convention used for self-loop edges in graphs is to assign the\n    diagonal matrix entry value to the edge weight attribute\n    (or the number 1 if the edge has no weight attribute).  If the\n    alternate convention of doubling the edge weight is desired the\n    resulting Scipy sparse matrix can be modified as follows:\n\n    >>> import scipy as sp\n    >>> G = nx.Graph([(1, 1)])\n    >>> A = nx.adjacency_matrix(G)\n    >>> print(A.todense())\n    [[1]]\n    >>> A.setdiag(A.diagonal() * 2)\n    >>> print(A.todense())\n    [[2]]\n\n    See Also\n    --------\n    to_numpy_array\n    to_scipy_sparse_matrix\n    to_dict_of_dicts\n    adjacency_spectrum\n    \"\"\"\n    return nx.to_scipy_sparse_matrix(G, nodelist=nodelist, weight=weight)\n",
+            "match": "(G, nodelist=None, weight='weight')",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.adjacency_matrix",
+            "error": "",
+            "internalPath": "networkx.linalg.graphmatrix",
+            "docstring": "Returns adjacency matrix of G.\n\nParameters\n----------\nG : graph\n   A NetworkX graph\n\nnodelist : list, optional\n   The rows and columns are ordered according to the nodes in nodelist.\n   If nodelist is None, then the ordering is produced by G.nodes().\n\ndtype : NumPy data-type, optional\n    The desired data-type for the array.\n    If None, then the NumPy default is used.\n\nweight : string or None, optional (default='weight')\n   The edge data key used to provide each value in the matrix.\n   If None, then each edge has weight 1.\n\nReturns\n-------\nA : SciPy sparse matrix\n  Adjacency matrix representation of G.\n\nNotes\n-----\nFor directed graphs, entry i,j corresponds to an edge from i to j.\n\nIf you want a pure Python adjacency matrix representation try\nnetworkx.convert.to_dict_of_dicts which will return a\ndictionary-of-dictionaries format that can be addressed as a\nsparse matrix.\n\nFor MultiGraph/MultiDiGraph with parallel edges the weights are summed.\nSee `to_numpy_array` for other options.\n\nThe convention used for self-loop edges in graphs is to assign the\ndiagonal matrix entry value to the edge weight attribute\n(or the number 1 if the edge has no weight attribute).  If the\nalternate convention of doubling the edge weight is desired the\nresulting Scipy sparse matrix can be modified as follows:\n\n>>> G = nx.Graph([(1, 1)])\n>>> A = nx.adjacency_matrix(G)\n>>> print(A.todense())\n[[1]]\n>>> A.setdiag(A.diagonal() * 2)\n>>> print(A.todense())\n[[2]]\n\nSee Also\n--------\nto_numpy_array\nto_scipy_sparse_matrix\nto_dict_of_dicts\nadjacency_spectrum",
+            "sourceCode": "def adjacency_matrix(G, nodelist=None, dtype=None, weight=\"weight\"):\n    \"\"\"Returns adjacency matrix of G.\n\n    Parameters\n    ----------\n    G : graph\n       A NetworkX graph\n\n    nodelist : list, optional\n       The rows and columns are ordered according to the nodes in nodelist.\n       If nodelist is None, then the ordering is produced by G.nodes().\n\n    dtype : NumPy data-type, optional\n        The desired data-type for the array.\n        If None, then the NumPy default is used.\n\n    weight : string or None, optional (default='weight')\n       The edge data key used to provide each value in the matrix.\n       If None, then each edge has weight 1.\n\n    Returns\n    -------\n    A : SciPy sparse matrix\n      Adjacency matrix representation of G.\n\n    Notes\n    -----\n    For directed graphs, entry i,j corresponds to an edge from i to j.\n\n    If you want a pure Python adjacency matrix representation try\n    networkx.convert.to_dict_of_dicts which will return a\n    dictionary-of-dictionaries format that can be addressed as a\n    sparse matrix.\n\n    For MultiGraph/MultiDiGraph with parallel edges the weights are summed.\n    See `to_numpy_array` for other options.\n\n    The convention used for self-loop edges in graphs is to assign the\n    diagonal matrix entry value to the edge weight attribute\n    (or the number 1 if the edge has no weight attribute).  If the\n    alternate convention of doubling the edge weight is desired the\n    resulting Scipy sparse matrix can be modified as follows:\n\n    >>> G = nx.Graph([(1, 1)])\n    >>> A = nx.adjacency_matrix(G)\n    >>> print(A.todense())\n    [[1]]\n    >>> A.setdiag(A.diagonal() * 2)\n    >>> print(A.todense())\n    [[2]]\n\n    See Also\n    --------\n    to_numpy_array\n    to_scipy_sparse_matrix\n    to_dict_of_dicts\n    adjacency_spectrum\n    \"\"\"\n    return nx.to_scipy_sparse_matrix(G, nodelist=nodelist, dtype=dtype, weight=weight)\n",
+            "match": "(G, nodelist=None, dtype=None, weight='weight')",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(nodelist, 1)": {},
+                "(weight, 2)": {
+                    "delete": 1,
+                    "replace": "dtype=None"
+                },
+                "(dtype, 2)": {
+                    "addPos": "dtype=None"
+                },
+                "(weight, 3)": {
+                    "posChange": 3
+                }
+            },
+            "targetOvPara": "(G, nodelist=None, dtype=None, weight='weight')"
+        }
+    ]
+}

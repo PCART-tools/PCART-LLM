@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "stream.read_bytes(10)",
+        "currentVersion": "5.1.1",
+        "targetVersion": "6.0",
+        "fileRelativePath": "tornado.iostream.BaseIOStream.read_bytes#1YY/read_bytesYY.py",
+        "lineNum": "11",
+        "config": "PCBench-LLM-Distilled/Benchmark/tornado/tornado.iostream.BaseIOStream.read_bytes@5.1.1-6.0/tornado.iostream.BaseIOStream.read_bytes#1YY/read_bytesYY.json",
+        "apiCall": "stream.read_bytes(10)",
+        "oldVersion": "tornado@5.1.1",
+        "newVersion": "tornado@6.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.iostream.IOStream.read_bytes",
+            "match": {
+                "tornado.iostream.BaseIOStream.read_bytes": [
+                    "(self,num_bytes,callback=None,streaming_callback=None,partial=False)"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "tornado.iostream.IOStream.read_bytes",
+            "match": {
+                "tornado.iostream.BaseIOStream.read_bytes": [
+                    "(self,num_bytes:int,partial:bool=False)->Awaitable[bytes]"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(num_bytes, 0)": {
+                    "typeChange": "int"
+                },
+                "(callback, 1)": {
+                    "delete": 1
+                },
+                "(streaming_callback, 2)": {
+                    "delete": 1
+                },
+                "(partial, 3)": {
+                    "typeChange": "bool",
+                    "posChange": 1
+                }
+            },
+            "targetOvPara": "(self,num_bytes:int,partial:bool=False)->Awaitable[bytes]"
+        }
+    ]
+}

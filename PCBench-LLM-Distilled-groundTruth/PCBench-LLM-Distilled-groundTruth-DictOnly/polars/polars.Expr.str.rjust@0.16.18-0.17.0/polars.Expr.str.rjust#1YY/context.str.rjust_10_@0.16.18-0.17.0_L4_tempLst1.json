@@ -1,0 +1,14 @@
+[
+  {
+    "(width, 0)": {},
+    "(fillchar, 1)": {
+      "rename": "fill_char"
+    }
+  },
+  {
+    "(width, 0)": {},
+    "(fillchar, 1)": {
+      "rename": "fill_char"
+    }
+  }
+]

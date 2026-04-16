@@ -1,0 +1,78 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(r, 1)": {},
+    "(theta, 2)": {},
+    "(color, 3)": {},
+    "(line_dash, 4)": {},
+    "(hover_name, 5)": {},
+    "(hover_data, 6)": {},
+    "(custom_data, 7)": {},
+    "(line_group, 8)": {},
+    "(text, 9)": {},
+    "(animation_frame, 10)": {
+      "posChange": 11,
+      "replace": "symbol=None"
+    },
+    "(animation_group, 11)": {
+      "posChange": 12
+    },
+    "(category_orders, 12)": {
+      "posChange": 13
+    },
+    "(labels, 13)": {
+      "posChange": 14
+    },
+    "(color_discrete_sequence, 14)": {
+      "posChange": 15
+    },
+    "(color_discrete_map, 15)": {
+      "posChange": 16
+    },
+    "(line_dash_sequence, 16)": {
+      "posChange": 17
+    },
+    "(line_dash_map, 17)": {
+      "posChange": 18
+    },
+    "(direction, 18)": {
+      "posChange": 22
+    },
+    "(start_angle, 19)": {
+      "posChange": 23,
+      "replace": "symbol_sequence=None"
+    },
+    "(line_close, 20)": {
+      "posChange": 24,
+      "replace": "symbol_map=None"
+    },
+    "(line_shape, 21)": {
+      "posChange": 25,
+      "replace": "markers=False"
+    },
+    "(render_mode, 22)": {
+      "posChange": 26
+    },
+    "(range_r, 23)": {
+      "posChange": 27
+    },
+    "(range_theta, 24)": {
+      "posChange": 28
+    },
+    "(log_r, 25)": {
+      "posChange": 29
+    },
+    "(title, 26)": {
+      "posChange": 30
+    },
+    "(template, 27)": {
+      "posChange": 31
+    },
+    "(width, 28)": {
+      "posChange": 32
+    },
+    "(height, 29)": {
+      "posChange": 33
+    }
+  }
+]

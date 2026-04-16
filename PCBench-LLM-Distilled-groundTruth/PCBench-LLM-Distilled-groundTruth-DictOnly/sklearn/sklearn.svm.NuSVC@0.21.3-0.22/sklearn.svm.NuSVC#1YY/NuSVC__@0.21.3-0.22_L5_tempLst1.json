@@ -1,0 +1,21 @@
+[
+  {
+    "(nu, 0)": {},
+    "(kernel, 1)": {},
+    "(degree, 2)": {},
+    "(gamma, 3)": {},
+    "(coef0, 4)": {},
+    "(shrinking, 5)": {},
+    "(probability, 6)": {},
+    "(tol, 7)": {},
+    "(cache_size, 8)": {},
+    "(class_weight, 9)": {},
+    "(verbose, 10)": {},
+    "(max_iter, 11)": {},
+    "(decision_function_shape, 12)": {},
+    "(random_state, 13)": {
+      "posChange": 14,
+      "replace": "break_ties=False"
+    }
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(line_group, 3)": {},
+    "(color, 4)": {},
+    "(hover_name, 5)": {},
+    "(hover_data, 6)": {},
+    "(custom_data, 7)": {},
+    "(text, 8)": {},
+    "(facet_row, 9)": {},
+    "(facet_col, 10)": {},
+    "(animation_frame, 11)": {
+      "posChange": 12,
+      "replace": "facet_col_wrap=0"
+    },
+    "(animation_group, 12)": {
+      "posChange": 13
+    },
+    "(category_orders, 13)": {
+      "posChange": 14
+    },
+    "(labels, 14)": {
+      "posChange": 15
+    },
+    "(color_discrete_sequence, 15)": {
+      "posChange": 16
+    },
+    "(color_discrete_map, 16)": {
+      "posChange": 17
+    },
+    "(orientation, 17)": {
+      "posChange": 18
+    },
+    "(groupnorm, 18)": {
+      "posChange": 19
+    },
+    "(log_x, 19)": {
+      "posChange": 20
+    },
+    "(log_y, 20)": {
+      "posChange": 21
+    },
+    "(range_x, 21)": {
+      "posChange": 22
+    },
+    "(range_y, 22)": {
+      "posChange": 23
+    },
+    "(line_shape, 23)": {
+      "posChange": 24
+    },
+    "(title, 24)": {
+      "posChange": 25
+    },
+    "(template, 25)": {
+      "posChange": 26
+    },
+    "(width, 26)": {
+      "posChange": 27
+    },
+    "(height, 27)": {
+      "posChange": 28
+    }
+  }
+]

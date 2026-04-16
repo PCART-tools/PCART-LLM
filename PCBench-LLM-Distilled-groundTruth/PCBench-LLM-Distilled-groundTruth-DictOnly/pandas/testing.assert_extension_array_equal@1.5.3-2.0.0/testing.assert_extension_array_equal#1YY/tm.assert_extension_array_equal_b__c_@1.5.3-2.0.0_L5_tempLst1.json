@@ -1,0 +1,21 @@
+[
+  {
+    "(left, 0)": {},
+    "(right, 1)": {},
+    "(check_dtype, 2)": {},
+    "(index_values, 3)": {},
+    "(check_less_precise, 4)": {
+      "delete": 1
+    },
+    "(check_exact, 5)": {
+      "posChange": 4
+    },
+    "(rtol, 6)": {
+      "posChange": 5
+    },
+    "(atol, 7)": {
+      "posChange": 6,
+      "replace": "obj='ExtensionArray'"
+    }
+  }
+]

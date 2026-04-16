@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/PIL/PIL.Image.Image.show@8.4.0-9.0.0/PIL.Image.Image.show#1YY",
+    "runCommand": "python showYY.py",
+    "runFilePath": "",
+    "libName": "PIL",
+    "currentVersion": "8.4.0",
+    "targetVersion": "9.0.0",
+    "currentEnv": "/envs/PIL8.4.0",
+    "targetEnv": "/envs/PIL9.0.0"
+}

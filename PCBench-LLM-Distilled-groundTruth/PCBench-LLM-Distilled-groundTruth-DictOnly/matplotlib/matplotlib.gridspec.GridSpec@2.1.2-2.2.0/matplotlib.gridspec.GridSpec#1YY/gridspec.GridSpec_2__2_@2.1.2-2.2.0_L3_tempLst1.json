@@ -1,0 +1,31 @@
+[
+  {
+    "(nrows, 0)": {},
+    "(ncols, 1)": {},
+    "(left, 2)": {
+      "posChange": 3,
+      "replace": "figure=None"
+    },
+    "(bottom, 3)": {
+      "posChange": 4
+    },
+    "(right, 4)": {
+      "posChange": 5
+    },
+    "(top, 5)": {
+      "posChange": 6
+    },
+    "(wspace, 6)": {
+      "posChange": 7
+    },
+    "(hspace, 7)": {
+      "posChange": 8
+    },
+    "(width_ratios, 8)": {
+      "posChange": 9
+    },
+    "(height_ratios, 9)": {
+      "posChange": 10
+    }
+  }
+]

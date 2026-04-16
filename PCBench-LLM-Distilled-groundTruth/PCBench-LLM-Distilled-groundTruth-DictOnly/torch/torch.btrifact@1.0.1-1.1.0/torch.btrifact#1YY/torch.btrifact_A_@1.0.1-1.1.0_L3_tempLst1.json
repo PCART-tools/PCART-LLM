@@ -1,0 +1,12 @@
+[
+  {
+    "(A, 0)": {},
+    "(info, 1)": {
+      "delete": 1
+    },
+    "(pivot, 2)": {
+      "posChange": 1,
+      "replace": "out=None"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "(G, 0)": {},
+    "(maxcardinality, 1)": {
+      "delete": 1
+    },
+    "(weight, 2)": {
+      "posChange": 1
+    }
+  }
+]

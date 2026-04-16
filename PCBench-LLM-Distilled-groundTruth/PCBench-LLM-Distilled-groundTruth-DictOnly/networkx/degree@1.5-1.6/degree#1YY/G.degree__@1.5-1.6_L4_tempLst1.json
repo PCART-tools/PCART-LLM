@@ -1,0 +1,9 @@
+[
+  {
+    "(nbunch, 0)": {},
+    "(weighted, 1)": {
+      "delete": 1,
+      "replace": "weight=None"
+    }
+  }
+]

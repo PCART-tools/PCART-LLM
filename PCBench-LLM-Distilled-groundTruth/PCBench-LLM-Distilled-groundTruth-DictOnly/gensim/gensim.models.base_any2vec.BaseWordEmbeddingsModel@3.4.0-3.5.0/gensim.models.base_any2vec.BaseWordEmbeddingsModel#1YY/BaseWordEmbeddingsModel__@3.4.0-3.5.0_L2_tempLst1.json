@@ -1,0 +1,30 @@
+[
+  {
+    "(sentences, 0)": {},
+    "(workers, 1)": {},
+    "(vector_size, 2)": {},
+    "(epochs, 3)": {},
+    "(callbacks, 4)": {},
+    "(batch_words, 5)": {},
+    "(trim_rule, 6)": {},
+    "(sg, 7)": {},
+    "(alpha, 8)": {},
+    "(window, 9)": {},
+    "(seed, 10)": {},
+    "(hs, 11)": {},
+    "(negative, 12)": {},
+    "(cbow_mean, 13)": {
+      "posChange": 14,
+      "replace": "ns_exponent=0.75"
+    },
+    "(min_alpha, 14)": {
+      "posChange": 15
+    },
+    "(compute_loss, 15)": {
+      "posChange": 16
+    },
+    "(fast_version, 16)": {
+      "posChange": 17
+    }
+  }
+]

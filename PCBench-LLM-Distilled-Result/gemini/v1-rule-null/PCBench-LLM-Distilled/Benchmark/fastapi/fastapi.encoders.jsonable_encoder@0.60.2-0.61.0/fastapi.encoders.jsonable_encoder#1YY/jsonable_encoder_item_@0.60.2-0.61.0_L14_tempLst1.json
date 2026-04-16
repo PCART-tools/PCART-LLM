@@ -1,0 +1,65 @@
+{
+    "context": {
+        "callAPI": "jsonable_encoder(item)",
+        "currentVersion": "0.60.2",
+        "targetVersion": "0.61.0",
+        "fileRelativePath": "fastapi.encoders.jsonable_encoder#1YY/jsonable_encoderYY.py",
+        "lineNum": "14",
+        "config": "PCBench-LLM-Distilled/Benchmark/fastapi/fastapi.encoders.jsonable_encoder@0.60.2-0.61.0/fastapi.encoders.jsonable_encoder#1YY/jsonable_encoderYY.json",
+        "apiCall": "jsonable_encoder(item)",
+        "oldVersion": "fastapi@0.60.2",
+        "newVersion": "fastapi@0.61.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "fastapi.encoders.jsonable_encoder",
+            "match": {
+                "fastapi.encoders.jsonable_encoder": [
+                    "(obj:Any,include:Optional[Union[SetIntStr,DictIntStrAny]]=None,exclude:Union[SetIntStr,DictIntStrAny]=set(),by_alias:bool=True,skip_defaults:Optional[bool]=None,exclude_unset:bool=False,exclude_defaults:bool=False,exclude_none:bool=False,custom_encoder:dict={},sqlalchemy_safe:bool=True)->Any"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "fastapi.encoders.jsonable_encoder",
+            "match": {
+                "fastapi.encoders.jsonable_encoder": [
+                    "(obj:Any,include:Optional[Union[SetIntStr,DictIntStrAny]]=None,exclude:Optional[Union[SetIntStr,DictIntStrAny]]=None,by_alias:bool=True,exclude_unset:bool=False,exclude_defaults:bool=False,exclude_none:bool=False,custom_encoder:dict={})->Any"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(obj, 0)": {},
+                "(include, 1)": {},
+                "(exclude, 2)": {
+                    "typeChange": "Optional[Union[SetIntStr,DictIntStrAny]]"
+                },
+                "(by_alias, 3)": {},
+                "(skip_defaults, 4)": {
+                    "delete": 1,
+                    "replace": "exclude_unset"
+                },
+                "(exclude_unset, 5)": {
+                    "posChange": 4
+                },
+                "(exclude_defaults, 6)": {
+                    "posChange": 5
+                },
+                "(exclude_none, 7)": {
+                    "posChange": 6
+                },
+                "(custom_encoder, 8)": {
+                    "posChange": 7
+                },
+                "(sqlalchemy_safe, 9)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(obj:Any,include:Optional[Union[SetIntStr,DictIntStrAny]]=None,exclude:Optional[Union[SetIntStr,DictIntStrAny]]=None,by_alias:bool=True,exclude_unset:bool=False,exclude_defaults:bool=False,exclude_none:bool=False,custom_encoder:dict={})->Any"
+        }
+    ]
+}

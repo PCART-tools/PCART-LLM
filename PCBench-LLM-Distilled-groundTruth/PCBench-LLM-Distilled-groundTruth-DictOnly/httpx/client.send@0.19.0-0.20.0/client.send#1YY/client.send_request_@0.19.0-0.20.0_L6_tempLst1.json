@@ -1,0 +1,13 @@
+[
+  {
+    "(request, 0)": {},
+    "(stream, 2)": {},
+    "(auth, 3)": {},
+    "(allow_redirects, 4)": {
+      "rename": "follow_redirects"
+    },
+    "(timeout, 5)": {
+      "delete": 1
+    }
+  }
+]

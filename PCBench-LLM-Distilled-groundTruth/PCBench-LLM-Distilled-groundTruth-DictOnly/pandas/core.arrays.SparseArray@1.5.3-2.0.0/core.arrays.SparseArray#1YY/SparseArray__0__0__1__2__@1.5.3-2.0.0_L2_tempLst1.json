@@ -1,0 +1,21 @@
+[
+  {
+    "(data, 0)": {},
+    "(sparse_index, 1)": {},
+    "(index, 2)": {
+      "delete": 1
+    },
+    "(fill_value, 3)": {
+      "posChange": 2
+    },
+    "(kind, 4)": {
+      "posChange": 3
+    },
+    "(dtype, 5)": {
+      "posChange": 4
+    },
+    "(copy, 6)": {
+      "posChange": 5
+    }
+  }
+]

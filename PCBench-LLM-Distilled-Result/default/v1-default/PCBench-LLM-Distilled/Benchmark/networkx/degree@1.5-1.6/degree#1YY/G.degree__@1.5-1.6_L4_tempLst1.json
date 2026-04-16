@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "G.degree()",
+        "currentVersion": "1.5",
+        "targetVersion": "1.6",
+        "fileRelativePath": "degree#1YY/degreeYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/degree@1.5-1.6/degree#1YY/degreeYY.json",
+        "apiCall": "G.degree()",
+        "oldVersion": "networkx@1.5",
+        "newVersion": "networkx@1.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.Graph.degree",
+            "error": "",
+            "internalPath": "networkx.classes.graph",
+            "docstring": "Return the degree of a node or nodes.\n\nThe node degree is the number of edges adjacent to that node.\n\nParameters\n----------\nnbunch : iterable container, optional (default=all nodes)\n    A container of nodes.  The container will be iterated\n    through once.\nweighted : bool, optional (default=False)\n   If True return the sum of edge weights adjacent to the node.\n\nReturns\n-------\nnd : dictionary, or number\n    A dictionary with nodes as keys and degree as values or\n    a number if a single node is specified.\n\nExamples\n--------\n>>> G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc\n>>> G.add_path([0,1,2,3])\n>>> G.degree(0)\n1\n>>> G.degree([0,1])\n{0: 1, 1: 2}\n>>> list(G.degree([0,1]).values())\n[1, 2]",
+            "sourceCode": "    def degree(self, nbunch=None, weighted=False):\n        \"\"\"Return the degree of a node or nodes.\n\n        The node degree is the number of edges adjacent to that node.\n\n        Parameters\n        ----------\n        nbunch : iterable container, optional (default=all nodes)\n            A container of nodes.  The container will be iterated\n            through once.\n        weighted : bool, optional (default=False)\n           If True return the sum of edge weights adjacent to the node.\n\n        Returns\n        -------\n        nd : dictionary, or number\n            A dictionary with nodes as keys and degree as values or\n            a number if a single node is specified.\n\n        Examples\n        --------\n        >>> G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc\n        >>> G.add_path([0,1,2,3])\n        >>> G.degree(0)\n        1\n        >>> G.degree([0,1])\n        {0: 1, 1: 2}\n        >>> list(G.degree([0,1]).values())\n        [1, 2]\n\n        \"\"\"\n        if nbunch in self:      # return a single node\n            return next(self.degree_iter(nbunch,weighted=weighted))[1]\n        else:           # return a dict\n            return dict(self.degree_iter(nbunch,weighted=weighted))\n",
+            "match": "(nbunch=None, weighted=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.Graph.degree",
+            "error": "",
+            "internalPath": "networkx.classes.graph",
+            "docstring": "Return the degree of a node or nodes.\n\nThe node degree is the number of edges adjacent to that node.\n\nParameters\n----------\nnbunch : iterable container, optional (default=all nodes)\n    A container of nodes.  The container will be iterated\n    through once.\n\nweight : string or None, optional (default=None)\n   The edge attribute that holds the numerical value used \n   as a weight.  If None, then each edge has weight 1.\n   The degree is the sum of the edge weights adjacent to the node.\n\nReturns\n-------\nnd : dictionary, or number\n    A dictionary with nodes as keys and degree as values or\n    a number if a single node is specified.\n\nExamples\n--------\n>>> G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc\n>>> G.add_path([0,1,2,3])\n>>> G.degree(0)\n1\n>>> G.degree([0,1])\n{0: 1, 1: 2}\n>>> list(G.degree([0,1]).values())\n[1, 2]",
+            "sourceCode": "    def degree(self, nbunch=None, weight=None):\n        \"\"\"Return the degree of a node or nodes.\n\n        The node degree is the number of edges adjacent to that node.\n\n        Parameters\n        ----------\n        nbunch : iterable container, optional (default=all nodes)\n            A container of nodes.  The container will be iterated\n            through once.\n\n        weight : string or None, optional (default=None)\n           The edge attribute that holds the numerical value used \n           as a weight.  If None, then each edge has weight 1.\n           The degree is the sum of the edge weights adjacent to the node.\n\n        Returns\n        -------\n        nd : dictionary, or number\n            A dictionary with nodes as keys and degree as values or\n            a number if a single node is specified.\n\n        Examples\n        --------\n        >>> G = nx.Graph()   # or DiGraph, MultiGraph, MultiDiGraph, etc\n        >>> G.add_path([0,1,2,3])\n        >>> G.degree(0)\n        1\n        >>> G.degree([0,1])\n        {0: 1, 1: 2}\n        >>> list(G.degree([0,1]).values())\n        [1, 2]\n\n        \"\"\"\n        if nbunch in self:      # return a single node\n            return next(self.degree_iter(nbunch,weight))[1]\n        else:           # return a dict\n            return dict(self.degree_iter(nbunch,weight))\n",
+            "match": "(nbunch=None, weight=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(nbunch, 0)": {},
+                "(weighted, 1)": {
+                    "rename": "weight"
+                }
+            },
+            "targetOvPara": "(nbunch=None, weight=None)"
+        }
+    ]
+}

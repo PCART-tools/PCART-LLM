@@ -1,0 +1,12 @@
+[
+  {
+    "(filename, 0)": {},
+    "(load, 1)": {
+      "typeChange": "t.Callable[[t.IO[t.Any]],t.Mapping]"
+    },
+    "(silent, 2)": {},
+    "(text, 3)": {
+      "addPos": "text=True"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/pydantic/pydantic.main.create_model@1.4-1.5/pydantic.main.create_model#1YY",
+    "runCommand": "python create_modelYY.py",
+    "runFilePath": "",
+    "libName": "pydantic",
+    "currentVersion": "1.4",
+    "targetVersion": "1.5",
+    "currentEnv": "/envs/pydantic1.4",
+    "targetEnv": "/envs/pydantic1.5"
+}

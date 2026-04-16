@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "tf.data.Dataset.random()",
+        "currentVersion": "2.11.1",
+        "targetVersion": "2.12.0",
+        "fileRelativePath": "tf.data.Dataset.random#1YY/randomYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/tensorflow/tf.data.Dataset.random@2.11.1-2.12.0/tf.data.Dataset.random#1YY/randomYY.json",
+        "apiCall": "tf.data.Dataset.random()",
+        "oldVersion": "tensorflow@2.11.1",
+        "newVersion": "tensorflow@2.12.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tensorflow.data.Dataset.random",
+            "error": "",
+            "internalPath": "tensorflow.python.data.ops.dataset_ops",
+            "docstring": "Creates a `Dataset` of pseudorandom values.\n\nThe dataset generates a sequence of uniformly distributed integer values.\n\n>>> ds1 = tf.data.Dataset.random(seed=4).take(10)\n>>> ds2 = tf.data.Dataset.random(seed=4).take(10)\n>>> print(list(ds1.as_numpy_iterator())==list(ds2.as_numpy_iterator()))\nTrue\n\nArgs:\n  seed: (Optional) If specified, the dataset produces a deterministic\n    sequence of values.\n  name: (Optional.) A name for the tf.data operation.\n\nReturns:\n  Dataset: A `Dataset`.",
+            "sourceCode": "  @staticmethod\n  def random(seed=None, name=None):\n    \"\"\"Creates a `Dataset` of pseudorandom values.\n\n    The dataset generates a sequence of uniformly distributed integer values.\n\n    >>> ds1 = tf.data.Dataset.random(seed=4).take(10)\n    >>> ds2 = tf.data.Dataset.random(seed=4).take(10)\n    >>> print(list(ds1.as_numpy_iterator())==list(ds2.as_numpy_iterator()))\n    True\n\n    Args:\n      seed: (Optional) If specified, the dataset produces a deterministic\n        sequence of values.\n      name: (Optional.) A name for the tf.data operation.\n\n    Returns:\n      Dataset: A `Dataset`.\n    \"\"\"\n    return RandomDataset(seed=seed, name=name)\n",
+            "match": "(seed=None, name=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "tensorflow.data.Dataset.random",
+            "error": "",
+            "internalPath": "tensorflow.python.data.ops.dataset_ops",
+            "docstring": "Creates a `Dataset` of pseudorandom values.\n\nThe dataset generates a sequence of uniformly distributed integer values.\n\n`rerandomize_each_iteration` controls whether the sequence of random number\ngenerated should be re-randomized for each epoch. The default value is False\nwhere the dataset generates the same sequence of random numbers for each\nepoch.\n\n>>> ds1 = tf.data.Dataset.random(seed=4).take(10)\n>>> ds2 = tf.data.Dataset.random(seed=4).take(10)\n>>> print(list(ds1.as_numpy_iterator())==list(ds2.as_numpy_iterator()))\nTrue\n\n>>> ds3 = tf.data.Dataset.random(seed=4).take(10)\n>>> ds3_first_epoch = list(ds3.as_numpy_iterator())\n>>> ds3_second_epoch = list(ds3.as_numpy_iterator())\n>>> print(ds3_first_epoch == ds3_second_epoch)\nTrue\n\n>>> ds4 = tf.data.Dataset.random(\n...     seed=4, rerandomize_each_iteration=True).take(10)\n>>> ds4_first_epoch = list(ds4.as_numpy_iterator())\n>>> ds4_second_epoch = list(ds4.as_numpy_iterator())\n>>> print(ds4_first_epoch == ds4_second_epoch)\nFalse\n\nArgs:\n  seed: (Optional) If specified, the dataset produces a deterministic\n    sequence of values.\n  rerandomize_each_iteration: (Optional) If set to False, the dataset\n  generates the same sequence of random numbers for each epoch. If set to\n  True, it generates a different deterministic sequence of random numbers\n  for each epoch. It is defaulted to False if left unspecified.\n  name: (Optional.) A name for the tf.data operation.\n\nReturns:\n  Dataset: A `Dataset`.",
+            "sourceCode": "  @staticmethod\n  def random(seed=None, rerandomize_each_iteration=None, name=None):\n    \"\"\"Creates a `Dataset` of pseudorandom values.\n\n    The dataset generates a sequence of uniformly distributed integer values.\n\n    `rerandomize_each_iteration` controls whether the sequence of random number\n    generated should be re-randomized for each epoch. The default value is False\n    where the dataset generates the same sequence of random numbers for each\n    epoch.\n\n    >>> ds1 = tf.data.Dataset.random(seed=4).take(10)\n    >>> ds2 = tf.data.Dataset.random(seed=4).take(10)\n    >>> print(list(ds1.as_numpy_iterator())==list(ds2.as_numpy_iterator()))\n    True\n\n    >>> ds3 = tf.data.Dataset.random(seed=4).take(10)\n    >>> ds3_first_epoch = list(ds3.as_numpy_iterator())\n    >>> ds3_second_epoch = list(ds3.as_numpy_iterator())\n    >>> print(ds3_first_epoch == ds3_second_epoch)\n    True\n\n    >>> ds4 = tf.data.Dataset.random(\n    ...     seed=4, rerandomize_each_iteration=True).take(10)\n    >>> ds4_first_epoch = list(ds4.as_numpy_iterator())\n    >>> ds4_second_epoch = list(ds4.as_numpy_iterator())\n    >>> print(ds4_first_epoch == ds4_second_epoch)\n    False\n\n    Args:\n      seed: (Optional) If specified, the dataset produces a deterministic\n        sequence of values.\n      rerandomize_each_iteration: (Optional) If set to False, the dataset\n      generates the same sequence of random numbers for each epoch. If set to\n      True, it generates a different deterministic sequence of random numbers\n      for each epoch. It is defaulted to False if left unspecified.\n      name: (Optional.) A name for the tf.data operation.\n\n    Returns:\n      Dataset: A `Dataset`.\n    \"\"\"\n    # Loaded lazily due to a circular dependency (\n    # dataset_ops -> random_op -> dataset_ops).\n    # pylint: disable=g-import-not-at-top,protected-access\n    from tensorflow.python.data.ops import random_op\n    return random_op._random(\n        seed=seed,\n        rerandomize_each_iteration=rerandomize_each_iteration,\n        name=name)\n    # pylint: enable=g-import-not-at-top,protected-access\n",
+            "match": "(seed=None, rerandomize_each_iteration=None, name=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(seed, 0)": {},
+                "(name, 1)": {
+                    "posChange": 2
+                },
+                "(rerandomize_each_iteration, 1)": {
+                    "addPos": "rerandomize_each_iteration"
+                }
+            },
+            "targetOvPara": "(seed=None, rerandomize_each_iteration=None, name=None)"
+        }
+    ]
+}

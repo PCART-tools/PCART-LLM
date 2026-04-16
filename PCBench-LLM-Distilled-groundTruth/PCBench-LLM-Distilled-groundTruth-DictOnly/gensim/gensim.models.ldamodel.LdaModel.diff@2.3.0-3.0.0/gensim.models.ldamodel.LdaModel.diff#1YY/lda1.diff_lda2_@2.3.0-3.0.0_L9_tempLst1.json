@@ -1,0 +1,15 @@
+[
+  {
+    "(other, 0)": {},
+    "(distance, 1)": {},
+    "(num_words, 2)": {},
+    "(n_ann_terms, 3)": {},
+    "(normed, 4)": {
+      "posChange": 6,
+      "replace": "diagonal=False"
+    },
+    "(annotation, 5)": {
+      "addPos": "annotation=True"
+    }
+  }
+]

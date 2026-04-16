@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "hdp.show_topics()",
+        "currentVersion": "0.13.1",
+        "targetVersion": "0.13.2",
+        "fileRelativePath": "gensim.models.hdpmodel.HdpModel.show_topics#1YY/show_topicsYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.hdpmodel.HdpModel.show_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.show_topics#1YY/show_topicsYY.json",
+        "apiCall": "hdp.show_topics()",
+        "oldVersion": "gensim@0.13.1",
+        "newVersion": "gensim@0.13.2",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "gensim.models.HdpModel.show_topics",
+            "error": "",
+            "internalPath": "gensim.models.hdpmodel",
+            "docstring": "Print the `topN` most probable words for `topics` number of topics.\nSet `topics=-1` to print all topics.\n\nSet `formatted=True` to return the topics as a list of strings, or\n`False` as lists of (weight, word) pairs.",
+            "sourceCode": "    def show_topics(self, topics=20, topn=20, log=False, formatted=True):\n        \"\"\"\n        Print the `topN` most probable words for `topics` number of topics.\n        Set `topics=-1` to print all topics.\n\n        Set `formatted=True` to return the topics as a list of strings, or\n        `False` as lists of (weight, word) pairs.\n\n        \"\"\"\n        if not self.m_status_up_to_date:\n            self.update_expectations()\n        betas = self.m_lambda + self.m_eta\n        hdp_formatter = HdpTopicFormatter(self.id2word, betas)\n        return hdp_formatter.show_topics(topics, topn, log, formatted)\n",
+            "match": "(topics=20, topn=20, log=False, formatted=True)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "gensim.models.HdpModel.show_topics",
+            "error": "",
+            "internalPath": "gensim.models.hdpmodel",
+            "docstring": "Print the `num_words` most probable words for `topics` number of topics.\nSet `topics=-1` to print all topics.\n\nSet `formatted=True` to return the topics as a list of strings, or\n`False` as lists of (weight, word) pairs.",
+            "sourceCode": "    def show_topics(self, num_topics=20, num_words=20, log=False, formatted=True):\n        \"\"\"\n        Print the `num_words` most probable words for `topics` number of topics.\n        Set `topics=-1` to print all topics.\n\n        Set `formatted=True` to return the topics as a list of strings, or\n        `False` as lists of (weight, word) pairs.\n\n        \"\"\"\n        if not self.m_status_up_to_date:\n            self.update_expectations()\n        betas = self.m_lambda + self.m_eta\n        hdp_formatter = HdpTopicFormatter(self.id2word, betas)\n        return hdp_formatter.show_topics(num_topics, num_words, log, formatted)\n",
+            "match": "(num_topics=20, num_words=20, log=False, formatted=True)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(topics, 0)": {
+                    "rename": "num_topics"
+                },
+                "(topn, 1)": {
+                    "rename": "num_words"
+                },
+                "(log, 2)": {},
+                "(formatted, 3)": {}
+            },
+            "targetOvPara": "(num_topics=20, num_words=20, log=False, formatted=True)"
+        }
+    ]
+}

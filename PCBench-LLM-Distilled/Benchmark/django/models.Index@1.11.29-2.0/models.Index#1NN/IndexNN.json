@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/django/models.Index@1.11.29-2.0/models.Index#1NN",
+    "runCommand": "python IndexNN.py",
+    "runFilePath": "",
+    "libName": "django",
+    "currentVersion": "1.11.29",
+    "targetVersion": "2.0",
+    "currentEnv": "/envs/django1.11.29",
+    "targetEnv": "/envs/django2.0"
+}

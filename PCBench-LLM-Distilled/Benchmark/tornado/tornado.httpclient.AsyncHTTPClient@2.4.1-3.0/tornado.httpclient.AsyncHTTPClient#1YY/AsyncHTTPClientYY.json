@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.httpclient.AsyncHTTPClient@2.4.1-3.0/tornado.httpclient.AsyncHTTPClient#1YY",
+    "runCommand": "python AsyncHTTPClientYY.py",
+    "runFilePath": "",
+    "libName": "tornado",
+    "currentVersion": "2.4.1",
+    "targetVersion": "3.0",
+    "currentEnv": "/envs/tornado2.4.1",
+    "targetEnv": "/envs/tornado3.0"
+}

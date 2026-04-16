@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "nx.set_edge_attributes(G, 'color', values)",
+        "currentVersion": "1.11",
+        "targetVersion": "2.0",
+        "fileRelativePath": "set_edge_attributes#1NN/set_edge_attributesNN.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/set_edge_attributes@1.11-2.0/set_edge_attributes#1NN/set_edge_attributesNN.json",
+        "apiCall": "nx.set_edge_attributes(G, 'color', values)",
+        "oldVersion": "networkx@1.11",
+        "newVersion": "networkx@2.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.set_edge_attributes",
+            "error": "",
+            "internalPath": "networkx.classes.function",
+            "docstring": "Set edge attributes from dictionary of edge tuples and values.\n\nParameters\n----------\nG : NetworkX Graph\n\nname : string\n   Attribute name\n\nvalues : dict\n   Dictionary of attribute values keyed by edge (tuple). For multigraphs,\n   the keys tuples must be of the form (u, v, key). For non-multigraphs,\n   the keys must be tuples of the form (u, v). If `values` is not a\n   dictionary, then it is treated as a single attribute value that is then\n   applied to every edge in `G`.\n\nExamples\n--------\n>>> G = nx.path_graph(3)\n>>> bb = nx.edge_betweenness_centrality(G, normalized=False)\n>>> nx.set_edge_attributes(G, 'betweenness', bb)\n>>> G[1][2]['betweenness']\n2.0",
+            "sourceCode": "def set_edge_attributes(G, name, values):\n    \"\"\"Set edge attributes from dictionary of edge tuples and values.\n\n    Parameters\n    ----------\n    G : NetworkX Graph\n\n    name : string\n       Attribute name\n\n    values : dict\n       Dictionary of attribute values keyed by edge (tuple). For multigraphs,\n       the keys tuples must be of the form (u, v, key). For non-multigraphs,\n       the keys must be tuples of the form (u, v). If `values` is not a\n       dictionary, then it is treated as a single attribute value that is then\n       applied to every edge in `G`.\n\n    Examples\n    --------\n    >>> G = nx.path_graph(3)\n    >>> bb = nx.edge_betweenness_centrality(G, normalized=False)\n    >>> nx.set_edge_attributes(G, 'betweenness', bb)\n    >>> G[1][2]['betweenness']\n    2.0\n\n    \"\"\"\n    try:\n        values.items\n    except AttributeError:\n        # Treat `value` as the attribute value for each edge.\n        if G.is_multigraph():\n            edges = G.edges(keys=True)\n        else:\n            edges = G.edges()\n        values = dict(zip(edges, [values] * len(edges)))\n\n    if G.is_multigraph():\n        for (u, v, key), value in values.items():\n            G[u][v][key][name] = value\n    else:\n        for (u, v), value in values.items():\n            G[u][v][name] = value\n",
+            "match": "(G, name, values)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.set_edge_attributes",
+            "error": "",
+            "internalPath": "networkx.classes.function",
+            "docstring": "Sets edge attributes from a given value or dictionary of values.\n\nParameters\n----------\nG : NetworkX Graph\n\nvalues : scalar value, dict-like\n    What the edge attribute should be set to.  If `values` is\n    not a dictionary, then it is treated as a single attribute value\n    that is then applied to every edge in `G`.  This means that if\n    you provide a mutable object, like a list, updates to that object\n    will be reflected in the edge attribute for each edge.  The attribute\n    name will be `name`.\n\n    If `values` is a dict or a dict of dict, the corresponding edge'\n    attributes will be updated to `values`.  For multigraphs, the tuples\n    must be of the form ``(u, v, key)``, where `u` and `v` are nodes\n    and `key` is the key corresponding to the edge.  For non-multigraphs,\n    the keys must be tuples of the form ``(u, v)``.\n\nname : string (optional, default=None)\n    Name of the edge attribute to set if values is a scalar.\n\nExamples\n--------\nAfter computing some property of the edges of a graph, you may want\nto assign a edge attribute to store the value of that property for\neach edge::\n\n    >>> G = nx.path_graph(3)\n    >>> bb = nx.edge_betweenness_centrality(G, normalized=False)\n    >>> nx.set_edge_attributes(G, bb, 'betweenness')\n    >>> G.edges[1, 2]['betweenness']\n    2.0\n\nIf you provide a list as the second argument, updates to the list\nwill be reflected in the edge attribute for each edge::\n\n    >>> labels = []\n    >>> nx.set_edge_attributes(G, labels, 'labels')\n    >>> labels.append('foo')\n    >>> G.edges[0, 1]['labels']\n    ['foo']\n    >>> G.edges[1, 2]['labels']\n    ['foo']\n\nIf you provide a dictionary of dictionaries as the second argument,\nthe entire dictionary will be used to update edge attributes::\n\n    >>> G = nx.path_graph(3)\n    >>> attrs = {(0, 1): {'attr1': 20, 'attr2': 'nothing'},\n    ...          (1, 2): {'attr2': 3}}\n    >>> nx.set_edge_attributes(G, attrs)\n    >>> G[0][1]['attr1']\n    20\n    >>> G[0][1]['attr2']\n    'nothing'\n    >>> G[1][2]['attr2']\n    3",
+            "sourceCode": "def set_edge_attributes(G, values, name=None):\n    \"\"\"Sets edge attributes from a given value or dictionary of values.\n\n    Parameters\n    ----------\n    G : NetworkX Graph\n\n    values : scalar value, dict-like\n        What the edge attribute should be set to.  If `values` is\n        not a dictionary, then it is treated as a single attribute value\n        that is then applied to every edge in `G`.  This means that if\n        you provide a mutable object, like a list, updates to that object\n        will be reflected in the edge attribute for each edge.  The attribute\n        name will be `name`.\n\n        If `values` is a dict or a dict of dict, the corresponding edge'\n        attributes will be updated to `values`.  For multigraphs, the tuples\n        must be of the form ``(u, v, key)``, where `u` and `v` are nodes\n        and `key` is the key corresponding to the edge.  For non-multigraphs,\n        the keys must be tuples of the form ``(u, v)``.\n\n    name : string (optional, default=None)\n        Name of the edge attribute to set if values is a scalar.\n\n    Examples\n    --------\n    After computing some property of the edges of a graph, you may want\n    to assign a edge attribute to store the value of that property for\n    each edge::\n\n        >>> G = nx.path_graph(3)\n        >>> bb = nx.edge_betweenness_centrality(G, normalized=False)\n        >>> nx.set_edge_attributes(G, bb, 'betweenness')\n        >>> G.edges[1, 2]['betweenness']\n        2.0\n\n    If you provide a list as the second argument, updates to the list\n    will be reflected in the edge attribute for each edge::\n\n        >>> labels = []\n        >>> nx.set_edge_attributes(G, labels, 'labels')\n        >>> labels.append('foo')\n        >>> G.edges[0, 1]['labels']\n        ['foo']\n        >>> G.edges[1, 2]['labels']\n        ['foo']\n\n    If you provide a dictionary of dictionaries as the second argument,\n    the entire dictionary will be used to update edge attributes::\n\n        >>> G = nx.path_graph(3)\n        >>> attrs = {(0, 1): {'attr1': 20, 'attr2': 'nothing'},\n        ...          (1, 2): {'attr2': 3}}\n        >>> nx.set_edge_attributes(G, attrs)\n        >>> G[0][1]['attr1']\n        20\n        >>> G[0][1]['attr2']\n        'nothing'\n        >>> G[1][2]['attr2']\n        3\n\n    \"\"\"\n    if name is not None:\n        # `values` does not contain attribute names\n        try:\n            # if `values` is a dict using `.items()` => {edge: value}\n            if G.is_multigraph():\n                for (u, v, key), value in values.items():\n                    try:\n                        G[u][v][key][name] = value\n                    except KeyError:\n                        pass\n            else:\n                for (u, v), value in values.items():\n                    try:\n                        G[u][v][name] = value\n                    except KeyError:\n                        pass\n        except AttributeError:\n            # treat `values` as a constant\n            for u, v, data in G.edges(data=True):\n                data[name] = values\n    else:\n        # `values` consists of doct-of-dict {edge: {attr: value}} shape\n        if G.is_multigraph():\n            for (u, v, key), d in values.items():\n                try:\n                    G[u][v][key].update(d)\n                except KeyError:\n                    pass\n        else:\n            for (u, v), d in values.items():\n                try:\n                    G[u][v].update(d)\n                except KeyError:\n                    pass\n",
+            "match": "(G, values, name=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(name, 1)": {
+                    "typeChange": "string (optional, default=None)",
+                    "posChange": 2
+                },
+                "(values, 2)": {
+                    "typeChange": "scalar value, dict-like",
+                    "posChange": 1
+                }
+            },
+            "targetOvPara": "(G, values, name=None)"
+        }
+    ]
+}

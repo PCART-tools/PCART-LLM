@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "collection.set_offset_transform(transOffset + plt.gca().transData)",
+        "currentVersion": "3.5.3",
+        "targetVersion": "3.6.0",
+        "fileRelativePath": "matplotlib.collections.AsteriskPolygonCollection.set_offset_transform#1YY/set_offset_transformYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform@3.5.3-3.6.0/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform#1YY/set_offset_transformYY.json",
+        "apiCall": "collection.set_offset_transform(transOffset + plt.gca().transData)",
+        "oldVersion": "matplotlib@3.5.3",
+        "newVersion": "matplotlib@3.6.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.collections.PolyCollection.set_offset_transform",
+            "error": "",
+            "internalPath": "matplotlib.collections",
+            "docstring": "Set the artist offset transform.\n\nParameters\n----------\ntransOffset : `.Transform`",
+            "sourceCode": "    def set_offset_transform(self, transOffset):\n        \"\"\"\n        Set the artist offset transform.\n\n        Parameters\n        ----------\n        transOffset : `.Transform`\n        \"\"\"\n        self._transOffset = transOffset\n",
+            "match": "(transOffset)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.collections.PolyCollection.set_offset_transform",
+            "error": "",
+            "internalPath": "matplotlib._api.deprecation",
+            "docstring": "Set the artist offset transform.\n\nParameters\n----------\noffset_transform : `.Transform`",
+            "sourceCode": "    @_api.rename_parameter(\"3.6\", \"transOffset\", \"offset_transform\")\n    def set_offset_transform(self, offset_transform):\n        \"\"\"\n        Set the artist offset transform.\n\n        Parameters\n        ----------\n        offset_transform : `.Transform`\n        \"\"\"\n        self._offset_transform = offset_transform\n",
+            "match": "(offset_transform)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(transOffset, 0)": {
+                    "delete": 1,
+                    "replace": "offset_transform"
+                },
+                "(offset_transform, 0)": {
+                    "addPos": "offset_transform"
+                }
+            },
+            "targetOvPara": "(offset_transform)"
+        }
+    ]
+}

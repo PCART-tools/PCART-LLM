@@ -1,0 +1,12 @@
+[
+  {
+    "(verbose, 0)": {},
+    "(buf, 1)": {},
+    "(max_cols, 2)": {},
+    "(memory_usage, 3)": {},
+    "(show_counts, 4)": {},
+    "(null_counts, 5)": {
+      "delete": 1
+    }
+  }
+]

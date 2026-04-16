@@ -1,0 +1,19 @@
+[
+  {
+    "(renderables, 0)": {},
+    "(padding, 1)": {},
+    "(expand, 2)": {
+      "posChange": 3,
+      "replace": "width=None"
+    },
+    "(equal, 3)": {
+      "posChange": 4
+    },
+    "(column_first, 4)": {
+      "posChange": 5
+    },
+    "(right_to_left, 5)": {
+      "posChange": 6
+    }
+  }
+]

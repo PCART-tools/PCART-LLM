@@ -1,0 +1,38 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(r, 1)": {},
+    "(theta, 2)": {},
+    "(color, 3)": {},
+    "(hover_name, 4)": {},
+    "(hover_data, 5)": {},
+    "(custom_data, 6)": {},
+    "(animation_frame, 7)": {},
+    "(animation_group, 8)": {},
+    "(category_orders, 9)": {},
+    "(labels, 10)": {},
+    "(color_discrete_sequence, 11)": {},
+    "(color_discrete_map, 12)": {},
+    "(barnorm, 13)": {},
+    "(barmode, 14)": {},
+    "(direction, 15)": {},
+    "(start_angle, 16)": {},
+    "(range_r, 17)": {},
+    "(log_r, 18)": {
+      "posChange": 19,
+      "replace": "range_theta=None"
+    },
+    "(title, 19)": {
+      "posChange": 20
+    },
+    "(template, 20)": {
+      "posChange": 21
+    },
+    "(width, 21)": {
+      "posChange": 22
+    },
+    "(height, 22)": {
+      "posChange": 23
+    }
+  }
+]

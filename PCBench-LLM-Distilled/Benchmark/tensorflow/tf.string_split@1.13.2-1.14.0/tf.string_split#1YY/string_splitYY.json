@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.string_split@1.13.2-1.14.0/tf.string_split#1YY",
+    "runCommand": "python string_splitYY.py",
+    "runFilePath": "",
+    "libName": "tensorflow",
+    "currentVersion": "1.13.2",
+    "targetVersion": "1.14.0",
+    "currentEnv": "/envs/tensorflow1.13.2",
+    "targetEnv": "/envs/tensorflow1.14.0"
+}

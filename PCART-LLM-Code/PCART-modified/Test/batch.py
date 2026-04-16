@@ -1,0 +1,388 @@
+#!/usr/bin/env python3
+## Batch run script for Benchmark configurations with progress tracking
+## 批量执行 Benchmark 配置文件的脚本，支持进度跟踪和断点续传
+#
+#  功能：
+#  1. --init: 扫描 Benchmark 目录，生成配置文件和进度文件（存放在 Test/ 目录）
+#  2. --run: 读取配置文件，按进度继续执行，完成后标记进度
+
+import os
+import sys
+import subprocess
+import argparse
+import json
+from pathlib import Path
+from datetime import datetime
+
+
+
+# 配置文件和进度文件名
+CONFIG_FILE = 'batch_config.json'
+PROGRESS_FILE = 'batch_progress.json'
+
+# 获取脚本所在目录
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+## Find all JSON configuration files matching the pattern
+## 查找所有匹配模式的 JSON 配置文件
+#
+#  @param benchmark_path The Benchmark directory path
+#  @return List of JSON file paths
+def find_config_files(benchmark_path):
+    config_files = []
+    pattern_suffixes = ['YY.json', 'NN.json', 'YN.json', 'NY.json']
+    
+    for root, dirs, files in os.walk(benchmark_path):
+        # 跳过以 # 开头的目录（标记为需要特殊环境的样例）
+        dirs[:] = [d for d in dirs if not d.startswith('#')]
+        
+        for file in files:
+            if any(file.endswith(suffix) for suffix in pattern_suffixes):
+                config_files.append(os.path.join(root, file))
+    
+    return sorted(config_files)
+
+
+## Get configuration path relative to Configure directory
+## 获取相对于 Configure 目录的配置路径
+#
+#  @param file_path Full path to the JSON configuration file
+#  @return Configuration path relative to Configure directory
+def get_config_path(file_path):
+    abs_file_path = os.path.abspath(file_path)
+    parts = Path(abs_file_path).parts
+    
+    if 'Configure' not in parts:
+        raise ValueError(f"配置文件路径中未找到 Configure 目录: {file_path}")
+    
+    configure_idx = parts.index('Configure')
+    config_parts = parts[configure_idx + 1:]
+    config_path = os.path.join(*config_parts)
+    
+    return config_path
+
+
+## Resolve Python executable from virtual environment path
+## 从虚拟环境路径解析 Python 可执行文件路径
+#
+#  @param envPath The virtual environment base path (e.g., /envs/numpy1.23.0)
+#  @return pythonExe Full path to python executable if exists, otherwise None
+def resolve_python_exe(envPath):
+    if not envPath:
+        return None
+    if os.name == 'nt':
+        pythonExe = os.path.join(envPath, 'python.exe')
+    else:
+        pythonExe = os.path.join(envPath, 'bin', 'python')
+    return pythonExe if os.path.exists(pythonExe) else None
+
+
+## Validate config file's virtual environments
+## 校验配置文件中的虚拟环境是否可用
+#
+#  @param config_full_path The full path of the JSON configuration file
+#  @return (is_ok, reason) is_ok indicates environments are ready; reason provides details when not ok
+def validate_config_envs(config_full_path):
+    try:
+        with open(config_full_path, 'r', encoding='utf-8') as f:
+            cfg = json.load(f)
+    except Exception as e:
+        return False, f"无法读取配置文件: {config_full_path} ({e})"
+
+    currentEnv = cfg.get('currentEnv')
+    targetEnv = cfg.get('targetEnv')
+    currentPy = resolve_python_exe(currentEnv)
+    targetPy = resolve_python_exe(targetEnv)
+
+    missing = []
+    if not currentPy:
+        missing.append(f"currentEnv={currentEnv}")
+    if not targetPy:
+        missing.append(f"targetEnv={targetEnv}")
+
+    if missing:
+        return False, "缺少虚拟环境: " + ", ".join(missing)
+    return True, ""
+
+
+
+## Initialize: Create config and progress files
+## 初始化: 创建配置文件和进度文件（存放在脚本所在目录）
+def init_batch(benchmark_path):
+    print(f"\n=== 初始化批量任务 ===")
+    print(f"Benchmark 路径: {benchmark_path}")
+    
+    # 查找所有配置文件
+    config_files = find_config_files(benchmark_path)
+    print(f"找到 {len(config_files)} 个配置文件")
+    
+    if len(config_files) == 0:
+        print("未找到任何匹配的配置文件")
+        sys.exit(0)
+    
+    # 构建配置列表
+    config_list = []
+    for file_path in config_files:
+        try:
+            config_path = get_config_path(file_path)
+            config_list.append({
+                'full_path': file_path,
+                'config_path': config_path
+            })
+        except ValueError as e:
+            print(f"警告: {e}")
+    
+    # 创建配置文件（存放在脚本所在目录）
+    batch_config = {
+        'benchmark_path': benchmark_path,
+        'created_at': datetime.now().isoformat(),
+        'total_count': len(config_list),
+        'configs': config_list
+    }
+    
+    config_file_path = os.path.join(SCRIPT_DIR, CONFIG_FILE)
+    with open(config_file_path, 'w', encoding='utf-8') as f:
+        json.dump(batch_config, f, ensure_ascii=False, indent=2)
+    print(f"配置文件已创建: {config_file_path}")
+    
+    # 创建进度文件（所有项目标记为未完成）
+    progress_data = {
+        'last_updated': datetime.now().isoformat(),
+        'completed_count': 0,
+        'total_count': len(config_list),
+        'completed': {}  # config_path -> completion_time
+    }
+    
+    progress_file_path = os.path.join(SCRIPT_DIR, PROGRESS_FILE)
+    with open(progress_file_path, 'w', encoding='utf-8') as f:
+        json.dump(progress_data, f, ensure_ascii=False, indent=2)
+    print(f"进度文件已创建: {progress_file_path}")
+    
+    print(f"\n初始化完成！共 {len(config_list)} 个任务待执行")
+    print(f"使用以下命令开始执行:")
+    print(f"  python Test/batch run")
+
+
+## Run batch tasks from config file
+## 从配置文件运行批量任务（配置文件位于脚本所在目录）
+def run_batch(project_root):
+    config_file_path = os.path.join(SCRIPT_DIR, CONFIG_FILE)
+    progress_file_path = os.path.join(SCRIPT_DIR, PROGRESS_FILE)
+    
+    # 检查配置文件是否存在
+    if not os.path.exists(config_file_path):
+        print(f"错误: 配置文件不存在: {config_file_path}")
+        print("请先使用 --init 初始化")
+        sys.exit(1)
+    
+    if not os.path.exists(progress_file_path):
+        print(f"错误: 进度文件不存在: {progress_file_path}")
+        print("请先使用 --init 初始化")
+        sys.exit(1)
+    
+    # 读取配置文件
+    with open(config_file_path, 'r', encoding='utf-8') as f:
+        batch_config = json.load(f)
+    
+    # 读取进度文件
+    with open(progress_file_path, 'r', encoding='utf-8') as f:
+        progress_data = json.load(f)
+    
+    configs = batch_config['configs']
+    completed = progress_data['completed']
+    skipped = progress_data.get('skipped', {})
+    
+    # 统计待执行任务
+    pending_configs = [c for c in configs if c['config_path'] not in completed]
+    
+    print(f"\n=== 批量执行 ===")
+    print(f"总任务: {len(configs)}")
+    
+    if len(pending_configs) == 0:
+        print("\n所有任务已完成！")
+        return
+    
+    env = os.environ.copy()
+    
+    # 确保共享库路径被正确设置（用于旧版 numpy/scipy 等）
+    libs_path = '/envs/libs'
+    if os.path.exists(libs_path):
+        current_ld_path = env.get('LD_LIBRARY_PATH', '')
+        if libs_path not in current_ld_path:
+            env['LD_LIBRARY_PATH'] = f'{libs_path}:{current_ld_path}' if current_ld_path else libs_path
+    
+    # 批量执行任务
+    print(f"\n=== 批量启动 ===\n")
+    
+    for idx, config in enumerate(pending_configs):
+            config_path = config['config_path']
+            config_full_path = config.get('full_path')
+            
+            # 当前处理的配置文件（只显示最后两级路径）
+            config_short = '/'.join(Path(config_path).parts[-2:]) if len(Path(config_path).parts) >= 2 else config_path
+            
+            # 输出任务开始分隔符
+            print(f"\n{'='*60}")
+            print(f"[{len(completed) + 1}/{len(configs)}] 正在处理: {config_short}")
+            print(f"完整路径: {config_path}")
+            print(f"{'='*60}")
+
+            # 运行前先检查虚拟环境是否就绪，避免出现 "/bin/sh: .../bin/python: not found"
+            if not config_full_path or not os.path.exists(config_full_path):
+                reason = f"配置文件不存在: {config_full_path}"
+                print(f"[SKIP] {reason}\n")
+                end_time = datetime.now()
+                completed[config_path] = end_time.isoformat()
+                skipped[config_path] = reason
+                progress_data['completed'] = completed
+                progress_data['skipped'] = skipped
+                progress_data['completed_count'] = len(completed)
+                progress_data['last_updated'] = datetime.now().isoformat()
+                with open(progress_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(progress_data, f, ensure_ascii=False, indent=2)
+                continue
+
+            env_ok, reason = validate_config_envs(config_full_path)
+            if not env_ok:
+                print(f"[SKIP] {reason}\n")
+                end_time = datetime.now()
+                completed[config_path] = end_time.isoformat()
+                skipped[config_path] = reason
+                progress_data['completed'] = completed
+                progress_data['skipped'] = skipped
+                progress_data['completed_count'] = len(completed)
+                progress_data['last_updated'] = datetime.now().isoformat()
+                with open(progress_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(progress_data, f, ensure_ascii=False, indent=2)
+                continue
+            
+            start_time = datetime.now()
+            
+            # 执行 main.py，使用 Popen 实时显示输出
+            cmd = ['python', '-u', 'main.py', '-cfg', config_path]  # 不传入 mode 参数，因为原系统可能未使用
+            
+            returncode = None
+            
+            try:
+                process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,  # 合并 stderr 到 stdout
+                    text=True,
+                    cwd=project_root,
+                    env=env,
+                    bufsize=1  # 行缓冲
+                )
+                
+                # 实时读取并显示子进程输出
+                for line in process.stdout:
+                    print(line, end='')
+                
+                process.wait()
+                returncode = process.returncode
+                
+            except Exception as e:
+                returncode = -1
+                print(f"执行时发生错误: {e}")
+            
+            # 输出任务结束分隔符
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
+            status = "OK" if returncode == 0 else f"FAIL (code={returncode})"
+            print(f"--- {status} | elapsed: {duration:.1f}s ---")
+            
+            # 更新进度（只记录完成时间）
+            completed[config_path] = end_time.isoformat()
+            progress_data['completed'] = completed
+            progress_data['completed_count'] = len(completed)
+            progress_data['last_updated'] = datetime.now().isoformat()
+            
+            # 立即保存进度
+            with open(progress_file_path, 'w', encoding='utf-8') as f:
+                json.dump(progress_data, f, ensure_ascii=False, indent=2)
+    
+    # 最终统计
+    print(f"\n=== 执行完成 ===")
+    print(f"已完成: {len(completed)}/{len(configs)}")
+    
+    remaining = len(configs) - len(completed)
+    if remaining > 0:
+        print(f"剩余未完成: {remaining}")
+
+
+## Clean batch config and progress files
+## 清理配置文件和进度文件
+def clean_batch():
+    print(f"\n=== 清理配置文件和进度文件 ===")
+    config_file_path = os.path.join(SCRIPT_DIR, CONFIG_FILE)
+    progress_file_path = os.path.join(SCRIPT_DIR, PROGRESS_FILE)
+    
+    deleted = False
+    if os.path.exists(config_file_path):
+        os.remove(config_file_path)
+        print(f"已删除配置文件: {config_file_path}")
+        deleted = True
+        
+    if os.path.exists(progress_file_path):
+        os.remove(progress_file_path)
+        print(f"已删除进度文件: {progress_file_path}")
+        deleted = True
+        
+    if not deleted:
+        print("未找到需要清理的文件")
+    else:
+        print("清理完成！")
+
+
+## Main function
+## 主函数
+def main():
+    parser = argparse.ArgumentParser(
+        description='批量执行 Benchmark 配置文件（支持进度跟踪和断点续传）',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+示例:
+  # 初始化（扫描目录并创建配置文件）
+  python Test/batch init Configure/PCBench-LLM-Distilled/Benchmark
+  
+  # 执行（从 Test/ 目录读取配置文件并运行）
+  python Test/batch run
+  
+  # 清理（删除本目录下的配置文件和进度文件）
+  python Test/batch clean
+'''
+    )
+    
+    subparsers = parser.add_subparsers(dest='command', required=True, help='子命令')
+    
+    parser_init = subparsers.add_parser('init', help='初始化: 扫描 Benchmark 目录并创建配置文件和进度文件')
+    parser_init.add_argument('benchmark_path', metavar='BENCHMARK_PATH', help='Benchmark 目录路径')
+    
+    parser_run = subparsers.add_parser('run', help='执行: 从 Test/ 目录读取配置文件并运行')
+    
+    parser_clean = subparsers.add_parser('clean', help='清理: 删除本目录下的配置文件和进度文件')
+    
+    args = parser.parse_args()
+    
+    # 获取 project_root
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(project_root)
+    
+    if args.command == 'init':
+        benchmark_path = args.benchmark_path
+        if not os.path.exists(benchmark_path):
+            print(f"错误: Benchmark 路径不存在: {benchmark_path}")
+            sys.exit(1)
+        
+        init_batch(benchmark_path)
+    
+    elif args.command == 'run':
+        run_batch(project_root)
+        
+    elif args.command == 'clean':
+        clean_batch()
+
+
+if __name__ == '__main__':
+    main()

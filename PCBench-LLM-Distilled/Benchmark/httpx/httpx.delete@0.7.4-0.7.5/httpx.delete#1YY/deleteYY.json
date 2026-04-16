@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/httpx/httpx.delete@0.7.4-0.7.5/httpx.delete#1YY",
+    "runCommand": "python deleteYY.py",
+    "runFilePath": "",
+    "libName": "httpx",
+    "currentVersion": "0.7.4",
+    "targetVersion": "0.7.5",
+    "currentEnv": "/envs/httpx0.7.4",
+    "targetEnv": "/envs/httpx0.7.5"
+}

@@ -1,0 +1,7 @@
+model.similarity_unseen_docs(doc_words1, doc_words2), validate error: Traceback (most recent call last):
+  File "verifySingle.py", line 21, in <module>
+    eval(callAPI)
+  File "<string>", line 1, in <module>
+TypeError: similarity_unseen_docs() missing 2 required positional arguments: 'doc_words1' and 'doc_words2'
+
+

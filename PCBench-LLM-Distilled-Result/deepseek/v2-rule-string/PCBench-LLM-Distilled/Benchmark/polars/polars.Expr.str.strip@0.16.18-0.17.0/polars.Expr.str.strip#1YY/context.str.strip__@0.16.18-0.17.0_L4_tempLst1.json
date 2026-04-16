@@ -1,0 +1,65 @@
+{
+    "context": {
+        "callAPI": "context.str.strip()",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.str.strip#1YY/stripYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.str.strip@0.16.18-0.17.0/polars.Expr.str.strip#1YY/stripYY.json",
+        "apiCall": "context.str.strip()",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.str.strip",
+            "match": {
+                "polars.series.string.StringNameSpace.strip": [
+                    "(self,matches:str|None=None)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.strip": [
+                    "(self,matches:str|None=None)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "polars.col.str.strip",
+            "match": {
+                "polars.series.string.StringNameSpace.strip": [
+                    "(self,characters:str|None=None)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.strip": [
+                    "(self,characters:str|None=None)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(matches, 0)": {
+                    "delete": 1,
+                    "replace": "characters"
+                },
+                "(characters, 0)": {
+                    "addPos": "characters"
+                }
+            },
+            "targetOvPara": "(self,characters:str|None=None)->Series"
+        },
+        {
+            "repairDict": {
+                "(matches, 0)": {
+                    "delete": 1,
+                    "replace": "characters"
+                },
+                "(characters, 0)": {
+                    "addPos": "characters"
+                }
+            },
+            "targetOvPara": "(self,characters:str|None=None)->Expr"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(r, 1)": {},
+    "(theta, 2)": {},
+    "(color, 3)": {},
+    "(line_dash, 4)": {},
+    "(hover_name, 5)": {},
+    "(hover_data, 6)": {},
+    "(custom_data, 7)": {},
+    "(line_group, 8)": {},
+    "(text, 9)": {},
+    "(animation_frame, 10)": {},
+    "(animation_group, 11)": {},
+    "(category_orders, 12)": {},
+    "(labels, 13)": {},
+    "(color_discrete_sequence, 14)": {},
+    "(color_discrete_map, 15)": {},
+    "(line_dash_sequence, 16)": {},
+    "(line_dash_map, 17)": {},
+    "(direction, 18)": {},
+    "(start_angle, 19)": {},
+    "(line_close, 20)": {},
+    "(line_shape, 21)": {},
+    "(render_mode, 22)": {},
+    "(range_r, 23)": {},
+    "(log_r, 24)": {
+      "posChange": 25,
+      "replace": "range_theta=None"
+    },
+    "(title, 25)": {
+      "posChange": 26
+    },
+    "(template, 26)": {
+      "posChange": 27
+    },
+    "(width, 27)": {
+      "posChange": 28
+    },
+    "(height, 28)": {
+      "posChange": 29
+    }
+  }
+]

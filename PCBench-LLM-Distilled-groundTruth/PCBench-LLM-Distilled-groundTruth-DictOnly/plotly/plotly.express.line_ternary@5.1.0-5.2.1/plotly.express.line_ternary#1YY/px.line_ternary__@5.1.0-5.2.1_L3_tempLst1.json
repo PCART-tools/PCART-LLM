@@ -1,0 +1,66 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(a, 1)": {},
+    "(b, 2)": {},
+    "(c, 3)": {},
+    "(color, 4)": {},
+    "(line_dash, 5)": {},
+    "(line_group, 6)": {},
+    "(hover_name, 7)": {
+      "posChange": 8,
+      "replace": "symbol=None"
+    },
+    "(hover_data, 8)": {
+      "posChange": 9
+    },
+    "(custom_data, 9)": {
+      "posChange": 10
+    },
+    "(text, 10)": {
+      "posChange": 11
+    },
+    "(animation_frame, 11)": {
+      "posChange": 12
+    },
+    "(animation_group, 12)": {
+      "posChange": 13
+    },
+    "(category_orders, 13)": {
+      "posChange": 14
+    },
+    "(labels, 14)": {
+      "posChange": 15
+    },
+    "(color_discrete_sequence, 15)": {
+      "posChange": 16
+    },
+    "(color_discrete_map, 16)": {
+      "posChange": 17
+    },
+    "(line_dash_sequence, 17)": {
+      "posChange": 18
+    },
+    "(line_dash_map, 18)": {
+      "posChange": 19
+    },
+    "(line_shape, 19)": {
+      "posChange": 23
+    },
+    "(title, 20)": {
+      "posChange": 24,
+      "replace": "symbol_sequence=None"
+    },
+    "(template, 21)": {
+      "posChange": 25,
+      "replace": "symbol_map=None"
+    },
+    "(width, 22)": {
+      "posChange": 26,
+      "replace": "markers=False"
+    },
+    "(height, 23)": {
+      "posChange": 27
+    }
+  }
+]

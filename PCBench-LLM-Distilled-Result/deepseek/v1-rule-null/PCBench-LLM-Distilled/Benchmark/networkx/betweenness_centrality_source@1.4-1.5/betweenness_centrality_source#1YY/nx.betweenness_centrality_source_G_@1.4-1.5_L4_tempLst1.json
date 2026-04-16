@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "nx.betweenness_centrality_source(G)",
+        "currentVersion": "1.4",
+        "targetVersion": "1.5",
+        "fileRelativePath": "betweenness_centrality_source#1YY/betweenness_centrality_sourceYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/betweenness_centrality_source@1.4-1.5/betweenness_centrality_source#1YY/betweenness_centrality_sourceYY.json",
+        "apiCall": "nx.betweenness_centrality_source(G)",
+        "oldVersion": "networkx@1.4",
+        "newVersion": "networkx@1.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.betweenness_centrality_source",
+            "error": "",
+            "internalPath": "networkx.algorithms.centrality.betweenness_subset",
+            "docstring": "",
+            "sourceCode": "def betweenness_centrality_source(G,normalized=True,\n                                  weighted_edges=False,\n                                  sources=None):\n    if sources is None:\n        sources=G.nodes()\n    targets=G.nodes()\n    return betweenness_centrality_subset(G,sources,targets,\n                                       normalized=normalized,\n                                       weighted_edges=weighted_edges)\n",
+            "match": "(G, normalized=True, weighted_edges=False, sources=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.betweenness_centrality_source",
+            "error": "",
+            "internalPath": "networkx.algorithms.centrality.betweenness_subset",
+            "docstring": "",
+            "sourceCode": "def betweenness_centrality_source(G,normalized=True,weight=None,sources=None):\n    if sources is None:\n        sources=G.nodes()\n    targets=G.nodes()\n    return betweenness_centrality_subset(G,sources,targets,normalized,weight)\n",
+            "match": "(G, normalized=True, weight=None, sources=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(normalized, 1)": {},
+                "(weighted_edges, 2)": {
+                    "delete": 1,
+                    "replace": "weight"
+                },
+                "(sources, 3)": {}
+            },
+            "targetOvPara": "(G, normalized=True, weight=None, sources=None)"
+        }
+    ]
+}

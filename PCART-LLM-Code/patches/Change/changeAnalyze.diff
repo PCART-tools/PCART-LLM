@@ -1,0 +1,148 @@
+--- PCART-original/Change/changeAnalyze.py	2026-04-15 21:36:13
++++ PCART-modified/Change/changeAnalyze.py	2026-04-15 21:36:13
+@@ -6,6 +6,7 @@
+ 
+ 
+ import os
++import json
+ import platform
+ import re
+ import copy
+@@ -14,7 +15,67 @@
+ from Tool.tool import get_parameter,removeParameter,getFileName
+ 
+ 
++## Serialize and save repairLst to a JSON file for debugging
++## 将 repairLst 序列化并写入 JSON 文件以供调试
++#
++#  Each repairLst entry is a tuple of (repairDict, targetOvPara).
++#  repairDict keys are (name, position) tuples which are not JSON-serializable;
++#  this helper converts them to strings before writing.
++#
++#  @param repairLst The list of (repairDict, targetOvPara) tuples returned by isCompatible
++#  @param context   A dict with keys: callAPI, currentVersion, targetVersion,
++#                   fileRelativePath, lineNum
++#  @param listLabel Either 'tempLst1' (matched path) or 'tempLst2' (unmatched path)
++def _saveRepairLst(repairLst, context, listLabel):
++    if context is None:
++        return
++    try:
++        configPath = context.get('config', '')
++        if configPath:
++            subDir = os.path.dirname(configPath)
++            logDir = os.path.join('Log', 'findDiffer', subDir)
++        else:
++            logDir = os.path.join('Log', 'findDiffer')
++        os.makedirs(logDir, exist_ok=True)
+ 
++        # Build a file-name-safe string from context fields
++        callAPI   = context.get('callAPI', 'unknown')
++        lineNum   = context.get('lineNum', '0')
++        currVer   = context.get('currentVersion', 'curr')
++        targVer   = context.get('targetVersion', 'targ')
++
++        # Sanitise for file system: keep only alphanumeric / dot / hyphen / underscore
++        def _safe(s):
++            return re.sub(r'[^\w.\-]', '_', str(s))
++
++        fileName = f"{_safe(callAPI)}@{_safe(currVer)}-{_safe(targVer)}_L{_safe(lineNum)}_{listLabel}.json"
++        filePath = os.path.join(logDir, fileName)
++
++        # Serialise: convert tuple keys to strings
++        serialisable = []
++        for repairDict, targetOvPara in repairLst:
++            strKeyDict = {}
++            for k, v in repairDict.items():
++                strKey = f"({k[0]}, {k[1]})"
++                strKeyDict[strKey] = v
++            serialisable.append({
++                'repairDict': strKeyDict,
++                'targetOvPara': targetOvPara
++            })
++
++        payload = {
++            'context': context,
++            'listLabel': listLabel,
++            'repairLst': serialisable
++        }
++
++        with open(filePath, 'w', encoding='utf-8') as fw:
++            json.dump(payload, fw, indent=4, ensure_ascii=False)
++    except Exception as e:
++        print(f"[isCompatible] Warning: failed to save repairLst log: {e}")
++
++
++
+ ## Update class for parameter change analysis
+ ## 参数变更分析类
+ #
+@@ -292,7 +353,31 @@
+ #  @param oldPara The old parameter from current version
+ #  @param newPara The new parameter from target version
+ #  @return ansDict The dictionary of parameter changes for each parameter 
+-def findDiffer(oldPara,newPara):
++def findDiffer(oldPara,newPara,context=None):
++    
++    # Filter ignore non-aimed API ，return none 
++
++
++    # if context is not None and context.get('apiCall'):
++    #     from LLM.findDiffer.findDifferHybridNullV4 import findDifferHybrid
++    #     return findDifferHybrid(oldPara, newPara, context)
++
++    # if context is not None and context.get('apiCall'):
++    #     from LLM.findDiffer.findDifferHybridStringV4 import findDifferHybridString
++    #     return findDifferHybridString(oldPara, newPara, context)
++
++    # if context is not None and context.get('apiCall'):
++    #     from LLM.findDiffer.findDifferHybridCodeV4 import findDifferHybridCode
++    #     return findDifferHybridCode(oldPara, newPara, context)
++
++    if context is not None and context.get('apiCall'):
++        from LLM.findDiffer.findDifferRuleNullV6 import findDifferRule
++        return findDifferRule(oldPara, newPara, context)
++
++    # if context is not None and context.get('apiCall'):
++    #     from LLM.findDiffer.findDifferRuleStringV4 import findDifferRuleString
++    #     return findDifferRuleString(oldPara, newPara, context)
++
+     oldPos,oldKey=para2Obj(oldPara) 
+     newPos,newKey=para2Obj(newPara)
+     oldPosParaNum=len(oldPos)
+@@ -545,8 +630,10 @@
+ #
+ #  @param current API parameter signature(s) from current version
+ #  @param target API parameter signature(s) from target version
++#  @param context Optional dict with caller metadata for logging:
++#                 keys: callAPI, currentVersion, targetVersion, fileRelativePath, lineNum
+ #  @return tempLst1/2 The repair operation dictionary if incompatible 
+-def isCompatible(current,target):
++def isCompatible(current, target, context=None):
+     if len(current['match'])==0 or len(target['match'])==0:
+         return None
+     # if "*args" in target['match'] or "**kwargs" in target['match'] or "**" in target['match']: #默认此时是兼容的
+@@ -590,7 +677,7 @@
+                     
+                     if compatibleFlag==0: #如果都不兼容，则需要尝试修复
+                         for targetOvPara in targetOvLst: #这里
+-                            repairDict=findDiffer(currentOvPara,targetOvPara)
++                            repairDict=findDiffer(currentOvPara,targetOvPara,context)
+                             tempLst1.append((repairDict,targetOvPara))
+             
+             else:
+@@ -605,12 +692,14 @@
+                     
+                     if compatibleFlag==0: #如果都不兼容，则需要尝试修复
+                         for targetOvPara in targetOvLst: #这里
+-                            repairDict=findDiffer(currentOvPara,targetOvPara)
++                            repairDict=findDiffer(currentOvPara,targetOvPara,context)
+                             tempLst2.append((repairDict,targetOvPara))
+ 
+     if flag==1:
++        _saveRepairLst(tempLst1, context, 'tempLst1')
+         return tempLst1
+     else:
++        _saveRepairLst(tempLst2, context, 'tempLst2')
+         return tempLst2
+      
+ 

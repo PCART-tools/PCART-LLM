@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patheffects.SimplePatchShadow@1.4.3-1.5.0/matplotlib.patheffects.SimplePatchShadow#1YY",
+    "runCommand": "python SimplePatchShadowYY.py",
+    "runFilePath": "",
+    "libName": "matplotlib",
+    "currentVersion": "1.4.3",
+    "targetVersion": "1.5.0",
+    "currentEnv": "/envs/matplotlib1.4.3",
+    "targetEnv": "/envs/matplotlib1.5.0"
+}

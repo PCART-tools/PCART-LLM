@@ -1,0 +1,14 @@
+[
+  {
+    "(monitor, 0)": {},
+    "(factor, 1)": {},
+    "(patience, 2)": {},
+    "(verbose, 3)": {},
+    "(mode, 4)": {},
+    "(epsilon, 5)": {
+      "rename": "min_delta"
+    },
+    "(cooldown, 6)": {},
+    "(min_lr, 7)": {}
+  }
+]

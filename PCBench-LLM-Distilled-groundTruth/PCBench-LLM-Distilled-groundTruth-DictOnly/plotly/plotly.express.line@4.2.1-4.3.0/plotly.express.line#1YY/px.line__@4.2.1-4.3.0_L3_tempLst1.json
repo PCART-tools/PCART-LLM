@@ -1,0 +1,83 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(line_group, 3)": {},
+    "(color, 4)": {},
+    "(line_dash, 5)": {},
+    "(hover_name, 6)": {},
+    "(hover_data, 7)": {},
+    "(custom_data, 8)": {},
+    "(text, 9)": {},
+    "(facet_row, 10)": {},
+    "(facet_col, 11)": {},
+    "(error_x, 12)": {
+      "posChange": 13,
+      "replace": "facet_col_wrap=0"
+    },
+    "(error_x_minus, 13)": {
+      "posChange": 14
+    },
+    "(error_y, 14)": {
+      "posChange": 15
+    },
+    "(error_y_minus, 15)": {
+      "posChange": 16
+    },
+    "(animation_frame, 16)": {
+      "posChange": 17
+    },
+    "(animation_group, 17)": {
+      "posChange": 18
+    },
+    "(category_orders, 18)": {
+      "posChange": 19
+    },
+    "(labels, 19)": {
+      "posChange": 20
+    },
+    "(color_discrete_sequence, 20)": {
+      "posChange": 21
+    },
+    "(color_discrete_map, 21)": {
+      "posChange": 22
+    },
+    "(line_dash_sequence, 22)": {
+      "posChange": 23
+    },
+    "(line_dash_map, 23)": {
+      "posChange": 24
+    },
+    "(log_x, 24)": {
+      "posChange": 25
+    },
+    "(log_y, 25)": {
+      "posChange": 26
+    },
+    "(range_x, 26)": {
+      "posChange": 27
+    },
+    "(range_y, 27)": {
+      "posChange": 28
+    },
+    "(line_shape, 28)": {
+      "posChange": 29
+    },
+    "(render_mode, 29)": {
+      "posChange": 30
+    },
+    "(title, 30)": {
+      "posChange": 31
+    },
+    "(template, 31)": {
+      "posChange": 32
+    },
+    "(width, 32)": {
+      "posChange": 33
+    },
+    "(height, 33)": {
+      "posChange": 34
+    }
+  }
+]

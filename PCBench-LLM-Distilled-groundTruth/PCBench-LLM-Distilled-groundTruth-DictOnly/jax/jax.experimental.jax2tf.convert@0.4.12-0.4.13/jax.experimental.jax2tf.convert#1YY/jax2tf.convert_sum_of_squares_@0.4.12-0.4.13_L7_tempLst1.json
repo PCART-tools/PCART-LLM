@@ -1,0 +1,19 @@
+[
+  {
+    "(fun_jax, 0)": {},
+    "(polymorphic_shapes, 2)": {},
+    "(with_gradient, 3)": {},
+    "(enable_xla, 4)": {},
+    "(experimental_native_lowering, 5)": {
+      "delete": 1
+    },
+    "(native_serialization, 6)": {},
+    "(native_serialization_platforms, 7)": {},
+    "(native_serialization_disabled_checks, 7)": {
+      "addKey": "native_serialization_disabled_checks=()"
+    },
+    "(native_serialization_strict_checks, 8)": {
+      "delete": 1
+    }
+  }
+]

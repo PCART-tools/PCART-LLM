@@ -1,0 +1,75 @@
+[
+  {
+    "(filepath_or_buffer, 0)": {
+      "typeChange": "FilePathOrBuffer"
+    },
+    "(sep, 1)": {},
+    "(delimiter, 2)": {},
+    "(header, 3)": {},
+    "(names, 4)": {},
+    "(index_col, 5)": {},
+    "(usecols, 6)": {},
+    "(squeeze, 7)": {},
+    "(prefix, 8)": {},
+    "(mangle_dupe_cols, 9)": {},
+    "(dtype, 10)": {},
+    "(engine, 11)": {},
+    "(converters, 12)": {},
+    "(true_values, 13)": {},
+    "(false_values, 14)": {},
+    "(skipinitialspace, 15)": {},
+    "(skiprows, 16)": {},
+    "(skipfooter, 17)": {},
+    "(nrows, 18)": {},
+    "(na_values, 19)": {},
+    "(keep_default_na, 20)": {},
+    "(na_filter, 21)": {},
+    "(verbose, 22)": {},
+    "(skip_blank_lines, 23)": {},
+    "(parse_dates, 24)": {},
+    "(infer_datetime_format, 25)": {},
+    "(keep_date_col, 26)": {},
+    "(date_parser, 27)": {},
+    "(dayfirst, 28)": {},
+    "(cache_dates, 29)": {},
+    "(iterator, 30)": {},
+    "(chunksize, 31)": {},
+    "(compression, 32)": {},
+    "(thousands, 33)": {},
+    "(decimal, 34)": {},
+    "(lineterminator, 35)": {},
+    "(quotechar, 36)": {},
+    "(quoting, 37)": {},
+    "(doublequote, 38)": {},
+    "(escapechar, 39)": {},
+    "(comment, 40)": {},
+    "(encoding, 41)": {},
+    "(dialect, 42)": {
+      "posChange": 43,
+      "replace": "encoding_errors='strict'"
+    },
+    "(error_bad_lines, 43)": {
+      "posChange": 44
+    },
+    "(warn_bad_lines, 44)": {
+      "posChange": 45
+    },
+    "(delim_whitespace, 45)": {
+      "posChange": 47
+    },
+    "(low_memory, 46)": {
+      "posChange": 48,
+      "replace": "on_bad_lines=None"
+    },
+    "(memory_map, 47)": {
+      "posChange": 49
+    },
+    "(float_precision, 48)": {
+      "posChange": 50
+    },
+    "(storage_options, 49)": {
+      "typeChange": "StorageOptions",
+      "posChange": 51
+    }
+  }
+]

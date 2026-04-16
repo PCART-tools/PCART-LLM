@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "pl.col('a').clip(1, 10)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.clip#1YY/clipYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.clip@0.16.18-0.17.0/polars.Expr.clip#1YY/clipYY.json",
+        "apiCall": "pl.col('a').clip(1, 10)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.clip",
+            "error": "",
+            "internalPath": "polars.expr.expr",
+            "docstring": "Clip (limit) the values in an array to a `min` and `max` boundary.\n\nOnly works for numerical types.\n\nIf you want to clip other dtypes, consider writing a \"when, then, otherwise\"\nexpression. See :func:`when` for more information.\n\nParameters\n----------\nmin_val\n    Minimum value.\nmax_val\n    Maximum value.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [-50, 5, None, 50]})\n>>> df.with_columns(pl.col(\"foo\").clip(1, 10).alias(\"foo_clipped\"))\nshape: (4, 2)\n┌──────┬─────────────┐\n│ foo  ┆ foo_clipped │\n│ ---  ┆ ---         │\n│ i64  ┆ i64         │\n╞══════╪═════════════╡\n│ -50  ┆ 1           │\n│ 5    ┆ 5           │\n│ null ┆ null        │\n│ 50   ┆ 10          │\n└──────┴─────────────┘",
+            "sourceCode": "    def clip(self, min_val: int | float, max_val: int | float) -> Self:\n        \"\"\"\n        Clip (limit) the values in an array to a `min` and `max` boundary.\n\n        Only works for numerical types.\n\n        If you want to clip other dtypes, consider writing a \"when, then, otherwise\"\n        expression. See :func:`when` for more information.\n\n        Parameters\n        ----------\n        min_val\n            Minimum value.\n        max_val\n            Maximum value.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [-50, 5, None, 50]})\n        >>> df.with_columns(pl.col(\"foo\").clip(1, 10).alias(\"foo_clipped\"))\n        shape: (4, 2)\n        ┌──────┬─────────────┐\n        │ foo  ┆ foo_clipped │\n        │ ---  ┆ ---         │\n        │ i64  ┆ i64         │\n        ╞══════╪═════════════╡\n        │ -50  ┆ 1           │\n        │ 5    ┆ 5           │\n        │ null ┆ null        │\n        │ 50   ┆ 10          │\n        └──────┴─────────────┘\n\n        \"\"\"\n        return self._from_pyexpr(self._pyexpr.clip(min_val, max_val))\n",
+            "match": "(min_val: 'int | float', max_val: 'int | float') -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.col.clip",
+            "error": "",
+            "internalPath": "polars.expr.expr",
+            "docstring": "Clip (limit) the values in an array to a `min` and `max` boundary.\n\nOnly works for numerical types.\n\nIf you want to clip other dtypes, consider writing a \"when, then, otherwise\"\nexpression. See :func:`when` for more information.\n\nParameters\n----------\nlower_bound\n    Lower bound.\nupper_bound\n    Upper bound.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [-50, 5, None, 50]})\n>>> df.with_columns(pl.col(\"foo\").clip(1, 10).alias(\"foo_clipped\"))\nshape: (4, 2)\n┌──────┬─────────────┐\n│ foo  ┆ foo_clipped │\n│ ---  ┆ ---         │\n│ i64  ┆ i64         │\n╞══════╪═════════════╡\n│ -50  ┆ 1           │\n│ 5    ┆ 5           │\n│ null ┆ null        │\n│ 50   ┆ 10          │\n└──────┴─────────────┘",
+            "sourceCode": "    def clip(self, lower_bound: int | float, upper_bound: int | float) -> Self:\n        \"\"\"\n        Clip (limit) the values in an array to a `min` and `max` boundary.\n\n        Only works for numerical types.\n\n        If you want to clip other dtypes, consider writing a \"when, then, otherwise\"\n        expression. See :func:`when` for more information.\n\n        Parameters\n        ----------\n        lower_bound\n            Lower bound.\n        upper_bound\n            Upper bound.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [-50, 5, None, 50]})\n        >>> df.with_columns(pl.col(\"foo\").clip(1, 10).alias(\"foo_clipped\"))\n        shape: (4, 2)\n        ┌──────┬─────────────┐\n        │ foo  ┆ foo_clipped │\n        │ ---  ┆ ---         │\n        │ i64  ┆ i64         │\n        ╞══════╪═════════════╡\n        │ -50  ┆ 1           │\n        │ 5    ┆ 5           │\n        │ null ┆ null        │\n        │ 50   ┆ 10          │\n        └──────┴─────────────┘\n\n        \"\"\"\n        return self._from_pyexpr(self._pyexpr.clip(lower_bound, upper_bound))\n",
+            "match": "(lower_bound: 'int | float', upper_bound: 'int | float') -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(min_val, 0)": {
+                    "rename": "lower_bound"
+                },
+                "(max_val, 1)": {
+                    "rename": "upper_bound"
+                }
+            },
+            "targetOvPara": "(lower_bound: 'int | float', upper_bound: 'int | float') -> 'Self'"
+        }
+    ]
+}

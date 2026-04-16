@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "itermonomials([x, y], 2)",
+        "currentVersion": "1.2",
+        "targetVersion": "1.3",
+        "fileRelativePath": "sympy.itermonomials#1NY/itermonomialsNY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/sympy/sympy.itermonomials@1.2-1.3/sympy.itermonomials#1NY/itermonomialsNY.json",
+        "apiCall": "itermonomials([x, y], 2)",
+        "oldVersion": "sympy@1.2",
+        "newVersion": "sympy@1.3",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "sympy.itermonomials",
+            "error": "",
+            "internalPath": "sympy.polys.monomials",
+            "docstring": "Generate a set of monomials of the given total degree or less.\n\nGiven a set of variables `V` and a total degree `N` generate\na set of monomials of degree at most `N`. The total number of\nmonomials in commutative variables is huge and is given by the\nfollowing formula:\n\n.. math::\n\n    \\frac{(\\#V + N)!}{\\#V! N!}\n\nFor example if we would like to generate a dense polynomial of\na total degree `N = 50` in 5 variables, assuming that exponents\nand all of coefficients are 32-bit long and stored in an array we\nwould need almost 80 GiB of memory! Fortunately most polynomials,\nthat we will encounter, are sparse.\n\nExamples\n========\n\nConsider monomials in commutative variables `x` and `y`\nand non-commutative variables `a` and `b`::\n\n    >>> from sympy import symbols\n    >>> from sympy.polys.monomials import itermonomials\n    >>> from sympy.polys.orderings import monomial_key\n    >>> from sympy.abc import x, y\n\n    >>> sorted(itermonomials([x, y], 2), key=monomial_key('grlex', [y, x]))\n    [1, x, y, x**2, x*y, y**2]\n\n    >>> sorted(itermonomials([x, y], 3), key=monomial_key('grlex', [y, x]))\n    [1, x, y, x**2, x*y, y**2, x**3, x**2*y, x*y**2, y**3]\n\n    >>> a, b = symbols('a, b', commutative=False)\n    >>> itermonomials([a, b, x], 2)\n    {1, a, a**2, b, b**2, x, x**2, a*b, b*a, x*a, x*b}",
+            "sourceCode": "@public\ndef itermonomials(variables, degree):\n    r\"\"\"\n    Generate a set of monomials of the given total degree or less.\n\n    Given a set of variables `V` and a total degree `N` generate\n    a set of monomials of degree at most `N`. The total number of\n    monomials in commutative variables is huge and is given by the\n    following formula:\n\n    .. math::\n\n        \\frac{(\\#V + N)!}{\\#V! N!}\n\n    For example if we would like to generate a dense polynomial of\n    a total degree `N = 50` in 5 variables, assuming that exponents\n    and all of coefficients are 32-bit long and stored in an array we\n    would need almost 80 GiB of memory! Fortunately most polynomials,\n    that we will encounter, are sparse.\n\n    Examples\n    ========\n\n    Consider monomials in commutative variables `x` and `y`\n    and non-commutative variables `a` and `b`::\n\n        >>> from sympy import symbols\n        >>> from sympy.polys.monomials import itermonomials\n        >>> from sympy.polys.orderings import monomial_key\n        >>> from sympy.abc import x, y\n\n        >>> sorted(itermonomials([x, y], 2), key=monomial_key('grlex', [y, x]))\n        [1, x, y, x**2, x*y, y**2]\n\n        >>> sorted(itermonomials([x, y], 3), key=monomial_key('grlex', [y, x]))\n        [1, x, y, x**2, x*y, y**2, x**3, x**2*y, x*y**2, y**3]\n\n        >>> a, b = symbols('a, b', commutative=False)\n        >>> itermonomials([a, b, x], 2)\n        {1, a, a**2, b, b**2, x, x**2, a*b, b*a, x*a, x*b}\n\n\n    \"\"\"\n    if degree < 0:\n        return set()\n    if not variables or degree == 0:\n        return {S(1)}\n    # Force to list in case of passed tuple or other incompatible collection\n    variables = list(variables) + [S(1)]\n    if all(variable.is_commutative for variable in variables):\n        return {Mul(*item) for item in combinations_with_replacement(variables, degree)}\n    else:\n        return {Mul(*item) for item in product(variables, repeat=degree)}\n",
+            "match": "(variables, degree)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "sympy.itermonomials",
+            "error": "",
+            "internalPath": "sympy.polys.monomials",
+            "docstring": "Generate a set of monomials of the degree greater than or equal\nto `min_degree` and less than or equal to `max_degree`.\n\nGiven a set of variables `V` and a min_degree `N` and a max_degree `M`\ngenerate a set of monomials of degree less than or equal to `N` and greater\nthan or equal to `M`. The total number of monomials in commutative\nvariables is huge and is given by the following formula if `M = 0`:\n\n.. math::\n\n    \\frac{(\\#V + N)!}{\\#V! N!}\n\nFor example if we would like to generate a dense polynomial of\na total degree `N = 50` and `M = 0`, which is the worst case, in 5\nvariables, assuming that exponents and all of coefficients are 32-bit long\nand stored in an array we would need almost 80 GiB of memory! Fortunately\nmost polynomials, that we will encounter, are sparse.\n\nExamples\n========\n\nConsider monomials in commutative variables `x` and `y`\nand non-commutative variables `a` and `b`::\n\n    >>> from sympy import symbols\n    >>> from sympy.polys.monomials import itermonomials\n    >>> from sympy.polys.orderings import monomial_key\n    >>> from sympy.abc import x, y\n\n    >>> sorted(itermonomials([x, y], 2), key=monomial_key('grlex', [y, x]))\n    [1, x, y, x**2, x*y, y**2]\n\n    >>> sorted(itermonomials([x, y], 3), key=monomial_key('grlex', [y, x]))\n    [1, x, y, x**2, x*y, y**2, x**3, x**2*y, x*y**2, y**3]\n\n    >>> a, b = symbols('a, b', commutative=False)\n    >>> itermonomials([a, b, x], 2)\n    {1, a, a**2, b, b**2, x, x**2, a*b, b*a, x*a, x*b}\n\n    >>> sorted(itermonomials([x, y], 2, 1), key=monomial_key('grlex', [y, x]))\n    [x, y, x**2, x*y, y**2]",
+            "sourceCode": "@public\ndef itermonomials(variables, max_degree, min_degree = 0):\n    r\"\"\"\n    Generate a set of monomials of the degree greater than or equal\n    to `min_degree` and less than or equal to `max_degree`.\n\n    Given a set of variables `V` and a min_degree `N` and a max_degree `M`\n    generate a set of monomials of degree less than or equal to `N` and greater\n    than or equal to `M`. The total number of monomials in commutative\n    variables is huge and is given by the following formula if `M = 0`:\n\n    .. math::\n\n        \\frac{(\\#V + N)!}{\\#V! N!}\n\n    For example if we would like to generate a dense polynomial of\n    a total degree `N = 50` and `M = 0`, which is the worst case, in 5\n    variables, assuming that exponents and all of coefficients are 32-bit long\n    and stored in an array we would need almost 80 GiB of memory! Fortunately\n    most polynomials, that we will encounter, are sparse.\n\n    Examples\n    ========\n\n    Consider monomials in commutative variables `x` and `y`\n    and non-commutative variables `a` and `b`::\n\n        >>> from sympy import symbols\n        >>> from sympy.polys.monomials import itermonomials\n        >>> from sympy.polys.orderings import monomial_key\n        >>> from sympy.abc import x, y\n\n        >>> sorted(itermonomials([x, y], 2), key=monomial_key('grlex', [y, x]))\n        [1, x, y, x**2, x*y, y**2]\n\n        >>> sorted(itermonomials([x, y], 3), key=monomial_key('grlex', [y, x]))\n        [1, x, y, x**2, x*y, y**2, x**3, x**2*y, x*y**2, y**3]\n\n        >>> a, b = symbols('a, b', commutative=False)\n        >>> itermonomials([a, b, x], 2)\n        {1, a, a**2, b, b**2, x, x**2, a*b, b*a, x*a, x*b}\n\n        >>> sorted(itermonomials([x, y], 2, 1), key=monomial_key('grlex', [y, x]))\n        [x, y, x**2, x*y, y**2]\n\n\n    \"\"\"\n    if max_degree < 0 or min_degree > max_degree:\n        return set()\n    if not variables or max_degree == 0:\n        return {S(1)}\n    # Force to list in case of passed tuple or other incompatible collection\n    variables = list(variables) + [S(1)]\n    if all(variable.is_commutative for variable in variables):\n        monomials_list_comm = []\n        for item in combinations_with_replacement(variables, max_degree):\n            powers = dict()\n            for variable in variables:\n                powers[variable] = 0\n            for variable in item:\n                if variable != 1:\n                    powers[variable] += 1\n            if max(powers.values()) >= min_degree:\n                monomials_list_comm.append(Mul(*item))\n        return set(monomials_list_comm)\n    else:\n        monomials_list_non_comm = []\n        for item in product(variables, repeat=max_degree):\n            powers = dict()\n            for variable in variables:\n                powers[variable] = 0\n            for variable in item:\n                if variable != 1:\n                    powers[variable] += 1\n            if max(powers.values()) >= min_degree:\n                monomials_list_non_comm.append(Mul(*item))\n        return set(monomials_list_non_comm)\n",
+            "match": "(variables, max_degree, min_degree=0)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(variables, 0)": {},
+                "(degree, 1)": {
+                    "delete": 1,
+                    "replace": "max_degree"
+                },
+                "(min_degree, 2)": {
+                    "addPos": "min_degree=0"
+                }
+            },
+            "targetOvPara": "(variables, max_degree, min_degree=0)"
+        }
+    ]
+}

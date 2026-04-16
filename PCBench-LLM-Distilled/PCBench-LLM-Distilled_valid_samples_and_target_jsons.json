@@ -1,0 +1,1713 @@
+{
+  "relative_root": "Benchmark",
+  "source_root": "Log/findDiffer/PCBench-LLM-Distilled/Benchmark",
+  "criteria": "repairLst is not empty",
+  "json_file_count": 284,
+  "valid_sample_count": 284,
+  "entries": [
+    {
+      "sample_dir": "PIL/PIL.Image.Image.show@8.4.0-9.0.0/PIL.Image.Image.show#1YY",
+      "target_jsons": [
+        "image.show__@8.4.0-9.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "PIL/PIL.ImagePalette.ImagePalette@9.5.0-10.0.0/PIL.ImagePalette.ImagePalette#1YY",
+      "target_jsons": [
+        "ImagePalette.ImagePalette__@9.5.0-10.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "aiohttp/aiohttp.BaseConnector@0.8.1-0.8.2/aiohttp.BaseConnector#1YY",
+      "target_jsons": [
+        "aiohttp.BaseConnector__@0.8.1-0.8.2_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "aiohttp/aiohttp.ClientSession@1.3.5-2.0.0/aiohttp.ClientSession#1YY",
+      "target_jsons": [
+        "aiohttp.ClientSession__@1.3.5-2.0.0_L18_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "aiohttp/aiohttp.TCPConnector@2.3.10-3.0.0/aiohttp.TCPConnector#1YY",
+      "target_jsons": [
+        "aiohttp.TCPConnector__@2.3.10-3.0.0_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "click/click.Command@7.0-7.1/click.Command#1YY",
+      "target_jsons": [
+        "click.Command__my_command__@7.0-7.1_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "click/click.secho@6.7-7.0/click.secho#1YY",
+      "target_jsons": [
+        "click.secho__Hello__Click___@6.7-7.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "dask/dask.dataframe.core.drop@2.2.0-2.3.0/dask.dataframe.core.drop#1YY",
+      "target_jsons": [
+        "ddf.drop__B___1_@2.2.0-2.3.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "dask/dask.dataframe.drop_duplicates@2.4.0-2.5.0/dask.dataframe.drop_duplicates#1YY",
+      "target_jsons": [
+        "ddf.drop_duplicates__@2.4.0-2.5.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "dask/dask.dataframe.read_parquet@2022.4.1-2022.4.2/dask.dataframe.read_parquet#1YY",
+      "target_jsons": [
+        "dd.read_parquet__._example.parquet__@2022.4.1-2022.4.2_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "dask/dask.dataframe.repartition@1.2.2-2.0.0/dask.dataframe.repartition#1YY",
+      "target_jsons": [
+        "ddf.repartition_None__10_@1.2.2-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "dask/dask.dataframe.utils.assert_eq@2022.5.2-2022.6.0/dask.dataframe.utils.assert_eq#1YY",
+      "target_jsons": [
+        "assert_eq_ddf_result__pdf_result_@2022.5.2-2022.6.0_L8_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "django/django.views.static.was_modified_since@4.0.10-4.1.0/django.views.static.was_modified_since#1YY",
+      "target_jsons": [
+        "was_modified_since__@4.0.10-4.1.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "django/models.Index@1.11.29-2.0/models.Index#1NN",
+      "target_jsons": [
+        "models.Index___question_text____pub_date___@1.11.29-2.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "fastapi/fastapi.encoders.jsonable_encoder@0.60.2-0.61.0/fastapi.encoders.jsonable_encoder#1YY",
+      "target_jsons": [
+        "jsonable_encoder_item_@0.60.2-0.61.0_L14_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "flask/flask.json.load@2.2.5-2.3.0/flask.json.load#1YY",
+      "target_jsons": [
+        "flask.json.load_text_file_@2.2.5-2.3.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "flask/from_file@2.2.5-2.3.0/from_file#1YY",
+      "target_jsons": [
+        "app.config.from_file__._test.json___json.load_@2.2.5-2.3.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.base_any2vec.BaseWordEmbeddingsModel@3.4.0-3.5.0/gensim.models.base_any2vec.BaseWordEmbeddingsModel#1YY",
+      "target_jsons": [
+        "BaseWordEmbeddingsModel__@3.4.0-3.5.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.coherencemodel.CoherenceModel@0.13.1-0.13.2/gensim.models.coherencemodel.CoherenceModel#1NN",
+      "target_jsons": [
+        "CoherenceModel_lda_model__documents_@0.13.1-0.13.2_L8_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.doc2vec.Doc2Vec.infer_vector@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.infer_vector#1YY",
+      "target_jsons": [
+        "model.infer_vector_doc_words_@4.0.1-4.1.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs#1YY",
+      "target_jsons": [
+        "model.similarity_unseen_docs_doc_words1__doc_words2_@4.0.1-4.1.0_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.doc2vec.Doc2Vec@3.5.0-3.6.0/gensim.models.doc2vec.Doc2Vec#1YY",
+      "target_jsons": [
+        "Doc2Vec__@3.5.0-3.6.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.fasttext.FastText@3.8.3-4.0.0/gensim.models.fasttext.FastText#1YY",
+      "target_jsons": [
+        "FastText__@3.8.3-4.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.hdpmodel.HdpModel.print_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.print_topics#1YY",
+      "target_jsons": [
+        "hdp.print_topics__@0.13.1-0.13.2_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.hdpmodel.HdpModel.show_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.show_topics#1YY",
+      "target_jsons": [
+        "hdp.show_topics__@0.13.1-0.13.2_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.ldamodel.LdaModel.diff@2.3.0-3.0.0/gensim.models.ldamodel.LdaModel.diff#1YY",
+      "target_jsons": [
+        "lda1.diff_lda2_@2.3.0-3.0.0_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.word2vec.Word2Vec.intersect_word2vec_format@0.13.1-0.13.2/gensim.models.word2vec.Word2Vec.intersect_word2vec_format#1YY",
+      "target_jsons": [
+        "model.intersect_word2vec_format_fname_@0.13.1-0.13.2_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.word2vec.Word2Vec.load_word2vec_format@0.12.3-0.12.4/gensim.models.word2vec.Word2Vec.load_word2vec_format#1YY",
+      "target_jsons": [
+        "Word2Vec.load_word2vec_format_fname_@0.12.3-0.12.4_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "gensim/gensim.models.word2vec.Word2Vec.train@1.0.1-2.0.0/gensim.models.word2vec.Word2Vec.train#1NN",
+      "target_jsons": [
+        "model.train_sentences_@1.0.1-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/Response@0.17.1-0.18.0/Response#1YY",
+      "target_jsons": [
+        "Response_1_@0.17.1-0.18.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/URL@0.13.3-0.14.0/URL#1YY",
+      "target_jsons": [
+        "httpx.URL_url_str_@0.13.3-0.14.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/client.send@0.19.0-0.20.0/client.send#1YY",
+      "target_jsons": [
+        "client.send_request_@0.19.0-0.20.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/httpx.AsyncClient@0.11.1-0.12.0/httpx.AsyncClient#1YY",
+      "target_jsons": [
+        "httpx.AsyncClient__@0.11.1-0.12.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/httpx.Proxy@0.18.2-0.19.0/httpx.Proxy#1YY",
+      "target_jsons": [
+        "httpx.Proxy_proxy_url_@0.18.2-0.19.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "httpx/httpx.delete@0.7.4-0.7.5/httpx.delete#1YY",
+      "target_jsons": [
+        "delete__https___example.com_resource__@0.7.4-0.7.5_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "jax/jax.experimental.jax2tf.convert@0.4.12-0.4.13/jax.experimental.jax2tf.convert#1YY",
+      "target_jsons": [
+        "jax2tf.convert_sum_of_squares_@0.4.12-0.4.13_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "keras/Conv2DTranspose@2.2.2-2.2.3/Conv2DTranspose#1YY",
+      "target_jsons": [
+        "Conv2DTranspose_64___3__3__@2.2.2-2.2.3_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "keras/DepthwiseConv2D@2.2.4-2.2.5/DepthwiseConv2D#1YY",
+      "target_jsons": [
+        "DepthwiseConv2D__3__3__@2.2.4-2.2.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "keras/ReduceLROnPlateau@2.1.5-2.1.6/ReduceLROnPlateau#1YY",
+      "target_jsons": [
+        "ReduceLROnPlateau__@2.1.5-2.1.6_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "keras/keras.preprocessing.image.ImageDataGenerator@2.1.4-2.1.5/keras.preprocessing.image.ImageDataGenerator#1YY",
+      "target_jsons": [
+        "ImageDataGenerator__@2.1.4-2.1.5_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "loguru/loguru.logger.configure@0.3.2-0.4.0/loguru.logger.configure#1YY",
+      "target_jsons": [
+        "logger.configure__@0.3.2-0.4.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.axes.Axes.imshow@3.4.3-3.5.0/matplotlib.axes.Axes.imshow#1YY",
+      "target_jsons": [
+        "plt.imshow_X_@3.4.3-3.5.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.cbook.normalize_kwargs@3.4.3-3.5.0/matplotlib.cbook.normalize_kwargs#1YY",
+      "target_jsons": [
+        "normalize_kwargs_kw_@3.4.3-3.5.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform@3.5.3-3.6.0/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform#1YY",
+      "target_jsons": [
+        "collection.set_offset_transform_transOffset___plt.gca__.transData_@3.5.3-3.6.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.colorbar.Colorbar.set_ticks@3.6.3-3.7.0/matplotlib.colorbar.Colorbar.set_ticks#1YY",
+      "target_jsons": [
+        "cbar.set_ticks_ticks_@3.6.3-3.7.0_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.gridspec.GridSpec@2.1.2-2.2.0/matplotlib.gridspec.GridSpec#1YY",
+      "target_jsons": [
+        "gridspec.GridSpec_2__2_@2.1.2-2.2.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.image.BboxImage@3.2.2-3.3.0/matplotlib.image.BboxImage#1YY",
+      "target_jsons": [
+        "mpimg.BboxImage_bbox_@3.2.2-3.3.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.patches.FancyArrowPatch@3.5.3-3.6.0/matplotlib.patches.FancyArrowPatch#1YY",
+      "target_jsons": [
+        "FancyArrowPatch__0.2__0.2____0.8__0.8__@3.5.3-3.6.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.patches.FancyBboxPatch@3.6.3-3.7.0/matplotlib.patches.FancyBboxPatch#1YY",
+      "target_jsons": [
+        "patches.FancyBboxPatch__0.2__0.4___0.4__0.2_@3.6.3-3.7.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.patches.Rectangle@3.5.3-3.6.0/matplotlib.patches.Rectangle#1YY",
+      "target_jsons": [
+        "patches.Rectangle__0.1__0.1___0.4__0.3_@3.5.3-3.6.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.patches.Shadow@3.4.3-3.5.0/matplotlib.patches.Shadow#1YY",
+      "target_jsons": [
+        "patches.Shadow_patch__0.1__0.1_@3.4.3-3.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.path.Path.cleaned@3.4.3-3.5.0/matplotlib.path.Path.cleaned#1YY",
+      "target_jsons": [
+        "path.cleaned__@3.4.3-3.5.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.patheffects.SimplePatchShadow@1.4.3-1.5.0/matplotlib.patheffects.SimplePatchShadow#1YY",
+      "target_jsons": [
+        "pe.SimplePatchShadow__@1.4.3-1.5.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.testing.compare.calculate_rms@3.0.3-3.1.0/matplotlib.testing.compare.calculate_rms#1YY",
+      "target_jsons": [
+        "mtc.calculate_rms_expectedImage__actualImage_@3.0.3-3.1.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "matplotlib/matplotlib.use@3.2.2-3.3.0/matplotlib.use#1YY",
+      "target_jsons": [
+        "matplotlib.use__Agg__@3.2.2-3.3.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/average_clustering@1.5-1.6/average_clustering#1YY",
+      "target_jsons": [
+        "nx.average_clustering_G_@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/average_neighbor_degree@1.5-1.6/average_neighbor_degree#1YY",
+      "target_jsons": [
+        "nx.average_neighbor_degree_G_@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/average_shortest_path_length@1.4-1.5/average_shortest_path_length#1YY",
+      "target_jsons": [
+        "nx.average_shortest_path_length_G_@1.4-1.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/betweenness_centrality@1.5-1.6/betweenness_centrality#1YY",
+      "target_jsons": [
+        "nx.betweenness_centrality_G_@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/betweenness_centrality_source@1.4-1.5/betweenness_centrality_source#1YY",
+      "target_jsons": [
+        "nx.betweenness_centrality_source_G_@1.4-1.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/closeness_vitality@1.4-1.5/closeness_vitality#1YY",
+      "target_jsons": [
+        "nx.closeness_vitality_G_@1.4-1.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/clustering@1.5-1.6/clustering#1YY",
+      "target_jsons": [
+        "nx.clustering_G_@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/degree@1.5-1.6/degree#1YY",
+      "target_jsons": [
+        "G.degree__@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/edge_betweenness_centrality_subset@1.4-1.5/edge_betweenness_centrality_subset#1YY",
+      "target_jsons": [
+        "nx.edge_betweenness_centrality_subset_G__sources__targets_@1.4-1.5_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/geographical_threshold_graph@2.0-2.1/geographical_threshold_graph#1YY",
+      "target_jsons": [
+        "nx.geographical_threshold_graph_10__0.1_@2.0-2.1_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/is_isomorphic@1.5-1.6/is_isomorphic#1YY",
+      "target_jsons": [
+        "nx.is_isomorphic_G1__G2_@1.5-1.6_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.betweenness_centrality@1.4-1.5/networkx.betweenness_centrality#1YY",
+      "target_jsons": [
+        "nx.betweenness_centrality_G_@1.4-1.5_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.closeness_centrality@1.4-1.5/networkx.closeness_centrality#1YY",
+      "target_jsons": [
+        "nx.closeness_centrality_G_@1.4-1.5_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.community.greedy_modularity_communities@2.8.8-3.0/networkx.community.greedy_modularity_communities#1YY",
+      "target_jsons": [
+        "nx.community.greedy_modularity_communities_G_@2.8.8-3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.linalg.graphmatrix.adjacency_matrix@2.5.1-2.6/networkx.linalg.graphmatrix.adjacency_matrix#1YY",
+      "target_jsons": [
+        "nx.adjacency_matrix_G_@2.5.1-2.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.min_weight_matching@2.8.8-3.0/networkx.min_weight_matching#1YY",
+      "target_jsons": [
+        "nx.min_weight_matching_G_@2.8.8-3.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.to_pandas_edgelist@2.8.8-3.0/networkx.to_pandas_edgelist#1YY",
+      "target_jsons": [
+        "nx.to_pandas_edgelist_G_@2.8.8-3.0_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/networkx.union@2.8.8-3.0/networkx.union#1YY",
+      "target_jsons": [
+        "nx.union_G__H_@2.8.8-3.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/set_edge_attributes@1.11-2.0/set_edge_attributes#1NN",
+      "target_jsons": [
+        "nx.set_edge_attributes_G___color___values_@1.11-2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/set_node_attributes@1.11-2.0/set_node_attributes#1NN",
+      "target_jsons": [
+        "nx.set_node_attributes_G___color___values_@1.11-2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/shortest_path@1.4-1.5/shortest_path#1YY",
+      "target_jsons": [
+        "nx.shortest_path_G_@1.4-1.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/shortest_path_length@1.4-1.5/shortest_path_length#1YY",
+      "target_jsons": [
+        "nx.shortest_path_length_G_@1.4-1.5_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "networkx/spectral_layout@1.5-1.6/spectral_layout#1YY",
+      "target_jsons": [
+        "nx.spectral_layout_G_@1.5-1.6_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.correlate@1.9.3-1.10.0/numpy.correlate#1YY",
+      "target_jsons": [
+        "np.correlate_a__v_@1.9.3-1.10.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.fix@1.12.1-1.13.0/numpy.fix#1YY",
+      "target_jsons": [
+        "np.fix_x_@1.12.1-1.13.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.genfromtxt@1.9.3-1.10.0/numpy.genfromtxt#1YY",
+      "target_jsons": [
+        "np.genfromtxt_f_@1.9.3-1.10.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.histogram2d@1.23.5-1.24.0/numpy.histogram2d#1YY",
+      "target_jsons": [
+        "np.histogram2d_x__y_@1.23.5-1.24.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.histogram@1.23.5-1.24.0/numpy.histogram#1YY",
+      "target_jsons": [
+        "np.histogram_a_@1.23.5-1.24.0_L8_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.histogramdd@1.23.5-1.24.0/numpy.histogramdd#1YY",
+      "target_jsons": [
+        "np.histogramdd_sample_@1.23.5-1.24.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.isneginf@1.12.1-1.13.0/numpy.isneginf#1YY",
+      "target_jsons": [
+        "np.isneginf_x_@1.12.1-1.13.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.isposinf@1.12.1-1.13.0/numpy.isposinf#1YY",
+      "target_jsons": [
+        "np.isposinf_x_@1.12.1-1.13.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.ma.argsort@1.12.1-1.13.0/numpy.ma.argsort#1YY",
+      "target_jsons": [
+        "np.ma.argsort_data_@1.12.1-1.13.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.percentile@1.21.6-1.22.0/numpy.percentile#1YY",
+      "target_jsons": [
+        "np.percentile_a___25__50__75__@1.21.6-1.22.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "numpy/numpy.quantile@1.21.6-1.22.0/numpy.quantile#1YY",
+      "target_jsons": [
+        "np.quantile_a__q_@1.21.6-1.22.0_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.between_time@1.5.3-2.0.0/DataFrame.between_time#1YY",
+      "target_jsons": [
+        "ts.between_time__0_15____0_45__@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.describe@1.5.3-2.0.0/DataFrame.describe#1YY",
+      "target_jsons": [
+        "df.describe__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.ewm@1.3.5-1.4.0/DataFrame.ewm#1YY",
+      "target_jsons": [
+        "df.ewm_0.5_@1.3.5-1.4.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.groupby@1.5.3-2.0.0/DataFrame.groupby#1YY",
+      "target_jsons": [
+        "df.groupby___Animal___@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.info@1.5.3-2.0.0/DataFrame.info#1YY",
+      "target_jsons": [
+        "df.info__@1.5.3-2.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.mask@1.5.3-2.0.0/DataFrame.mask#1YY",
+      "target_jsons": [
+        "s.mask_s___0_@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.reset_index@1.4.4-1.5.0/DataFrame.reset_index#1YY",
+      "target_jsons": [
+        "df.reset_index__@1.4.4-1.5.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.rolling@1.4.4-1.5.0/DataFrame.rolling#1YY",
+      "target_jsons": [
+        "df.rolling_2_@1.4.4-1.5.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.set_axis@1.5.3-2.0.0/DataFrame.set_axis#1YY",
+      "target_jsons": [
+        "df.set_axis___a____b____c___@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.take@1.5.3-2.0.0/DataFrame.take#1YY",
+      "target_jsons": [
+        "df.take__0__3__@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.to_excel@1.5.3-2.0.0/DataFrame.to_excel#1YY",
+      "target_jsons": [
+        "df1.to_excel__._output.xlsx__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.to_latex@1.5.3-2.0.0/DataFrame.to_latex#1YY",
+      "target_jsons": [
+        "df.to_latex__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.to_stata@1.3.5-1.4.0/DataFrame.to_stata#1YY",
+      "target_jsons": [
+        "df.to_stata__animals.dta__@1.3.5-1.4.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/DataFrame.where@1.5.3-2.0.0/DataFrame.where#1YY",
+      "target_jsons": [
+        "s.where_s___0_@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Index.copy@1.5.3-2.0.0/Index.copy#1YY",
+      "target_jsons": [
+        "index.copy__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Index.get_loc@1.5.3-2.0.0/Index.get_loc#1YY",
+      "target_jsons": [
+        "unique_index.get_loc__b__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Index.get_slice_bound@1.5.3-2.0.0/Index.get_slice_bound#1YY",
+      "target_jsons": [
+        "index.get_slice_bound_start___left__@1.5.3-2.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Index.slice_indexer@1.5.3-2.0.0/Index.slice_indexer#1YY",
+      "target_jsons": [
+        "idx.slice_indexer__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Index.slice_locs@1.5.3-2.0.0/Index.slice_locs#1YY",
+      "target_jsons": [
+        "idx.slice_locs__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.describe@1.5.3-2.0.0/Series.describe#1YY",
+      "target_jsons": [
+        "s.describe__@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.ewm@1.3.5-1.4.0/Series.ewm#1YY",
+      "target_jsons": [
+        "df.ewm_0.5_@1.3.5-1.4.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.groupby@1.5.3-2.0.0/Series.groupby#1YY",
+      "target_jsons": [
+        "ser.groupby___a____b____a____b___@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.mask@1.5.3-2.0.0/Series.mask#1YY",
+      "target_jsons": [
+        "s.mask_s___0_@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.rolling@1.4.4-1.5.0/Series.rolling#1YY",
+      "target_jsons": [
+        "df.rolling_2_@1.4.4-1.5.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.set_axis@1.5.3-2.0.0/Series.set_axis#1YY",
+      "target_jsons": [
+        "s.set_axis___a____b____c___@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.take@1.5.3-2.0.0/Series.take#1YY",
+      "target_jsons": [
+        "df.take__0__3__@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Series.where@1.5.3-2.0.0/Series.where#1YY",
+      "target_jsons": [
+        "s.where_s___0_@1.5.3-2.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Styler.background_gradient@1.2.5-1.3.0/Styler.background_gradient#1YY",
+      "target_jsons": [
+        "df.style.background_gradient__@1.2.5-1.3.0_L13_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Styler.format@1.2.5-1.3.0/Styler.format#1YY",
+      "target_jsons": [
+        "df.style.format____.2____@1.2.5-1.3.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Timestamp.fromordinal@1.5.3-2.0.0/Timestamp.fromordinal#1YY",
+      "target_jsons": [
+        "pd.Timestamp.fromordinal_737425_@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/Timestamp@1.5.3-2.0.0/Timestamp#1YY",
+      "target_jsons": [
+        "pd.Timestamp__2017-01-01T12__@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/bdate_range@1.5.3-2.0.0/bdate_range#1YY",
+      "target_jsons": [
+        "pd.bdate_range__1_1_2018____1_08_2018__@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/core.arrays.SparseArray@1.5.3-2.0.0/core.arrays.SparseArray#1YY",
+      "target_jsons": [
+        "SparseArray__0__0__1__2__@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/date_range@1.5.3-2.0.0/date_range#1YY",
+      "target_jsons": [
+        "pd.date_range__1_1_2018____1_08_2018__@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/melt@1.0.5-1.1.0/melt#1YY",
+      "target_jsons": [
+        "pd.melt_df_@1.0.5-1.1.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/pandas.DataFrame.resample@1.5.3-2.0.0/pandas.DataFrame.resample#1YY",
+      "target_jsons": [
+        "DataFrame.resample__3T__@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/pandas.Series.resample@1.5.3-2.0.0/pandas.Series.resample#1YY",
+      "target_jsons": [
+        "series.resample__3T__@1.5.3-2.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/read_csv@1.2.5-1.3.0/read_csv#1YY",
+      "target_jsons": [
+        "pd.read_csv__._dev.csv__@1.2.5-1.3.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/read_csv@1.5.3-2.0.0/read_csv#1YY",
+      "target_jsons": [
+        "pd.read_csv__._dev.csv__@1.5.3-2.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_extension_array_equal@1.5.3-2.0.0/testing.assert_extension_array_equal#1YY",
+      "target_jsons": [
+        "tm.assert_extension_array_equal_b__c_@1.5.3-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_frame_equal@1.0.5-1.1.0/testing.assert_frame_equal#1YY",
+      "target_jsons": [
+        "assert_frame_equal_df1__df1_@1.0.5-1.1.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_frame_equal@1.5.3-2.0.0/testing.assert_frame_equal#1YY",
+      "target_jsons": [
+        "assert_frame_equal_df1__df1_@1.5.3-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_index_equal@1.5.3-2.0.0/testing.assert_index_equal#1YY",
+      "target_jsons": [
+        "tm.assert_index_equal_a__b_@1.5.3-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_series_equal@1.0.5-1.1.0/testing.assert_series_equal#1YY",
+      "target_jsons": [
+        "assert_series_equal_df1__df1_@1.0.5-1.1.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_series_equal@1.1.5-1.2.0/testing.assert_series_equal#1YY",
+      "target_jsons": [
+        "tm.assert_series_equal_a__b_@1.1.5-1.2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pandas/testing.assert_series_equal@1.5.3-2.0.0/testing.assert_series_equal#1YY",
+      "target_jsons": [
+        "tm.assert_series_equal_a__b_@1.5.3-2.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.area@4.2.1-4.3.0/plotly.express.area#1YY",
+      "target_jsons": [
+        "px.area__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.bar@4.14.3-5.0.0/plotly.express.bar#1YY",
+      "target_jsons": [
+        "px.bar__@4.14.3-5.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.bar@4.2.1-4.3.0/plotly.express.bar#1YY",
+      "target_jsons": [
+        "px.bar__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.bar@5.4.0-5.5.0/plotly.express.bar#1YY",
+      "target_jsons": [
+        "px.bar__@5.4.0-5.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.bar_polar@4.14.3-5.0.0/plotly.express.bar_polar#1YY",
+      "target_jsons": [
+        "px.bar_polar__@4.14.3-5.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.bar_polar@4.3.0-4.4.0/plotly.express.bar_polar#1YY",
+      "target_jsons": [
+        "px.bar_polar__@4.3.0-4.4.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.box@4.2.1-4.3.0/plotly.express.box#1YY",
+      "target_jsons": [
+        "px.box__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.density_contour@4.2.1-4.3.0/plotly.express.density_contour#1YY",
+      "target_jsons": [
+        "px.density_contour__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.density_contour@5.1.0-5.2.1/plotly.express.density_contour#1YY",
+      "target_jsons": [
+        "px.density_contour__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.density_heatmap@4.2.1-4.3.0/plotly.express.density_heatmap#1YY",
+      "target_jsons": [
+        "px.density_heatmap__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.density_heatmap@5.4.0-5.5.0/plotly.express.density_heatmap#1YY",
+      "target_jsons": [
+        "px.density_heatmap__@5.4.0-5.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.histogram@4.14.3-5.0.0/plotly.express.histogram#1YY",
+      "target_jsons": [
+        "px.histogram__@4.14.3-5.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.histogram@4.2.1-4.3.0/plotly.express.histogram#1YY",
+      "target_jsons": [
+        "px.histogram__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.histogram@5.4.0-5.5.0/plotly.express.histogram#1YY",
+      "target_jsons": [
+        "px.histogram__@5.4.0-5.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.imshow@4.13.0-4.14.0/plotly.express.imshow#1YY",
+      "target_jsons": [
+        "px.imshow_img_rgb_@4.13.0-4.14.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line@4.2.1-4.3.0/plotly.express.line#1YY",
+      "target_jsons": [
+        "px.line__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line@5.1.0-5.2.1/plotly.express.line#1YY",
+      "target_jsons": [
+        "px.line__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_3d@5.1.0-5.2.1/plotly.express.line_3d#1YY",
+      "target_jsons": [
+        "px.line_3d__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_geo@5.1.0-5.2.1/plotly.express.line_geo#1YY",
+      "target_jsons": [
+        "px.line_geo__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_mapbox@4.3.0-4.4.0/plotly.express.line_mapbox#1YY",
+      "target_jsons": [
+        "px.line_mapbox_us_cities___lat____lon__@4.3.0-4.4.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_polar@4.3.0-4.4.0/plotly.express.line_polar#1YY",
+      "target_jsons": [
+        "px.line_polar__@4.3.0-4.4.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_polar@5.1.0-5.2.1/plotly.express.line_polar#1YY",
+      "target_jsons": [
+        "px.line_polar__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.line_ternary@5.1.0-5.2.1/plotly.express.line_ternary#1YY",
+      "target_jsons": [
+        "px.line_ternary__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.scatter@4.2.1-4.3.0/plotly.express.scatter#1YY",
+      "target_jsons": [
+        "px.scatter__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.scatter@5.1.0-5.2.1/plotly.express.scatter#1YY",
+      "target_jsons": [
+        "px.scatter__@5.1.0-5.2.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.scatter_mapbox@4.3.0-4.4.0/plotly.express.scatter_mapbox#1YY",
+      "target_jsons": [
+        "px.scatter_mapbox_df___centroid_lat____centroid_lon__@4.3.0-4.4.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.scatter_polar@4.3.0-4.4.0/plotly.express.scatter_polar#1YY",
+      "target_jsons": [
+        "px.scatter_polar__@4.3.0-4.4.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.strip@4.2.1-4.3.0/plotly.express.strip#1YY",
+      "target_jsons": [
+        "px.strip__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.sunburst@4.4.1-4.5.0/plotly.express.sunburst#1YY",
+      "target_jsons": [
+        "px.sunburst__@4.4.1-4.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.treemap@4.4.1-4.5.0/plotly.express.treemap#1YY",
+      "target_jsons": [
+        "px.treemap__@4.4.1-4.5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.express.violin@4.2.1-4.3.0/plotly.express.violin#1YY",
+      "target_jsons": [
+        "px.violin__@4.2.1-4.3.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.figure_factory.create_choropleth@2.4.1-2.5.0/plotly.figure_factory.create_choropleth#1YY",
+      "target_jsons": [
+        "ff.create_choropleth_fips__values_@2.4.1-2.5.0_L11_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.figure_factory.create_violin@2.0.8-2.0.9/plotly.figure_factory.create_violin#1YY",
+      "target_jsons": [
+        "create_violin_data_list_@2.0.8-2.0.9_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "plotly/plotly.tools.FigureFactory.create_distplot@1.10.0-1.11.0/plotly.tools.FigureFactory.create_distplot#1YY",
+      "target_jsons": [
+        "FF.create_distplot_hist_data__group_labels_@1.10.0-1.11.0_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.drop@0.14.17-0.14.18/polars.DataFrame.drop#1YY",
+      "target_jsons": [
+        "df.drop__B__@0.14.17-0.14.18_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.fill_nan@0.16.18-0.17.0/polars.DataFrame.fill_nan#1YY",
+      "target_jsons": [
+        "df.fill_nan_99_@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.replace@0.16.18-0.17.0/polars.DataFrame.replace#1YY",
+      "target_jsons": [
+        "df.replace__foo___s_@0.16.18-0.17.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.sample@0.16.18-0.17.0/polars.DataFrame.sample#1YY",
+      "target_jsons": [
+        "df.sample__@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.shift_and_fill@0.16.18-0.17.0/polars.DataFrame.shift_and_fill#1NN",
+      "target_jsons": [
+        "df.shift_and_fill_1__0_@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.DataFrame.write_json@0.15.18-0.16.1/polars.DataFrame.write_json#1YY",
+      "target_jsons": [
+        "df.write_json__@0.15.18-0.16.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.clip@0.16.18-0.17.0/polars.Expr.clip#1YY",
+      "target_jsons": [
+        "pl.col__a__.clip_1__10_@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.is_between@0.16.18-0.17.0/polars.Expr.is_between#1YY",
+      "target_jsons": [
+        "pl.col__num__.is_between_2__4_@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.map_dict@0.16.18-0.17.0/polars.Expr.map_dict#1YY",
+      "target_jsons": [
+        "pl.col__country_code__.map_dict_country_code_dict_@0.16.18-0.17.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.reshape@0.16.18-0.17.0/polars.Expr.reshape#1YY",
+      "target_jsons": [
+        "pl.col__foo__.reshape__3__3__@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.contains@0.16.18-0.17.0/polars.Expr.str.contains#1YY",
+      "target_jsons": [
+        "a.str.contains__AA__@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.ends_with@0.16.18-0.17.0/polars.Expr.str.ends_with#1YY",
+      "target_jsons": [
+        "a.str.ends_with__go__@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.ljust@0.16.18-0.17.0/polars.Expr.str.ljust#1YY",
+      "target_jsons": [
+        "context.str.ljust_10_@0.16.18-0.17.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.rjust@0.16.18-0.17.0/polars.Expr.str.rjust#1YY",
+      "target_jsons": [
+        "context.str.rjust_10_@0.16.18-0.17.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.starts_with@0.16.18-0.17.0/polars.Expr.str.starts_with#1YY",
+      "target_jsons": [
+        "a.str.starts_with__app__@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.Expr.str.strip@0.16.18-0.17.0/polars.Expr.str.strip#1YY",
+      "target_jsons": [
+        "context.str.strip__@0.16.18-0.17.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.any@0.16.18-0.17.0/polars.any#1YY",
+      "target_jsons": [
+        "pl.any__a__@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.arange@0.16.18-0.17.0/polars.arange#1YY",
+      "target_jsons": [
+        "pl.arange_0__3_@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.arg_where@0.16.18-0.17.0/polars.arg_where#1YY",
+      "target_jsons": [
+        "pl.arg_where_pl.col__a_____2____0_@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.date_range@0.16.18-0.17.0/polars.date_range#1YY",
+      "target_jsons": [
+        "pl.date_range_date_2022__1__1___date_2022__3__1__@0.16.18-0.17.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.expr.str.strptime@0.17.15-0.18.0/polars.expr.str.strptime#1YY",
+      "target_jsons": [
+        "a.str.strptime_pl.Date_@0.17.15-0.18.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.format@0.16.18-0.17.0/polars.format#1YY",
+      "target_jsons": [
+        "pl.format__fo__@0.16.18-0.17.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.from_pandas@0.16.2-0.16.3/polars.from_pandas#1YY",
+      "target_jsons": [
+        "pl.from_pandas_pdf_@0.16.2-0.16.3_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.read_json@0.15.18-0.16.1/polars.read_json#1YY",
+      "target_jsons": [
+        "pl.read_json__._output.json__@0.15.18-0.16.1_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "polars/polars.repeat@0.17.14-0.17.15/polars.repeat#1YY",
+      "target_jsons": [
+        "pl.repeat__z___3_@0.17.14-0.17.15_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "pydantic/pydantic.main.create_model@1.4-1.5/pydantic.main.create_model#1YY",
+      "target_jsons": [
+        "create_model__DynamicModel__@1.4-1.5_L13_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/Columns@1.3.0-1.3.1/Columns#1YY",
+      "target_jsons": [
+        "Columns_renderables_@1.3.0-1.3.1_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/Panel@2.3.1-3.0.0/Panel#1YY",
+      "target_jsons": [
+        "Panel_None_@2.3.1-3.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/Panel@3.1.0-3.2.0/Panel#1YY",
+      "target_jsons": [
+        "Panel_renderable_@3.1.0-3.2.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/Rule@2.3.1-3.0.0/Rule#1YY",
+      "target_jsons": [
+        "Rule__@2.3.1-3.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/Table.add_column@2.3.1-3.0.0/Table.add_column#1YY",
+      "target_jsons": [
+        "table.add_column__@2.3.1-3.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/install@12.5.1-12.6.0/install#1YY",
+      "target_jsons": [
+        "pretty.install__@12.5.1-12.6.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/rich.layout.Layout@12.5.1-12.6.0/rich.layout.Layout#1YY",
+      "target_jsons": [
+        "Layout__@12.5.1-12.6.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/rich.syntax.Syntax.from_path@11.0.0-11.1.0/rich.syntax.Syntax.from_path#1YY",
+      "target_jsons": [
+        "Syntax.from_path__._example.py__@11.0.0-11.1.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/rich.syntax.Syntax@10.16.2-11.0.0/rich.syntax.Syntax#1YY",
+      "target_jsons": [
+        "Syntax__print__hello_world______python__@10.16.2-11.0.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "rich/traceback.install@7.0.0-7.1.0/traceback.install#1YY",
+      "target_jsons": [
+        "install__@7.0.0-7.1.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.linalg.expm@0.19.1-1.0.0/scipy.linalg.expm#1YY",
+      "target_jsons": [
+        "expm_A_@0.19.1-1.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.linalg.solve@1.10.1-1.11.0/scipy.linalg.solve#1YY",
+      "target_jsons": [
+        "scipy.linalg.solve_a__b_@1.10.1-1.11.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.linalg.solve_banded@1.8.1-1.9.0/scipy.linalg.solve_banded#1YY",
+      "target_jsons": [
+        "solve_banded_l_and_u__ab__b_@1.8.1-1.9.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.linalg.solve_triangular@1.8.1-1.9.0/scipy.linalg.solve_triangular#1YY",
+      "target_jsons": [
+        "solve_triangular_a__b_@1.8.1-1.9.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.optimize.dual_annealing@1.9.3-1.10.0/scipy.optimize.dual_annealing#1YY",
+      "target_jsons": [
+        "dual_annealing_objective__bounds_@1.9.3-1.10.0_L12_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.optimize.fmin_cobyla@0.19.1-1.0.0/scipy.optimize.fmin_cobyla#1YY",
+      "target_jsons": [
+        "fmin_cobyla_objective__x0__constraints_@0.19.1-1.0.0_L13_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.bicg@0.19.1-1.0.0/scipy.sparse.linalg.bicg#1YY",
+      "target_jsons": [
+        "spla.bicg_A__b_@0.19.1-1.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.bicgstab@0.19.1-1.0.0/scipy.sparse.linalg.bicgstab#1YY",
+      "target_jsons": [
+        "bicgstab_A__b_@0.19.1-1.0.0_L8_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.cg@0.19.1-1.0.0/scipy.sparse.linalg.cg#1YY",
+      "target_jsons": [
+        "cg_A__b_@0.19.1-1.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.cgs@0.19.1-1.0.0/scipy.sparse.linalg.cgs#1YY",
+      "target_jsons": [
+        "cgs_A__b_@0.19.1-1.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.gmres@0.19.1-1.0.0/scipy.sparse.linalg.gmres#1YY",
+      "target_jsons": [
+        "gmres_A__b_@0.19.1-1.0.0_L13_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.minres@0.19.1-1.0.0/scipy.sparse.linalg.minres#1YY",
+      "target_jsons": [
+        "minres_A__b_@0.19.1-1.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.qmr@0.19.1-1.0.0/scipy.sparse.linalg.qmr#1YY",
+      "target_jsons": [
+        "qmr_A__b_@0.19.1-1.0.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.sparse.linalg.splu@0.19.1-1.0.0/scipy.sparse.linalg.splu#1YY",
+      "target_jsons": [
+        "splu_A_@0.19.1-1.0.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.spatial.distance.cdist@0.19.1-1.0.0/scipy.spatial.distance.cdist#1YY",
+      "target_jsons": [
+        "cdist_XA__XB_@0.19.1-1.0.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.spatial.distance.pdist@0.19.1-1.0.0/scipy.spatial.distance.pdist#1YY",
+      "target_jsons": [
+        "pdist_X_@0.19.1-1.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.qmc.LatinHypercube@1.9.3-1.10.0/scipy.stats.qmc.LatinHypercube#1YY",
+      "target_jsons": [
+        "qmc.LatinHypercube_d_@1.9.3-1.10.0_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.rv_continuous@1.10.1-1.11.0/scipy.stats.rv_continuous#1YY",
+      "target_jsons": [
+        "stats.rv_continuous__@1.10.1-1.11.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.rv_discrete.expect@0.16.1-0.17.0/scipy.stats.rv_discrete.expect#1YY",
+      "target_jsons": [
+        "custom_distribution.expect__@0.16.1-0.17.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.rv_discrete@1.10.1-1.11.0/scipy.stats.rv_discrete#1YY",
+      "target_jsons": [
+        "rv_discrete__@1.10.1-1.11.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.shapiro@0.19.1-1.0.0/scipy.stats.shapiro#1YY",
+      "target_jsons": [
+        "stats.shapiro_x_@0.19.1-1.0.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "scipy/scipy.stats.ttest_ind@1.6.3-1.7.0/scipy.stats.ttest_ind#1YY",
+      "target_jsons": [
+        "stats.ttest_ind_a__b_@1.6.3-1.7.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/calibration.CalibratedClassifierCV@1.1.3-1.2.0/calibration.CalibratedClassifierCV#1YY",
+      "target_jsons": [
+        "CalibratedClassifierCV__@1.1.3-1.2.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/cluster.AffinityPropagation@0.22.2-0.23.0/cluster.AffinityPropagation#1YY",
+      "target_jsons": [
+        "AffinityPropagation__@0.22.2-0.23.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/cluster.KMeans@0.22.2-0.23.0/cluster.KMeans#1YY",
+      "target_jsons": [
+        "KMeans_2_@0.22.2-0.23.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/cluster.SpectralBiclustering@0.22.2-0.23.0/cluster.SpectralBiclustering#1YY",
+      "target_jsons": [
+        "SpectralBiclustering_2_@0.22.2-0.23.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/cluster.SpectralCoclustering@0.22.2-0.23.0/cluster.SpectralCoclustering#1YY",
+      "target_jsons": [
+        "SpectralCoclustering__@0.22.2-0.23.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/datasets.make_blobs@0.22.2-0.23.0/datasets.make_blobs#1YY",
+      "target_jsons": [
+        "make_blobs__@0.22.2-0.23.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.AdaBoostClassifier@1.1.3-1.2.0/ensemble.AdaBoostClassifier#1YY",
+      "target_jsons": [
+        "AdaBoostClassifier__@1.1.3-1.2.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.AdaBoostRegressor@1.1.3-1.2.0/ensemble.AdaBoostRegressor#1YY",
+      "target_jsons": [
+        "AdaBoostRegressor__@1.1.3-1.2.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.BaggingClassifier@1.1.3-1.2.0/ensemble.BaggingClassifier#1YY",
+      "target_jsons": [
+        "BaggingClassifier__@1.1.3-1.2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.BaggingRegressor@1.1.3-1.2.0/ensemble.BaggingRegressor#1YY",
+      "target_jsons": [
+        "BaggingRegressor__@1.1.3-1.2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.GradientBoostingRegressor@0.23.2-0.24.0/ensemble.GradientBoostingRegressor#1YY",
+      "target_jsons": [
+        "GradientBoostingRegressor__@0.23.2-0.24.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/ensemble.HistGradientBoostingRegressor@0.22.2-0.23.0/ensemble.HistGradientBoostingRegressor#1YY",
+      "target_jsons": [
+        "HistGradientBoostingRegressor__@0.22.2-0.23.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.Lars@0.22.2-0.23.0/linear_model.Lars#1YY",
+      "target_jsons": [
+        "linear_model.Lars__@0.22.2-0.23.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.LassoLars@0.22.2-0.23.0/linear_model.LassoLars#1YY",
+      "target_jsons": [
+        "linear_model.LassoLars__@0.22.2-0.23.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.LinearRegression@1.1.3-1.2.0/linear_model.LinearRegression#1YY",
+      "target_jsons": [
+        "LinearRegression__@1.1.3-1.2.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.RANSACRegressor@0.17.1-0.18/linear_model.RANSACRegressor#1YY",
+      "target_jsons": [
+        "RANSACRegressor__@0.17.1-0.18_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.RANSACRegressor@1.0.2-1.1.0/linear_model.RANSACRegressor#1YY",
+      "target_jsons": [
+        "RANSACRegressor__@1.0.2-1.1.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.RANSACRegressor@1.2.2-1.3.0/linear_model.RANSACRegressor#1YY",
+      "target_jsons": [
+        "RANSACRegressor__@1.2.2-1.3.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/linear_model.lasso_path@0.15.2-0.16.0/linear_model.lasso_path#1YY",
+      "target_jsons": [
+        "lasso_path_X__y_@0.15.2-0.16.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.cluster.SpectralClustering@0.21.3-0.22/sklearn.cluster.SpectralClustering#1YY",
+      "target_jsons": [
+        "SpectralClustering_5_@0.21.3-0.22_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis@0.18.1-0.19.0/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis#1YY",
+      "target_jsons": [
+        "QuadraticDiscriminantAnalysis__@0.18.1-0.19.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.feature_selection.RFECV@0.17.1-0.18/sklearn.feature_selection.RFECV#1YY",
+      "target_jsons": [
+        "RFECV_estimator_@0.17.1-0.18_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.linear_model.BayesianRidge@0.21.3-0.22/sklearn.linear_model.BayesianRidge#1YY",
+      "target_jsons": [
+        "linear_model.BayesianRidge__@0.21.3-0.22_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.linear_model.PassiveAggressiveClassifier@0.18.1-0.19.0/sklearn.linear_model.PassiveAggressiveClassifier#1YY",
+      "target_jsons": [
+        "PassiveAggressiveClassifier__@0.18.1-0.19.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.svm.NuSVC@0.21.3-0.22/sklearn.svm.NuSVC#1YY",
+      "target_jsons": [
+        "NuSVC__@0.21.3-0.22_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sklearn/sklearn.svm.SVC@0.21.3-0.22/sklearn.svm.SVC#1YY",
+      "target_jsons": [
+        "SVC__@0.21.3-0.22_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "spacy/spacy.load@3.0.5-3.0.6/spacy.load#1YY",
+      "target_jsons": [
+        "spacy.load_model_name_@3.0.5-3.0.6_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.GramSchmidt@0.7.6.1-1.0/sympy.GramSchmidt#1YY",
+      "target_jsons": [
+        "sp.GramSchmidt_independent_vectors_@0.7.6.1-1.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.crypto.crypto.rsa_private_key@1.4-1.5/sympy.crypto.crypto.rsa_private_key#1YY",
+      "target_jsons": [
+        "rsa_private_key_p__q__e_@1.4-1.5_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.crypto.crypto.rsa_public_key@1.4-1.5/sympy.crypto.crypto.rsa_public_key#1YY",
+      "target_jsons": [
+        "rsa_public_key_p__q__e_@1.4-1.5_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.geometry.Line3D.equation@1.11.1-1.12/sympy.geometry.Line3D.equation#1YY",
+      "target_jsons": [
+        "line.equation__@1.11.1-1.12_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.itermonomials@1.2-1.3/sympy.itermonomials#1NY",
+      "target_jsons": [
+        "itermonomials__x__y___2_@1.2-1.3_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.physics.mechanics.PinJoint@1.11.1-1.12/sympy.physics.mechanics.PinJoint#1YY",
+      "target_jsons": [
+        "PinJoint__PC___parent__child_@1.11.1-1.12_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.physics.mechanics.PrismaticJoint@1.11.1-1.12/sympy.physics.mechanics.PrismaticJoint#1YY",
+      "target_jsons": [
+        "PrismaticJoint__PC___parent__child_@1.11.1-1.12_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.physics.units.quantities.Quantity@1.1.1-1.2/sympy.physics.units.quantities.Quantity#1NY",
+      "target_jsons": [
+        "Quantity__meter___length_@1.1.1-1.2_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "sympy/sympy.physics.units.quantities.Quantity@1.11.1-1.12/sympy.physics.units.quantities.Quantity#1YY",
+      "target_jsons": [
+        "Quantity__velocity__@1.11.1-1.12_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.contrib.data.make_csv_dataset@1.10.1-1.11.0/tf.contrib.data.make_csv_dataset#1NN",
+      "target_jsons": [
+        "tf.contrib.data.make_csv_dataset__._dev.csv___1__None__None__None__None_______True______True__None__True__10000__None__1__1__2__False__1_@1.10.1-1.11.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.contrib.data.make_csv_dataset@1.8.0-1.9.0/tf.contrib.data.make_csv_dataset#1NN",
+      "target_jsons": [
+        "tf.contrib.data.make_csv_dataset__._dev.csv___1__None__None__None_______True______True__None__None__True__1__None__1__1__2__False__tf.float32__1_@1.8.0-1.9.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.data.Dataset.random@2.11.1-2.12.0/tf.data.Dataset.random#1YY",
+      "target_jsons": [
+        "tf.data.Dataset.random__@2.11.1-2.12.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.data.experimental.service.DispatchServer@2.3.4-2.4.0/tf.data.experimental.service.DispatchServer#1NY",
+      "target_jsons": [
+        "tf.data.experimental.service.DispatchServer_0_@2.3.4-2.4.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.keras.losses.SparseCategoricalCrossentropy@2.9.3-2.10.0/tf.keras.losses.SparseCategoricalCrossentropy#1YY",
+      "target_jsons": [
+        "tf.keras.losses.SparseCategoricalCrossentropy__@2.9.3-2.10.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tensorflow/tf.string_split@1.13.2-1.14.0/tf.string_split#1YY",
+      "target_jsons": [
+        "tf.string_split_string_tensor_@1.13.2-1.14.0_L4_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "torch/torch.btrifact@1.0.1-1.1.0/torch.btrifact#1YY",
+      "target_jsons": [
+        "torch.btrifact_A_@1.0.1-1.1.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.autoreload.start@4.5.3-5.0/tornado.autoreload.start#1YY",
+      "target_jsons": [
+        "tornado.autoreload.start__@4.5.3-5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.gen.YieldFuture@4.5.3-5.0/tornado.gen.YieldFuture#1YY",
+      "target_jsons": [
+        "tornado.gen.YieldFuture_future_@4.5.3-5.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.httpclient.AsyncHTTPClient.fetch@5.1.1-6.0/tornado.httpclient.AsyncHTTPClient.fetch#1YY",
+      "target_jsons": [
+        "http_client.fetch__http___example.com__@5.1.1-6.0_L6_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.httpclient.AsyncHTTPClient@2.4.1-3.0/tornado.httpclient.AsyncHTTPClient#1YY",
+      "target_jsons": [
+        "tornado.httpclient.AsyncHTTPClient__@2.4.1-3.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.httpclient.HTTPRequest@3.0.2-3.1/tornado.httpclient.HTTPRequest#1YY",
+      "target_jsons": [
+        "tornado.httpclient.HTTPRequest__http___httpbin.org_get__@3.0.2-3.1_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.ioloop.PeriodicCallback@4.5.3-5.0/tornado.ioloop.PeriodicCallback#1YY",
+      "target_jsons": [
+        "tornado.ioloop.PeriodicCallback_my_callback__1000_@4.5.3-5.0_L5_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.iostream.BaseIOStream.read_bytes@5.1.1-6.0/tornado.iostream.BaseIOStream.read_bytes#1YY",
+      "target_jsons": [
+        "stream.read_bytes_10_@5.1.1-6.0_L11_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.netutil.add_accept_handler@4.5.3-5.0/tornado.netutil.add_accept_handler#1YY",
+      "target_jsons": [
+        "tornado.netutil.add_accept_handler_sock__accept_handler_@4.5.3-5.0_L9_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.platform.twisted.TornadoReactor@4.5.3-5.0/tornado.platform.twisted.TornadoReactor#1YY",
+      "target_jsons": [
+        "tornado.platform.twisted.TornadoReactor__@4.5.3-5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.platform.twisted.install@4.5.3-5.0/tornado.platform.twisted.install#1YY",
+      "target_jsons": [
+        "tornado.platform.twisted.install__@4.5.3-5.0_L2_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.tcpclient.TCPClient@4.5.3-5.0/tornado.tcpclient.TCPClient#1YY",
+      "target_jsons": [
+        "tornado.tcpclient.TCPClient__@4.5.3-5.0_L7_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "tornado/tornado.tcpserver.TCPServer@4.5.3-5.0/tornado.tcpserver.TCPServer#1YY",
+      "target_jsons": [
+        "tornado.tcpserver.TCPServer__@4.5.3-5.0_L3_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "transformers/transformers.modeling_albert.AlbertForPreTraining.forward@2.11.0-3.0.0/transformers.modeling_albert.AlbertForPreTraining.forward#1YY",
+      "target_jsons": [
+        "model.forward_input_ids_@2.11.0-3.0.0_L11_tempLst1.json"
+      ]
+    },
+    {
+      "sample_dir": "xgboost/predict@1.3.3-1.4.0/predict#1YY",
+      "target_jsons": [
+        "model.predict_X_test_@1.3.3-1.4.0_L8_tempLst1.json"
+      ]
+    }
+  ]
+}

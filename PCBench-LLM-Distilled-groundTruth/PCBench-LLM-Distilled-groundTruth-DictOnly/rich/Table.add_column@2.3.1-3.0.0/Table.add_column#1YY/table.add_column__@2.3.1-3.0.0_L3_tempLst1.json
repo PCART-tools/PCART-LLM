@@ -1,0 +1,30 @@
+[
+  {
+    "(header, 0)": {},
+    "(footer, 1)": {},
+    "(header_style, 2)": {
+      "pos2key": "header_style"
+    },
+    "(footer_style, 3)": {
+      "pos2key": "footer_style"
+    },
+    "(style, 4)": {
+      "pos2key": "style"
+    },
+    "(justify, 5)": {
+      "pos2key": "justify"
+    },
+    "(overflow, 6)": {
+      "pos2key": "overflow"
+    },
+    "(width, 7)": {
+      "pos2key": "width"
+    },
+    "(ratio, 8)": {
+      "pos2key": "ratio"
+    },
+    "(no_wrap, 9)": {
+      "pos2key": "no_wrap"
+    }
+  }
+]

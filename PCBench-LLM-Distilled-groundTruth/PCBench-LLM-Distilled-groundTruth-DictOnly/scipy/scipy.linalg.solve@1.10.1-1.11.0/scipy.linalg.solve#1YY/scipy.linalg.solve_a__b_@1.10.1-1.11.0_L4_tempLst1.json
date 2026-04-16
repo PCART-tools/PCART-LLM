@@ -1,0 +1,27 @@
+[
+  {
+    "(a, 0)": {},
+    "(b, 1)": {},
+    "(sym_pos, 2)": {
+      "delete": 1
+    },
+    "(lower, 3)": {
+      "posChange": 2
+    },
+    "(overwrite_a, 4)": {
+      "posChange": 3
+    },
+    "(overwrite_b, 5)": {
+      "posChange": 4
+    },
+    "(check_finite, 6)": {
+      "posChange": 5
+    },
+    "(assume_a, 7)": {
+      "posChange": 6
+    },
+    "(transposed, 8)": {
+      "posChange": 7
+    }
+  }
+]

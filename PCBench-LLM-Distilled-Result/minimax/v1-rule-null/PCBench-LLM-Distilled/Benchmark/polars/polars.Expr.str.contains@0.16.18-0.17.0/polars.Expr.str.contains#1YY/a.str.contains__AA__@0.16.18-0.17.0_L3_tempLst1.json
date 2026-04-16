@@ -1,0 +1,99 @@
+{
+    "context": {
+        "callAPI": "a.str.contains('AA')",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.str.contains#1YY/containsYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.str.contains@0.16.18-0.17.0/polars.Expr.str.contains#1YY/containsYY.json",
+        "apiCall": "a.str.contains('AA')",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.str.contains",
+            "match": {
+                "polars.series.list.ListNameSpace.contains": [],
+                "polars.series.string.StringNameSpace.contains": [
+                    "(self,pattern:str|Expr,literal:bool=False,strict:bool=True)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.contains": [
+                    "(self,lit:bytes)->Series"
+                ],
+                "polars.expr.list.ExprListNameSpace.contains": [],
+                "polars.expr.string.ExprStringNameSpace.contains": [
+                    "(self,pattern:str|Expr,literal:bool=False,strict:bool=True)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.contains": [
+                    "(self,lit:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "polars.col.str.contains",
+            "match": {
+                "polars.series.list.ListNameSpace.contains": [],
+                "polars.series.string.StringNameSpace.contains": [
+                    "(self,pattern:str|Expr,*,literal:bool=False,strict:bool=True)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.contains": [
+                    "(self,literal:bytes)->Series"
+                ],
+                "polars.expr.list.ExprListNameSpace.contains": [],
+                "polars.expr.string.ExprStringNameSpace.contains": [
+                    "(self,pattern:str|Expr,*,literal:bool=False,strict:bool=True)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.contains": [
+                    "(self,literal:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(pattern, 0)": {},
+                "(literal, 1)": {
+                    "pos2key": "literal"
+                },
+                "(strict, 2)": {
+                    "pos2key": "strict"
+                }
+            },
+            "targetOvPara": "(self,pattern:str|Expr,*,literal:bool=False,strict:bool=True)->Series"
+        },
+        {
+            "repairDict": {
+                "(lit, 0)": {
+                    "rename": "literal"
+                }
+            },
+            "targetOvPara": "(self,literal:bytes)->Series"
+        },
+        {
+            "repairDict": {
+                "(pattern, 0)": {},
+                "(literal, 1)": {
+                    "posChange": 2,
+                    "pos2key": "literal"
+                },
+                "(strict, 2)": {
+                    "posChange": 3,
+                    "pos2key": "strict"
+                }
+            },
+            "targetOvPara": "(self,pattern:str|Expr,*,literal:bool=False,strict:bool=True)->Expr"
+        },
+        {
+            "repairDict": {
+                "(lit, 0)": {
+                    "rename": "literal"
+                }
+            },
+            "targetOvPara": "(self,literal:bytes)->Expr"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "(xy, 0)": {},
+    "(width, 1)": {},
+    "(height, 2)": {},
+    "(angle, 3)": {
+      "pos2key": "angle"
+    },
+    "(rotation_point, 5)": {
+      "addKey": "rotation_point='xy'"
+    }
+  }
+]

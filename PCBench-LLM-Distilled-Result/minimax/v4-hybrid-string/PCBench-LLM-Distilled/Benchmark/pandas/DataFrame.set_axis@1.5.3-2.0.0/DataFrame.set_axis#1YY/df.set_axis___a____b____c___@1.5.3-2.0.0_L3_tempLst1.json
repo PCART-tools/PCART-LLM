@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "df.set_axis(['a', 'b', 'c'])",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "DataFrame.set_axis#1YY/set_axisYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/DataFrame.set_axis@1.5.3-2.0.0/DataFrame.set_axis#1YY/set_axisYY.json",
+        "apiCall": "df.set_axis(['a', 'b', 'c'])",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.DataFrame.set_axis",
+            "error": "",
+            "internalPath": "pandas.util._decorators",
+            "docstring": "Assign desired index to given axis.\n\nIndexes for column or row labels can be changed by assigning\na list-like or Index.\n\nParameters\n----------\nlabels : list-like, Index\n    The values for the new index.\n\naxis : {0 or 'index', 1 or 'columns'}, default 0\n    The axis to update. The value 0 identifies the rows. For `Series`\n    this parameter is unused and defaults to 0.\n\ninplace : bool, default False\n    Whether to return a new DataFrame instance.\n\n    .. deprecated:: 1.5.0\n\ncopy : bool, default True\n    Whether to make a copy of the underlying data.\n\n    .. versionadded:: 1.5.0\n\nReturns\n-------\nrenamed : DataFrame or None\n    An object of type DataFrame or None if ``inplace=True``.\n\nSee Also\n--------\nDataFrame.rename_axis : Alter the name of the index or columns.\n\n        Examples\n        --------\n        >>> df = pd.DataFrame({\"A\": [1, 2, 3], \"B\": [4, 5, 6]})\n\n        Change the row labels.\n\n        >>> df.set_axis(['a', 'b', 'c'], axis='index')\n           A  B\n        a  1  4\n        b  2  5\n        c  3  6\n\n        Change the column labels.\n\n        >>> df.set_axis(['I', 'II'], axis='columns')\n           I  II\n        0  1   4\n        1  2   5\n        2  3   6\n\n        Now, update the labels without copying the underlying data.\n\n        >>> df.set_axis(['i', 'ii'], axis='columns', copy=False)\n           i  ii\n        0  1   4\n        1  2   5\n        2  3   6",
+            "sourceCode": "    @deprecate_nonkeyword_arguments(version=None, allowed_args=[\"self\", \"labels\"])\n    @Appender(\n        \"\"\"\n        Examples\n        --------\n        >>> df = pd.DataFrame({\"A\": [1, 2, 3], \"B\": [4, 5, 6]})\n\n        Change the row labels.\n\n        >>> df.set_axis(['a', 'b', 'c'], axis='index')\n           A  B\n        a  1  4\n        b  2  5\n        c  3  6\n\n        Change the column labels.\n\n        >>> df.set_axis(['I', 'II'], axis='columns')\n           I  II\n        0  1   4\n        1  2   5\n        2  3   6\n\n        Now, update the labels without copying the underlying data.\n\n        >>> df.set_axis(['i', 'ii'], axis='columns', copy=False)\n           i  ii\n        0  1   4\n        1  2   5\n        2  3   6\n        \"\"\"\n    )\n    @Substitution(\n        **_shared_doc_kwargs,\n        extended_summary_sub=\" column or\",\n        axis_description_sub=\", and 1 identifies the columns\",\n        see_also_sub=\" or columns\",\n    )\n    @Appender(NDFrame.set_axis.__doc__)\n    def set_axis(\n        self,\n        labels,\n        axis: Axis = 0,\n        inplace: bool | lib.NoDefault = lib.no_default,\n        *,\n        copy: bool | lib.NoDefault = lib.no_default,\n    ):\n        return super().set_axis(labels, axis=axis, inplace=inplace, copy=copy)\n",
+            "match": "(labels, *, axis: 'Axis' = 0, inplace: 'bool | lib.NoDefault' = <no_default>, copy: 'bool | lib.NoDefault' = <no_default>)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.DataFrame.set_axis",
+            "error": "",
+            "internalPath": "pandas.core.frame",
+            "docstring": "Assign desired index to given axis.\n\nIndexes for column or row labels can be changed by assigning\na list-like or Index.\n\nParameters\n----------\nlabels : list-like, Index\n    The values for the new index.\n\naxis : {0 or 'index', 1 or 'columns'}, default 0\n    The axis to update. The value 0 identifies the rows. For `Series`\n    this parameter is unused and defaults to 0.\n\ncopy : bool, default True\n    Whether to make a copy of the underlying data.\n\n    .. versionadded:: 1.5.0\n\nReturns\n-------\nDataFrame\n    An object of type DataFrame.\n\nSee Also\n--------\nDataFrame.rename_axis : Alter the name of the index or columns.\n\n        Examples\n        --------\n        >>> df = pd.DataFrame({\"A\": [1, 2, 3], \"B\": [4, 5, 6]})\n\n        Change the row labels.\n\n        >>> df.set_axis(['a', 'b', 'c'], axis='index')\n           A  B\n        a  1  4\n        b  2  5\n        c  3  6\n\n        Change the column labels.\n\n        >>> df.set_axis(['I', 'II'], axis='columns')\n           I  II\n        0  1   4\n        1  2   5\n        2  3   6",
+            "sourceCode": "    @Appender(\n        \"\"\"\n        Examples\n        --------\n        >>> df = pd.DataFrame({\"A\": [1, 2, 3], \"B\": [4, 5, 6]})\n\n        Change the row labels.\n\n        >>> df.set_axis(['a', 'b', 'c'], axis='index')\n           A  B\n        a  1  4\n        b  2  5\n        c  3  6\n\n        Change the column labels.\n\n        >>> df.set_axis(['I', 'II'], axis='columns')\n           I  II\n        0  1   4\n        1  2   5\n        2  3   6\n        \"\"\"\n    )\n    @Substitution(\n        **_shared_doc_kwargs,\n        extended_summary_sub=\" column or\",\n        axis_description_sub=\", and 1 identifies the columns\",\n        see_also_sub=\" or columns\",\n    )\n    @Appender(NDFrame.set_axis.__doc__)\n    def set_axis(\n        self,\n        labels,\n        *,\n        axis: Axis = 0,\n        copy: bool | None = None,\n    ) -> DataFrame:\n        return super().set_axis(labels, axis=axis, copy=copy)\n",
+            "match": "(labels, *, axis: 'Axis' = 0, copy: 'bool | None' = None) -> 'DataFrame'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(labels, 0)": {},
+                "(axis, 2)": {},
+                "(inplace, 3)": {
+                    "delete": 1
+                },
+                "(copy, 4)": {
+                    "typeChange": "bool|None"
+                }
+            },
+            "targetOvPara": "(labels, *, axis: 'Axis' = 0, copy: 'bool | None' = None) -> 'DataFrame'"
+        }
+    ]
+}

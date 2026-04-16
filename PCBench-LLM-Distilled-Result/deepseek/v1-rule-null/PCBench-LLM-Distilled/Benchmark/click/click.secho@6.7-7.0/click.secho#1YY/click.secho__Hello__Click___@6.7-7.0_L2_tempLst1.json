@@ -1,0 +1,51 @@
+{
+    "context": {
+        "callAPI": "click.secho('Hello, Click!')",
+        "currentVersion": "6.7",
+        "targetVersion": "7.0",
+        "fileRelativePath": "click.secho#1YY/sechoYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/click/click.secho@6.7-7.0/click.secho#1YY/sechoYY.json",
+        "apiCall": "click.secho('Hello, Click!')",
+        "oldVersion": "click@6.7",
+        "newVersion": "click@7.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "click.secho",
+            "error": "",
+            "internalPath": "click.termui",
+            "docstring": "This function combines :func:`echo` and :func:`style` into one\ncall.  As such the following two calls are the same::\n\n    click.secho('Hello World!', fg='green')\n    click.echo(click.style('Hello World!', fg='green'))\n\nAll keyword arguments are forwarded to the underlying functions\ndepending on which one they go with.\n\n.. versionadded:: 2.0",
+            "sourceCode": "def secho(text, file=None, nl=True, err=False, color=None, **styles):\n    \"\"\"This function combines :func:`echo` and :func:`style` into one\n    call.  As such the following two calls are the same::\n\n        click.secho('Hello World!', fg='green')\n        click.echo(click.style('Hello World!', fg='green'))\n\n    All keyword arguments are forwarded to the underlying functions\n    depending on which one they go with.\n\n    .. versionadded:: 2.0\n    \"\"\"\n    return echo(style(text, **styles), file=file, nl=nl, err=err, color=color)\n",
+            "match": "(text, file=None, nl=True, err=False, color=None, **styles)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "click.secho",
+            "error": "",
+            "internalPath": "click.termui",
+            "docstring": "This function combines :func:`echo` and :func:`style` into one\ncall.  As such the following two calls are the same::\n\n    click.secho('Hello World!', fg='green')\n    click.echo(click.style('Hello World!', fg='green'))\n\nAll keyword arguments are forwarded to the underlying functions\ndepending on which one they go with.\n\n.. versionadded:: 2.0",
+            "sourceCode": "def secho(message=None, file=None, nl=True, err=False, color=None, **styles):\n    \"\"\"This function combines :func:`echo` and :func:`style` into one\n    call.  As such the following two calls are the same::\n\n        click.secho('Hello World!', fg='green')\n        click.echo(click.style('Hello World!', fg='green'))\n\n    All keyword arguments are forwarded to the underlying functions\n    depending on which one they go with.\n\n    .. versionadded:: 2.0\n    \"\"\"\n    if message is not None:\n        message = style(message, **styles)\n    return echo(message, file=file, nl=nl, err=err, color=color)\n",
+            "match": "(message=None, file=None, nl=True, err=False, color=None, **styles)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(text, 0)": {
+                    "delete": 1,
+                    "replace": "message=None"
+                },
+                "(message, 0)": {
+                    "addPos": "message=None"
+                },
+                "(file, 1)": {},
+                "(nl, 2)": {},
+                "(err, 3)": {},
+                "(color, 4)": {}
+            },
+            "targetOvPara": "(message=None, file=None, nl=True, err=False, color=None, **styles)"
+        }
+    ]
+}

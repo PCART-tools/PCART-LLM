@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "index.copy()",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Index.copy#1YY/copyYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/Index.copy@1.5.3-2.0.0/Index.copy#1YY/copyYY.json",
+        "apiCall": "index.copy()",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Index.copy",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Make a copy of this object.\n\nName and dtype sets those attributes on the new object.\n\nParameters\n----------\nname : Label, optional\n    Set name for new object.\ndeep : bool, default False\ndtype : numpy dtype or pandas type, optional\n    Set dtype for new object.\n\n    .. deprecated:: 1.2.0\n        use ``astype`` method instead.\nnames : list-like, optional\n    Kept for compatibility with MultiIndex. Should not be used.\n\n    .. deprecated:: 1.4.0\n        use ``name`` instead.\n\nReturns\n-------\nIndex\n    Index refer to new object which is a copy of this object.\n\nNotes\n-----\nIn most cases, there should be no functional difference from using\n``deep``, but if ``deep`` is passed it will attempt to deepcopy.",
+            "sourceCode": "    def copy(\n        self: _IndexT,\n        name: Hashable | None = None,\n        deep: bool = False,\n        dtype: Dtype | None = None,\n        names: Sequence[Hashable] | None = None,\n    ) -> _IndexT:\n        \"\"\"\n        Make a copy of this object.\n\n        Name and dtype sets those attributes on the new object.\n\n        Parameters\n        ----------\n        name : Label, optional\n            Set name for new object.\n        deep : bool, default False\n        dtype : numpy dtype or pandas type, optional\n            Set dtype for new object.\n\n            .. deprecated:: 1.2.0\n                use ``astype`` method instead.\n        names : list-like, optional\n            Kept for compatibility with MultiIndex. Should not be used.\n\n            .. deprecated:: 1.4.0\n                use ``name`` instead.\n\n        Returns\n        -------\n        Index\n            Index refer to new object which is a copy of this object.\n\n        Notes\n        -----\n        In most cases, there should be no functional difference from using\n        ``deep``, but if ``deep`` is passed it will attempt to deepcopy.\n        \"\"\"\n        if names is not None:\n            warnings.warn(\n                \"parameter names is deprecated and will be removed in a future \"\n                \"version. Use the name parameter instead.\",\n                FutureWarning,\n                stacklevel=find_stack_level(),\n            )\n\n        name = self._validate_names(name=name, names=names, deep=deep)[0]\n        if deep:\n            new_data = self._data.copy()\n            new_index = type(self)._simple_new(new_data, name=name)\n        else:\n            new_index = self._rename(name=name)\n\n        if dtype:\n            warnings.warn(\n                \"parameter dtype is deprecated and will be removed in a future \"\n                \"version. Use the astype method instead.\",\n                FutureWarning,\n                stacklevel=find_stack_level(),\n            )\n            new_index = new_index.astype(dtype)\n        return new_index\n",
+            "match": "(name: 'Hashable | None' = None, deep: 'bool' = False, dtype: 'Dtype | None' = None, names: 'Sequence[Hashable] | None' = None) -> '_IndexT'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Index.copy",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Make a copy of this object.\n\nName is set on the new object.\n\nParameters\n----------\nname : Label, optional\n    Set name for new object.\ndeep : bool, default False\n\nReturns\n-------\nIndex\n    Index refer to new object which is a copy of this object.\n\nNotes\n-----\nIn most cases, there should be no functional difference from using\n``deep``, but if ``deep`` is passed it will attempt to deepcopy.",
+            "sourceCode": "    def copy(\n        self: _IndexT,\n        name: Hashable | None = None,\n        deep: bool = False,\n    ) -> _IndexT:\n        \"\"\"\n        Make a copy of this object.\n\n        Name is set on the new object.\n\n        Parameters\n        ----------\n        name : Label, optional\n            Set name for new object.\n        deep : bool, default False\n\n        Returns\n        -------\n        Index\n            Index refer to new object which is a copy of this object.\n\n        Notes\n        -----\n        In most cases, there should be no functional difference from using\n        ``deep``, but if ``deep`` is passed it will attempt to deepcopy.\n        \"\"\"\n\n        name = self._validate_names(name=name, deep=deep)[0]\n        if deep:\n            new_data = self._data.copy()\n            new_index = type(self)._simple_new(new_data, name=name)\n        else:\n            new_index = self._rename(name=name)\n        return new_index\n",
+            "match": "(name: 'Hashable | None' = None, deep: 'bool' = False) -> '_IndexT'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(name, 0)": {},
+                "(deep, 1)": {},
+                "(dtype, 2)": {
+                    "delete": 1
+                },
+                "(names, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(name: 'Hashable | None' = None, deep: 'bool' = False) -> '_IndexT'"
+        }
+    ]
+}

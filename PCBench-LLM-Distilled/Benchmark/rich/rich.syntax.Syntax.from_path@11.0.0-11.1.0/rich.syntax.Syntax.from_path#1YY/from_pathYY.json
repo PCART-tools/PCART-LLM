@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/rich/rich.syntax.Syntax.from_path@11.0.0-11.1.0/rich.syntax.Syntax.from_path#1YY",
+    "runCommand": "python from_pathYY.py",
+    "runFilePath": "",
+    "libName": "rich",
+    "currentVersion": "11.0.0",
+    "targetVersion": "11.1.0",
+    "currentEnv": "/envs/rich11.0.0",
+    "targetEnv": "/envs/rich11.1.0"
+}

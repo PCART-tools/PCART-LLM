@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.community.greedy_modularity_communities@2.8.8-3.0/networkx.community.greedy_modularity_communities#1YY",
+    "runCommand": "python greedy_modularity_communitiesYY.py",
+    "runFilePath": "",
+    "libName": "networkx",
+    "currentVersion": "2.8.8",
+    "targetVersion": "3.0",
+    "currentEnv": "/envs/networkx2.8.8",
+    "targetEnv": "/envs/networkx3.0"
+}

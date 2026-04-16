@@ -1,0 +1,70 @@
+{
+    "context": {
+        "callAPI": "PinJoint('PC', parent, child)",
+        "currentVersion": "1.11.1",
+        "targetVersion": "1.12",
+        "fileRelativePath": "sympy.physics.mechanics.PinJoint#1YY/PinJointYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/sympy/sympy.physics.mechanics.PinJoint@1.11.1-1.12/sympy.physics.mechanics.PinJoint#1YY/PinJointYY.json",
+        "apiCall": "PinJoint('PC', parent, child)",
+        "oldVersion": "sympy@1.11.1",
+        "newVersion": "sympy@1.12",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "sympy.physics.mechanics.PinJoint",
+            "match": {
+                "sympy.physics.mechanics.PinJoint": [
+                    "(self,name,parent,child,coordinates=None,speeds=None,parent_joint_pos=None,child_joint_pos=None,parent_axis=None,child_axis=None)"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "sympy.physics.mechanics.PinJoint",
+            "match": {
+                "sympy.physics.mechanics.PinJoint": [
+                    "(self,name,parent,child,coordinates=None,speeds=None,parent_point=None,child_point=None,parent_axis=None,child_axis=None,parent_interframe=None,child_interframe=None,joint_axis=None,parent_joint_pos=None,child_joint_pos=None)"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(name, 0)": {},
+                "(parent, 1)": {},
+                "(child, 2)": {},
+                "(coordinates, 3)": {},
+                "(speeds, 4)": {},
+                "(parent_joint_pos, 5)": {
+                    "delete": 1,
+                    "replace": "parent_point"
+                },
+                "(child_joint_pos, 6)": {
+                    "delete": 1,
+                    "replace": "child_point"
+                },
+                "(parent_axis, 7)": {},
+                "(child_axis, 8)": {},
+                "(parent_interframe, 9)": {
+                    "addPos": "parent_interframe"
+                },
+                "(child_interframe, 10)": {
+                    "addPos": "child_interframe"
+                },
+                "(joint_axis, 11)": {
+                    "addPos": "joint_axis"
+                },
+                "(parent_joint_pos, 12)": {
+                    "addPos": "parent_joint_pos=None"
+                },
+                "(child_joint_pos, 13)": {
+                    "addPos": "child_joint_pos=None"
+                }
+            },
+            "targetOvPara": "(self,name,parent,child,coordinates=None,speeds=None,parent_point=None,child_point=None,parent_axis=None,child_axis=None,parent_interframe=None,child_interframe=None,joint_axis=None,parent_joint_pos=None,child_joint_pos=None)"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.union@2.8.8-3.0/networkx.union#1YY",
+    "runCommand": "python unionYY.py",
+    "runFilePath": "",
+    "libName": "networkx",
+    "currentVersion": "2.8.8",
+    "targetVersion": "3.0",
+    "currentEnv": "/envs/networkx2.8.8",
+    "targetEnv": "/envs/networkx3.0"
+}

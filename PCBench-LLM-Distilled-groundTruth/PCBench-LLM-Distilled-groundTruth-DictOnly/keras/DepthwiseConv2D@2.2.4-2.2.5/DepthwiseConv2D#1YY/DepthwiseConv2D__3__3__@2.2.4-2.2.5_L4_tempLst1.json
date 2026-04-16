@@ -1,0 +1,37 @@
+[
+  {
+    "(kernel_size, 0)": {},
+    "(strides, 1)": {},
+    "(padding, 2)": {},
+    "(depth_multiplier, 3)": {},
+    "(data_format, 4)": {},
+    "(activation, 5)": {
+      "posChange": 6,
+      "replace": "dilation_rate=(1,1)"
+    },
+    "(use_bias, 6)": {
+      "posChange": 7
+    },
+    "(depthwise_initializer, 7)": {
+      "posChange": 8
+    },
+    "(bias_initializer, 8)": {
+      "posChange": 9
+    },
+    "(depthwise_regularizer, 9)": {
+      "posChange": 10
+    },
+    "(bias_regularizer, 10)": {
+      "posChange": 11
+    },
+    "(activity_regularizer, 11)": {
+      "posChange": 12
+    },
+    "(depthwise_constraint, 12)": {
+      "posChange": 13
+    },
+    "(bias_constraint, 13)": {
+      "posChange": 14
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "(sentences, 0)": {},
+    "(total_words, 1)": {
+      "posChange": 2
+    },
+    "(word_count, 2)": {
+      "posChange": 6
+    },
+    "(total_examples, 3)": {
+      "posChange": 1,
+      "replace": "epochs=None"
+    },
+    "(queue_factor, 4)": {
+      "posChange": 7,
+      "replace": "start_alpha=None"
+    },
+    "(report_delay, 5)": {
+      "posChange": 8,
+      "replace": "end_alpha=None"
+    }
+  }
+]

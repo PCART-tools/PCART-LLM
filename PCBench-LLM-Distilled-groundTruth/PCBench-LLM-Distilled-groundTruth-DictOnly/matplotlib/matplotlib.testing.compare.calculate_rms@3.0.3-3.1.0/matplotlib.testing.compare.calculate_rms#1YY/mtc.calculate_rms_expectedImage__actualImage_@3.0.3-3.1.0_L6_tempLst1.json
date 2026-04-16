@@ -1,0 +1,10 @@
+[
+  {
+    "(expectedImage, 0)": {
+      "rename": "expected_image"
+    },
+    "(actualImage, 1)": {
+      "rename": "actual_image"
+    }
+  }
+]

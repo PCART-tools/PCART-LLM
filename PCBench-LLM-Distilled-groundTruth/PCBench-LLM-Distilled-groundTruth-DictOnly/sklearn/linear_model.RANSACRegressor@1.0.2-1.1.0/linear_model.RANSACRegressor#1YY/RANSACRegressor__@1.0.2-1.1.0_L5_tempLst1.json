@@ -1,0 +1,19 @@
+[
+  {
+    "(base_estimator, 0)": {
+      "replace": "estimator=None",
+      "pos2key": "base_estimator"
+    },
+    "(min_samples, 2)": {},
+    "(residual_threshold, 3)": {},
+    "(is_data_valid, 4)": {},
+    "(is_model_valid, 5)": {},
+    "(max_trials, 6)": {},
+    "(max_skips, 7)": {},
+    "(stop_n_inliers, 8)": {},
+    "(stop_score, 9)": {},
+    "(stop_probability, 10)": {},
+    "(loss, 11)": {},
+    "(random_state, 12)": {}
+  }
+]

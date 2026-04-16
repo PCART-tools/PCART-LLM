@@ -1,0 +1,27 @@
+[
+  {
+    "(name, 0)": {},
+    "(abbrev, 1)": {},
+    "(dimension, 2)": {
+      "delete": 1
+    },
+    "(scale_factor, 3)": {
+      "delete": 1
+    },
+    "(latex_repr, 4)": {
+      "posChange": 2
+    },
+    "(pretty_unicode_repr, 5)": {
+      "posChange": 3
+    },
+    "(pretty_ascii_repr, 6)": {
+      "posChange": 4
+    },
+    "(mathml_presentation_repr, 7)": {
+      "posChange": 5
+    },
+    "(is_prefixed, 8)": {
+      "posChange": 6
+    }
+  }
+]

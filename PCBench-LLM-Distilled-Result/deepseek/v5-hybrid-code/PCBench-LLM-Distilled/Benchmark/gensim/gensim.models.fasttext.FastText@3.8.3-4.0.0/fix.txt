@@ -1,0 +1,1 @@
+第三个compatible_hash是删除再新增不是这个

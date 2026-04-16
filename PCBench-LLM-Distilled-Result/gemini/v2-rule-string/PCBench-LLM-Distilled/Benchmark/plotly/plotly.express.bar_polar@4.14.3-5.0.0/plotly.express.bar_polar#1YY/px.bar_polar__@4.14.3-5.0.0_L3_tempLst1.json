@@ -1,0 +1,125 @@
+{
+    "context": {
+        "callAPI": "px.bar_polar()",
+        "currentVersion": "4.14.3",
+        "targetVersion": "5.0.0",
+        "fileRelativePath": "plotly.express.bar_polar#1YY/bar_polarYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/plotly/plotly.express.bar_polar@4.14.3-5.0.0/plotly.express.bar_polar#1YY/bar_polarYY.json",
+        "apiCall": "px.bar_polar()",
+        "oldVersion": "plotly@4.14.3",
+        "newVersion": "plotly@5.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "plotly.express.bar_polar",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a polar bar plot, each row of `data_frame` is represented as a wedge\n    mark in polar coordinates.\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword\n    names) to be used. Array-like and dict are tranformed internally to a\n    pandas DataFrame. Optional: if missing, a DataFrame gets constructed\n    under the hood using the other arguments.\nr: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the radial axis in polar coordinates.\ntheta: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the angular axis in polar coordinates.\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like, or dict\n    Either a list of names of columns in `data_frame`, or pandas Series, or\n    array_like objects or a dict with column names as keys, with values\n    True (for default formatting) False (in order to remove this column\n    from hover information), or a formatting string, for example ':.3f' or\n    '|%a' or list-like data to appear in the hover tooltip or tuples with a\n    bool or formatting string as first element, and list-like data to\n    appear in hover as second element Values from these columns appear as\n    extra data in the hover tooltip.\ncustom_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns are extra data, to be used\n    in widgets or Dash callbacks for example. This data is not user-visible\n    but is included in events emitted by the figure (lasso selection etc.)\nbase: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position the base of the bar.\nanimation_frame: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to animation frames.\nanimation_group: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    provide object-constancy across animation frames: rows with matching\n    `animation_group`s will be treated as if they describe the same object\n    in each frame.\ncategory_orders: dict with str keys and list of str values (default `{}`)\n    By default, in Python 3.6+, the order of categorical values in axes,\n    legends and facets depends on the order in which these values are first\n    encountered in `data_frame` (and no order is guaranteed by default in\n    Python below 3.6). This parameter is used to force a specific ordering\n    of values per column. The keys of this dict should correspond to column\n    names, and the values should be lists of strings corresponding to the\n    specific display order desired.\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The\n    keys of this dict should correspond to column names, and the values\n    should correspond to the desired label to be displayed.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that\n    column are assigned colors by cycling through `color_discrete_sequence`\n    in the order described in `category_orders`, unless the value of\n    `color` is a key in `color_discrete_map`. Various useful color\n    sequences are available in the `plotly.express.colors` submodules,\n    specifically `plotly.express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`. Alternatively, if the\n    values of `color` are valid colors, the string `'identity'` may be\n    passed to cause them to be used directly.\ncolor_continuous_scale: list of str\n    Strings should define valid CSS-colors This list is used to build a\n    continuous color scale when the column denoted by `color` contains\n    numeric data. Various useful color scales are available in the\n    `plotly.express.colors` submodules, specifically\n    `plotly.express.colors.sequential`, `plotly.express.colors.diverging`\n    and `plotly.express.colors.cyclical`.\nrange_color: list of two numbers\n    If provided, overrides auto-scaling on the continuous color scale.\ncolor_continuous_midpoint: number (default `None`)\n    If set, computes the bounds of the continuous color scale to have the\n    desired midpoint. Setting this value is recommended when using\n    `plotly.express.colors.diverging` color scales as the inputs to\n    `color_continuous_scale`.\nbarnorm: str (default `None`)\n    One of `'fraction'` or `'percent'`. If `'fraction'`, the value of each\n    bar is divided by the sum of all values at that location coordinate.\n    `'percent'` is the same but multiplied by 100 to show percentages.\n    `None` will stack up all values at each location coordinate.\nbarmode: str (default `'relative'`)\n    One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode,\n    bars are stacked above zero for positive values and below zero for\n    negative values. In `'overlay'` mode, bars are drawn on top of one\n    another. In `'group'` mode, bars are placed beside each other.\ndirection: str\n    One of '`counterclockwise'` or `'clockwise'`. Default is `'clockwise'`\n    Sets the direction in which increasing values of the angular axis are\n    drawn.\nstart_angle: int (default `90`)\n    Sets start angle for the angular axis, with 0 being due east and 90\n    being due north.\nrange_r: list of two numbers\n    If provided, overrides auto-scaling on the radial axis in polar\n    coordinates.\nrange_theta: list of two numbers\n    If provided, overrides auto-scaling on the angular axis in polar\n    coordinates.\nlog_r: boolean (default `False`)\n    If `True`, the radial axis is log-scaled in polar coordinates.\ntitle: str\n    The figure title.\ntemplate: str or dict or plotly.graph_objects.layout.Template instance\n    The figure template name (must be a key in plotly.io.templates) or\n    definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `None`)\n    The figure height in pixels.\n\nReturns\n-------\n    plotly.graph_objects.Figure",
+            "sourceCode": "def bar_polar(\n    data_frame=None,\n    r=None,\n    theta=None,\n    color=None,\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    base=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders=None,\n    labels=None,\n    color_discrete_sequence=None,\n    color_discrete_map=None,\n    color_continuous_scale=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    barnorm=None,\n    barmode=\"relative\",\n    direction=\"clockwise\",\n    start_angle=90,\n    range_r=None,\n    range_theta=None,\n    log_r=False,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a polar bar plot, each row of `data_frame` is represented as a wedge\n    mark in polar coordinates.\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Barpolar,\n        layout_patch=dict(barnorm=barnorm, barmode=barmode),\n    )\n",
+            "match": "(data_frame=None, r=None, theta=None, color=None, hover_name=None, hover_data=None, custom_data=None, base=None, animation_frame=None, animation_group=None, category_orders=None, labels=None, color_discrete_sequence=None, color_discrete_map=None, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, barnorm=None, barmode='relative', direction='clockwise', start_angle=90, range_r=None, range_theta=None, log_r=False, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "plotly.express.bar_polar",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a polar bar plot, each row of `data_frame` is represented as a wedge\n    mark in polar coordinates.\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword\n    names) to be used. Array-like and dict are tranformed internally to a\n    pandas DataFrame. Optional: if missing, a DataFrame gets constructed\n    under the hood using the other arguments.\nr: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the radial axis in polar coordinates.\ntheta: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the angular axis in polar coordinates.\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\npattern_shape: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign pattern shapes to marks.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like, or dict\n    Either a list of names of columns in `data_frame`, or pandas Series, or\n    array_like objects or a dict with column names as keys, with values\n    True (for default formatting) False (in order to remove this column\n    from hover information), or a formatting string, for example ':.3f' or\n    '|%a' or list-like data to appear in the hover tooltip or tuples with a\n    bool or formatting string as first element, and list-like data to\n    appear in hover as second element Values from these columns appear as\n    extra data in the hover tooltip.\ncustom_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns are extra data, to be used\n    in widgets or Dash callbacks for example. This data is not user-visible\n    but is included in events emitted by the figure (lasso selection etc.)\nbase: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position the base of the bar.\nanimation_frame: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to animation frames.\nanimation_group: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    provide object-constancy across animation frames: rows with matching\n    `animation_group`s will be treated as if they describe the same object\n    in each frame.\ncategory_orders: dict with str keys and list of str values (default `{}`)\n    By default, in Python 3.6+, the order of categorical values in axes,\n    legends and facets depends on the order in which these values are first\n    encountered in `data_frame` (and no order is guaranteed by default in\n    Python below 3.6). This parameter is used to force a specific ordering\n    of values per column. The keys of this dict should correspond to column\n    names, and the values should be lists of strings corresponding to the\n    specific display order desired.\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The\n    keys of this dict should correspond to column names, and the values\n    should correspond to the desired label to be displayed.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that\n    column are assigned colors by cycling through `color_discrete_sequence`\n    in the order described in `category_orders`, unless the value of\n    `color` is a key in `color_discrete_map`. Various useful color\n    sequences are available in the `plotly.express.colors` submodules,\n    specifically `plotly.express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`. Alternatively, if the\n    values of `color` are valid colors, the string `'identity'` may be\n    passed to cause them to be used directly.\ncolor_continuous_scale: list of str\n    Strings should define valid CSS-colors This list is used to build a\n    continuous color scale when the column denoted by `color` contains\n    numeric data. Various useful color scales are available in the\n    `plotly.express.colors` submodules, specifically\n    `plotly.express.colors.sequential`, `plotly.express.colors.diverging`\n    and `plotly.express.colors.cyclical`.\npattern_shape_sequence: list of str\n    Strings should define valid plotly.js patterns-shapes. When\n    `pattern_shape` is set, values in that column are assigned patterns-\n    shapes by cycling through `pattern_shape_sequence` in the order\n    described in `category_orders`, unless the value of `pattern_shape` is\n    a key in `pattern_shape_map`.\npattern_shape_map: dict with str keys and str values (default `{}`)\n    Strings values define plotly.js patterns-shapes. Used to override\n    `pattern_shape_sequences` to assign a specific patterns-shapes to lines\n    corresponding with specific values. Keys in `pattern_shape_map` should\n    be values in the column denoted by `pattern_shape`. Alternatively, if\n    the values of `pattern_shape` are valid patterns-shapes names, the\n    string `'identity'` may be passed to cause them to be used directly.\nrange_color: list of two numbers\n    If provided, overrides auto-scaling on the continuous color scale.\ncolor_continuous_midpoint: number (default `None`)\n    If set, computes the bounds of the continuous color scale to have the\n    desired midpoint. Setting this value is recommended when using\n    `plotly.express.colors.diverging` color scales as the inputs to\n    `color_continuous_scale`.\nbarnorm: str (default `None`)\n    One of `'fraction'` or `'percent'`. If `'fraction'`, the value of each\n    bar is divided by the sum of all values at that location coordinate.\n    `'percent'` is the same but multiplied by 100 to show percentages.\n    `None` will stack up all values at each location coordinate.\nbarmode: str (default `'relative'`)\n    One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode,\n    bars are stacked above zero for positive values and below zero for\n    negative values. In `'overlay'` mode, bars are drawn on top of one\n    another. In `'group'` mode, bars are placed beside each other.\ndirection: str\n    One of '`counterclockwise'` or `'clockwise'`. Default is `'clockwise'`\n    Sets the direction in which increasing values of the angular axis are\n    drawn.\nstart_angle: int (default `90`)\n    Sets start angle for the angular axis, with 0 being due east and 90\n    being due north.\nrange_r: list of two numbers\n    If provided, overrides auto-scaling on the radial axis in polar\n    coordinates.\nrange_theta: list of two numbers\n    If provided, overrides auto-scaling on the angular axis in polar\n    coordinates.\nlog_r: boolean (default `False`)\n    If `True`, the radial axis is log-scaled in polar coordinates.\ntitle: str\n    The figure title.\ntemplate: str or dict or plotly.graph_objects.layout.Template instance\n    The figure template name (must be a key in plotly.io.templates) or\n    definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `None`)\n    The figure height in pixels.\n\nReturns\n-------\n    plotly.graph_objects.Figure",
+            "sourceCode": "def bar_polar(\n    data_frame=None,\n    r=None,\n    theta=None,\n    color=None,\n    pattern_shape=None,\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    base=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders=None,\n    labels=None,\n    color_discrete_sequence=None,\n    color_discrete_map=None,\n    color_continuous_scale=None,\n    pattern_shape_sequence=None,\n    pattern_shape_map=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    barnorm=None,\n    barmode=\"relative\",\n    direction=\"clockwise\",\n    start_angle=90,\n    range_r=None,\n    range_theta=None,\n    log_r=False,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a polar bar plot, each row of `data_frame` is represented as a wedge\n    mark in polar coordinates.\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Barpolar,\n        layout_patch=dict(barnorm=barnorm, barmode=barmode),\n    )\n",
+            "match": "(data_frame=None, r=None, theta=None, color=None, pattern_shape=None, hover_name=None, hover_data=None, custom_data=None, base=None, animation_frame=None, animation_group=None, category_orders=None, labels=None, color_discrete_sequence=None, color_discrete_map=None, color_continuous_scale=None, pattern_shape_sequence=None, pattern_shape_map=None, range_color=None, color_continuous_midpoint=None, barnorm=None, barmode='relative', direction='clockwise', start_angle=90, range_r=None, range_theta=None, log_r=False, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(data_frame, 0)": {},
+                "(r, 1)": {},
+                "(theta, 2)": {},
+                "(color, 3)": {},
+                "(pattern_shape, 4)": {
+                    "addPos": "pattern_shape=None"
+                },
+                "(hover_name, 4)": {
+                    "posChange": 5
+                },
+                "(hover_data, 5)": {
+                    "posChange": 6
+                },
+                "(custom_data, 6)": {
+                    "posChange": 7
+                },
+                "(base, 7)": {
+                    "posChange": 8
+                },
+                "(animation_frame, 8)": {
+                    "posChange": 9
+                },
+                "(animation_group, 9)": {
+                    "posChange": 10
+                },
+                "(category_orders, 10)": {
+                    "posChange": 11
+                },
+                "(labels, 11)": {
+                    "posChange": 12
+                },
+                "(color_discrete_sequence, 12)": {
+                    "posChange": 13
+                },
+                "(color_discrete_map, 13)": {
+                    "posChange": 14
+                },
+                "(color_continuous_scale, 14)": {
+                    "posChange": 15
+                },
+                "(range_color, 15)": {
+                    "posChange": 18
+                },
+                "(pattern_shape_sequence, 16)": {
+                    "addPos": "pattern_shape_sequence=None"
+                },
+                "(color_continuous_midpoint, 16)": {
+                    "posChange": 19
+                },
+                "(pattern_shape_map, 17)": {
+                    "addPos": "pattern_shape_map=None"
+                },
+                "(barnorm, 17)": {
+                    "posChange": 20
+                },
+                "(barmode, 18)": {
+                    "posChange": 21
+                },
+                "(direction, 19)": {
+                    "posChange": 22
+                },
+                "(start_angle, 20)": {
+                    "posChange": 23
+                },
+                "(range_r, 21)": {
+                    "posChange": 24
+                },
+                "(range_theta, 22)": {
+                    "posChange": 25
+                },
+                "(log_r, 23)": {
+                    "posChange": 26
+                },
+                "(title, 24)": {
+                    "posChange": 27
+                },
+                "(template, 25)": {
+                    "posChange": 28
+                },
+                "(width, 26)": {
+                    "posChange": 29
+                },
+                "(height, 27)": {
+                    "posChange": 30
+                }
+            },
+            "targetOvPara": "(data_frame=None, r=None, theta=None, color=None, pattern_shape=None, hover_name=None, hover_data=None, custom_data=None, base=None, animation_frame=None, animation_group=None, category_orders=None, labels=None, color_discrete_sequence=None, color_discrete_map=None, color_continuous_scale=None, pattern_shape_sequence=None, pattern_shape_map=None, range_color=None, color_continuous_midpoint=None, barnorm=None, barmode='relative', direction='clockwise', start_angle=90, range_r=None, range_theta=None, log_r=False, title=None, template=None, width=None, height=None)"
+        }
+    ]
+}

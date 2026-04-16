@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "pe.SimplePatchShadow()",
+        "currentVersion": "1.4.3",
+        "targetVersion": "1.5.0",
+        "fileRelativePath": "matplotlib.patheffects.SimplePatchShadow#1YY/SimplePatchShadowYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.patheffects.SimplePatchShadow@1.4.3-1.5.0/matplotlib.patheffects.SimplePatchShadow#1YY/SimplePatchShadowYY.json",
+        "apiCall": "pe.SimplePatchShadow()",
+        "oldVersion": "matplotlib@1.4.3",
+        "newVersion": "matplotlib@1.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.patheffects.SimplePatchShadow",
+            "error": "",
+            "internalPath": "matplotlib.patheffects",
+            "docstring": "A simple shadow via a filled patch.",
+            "sourceCode": "class SimplePatchShadow(AbstractPathEffect):\n    \"\"\"A simple shadow via a filled patch.\"\"\"\n    def __init__(self, offset=(2,-2),\n                 shadow_rgbFace=None, alpha=None, patch_alpha=None,\n                 rho=0.3, offset_xy=None, **kwargs):\n        \"\"\"\n        Parameters\n        ----------\n        offset : pair of floats\n            The offset of the shadow in points.\n        shadow_rgbFace : color\n            The shadow color.\n        alpha : float\n            The alpha transparency of the created shadow patch.\n            Default is 0.3.\n            http://matplotlib.1069221.n5.nabble.com/path-effects-question-td27630.html\n        rho : float\n            A scale factor to apply to the rgbFace color if `shadow_rgbFace`\n            is not specified. Default is 0.3.\n        **kwargs\n            Extra keywords are stored and passed through to\n            :meth:`AbstractPathEffect._update_gc`.\n\n        \"\"\"\n        if offset_xy is not None:\n            cbook.deprecated('v1.4', 'The offset_xy keyword is deprecated. '\n                             'Use the offset keyword instead.')\n            offset = offset_xy\n        super(SimplePatchShadow, self).__init__(offset)\n\n        if shadow_rgbFace is None:\n            self._shadow_rgbFace = shadow_rgbFace\n        else:\n            self._shadow_rgbFace = colorConverter.to_rgba(shadow_rgbFace)\n        if patch_alpha is not None:\n            cbook.deprecated('v1.4', 'The patch_alpha keyword is deprecated. '\n                             'Use the alpha keyword instead. Transform your '\n                             'patch_alpha by alpha = 1 - patch_alpha')\n            if alpha is not None:\n                raise ValueError(\"Both alpha and patch_alpha were set. \"\n                                 \"Just use alpha.\")\n            alpha = 1 - patch_alpha\n\n        if alpha is None:\n            alpha = 0.3\n\n        self._alpha = alpha\n        self._rho = rho\n\n        #: The dictionary of keywords to update the graphics collection with.\n        self._gc = kwargs\n\n        #: The offset transform object. The offset isn't calculated yet\n        #: as we don't know how big the figure will be in pixels.\n        self._offset_tran = mtransforms.Affine2D()\n\n    def draw_path(self, renderer, gc, tpath, affine, rgbFace):\n        \"\"\"\n        Overrides the standard draw_path to add the shadow offset and\n        necessary color changes for the shadow.\n\n        \"\"\"\n        # IMPORTANT: Do not modify the input - we copy everything instead.\n        affine0 = self._offset_transform(renderer, affine)\n        gc0 = renderer.new_gc()\n        gc0.copy_properties(gc)\n\n        if self._shadow_rgbFace is None:\n            r,g,b = (rgbFace or (1., 1., 1.))[:3]\n            # Scale the colors by a factor to improve the shadow effect.\n            shadow_rgbFace = (r * self._rho, g * self._rho, b * self._rho)\n        else:\n            shadow_rgbFace = self._shadow_rgbFace\n\n        gc0.set_foreground(\"none\")\n        gc0.set_alpha(self._alpha)\n        gc0.set_linewidth(0)\n\n        gc0 = self._update_gc(gc0, self._gc)\n        renderer.draw_path(gc0, tpath, affine0, shadow_rgbFace)\n        gc0.restore()\n",
+            "match": "(offset=(2, -2), shadow_rgbFace=None, alpha=None, patch_alpha=None, rho=0.3, offset_xy=None, **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.patheffects.SimplePatchShadow",
+            "error": "",
+            "internalPath": "matplotlib.patheffects",
+            "docstring": "A simple shadow via a filled patch.",
+            "sourceCode": "class SimplePatchShadow(AbstractPathEffect):\n    \"\"\"A simple shadow via a filled patch.\"\"\"\n    def __init__(self, offset=(2, -2),\n                 shadow_rgbFace=None, alpha=None,\n                 rho=0.3, **kwargs):\n        \"\"\"\n        Parameters\n        ----------\n        offset : pair of floats\n            The offset of the shadow in points.\n        shadow_rgbFace : color\n            The shadow color.\n        alpha : float\n            The alpha transparency of the created shadow patch.\n            Default is 0.3.\n            http://matplotlib.1069221.n5.nabble.com/path-effects-question-td27630.html\n        rho : float\n            A scale factor to apply to the rgbFace color if `shadow_rgbFace`\n            is not specified. Default is 0.3.\n        **kwargs\n            Extra keywords are stored and passed through to\n            :meth:`AbstractPathEffect._update_gc`.\n\n        \"\"\"\n        super(SimplePatchShadow, self).__init__(offset)\n\n        if shadow_rgbFace is None:\n            self._shadow_rgbFace = shadow_rgbFace\n        else:\n            self._shadow_rgbFace = colorConverter.to_rgba(shadow_rgbFace)\n\n        if alpha is None:\n            alpha = 0.3\n\n        self._alpha = alpha\n        self._rho = rho\n\n        #: The dictionary of keywords to update the graphics collection with.\n        self._gc = kwargs\n\n        #: The offset transform object. The offset isn't calculated yet\n        #: as we don't know how big the figure will be in pixels.\n        self._offset_tran = mtransforms.Affine2D()\n\n    def draw_path(self, renderer, gc, tpath, affine, rgbFace):\n        \"\"\"\n        Overrides the standard draw_path to add the shadow offset and\n        necessary color changes for the shadow.\n\n        \"\"\"\n        # IMPORTANT: Do not modify the input - we copy everything instead.\n        affine0 = self._offset_transform(renderer, affine)\n        gc0 = renderer.new_gc()\n        gc0.copy_properties(gc)\n\n        if self._shadow_rgbFace is None:\n            r,g,b = (rgbFace or (1., 1., 1.))[:3]\n            # Scale the colors by a factor to improve the shadow effect.\n            shadow_rgbFace = (r * self._rho, g * self._rho, b * self._rho)\n        else:\n            shadow_rgbFace = self._shadow_rgbFace\n\n        gc0.set_foreground(\"none\")\n        gc0.set_alpha(self._alpha)\n        gc0.set_linewidth(0)\n\n        gc0 = self._update_gc(gc0, self._gc)\n        renderer.draw_path(gc0, tpath, affine0, shadow_rgbFace)\n        gc0.restore()\n",
+            "match": "(offset=(2, -2), shadow_rgbFace=None, alpha=None, rho=0.3, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(offset, 0)": {},
+                "(shadow_rgbFace, 1)": {},
+                "(alpha, 2)": {},
+                "(patch_alpha, 3)": {
+                    "delete": 1,
+                    "replace": "rho"
+                },
+                "(rho, 4)": {
+                    "posChange": 3
+                },
+                "(offset_xy, 5)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(offset=(2, -2), shadow_rgbFace=None, alpha=None, rho=0.3, **kwargs)"
+        }
+    ]
+}

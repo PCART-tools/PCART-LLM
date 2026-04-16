@@ -1,0 +1,66 @@
+[
+  {
+    "(buf, 0)": {},
+    "(columns, 1)": {},
+    "(col_space, 2)": {
+      "delete": 1
+    },
+    "(header, 3)": {
+      "posChange": 2
+    },
+    "(index, 4)": {
+      "posChange": 3
+    },
+    "(na_rep, 5)": {
+      "posChange": 4
+    },
+    "(formatters, 6)": {
+      "posChange": 5
+    },
+    "(float_format, 7)": {
+      "posChange": 6
+    },
+    "(sparsify, 8)": {
+      "posChange": 7
+    },
+    "(index_names, 9)": {
+      "posChange": 8
+    },
+    "(bold_rows, 10)": {
+      "posChange": 9
+    },
+    "(column_format, 11)": {
+      "posChange": 10
+    },
+    "(longtable, 12)": {
+      "posChange": 11
+    },
+    "(escape, 13)": {
+      "posChange": 12
+    },
+    "(encoding, 14)": {
+      "posChange": 13
+    },
+    "(decimal, 15)": {
+      "posChange": 14
+    },
+    "(multicolumn, 16)": {
+      "posChange": 15
+    },
+    "(multicolumn_format, 17)": {
+      "posChange": 16
+    },
+    "(multirow, 18)": {
+      "posChange": 17
+    },
+    "(caption, 19)": {
+      "posChange": 18
+    },
+    "(label, 20)": {
+      "posChange": 19
+    },
+    "(position, 21)": {
+      "posChange": 20
+    }
+  }
+]

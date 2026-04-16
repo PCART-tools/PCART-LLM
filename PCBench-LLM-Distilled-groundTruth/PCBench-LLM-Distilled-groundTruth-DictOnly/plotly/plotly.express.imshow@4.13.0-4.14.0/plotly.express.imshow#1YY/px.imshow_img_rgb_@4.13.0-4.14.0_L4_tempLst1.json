@@ -1,0 +1,55 @@
+[
+  {
+    "(img, 0)": {},
+    "(zmin, 1)": {},
+    "(zmax, 2)": {},
+    "(origin, 3)": {},
+    "(labels, 4)": {},
+    "(x, 5)": {},
+    "(y, 6)": {},
+    "(color_continuous_scale, 7)": {
+      "posChange": 12,
+      "replace": "animation_frame=None"
+    },
+    "(color_continuous_midpoint, 8)": {
+      "posChange": 13,
+      "replace": "facet_col=None"
+    },
+    "(range_color, 9)": {
+      "posChange": 14,
+      "replace": "facet_col_wrap=None"
+    },
+    "(title, 10)": {
+      "posChange": 15,
+      "replace": "facet_col_spacing=None"
+    },
+    "(template, 11)": {
+      "posChange": 16,
+      "replace": "facet_row_spacing=None"
+    },
+    "(width, 12)": {
+      "posChange": 17
+    },
+    "(height, 13)": {
+      "posChange": 18
+    },
+    "(aspect, 14)": {
+      "posChange": 19
+    },
+    "(contrast_rescaling, 15)": {
+      "posChange": 20
+    },
+    "(binary_string, 16)": {
+      "posChange": 21
+    },
+    "(binary_backend, 17)": {
+      "posChange": 22
+    },
+    "(binary_compression_level, 18)": {
+      "posChange": 23
+    },
+    "(binary_format, 19)": {
+      "posChange": 24
+    }
+  }
+]

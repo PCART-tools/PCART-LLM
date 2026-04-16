@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.physics.units.quantities.Quantity@1.1.1-1.2/sympy.physics.units.quantities.Quantity#1NY",
+    "runCommand": "python QuantityNY.py",
+    "runFilePath": "",
+    "libName": "sympy",
+    "currentVersion": "1.1.1",
+    "targetVersion": "1.2",
+    "currentEnv": "/envs/sympy1.1.1",
+    "targetEnv": "/envs/sympy1.2"
+}

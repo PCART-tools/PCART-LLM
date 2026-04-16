@@ -1,0 +1,66 @@
+{
+    "context": {
+        "callAPI": "table.add_column()",
+        "currentVersion": "2.3.1",
+        "targetVersion": "3.0.0",
+        "fileRelativePath": "Table.add_column#1YY/add_columnYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/rich/Table.add_column@2.3.1-3.0.0/Table.add_column#1YY/add_columnYY.json",
+        "apiCall": "table.add_column()",
+        "oldVersion": "rich@2.3.1",
+        "newVersion": "rich@3.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "rich.table.Table.add_column",
+            "error": "",
+            "internalPath": "rich.table",
+            "docstring": "Add a column to the table.\n\nArgs:\n    header (RenderableType, optional): Text or renderable for the header.\n        Defaults to \"\".\n    footer (RenderableType, optional): Text or renderable for the footer.\n        Defaults to \"\".\n    header_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n    footer_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n    style (Union[str, Style], optional): Style for the column cells. Defaults to \"none\".\n    justify (JustifyMethod, optional): Alignment for cells. Defaults to \"left\".\n    width (int, optional): A minimum width in characters. Defaults to None.\n    ratio (int, optional): Flexible ratio for the column. Defaults to None.\n    no_wrap (bool, optional): Set to ``True`` to disable wrapping of this column.",
+            "sourceCode": "    def add_column(\n        self,\n        header: \"RenderableType\" = \"\",\n        footer: \"RenderableType\" = \"\",\n        header_style: StyleType = None,\n        footer_style: StyleType = None,\n        style: StyleType = None,\n        justify: \"JustifyMethod\" = \"left\",\n        overflow: \"OverflowMethod\" = \"ellipsis\",\n        width: int = None,\n        ratio: int = None,\n        no_wrap: bool = False,\n    ) -> None:\n        \"\"\"Add a column to the table.\n        \n        Args:\n            header (RenderableType, optional): Text or renderable for the header.\n                Defaults to \"\".\n            footer (RenderableType, optional): Text or renderable for the footer.\n                Defaults to \"\".\n            header_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n            footer_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n            style (Union[str, Style], optional): Style for the column cells. Defaults to \"none\".\n            justify (JustifyMethod, optional): Alignment for cells. Defaults to \"left\".\n            width (int, optional): A minimum width in characters. Defaults to None.\n            ratio (int, optional): Flexible ratio for the column. Defaults to None.\n            no_wrap (bool, optional): Set to ``True`` to disable wrapping of this column.\n        \"\"\"\n\n        column = Column(\n            index=len(self.columns),\n            header=header,\n            footer=footer,\n            header_style=Style.pick_first(\n                header_style, self.header_style, \"table.header\"\n            ),\n            footer_style=Style.pick_first(\n                footer_style, self.footer_style, \"table.footer\"\n            ),\n            style=Style.pick_first(style, self.style, \"table.cell\"),\n            justify=justify,\n            overflow=overflow,\n            width=width,\n            ratio=ratio,\n            no_wrap=no_wrap,\n        )\n        self.columns.append(column)\n",
+            "match": "(header: 'RenderableType' = '', footer: 'RenderableType' = '', header_style: Union[str, ForwardRef('Style')] = None, footer_style: Union[str, ForwardRef('Style')] = None, style: Union[str, ForwardRef('Style')] = None, justify: 'JustifyMethod' = 'left', overflow: 'OverflowMethod' = 'ellipsis', width: int = None, ratio: int = None, no_wrap: bool = False) -> None",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "rich.table.Table.add_column",
+            "error": "",
+            "internalPath": "rich.table",
+            "docstring": "Add a column to the table.\n\nArgs:\n    header (RenderableType, optional): Text or renderable for the header.\n        Defaults to \"\".\n    footer (RenderableType, optional): Text or renderable for the footer.\n        Defaults to \"\".\n    header_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n    footer_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n    style (Union[str, Style], optional): Style for the column cells. Defaults to \"none\".\n    justify (JustifyMethod, optional): Alignment for cells. Defaults to \"left\".\n    width (int, optional): A minimum width in characters. Defaults to None.\n    ratio (int, optional): Flexible ratio for the column. Defaults to None.\n    no_wrap (bool, optional): Set to ``True`` to disable wrapping of this column.",
+            "sourceCode": "    def add_column(\n        self,\n        header: \"RenderableType\" = \"\",\n        footer: \"RenderableType\" = \"\",\n        *,\n        header_style: StyleType = None,\n        footer_style: StyleType = None,\n        style: StyleType = None,\n        justify: \"JustifyMethod\" = \"left\",\n        overflow: \"OverflowMethod\" = \"ellipsis\",\n        width: int = None,\n        ratio: int = None,\n        no_wrap: bool = False,\n    ) -> None:\n        \"\"\"Add a column to the table.\n        \n        Args:\n            header (RenderableType, optional): Text or renderable for the header.\n                Defaults to \"\".\n            footer (RenderableType, optional): Text or renderable for the footer.\n                Defaults to \"\".\n            header_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n            footer_style (Union[str, Style], optional): Style for the header. Defaults to \"none\".\n            style (Union[str, Style], optional): Style for the column cells. Defaults to \"none\".\n            justify (JustifyMethod, optional): Alignment for cells. Defaults to \"left\".\n            width (int, optional): A minimum width in characters. Defaults to None.\n            ratio (int, optional): Flexible ratio for the column. Defaults to None.\n            no_wrap (bool, optional): Set to ``True`` to disable wrapping of this column.\n        \"\"\"\n\n        column = Column(\n            index=len(self.columns),\n            header=header,\n            footer=footer,\n            header_style=Style.pick_first(\n                header_style, self.header_style, \"table.header\"\n            ),\n            footer_style=Style.pick_first(\n                footer_style, self.footer_style, \"table.footer\"\n            ),\n            style=Style.pick_first(style, self.style, \"table.cell\"),\n            justify=justify,\n            overflow=overflow,\n            width=width,\n            ratio=ratio,\n            no_wrap=no_wrap,\n        )\n        self.columns.append(column)\n",
+            "match": "(header: 'RenderableType' = '', footer: 'RenderableType' = '', *, header_style: Union[str, ForwardRef('Style')] = None, footer_style: Union[str, ForwardRef('Style')] = None, style: Union[str, ForwardRef('Style')] = None, justify: 'JustifyMethod' = 'left', overflow: 'OverflowMethod' = 'ellipsis', width: int = None, ratio: int = None, no_wrap: bool = False) -> None",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(header, 0)": {},
+                "(footer, 1)": {},
+                "(header_style, 2)": {
+                    "pos2key": "header_style"
+                },
+                "(footer_style, 3)": {
+                    "pos2key": "footer_style"
+                },
+                "(style, 4)": {
+                    "pos2key": "style"
+                },
+                "(justify, 5)": {
+                    "pos2key": "justify"
+                },
+                "(overflow, 6)": {
+                    "pos2key": "overflow"
+                },
+                "(width, 7)": {
+                    "pos2key": "width"
+                },
+                "(ratio, 8)": {
+                    "pos2key": "ratio"
+                },
+                "(no_wrap, 9)": {
+                    "pos2key": "no_wrap"
+                }
+            },
+            "targetOvPara": "(header: 'RenderableType' = '', footer: 'RenderableType' = '', *, header_style: Union[str, ForwardRef('Style')] = None, footer_style: Union[str, ForwardRef('Style')] = None, style: Union[str, ForwardRef('Style')] = None, justify: 'JustifyMethod' = 'left', overflow: 'OverflowMethod' = 'ellipsis', width: int = None, ratio: int = None, no_wrap: bool = False) -> None"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(lat, 1)": {},
+    "(lon, 2)": {},
+    "(locations, 3)": {},
+    "(locationmode, 4)": {},
+    "(geojson, 5)": {},
+    "(featureidkey, 6)": {},
+    "(color, 7)": {},
+    "(line_dash, 8)": {},
+    "(text, 9)": {},
+    "(facet_row, 10)": {},
+    "(facet_col, 11)": {},
+    "(facet_col_wrap, 12)": {},
+    "(facet_row_spacing, 13)": {},
+    "(facet_col_spacing, 14)": {},
+    "(hover_name, 15)": {},
+    "(hover_data, 16)": {},
+    "(custom_data, 17)": {},
+    "(line_group, 18)": {},
+    "(animation_frame, 19)": {
+      "posChange": 20,
+      "replace": "symbol=None"
+    },
+    "(animation_group, 20)": {
+      "posChange": 21
+    },
+    "(category_orders, 21)": {
+      "posChange": 22
+    },
+    "(labels, 22)": {
+      "posChange": 23
+    },
+    "(color_discrete_sequence, 23)": {
+      "posChange": 24
+    },
+    "(color_discrete_map, 24)": {
+      "posChange": 25
+    },
+    "(line_dash_sequence, 25)": {
+      "posChange": 26
+    },
+    "(line_dash_map, 26)": {
+      "posChange": 27
+    },
+    "(projection, 27)": {
+      "posChange": 31
+    },
+    "(scope, 28)": {
+      "posChange": 32,
+      "replace": "symbol_sequence=None"
+    },
+    "(center, 29)": {
+      "posChange": 33,
+      "replace": "symbol_map=None"
+    },
+    "(fitbounds, 30)": {
+      "posChange": 34,
+      "replace": "markers=False"
+    },
+    "(basemap_visible, 31)": {
+      "posChange": 35
+    },
+    "(title, 32)": {
+      "posChange": 36
+    },
+    "(template, 33)": {
+      "posChange": 37
+    },
+    "(width, 34)": {
+      "posChange": 38
+    },
+    "(height, 35)": {
+      "posChange": 39
+    }
+  }
+]

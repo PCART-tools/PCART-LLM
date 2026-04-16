@@ -1,0 +1,53 @@
+{
+    "context": {
+        "callAPI": "spacy.load(model_name)",
+        "currentVersion": "3.0.5",
+        "targetVersion": "3.0.6",
+        "fileRelativePath": "spacy.load#1YY/loadYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled/Benchmark/spacy/spacy.load@3.0.5-3.0.6/spacy.load#1YY/loadYY.json",
+        "apiCall": "spacy.load(model_name)",
+        "oldVersion": "spacy@3.0.5",
+        "newVersion": "spacy@3.0.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "spacy.load",
+            "error": "",
+            "internalPath": "spacy.__init__",
+            "docstring": "Load a spaCy model from an installed package or a local path.\n\nname (str): Package name or model path.\ndisable (Iterable[str]): Names of pipeline components to disable. Disabled\n    pipes will be loaded but they won't be run unless you explicitly\n    enable them by calling nlp.enable_pipe.\nexclude (Iterable[str]): Names of pipeline components to exclude. Excluded\n    components won't be loaded.\nconfig (Dict[str, Any] / Config): Config overrides as nested dict or dict\n    keyed by section values in dot notation.\nRETURNS (Language): The loaded nlp object.",
+            "sourceCode": "def load(\n    name: Union[str, Path],\n    disable: Iterable[str] = util.SimpleFrozenList(),\n    exclude: Iterable[str] = util.SimpleFrozenList(),\n    config: Union[Dict[str, Any], Config] = util.SimpleFrozenDict(),\n) -> Language:\n    \"\"\"Load a spaCy model from an installed package or a local path.\n\n    name (str): Package name or model path.\n    disable (Iterable[str]): Names of pipeline components to disable. Disabled\n        pipes will be loaded but they won't be run unless you explicitly\n        enable them by calling nlp.enable_pipe.\n    exclude (Iterable[str]): Names of pipeline components to exclude. Excluded\n        components won't be loaded.\n    config (Dict[str, Any] / Config): Config overrides as nested dict or dict\n        keyed by section values in dot notation.\n    RETURNS (Language): The loaded nlp object.\n    \"\"\"\n    return util.load_model(name, disable=disable, exclude=exclude, config=config)\n",
+            "match": "(name: Union[str, pathlib.Path], disable: Iterable[str] = [], exclude: Iterable[str] = [], config: Union[Dict[str, Any], thinc.config.Config] = {}) -> spacy.language.Language",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "spacy.load",
+            "error": "",
+            "internalPath": "spacy.__init__",
+            "docstring": "Load a spaCy model from an installed package or a local path.\n\nname (str): Package name or model path.\nvocab (Vocab): A Vocab object. If True, a vocab is created.\ndisable (Iterable[str]): Names of pipeline components to disable. Disabled\n    pipes will be loaded but they won't be run unless you explicitly\n    enable them by calling nlp.enable_pipe.\nexclude (Iterable[str]): Names of pipeline components to exclude. Excluded\n    components won't be loaded.\nconfig (Dict[str, Any] / Config): Config overrides as nested dict or dict\n    keyed by section values in dot notation.\nRETURNS (Language): The loaded nlp object.",
+            "sourceCode": "def load(\n    name: Union[str, Path],\n    *,\n    vocab: Union[Vocab, bool] = True,\n    disable: Iterable[str] = util.SimpleFrozenList(),\n    exclude: Iterable[str] = util.SimpleFrozenList(),\n    config: Union[Dict[str, Any], Config] = util.SimpleFrozenDict(),\n) -> Language:\n    \"\"\"Load a spaCy model from an installed package or a local path.\n\n    name (str): Package name or model path.\n    vocab (Vocab): A Vocab object. If True, a vocab is created.\n    disable (Iterable[str]): Names of pipeline components to disable. Disabled\n        pipes will be loaded but they won't be run unless you explicitly\n        enable them by calling nlp.enable_pipe.\n    exclude (Iterable[str]): Names of pipeline components to exclude. Excluded\n        components won't be loaded.\n    config (Dict[str, Any] / Config): Config overrides as nested dict or dict\n        keyed by section values in dot notation.\n    RETURNS (Language): The loaded nlp object.\n    \"\"\"\n    return util.load_model(\n        name, vocab=vocab, disable=disable, exclude=exclude, config=config\n    )\n",
+            "match": "(name: Union[str, pathlib.Path], *, vocab: Union[spacy.vocab.Vocab, bool] = True, disable: Iterable[str] = [], exclude: Iterable[str] = [], config: Union[Dict[str, Any], thinc.config.Config] = {}) -> spacy.language.Language",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(name, 0)": {},
+                "(disable, 1)": {
+                    "pos2key": "disable"
+                },
+                "(exclude, 2)": {
+                    "pos2key": "exclude"
+                },
+                "(vocab, 2)": {
+                    "addKey": "vocab=True"
+                },
+                "(config, 3)": {
+                    "pos2key": "config"
+                }
+            },
+            "targetOvPara": "(name: Union[str, pathlib.Path], *, vocab: Union[spacy.vocab.Vocab, bool] = True, disable: Iterable[str] = [], exclude: Iterable[str] = [], config: Union[Dict[str, Any], thinc.config.Config] = {}) -> spacy.language.Language"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "(left, 0)": {},
+    "(right, 1)": {},
+    "(check_dtype, 2)": {},
+    "(check_index_type, 3)": {},
+    "(check_column_type, 4)": {},
+    "(check_frame_type, 5)": {},
+    "(check_less_precise, 6)": {
+      "delete": 1
+    },
+    "(check_names, 7)": {
+      "posChange": 6
+    },
+    "(by_blocks, 8)": {
+      "posChange": 7
+    },
+    "(check_exact, 9)": {
+      "posChange": 8
+    },
+    "(check_datetimelike_compat, 10)": {
+      "posChange": 9
+    },
+    "(check_categorical, 11)": {
+      "posChange": 10
+    },
+    "(check_like, 12)": {
+      "posChange": 11
+    },
+    "(check_freq, 13)": {
+      "posChange": 12
+    },
+    "(check_flags, 14)": {
+      "posChange": 13
+    },
+    "(rtol, 15)": {
+      "posChange": 14
+    },
+    "(atol, 16)": {
+      "posChange": 15
+    },
+    "(obj, 17)": {
+      "posChange": 16
+    }
+  }
+]

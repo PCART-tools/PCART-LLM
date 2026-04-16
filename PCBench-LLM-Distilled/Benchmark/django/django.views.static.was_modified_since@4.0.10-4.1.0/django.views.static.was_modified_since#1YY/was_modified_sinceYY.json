@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/django/django.views.static.was_modified_since@4.0.10-4.1.0/django.views.static.was_modified_since#1YY",
+    "runCommand": "python was_modified_sinceYY.py",
+    "runFilePath": "",
+    "libName": "django",
+    "currentVersion": "4.0.10",
+    "targetVersion": "4.1.0",
+    "currentEnv": "/envs/django4.0.10",
+    "targetEnv": "/envs/django4.1.0"
+}

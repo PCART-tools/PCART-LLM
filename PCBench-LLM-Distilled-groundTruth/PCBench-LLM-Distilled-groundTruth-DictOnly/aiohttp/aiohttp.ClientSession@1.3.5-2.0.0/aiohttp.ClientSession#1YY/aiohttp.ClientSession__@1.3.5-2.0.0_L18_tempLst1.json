@@ -1,0 +1,31 @@
+[
+  {
+    "(connector, 1)": {},
+    "(loop, 2)": {},
+    "(cookies, 3)": {},
+    "(headers, 4)": {},
+    "(skip_auto_headers, 5)": {},
+    "(auth, 6)": {},
+    "(request_class, 7)": {},
+    "(json_serialize, 7)": {
+      "addKey": "json_serialize=<functiondumpsat0x7af4f31667b8>"
+    },
+    "(response_class, 8)": {},
+    "(ws_response_class, 9)": {},
+    "(version, 10)": {},
+    "(cookie_jar, 11)": {},
+    "(read_timeout, 12)": {},
+    "(time_service, 13)": {
+      "delete": 1
+    },
+    "(connector_owner, 13)": {
+      "addKey": "connector_owner=True"
+    },
+    "(raise_for_status, 14)": {
+      "addKey": "raise_for_status=False"
+    },
+    "(conn_timeout, 16)": {
+      "addKey": "conn_timeout=None"
+    }
+  }
+]

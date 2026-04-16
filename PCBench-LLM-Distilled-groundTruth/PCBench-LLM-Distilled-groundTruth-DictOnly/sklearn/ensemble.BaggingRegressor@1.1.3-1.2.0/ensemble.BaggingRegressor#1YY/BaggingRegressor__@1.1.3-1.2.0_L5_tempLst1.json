@@ -1,0 +1,18 @@
+[
+  {
+    "(base_estimator, 0)": {
+      "replace": "estimator=None",
+      "pos2key": "base_estimator"
+    },
+    "(n_estimators, 1)": {},
+    "(max_samples, 3)": {},
+    "(max_features, 4)": {},
+    "(bootstrap, 5)": {},
+    "(bootstrap_features, 6)": {},
+    "(oob_score, 7)": {},
+    "(warm_start, 8)": {},
+    "(n_jobs, 9)": {},
+    "(random_state, 10)": {},
+    "(verbose, 11)": {}
+  }
+]

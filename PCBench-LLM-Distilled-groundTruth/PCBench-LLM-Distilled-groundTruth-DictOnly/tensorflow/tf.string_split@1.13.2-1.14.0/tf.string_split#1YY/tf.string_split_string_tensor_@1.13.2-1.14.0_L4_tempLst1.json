@@ -1,0 +1,10 @@
+[
+  {
+    "(source, 0)": {},
+    "(delimiter, 1)": {
+      "posChange": 3,
+      "replace": "sep=None"
+    },
+    "(skip_empty, 2)": {}
+  }
+]

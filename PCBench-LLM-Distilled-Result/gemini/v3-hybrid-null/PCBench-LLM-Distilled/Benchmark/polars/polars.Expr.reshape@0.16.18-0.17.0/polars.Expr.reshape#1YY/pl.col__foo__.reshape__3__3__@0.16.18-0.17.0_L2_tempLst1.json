@@ -1,0 +1,43 @@
+{
+    "context": {
+        "callAPI": "pl.col('foo').reshape((3, 3))",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.reshape#1YY/reshapeYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.reshape@0.16.18-0.17.0/polars.Expr.reshape#1YY/reshapeYY.json",
+        "apiCall": "pl.col('foo').reshape((3, 3))",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.reshape",
+            "error": "",
+            "internalPath": "polars.expr.expr",
+            "docstring": "Reshape this Expr to a flat Series or a Series of Lists.\n\nParameters\n----------\ndims\n    Tuple of the dimension sizes. If a -1 is used in any of the dimensions, that\n    dimension is inferred.\n\nReturns\n-------\nExpr\n    If a single dimension is given, results in a flat Series of shape (len,).\n    If a multiple dimensions are given, results in a Series of Lists with shape\n    (rows, cols).\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [1, 2, 3, 4, 5, 6, 7, 8, 9]})\n>>> df.select(pl.col(\"foo\").reshape((3, 3)))\nshape: (3, 1)\n┌───────────┐\n│ foo       │\n│ ---       │\n│ list[i64] │\n╞═══════════╡\n│ [1, 2, 3] │\n│ [4, 5, 6] │\n│ [7, 8, 9] │\n└───────────┘\n\nSee Also\n--------\nExprListNameSpace.explode : Explode a list column.",
+            "sourceCode": "    def reshape(self, dims: tuple[int, ...]) -> Self:\n        \"\"\"\n        Reshape this Expr to a flat Series or a Series of Lists.\n\n        Parameters\n        ----------\n        dims\n            Tuple of the dimension sizes. If a -1 is used in any of the dimensions, that\n            dimension is inferred.\n\n        Returns\n        -------\n        Expr\n            If a single dimension is given, results in a flat Series of shape (len,).\n            If a multiple dimensions are given, results in a Series of Lists with shape\n            (rows, cols).\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [1, 2, 3, 4, 5, 6, 7, 8, 9]})\n        >>> df.select(pl.col(\"foo\").reshape((3, 3)))\n        shape: (3, 1)\n        ┌───────────┐\n        │ foo       │\n        │ ---       │\n        │ list[i64] │\n        ╞═══════════╡\n        │ [1, 2, 3] │\n        │ [4, 5, 6] │\n        │ [7, 8, 9] │\n        └───────────┘\n\n        See Also\n        --------\n        ExprListNameSpace.explode : Explode a list column.\n\n        \"\"\"\n        return self._from_pyexpr(self._pyexpr.reshape(dims))\n",
+            "match": "(dims: 'tuple[int, ...]') -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.col.reshape",
+            "error": "",
+            "internalPath": "polars.expr.expr",
+            "docstring": "Reshape this Expr to a flat Series or a Series of Lists.\n\nParameters\n----------\ndimensions\n    Tuple of the dimension sizes. If a -1 is used in any of the dimensions, that\n    dimension is inferred.\n\nReturns\n-------\nExpr\n    If a single dimension is given, results in a flat Series of shape (len,).\n    If a multiple dimensions are given, results in a Series of Lists with shape\n    (rows, cols).\n\nExamples\n--------\n>>> df = pl.DataFrame({\"foo\": [1, 2, 3, 4, 5, 6, 7, 8, 9]})\n>>> df.select(pl.col(\"foo\").reshape((3, 3)))\nshape: (3, 1)\n┌───────────┐\n│ foo       │\n│ ---       │\n│ list[i64] │\n╞═══════════╡\n│ [1, 2, 3] │\n│ [4, 5, 6] │\n│ [7, 8, 9] │\n└───────────┘\n\nSee Also\n--------\nExprListNameSpace.explode : Explode a list column.",
+            "sourceCode": "    def reshape(self, dimensions: tuple[int, ...]) -> Self:\n        \"\"\"\n        Reshape this Expr to a flat Series or a Series of Lists.\n\n        Parameters\n        ----------\n        dimensions\n            Tuple of the dimension sizes. If a -1 is used in any of the dimensions, that\n            dimension is inferred.\n\n        Returns\n        -------\n        Expr\n            If a single dimension is given, results in a flat Series of shape (len,).\n            If a multiple dimensions are given, results in a Series of Lists with shape\n            (rows, cols).\n\n        Examples\n        --------\n        >>> df = pl.DataFrame({\"foo\": [1, 2, 3, 4, 5, 6, 7, 8, 9]})\n        >>> df.select(pl.col(\"foo\").reshape((3, 3)))\n        shape: (3, 1)\n        ┌───────────┐\n        │ foo       │\n        │ ---       │\n        │ list[i64] │\n        ╞═══════════╡\n        │ [1, 2, 3] │\n        │ [4, 5, 6] │\n        │ [7, 8, 9] │\n        └───────────┘\n\n        See Also\n        --------\n        ExprListNameSpace.explode : Explode a list column.\n\n        \"\"\"\n        return self._from_pyexpr(self._pyexpr.reshape(dimensions))\n",
+            "match": "(dimensions: 'tuple[int, ...]') -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(dims, 0)": {
+                    "rename": "dimensions"
+                }
+            },
+            "targetOvPara": "(dimensions: 'tuple[int, ...]') -> 'Self'"
+        }
+    ]
+}

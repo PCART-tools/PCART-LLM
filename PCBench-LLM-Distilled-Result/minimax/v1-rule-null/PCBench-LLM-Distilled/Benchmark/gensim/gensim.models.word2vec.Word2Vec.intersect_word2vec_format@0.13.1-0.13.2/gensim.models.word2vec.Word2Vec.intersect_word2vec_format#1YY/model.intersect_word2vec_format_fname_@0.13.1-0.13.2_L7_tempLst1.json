@@ -1,0 +1,55 @@
+{
+    "context": {
+        "callAPI": "model.intersect_word2vec_format(fname)",
+        "currentVersion": "0.13.1",
+        "targetVersion": "0.13.2",
+        "fileRelativePath": "gensim.models.word2vec.Word2Vec.intersect_word2vec_format#1YY/intersect_word2vec_formatYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled/Benchmark/gensim/gensim.models.word2vec.Word2Vec.intersect_word2vec_format@0.13.1-0.13.2/gensim.models.word2vec.Word2Vec.intersect_word2vec_format#1YY/intersect_word2vec_formatYY.json",
+        "apiCall": "model.intersect_word2vec_format(fname)",
+        "oldVersion": "gensim@0.13.1",
+        "newVersion": "gensim@0.13.2",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "gensim.models.Word2Vec.intersect_word2vec_format",
+            "error": "",
+            "internalPath": "gensim.models.word2vec",
+            "docstring": "Merge the input-hidden weight matrix from the original C word2vec-tool format\ngiven, where it intersects with the current vocabulary. (No words are added to the\nexisting vocabulary, but intersecting words adopt the file's weights, and\nnon-intersecting words are left alone.)\n\n`binary` is a boolean indicating whether the data is in binary word2vec format.",
+            "sourceCode": "    def intersect_word2vec_format(self, fname, binary=False, encoding='utf8', unicode_errors='strict'):\n        \"\"\"\n        Merge the input-hidden weight matrix from the original C word2vec-tool format\n        given, where it intersects with the current vocabulary. (No words are added to the\n        existing vocabulary, but intersecting words adopt the file's weights, and\n        non-intersecting words are left alone.)\n\n        `binary` is a boolean indicating whether the data is in binary word2vec format.\n        \"\"\"\n        overlap_count = 0\n        logger.info(\"loading projection weights from %s\" % (fname))\n        with utils.smart_open(fname) as fin:\n            header = utils.to_unicode(fin.readline(), encoding=encoding)\n            vocab_size, vector_size = map(int, header.split())  # throws for invalid file format\n            if not vector_size == self.vector_size:\n                raise ValueError(\"incompatible vector size %d in file %s\" % (vector_size, fname))\n                # TOCONSIDER: maybe mismatched vectors still useful enough to merge (truncating/padding)?\n            if binary:\n                binary_len = dtype(REAL).itemsize * vector_size\n                for line_no in xrange(vocab_size):\n                    # mixed text and binary: read text first, then binary\n                    word = []\n                    while True:\n                        ch = fin.read(1)\n                        if ch == b' ':\n                            break\n                        if ch != b'\\n':  # ignore newlines in front of words (some binary files have)\n                            word.append(ch)\n                    word = utils.to_unicode(b''.join(word), encoding=encoding, errors=unicode_errors)\n                    weights = fromstring(fin.read(binary_len), dtype=REAL)\n                    if word in self.vocab:\n                        overlap_count += 1\n                        self.syn0[self.vocab[word].index] = weights\n                        self.syn0_lockf[self.vocab[word].index] = 0.0  # lock it\n            else:\n                for line_no, line in enumerate(fin):\n                    parts = utils.to_unicode(line.rstrip(), encoding=encoding, errors=unicode_errors).split(\" \")\n                    if len(parts) != vector_size + 1:\n                        raise ValueError(\"invalid vector on line %s (is this really the text format?)\" % (line_no))\n                    word, weights = parts[0], list(map(REAL, parts[1:]))\n                    if word in self.vocab:\n                        overlap_count += 1\n                        self.syn0[self.vocab[word].index] = weights\n        logger.info(\"merged %d vectors into %s matrix from %s\" % (overlap_count, self.syn0.shape, fname))\n",
+            "match": "(fname, binary=False, encoding='utf8', unicode_errors='strict')",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "gensim.models.Word2Vec.intersect_word2vec_format",
+            "error": "",
+            "internalPath": "gensim.models.word2vec",
+            "docstring": "Merge the input-hidden weight matrix from the original C word2vec-tool format\ngiven, where it intersects with the current vocabulary. (No words are added to the\nexisting vocabulary, but intersecting words adopt the file's weights, and\nnon-intersecting words are left alone.)\n\n`binary` is a boolean indicating whether the data is in binary word2vec format.\n\n`lockf` is a lock-factor value to be set for any imported word-vectors; the\ndefault value of 0.0 prevents further updating of the vector during subsequent\ntraining. Use 1.0 to allow further training updates of merged vectors.",
+            "sourceCode": "    def intersect_word2vec_format(self, fname, lockf=0.0, binary=False, encoding='utf8', unicode_errors='strict'):\n        \"\"\"\n        Merge the input-hidden weight matrix from the original C word2vec-tool format\n        given, where it intersects with the current vocabulary. (No words are added to the\n        existing vocabulary, but intersecting words adopt the file's weights, and\n        non-intersecting words are left alone.)\n\n        `binary` is a boolean indicating whether the data is in binary word2vec format.\n\n        `lockf` is a lock-factor value to be set for any imported word-vectors; the\n        default value of 0.0 prevents further updating of the vector during subsequent\n        training. Use 1.0 to allow further training updates of merged vectors.\n        \"\"\"\n        overlap_count = 0\n        logger.info(\"loading projection weights from %s\" % (fname))\n        with utils.smart_open(fname) as fin:\n            header = utils.to_unicode(fin.readline(), encoding=encoding)\n            vocab_size, vector_size = map(int, header.split())  # throws for invalid file format\n            if not vector_size == self.vector_size:\n                raise ValueError(\"incompatible vector size %d in file %s\" % (vector_size, fname))\n                # TOCONSIDER: maybe mismatched vectors still useful enough to merge (truncating/padding)?\n            if binary:\n                binary_len = dtype(REAL).itemsize * vector_size\n                for line_no in xrange(vocab_size):\n                    # mixed text and binary: read text first, then binary\n                    word = []\n                    while True:\n                        ch = fin.read(1)\n                        if ch == b' ':\n                            break\n                        if ch != b'\\n':  # ignore newlines in front of words (some binary files have)\n                            word.append(ch)\n                    word = utils.to_unicode(b''.join(word), encoding=encoding, errors=unicode_errors)\n                    weights = fromstring(fin.read(binary_len), dtype=REAL)\n                    if word in self.vocab:\n                        overlap_count += 1\n                        self.syn0[self.vocab[word].index] = weights\n                        self.syn0_lockf[self.vocab[word].index] = lockf  # lock-factor: 0.0 stops further changes\n            else:\n                for line_no, line in enumerate(fin):\n                    parts = utils.to_unicode(line.rstrip(), encoding=encoding, errors=unicode_errors).split(\" \")\n                    if len(parts) != vector_size + 1:\n                        raise ValueError(\"invalid vector on line %s (is this really the text format?)\" % (line_no))\n                    word, weights = parts[0], list(map(REAL, parts[1:]))\n                    if word in self.vocab:\n                        overlap_count += 1\n                        self.syn0[self.vocab[word].index] = weights\n        logger.info(\"merged %d vectors into %s matrix from %s\" % (overlap_count, self.syn0.shape, fname))\n",
+            "match": "(fname, lockf=0.0, binary=False, encoding='utf8', unicode_errors='strict')",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(fname, 0)": {},
+                "(binary, 1)": {
+                    "delete": 1,
+                    "posChange": 2,
+                    "replace": "lockf"
+                },
+                "(lockf, 1)": {
+                    "addPos": "lockf=0.0"
+                },
+                "(encoding, 2)": {
+                    "posChange": 3
+                },
+                "(unicode_errors, 3)": {
+                    "posChange": 4
+                }
+            },
+            "targetOvPara": "(fname, lockf=0.0, binary=False, encoding='utf8', unicode_errors='strict')"
+        }
+    ]
+}

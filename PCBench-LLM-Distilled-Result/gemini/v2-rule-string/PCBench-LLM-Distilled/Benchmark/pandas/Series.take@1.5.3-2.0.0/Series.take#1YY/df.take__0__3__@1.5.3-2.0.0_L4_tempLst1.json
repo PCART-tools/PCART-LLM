@@ -1,0 +1,45 @@
+{
+    "context": {
+        "callAPI": "df.take([0, 3])",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Series.take#1YY/takeYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/Series.take@1.5.3-2.0.0/Series.take#1YY/takeYY.json",
+        "apiCall": "df.take([0, 3])",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Series.take",
+            "error": "",
+            "internalPath": "pandas.core.series",
+            "docstring": "Return the elements in the given *positional* indices along an axis.\n\nThis means that we are not indexing according to actual values in\nthe index attribute of the object. We are indexing according to the\nactual position of the element in the object.\n\nParameters\n----------\nindices : array-like\n    An array of ints indicating which positions to take.\naxis : {0 or 'index', 1 or 'columns', None}, default 0\n    The axis on which to select elements. ``0`` means that we are\n    selecting rows, ``1`` means that we are selecting columns.\n    For `Series` this parameter is unused and defaults to 0.\nis_copy : bool\n    Before pandas 1.0, ``is_copy=False`` can be specified to ensure\n    that the return value is an actual copy. Starting with pandas 1.0,\n    ``take`` always returns a copy, and the keyword is therefore\n    deprecated.\n\n    .. deprecated:: 1.0.0\n**kwargs\n    For compatibility with :meth:`numpy.take`. Has no effect on the\n    output.\n\nReturns\n-------\ntaken : same type as caller\n    An array-like containing the elements taken from the object.\n\nSee Also\n--------\nDataFrame.loc : Select a subset of a DataFrame by labels.\nDataFrame.iloc : Select a subset of a DataFrame by positions.\nnumpy.take : Take elements from an array along an axis.\n\nExamples\n--------\n>>> df = pd.DataFrame([('falcon', 'bird', 389.0),\n...                    ('parrot', 'bird', 24.0),\n...                    ('lion', 'mammal', 80.5),\n...                    ('monkey', 'mammal', np.nan)],\n...                   columns=['name', 'class', 'max_speed'],\n...                   index=[0, 2, 3, 1])\n>>> df\n     name   class  max_speed\n0  falcon    bird      389.0\n2  parrot    bird       24.0\n3    lion  mammal       80.5\n1  monkey  mammal        NaN\n\nTake elements at positions 0 and 3 along the axis 0 (default).\n\nNote how the actual indices selected (0 and 1) do not correspond to\nour selected indices 0 and 3. That's because we are selecting the 0th\nand 3rd rows, not rows whose indices equal 0 and 3.\n\n>>> df.take([0, 3])\n     name   class  max_speed\n0  falcon    bird      389.0\n1  monkey  mammal        NaN\n\nTake elements at indices 1 and 2 along the axis 1 (column selection).\n\n>>> df.take([1, 2], axis=1)\n    class  max_speed\n0    bird      389.0\n2    bird       24.0\n3  mammal       80.5\n1  mammal        NaN\n\nWe may take elements using negative integers for positive indices,\nstarting from the end of the object, just like with Python lists.\n\n>>> df.take([-1, -2])\n     name   class  max_speed\n1  monkey  mammal        NaN\n3    lion  mammal       80.5",
+            "sourceCode": "    @Appender(NDFrame.take.__doc__)\n    def take(\n        self, indices, axis: Axis = 0, is_copy: bool | None = None, **kwargs\n    ) -> Series:\n        if is_copy is not None:\n            warnings.warn(\n                \"is_copy is deprecated and will be removed in a future version. \"\n                \"'take' always returns a copy, so there is no need to specify this.\",\n                FutureWarning,\n                stacklevel=find_stack_level(),\n            )\n        nv.validate_take((), kwargs)\n\n        indices = ensure_platform_int(indices)\n        new_index = self.index.take(indices)\n        new_values = self._values.take(indices)\n\n        result = self._constructor(new_values, index=new_index, fastpath=True)\n        return result.__finalize__(self, method=\"take\")\n",
+            "match": "(indices, axis: 'Axis' = 0, is_copy: 'bool | None' = None, **kwargs) -> 'Series'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Series.take",
+            "error": "",
+            "internalPath": "pandas.core.series",
+            "docstring": "Return the elements in the given *positional* indices along an axis.\n\nThis means that we are not indexing according to actual values in\nthe index attribute of the object. We are indexing according to the\nactual position of the element in the object.\n\nParameters\n----------\nindices : array-like\n    An array of ints indicating which positions to take.\naxis : {0 or 'index', 1 or 'columns', None}, default 0\n    The axis on which to select elements. ``0`` means that we are\n    selecting rows, ``1`` means that we are selecting columns.\n    For `Series` this parameter is unused and defaults to 0.\n**kwargs\n    For compatibility with :meth:`numpy.take`. Has no effect on the\n    output.\n\nReturns\n-------\nsame type as caller\n    An array-like containing the elements taken from the object.\n\nSee Also\n--------\nDataFrame.loc : Select a subset of a DataFrame by labels.\nDataFrame.iloc : Select a subset of a DataFrame by positions.\nnumpy.take : Take elements from an array along an axis.\n\nExamples\n--------\n>>> df = pd.DataFrame([('falcon', 'bird', 389.0),\n...                    ('parrot', 'bird', 24.0),\n...                    ('lion', 'mammal', 80.5),\n...                    ('monkey', 'mammal', np.nan)],\n...                   columns=['name', 'class', 'max_speed'],\n...                   index=[0, 2, 3, 1])\n>>> df\n     name   class  max_speed\n0  falcon    bird      389.0\n2  parrot    bird       24.0\n3    lion  mammal       80.5\n1  monkey  mammal        NaN\n\nTake elements at positions 0 and 3 along the axis 0 (default).\n\nNote how the actual indices selected (0 and 1) do not correspond to\nour selected indices 0 and 3. That's because we are selecting the 0th\nand 3rd rows, not rows whose indices equal 0 and 3.\n\n>>> df.take([0, 3])\n     name   class  max_speed\n0  falcon    bird      389.0\n1  monkey  mammal        NaN\n\nTake elements at indices 1 and 2 along the axis 1 (column selection).\n\n>>> df.take([1, 2], axis=1)\n    class  max_speed\n0    bird      389.0\n2    bird       24.0\n3  mammal       80.5\n1  mammal        NaN\n\nWe may take elements using negative integers for positive indices,\nstarting from the end of the object, just like with Python lists.\n\n>>> df.take([-1, -2])\n     name   class  max_speed\n1  monkey  mammal        NaN\n3    lion  mammal       80.5",
+            "sourceCode": "    @Appender(NDFrame.take.__doc__)\n    def take(self, indices, axis: Axis = 0, **kwargs) -> Series:\n        nv.validate_take((), kwargs)\n\n        indices = ensure_platform_int(indices)\n\n        if (\n            indices.ndim == 1\n            and using_copy_on_write()\n            and is_range_indexer(indices, len(self))\n        ):\n            return self.copy(deep=None)\n\n        new_index = self.index.take(indices)\n        new_values = self._values.take(indices)\n\n        result = self._constructor(new_values, index=new_index, fastpath=True)\n        return result.__finalize__(self, method=\"take\")\n",
+            "match": "(indices, axis: 'Axis' = 0, **kwargs) -> 'Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(indices, 0)": {},
+                "(axis, 1)": {},
+                "(is_copy, 2)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(indices, axis: 'Axis' = 0, **kwargs) -> 'Series'"
+        }
+    ]
+}

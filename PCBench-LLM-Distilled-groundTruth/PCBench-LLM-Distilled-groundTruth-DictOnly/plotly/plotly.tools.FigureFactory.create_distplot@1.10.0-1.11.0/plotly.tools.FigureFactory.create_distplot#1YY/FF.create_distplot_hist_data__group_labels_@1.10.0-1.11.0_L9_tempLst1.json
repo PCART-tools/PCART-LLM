@@ -1,0 +1,20 @@
+[
+  {
+    "(hist_data, 0)": {},
+    "(group_labels, 1)": {},
+    "(bin_size, 2)": {},
+    "(curve_type, 3)": {},
+    "(colors, 4)": {},
+    "(rug_text, 5)": {},
+    "(show_hist, 6)": {
+      "posChange": 7,
+      "replace": "histnorm='probabilitydensity'"
+    },
+    "(show_curve, 7)": {
+      "posChange": 8
+    },
+    "(show_rug, 8)": {
+      "posChange": 9
+    }
+  }
+]

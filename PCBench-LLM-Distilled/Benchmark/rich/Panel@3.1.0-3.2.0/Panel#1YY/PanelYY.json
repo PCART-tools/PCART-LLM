@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/rich/Panel@3.1.0-3.2.0/Panel#1YY",
+    "runCommand": "python PanelYY.py",
+    "runFilePath": "",
+    "libName": "rich",
+    "currentVersion": "3.1.0",
+    "targetVersion": "3.2.0",
+    "currentEnv": "/envs/rich3.1.0",
+    "targetEnv": "/envs/rich3.2.0"
+}

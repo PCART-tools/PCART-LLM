@@ -1,0 +1,51 @@
+{
+    "context": {
+        "callAPI": "normalize_kwargs(kw)",
+        "currentVersion": "3.4.3",
+        "targetVersion": "3.5.0",
+        "fileRelativePath": "matplotlib.cbook.normalize_kwargs#1YY/normalize_kwargsYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.cbook.normalize_kwargs@3.4.3-3.5.0/matplotlib.cbook.normalize_kwargs#1YY/normalize_kwargsYY.json",
+        "apiCall": "normalize_kwargs(kw)",
+        "oldVersion": "matplotlib@3.4.3",
+        "newVersion": "matplotlib@3.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.cbook.normalize_kwargs",
+            "error": "",
+            "internalPath": "matplotlib._api.deprecation",
+            "docstring": "Helper function to normalize kwarg inputs.\n\nThe order they are resolved are:\n\n1. aliasing\n2. required\n3. forbidden\n4. allowed\n\nThis order means that only the canonical names need appear in\n*allowed*, *forbidden*, *required*.\n\nParameters\n----------\nkw : dict or None\n    A dict of keyword arguments.  None is explicitly supported and treated\n    as an empty dict, to support functions with an optional parameter of\n    the form ``props=None``.\n\nalias_mapping : dict or Artist subclass or Artist instance, optional\n    A mapping between a canonical name to a list of\n    aliases, in order of precedence from lowest to highest.\n\n    If the canonical value is not in the list it is assumed to have\n    the highest priority.\n\n    If an Artist subclass or instance is passed, use its properties alias\n    mapping.\n\nrequired : list of str, optional\n    A list of keys that must be in *kws*.  This parameter is deprecated.\n\nforbidden : list of str, optional\n    A list of keys which may not be in *kw*.  This parameter is deprecated.\n\nallowed : list of str, optional\n    A list of allowed fields.  If this not None, then raise if\n    *kw* contains any keys not in the union of *required*\n    and *allowed*.  To allow only the required fields pass in\n    an empty tuple ``allowed=()``.  This parameter is deprecated.\n\nRaises\n------\nTypeError\n    To match what python raises if invalid args/kwargs are passed to\n    a callable.",
+            "sourceCode": "@_api.delete_parameter(\"3.3\", \"required\")\n@_api.delete_parameter(\"3.3\", \"forbidden\")\n@_api.delete_parameter(\"3.3\", \"allowed\")\ndef normalize_kwargs(kw, alias_mapping=None, required=(), forbidden=(),\n                     allowed=None):\n    \"\"\"\n    Helper function to normalize kwarg inputs.\n\n    The order they are resolved are:\n\n    1. aliasing\n    2. required\n    3. forbidden\n    4. allowed\n\n    This order means that only the canonical names need appear in\n    *allowed*, *forbidden*, *required*.\n\n    Parameters\n    ----------\n    kw : dict or None\n        A dict of keyword arguments.  None is explicitly supported and treated\n        as an empty dict, to support functions with an optional parameter of\n        the form ``props=None``.\n\n    alias_mapping : dict or Artist subclass or Artist instance, optional\n        A mapping between a canonical name to a list of\n        aliases, in order of precedence from lowest to highest.\n\n        If the canonical value is not in the list it is assumed to have\n        the highest priority.\n\n        If an Artist subclass or instance is passed, use its properties alias\n        mapping.\n\n    required : list of str, optional\n        A list of keys that must be in *kws*.  This parameter is deprecated.\n\n    forbidden : list of str, optional\n        A list of keys which may not be in *kw*.  This parameter is deprecated.\n\n    allowed : list of str, optional\n        A list of allowed fields.  If this not None, then raise if\n        *kw* contains any keys not in the union of *required*\n        and *allowed*.  To allow only the required fields pass in\n        an empty tuple ``allowed=()``.  This parameter is deprecated.\n\n    Raises\n    ------\n    TypeError\n        To match what python raises if invalid args/kwargs are passed to\n        a callable.\n    \"\"\"\n    from matplotlib.artist import Artist\n\n    if kw is None:\n        return {}\n\n    # deal with default value of alias_mapping\n    if alias_mapping is None:\n        alias_mapping = dict()\n    elif (isinstance(alias_mapping, type) and issubclass(alias_mapping, Artist)\n          or isinstance(alias_mapping, Artist)):\n        alias_mapping = getattr(alias_mapping, \"_alias_map\", {})\n\n    to_canonical = {alias: canonical\n                    for canonical, alias_list in alias_mapping.items()\n                    for alias in alias_list}\n    canonical_to_seen = {}\n    ret = {}  # output dictionary\n\n    for k, v in kw.items():\n        canonical = to_canonical.get(k, k)\n        if canonical in canonical_to_seen:\n            raise TypeError(f\"Got both {canonical_to_seen[canonical]!r} and \"\n                            f\"{k!r}, which are aliases of one another\")\n        canonical_to_seen[canonical] = k\n        ret[canonical] = v\n\n    fail_keys = [k for k in required if k not in ret]\n    if fail_keys:\n        raise TypeError(\"The required keys {keys!r} \"\n                        \"are not in kwargs\".format(keys=fail_keys))\n\n    fail_keys = [k for k in forbidden if k in ret]\n    if fail_keys:\n        raise TypeError(\"The forbidden keys {keys!r} \"\n                        \"are in kwargs\".format(keys=fail_keys))\n\n    if allowed is not None:\n        allowed_set = {*required, *allowed}\n        fail_keys = [k for k in ret if k not in allowed_set]\n        if fail_keys:\n            raise TypeError(\n                \"kwargs contains {keys!r} which are not in the required \"\n                \"{req!r} or allowed {allow!r} keys\".format(\n                    keys=fail_keys, req=required, allow=allowed))\n\n    return ret\n",
+            "match": "(kw, alias_mapping=None, required=<deprecated parameter>, forbidden=<deprecated parameter>, allowed=<deprecated parameter>)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.cbook.normalize_kwargs",
+            "error": "",
+            "internalPath": "matplotlib.cbook.__init__",
+            "docstring": "Helper function to normalize kwarg inputs.\n\nParameters\n----------\nkw : dict or None\n    A dict of keyword arguments.  None is explicitly supported and treated\n    as an empty dict, to support functions with an optional parameter of\n    the form ``props=None``.\n\nalias_mapping : dict or Artist subclass or Artist instance, optional\n    A mapping between a canonical name to a list of aliases, in order of\n    precedence from lowest to highest.\n\n    If the canonical value is not in the list it is assumed to have the\n    highest priority.\n\n    If an Artist subclass or instance is passed, use its properties alias\n    mapping.\n\nRaises\n------\nTypeError\n    To match what Python raises if invalid arguments/keyword arguments are\n    passed to a callable.",
+            "sourceCode": "def normalize_kwargs(kw, alias_mapping=None):\n    \"\"\"\n    Helper function to normalize kwarg inputs.\n\n    Parameters\n    ----------\n    kw : dict or None\n        A dict of keyword arguments.  None is explicitly supported and treated\n        as an empty dict, to support functions with an optional parameter of\n        the form ``props=None``.\n\n    alias_mapping : dict or Artist subclass or Artist instance, optional\n        A mapping between a canonical name to a list of aliases, in order of\n        precedence from lowest to highest.\n\n        If the canonical value is not in the list it is assumed to have the\n        highest priority.\n\n        If an Artist subclass or instance is passed, use its properties alias\n        mapping.\n\n    Raises\n    ------\n    TypeError\n        To match what Python raises if invalid arguments/keyword arguments are\n        passed to a callable.\n    \"\"\"\n    from matplotlib.artist import Artist\n\n    if kw is None:\n        return {}\n\n    # deal with default value of alias_mapping\n    if alias_mapping is None:\n        alias_mapping = dict()\n    elif (isinstance(alias_mapping, type) and issubclass(alias_mapping, Artist)\n          or isinstance(alias_mapping, Artist)):\n        alias_mapping = getattr(alias_mapping, \"_alias_map\", {})\n\n    to_canonical = {alias: canonical\n                    for canonical, alias_list in alias_mapping.items()\n                    for alias in alias_list}\n    canonical_to_seen = {}\n    ret = {}  # output dictionary\n\n    for k, v in kw.items():\n        canonical = to_canonical.get(k, k)\n        if canonical in canonical_to_seen:\n            raise TypeError(f\"Got both {canonical_to_seen[canonical]!r} and \"\n                            f\"{k!r}, which are aliases of one another\")\n        canonical_to_seen[canonical] = k\n        ret[canonical] = v\n\n    return ret\n",
+            "match": "(kw, alias_mapping=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(kw, 0)": {},
+                "(alias_mapping, 1)": {},
+                "(required, 2)": {
+                    "delete": 1
+                },
+                "(forbidden, 3)": {
+                    "delete": 1
+                },
+                "(allowed, 4)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(kw, alias_mapping=None)"
+        }
+    ]
+}

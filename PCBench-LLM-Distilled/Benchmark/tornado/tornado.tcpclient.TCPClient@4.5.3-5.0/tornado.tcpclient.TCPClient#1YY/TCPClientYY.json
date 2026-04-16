@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.tcpclient.TCPClient@4.5.3-5.0/tornado.tcpclient.TCPClient#1YY",
+    "runCommand": "python TCPClientYY.py",
+    "runFilePath": "",
+    "libName": "tornado",
+    "currentVersion": "4.5.3",
+    "targetVersion": "5.0",
+    "currentEnv": "/envs/tornado4.5.3",
+    "targetEnv": "/envs/tornado5.0"
+}

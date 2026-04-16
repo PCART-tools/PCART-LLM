@@ -1,0 +1,112 @@
+{
+    "context": {
+        "callAPI": "tornado.httpclient.HTTPRequest('http://httpbin.org/get')",
+        "currentVersion": "3.0.2",
+        "targetVersion": "3.1",
+        "fileRelativePath": "tornado.httpclient.HTTPRequest#1YY/HTTPRequestYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/tornado/tornado.httpclient.HTTPRequest@3.0.2-3.1/tornado.httpclient.HTTPRequest#1YY/HTTPRequestYY.json",
+        "apiCall": "tornado.httpclient.HTTPRequest('http://httpbin.org/get')",
+        "oldVersion": "tornado@3.0.2",
+        "newVersion": "tornado@3.1",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.httpclient.HTTPRequest",
+            "error": "",
+            "internalPath": "tornado.httpclient",
+            "docstring": "HTTP client request object.",
+            "sourceCode": "class HTTPRequest(object):\n    \"\"\"HTTP client request object.\"\"\"\n\n    # Default values for HTTPRequest parameters.\n    # Merged with the values on the request object by AsyncHTTPClient\n    # implementations.\n    _DEFAULTS = dict(\n        connect_timeout=20.0,\n        request_timeout=20.0,\n        follow_redirects=True,\n        max_redirects=5,\n        use_gzip=True,\n        proxy_password='',\n        allow_nonstandard_methods=False,\n        validate_cert=True)\n\n    def __init__(self, url, method=\"GET\", headers=None, body=None,\n                 auth_username=None, auth_password=None,\n                 connect_timeout=None, request_timeout=None,\n                 if_modified_since=None, follow_redirects=None,\n                 max_redirects=None, user_agent=None, use_gzip=None,\n                 network_interface=None, streaming_callback=None,\n                 header_callback=None, prepare_curl_callback=None,\n                 proxy_host=None, proxy_port=None, proxy_username=None,\n                 proxy_password=None, allow_nonstandard_methods=None,\n                 validate_cert=None, ca_certs=None,\n                 allow_ipv6=None,\n                 client_key=None, client_cert=None):\n        r\"\"\"All parameters except ``url`` are optional.\n\n        :arg string url: URL to fetch\n        :arg string method: HTTP method, e.g. \"GET\" or \"POST\"\n        :arg headers: Additional HTTP headers to pass on the request\n        :type headers: `~tornado.httputil.HTTPHeaders` or `dict`\n        :arg string auth_username: Username for HTTP \"Basic\" authentication\n        :arg string auth_password: Password for HTTP \"Basic\" authentication\n        :arg float connect_timeout: Timeout for initial connection in seconds\n        :arg float request_timeout: Timeout for entire request in seconds\n        :arg if_modified_since: Timestamp for ``If-Modified-Since`` header\n        :type if_modified_since: `datetime` or `float`\n        :arg bool follow_redirects: Should redirects be followed automatically\n           or return the 3xx response?\n        :arg int max_redirects: Limit for ``follow_redirects``\n        :arg string user_agent: String to send as ``User-Agent`` header\n        :arg bool use_gzip: Request gzip encoding from the server\n        :arg string network_interface: Network interface to use for request\n        :arg callable streaming_callback: If set, ``streaming_callback`` will\n           be run with each chunk of data as it is received, and\n           ``HTTPResponse.body`` and ``HTTPResponse.buffer`` will be empty in\n           the final response.\n        :arg callable header_callback: If set, ``header_callback`` will\n           be run with each header line as it is received (including the\n           first line, e.g. ``HTTP/1.0 200 OK\\r\\n``, and a final line\n           containing only ``\\r\\n``.  All lines include the trailing newline\n           characters).  ``HTTPResponse.headers`` will be empty in the final\n           response.  This is most useful in conjunction with\n           ``streaming_callback``, because it's the only way to get access to\n           header data while the request is in progress.\n        :arg callable prepare_curl_callback: If set, will be called with\n           a ``pycurl.Curl`` object to allow the application to make additional\n           ``setopt`` calls.\n        :arg string proxy_host: HTTP proxy hostname.  To use proxies,\n           ``proxy_host`` and ``proxy_port`` must be set; ``proxy_username`` and\n           ``proxy_pass`` are optional.  Proxies are currently only supported\n           with ``curl_httpclient``.\n        :arg int proxy_port: HTTP proxy port\n        :arg string proxy_username: HTTP proxy username\n        :arg string proxy_password: HTTP proxy password\n        :arg bool allow_nonstandard_methods: Allow unknown values for ``method``\n           argument?\n        :arg bool validate_cert: For HTTPS requests, validate the server's\n           certificate?\n        :arg string ca_certs: filename of CA certificates in PEM format,\n           or None to use defaults.  Note that in ``curl_httpclient``, if\n           any request uses a custom ``ca_certs`` file, they all must (they\n           don't have to all use the same ``ca_certs``, but it's not possible\n           to mix requests with ``ca_certs`` and requests that use the defaults.\n        :arg bool allow_ipv6: Use IPv6 when available?  Default is false in\n           ``simple_httpclient`` and true in ``curl_httpclient``\n        :arg string client_key: Filename for client SSL key, if any\n        :arg string client_cert: Filename for client SSL certificate, if any\n        \"\"\"\n        if headers is None:\n            headers = httputil.HTTPHeaders()\n        if if_modified_since:\n            headers[\"If-Modified-Since\"] = httputil.format_timestamp(\n                if_modified_since)\n        self.proxy_host = proxy_host\n        self.proxy_port = proxy_port\n        self.proxy_username = proxy_username\n        self.proxy_password = proxy_password\n        self.url = url\n        self.method = method\n        self.headers = headers\n        self.body = utf8(body)\n        self.auth_username = auth_username\n        self.auth_password = auth_password\n        self.connect_timeout = connect_timeout\n        self.request_timeout = request_timeout\n        self.follow_redirects = follow_redirects\n        self.max_redirects = max_redirects\n        self.user_agent = user_agent\n        self.use_gzip = use_gzip\n        self.network_interface = network_interface\n        self.streaming_callback = stack_context.wrap(streaming_callback)\n        self.header_callback = stack_context.wrap(header_callback)\n        self.prepare_curl_callback = stack_context.wrap(prepare_curl_callback)\n        self.allow_nonstandard_methods = allow_nonstandard_methods\n        self.validate_cert = validate_cert\n        self.ca_certs = ca_certs\n        self.allow_ipv6 = allow_ipv6\n        self.client_key = client_key\n        self.client_cert = client_cert\n        self.start_time = time.time()\n",
+            "match": "(url, method='GET', headers=None, body=None, auth_username=None, auth_password=None, connect_timeout=None, request_timeout=None, if_modified_since=None, follow_redirects=None, max_redirects=None, user_agent=None, use_gzip=None, network_interface=None, streaming_callback=None, header_callback=None, prepare_curl_callback=None, proxy_host=None, proxy_port=None, proxy_username=None, proxy_password=None, allow_nonstandard_methods=None, validate_cert=None, ca_certs=None, allow_ipv6=None, client_key=None, client_cert=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "tornado.httpclient.HTTPRequest",
+            "error": "",
+            "internalPath": "tornado.httpclient",
+            "docstring": "HTTP client request object.",
+            "sourceCode": "class HTTPRequest(object):\n    \"\"\"HTTP client request object.\"\"\"\n\n    # Default values for HTTPRequest parameters.\n    # Merged with the values on the request object by AsyncHTTPClient\n    # implementations.\n    _DEFAULTS = dict(\n        connect_timeout=20.0,\n        request_timeout=20.0,\n        follow_redirects=True,\n        max_redirects=5,\n        use_gzip=True,\n        proxy_password='',\n        allow_nonstandard_methods=False,\n        validate_cert=True)\n\n    def __init__(self, url, method=\"GET\", headers=None, body=None,\n                 auth_username=None, auth_password=None, auth_mode=None,\n                 connect_timeout=None, request_timeout=None,\n                 if_modified_since=None, follow_redirects=None,\n                 max_redirects=None, user_agent=None, use_gzip=None,\n                 network_interface=None, streaming_callback=None,\n                 header_callback=None, prepare_curl_callback=None,\n                 proxy_host=None, proxy_port=None, proxy_username=None,\n                 proxy_password=None, allow_nonstandard_methods=None,\n                 validate_cert=None, ca_certs=None,\n                 allow_ipv6=None,\n                 client_key=None, client_cert=None):\n        r\"\"\"All parameters except ``url`` are optional.\n\n        :arg string url: URL to fetch\n        :arg string method: HTTP method, e.g. \"GET\" or \"POST\"\n        :arg headers: Additional HTTP headers to pass on the request\n        :arg body: HTTP body to pass on the request\n        :type headers: `~tornado.httputil.HTTPHeaders` or `dict`\n        :arg string auth_username: Username for HTTP authentication\n        :arg string auth_password: Password for HTTP authentication\n        :arg string auth_mode: Authentication mode; default is \"basic\".\n           Allowed values are implementation-defined; ``curl_httpclient``\n           supports \"basic\" and \"digest\"; ``simple_httpclient`` only supports\n           \"basic\"\n        :arg float connect_timeout: Timeout for initial connection in seconds\n        :arg float request_timeout: Timeout for entire request in seconds\n        :arg if_modified_since: Timestamp for ``If-Modified-Since`` header\n        :type if_modified_since: `datetime` or `float`\n        :arg bool follow_redirects: Should redirects be followed automatically\n           or return the 3xx response?\n        :arg int max_redirects: Limit for ``follow_redirects``\n        :arg string user_agent: String to send as ``User-Agent`` header\n        :arg bool use_gzip: Request gzip encoding from the server\n        :arg string network_interface: Network interface to use for request\n        :arg callable streaming_callback: If set, ``streaming_callback`` will\n           be run with each chunk of data as it is received, and\n           ``HTTPResponse.body`` and ``HTTPResponse.buffer`` will be empty in\n           the final response.\n        :arg callable header_callback: If set, ``header_callback`` will\n           be run with each header line as it is received (including the\n           first line, e.g. ``HTTP/1.0 200 OK\\r\\n``, and a final line\n           containing only ``\\r\\n``.  All lines include the trailing newline\n           characters).  ``HTTPResponse.headers`` will be empty in the final\n           response.  This is most useful in conjunction with\n           ``streaming_callback``, because it's the only way to get access to\n           header data while the request is in progress.\n        :arg callable prepare_curl_callback: If set, will be called with\n           a ``pycurl.Curl`` object to allow the application to make additional\n           ``setopt`` calls.\n        :arg string proxy_host: HTTP proxy hostname.  To use proxies,\n           ``proxy_host`` and ``proxy_port`` must be set; ``proxy_username`` and\n           ``proxy_pass`` are optional.  Proxies are currently only supported\n           with ``curl_httpclient``.\n        :arg int proxy_port: HTTP proxy port\n        :arg string proxy_username: HTTP proxy username\n        :arg string proxy_password: HTTP proxy password\n        :arg bool allow_nonstandard_methods: Allow unknown values for ``method``\n           argument?\n        :arg bool validate_cert: For HTTPS requests, validate the server's\n           certificate?\n        :arg string ca_certs: filename of CA certificates in PEM format,\n           or None to use defaults.  Note that in ``curl_httpclient``, if\n           any request uses a custom ``ca_certs`` file, they all must (they\n           don't have to all use the same ``ca_certs``, but it's not possible\n           to mix requests with ``ca_certs`` and requests that use the defaults.\n        :arg bool allow_ipv6: Use IPv6 when available?  Default is false in\n           ``simple_httpclient`` and true in ``curl_httpclient``\n        :arg string client_key: Filename for client SSL key, if any\n        :arg string client_cert: Filename for client SSL certificate, if any\n\n        .. versionadded:: 3.1\n           The ``auth_mode`` argument.\n        \"\"\"\n        if headers is None:\n            headers = httputil.HTTPHeaders()\n        if if_modified_since:\n            headers[\"If-Modified-Since\"] = httputil.format_timestamp(\n                if_modified_since)\n        self.proxy_host = proxy_host\n        self.proxy_port = proxy_port\n        self.proxy_username = proxy_username\n        self.proxy_password = proxy_password\n        self.url = url\n        self.method = method\n        self.headers = headers\n        self.body = utf8(body)\n        self.auth_username = auth_username\n        self.auth_password = auth_password\n        self.auth_mode = auth_mode\n        self.connect_timeout = connect_timeout\n        self.request_timeout = request_timeout\n        self.follow_redirects = follow_redirects\n        self.max_redirects = max_redirects\n        self.user_agent = user_agent\n        self.use_gzip = use_gzip\n        self.network_interface = network_interface\n        self.streaming_callback = stack_context.wrap(streaming_callback)\n        self.header_callback = stack_context.wrap(header_callback)\n        self.prepare_curl_callback = stack_context.wrap(prepare_curl_callback)\n        self.allow_nonstandard_methods = allow_nonstandard_methods\n        self.validate_cert = validate_cert\n        self.ca_certs = ca_certs\n        self.allow_ipv6 = allow_ipv6\n        self.client_key = client_key\n        self.client_cert = client_cert\n        self.start_time = time.time()\n",
+            "match": "(url, method='GET', headers=None, body=None, auth_username=None, auth_password=None, auth_mode=None, connect_timeout=None, request_timeout=None, if_modified_since=None, follow_redirects=None, max_redirects=None, user_agent=None, use_gzip=None, network_interface=None, streaming_callback=None, header_callback=None, prepare_curl_callback=None, proxy_host=None, proxy_port=None, proxy_username=None, proxy_password=None, allow_nonstandard_methods=None, validate_cert=None, ca_certs=None, allow_ipv6=None, client_key=None, client_cert=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(url, 0)": {},
+                "(method, 1)": {},
+                "(headers, 2)": {},
+                "(body, 3)": {},
+                "(auth_username, 4)": {},
+                "(auth_password, 5)": {},
+                "(auth_mode, 6)": {
+                    "addPos": "auth_mode=None"
+                },
+                "(connect_timeout, 6)": {
+                    "posChange": 7
+                },
+                "(request_timeout, 7)": {
+                    "posChange": 8
+                },
+                "(if_modified_since, 8)": {
+                    "posChange": 9
+                },
+                "(follow_redirects, 9)": {
+                    "posChange": 10
+                },
+                "(max_redirects, 10)": {
+                    "posChange": 11
+                },
+                "(user_agent, 11)": {
+                    "posChange": 12
+                },
+                "(use_gzip, 12)": {
+                    "posChange": 13
+                },
+                "(network_interface, 13)": {
+                    "posChange": 14
+                },
+                "(streaming_callback, 14)": {
+                    "posChange": 15
+                },
+                "(header_callback, 15)": {
+                    "posChange": 16
+                },
+                "(prepare_curl_callback, 16)": {
+                    "posChange": 17
+                },
+                "(proxy_host, 17)": {
+                    "posChange": 18
+                },
+                "(proxy_port, 18)": {
+                    "posChange": 19
+                },
+                "(proxy_username, 19)": {
+                    "posChange": 20
+                },
+                "(proxy_password, 20)": {
+                    "posChange": 21
+                },
+                "(allow_nonstandard_methods, 21)": {
+                    "posChange": 22
+                },
+                "(validate_cert, 22)": {
+                    "posChange": 23
+                },
+                "(ca_certs, 23)": {
+                    "posChange": 24
+                },
+                "(allow_ipv6, 24)": {
+                    "posChange": 25
+                },
+                "(client_key, 25)": {
+                    "posChange": 26
+                },
+                "(client_cert, 26)": {
+                    "posChange": 27
+                }
+            },
+            "targetOvPara": "(url, method='GET', headers=None, body=None, auth_username=None, auth_password=None, auth_mode=None, connect_timeout=None, request_timeout=None, if_modified_since=None, follow_redirects=None, max_redirects=None, user_agent=None, use_gzip=None, network_interface=None, streaming_callback=None, header_callback=None, prepare_curl_callback=None, proxy_host=None, proxy_port=None, proxy_username=None, proxy_password=None, allow_nonstandard_methods=None, validate_cert=None, ca_certs=None, allow_ipv6=None, client_key=None, client_cert=None)"
+        }
+    ]
+}

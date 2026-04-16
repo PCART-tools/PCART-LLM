@@ -1,0 +1,23 @@
+[
+  {
+    "(func, 0)": {},
+    "(x0, 1)": {},
+    "(cons, 2)": {},
+    "(args, 3)": {},
+    "(consargs, 4)": {},
+    "(rhobeg, 5)": {},
+    "(rhoend, 6)": {},
+    "(iprint, 7)": {
+      "delete": 1
+    },
+    "(maxfun, 8)": {
+      "posChange": 7
+    },
+    "(disp, 9)": {
+      "posChange": 8
+    },
+    "(catol, 10)": {
+      "posChange": 9
+    }
+  }
+]

@@ -1,0 +1,124 @@
+{
+    "context": {
+        "callAPI": "px.histogram()",
+        "currentVersion": "4.2.1",
+        "targetVersion": "4.3.0",
+        "fileRelativePath": "plotly.express.histogram#1YY/histogramYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/plotly/plotly.express.histogram@4.2.1-4.3.0/plotly.express.histogram#1YY/histogramYY.json",
+        "apiCall": "px.histogram()",
+        "oldVersion": "plotly@4.2.1",
+        "newVersion": "plotly@4.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "plotly.express.histogram",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a histogram, rows of `data_frame` are grouped together into a rectangular mark to     visualize the 1D distribution of an aggregate function `histfunc` (e.g. the count or sum)     of the value `y` (or `x` if `orientation` is `'h'`).\n    \nArguments:\n    data_frame: A `pandas.DataFrame`, or a `NumPy` array or a dictionary which are tranformed internally to `pandas.DataFrame`. This argument needsto be passed for column names (and not keyword names) to be used.\n    x: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the x axis in cartesian coordinates. For horizontal `histogram`s, these values are used as inputs to `histfunc`.\n    y: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the y axis in cartesian coordinates. For vertical `histogram`s, these values are used as inputs to `histfunc`.\n    color: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign color to marks.\n    facet_row: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the vertical direction.\n    facet_col: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the horizontal direction.\n    hover_name: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like appear in bold in the hover tooltip.\n    hover_data: (list of string or int: names of columns in `data_frame`, or pandas Series, or array_like objects) Values from these columns appear as extra data in the hover tooltip.\n    animation_frame: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to animation frames.\n    animation_group: (string or int: name of column in `data_frame`, or pandas Series, or array_like object) Values from this column or array_like are used to provide object-constancy across animation frames: rows with matching `animation_group`s will be treated as if they describe the same object in each frame.\n    category_orders: (dict with string keys and list-of-string values, default `{}`) By default, in Python 3.6+, the order of categorical values in axes, legends and facets depends on the order in which these values are first encountered in `data_frame` (and no order is guaranteed by default in Python below 3.6). This parameter is used to force a specific ordering of values per column. The keys of this dict should correspond to column names, and the values should be lists of strings corresponding to the specific display order desired.\n    labels: (dict with string keys and string values, default `{}`) By default, column names are used in the figure for axis titles, legend entries and hovers. This parameter allows this to be overridden. The keys of this dict should correspond to column names, and the values should correspond to the desired label to be displayed.\n    color_discrete_sequence: (list of valid CSS-color strings) When `color` is set and the values in the corresponding column are not numeric, values in that column are assigned colors by cycling through `color_discrete_sequence` in the order described in `category_orders`, unless the value of `color` is a key in `color_discrete_map`. Various useful color sequences are available in the `plotly_express.colors` submodules, specifically `plotly_express.colors.qualitative`.\n    color_discrete_map: (dict with string keys and values that are valid CSS-color strings, default `{}`) Used to override `color_discrete_sequence` to assign a specific colors to marks corresponding with specific values. Keys in `color_discrete_map` should be values in the column denoted by `color`.\n    marginal: (string, one of `'rug'`, `'box'`, `'violin'`, `'histogram'`) If set, a subplot is drawn alongside the main plot, visualizing the distribution.\n    opacity: (number, between 0 and 1) Sets the opacity for markers.\n    orientation: (string, one of `'h'` for horizontal or `'v'` for vertical) Default is `'v'`.\n    barmode: (string, one of `'group'`, `'overlay'` or `'relative'`. Default is `'relative'`) In `'relative'` mode, bars are stacked above zero for positive values and below zero for negative values. In `'overlay'` mode, bars are drawn on top of one another. In `'group'` mode, bars are placed beside each other.\n    barnorm: (string, one of `'fraction'` or `'percent'`, default is `None`) If `'fraction'`, the value of each bar is divided by the sum of all values at that location coordinate. `'percent'` is the same but multiplied by 100 to show percentages. `None` will stack up all values at each location coordinate.\n    histnorm: (string, one of `'percent'`, `'probability'`, `'density'`, `'probability density'`, default `None`) If `None`, the output of `histfunc` is used as is. If `'probability'`, the output of `histfunc` for a given bin is divided by the sum of the output of `histfunc` for all bins. If `'percent'`, the output of `histfunc` for a given bin is divided by the sum of the output of `histfunc` for all bins and multiplied by 100. If `'density'`, the output of `histfunc` for a given bin is divided by the size of the bin. If `'probability density'`, the output of `histfunc` for a given bin is normalized such that it corresponds to the probability that a random event whose distribution is described by the output of `histfunc` will fall into that bin.\n    log_x: (boolean, default `False`) If `True`, the x-axis is log-scaled in cartesian coordinates.\n    log_y: (boolean, default `False`) If `True`, the y-axis is log-scaled in cartesian coordinates.\n    range_x: (2-element list of numbers) If provided, overrides auto-scaling on the x-axis in cartesian coordinates.\n    range_y: (2-element list of numbers) If provided, overrides auto-scaling on the y-axis in cartesian coordinates.\n    histfunc: (string, one of `'count'`, `'sum'`, `'avg'`, `'min'`, `'max'`. Default is `'count'`)Function used to aggregate values for summarization (note: can be normalized with `histnorm`). The arguments to this function for `histogram` are the values of `y` if `orientation` is `'v'`, otherwise the arguements are the values of `x`. The arguments to this function for `density_heatmap` and `density_contour` are the values of `z`.\n    cumulative: (boolean, default `False`) If `True`, histogram values are cumulative.\n    nbins: (positive integer) Sets the number of bins.\n    title: (string) The figure title.\n    template: (string or Plotly.py template object) The figure template name or definition.\n    width: (integer, default `None`) The figure width in pixels.\n    height: (integer, default `600`) The figure height in pixels.\nReturns:\n    A `Figure` object.",
+            "sourceCode": "def histogram(\n    data_frame=None,\n    x=None,\n    y=None,\n    color=None,\n    facet_row=None,\n    facet_col=None,\n    hover_name=None,\n    hover_data=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders={},\n    labels={},\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    marginal=None,\n    opacity=None,\n    orientation=\"v\",\n    barmode=\"relative\",\n    barnorm=None,\n    histnorm=None,\n    log_x=False,\n    log_y=False,\n    range_x=None,\n    range_y=None,\n    histfunc=None,\n    cumulative=None,\n    nbins=None,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a histogram, rows of `data_frame` are grouped together into a rectangular mark to \\\n    visualize the 1D distribution of an aggregate function `histfunc` (e.g. the count or sum) \\\n    of the value `y` (or `x` if `orientation` is `'h'`).\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Histogram,\n        trace_patch=dict(\n            orientation=orientation,\n            histnorm=histnorm,\n            histfunc=histfunc,\n            nbinsx=nbins if orientation == \"v\" else None,\n            nbinsy=None if orientation == \"v\" else nbins,\n            cumulative=dict(enabled=cumulative),\n            bingroup=\"x\" if orientation == \"v\" else \"y\",\n        ),\n        layout_patch=dict(barmode=barmode, barnorm=barnorm),\n    )\n",
+            "match": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, hover_name=None, hover_data=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, marginal=None, opacity=None, orientation='v', barmode='relative', barnorm=None, histnorm=None, log_x=False, log_y=False, range_x=None, range_y=None, histfunc=None, cumulative=None, nbins=None, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "plotly.express.histogram",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    In a histogram, rows of `data_frame` are grouped together into a\n    rectangular mark to visualize the 1D distribution of an aggregate function\n    `histfunc` (e.g. the count or sum) of the value `y` (or `x` if\n    `orientation` is `'h'`).\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword names)\n    to be used. Array-like and dict are tranformed internally to a pandas\n    DataFrame.\nx: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the x axis in cartesian coordinates. For horizontal\n    histograms, these values are used as inputs to `histfunc`.\ny: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    position marks along the y axis in cartesian coordinates. For vertical\n    histograms, these values are used as inputs to `histfunc`.\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\nfacet_row: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to facetted subplots in the vertical direction.\nfacet_col: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to facetted subplots in the horizontal direction.\nfacet_col_wrap: int\n    Maximum number of facet columns. Wraps the column variable at this width,\n    so that the column facets span multiple rows. Ignored if 0, and forced to\n    0 if `facet_row` or a `marginal` is set.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or array_like\n    objects Values from these columns appear as extra data in the hover\n    tooltip.\nanimation_frame: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign marks to animation frames.\nanimation_group: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    provide object-constancy across animation frames: rows with matching\n    `animation_group`s will be treated as if they describe the same object in\n    each frame.\ncategory_orders: dict with str keys and list of str values (default `{}`)\n    By default, in Python 3.6+, the order of categorical values in axes,\n    legends and facets depends on the order in which these values are first\n    encountered in `data_frame` (and no order is guaranteed by default in\n    Python below 3.6). This parameter is used to force a specific ordering of\n    values per column. The keys of this dict should correspond to column\n    names, and the values should be lists of strings corresponding to the\n    specific display order desired.\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The keys\n    of this dict should correspond to column names, and the values should\n    correspond to the desired label to be displayed.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that column\n    are assigned colors by cycling through `color_discrete_sequence` in the\n    order described in `category_orders`, unless the value of `color` is a\n    key in `color_discrete_map`. Various useful color sequences are available\n    in the `plotly_express.colors` submodules, specifically\n    `plotly_express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`.\nmarginal: str\n    One of `'rug'`, `'box'`, `'violin'`, or `'histogram'`. If set, a subplot\n    is drawn alongside the main plot, visualizing the distribution.\nopacity: float\n    Value between 0 and 1. Sets the opacity for markers.\norientation: str (default `'v'`)\n    One of `'h'` for horizontal or `'v'` for vertical)\nbarmode: str (default `'relative'`)\n    One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode, bars\n    are stacked above zero for positive values and below zero for negative\n    values. In `'overlay'` mode, bars are drawn on top of one another. In\n    `'group'` mode, bars are placed beside each other.\nbarnorm: str (default `None`)\n    One of `'fraction'` or `'percent'`. If `'fraction'`, the value of each\n    bar is divided by the sum of all values at that location coordinate.\n    `'percent'` is the same but multiplied by 100 to show percentages. `None`\n    will stack up all values at each location coordinate.\nhistnorm: str (default `None`)\n    One of `'percent'`, `'probability'`, `'density'`, or `'probability\n    density'` If `None`, the output of `histfunc` is used as is. If\n    `'probability'`, the output of `histfunc` for a given bin is divided by\n    the sum of the output of `histfunc` for all bins. If `'percent'`, the\n    output of `histfunc` for a given bin is divided by the sum of the output\n    of `histfunc` for all bins and multiplied by 100. If `'density'`, the\n    output of `histfunc` for a given bin is divided by the size of the bin.\n    If `'probability density'`, the output of `histfunc` for a given bin is\n    normalized such that it corresponds to the probability that a random\n    event whose distribution is described by the output of `histfunc` will\n    fall into that bin.\nlog_x: boolean (default `False`)\n    If `True`, the x-axis is log-scaled in cartesian coordinates.\nlog_y: boolean (default `False`)\n    If `True`, the y-axis is log-scaled in cartesian coordinates.\nrange_x: list of two numbers\n    If provided, overrides auto-scaling on the x-axis in cartesian\n    coordinates.\nrange_y: list of two numbers\n    If provided, overrides auto-scaling on the y-axis in cartesian\n    coordinates.\nhistfunc: str (default `'count'`)\n    One of `'count'`, `'sum'`, `'avg'`, `'min'`, or `'max'`.Function used to\n    aggregate values for summarization (note: can be normalized with\n    `histnorm`). The arguments to this function for `histogram` are the\n    values of `y` if `orientation` is `'v'`, otherwise the arguements are the\n    values of `x`. The arguments to this function for `density_heatmap` and\n    `density_contour` are the values of `z`.\ncumulative: boolean (default `False`)\n    If `True`, histogram values are cumulative.\nnbins: int\n    Positive integer. Sets the number of bins.\ntitle: str\n    The figure title.\ntemplate: or dict or plotly.graph_objects.layout.Template instance\n    The figure template name or definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `600`)\n    The figure height in pixels.\n\nReturns\n-------\n    A `Figure` object.",
+            "sourceCode": "def histogram(\n    data_frame=None,\n    x=None,\n    y=None,\n    color=None,\n    facet_row=None,\n    facet_col=None,\n    facet_col_wrap=0,\n    hover_name=None,\n    hover_data=None,\n    animation_frame=None,\n    animation_group=None,\n    category_orders={},\n    labels={},\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    marginal=None,\n    opacity=None,\n    orientation=\"v\",\n    barmode=\"relative\",\n    barnorm=None,\n    histnorm=None,\n    log_x=False,\n    log_y=False,\n    range_x=None,\n    range_y=None,\n    histfunc=None,\n    cumulative=None,\n    nbins=None,\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n):\n    \"\"\"\n    In a histogram, rows of `data_frame` are grouped together into a\n    rectangular mark to visualize the 1D distribution of an aggregate function\n    `histfunc` (e.g. the count or sum) of the value `y` (or `x` if\n    `orientation` is `'h'`).\n    \"\"\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Histogram,\n        trace_patch=dict(\n            orientation=orientation,\n            histnorm=histnorm,\n            histfunc=histfunc,\n            nbinsx=nbins if orientation == \"v\" else None,\n            nbinsy=None if orientation == \"v\" else nbins,\n            cumulative=dict(enabled=cumulative),\n            bingroup=\"x\" if orientation == \"v\" else \"y\",\n        ),\n        layout_patch=dict(barmode=barmode, barnorm=barnorm),\n    )\n",
+            "match": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, facet_col_wrap=0, hover_name=None, hover_data=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, marginal=None, opacity=None, orientation='v', barmode='relative', barnorm=None, histnorm=None, log_x=False, log_y=False, range_x=None, range_y=None, histfunc=None, cumulative=None, nbins=None, title=None, template=None, width=None, height=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(data_frame, 0)": {},
+                "(x, 1)": {},
+                "(y, 2)": {},
+                "(color, 3)": {},
+                "(facet_row, 4)": {},
+                "(facet_col, 5)": {},
+                "(facet_col_wrap, 6)": {
+                    "addPos": "facet_col_wrap=0"
+                },
+                "(hover_name, 6)": {
+                    "posChange": 7
+                },
+                "(hover_data, 7)": {
+                    "posChange": 8
+                },
+                "(animation_frame, 8)": {
+                    "posChange": 9
+                },
+                "(animation_group, 9)": {
+                    "posChange": 10
+                },
+                "(category_orders, 10)": {
+                    "posChange": 11
+                },
+                "(labels, 11)": {
+                    "posChange": 12
+                },
+                "(color_discrete_sequence, 12)": {
+                    "posChange": 13
+                },
+                "(color_discrete_map, 13)": {
+                    "posChange": 14
+                },
+                "(marginal, 14)": {
+                    "posChange": 15
+                },
+                "(opacity, 15)": {
+                    "posChange": 16
+                },
+                "(orientation, 16)": {
+                    "posChange": 17
+                },
+                "(barmode, 17)": {
+                    "posChange": 18
+                },
+                "(barnorm, 18)": {
+                    "posChange": 19
+                },
+                "(histnorm, 19)": {
+                    "posChange": 20
+                },
+                "(log_x, 20)": {
+                    "posChange": 21
+                },
+                "(log_y, 21)": {
+                    "posChange": 22
+                },
+                "(range_x, 22)": {
+                    "posChange": 23
+                },
+                "(range_y, 23)": {
+                    "posChange": 24
+                },
+                "(histfunc, 24)": {
+                    "posChange": 25
+                },
+                "(cumulative, 25)": {
+                    "posChange": 26
+                },
+                "(nbins, 26)": {
+                    "posChange": 27
+                },
+                "(title, 27)": {
+                    "posChange": 28
+                },
+                "(template, 28)": {
+                    "posChange": 29
+                },
+                "(width, 29)": {
+                    "posChange": 30
+                },
+                "(height, 30)": {
+                    "posChange": 31
+                }
+            },
+            "targetOvPara": "(data_frame=None, x=None, y=None, color=None, facet_row=None, facet_col=None, facet_col_wrap=0, hover_name=None, hover_data=None, animation_frame=None, animation_group=None, category_orders={}, labels={}, color_discrete_sequence=None, color_discrete_map={}, marginal=None, opacity=None, orientation='v', barmode='relative', barnorm=None, histnorm=None, log_x=False, log_y=False, range_x=None, range_y=None, histfunc=None, cumulative=None, nbins=None, title=None, template=None, width=None, height=None)"
+        }
+    ]
+}

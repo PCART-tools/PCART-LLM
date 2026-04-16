@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/networkx/closeness_vitality@1.4-1.5/closeness_vitality#1YY",
+    "runCommand": "python closeness_vitalityYY.py",
+    "runFilePath": "",
+    "libName": "networkx",
+    "currentVersion": "1.4",
+    "targetVersion": "1.5",
+    "currentEnv": "/envs/networkx1.4",
+    "targetEnv": "/envs/networkx1.5"
+}

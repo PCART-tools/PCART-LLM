@@ -1,0 +1,40 @@
+[
+  {
+    "(path, 0)": {},
+    "(encoding, 1)": {},
+    "(theme, 2)": {
+      "posChange": 3,
+      "replace": "lexer=None"
+    },
+    "(dedent, 3)": {
+      "posChange": 4
+    },
+    "(line_numbers, 4)": {
+      "posChange": 5
+    },
+    "(line_range, 5)": {
+      "posChange": 6
+    },
+    "(start_line, 6)": {
+      "posChange": 7
+    },
+    "(highlight_lines, 7)": {
+      "posChange": 8
+    },
+    "(code_width, 8)": {
+      "posChange": 9
+    },
+    "(tab_size, 9)": {
+      "posChange": 10
+    },
+    "(word_wrap, 10)": {
+      "posChange": 11
+    },
+    "(background_color, 11)": {
+      "posChange": 12
+    },
+    "(indent_guides, 12)": {
+      "posChange": 13
+    }
+  }
+]

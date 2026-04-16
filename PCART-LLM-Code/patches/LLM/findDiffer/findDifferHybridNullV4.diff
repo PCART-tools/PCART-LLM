@@ -1,0 +1,676 @@
+--- /dev/null	2026-04-17 07:29:42
++++ PCART-modified/LLM/findDiffer/findDifferHybridNullV4.py	2026-04-17 07:29:20
+@@ -0,0 +1,673 @@
++## @package findDifferHybrid
++#  Hybrid difference analysis using LLM for API parameter changes
++#  使用 LLM 进行 API 参数变更的混合差异分析
++#
++#  Null 上下文版本：与 findDifferHybridCodeV5 对齐（OpenAI SDK + 提示内 JSON Schema），
++#  不使用 LangChain；LLM 输入仅包含参数列表，依赖模型自身知识判断重命名。
++
++import os
++import re
++import json
++import copy
++import traceback
++from openai import OpenAI
++
++from Change.changeAnalyze import para2Obj, isDifferType, Update
++from Tool.tool import getFileName, removeParameter
++
++parameter_changes_schema = {
++    "title": "ParameterChanges",
++    "description": "Return renamed parameters only. Do not include deleted parameters.",
++    "type": "object",
++    "properties": {
++        "changes": {
++            "type": "array",
++            "description": "List of renamed parameters. Do NOT include deleted parameters.",
++            "items": {
++                "type": "object",
++                "properties": {
++                    "param_name": {
++                        "type": "string",
++                        "description": "Name of the parameter in the old version",
++                    },
++                    "position": {
++                        "type": "integer",
++                        "description": "Original position index, starting from 0, excluding self/cls",
++                    },
++                    "rename": {
++                        "type": "string",
++                        "description": "Name of the parameter in the new version",
++                    },
++                },
++                "required": ["param_name", "position", "rename"],
++            },
++        }
++    },
++    "required": ["changes"],
++}
++
++
++SYSTEM_PROMPT_TEMPLATE = """You are an API parameter change analysis assistant. Your task is to analyze parameter changes between different API versions and output the results in a specific JSON format.
++
++<task>
++Determine which parameters from the old version have been renamed in the new version.
++</task>
++
++<rules>
++RENAME: A parameter must satisfy **all** of the following conditions:
++a) Based on your existing knowledge of the library, the parameter is semantically the same parameter with a name change, or the new parameter extends the functionality of the old one with full backward compatibility (use data types as an additional reference).
++b) For keyword parameters: position does **not** matter.
++c) For positional parameters: position **must** remain the same.
++</rules>
++"""
++
++HUMAN_PROMPT_TEMPLATE = """<general_information>
++
++### API call
++{fullApiName}
++
++### Library and version
++- old：{oldVersion}
++- new：{newVersion}
++
++</general_information>
++
++<old_parameters>
++
++```json
++{oldParamsJSON}
++```
++
++</old_parameters>
++
++<new_parameters>
++
++```json
++{newParamsJSON}
++```
++
++</new_parameters>
++
++Based on your existing knowledge of the library, combined with parameter names, data types, and version information, determine which parameters from the old version have been renamed in the new version.
++
++Each item uses `param_name` and `position` to identify the old parameter, and `rename` for the new name.
++
++If no parameters were renamed, output: {{"changes": []}}
++"""
++
++
++def buildPromptMessages(apiCall, oldVersion, newVersion, oldParamsJSON, newParamsJSON):
++    user_prompt = HUMAN_PROMPT_TEMPLATE.format(
++        fullApiName=apiCall,
++        oldVersion=oldVersion,
++        newVersion=newVersion,
++        oldParamsJSON=oldParamsJSON,
++        newParamsJSON=newParamsJSON,
++    )
++    return [
++        {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE},
++        {"role": "user", "content": user_prompt},
++    ]
++
++
++def _llm_debug_enabled():
++    # 当环境变量 FIND_DIFFER_LLM_DEBUG=1 / true / yes / on 时，开启 LLM 原始响应调试输出。
++    v = os.environ.get("FIND_DIFFER_LLM_DEBUG", "").strip().lower()
++    return v in ("1", "true", "yes", "on")
++
++
++def _openai_response_to_dict(obj):
++    # 将 SDK 返回对象转为可 JSON 序列化的 dict，便于打印原始返回结构。
++    if obj is None:
++        return None
++    if hasattr(obj, "model_dump"):
++        try:
++            return obj.model_dump()
++        except Exception:
++            pass
++    if hasattr(obj, "dict") and callable(getattr(obj, "dict")):
++        try:
++            return obj.dict()
++        except Exception:
++            pass
++    return {"_fallback_repr": repr(obj)}
++
++
++def print_llm_raw_response(response, label=""):
++    # 打印 chat.completions.create 返回的完整结构，与 HTTP 响应体字段保持一致，便于排查空 content 等问题。
++    # 仅当 FIND_DIFFER_LLM_DEBUG 开启时输出。
++    if not _llm_debug_enabled():
++        return
++    sep = "=" * 72
++    print(f"\n{sep}\n[FIND_DIFFER_LLM_DEBUG] {label}\n{sep}")
++    try:
++        data = _openai_response_to_dict(response)
++        print(json.dumps(data, ensure_ascii=False, indent=2, default=str))
++    except Exception as e:
++        print(f"(序列化失败: {e})")
++        traceback.print_exc()
++        print(repr(response))
++    print(f"{sep}\n")
++
++
++def _extract_json_from_text(text):
++    # 从可能包含 <think>...</think> 和 markdown 代码块的文本中提取 JSON。
++    # 适配 MiniMax 等思维链模型，它们会在 content 里混入推理过程和 markdown 格式。
++    stripped = re.sub(r"<think>[\s\S]*?</think>", "", text)
++    stripped = re.sub(r"<think>[\s\S]*$", "", stripped)
++    stripped = stripped.strip()
++
++    m = re.search(r"```(?:json)?\s*\n([\s\S]*?)```", stripped)
++    if m:
++        stripped = m.group(1).strip()
++
++    return json.loads(stripped)
++
++
++def parseStructuredResponse(response):
++    # Normalize OpenAI chat completion structured output to a plain dict.
++    # 兼容标准 JSON 输出和包含 <think> / markdown 代码块的思维链模型输出。
++    message = response.choices[0].message
++    content = message.content
++
++    if _llm_debug_enabled():
++        print(
++            "\n[FIND_DIFFER_LLM_DEBUG] message 摘要:\n"
++            f"  content 类型: {type(content).__name__}\n"
++            f"  content 长度: {len(content) if isinstance(content, str) else 'N/A'}\n"
++            f"  refusal: {getattr(message, 'refusal', None)!r}\n"
++            f"  finish_reason: {getattr(response.choices[0], 'finish_reason', None)!r}\n"
++        )
++
++    if isinstance(content, str):
++        if not content.strip():
++            if _llm_debug_enabled():
++                print(
++                    "[FIND_DIFFER_LLM_DEBUG] 警告: message.content 为空或仅空白，"
++                    "json.loads 将失败。完整对象见上一段 Raw API response。\n"
++                )
++            raise ValueError("LLM returned empty content")
++
++        try:
++            return json.loads(content)
++        except json.JSONDecodeError:
++            if _llm_debug_enabled():
++                print(
++                    "[FIND_DIFFER_LLM_DEBUG] json.loads 直接解析失败，"
++                    "尝试提取 <think>/markdown 包裹的 JSON...\n"
++                )
++            return _extract_json_from_text(content)
++
++    if isinstance(content, list):
++        text_parts = []
++        for item in content:
++            if isinstance(item, dict) and item.get("type") == "text":
++                text_parts.append(item.get("text", ""))
++            elif hasattr(item, "type") and item.type == "text":
++                text_parts.append(getattr(item, "text", ""))
++        if text_parts:
++            combined = "".join(text_parts)
++            try:
++                return json.loads(combined)
++            except json.JSONDecodeError:
++                return _extract_json_from_text(combined)
++
++    raise TypeError(f"Unsupported structured output type: {type(content).__name__}")
++
++
++
++## Apply hard rules preprocessing to match parameters by name and position
++## 应用硬规则预处理，根据名称和位置匹配参数
++#
++#  这部分对应 changeAnalyze.py:311-387 的前置硬规则处理
++#
++#  @param oldPara The old parameter string from current version
++#  @param newPara The new parameter string from target version
++#  @return (dic, oldPos, oldKey, newPos, newKey, oldPosParaNum) Tuple containing matched dictionary and remaining parameters
++def applyPreprocessing(oldPara, newPara):
++    oldPos, oldKey = para2Obj(oldPara)
++    newPos, newKey = para2Obj(newPara)
++    oldPosParaNum = len(oldPos)
++    dic = {}  # 保存每个参数应该做哪些修改操作
++
++    # 第一轮筛选，先根据名字来找对应关系
++    # 处理位置参数
++    for oldParaObj in copy.deepcopy(oldPos):
++        sameFlag = 0
++        for newParaObj in newPos:
++            if oldParaObj.name == newParaObj.name:
++                up = Update()
++                if oldParaObj.position != newParaObj.position:
++                    up.pos = newParaObj.position
++                ty = isDifferType(oldParaObj.type, newParaObj.type)
++                if ty:
++                    up.type = ty
++                sameFlag = 1
++                oldPos.remove(oldParaObj)
++                newPos.remove(newParaObj)
++                break
++        if sameFlag == 1:
++            dic[(oldParaObj.name, oldParaObj.position)] = up
++
++    # 处理关键字参数
++    for oldParaObj in copy.deepcopy(oldKey):
++        sameFlag = 0
++        for newParaObj in newKey:
++            if oldParaObj.name == newParaObj.name:
++                up = Update()
++                ty = isDifferType(oldParaObj.type, newParaObj.type)
++                if ty:
++                    up.type = ty
++                sameFlag = 1
++                oldKey.remove(oldParaObj)
++                newKey.remove(newParaObj)
++                break
++        if sameFlag == 1:
++            dic[(oldParaObj.name, oldParaObj.position)] = up
++
++    # 第二轮筛选，根据名字找对应关系，判断是否存在位置参数变到了关键字参数
++    for oldParaObj in copy.deepcopy(oldPos):
++        sameFlag = 0
++        for newParaObj in newKey:
++            if oldParaObj.name == newParaObj.name:
++                up = Update()
++                up.pos2key = oldParaObj.name  # 位置参数变成关键字参数
++                ty = isDifferType(oldParaObj.type, newParaObj.type)
++                if ty:
++                    up.type = ty
++                sameFlag = 1
++                oldPos.remove(oldParaObj)
++                newKey.remove(newParaObj)
++                break
++        if sameFlag == 1:
++            dic[(oldParaObj.name, oldParaObj.position)] = up
++
++    # 再判断是否有关键字参数(起始版本)变到了位置参数(目标版本)
++    for oldParaObj in copy.deepcopy(oldKey):
++        sameFlag = 0
++        for newParaObj in copy.deepcopy(newPos):
++            if oldParaObj.name == newParaObj.name:
++                up = Update()
++                up.key2pos = oldParaObj.name
++                ty = isDifferType(oldParaObj.type, newParaObj.type)
++                if ty:
++                    up.type = ty
++                sameFlag = 1
++                oldKey.remove(oldParaObj)
++                newPos.remove(newParaObj)
++                break
++        if sameFlag == 1:
++            dic[(oldParaObj.name, oldParaObj.position)] = up
++
++    return dic, oldPos, oldKey, newPos, newKey, oldPosParaNum
++
++
++## Convert parameter objects to JSON format for LLM
++## 将参数对象转换为 LLM 所需的 JSON 格式
++#
++#  @param paraList List of Parameter objects
++#  @param isPositional Whether these are positional parameters
++#  @return jsonList List of dictionaries in JSON format
++def convertParamsToJSON(paraList, isPositional=True):
++    jsonList = []
++    for para in paraList:
++        paramDict = {
++            "name": para.name,
++            "position": para.position,
++            "parameter_type": "positional" if isPositional else "keyword",
++            "data_type": para.type if para.type else None,
++        }
++        jsonList.append(paramDict)
++    return jsonList
++
++
++def _normalize_llm_result(raw):
++    # 将 LLM 返回的各种不规范格式归一化为标准结果。
++    # 目标格式为 {"changes": [{"param_name": ..., "position": ..., "rename": ...}, ...]}。
++    # MiniMax 等模型经常无视 json_schema 约束，产出各种字段名变体。
++    if isinstance(raw, dict) and "changes" in raw:
++        changes = raw["changes"]
++        if changes and "param_name" in changes[0] and "rename" in changes[0]:
++            return raw
++
++    items = []
++    if isinstance(raw, dict):
++        items = (
++            raw.get("changes")
++            or raw.get("changed_parameters")
++            or raw.get("renamed_parameters")
++            or raw.get("renames")
++            or []
++        )
++    elif isinstance(raw, list):
++        items = raw
++
++    normalized = []
++    for item in items:
++        if not isinstance(item, dict):
++            continue
++
++        old_name = (
++            item.get("param_name")
++            or item.get("old_name")
++            or item.get("old_parameter")
++        )
++        if isinstance(old_name, dict):
++            old_name = old_name.get("name")
++
++        new_name = (
++            item.get("rename")
++            or item.get("new_name")
++            or item.get("new_parameter")
++        )
++        if isinstance(new_name, dict):
++            new_name = new_name.get("name")
++
++        position = item.get("position")
++        if position is None:
++            old_param_obj = item.get("old_parameter")
++            if isinstance(old_param_obj, dict):
++                position = old_param_obj.get("position")
++
++        if old_name and new_name and position is not None:
++            normalized.append({
++                "param_name": old_name,
++                "position": position,
++                "rename": new_name,
++            })
++
++    if _llm_debug_enabled():
++        print(f"[FIND_DIFFER_LLM_DEBUG] 归一化结果: {{'changes': {normalized}}}")
++
++    return {"changes": normalized}
++
++
++LLM_SKIP_API_KEYWORDS = [
++    "np.array",
++]
++
++
++def shouldSkipLLM(apiCall):
++    apiCallLower = (apiCall or "").lower()
++    return any(keyword.lower() in apiCallLower for keyword in LLM_SKIP_API_KEYWORDS)
++
++
++## Call LLM to analyze parameter changes using OpenAI official SDK
++## 调用 LLM 分析参数变更（使用 OpenAI 官方 SDK；提示词内嵌 JSON Schema）
++#
++#  Null 版本：不传入源码或 docstring，完全依赖 LLM 自身知识进行判断
++#
++#  @param apiCall The full API name without parameters
++#  @param oldVersion The old library version
++#  @param newVersion The new library version
++#  @param oldPosRemaining Remaining old positional parameters
++#  @param oldKeyRemaining Remaining old keyword parameters
++#  @param newPosRemaining Remaining new positional parameters
++#  @param newKeyRemaining Remaining new keyword parameters
++#  @param maxRetries Maximum number of retry attempts (default: 3)
++#  @return resultDict containing parameter modifications from LLM output
++def callLLM(apiCall, oldVersion, newVersion, oldPosRemaining, oldKeyRemaining,
++            newPosRemaining, newKeyRemaining, maxRetries=3):
++    # 调用 LLM 分析参数变更，使用 OpenAI 官方 SDK。
++
++    if shouldSkipLLM(apiCall):
++        print(f"[LLM-Hybrid-Null] Skip LLM invocation for API: {apiCall}")
++        return {"changes": []}
++
++    client = OpenAI(
++        # api_key=apiKey,
++        # base_url=baseUrl,
++    )
++
++    oldParamsJSON = convertParamsToJSON(oldPosRemaining, True) + convertParamsToJSON(oldKeyRemaining, False)
++    newParamsJSON = convertParamsToJSON(newPosRemaining, True) + convertParamsToJSON(newKeyRemaining, False)
++
++    old_params_str = json.dumps(oldParamsJSON, indent=2, ensure_ascii=False)
++    new_params_str = json.dumps(newParamsJSON, indent=2, ensure_ascii=False)
++
++    messages = buildPromptMessages(
++        apiCall,
++        oldVersion,
++        newVersion,
++        old_params_str,
++        new_params_str,
++    )
++
++    print(
++        "--- Prompt Sent to LLM ---\n"
++        f"[system]\n{SYSTEM_PROMPT_TEMPLATE}\n\n"
++        f"[user]\n{messages[1]['content']}\n"
++        "---------------------------\n\n"
++    )
++
++    if _llm_debug_enabled():
++        print(
++            "\n[FIND_DIFFER_LLM_DEBUG] 已开启：将打印每次 API 返回的完整结构化对象。"
++            "关闭: unset FIND_DIFFER_LLM_DEBUG\n"
++        )
++
++    for attempt in range(1, maxRetries + 1):
++        try:
++            response = client.chat.completions.create(
++                model="gemini-3.1-pro-preview-low",
++                messages=messages,
++                temperature=0,
++                max_tokens=8192,
++                response_format={
++                    "type": "json_schema",
++                    "json_schema": {
++                        "name": "ParameterChanges",
++                        "schema": parameter_changes_schema,
++                    },
++                },
++            )
++            print_llm_raw_response(response, f"chat.completions 原始返回 (attempt {attempt})")
++            result = parseStructuredResponse(response)
++            print(result)
++            print(f"[LLM] Response received. Changes: {result}")
++            return result
++        except Exception as e:
++            if _llm_debug_enabled():
++                print(f"\n[FIND_DIFFER_LLM_DEBUG] 本次异常: {type(e).__name__}: {e}")
++                traceback.print_exc()
++            if attempt == maxRetries:
++                print(f"Error during LLM invocation: {e}")
++                return {"changes": []}
++            print(f"[LLM] Attempt {attempt} failed: {e}. Retrying...")
++
++
++## Apply LLM analysis results to the existing dictionary
++## 将 LLM 返回的分析结果应用到现有字典中
++#
++#  @param dic The existing dictionary from hard rules preprocessing
++#  @param llmResult The LLM analysis result
++#  @param oldPosRemaining Remaining old positional parameters
++#  @param oldKeyRemaining Remaining old keyword parameters
++#  @param newPosRemaining Remaining new positional parameters
++#  @param newKeyRemaining Remaining new keyword parameters
++#  @return dic The merged dictionary
++def applyLLMResult(dic, llmResult, oldPosRemaining, oldKeyRemaining,
++                   newPosRemaining, newKeyRemaining):
++    # 应用 LLM 返回的分析结果。
++    # 处理 LLM 返回的重命名操作，并将剩余的旧参数标记为删除。
++    changes = llmResult.get('changes', [])
++
++    # 创建旧参数映射：从 (name, position) 到参数对象
++    oldParamMap = {}
++    for para in oldPosRemaining + oldKeyRemaining:
++        oldParamMap[(para.name, para.position)] = para
++
++    # 创建新参数映射：从 name 到参数对象（用于重命名查找）
++    newParamMap = {}
++    for para in newPosRemaining + newKeyRemaining:
++        if para.name not in newParamMap:
++            newParamMap[para.name] = para
++
++    # 处理 LLM 返回的重命名
++    for change in changes:
++        paramName = change.get('param_name')
++        position = change.get('position')
++        key = (paramName, position)
++
++        if key in oldParamMap and 'rename' in change:
++            oldPara = oldParamMap[key]
++            newName = change['rename']
++
++            if newName in newParamMap:
++                newPara = newParamMap[newName]
++                up = Update()
++                up.rename = newName
++                ty = isDifferType(oldPara.type, newPara.type)
++                if ty:
++                    up.type = ty
++                dic[key] = up
++
++                # 从剩余参数中移除
++                if oldPara in oldPosRemaining:
++                    oldPosRemaining.remove(oldPara)
++                elif oldPara in oldKeyRemaining:
++                    oldKeyRemaining.remove(oldPara)
++                if newPara in newPosRemaining:
++                    newPosRemaining.remove(newPara)
++                elif newPara in newKeyRemaining:
++                    newKeyRemaining.remove(newPara)
++
++    # 将剩余的旧参数标记为删除
++    for oldPara in oldPosRemaining:
++        up = Update()
++        up.dele = 1
++        dic[(oldPara.name, oldPara.position)] = up
++
++    for oldPara in oldKeyRemaining:
++        up = Update()
++        up.dele = 1
++        dic[(oldPara.name, oldPara.position)] = up
++
++    return dic
++
++
++## Apply hard rules postprocessing for new parameters
++## 应用硬规则后处理，处理新增和替换参数
++#
++#  这部分对应 changeAnalyze.py:434-457 的后置硬规则处理
++#
++#  @param dic The dictionary of parameter changes
++#  @param newPosRemaining Remaining new positional parameters
++#  @param newKeyRemaining Remaining new keyword parameters
++#  @param oldPosParaNum The number of old positional parameters
++#  @return dic The updated dictionary
++def applyPostprocessing(dic, newPosRemaining, newKeyRemaining, oldPosParaNum):
++    # newPos中剩下的就是替换或新增的
++    for para in newPosRemaining:
++        s = f'{para.name}'
++        if para.value:
++            s += f"={para.value}"
++        if para.position >= 0 and para.position < oldPosParaNum:  # 如果剩余参数的下标在旧版本参数下标的范围内，则认为是替换操作,反之则认为是新增的
++            for key in dic:
++                if key[1] == para.position:
++                    dic[key].rep = s
++                    break
++        else:
++            up = Update()
++            up.addPos = s
++            dic[(para.name, para.position)] = up
++
++    # newKey中剩下的就是新增的,新增的关键字参数往往都带有默认值，一般不会引起兼容性问题
++    for para in newKeyRemaining:
++        s = para.name
++        if para.value:
++            s += f"={para.value}"
++        up = Update()
++        up.addKey = s
++        dic[(para.name, para.position)] = up
++
++    return dic
++
++
++
++## Build final answer dictionary
++## 构建最终的答案字典
++#
++#  @param dic The dictionary of parameter changes
++#  @return ansDict The final answer dictionary sorted by position
++def buildFinalAnswerDict(dic):
++    # 构建修改操作的字典
++    updateDict = {}
++    for key, value in dic.items():
++        if key not in updateDict:
++            updateDict[key] = {}
++        if value.dele:
++            updateDict[key]['delete'] = value.dele
++        if value.type:
++            updateDict[key]['typeChange'] = value.type
++        if value.rename:
++            updateDict[key]['rename'] = value.rename
++        if value.pos != -1:
++            updateDict[key]['posChange'] = value.pos
++        if value.rep:
++            updateDict[key]['replace'] = value.rep
++        if value.pos2key:
++            updateDict[key]['pos2key'] = value.pos2key
++        if value.addPos:
++            updateDict[key]['addPos'] = value.addPos
++        if value.addKey:
++            updateDict[key]['addKey'] = value.addKey
++        if value.key2pos:
++            updateDict[key]['key2pos'] = value.key2pos
++
++    # 对字典按照参数的位置进行排序
++    ansDict = dict(sorted(updateDict.items(), key=lambda it: it[0][1]))  # it[0]代表字典的键，it[0][1]代表键中的第二个元素,即位置
++    return ansDict
++
++
++## Hybrid difference analysis using LLM
++## 使用 LLM 进行混合差异分析
++#
++#  @param oldPara The old parameter string from current version
++#  @param newPara The new parameter string from target version
++#  @param context A dictionary containing all additional context for LLM analysis:
++#         - apiCall: The API call name
++#         - oldVersion: The old library version (e.g., "networkx@1.5")
++#         - newVersion: The new library version (e.g., "networkx@1.6")
++#         - jsonPrefix: The prefix path for JSON files (default: ".")
++#         - oldMatchDict: The old version match dictionary (optional)
++#         - newMatchDict: The new version match dictionary (optional)
++#  @return ansDict The final answer dictionary
++def findDifferHybrid(oldPara, newPara, context):
++    # 从 context 中提取参数
++    apiCall = context.get('apiCall')
++    print(f"\n[Hybrid] Analyzing API: {apiCall}")
++    oldVersion = context.get('oldVersion')
++    newVersion = context.get('newVersion')
++    jsonPrefix = context.get('jsonPrefix', '.')
++    oldMatchDict = context.get('oldMatchDict')
++    newMatchDict = context.get('newMatchDict')
++
++    # Step 1: 前置规则处理
++    dic, oldPosRemaining, oldKeyRemaining, newPosRemaining, newKeyRemaining, oldPosParaNum = \
++        applyPreprocessing(oldPara, newPara)
++    print(f"[Hybrid] Step 1 Preprocessing Done. Remaining: oldPos={len(oldPosRemaining)}, oldKey={len(oldKeyRemaining)}")
++
++    # Step 2: 如果还有剩余参数，调用 LLM 处理
++    if len(oldPosRemaining) > 0 or len(oldKeyRemaining) > 0:
++        print(f"[Hybrid] Step 2: Triggering LLM analysis...")
++
++        llmResult = callLLM(
++            apiCall, oldVersion, newVersion,
++            oldPosRemaining, oldKeyRemaining,
++            newPosRemaining, newKeyRemaining
++        )
++
++        dic = applyLLMResult(dic, llmResult, oldPosRemaining, oldKeyRemaining,
++                             newPosRemaining, newKeyRemaining)
++        print(f"[Hybrid] Step 2: LLM results applied. Dictionary updated.")
++
++    # Step 3: 后处理新增和替换
++    dic = applyPostprocessing(dic, newPosRemaining, newKeyRemaining, oldPosParaNum)
++    print(f"[Hybrid] Step 3: Postprocessing Done.")
++
++    # Step 4: 构建最终答案字典
++    ansDict = buildFinalAnswerDict(dic)
++    print(f"[Hybrid] Step 4: Final answer built. Result keys: {list(ansDict.keys())}")
++
++    return ansDict

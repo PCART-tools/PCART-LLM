@@ -1,0 +1,3275 @@
+
+=== 批量执行 ===
+总任务: 284
+
+=== 批量启动 ===
+
+
+============================================================
+[1/284] 正在处理: PIL.Image.Image.show#1YY/showYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/PIL/PIL.Image.Image.show@8.4.0-9.0.0/PIL.Image.Image.show#1YY/showYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[2/284] 正在处理: PIL.ImagePalette.ImagePalette#1YY/ImagePaletteYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/PIL/PIL.ImagePalette.ImagePalette@9.5.0-10.0.0/PIL.ImagePalette.ImagePalette#1YY/ImagePaletteYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[3/284] 正在处理: aiohttp.BaseConnector#1YY/BaseConnectorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/aiohttp/aiohttp.BaseConnector@0.8.1-0.8.2/aiohttp.BaseConnector#1YY/BaseConnectorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[4/284] 正在处理: aiohttp.ClientSession#1YY/ClientSessionYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/aiohttp/aiohttp.ClientSession@1.3.5-2.0.0/aiohttp.ClientSession#1YY/ClientSessionYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[5/284] 正在处理: aiohttp.TCPConnector#1YY/TCPConnectorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/aiohttp/aiohttp.TCPConnector@2.3.10-3.0.0/aiohttp.TCPConnector#1YY/TCPConnectorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.2s ---
+
+============================================================
+[6/284] 正在处理: click.Command#1YY/CommandYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/click/click.Command@7.0-7.1/click.Command#1YY/CommandYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.4s ---
+
+============================================================
+[7/284] 正在处理: click.secho#1YY/sechoYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/click/click.secho@6.7-7.0/click.secho#1YY/sechoYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.4s ---
+
+============================================================
+[8/284] 正在处理: dask.dataframe.core.drop#1YY/dropYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.core.drop@2.2.0-2.3.0/dask.dataframe.core.drop#1YY/dropYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.7s ---
+
+============================================================
+[9/284] 正在处理: dask.dataframe.drop_duplicates#1YY/drop_duplicatesYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.drop_duplicates@2.4.0-2.5.0/dask.dataframe.drop_duplicates#1YY/drop_duplicatesYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.7s ---
+
+============================================================
+[10/284] 正在处理: dask.dataframe.read_parquet#1YY/read_parquetYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.read_parquet@2022.4.1-2022.4.2/dask.dataframe.read_parquet#1YY/read_parquetYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.5s ---
+
+============================================================
+[11/284] 正在处理: dask.dataframe.repartition#1YY/repartitionYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.repartition@1.2.2-2.0.0/dask.dataframe.repartition#1YY/repartitionYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.8s ---
+
+============================================================
+[12/284] 正在处理: dask.dataframe.utils.assert_eq#1YY/assert_eqYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.utils.assert_eq@2022.5.2-2022.6.0/dask.dataframe.utils.assert_eq#1YY/assert_eqYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=8s
+--- OK | elapsed: 8.1s ---
+
+============================================================
+[13/284] 正在处理: django.views.static.was_modified_since#1YY/was_modified_sinceYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/django/django.views.static.was_modified_since@4.0.10-4.1.0/django.views.static.was_modified_since#1YY/was_modified_sinceYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[14/284] 正在处理: models.Index#1NN/IndexNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/django/models.Index@1.11.29-2.0/models.Index#1NN/IndexNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.9s ---
+
+============================================================
+[15/284] 正在处理: fastapi.encoders.jsonable_encoder#1YY/jsonable_encoderYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/fastapi/fastapi.encoders.jsonable_encoder@0.60.2-0.61.0/fastapi.encoders.jsonable_encoder#1YY/jsonable_encoderYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[16/284] 正在处理: flask.json.load#1YY/loadYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/flask/flask.json.load@2.2.5-2.3.0/flask.json.load#1YY/loadYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[17/284] 正在处理: from_file#1YY/from_fileYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/flask/from_file@2.2.5-2.3.0/from_file#1YY/from_fileYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[18/284] 正在处理: gensim.models.base_any2vec.BaseWordEmbeddingsModel#1YY/BaseWordEmbeddingsModelYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.base_any2vec.BaseWordEmbeddingsModel@3.4.0-3.5.0/gensim.models.base_any2vec.BaseWordEmbeddingsModel#1YY/BaseWordEmbeddingsModelYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[19/284] 正在处理: gensim.models.coherencemodel.CoherenceModel#1NN/CoherenceModelNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.coherencemodel.CoherenceModel@0.13.1-0.13.2/gensim.models.coherencemodel.CoherenceModel#1NN/CoherenceModelNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.4s ---
+
+============================================================
+[20/284] 正在处理: gensim.models.doc2vec.Doc2Vec.infer_vector#1YY/infer_vectorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec.infer_vector@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.infer_vector#1YY/infer_vectorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[21/284] 正在处理: gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs#1YY/similarity_unseen_docsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.similarity_unseen_docs#1YY/similarity_unseen_docsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 5.0s ---
+
+============================================================
+[22/284] 正在处理: gensim.models.doc2vec.Doc2Vec#1YY/Doc2VecYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec@3.5.0-3.6.0/gensim.models.doc2vec.Doc2Vec#1YY/Doc2VecYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[23/284] 正在处理: gensim.models.fasttext.FastText#1YY/FastTextYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.fasttext.FastText@3.8.3-4.0.0/gensim.models.fasttext.FastText#1YY/FastTextYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.9s ---
+
+============================================================
+[24/284] 正在处理: gensim.models.hdpmodel.HdpModel.print_topics#1YY/print_topicsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.hdpmodel.HdpModel.print_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.print_topics#1YY/print_topicsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[25/284] 正在处理: gensim.models.hdpmodel.HdpModel.show_topics#1YY/show_topicsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.hdpmodel.HdpModel.show_topics@0.13.1-0.13.2/gensim.models.hdpmodel.HdpModel.show_topics#1YY/show_topicsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[26/284] 正在处理: gensim.models.ldamodel.LdaModel.diff#1YY/diffYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.ldamodel.LdaModel.diff@2.3.0-3.0.0/gensim.models.ldamodel.LdaModel.diff#1YY/diffYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.8s ---
+
+============================================================
+[27/284] 正在处理: gensim.models.word2vec.Word2Vec.intersect_word2vec_format#1YY/intersect_word2vec_formatYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.word2vec.Word2Vec.intersect_word2vec_format@0.13.1-0.13.2/gensim.models.word2vec.Word2Vec.intersect_word2vec_format#1YY/intersect_word2vec_formatYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.4s ---
+
+============================================================
+[28/284] 正在处理: gensim.models.word2vec.Word2Vec.load_word2vec_format#1YY/load_word2vec_formatYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.word2vec.Word2Vec.load_word2vec_format@0.12.3-0.12.4/gensim.models.word2vec.Word2Vec.load_word2vec_format#1YY/load_word2vec_formatYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.9s ---
+
+============================================================
+[29/284] 正在处理: gensim.models.word2vec.Word2Vec.train#1NN/trainNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.word2vec.Word2Vec.train@1.0.1-2.0.0/gensim.models.word2vec.Word2Vec.train#1NN/trainNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[30/284] 正在处理: Response#1YY/ResponseYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/Response@0.17.1-0.18.0/Response#1YY/ResponseYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[31/284] 正在处理: URL#1YY/URLYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/URL@0.13.3-0.14.0/URL#1YY/URLYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[32/284] 正在处理: client.send#1YY/sendYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/client.send@0.19.0-0.20.0/client.send#1YY/sendYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.6s ---
+
+============================================================
+[33/284] 正在处理: httpx.AsyncClient#1YY/AsyncClientYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/httpx.AsyncClient@0.11.1-0.12.0/httpx.AsyncClient#1YY/AsyncClientYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[34/284] 正在处理: httpx.Proxy#1YY/ProxyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/httpx.Proxy@0.18.2-0.19.0/httpx.Proxy#1YY/ProxyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[35/284] 正在处理: httpx.delete#1YY/deleteYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/httpx/httpx.delete@0.7.4-0.7.5/httpx.delete#1YY/deleteYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[36/284] 正在处理: jax.experimental.jax2tf.convert#1YY/convertYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/jax/jax.experimental.jax2tf.convert@0.4.12-0.4.13/jax.experimental.jax2tf.convert#1YY/convertYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=13s
+--- OK | elapsed: 13.4s ---
+
+============================================================
+[37/284] 正在处理: Conv2DTranspose#1YY/Conv2DTransposeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/keras/Conv2DTranspose@2.2.2-2.2.3/Conv2DTranspose#1YY/Conv2DTransposeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=9s
+--- OK | elapsed: 9.9s ---
+
+============================================================
+[38/284] 正在处理: DepthwiseConv2D#1YY/DepthwiseConv2DYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/keras/DepthwiseConv2D@2.2.4-2.2.5/DepthwiseConv2D#1YY/DepthwiseConv2DYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=8s
+--- OK | elapsed: 9.0s ---
+
+============================================================
+[39/284] 正在处理: ReduceLROnPlateau#1YY/ReduceLROnPlateauYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/keras/ReduceLROnPlateau@2.1.5-2.1.6/ReduceLROnPlateau#1YY/ReduceLROnPlateauYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=12s
+--- OK | elapsed: 12.6s ---
+
+============================================================
+[40/284] 正在处理: keras.preprocessing.image.ImageDataGenerator#1YY/ImageDataGeneratorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/keras/keras.preprocessing.image.ImageDataGenerator@2.1.4-2.1.5/keras.preprocessing.image.ImageDataGenerator#1YY/ImageDataGeneratorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[41/284] 正在处理: loguru.logger.configure#1YY/configureYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/loguru/loguru.logger.configure@0.3.2-0.4.0/loguru.logger.configure#1YY/configureYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[42/284] 正在处理: matplotlib.axes.Axes.imshow#1YY/imshowYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.axes.Axes.imshow@3.4.3-3.5.0/matplotlib.axes.Axes.imshow#1YY/imshowYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[43/284] 正在处理: matplotlib.cbook.normalize_kwargs#1YY/normalize_kwargsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.cbook.normalize_kwargs@3.4.3-3.5.0/matplotlib.cbook.normalize_kwargs#1YY/normalize_kwargsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.5s ---
+
+============================================================
+[44/284] 正在处理: matplotlib.collections.AsteriskPolygonCollection.set_offset_transform#1YY/set_offset_transformYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform@3.5.3-3.6.0/matplotlib.collections.AsteriskPolygonCollection.set_offset_transform#1YY/set_offset_transformYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=15s
+--- OK | elapsed: 15.6s ---
+
+============================================================
+[45/284] 正在处理: matplotlib.colorbar.Colorbar.set_ticks#1YY/set_ticksYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.colorbar.Colorbar.set_ticks@3.6.3-3.7.0/matplotlib.colorbar.Colorbar.set_ticks#1YY/set_ticksYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.5s ---
+
+============================================================
+[46/284] 正在处理: matplotlib.gridspec.GridSpec#1YY/GridSpecYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.gridspec.GridSpec@2.1.2-2.2.0/matplotlib.gridspec.GridSpec#1YY/GridSpecYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.4s ---
+
+============================================================
+[47/284] 正在处理: matplotlib.image.BboxImage#1YY/BboxImageYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.image.BboxImage@3.2.2-3.3.0/matplotlib.image.BboxImage#1YY/BboxImageYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.4s ---
+
+============================================================
+[48/284] 正在处理: matplotlib.patches.FancyArrowPatch#1YY/FancyArrowPatchYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patches.FancyArrowPatch@3.5.3-3.6.0/matplotlib.patches.FancyArrowPatch#1YY/FancyArrowPatchYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[49/284] 正在处理: matplotlib.patches.FancyBboxPatch#1YY/FancyBboxPatchYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patches.FancyBboxPatch@3.6.3-3.7.0/matplotlib.patches.FancyBboxPatch#1YY/FancyBboxPatchYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.4s ---
+
+============================================================
+[50/284] 正在处理: matplotlib.patches.Rectangle#1YY/RectangleYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patches.Rectangle@3.5.3-3.6.0/matplotlib.patches.Rectangle#1YY/RectangleYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.6s ---
+
+============================================================
+[51/284] 正在处理: matplotlib.patches.Shadow#1YY/ShadowYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patches.Shadow@3.4.3-3.5.0/matplotlib.patches.Shadow#1YY/ShadowYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.3s ---
+
+============================================================
+[52/284] 正在处理: matplotlib.path.Path.cleaned#1YY/cleanedYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.path.Path.cleaned@3.4.3-3.5.0/matplotlib.path.Path.cleaned#1YY/cleanedYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[53/284] 正在处理: matplotlib.patheffects.SimplePatchShadow#1YY/SimplePatchShadowYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patheffects.SimplePatchShadow@1.4.3-1.5.0/matplotlib.patheffects.SimplePatchShadow#1YY/SimplePatchShadowYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[54/284] 正在处理: matplotlib.testing.compare.calculate_rms#1YY/calculate_rmsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.testing.compare.calculate_rms@3.0.3-3.1.0/matplotlib.testing.compare.calculate_rms#1YY/calculate_rmsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.9s ---
+
+============================================================
+[55/284] 正在处理: matplotlib.use#1YY/useYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.use@3.2.2-3.3.0/matplotlib.use#1YY/useYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.6s ---
+
+============================================================
+[56/284] 正在处理: average_clustering#1YY/average_clusteringYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/average_clustering@1.5-1.6/average_clustering#1YY/average_clusteringYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[57/284] 正在处理: average_neighbor_degree#1YY/average_neighbor_degreeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/average_neighbor_degree@1.5-1.6/average_neighbor_degree#1YY/average_neighbor_degreeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[58/284] 正在处理: average_shortest_path_length#1YY/average_shortest_path_lengthYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/average_shortest_path_length@1.4-1.5/average_shortest_path_length#1YY/average_shortest_path_lengthYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.9s ---
+
+============================================================
+[59/284] 正在处理: betweenness_centrality#1YY/betweenness_centralityYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/betweenness_centrality@1.5-1.6/betweenness_centrality#1YY/betweenness_centralityYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[60/284] 正在处理: betweenness_centrality_source#1YY/betweenness_centrality_sourceYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/betweenness_centrality_source@1.4-1.5/betweenness_centrality_source#1YY/betweenness_centrality_sourceYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[61/284] 正在处理: closeness_vitality#1YY/closeness_vitalityYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/closeness_vitality@1.4-1.5/closeness_vitality#1YY/closeness_vitalityYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[62/284] 正在处理: clustering#1YY/clusteringYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/clustering@1.5-1.6/clustering#1YY/clusteringYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[63/284] 正在处理: degree#1YY/degreeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/degree@1.5-1.6/degree#1YY/degreeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[64/284] 正在处理: edge_betweenness_centrality_subset#1YY/edge_betweenness_centrality_subsetYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/edge_betweenness_centrality_subset@1.4-1.5/edge_betweenness_centrality_subset#1YY/edge_betweenness_centrality_subsetYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[65/284] 正在处理: geographical_threshold_graph#1YY/geographical_threshold_graphYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/geographical_threshold_graph@2.0-2.1/geographical_threshold_graph#1YY/geographical_threshold_graphYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[66/284] 正在处理: is_isomorphic#1YY/is_isomorphicYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/is_isomorphic@1.5-1.6/is_isomorphic#1YY/is_isomorphicYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.9s ---
+
+============================================================
+[67/284] 正在处理: networkx.betweenness_centrality#1YY/betweenness_centralityYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.betweenness_centrality@1.4-1.5/networkx.betweenness_centrality#1YY/betweenness_centralityYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[68/284] 正在处理: networkx.closeness_centrality#1YY/closeness_centralityYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.closeness_centrality@1.4-1.5/networkx.closeness_centrality#1YY/closeness_centralityYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[69/284] 正在处理: networkx.community.greedy_modularity_communities#1YY/greedy_modularity_communitiesYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.community.greedy_modularity_communities@2.8.8-3.0/networkx.community.greedy_modularity_communities#1YY/greedy_modularity_communitiesYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[70/284] 正在处理: networkx.linalg.graphmatrix.adjacency_matrix#1YY/adjacency_matrixYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.linalg.graphmatrix.adjacency_matrix@2.5.1-2.6/networkx.linalg.graphmatrix.adjacency_matrix#1YY/adjacency_matrixYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[71/284] 正在处理: networkx.min_weight_matching#1YY/min_weight_matchingYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.min_weight_matching@2.8.8-3.0/networkx.min_weight_matching#1YY/min_weight_matchingYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[72/284] 正在处理: networkx.to_pandas_edgelist#1YY/to_pandas_edgelistYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.to_pandas_edgelist@2.8.8-3.0/networkx.to_pandas_edgelist#1YY/to_pandas_edgelistYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.2s ---
+
+============================================================
+[73/284] 正在处理: networkx.union#1YY/unionYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.union@2.8.8-3.0/networkx.union#1YY/unionYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[74/284] 正在处理: set_edge_attributes#1NN/set_edge_attributesNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/set_edge_attributes@1.11-2.0/set_edge_attributes#1NN/set_edge_attributesNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.4s ---
+
+============================================================
+[75/284] 正在处理: set_node_attributes#1NN/set_node_attributesNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/set_node_attributes@1.11-2.0/set_node_attributes#1NN/set_node_attributesNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.3s ---
+
+============================================================
+[76/284] 正在处理: shortest_path#1YY/shortest_pathYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/shortest_path@1.4-1.5/shortest_path#1YY/shortest_pathYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[77/284] 正在处理: shortest_path_length#1YY/shortest_path_lengthYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/shortest_path_length@1.4-1.5/shortest_path_length#1YY/shortest_path_lengthYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[78/284] 正在处理: spectral_layout#1YY/spectral_layoutYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/networkx/spectral_layout@1.5-1.6/spectral_layout#1YY/spectral_layoutYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.5s ---
+
+============================================================
+[79/284] 正在处理: numpy.correlate#1YY/correlateYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.correlate@1.9.3-1.10.0/numpy.correlate#1YY/correlateYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.5s ---
+
+============================================================
+[80/284] 正在处理: numpy.fix#1YY/fixYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.fix@1.12.1-1.13.0/numpy.fix#1YY/fixYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.4s ---
+
+============================================================
+[81/284] 正在处理: numpy.genfromtxt#1YY/genfromtxtYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.genfromtxt@1.9.3-1.10.0/numpy.genfromtxt#1YY/genfromtxtYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[82/284] 正在处理: numpy.histogram2d#1YY/histogram2dYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.histogram2d@1.23.5-1.24.0/numpy.histogram2d#1YY/histogram2dYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.2s ---
+
+============================================================
+[83/284] 正在处理: numpy.histogram#1YY/histogramYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.histogram@1.23.5-1.24.0/numpy.histogram#1YY/histogramYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+key2pos-->copy
+key2pos-->order
+key2pos-->subok
+key2pos-->ndmin
+Total run time=9s
+--- OK | elapsed: 9.6s ---
+
+============================================================
+[84/284] 正在处理: numpy.histogramdd#1YY/histogramddYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.histogramdd@1.23.5-1.24.0/numpy.histogramdd#1YY/histogramddYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 5.0s ---
+
+============================================================
+[85/284] 正在处理: numpy.isneginf#1YY/isneginfYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.isneginf@1.12.1-1.13.0/numpy.isneginf#1YY/isneginfYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.1s ---
+
+============================================================
+[86/284] 正在处理: numpy.isposinf#1YY/isposinfYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.isposinf@1.12.1-1.13.0/numpy.isposinf#1YY/isposinfYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.2s ---
+
+============================================================
+[87/284] 正在处理: numpy.ma.argsort#1YY/argsortYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.ma.argsort@1.12.1-1.13.0/numpy.ma.argsort#1YY/argsortYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[88/284] 正在处理: numpy.percentile#1YY/percentileYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.percentile@1.21.6-1.22.0/numpy.percentile#1YY/percentileYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.4s ---
+
+============================================================
+[89/284] 正在处理: numpy.quantile#1YY/quantileYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/numpy/numpy.quantile@1.21.6-1.22.0/numpy.quantile#1YY/quantileYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.9s ---
+
+============================================================
+[90/284] 正在处理: DataFrame.between_time#1YY/between_timeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.between_time@1.5.3-2.0.0/DataFrame.between_time#1YY/between_timeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.4s ---
+
+============================================================
+[91/284] 正在处理: DataFrame.describe#1YY/describeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.describe@1.5.3-2.0.0/DataFrame.describe#1YY/describeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.8s ---
+
+============================================================
+[92/284] 正在处理: DataFrame.ewm#1YY/ewmYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.ewm@1.3.5-1.4.0/DataFrame.ewm#1YY/ewmYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.5s ---
+
+============================================================
+[93/284] 正在处理: DataFrame.groupby#1YY/groupbyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.groupby@1.5.3-2.0.0/DataFrame.groupby#1YY/groupbyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[94/284] 正在处理: DataFrame.info#1YY/infoYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.info@1.5.3-2.0.0/DataFrame.info#1YY/infoYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.9s ---
+
+============================================================
+[95/284] 正在处理: DataFrame.mask#1YY/maskYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.mask@1.5.3-2.0.0/DataFrame.mask#1YY/maskYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[96/284] 正在处理: DataFrame.reset_index#1YY/reset_indexYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.reset_index@1.4.4-1.5.0/DataFrame.reset_index#1YY/reset_indexYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[97/284] 正在处理: DataFrame.rolling#1YY/rollingYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.rolling@1.4.4-1.5.0/DataFrame.rolling#1YY/rollingYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[98/284] 正在处理: DataFrame.set_axis#1YY/set_axisYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.set_axis@1.5.3-2.0.0/DataFrame.set_axis#1YY/set_axisYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.9s ---
+
+============================================================
+[99/284] 正在处理: DataFrame.take#1YY/takeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.take@1.5.3-2.0.0/DataFrame.take#1YY/takeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.5s ---
+
+============================================================
+[100/284] 正在处理: DataFrame.to_excel#1YY/to_excelYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.to_excel@1.5.3-2.0.0/DataFrame.to_excel#1YY/to_excelYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[101/284] 正在处理: DataFrame.to_latex#1YY/to_latexYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.to_latex@1.5.3-2.0.0/DataFrame.to_latex#1YY/to_latexYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 3.0s ---
+
+============================================================
+[102/284] 正在处理: DataFrame.to_stata#1YY/to_stataYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.to_stata@1.3.5-1.4.0/DataFrame.to_stata#1YY/to_stataYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.6s ---
+
+============================================================
+[103/284] 正在处理: DataFrame.where#1YY/whereYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.where@1.5.3-2.0.0/DataFrame.where#1YY/whereYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[104/284] 正在处理: Index.copy#1YY/copyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.copy@1.5.3-2.0.0/Index.copy#1YY/copyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 3.0s ---
+
+============================================================
+[105/284] 正在处理: Index.get_loc#1YY/get_locYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.get_loc@1.5.3-2.0.0/Index.get_loc#1YY/get_locYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[106/284] 正在处理: Index.get_slice_bound#1YY/get_slice_boundYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.get_slice_bound@1.5.3-2.0.0/Index.get_slice_bound#1YY/get_slice_boundYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.6s ---
+
+============================================================
+[107/284] 正在处理: Index.slice_indexer#1YY/slice_indexerYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.slice_indexer@1.5.3-2.0.0/Index.slice_indexer#1YY/slice_indexerYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.9s ---
+
+============================================================
+[108/284] 正在处理: Index.slice_locs#1YY/slice_locsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.slice_locs@1.5.3-2.0.0/Index.slice_locs#1YY/slice_locsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[109/284] 正在处理: Series.describe#1YY/describeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.describe@1.5.3-2.0.0/Series.describe#1YY/describeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.6s ---
+
+============================================================
+[110/284] 正在处理: Series.ewm#1YY/ewmYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.ewm@1.3.5-1.4.0/Series.ewm#1YY/ewmYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.1s ---
+
+============================================================
+[111/284] 正在处理: Series.groupby#1YY/groupbyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.groupby@1.5.3-2.0.0/Series.groupby#1YY/groupbyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.2s ---
+
+============================================================
+[112/284] 正在处理: Series.mask#1YY/maskYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.mask@1.5.3-2.0.0/Series.mask#1YY/maskYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.9s ---
+
+============================================================
+[113/284] 正在处理: Series.rolling#1YY/rollingYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.rolling@1.4.4-1.5.0/Series.rolling#1YY/rollingYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[114/284] 正在处理: Series.set_axis#1YY/set_axisYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.set_axis@1.5.3-2.0.0/Series.set_axis#1YY/set_axisYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[115/284] 正在处理: Series.take#1YY/takeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.take@1.5.3-2.0.0/Series.take#1YY/takeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.4s ---
+
+============================================================
+[116/284] 正在处理: Series.where#1YY/whereYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Series.where@1.5.3-2.0.0/Series.where#1YY/whereYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[117/284] 正在处理: Styler.background_gradient#1YY/background_gradientYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Styler.background_gradient@1.2.5-1.3.0/Styler.background_gradient#1YY/background_gradientYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.5s ---
+
+============================================================
+[118/284] 正在处理: Styler.format#1YY/formatYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Styler.format@1.2.5-1.3.0/Styler.format#1YY/formatYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.7s ---
+
+============================================================
+[119/284] 正在处理: Timestamp.fromordinal#1YY/fromordinalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Timestamp.fromordinal@1.5.3-2.0.0/Timestamp.fromordinal#1YY/fromordinalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.9s ---
+
+============================================================
+[120/284] 正在处理: Timestamp#1YY/TimestampYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/Timestamp@1.5.3-2.0.0/Timestamp#1YY/TimestampYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[121/284] 正在处理: bdate_range#1YY/bdate_rangeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/bdate_range@1.5.3-2.0.0/bdate_range#1YY/bdate_rangeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.8s ---
+
+============================================================
+[122/284] 正在处理: core.arrays.SparseArray#1YY/SparseArrayYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/core.arrays.SparseArray@1.5.3-2.0.0/core.arrays.SparseArray#1YY/SparseArrayYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[123/284] 正在处理: date_range#1YY/date_rangeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/date_range@1.5.3-2.0.0/date_range#1YY/date_rangeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.8s ---
+
+============================================================
+[124/284] 正在处理: melt#1YY/meltYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/melt@1.0.5-1.1.0/melt#1YY/meltYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.7s ---
+
+============================================================
+[125/284] 正在处理: pandas.DataFrame.resample#1YY/resampleYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/pandas.DataFrame.resample@1.5.3-2.0.0/pandas.DataFrame.resample#1YY/resampleYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.8s ---
+
+============================================================
+[126/284] 正在处理: pandas.Series.resample#1YY/resampleYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/pandas.Series.resample@1.5.3-2.0.0/pandas.Series.resample#1YY/resampleYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.6s ---
+
+============================================================
+[127/284] 正在处理: read_csv#1YY/read_csvYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/read_csv@1.2.5-1.3.0/read_csv#1YY/read_csvYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[128/284] 正在处理: read_csv#1YY/read_csvYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/read_csv@1.5.3-2.0.0/read_csv#1YY/read_csvYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.9s ---
+
+============================================================
+[129/284] 正在处理: testing.assert_extension_array_equal#1YY/assert_extension_array_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_extension_array_equal@1.5.3-2.0.0/testing.assert_extension_array_equal#1YY/assert_extension_array_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[130/284] 正在处理: testing.assert_frame_equal#1YY/assert_frame_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_frame_equal@1.0.5-1.1.0/testing.assert_frame_equal#1YY/assert_frame_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[131/284] 正在处理: testing.assert_frame_equal#1YY/assert_frame_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_frame_equal@1.5.3-2.0.0/testing.assert_frame_equal#1YY/assert_frame_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[132/284] 正在处理: testing.assert_index_equal#1YY/assert_index_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_index_equal@1.5.3-2.0.0/testing.assert_index_equal#1YY/assert_index_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.6s ---
+
+============================================================
+[133/284] 正在处理: testing.assert_series_equal#1YY/assert_series_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_series_equal@1.0.5-1.1.0/testing.assert_series_equal#1YY/assert_series_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.8s ---
+
+============================================================
+[134/284] 正在处理: testing.assert_series_equal#1YY/assert_series_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_series_equal@1.1.5-1.2.0/testing.assert_series_equal#1YY/assert_series_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.5s ---
+
+============================================================
+[135/284] 正在处理: testing.assert_series_equal#1YY/assert_series_equalYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pandas/testing.assert_series_equal@1.5.3-2.0.0/testing.assert_series_equal#1YY/assert_series_equalYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.6s ---
+
+============================================================
+[136/284] 正在处理: plotly.express.area#1YY/areaYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.area@4.2.1-4.3.0/plotly.express.area#1YY/areaYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 7.0s ---
+
+============================================================
+[137/284] 正在处理: plotly.express.bar#1YY/barYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.bar@4.14.3-5.0.0/plotly.express.bar#1YY/barYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=10s
+--- OK | elapsed: 10.9s ---
+
+============================================================
+[138/284] 正在处理: plotly.express.bar#1YY/barYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.bar@4.2.1-4.3.0/plotly.express.bar#1YY/barYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.2s ---
+
+============================================================
+[139/284] 正在处理: plotly.express.bar#1YY/barYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.bar@5.4.0-5.5.0/plotly.express.bar#1YY/barYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=11s
+--- OK | elapsed: 11.4s ---
+
+============================================================
+[140/284] 正在处理: plotly.express.bar_polar#1YY/bar_polarYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.bar_polar@4.14.3-5.0.0/plotly.express.bar_polar#1YY/bar_polarYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.8s ---
+
+============================================================
+[141/284] 正在处理: plotly.express.bar_polar#1YY/bar_polarYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.bar_polar@4.3.0-4.4.0/plotly.express.bar_polar#1YY/bar_polarYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.0s ---
+
+============================================================
+[142/284] 正在处理: plotly.express.box#1YY/boxYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.box@4.2.1-4.3.0/plotly.express.box#1YY/boxYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 5.0s ---
+
+============================================================
+[143/284] 正在处理: plotly.express.density_contour#1YY/density_contourYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.density_contour@4.2.1-4.3.0/plotly.express.density_contour#1YY/density_contourYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.1s ---
+
+============================================================
+[144/284] 正在处理: plotly.express.density_contour#1YY/density_contourYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.density_contour@5.1.0-5.2.1/plotly.express.density_contour#1YY/density_contourYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=9s
+--- OK | elapsed: 9.8s ---
+
+============================================================
+[145/284] 正在处理: plotly.express.density_heatmap#1YY/density_heatmapYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.density_heatmap@4.2.1-4.3.0/plotly.express.density_heatmap#1YY/density_heatmapYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.9s ---
+
+============================================================
+[146/284] 正在处理: plotly.express.density_heatmap#1YY/density_heatmapYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.density_heatmap@5.4.0-5.5.0/plotly.express.density_heatmap#1YY/density_heatmapYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.9s ---
+
+============================================================
+[147/284] 正在处理: plotly.express.histogram#1YY/histogramYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.histogram@4.14.3-5.0.0/plotly.express.histogram#1YY/histogramYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.6s ---
+
+============================================================
+[148/284] 正在处理: plotly.express.histogram#1YY/histogramYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.histogram@4.2.1-4.3.0/plotly.express.histogram#1YY/histogramYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.1s ---
+
+============================================================
+[149/284] 正在处理: plotly.express.histogram#1YY/histogramYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.histogram@5.4.0-5.5.0/plotly.express.histogram#1YY/histogramYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[150/284] 正在处理: plotly.express.imshow#1YY/imshowYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.imshow@4.13.0-4.14.0/plotly.express.imshow#1YY/imshowYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 8.0s ---
+
+============================================================
+[151/284] 正在处理: plotly.express.line#1YY/lineYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line@4.2.1-4.3.0/plotly.express.line#1YY/lineYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.2s ---
+
+============================================================
+[152/284] 正在处理: plotly.express.line#1YY/lineYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line@5.1.0-5.2.1/plotly.express.line#1YY/lineYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.3s ---
+
+============================================================
+[153/284] 正在处理: plotly.express.line_3d#1YY/line_3dYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_3d@5.1.0-5.2.1/plotly.express.line_3d#1YY/line_3dYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.1s ---
+
+============================================================
+[154/284] 正在处理: plotly.express.line_geo#1YY/line_geoYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_geo@5.1.0-5.2.1/plotly.express.line_geo#1YY/line_geoYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.4s ---
+
+============================================================
+[155/284] 正在处理: plotly.express.line_mapbox#1YY/line_mapboxYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_mapbox@4.3.0-4.4.0/plotly.express.line_mapbox#1YY/line_mapboxYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.1s ---
+
+============================================================
+[156/284] 正在处理: plotly.express.line_polar#1YY/line_polarYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_polar@4.3.0-4.4.0/plotly.express.line_polar#1YY/line_polarYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.2s ---
+
+============================================================
+[157/284] 正在处理: plotly.express.line_polar#1YY/line_polarYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_polar@5.1.0-5.2.1/plotly.express.line_polar#1YY/line_polarYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.8s ---
+
+============================================================
+[158/284] 正在处理: plotly.express.line_ternary#1YY/line_ternaryYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.line_ternary@5.1.0-5.2.1/plotly.express.line_ternary#1YY/line_ternaryYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.9s ---
+
+============================================================
+[159/284] 正在处理: plotly.express.scatter#1YY/scatterYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.scatter@4.2.1-4.3.0/plotly.express.scatter#1YY/scatterYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.9s ---
+
+============================================================
+[160/284] 正在处理: plotly.express.scatter#1YY/scatterYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.scatter@5.1.0-5.2.1/plotly.express.scatter#1YY/scatterYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[161/284] 正在处理: plotly.express.scatter_mapbox#1YY/scatter_mapboxYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.scatter_mapbox@4.3.0-4.4.0/plotly.express.scatter_mapbox#1YY/scatter_mapboxYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.2s ---
+
+============================================================
+[162/284] 正在处理: plotly.express.scatter_polar#1YY/scatter_polarYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.scatter_polar@4.3.0-4.4.0/plotly.express.scatter_polar#1YY/scatter_polarYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.3s ---
+
+============================================================
+[163/284] 正在处理: plotly.express.strip#1YY/stripYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.strip@4.2.1-4.3.0/plotly.express.strip#1YY/stripYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.1s ---
+
+============================================================
+[164/284] 正在处理: plotly.express.sunburst#1YY/sunburstYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.sunburst@4.4.1-4.5.0/plotly.express.sunburst#1YY/sunburstYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.2s ---
+
+============================================================
+[165/284] 正在处理: plotly.express.treemap#1YY/treemapYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.treemap@4.4.1-4.5.0/plotly.express.treemap#1YY/treemapYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.3s ---
+
+============================================================
+[166/284] 正在处理: plotly.express.violin#1YY/violinYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.violin@4.2.1-4.3.0/plotly.express.violin#1YY/violinYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.1s ---
+
+============================================================
+[167/284] 正在处理: plotly.figure_factory.create_choropleth#1YY/create_choroplethYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.figure_factory.create_choropleth@2.4.1-2.5.0/plotly.figure_factory.create_choropleth#1YY/create_choroplethYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=9s
+--- OK | elapsed: 9.7s ---
+
+============================================================
+[168/284] 正在处理: plotly.figure_factory.create_violin#1YY/create_violinYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.figure_factory.create_violin@2.0.8-2.0.9/plotly.figure_factory.create_violin#1YY/create_violinYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[169/284] 正在处理: plotly.tools.FigureFactory.create_distplot#1YY/create_distplotYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.tools.FigureFactory.create_distplot@1.10.0-1.11.0/plotly.tools.FigureFactory.create_distplot#1YY/create_distplotYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[170/284] 正在处理: polars.DataFrame.drop#1YY/dropYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.drop@0.14.17-0.14.18/polars.DataFrame.drop#1YY/dropYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.1s ---
+
+============================================================
+[171/284] 正在处理: polars.DataFrame.fill_nan#1YY/fill_nanYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.fill_nan@0.16.18-0.17.0/polars.DataFrame.fill_nan#1YY/fill_nanYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.1s ---
+
+============================================================
+[172/284] 正在处理: polars.DataFrame.replace#1YY/replaceYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.replace@0.16.18-0.17.0/polars.DataFrame.replace#1YY/replaceYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.1s ---
+
+============================================================
+[173/284] 正在处理: polars.DataFrame.sample#1YY/sampleYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.sample@0.16.18-0.17.0/polars.DataFrame.sample#1YY/sampleYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[174/284] 正在处理: polars.DataFrame.shift_and_fill#1NN/shift_and_fillNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.shift_and_fill@0.16.18-0.17.0/polars.DataFrame.shift_and_fill#1NN/shift_and_fillNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[175/284] 正在处理: polars.DataFrame.write_json#1YY/write_jsonYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.write_json@0.15.18-0.16.1/polars.DataFrame.write_json#1YY/write_jsonYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[176/284] 正在处理: polars.Expr.clip#1YY/clipYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.clip@0.16.18-0.17.0/polars.Expr.clip#1YY/clipYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[177/284] 正在处理: polars.Expr.is_between#1YY/is_betweenYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.is_between@0.16.18-0.17.0/polars.Expr.is_between#1YY/is_betweenYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[178/284] 正在处理: polars.Expr.map_dict#1YY/map_dictYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.map_dict@0.16.18-0.17.0/polars.Expr.map_dict#1YY/map_dictYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[179/284] 正在处理: polars.Expr.reshape#1YY/reshapeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.reshape@0.16.18-0.17.0/polars.Expr.reshape#1YY/reshapeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[180/284] 正在处理: polars.Expr.str.contains#1YY/containsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.contains@0.16.18-0.17.0/polars.Expr.str.contains#1YY/containsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[181/284] 正在处理: polars.Expr.str.ends_with#1YY/ends_withYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.ends_with@0.16.18-0.17.0/polars.Expr.str.ends_with#1YY/ends_withYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[182/284] 正在处理: polars.Expr.str.ljust#1YY/ljustYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.ljust@0.16.18-0.17.0/polars.Expr.str.ljust#1YY/ljustYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[183/284] 正在处理: polars.Expr.str.rjust#1YY/rjustYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.rjust@0.16.18-0.17.0/polars.Expr.str.rjust#1YY/rjustYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.1s ---
+
+============================================================
+[184/284] 正在处理: polars.Expr.str.starts_with#1YY/starts_withYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.starts_with@0.16.18-0.17.0/polars.Expr.str.starts_with#1YY/starts_withYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[185/284] 正在处理: polars.Expr.str.strip#1YY/stripYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.Expr.str.strip@0.16.18-0.17.0/polars.Expr.str.strip#1YY/stripYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[186/284] 正在处理: polars.any#1YY/anyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.any@0.16.18-0.17.0/polars.any#1YY/anyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[187/284] 正在处理: polars.arange#1YY/arangeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.arange@0.16.18-0.17.0/polars.arange#1YY/arangeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[188/284] 正在处理: polars.arg_where#1YY/arg_whereYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.arg_where@0.16.18-0.17.0/polars.arg_where#1YY/arg_whereYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[189/284] 正在处理: polars.date_range#1YY/date_rangeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.date_range@0.16.18-0.17.0/polars.date_range#1YY/date_rangeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[190/284] 正在处理: polars.expr.str.strptime#1YY/strptimeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.expr.str.strptime@0.17.15-0.18.0/polars.expr.str.strptime#1YY/strptimeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[191/284] 正在处理: polars.format#1YY/formatYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.format@0.16.18-0.17.0/polars.format#1YY/formatYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[192/284] 正在处理: polars.from_pandas#1YY/from_pandasYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.from_pandas@0.16.2-0.16.3/polars.from_pandas#1YY/from_pandasYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[193/284] 正在处理: polars.read_json#1YY/read_jsonYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.read_json@0.15.18-0.16.1/polars.read_json#1YY/read_jsonYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[194/284] 正在处理: polars.repeat#1YY/repeatYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.repeat@0.17.14-0.17.15/polars.repeat#1YY/repeatYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[195/284] 正在处理: pydantic.main.create_model#1YY/create_modelYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/pydantic/pydantic.main.create_model@1.4-1.5/pydantic.main.create_model#1YY/create_modelYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.6s ---
+
+============================================================
+[196/284] 正在处理: Columns#1YY/ColumnsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/Columns@1.3.0-1.3.1/Columns#1YY/ColumnsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[197/284] 正在处理: Panel#1YY/PanelYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/Panel@2.3.1-3.0.0/Panel#1YY/PanelYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[198/284] 正在处理: Panel#1YY/PanelYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/Panel@3.1.0-3.2.0/Panel#1YY/PanelYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.9s ---
+
+============================================================
+[199/284] 正在处理: Rule#1YY/RuleYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/Rule@2.3.1-3.0.0/Rule#1YY/RuleYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.4s ---
+
+============================================================
+[200/284] 正在处理: Table.add_column#1YY/add_columnYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/Table.add_column@2.3.1-3.0.0/Table.add_column#1YY/add_columnYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[201/284] 正在处理: install#1YY/installYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/install@12.5.1-12.6.0/install#1YY/installYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[202/284] 正在处理: rich.layout.Layout#1YY/LayoutYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/rich.layout.Layout@12.5.1-12.6.0/rich.layout.Layout#1YY/LayoutYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[203/284] 正在处理: rich.syntax.Syntax.from_path#1YY/from_pathYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/rich.syntax.Syntax.from_path@11.0.0-11.1.0/rich.syntax.Syntax.from_path#1YY/from_pathYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 1.0s ---
+
+============================================================
+[204/284] 正在处理: rich.syntax.Syntax#1YY/SyntaxYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/rich.syntax.Syntax@10.16.2-11.0.0/rich.syntax.Syntax#1YY/SyntaxYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[205/284] 正在处理: traceback.install#1YY/installYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/rich/traceback.install@7.0.0-7.1.0/traceback.install#1YY/installYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[206/284] 正在处理: scipy.linalg.expm#1YY/expmYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.linalg.expm@0.19.1-1.0.0/scipy.linalg.expm#1YY/expmYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[207/284] 正在处理: scipy.linalg.solve#1YY/solveYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.linalg.solve@1.10.1-1.11.0/scipy.linalg.solve#1YY/solveYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[208/284] 正在处理: scipy.linalg.solve_banded#1YY/solve_bandedYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.linalg.solve_banded@1.8.1-1.9.0/scipy.linalg.solve_banded#1YY/solve_bandedYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[209/284] 正在处理: scipy.linalg.solve_triangular#1YY/solve_triangularYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.linalg.solve_triangular@1.8.1-1.9.0/scipy.linalg.solve_triangular#1YY/solve_triangularYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[210/284] 正在处理: scipy.optimize.dual_annealing#1YY/dual_annealingYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.optimize.dual_annealing@1.9.3-1.10.0/scipy.optimize.dual_annealing#1YY/dual_annealingYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 3.0s ---
+
+============================================================
+[211/284] 正在处理: scipy.optimize.fmin_cobyla#1YY/fmin_cobylaYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.optimize.fmin_cobyla@0.19.1-1.0.0/scipy.optimize.fmin_cobyla#1YY/fmin_cobylaYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.3s ---
+
+============================================================
+[212/284] 正在处理: scipy.sparse.linalg.bicg#1YY/bicgYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.bicg@0.19.1-1.0.0/scipy.sparse.linalg.bicg#1YY/bicgYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[213/284] 正在处理: scipy.sparse.linalg.bicgstab#1YY/bicgstabYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.bicgstab@0.19.1-1.0.0/scipy.sparse.linalg.bicgstab#1YY/bicgstabYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[214/284] 正在处理: scipy.sparse.linalg.cg#1YY/cgYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.cg@0.19.1-1.0.0/scipy.sparse.linalg.cg#1YY/cgYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.9s ---
+
+============================================================
+[215/284] 正在处理: scipy.sparse.linalg.cgs#1YY/cgsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.cgs@0.19.1-1.0.0/scipy.sparse.linalg.cgs#1YY/cgsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.6s ---
+
+============================================================
+[216/284] 正在处理: scipy.sparse.linalg.gmres#1YY/gmresYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.gmres@0.19.1-1.0.0/scipy.sparse.linalg.gmres#1YY/gmresYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.2s ---
+
+============================================================
+[217/284] 正在处理: scipy.sparse.linalg.minres#1YY/minresYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.minres@0.19.1-1.0.0/scipy.sparse.linalg.minres#1YY/minresYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.3s ---
+
+============================================================
+[218/284] 正在处理: scipy.sparse.linalg.qmr#1YY/qmrYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.qmr@0.19.1-1.0.0/scipy.sparse.linalg.qmr#1YY/qmrYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[219/284] 正在处理: scipy.sparse.linalg.splu#1YY/spluYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.sparse.linalg.splu@0.19.1-1.0.0/scipy.sparse.linalg.splu#1YY/spluYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.8s ---
+
+============================================================
+[220/284] 正在处理: scipy.spatial.distance.cdist#1YY/cdistYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.spatial.distance.cdist@0.19.1-1.0.0/scipy.spatial.distance.cdist#1YY/cdistYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.3s ---
+
+============================================================
+[221/284] 正在处理: scipy.spatial.distance.pdist#1YY/pdistYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.spatial.distance.pdist@0.19.1-1.0.0/scipy.spatial.distance.pdist#1YY/pdistYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.1s ---
+
+============================================================
+[222/284] 正在处理: scipy.stats.qmc.LatinHypercube#1YY/LatinHypercubeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.qmc.LatinHypercube@1.9.3-1.10.0/scipy.stats.qmc.LatinHypercube#1YY/LatinHypercubeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[223/284] 正在处理: scipy.stats.rv_continuous#1YY/rv_continuousYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.rv_continuous@1.10.1-1.11.0/scipy.stats.rv_continuous#1YY/rv_continuousYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 3.0s ---
+
+============================================================
+[224/284] 正在处理: scipy.stats.rv_discrete.expect#1YY/expectYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.rv_discrete.expect@0.16.1-0.17.0/scipy.stats.rv_discrete.expect#1YY/expectYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+3.2
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[225/284] 正在处理: scipy.stats.rv_discrete#1YY/rv_discreteYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.rv_discrete@1.10.1-1.11.0/scipy.stats.rv_discrete#1YY/rv_discreteYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.5s ---
+
+============================================================
+[226/284] 正在处理: scipy.stats.shapiro#1YY/shapiroYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.shapiro@0.19.1-1.0.0/scipy.stats.shapiro#1YY/shapiroYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.8s ---
+
+============================================================
+[227/284] 正在处理: scipy.stats.ttest_ind#1YY/ttest_indYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/scipy/scipy.stats.ttest_ind@1.6.3-1.7.0/scipy.stats.ttest_ind#1YY/ttest_indYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[228/284] 正在处理: calibration.CalibratedClassifierCV#1YY/CalibratedClassifierCVYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/calibration.CalibratedClassifierCV@1.1.3-1.2.0/calibration.CalibratedClassifierCV#1YY/CalibratedClassifierCVYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.2s ---
+
+============================================================
+[229/284] 正在处理: cluster.AffinityPropagation#1YY/AffinityPropagationYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/cluster.AffinityPropagation@0.22.2-0.23.0/cluster.AffinityPropagation#1YY/AffinityPropagationYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.4s ---
+
+============================================================
+[230/284] 正在处理: cluster.KMeans#1YY/KMeansYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/cluster.KMeans@0.22.2-0.23.0/cluster.KMeans#1YY/KMeansYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 4.0s ---
+
+============================================================
+[231/284] 正在处理: cluster.SpectralBiclustering#1YY/SpectralBiclusteringYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/cluster.SpectralBiclustering@0.22.2-0.23.0/cluster.SpectralBiclustering#1YY/SpectralBiclusteringYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.1s ---
+
+============================================================
+[232/284] 正在处理: cluster.SpectralCoclustering#1YY/SpectralCoclusteringYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/cluster.SpectralCoclustering@0.22.2-0.23.0/cluster.SpectralCoclustering#1YY/SpectralCoclusteringYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 4.0s ---
+
+============================================================
+[233/284] 正在处理: datasets.make_blobs#1YY/make_blobsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/datasets.make_blobs@0.22.2-0.23.0/datasets.make_blobs#1YY/make_blobsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[234/284] 正在处理: ensemble.AdaBoostClassifier#1YY/AdaBoostClassifierYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.AdaBoostClassifier@1.1.3-1.2.0/ensemble.AdaBoostClassifier#1YY/AdaBoostClassifierYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 4.0s ---
+
+============================================================
+[235/284] 正在处理: ensemble.AdaBoostRegressor#1YY/AdaBoostRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.AdaBoostRegressor@1.1.3-1.2.0/ensemble.AdaBoostRegressor#1YY/AdaBoostRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 4.0s ---
+
+============================================================
+[236/284] 正在处理: ensemble.BaggingClassifier#1YY/BaggingClassifierYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.BaggingClassifier@1.1.3-1.2.0/ensemble.BaggingClassifier#1YY/BaggingClassifierYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.9s ---
+
+============================================================
+[237/284] 正在处理: ensemble.BaggingRegressor#1YY/BaggingRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.BaggingRegressor@1.1.3-1.2.0/ensemble.BaggingRegressor#1YY/BaggingRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 4.0s ---
+
+============================================================
+[238/284] 正在处理: ensemble.GradientBoostingRegressor#1YY/GradientBoostingRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.GradientBoostingRegressor@0.23.2-0.24.0/ensemble.GradientBoostingRegressor#1YY/GradientBoostingRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.8s ---
+
+============================================================
+[239/284] 正在处理: ensemble.HistGradientBoostingRegressor#1YY/HistGradientBoostingRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/ensemble.HistGradientBoostingRegressor@0.22.2-0.23.0/ensemble.HistGradientBoostingRegressor#1YY/HistGradientBoostingRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[240/284] 正在处理: linear_model.Lars#1YY/LarsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.Lars@0.22.2-0.23.0/linear_model.Lars#1YY/LarsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[241/284] 正在处理: linear_model.LassoLars#1YY/LassoLarsYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.LassoLars@0.22.2-0.23.0/linear_model.LassoLars#1YY/LassoLarsYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.9s ---
+
+============================================================
+[242/284] 正在处理: linear_model.LinearRegression#1YY/LinearRegressionYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.LinearRegression@1.1.3-1.2.0/linear_model.LinearRegression#1YY/LinearRegressionYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.7s ---
+
+============================================================
+[243/284] 正在处理: linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.RANSACRegressor@0.17.1-0.18/linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.5s ---
+
+============================================================
+[244/284] 正在处理: linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.RANSACRegressor@1.0.2-1.1.0/linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.3s ---
+
+============================================================
+[245/284] 正在处理: linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.RANSACRegressor@1.2.2-1.3.0/linear_model.RANSACRegressor#1YY/RANSACRegressorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.2s ---
+
+============================================================
+[246/284] 正在处理: linear_model.lasso_path#1YY/lasso_pathYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/linear_model.lasso_path@0.15.2-0.16.0/linear_model.lasso_path#1YY/lasso_pathYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[247/284] 正在处理: sklearn.cluster.SpectralClustering#1YY/SpectralClusteringYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.cluster.SpectralClustering@0.21.3-0.22/sklearn.cluster.SpectralClustering#1YY/SpectralClusteringYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=5s
+--- OK | elapsed: 5.7s ---
+
+============================================================
+[248/284] 正在处理: sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis#1YY/QuadraticDiscriminantAnalysisYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis@0.18.1-0.19.0/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis#1YY/QuadraticDiscriminantAnalysisYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.3s ---
+
+============================================================
+[249/284] 正在处理: sklearn.feature_selection.RFECV#1YY/RFECVYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.feature_selection.RFECV@0.17.1-0.18/sklearn.feature_selection.RFECV#1YY/RFECVYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.7s ---
+
+============================================================
+[250/284] 正在处理: sklearn.linear_model.BayesianRidge#1YY/BayesianRidgeYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.linear_model.BayesianRidge@0.21.3-0.22/sklearn.linear_model.BayesianRidge#1YY/BayesianRidgeYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[251/284] 正在处理: sklearn.linear_model.PassiveAggressiveClassifier#1YY/PassiveAggressiveClassifierYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.linear_model.PassiveAggressiveClassifier@0.18.1-0.19.0/sklearn.linear_model.PassiveAggressiveClassifier#1YY/PassiveAggressiveClassifierYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.4s ---
+
+============================================================
+[252/284] 正在处理: sklearn.svm.NuSVC#1YY/NuSVCYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.svm.NuSVC@0.21.3-0.22/sklearn.svm.NuSVC#1YY/NuSVCYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.1s ---
+
+============================================================
+[253/284] 正在处理: sklearn.svm.SVC#1YY/SVCYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sklearn/sklearn.svm.SVC@0.21.3-0.22/sklearn.svm.SVC#1YY/SVCYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[254/284] 正在处理: spacy.load#1YY/loadYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/spacy/spacy.load@3.0.5-3.0.6/spacy.load#1YY/loadYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.6s ---
+
+============================================================
+[255/284] 正在处理: sympy.GramSchmidt#1YY/GramSchmidtYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.GramSchmidt@0.7.6.1-1.0/sympy.GramSchmidt#1YY/GramSchmidtYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[256/284] 正在处理: sympy.crypto.crypto.rsa_private_key#1YY/rsa_private_keyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.crypto.crypto.rsa_private_key@1.4-1.5/sympy.crypto.crypto.rsa_private_key#1YY/rsa_private_keyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.4s ---
+
+============================================================
+[257/284] 正在处理: sympy.crypto.crypto.rsa_public_key#1YY/rsa_public_keyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.crypto.crypto.rsa_public_key@1.4-1.5/sympy.crypto.crypto.rsa_public_key#1YY/rsa_public_keyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[258/284] 正在处理: sympy.geometry.Line3D.equation#1YY/equationYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.geometry.Line3D.equation@1.11.1-1.12/sympy.geometry.Line3D.equation#1YY/equationYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=3s
+--- OK | elapsed: 3.2s ---
+
+============================================================
+[259/284] 正在处理: sympy.itermonomials#1NY/itermonomialsNY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.itermonomials@1.2-1.3/sympy.itermonomials#1NY/itermonomialsNY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[260/284] 正在处理: sympy.physics.mechanics.PinJoint#1YY/PinJointYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.physics.mechanics.PinJoint@1.11.1-1.12/sympy.physics.mechanics.PinJoint#1YY/PinJointYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=19s
+--- OK | elapsed: 19.3s ---
+
+============================================================
+[261/284] 正在处理: sympy.physics.mechanics.PrismaticJoint#1YY/PrismaticJointYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.physics.mechanics.PrismaticJoint@1.11.1-1.12/sympy.physics.mechanics.PrismaticJoint#1YY/PrismaticJointYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=19s
+--- OK | elapsed: 19.9s ---
+
+============================================================
+[262/284] 正在处理: sympy.physics.units.quantities.Quantity#1NY/QuantityNY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.physics.units.quantities.Quantity@1.1.1-1.2/sympy.physics.units.quantities.Quantity#1NY/QuantityNY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 2.0s ---
+
+============================================================
+[263/284] 正在处理: sympy.physics.units.quantities.Quantity#1YY/QuantityYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.physics.units.quantities.Quantity@1.11.1-1.12/sympy.physics.units.quantities.Quantity#1YY/QuantityYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.7s ---
+
+============================================================
+[264/284] 正在处理: tf.contrib.data.make_csv_dataset#1NN/make_csv_datasetNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.contrib.data.make_csv_dataset@1.10.1-1.11.0/tf.contrib.data.make_csv_dataset#1NN/make_csv_datasetNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=9s
+--- OK | elapsed: 9.8s ---
+
+============================================================
+[265/284] 正在处理: tf.contrib.data.make_csv_dataset#1NN/make_csv_datasetNN.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.contrib.data.make_csv_dataset@1.8.0-1.9.0/tf.contrib.data.make_csv_dataset#1NN/make_csv_datasetNN.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=8s
+--- OK | elapsed: 8.8s ---
+
+============================================================
+[266/284] 正在处理: tf.data.Dataset.random#1YY/randomYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.data.Dataset.random@2.11.1-2.12.0/tf.data.Dataset.random#1YY/randomYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=22s
+--- OK | elapsed: 22.5s ---
+
+============================================================
+[267/284] 正在处理: tf.data.experimental.service.DispatchServer#1NY/DispatchServerNY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.data.experimental.service.DispatchServer@2.3.4-2.4.0/tf.data.experimental.service.DispatchServer#1NY/DispatchServerNY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=8s
+--- OK | elapsed: 8.7s ---
+
+============================================================
+[268/284] 正在处理: tf.keras.losses.SparseCategoricalCrossentropy#1YY/SparseCategoricalCrossentropyYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.keras.losses.SparseCategoricalCrossentropy@2.9.3-2.10.0/tf.keras.losses.SparseCategoricalCrossentropy#1YY/SparseCategoricalCrossentropyYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=11s
+--- OK | elapsed: 11.1s ---
+
+============================================================
+[269/284] 正在处理: tf.string_split#1YY/string_splitYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.string_split@1.13.2-1.14.0/tf.string_split#1YY/string_splitYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=15s
+--- OK | elapsed: 15.1s ---
+
+============================================================
+[270/284] 正在处理: torch.btrifact#1YY/btrifactYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/torch/torch.btrifact@1.0.1-1.1.0/torch.btrifact#1YY/btrifactYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=4s
+--- OK | elapsed: 4.3s ---
+
+============================================================
+[271/284] 正在处理: tornado.autoreload.start#1YY/startYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.autoreload.start@4.5.3-5.0/tornado.autoreload.start#1YY/startYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[272/284] 正在处理: tornado.gen.YieldFuture#1YY/YieldFutureYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.gen.YieldFuture@4.5.3-5.0/tornado.gen.YieldFuture#1YY/YieldFutureYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+save to pkl error: cannot pickle '_asyncio.Future' object
+Total run time=0s
+--- OK | elapsed: 0.7s ---
+
+============================================================
+[273/284] 正在处理: tornado.httpclient.AsyncHTTPClient.fetch#1YY/fetchYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.httpclient.AsyncHTTPClient.fetch@5.1.1-6.0/tornado.httpclient.AsyncHTTPClient.fetch#1YY/fetchYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.5s ---
+
+============================================================
+[274/284] 正在处理: tornado.httpclient.AsyncHTTPClient#1YY/AsyncHTTPClientYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.httpclient.AsyncHTTPClient@2.4.1-3.0/tornado.httpclient.AsyncHTTPClient#1YY/AsyncHTTPClientYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[275/284] 正在处理: tornado.httpclient.HTTPRequest#1YY/HTTPRequestYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.httpclient.HTTPRequest@3.0.2-3.1/tornado.httpclient.HTTPRequest#1YY/HTTPRequestYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.6s ---
+
+============================================================
+[276/284] 正在处理: tornado.ioloop.PeriodicCallback#1YY/PeriodicCallbackYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.ioloop.PeriodicCallback@4.5.3-5.0/tornado.ioloop.PeriodicCallback#1YY/PeriodicCallbackYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.4s ---
+
+============================================================
+[277/284] 正在处理: tornado.iostream.BaseIOStream.read_bytes#1YY/read_bytesYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.iostream.BaseIOStream.read_bytes@5.1.1-6.0/tornado.iostream.BaseIOStream.read_bytes#1YY/read_bytesYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=2s
+--- OK | elapsed: 2.1s ---
+
+============================================================
+[278/284] 正在处理: tornado.netutil.add_accept_handler#1YY/add_accept_handlerYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.netutil.add_accept_handler@4.5.3-5.0/tornado.netutil.add_accept_handler#1YY/add_accept_handlerYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.4s ---
+
+============================================================
+[279/284] 正在处理: tornado.platform.twisted.TornadoReactor#1YY/TornadoReactorYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.platform.twisted.TornadoReactor@4.5.3-5.0/tornado.platform.twisted.TornadoReactor#1YY/TornadoReactorYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.9s ---
+
+============================================================
+[280/284] 正在处理: tornado.platform.twisted.install#1YY/installYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.platform.twisted.install@4.5.3-5.0/tornado.platform.twisted.install#1YY/installYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.8s ---
+
+============================================================
+[281/284] 正在处理: tornado.tcpclient.TCPClient#1YY/TCPClientYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.tcpclient.TCPClient@4.5.3-5.0/tornado.tcpclient.TCPClient#1YY/TCPClientYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=1s
+--- OK | elapsed: 1.3s ---
+
+============================================================
+[282/284] 正在处理: tornado.tcpserver.TCPServer#1YY/TCPServerYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/tornado/tornado.tcpserver.TCPServer@4.5.3-5.0/tornado.tcpserver.TCPServer#1YY/TCPServerYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=0s
+--- OK | elapsed: 0.5s ---
+
+============================================================
+[283/284] 正在处理: transformers.modeling_albert.AlbertForPreTraining.forward#1YY/forwardYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/transformers/transformers.modeling_albert.AlbertForPreTraining.forward@2.11.0-3.0.0/transformers.modeling_albert.AlbertForPreTraining.forward#1YY/forwardYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=7s
+--- OK | elapsed: 7.4s ---
+
+============================================================
+[284/284] 正在处理: predict#1YY/predictYY.json
+完整路径: PCBench-LLM-Distilled-NaN/Benchmark/xgboost/predict@1.3.3-1.4.0/predict#1YY/predictYY.json
+============================================================
+Code preprocessing...
+Code preprocess complete
+Running the project...
+Running complete
+Total run time=6s
+--- OK | elapsed: 6.1s ---
+
+=== 执行完成 ===
+已完成: 284/284

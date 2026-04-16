@@ -1,0 +1,19 @@
+[
+  {
+    "(a, 0)": {},
+    "(b, 1)": {},
+    "(axis, 2)": {},
+    "(equal_var, 3)": {},
+    "(nan_policy, 4)": {},
+    "(alternative, 5)": {
+      "posChange": 7,
+      "replace": "permutations=None"
+    },
+    "(random_state, 6)": {
+      "addPos": "random_state=None"
+    },
+    "(trim, 8)": {
+      "addPos": "trim=0"
+    }
+  }
+]

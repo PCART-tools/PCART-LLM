@@ -1,0 +1,13 @@
+[
+  {
+    "(fields, 0)": {
+      "pos2key": "fields"
+    },
+    "(name, 1)": {
+      "pos2key": "name"
+    },
+    "(db_tablespace, 3)": {
+      "addKey": "db_tablespace=None"
+    }
+  }
+]

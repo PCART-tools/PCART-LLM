@@ -1,0 +1,11 @@
+[
+  {
+    "(backend, 0)": {},
+    "(warn, 1)": {
+      "delete": 1
+    },
+    "(force, 2)": {
+      "pos2key": "force"
+    }
+  }
+]

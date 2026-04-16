@@ -1,0 +1,11 @@
+[
+  {
+    "(split_every, 0)": {
+      "posChange": 1,
+      "replace": "subset=None"
+    },
+    "(split_out, 1)": {
+      "posChange": 2
+    }
+  }
+]

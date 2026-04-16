@@ -1,0 +1,74 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(color, 3)": {},
+    "(facet_row, 4)": {},
+    "(facet_col, 5)": {},
+    "(hover_name, 6)": {
+      "posChange": 7,
+      "replace": "facet_col_wrap=0"
+    },
+    "(hover_data, 7)": {
+      "posChange": 8
+    },
+    "(custom_data, 8)": {
+      "posChange": 9
+    },
+    "(animation_frame, 9)": {
+      "posChange": 10
+    },
+    "(animation_group, 10)": {
+      "posChange": 11
+    },
+    "(category_orders, 11)": {
+      "posChange": 12
+    },
+    "(labels, 12)": {
+      "posChange": 13
+    },
+    "(color_discrete_sequence, 13)": {
+      "posChange": 14
+    },
+    "(color_discrete_map, 14)": {
+      "posChange": 15
+    },
+    "(orientation, 15)": {
+      "posChange": 16
+    },
+    "(boxmode, 16)": {
+      "posChange": 17
+    },
+    "(log_x, 17)": {
+      "posChange": 18
+    },
+    "(log_y, 18)": {
+      "posChange": 19
+    },
+    "(range_x, 19)": {
+      "posChange": 20
+    },
+    "(range_y, 20)": {
+      "posChange": 21
+    },
+    "(points, 21)": {
+      "posChange": 22
+    },
+    "(notched, 22)": {
+      "posChange": 23
+    },
+    "(title, 23)": {
+      "posChange": 24
+    },
+    "(template, 24)": {
+      "posChange": 25
+    },
+    "(width, 25)": {
+      "posChange": 26
+    },
+    "(height, 26)": {
+      "posChange": 27
+    }
+  }
+]

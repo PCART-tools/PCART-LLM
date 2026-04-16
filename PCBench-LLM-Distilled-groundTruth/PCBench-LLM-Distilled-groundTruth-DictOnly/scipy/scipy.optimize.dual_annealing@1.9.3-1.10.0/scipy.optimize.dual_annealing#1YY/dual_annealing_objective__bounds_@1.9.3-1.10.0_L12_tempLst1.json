@@ -1,0 +1,21 @@
+[
+  {
+    "(func, 0)": {},
+    "(bounds, 1)": {},
+    "(args, 2)": {},
+    "(maxiter, 3)": {},
+    "(minimizer_kwargs, 4)": {},
+    "(initial_temp, 5)": {},
+    "(restart_temp_ratio, 6)": {},
+    "(visit, 7)": {},
+    "(accept, 8)": {},
+    "(maxfun, 9)": {},
+    "(seed, 10)": {},
+    "(no_local_search, 11)": {},
+    "(callback, 12)": {},
+    "(x0, 13)": {},
+    "(local_search_options, 14)": {
+      "delete": 1
+    }
+  }
+]

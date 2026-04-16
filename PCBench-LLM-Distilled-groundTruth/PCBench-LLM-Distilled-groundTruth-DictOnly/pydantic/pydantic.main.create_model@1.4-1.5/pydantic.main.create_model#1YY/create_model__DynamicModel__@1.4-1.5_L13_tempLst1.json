@@ -1,0 +1,12 @@
+[
+  {
+    "(model_name, 0)": {
+      "typeChange": "str",
+      "rename": "__model_name"
+    },
+    "(__config__, 2)": {},
+    "(__base__, 3)": {},
+    "(__module__, 4)": {},
+    "(__validators__, 5)": {}
+  }
+]

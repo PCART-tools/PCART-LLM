@@ -1,0 +1,49 @@
+{
+    "context": {
+        "callAPI": "pl.arange(0, 3)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.arange#1YY/arangeYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.arange@0.16.18-0.17.0/polars.arange#1YY/arangeYY.json",
+        "apiCall": "pl.arange(0, 3)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.arange",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Create a range expression (or Series).\n\nThis can be used in a `select`, `with_column` etc. Be sure that the resulting\nrange size is equal to the length of the DataFrame you are collecting.\n\nExamples\n--------\n>>> df.lazy().filter(pl.col(\"foo\") < pl.arange(0, 100)).collect()  # doctest: +SKIP\n\nParameters\n----------\nlow\n    Lower bound of range.\nhigh\n    Upper bound of range.\nstep\n    Step size of the range.\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\ndtype\n    Apply an explicit integer dtype to the resulting expression (default is Int64).",
+            "sourceCode": "def arange(\n    low: int | Expr | Series,\n    high: int | Expr | Series,\n    step: int = 1,\n    *,\n    eager: bool = False,\n    dtype: PolarsDataType | None = None,\n) -> Expr | Series:\n    \"\"\"\n    Create a range expression (or Series).\n\n    This can be used in a `select`, `with_column` etc. Be sure that the resulting\n    range size is equal to the length of the DataFrame you are collecting.\n\n    Examples\n    --------\n    >>> df.lazy().filter(pl.col(\"foo\") < pl.arange(0, 100)).collect()  # doctest: +SKIP\n\n    Parameters\n    ----------\n    low\n        Lower bound of range.\n    high\n        Upper bound of range.\n    step\n        Step size of the range.\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n    dtype\n        Apply an explicit integer dtype to the resulting expression (default is Int64).\n\n    \"\"\"\n    low = expr_to_lit_or_expr(low, str_to_lit=False)\n    high = expr_to_lit_or_expr(high, str_to_lit=False)\n    range_expr = wrap_expr(pyarange(low._pyexpr, high._pyexpr, step))\n\n    if dtype is not None and dtype != Int64:\n        range_expr = range_expr.cast(dtype)\n    if not eager:\n        return range_expr\n    else:\n        return (\n            pli.DataFrame()\n            .select(range_expr)\n            .to_series()\n            .rename(\"arange\", in_place=True)\n        )\n",
+            "match": "(low: 'int | Expr | Series', high: 'int | Expr | Series', step: 'int' = 1, *, eager: 'bool' = False, dtype: 'PolarsDataType | None' = None) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.arange",
+            "error": "",
+            "internalPath": "polars.utils.decorators",
+            "docstring": "Create a range expression (or Series).\n\nThis can be used in a `select`, `with_column` etc. Be sure that the resulting\nrange size is equal to the length of the DataFrame you are collecting.\n\nExamples\n--------\n>>> df.lazy().filter(pl.col(\"foo\") < pl.arange(0, 100)).collect()  # doctest: +SKIP\n\nParameters\n----------\nstart\n    Lower bound of range.\nend\n    Upper bound of range.\nstep\n    Step size of the range.\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\ndtype\n    Apply an explicit integer dtype to the resulting expression (default is Int64).",
+            "sourceCode": "@deprecated_alias(low=\"start\", high=\"end\")\ndef arange(\n    start: int | Expr | Series,\n    end: int | Expr | Series,\n    step: int = 1,\n    *,\n    eager: bool = False,\n    dtype: PolarsDataType | None = None,\n) -> Expr | Series:\n    \"\"\"\n    Create a range expression (or Series).\n\n    This can be used in a `select`, `with_column` etc. Be sure that the resulting\n    range size is equal to the length of the DataFrame you are collecting.\n\n    Examples\n    --------\n    >>> df.lazy().filter(pl.col(\"foo\") < pl.arange(0, 100)).collect()  # doctest: +SKIP\n\n    Parameters\n    ----------\n    start\n        Lower bound of range.\n    end\n        Upper bound of range.\n    step\n        Step size of the range.\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n    dtype\n        Apply an explicit integer dtype to the resulting expression (default is Int64).\n\n    \"\"\"\n    start = expr_to_lit_or_expr(start, str_to_lit=False)\n    end = expr_to_lit_or_expr(end, str_to_lit=False)\n    range_expr = wrap_expr(pyarange(start._pyexpr, end._pyexpr, step))\n\n    if dtype is not None and dtype != Int64:\n        range_expr = range_expr.cast(dtype)\n    if not eager:\n        return range_expr\n    else:\n        return (\n            pli.DataFrame()\n            .select(range_expr)\n            .to_series()\n            .rename(\"arange\", in_place=True)\n        )\n",
+            "match": "(start: 'int | Expr | Series', end: 'int | Expr | Series', step: 'int' = 1, *, eager: 'bool' = False, dtype: 'PolarsDataType | None' = None) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(low, 0)": {
+                    "rename": "start"
+                },
+                "(high, 1)": {
+                    "rename": "end"
+                },
+                "(step, 2)": {},
+                "(eager, 4)": {},
+                "(dtype, 5)": {}
+            },
+            "targetOvPara": "(start: 'int | Expr | Series', end: 'int | Expr | Series', step: 'int' = 1, *, eager: 'bool' = False, dtype: 'PolarsDataType | None' = None) -> 'Expr | Series'"
+        }
+    ]
+}

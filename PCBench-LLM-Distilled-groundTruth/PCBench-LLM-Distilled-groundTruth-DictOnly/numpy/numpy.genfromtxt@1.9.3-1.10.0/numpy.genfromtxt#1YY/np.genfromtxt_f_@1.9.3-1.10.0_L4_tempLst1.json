@@ -1,0 +1,66 @@
+[
+  {
+    "(fname, 0)": {},
+    "(dtype, 1)": {},
+    "(comments, 2)": {},
+    "(delimiter, 3)": {},
+    "(skiprows, 4)": {
+      "delete": 1
+    },
+    "(skip_header, 5)": {
+      "posChange": 4
+    },
+    "(skip_footer, 6)": {
+      "posChange": 5
+    },
+    "(converters, 7)": {
+      "posChange": 6
+    },
+    "(missing, 8)": {
+      "delete": 1
+    },
+    "(missing_values, 9)": {
+      "posChange": 7
+    },
+    "(filling_values, 10)": {
+      "posChange": 8
+    },
+    "(usecols, 11)": {
+      "posChange": 9
+    },
+    "(names, 12)": {
+      "posChange": 10
+    },
+    "(excludelist, 13)": {
+      "posChange": 11
+    },
+    "(deletechars, 14)": {
+      "posChange": 12
+    },
+    "(replace_space, 15)": {
+      "posChange": 13
+    },
+    "(autostrip, 16)": {
+      "posChange": 14
+    },
+    "(case_sensitive, 17)": {
+      "posChange": 15
+    },
+    "(defaultfmt, 18)": {
+      "posChange": 16
+    },
+    "(unpack, 19)": {
+      "posChange": 17
+    },
+    "(usemask, 20)": {
+      "posChange": 18
+    },
+    "(loose, 21)": {
+      "posChange": 19,
+      "replace": "max_rows=None"
+    },
+    "(invalid_raise, 22)": {
+      "posChange": 20
+    }
+  }
+]

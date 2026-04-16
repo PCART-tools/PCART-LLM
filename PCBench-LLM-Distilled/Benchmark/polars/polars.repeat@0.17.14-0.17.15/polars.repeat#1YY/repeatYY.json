@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.repeat@0.17.14-0.17.15/polars.repeat#1YY",
+    "runCommand": "python repeatYY.py",
+    "runFilePath": "",
+    "libName": "polars",
+    "currentVersion": "0.17.14",
+    "targetVersion": "0.17.15",
+    "currentEnv": "/envs/polars0.17.14",
+    "targetEnv": "/envs/polars0.17.15"
+}

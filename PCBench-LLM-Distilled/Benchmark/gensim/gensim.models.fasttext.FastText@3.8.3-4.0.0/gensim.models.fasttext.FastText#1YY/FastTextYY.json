@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.fasttext.FastText@3.8.3-4.0.0/gensim.models.fasttext.FastText#1YY",
+    "runCommand": "python FastTextYY.py",
+    "runFilePath": "",
+    "libName": "gensim",
+    "currentVersion": "3.8.3",
+    "targetVersion": "4.0.0",
+    "currentEnv": "/envs/gensim3.8.3",
+    "targetEnv": "/envs/gensim4.0.0"
+}

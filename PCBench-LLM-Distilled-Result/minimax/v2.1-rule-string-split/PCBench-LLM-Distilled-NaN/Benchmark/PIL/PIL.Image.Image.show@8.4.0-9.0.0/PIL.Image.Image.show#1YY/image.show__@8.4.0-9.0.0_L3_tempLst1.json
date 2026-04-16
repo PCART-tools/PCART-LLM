@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "image.show()",
+        "currentVersion": "8.4.0",
+        "targetVersion": "9.0.0",
+        "fileRelativePath": "PIL.Image.Image.show#1YY/showYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/PIL/PIL.Image.Image.show@8.4.0-9.0.0/PIL.Image.Image.show#1YY/showYY.json",
+        "apiCall": "image.show()",
+        "oldVersion": "PIL@8.4.0",
+        "newVersion": "PIL@9.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "PIL.Image.open.show",
+            "error": "",
+            "internalPath": "PIL.Image",
+            "docstring": "Displays this image. This method is mainly intended for debugging purposes.\n\nThis method calls :py:func:`PIL.ImageShow.show` internally. You can use\n:py:func:`PIL.ImageShow.register` to override its default behaviour.\n\nThe image is first saved to a temporary file. By default, it will be in\nPNG format.\n\nOn Unix, the image is then opened using the **display**, **eog** or\n**xv** utility, depending on which one can be found.\n\nOn macOS, the image is opened with the native Preview application.\n\nOn Windows, the image is opened with the standard PNG display utility.\n\n:param title: Optional title to use for the image window, where possible.",
+            "sourceCode": "    def show(self, title=None, command=None):\n        \"\"\"\n        Displays this image. This method is mainly intended for debugging purposes.\n\n        This method calls :py:func:`PIL.ImageShow.show` internally. You can use\n        :py:func:`PIL.ImageShow.register` to override its default behaviour.\n\n        The image is first saved to a temporary file. By default, it will be in\n        PNG format.\n\n        On Unix, the image is then opened using the **display**, **eog** or\n        **xv** utility, depending on which one can be found.\n\n        On macOS, the image is opened with the native Preview application.\n\n        On Windows, the image is opened with the standard PNG display utility.\n\n        :param title: Optional title to use for the image window, where possible.\n        \"\"\"\n\n        if command is not None:\n            warnings.warn(\n                \"The command parameter is deprecated and will be removed in Pillow 9 \"\n                \"(2022-01-02). Use a subclass of ImageShow.Viewer instead.\",\n                DeprecationWarning,\n            )\n\n        _show(self, title=title, command=command)\n",
+            "match": "(title=None, command=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "PIL.Image.open.show",
+            "error": "",
+            "internalPath": "PIL.Image",
+            "docstring": "Displays this image. This method is mainly intended for debugging purposes.\n\nThis method calls :py:func:`PIL.ImageShow.show` internally. You can use\n:py:func:`PIL.ImageShow.register` to override its default behaviour.\n\nThe image is first saved to a temporary file. By default, it will be in\nPNG format.\n\nOn Unix, the image is then opened using the **display**, **eog** or\n**xv** utility, depending on which one can be found.\n\nOn macOS, the image is opened with the native Preview application.\n\nOn Windows, the image is opened with the standard PNG display utility.\n\n:param title: Optional title to use for the image window, where possible.",
+            "sourceCode": "    def show(self, title=None):\n        \"\"\"\n        Displays this image. This method is mainly intended for debugging purposes.\n\n        This method calls :py:func:`PIL.ImageShow.show` internally. You can use\n        :py:func:`PIL.ImageShow.register` to override its default behaviour.\n\n        The image is first saved to a temporary file. By default, it will be in\n        PNG format.\n\n        On Unix, the image is then opened using the **display**, **eog** or\n        **xv** utility, depending on which one can be found.\n\n        On macOS, the image is opened with the native Preview application.\n\n        On Windows, the image is opened with the standard PNG display utility.\n\n        :param title: Optional title to use for the image window, where possible.\n        \"\"\"\n\n        _show(self, title=title)\n",
+            "match": "(title=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(title, 0)": {},
+                "(command, 1)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(title=None)"
+        }
+    ]
+}

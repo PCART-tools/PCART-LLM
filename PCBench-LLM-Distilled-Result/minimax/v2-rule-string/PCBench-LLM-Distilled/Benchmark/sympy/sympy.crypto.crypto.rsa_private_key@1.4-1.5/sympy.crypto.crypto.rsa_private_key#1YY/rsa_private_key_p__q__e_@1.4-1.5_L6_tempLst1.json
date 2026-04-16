@@ -1,0 +1,58 @@
+{
+    "context": {
+        "callAPI": "rsa_private_key(p, q, e)",
+        "currentVersion": "1.4",
+        "targetVersion": "1.5",
+        "fileRelativePath": "sympy.crypto.crypto.rsa_private_key#1YY/rsa_private_keyYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/sympy/sympy.crypto.crypto.rsa_private_key@1.4-1.5/sympy.crypto.crypto.rsa_private_key#1YY/rsa_private_keyYY.json",
+        "apiCall": "rsa_private_key(p, q, e)",
+        "oldVersion": "sympy@1.4",
+        "newVersion": "sympy@1.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "sympy.crypto.crypto.rsa_private_key",
+            "error": "",
+            "internalPath": "sympy.crypto.crypto",
+            "docstring": "Return the RSA *private key*, `(n,d)`, where `n`\nis a product of two primes and `d` is the inverse of\n`e` (mod `\\phi(n)`). False is returned if any assumption\nis violated.\n\nExamples\n========\n\n>>> from sympy.crypto.crypto import rsa_private_key\n>>> p, q, e = 3, 5, 7\n>>> rsa_private_key(p, q, e)\n(15, 7)\n>>> rsa_private_key(p, q, 30)\nFalse",
+            "sourceCode": "def rsa_private_key(p, q, e):\n    r\"\"\"\n    Return the RSA *private key*, `(n,d)`, where `n`\n    is a product of two primes and `d` is the inverse of\n    `e` (mod `\\phi(n)`). False is returned if any assumption\n    is violated.\n\n    Examples\n    ========\n\n    >>> from sympy.crypto.crypto import rsa_private_key\n    >>> p, q, e = 3, 5, 7\n    >>> rsa_private_key(p, q, e)\n    (15, 7)\n    >>> rsa_private_key(p, q, 30)\n    False\n    \"\"\"\n    n = p*q\n    if isprime(p) and isprime(q):\n        if p == q:\n            SymPyDeprecationWarning(\n                feature=\"Using non-distinct primes for rsa_public_key\",\n                useinstead=\"distinct primes\",\n                issue=16162,\n                deprecated_since_version=\"1.4\").warn()\n            phi = p * (p - 1)\n        else:\n            phi = (p - 1) * (q - 1)\n        if gcd(e, phi) == 1:\n            d = mod_inverse(e, phi)\n            return n, d\n    return False\n",
+            "match": "(p, q, e)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "sympy.crypto.crypto.rsa_private_key",
+            "error": "",
+            "internalPath": "sympy.crypto.crypto",
+            "docstring": "Return the RSA *private key* pair, `(n, d)`\n\nParameters\n==========\n\nargs : naturals\n    The keyword is identical to the ``args`` in\n    :meth:`rsa_public_key`.\n\ntotient : bool, optional\n    If ``'Euler'``, it uses Euler's totient convention `\\phi(n)`\n    which is :meth:`sympy.ntheory.factor_.totient` in SymPy.\n\n    If ``'Carmichael'``, it uses Carmichael's totient convention\n    `\\lambda(n)` which is\n    :meth:`sympy.ntheory.factor_.reduced_totient` in SymPy.\n\n    There can be some output differences for private key generation\n    as examples below.\n\n    Example using Euler's totient:\n\n    >>> from sympy.crypto.crypto import rsa_private_key\n    >>> rsa_private_key(61, 53, 17, totient='Euler')\n    (3233, 2753)\n\n    Example using Carmichael's totient:\n\n    >>> from sympy.crypto.crypto import rsa_private_key\n    >>> rsa_private_key(61, 53, 17, totient='Carmichael')\n    (3233, 413)\n\nindex : nonnegative integer, optional\n    Returns an arbitrary solution of a RSA private key at the index\n    specified at `0, 1, 2, ...`. This parameter needs to be\n    specified along with ``totient='Carmichael'``.\n\n    RSA private exponent is a non-unique solution of\n    `e d \\mod \\lambda(n) = 1` and it is possible in any form of\n    `d + k \\lambda(n)`, where `d` is an another\n    already-computed private exponent, and `\\lambda` is a\n    Carmichael's totient function, and `k` is any integer.\n\n    However, considering only the positive cases, there can be\n    a principal solution of a RSA private exponent `d_0` in\n    `0 < d_0 < \\lambda(n)`, and all the other solutions\n    can be canonicalzed in a form of `d_0 + k \\lambda(n)`.\n\n    ``index`` specifies the `k` notation to yield any possible value\n    an RSA private key can have.\n\n    An example of computing any arbitrary RSA private key:\n\n    >>> from sympy.crypto.crypto import rsa_private_key\n    >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=0)\n    (3233, 413)\n    >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=1)\n    (3233, 1193)\n    >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=2)\n    (3233, 1973)\n\nmultipower : bool, optional\n    The keyword is identical to the ``multipower`` in\n    :meth:`rsa_public_key`.\n\nReturns\n=======\n\n(n, d) : int, int\n    `n` is a product of any arbitrary number of primes given as\n    the argument.\n\n    `d` is the inverse of `e` (mod `\\phi(n)`) where `e` is the\n    exponent given, and `\\phi` is a Euler totient.\n\nFalse\n    Returned if less than two arguments are given, or `e` is\n    not relatively prime to the totient of the modulus.\n\nExamples\n========\n\n>>> from sympy.crypto.crypto import rsa_private_key\n\nA private key of a two-prime RSA:\n\n>>> p, q, e = 3, 5, 7\n>>> rsa_private_key(p, q, e)\n(15, 7)\n>>> rsa_private_key(p, q, 30)\nFalse\n\nA private key of a multiprime RSA:\n\n>>> primes = [2, 3, 5, 7, 11, 13]\n>>> e = 7\n>>> args = primes + [e]\n>>> rsa_private_key(*args)\n(30030, 823)\n\nSee Also\n========\n\nrsa_public_key\nencipher_rsa\ndecipher_rsa\n\nReferences\n==========\n\n.. [1] https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\n\n.. [2] http://cacr.uwaterloo.ca/techreports/2006/cacr2006-16.pdf\n\n.. [3] https://link.springer.com/content/pdf/10.1007%2FBFb0055738.pdf\n\n.. [4] http://www.itiis.org/digital-library/manuscript/1381",
+            "sourceCode": "def rsa_private_key(*args, **kwargs):\n    r\"\"\"Return the RSA *private key* pair, `(n, d)`\n\n    Parameters\n    ==========\n\n    args : naturals\n        The keyword is identical to the ``args`` in\n        :meth:`rsa_public_key`.\n\n    totient : bool, optional\n        If ``'Euler'``, it uses Euler's totient convention `\\phi(n)`\n        which is :meth:`sympy.ntheory.factor_.totient` in SymPy.\n\n        If ``'Carmichael'``, it uses Carmichael's totient convention\n        `\\lambda(n)` which is\n        :meth:`sympy.ntheory.factor_.reduced_totient` in SymPy.\n\n        There can be some output differences for private key generation\n        as examples below.\n\n        Example using Euler's totient:\n\n        >>> from sympy.crypto.crypto import rsa_private_key\n        >>> rsa_private_key(61, 53, 17, totient='Euler')\n        (3233, 2753)\n\n        Example using Carmichael's totient:\n\n        >>> from sympy.crypto.crypto import rsa_private_key\n        >>> rsa_private_key(61, 53, 17, totient='Carmichael')\n        (3233, 413)\n\n    index : nonnegative integer, optional\n        Returns an arbitrary solution of a RSA private key at the index\n        specified at `0, 1, 2, ...`. This parameter needs to be\n        specified along with ``totient='Carmichael'``.\n\n        RSA private exponent is a non-unique solution of\n        `e d \\mod \\lambda(n) = 1` and it is possible in any form of\n        `d + k \\lambda(n)`, where `d` is an another\n        already-computed private exponent, and `\\lambda` is a\n        Carmichael's totient function, and `k` is any integer.\n\n        However, considering only the positive cases, there can be\n        a principal solution of a RSA private exponent `d_0` in\n        `0 < d_0 < \\lambda(n)`, and all the other solutions\n        can be canonicalzed in a form of `d_0 + k \\lambda(n)`.\n\n        ``index`` specifies the `k` notation to yield any possible value\n        an RSA private key can have.\n\n        An example of computing any arbitrary RSA private key:\n\n        >>> from sympy.crypto.crypto import rsa_private_key\n        >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=0)\n        (3233, 413)\n        >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=1)\n        (3233, 1193)\n        >>> rsa_private_key(61, 53, 17, totient='Carmichael', index=2)\n        (3233, 1973)\n\n    multipower : bool, optional\n        The keyword is identical to the ``multipower`` in\n        :meth:`rsa_public_key`.\n\n    Returns\n    =======\n\n    (n, d) : int, int\n        `n` is a product of any arbitrary number of primes given as\n        the argument.\n\n        `d` is the inverse of `e` (mod `\\phi(n)`) where `e` is the\n        exponent given, and `\\phi` is a Euler totient.\n\n    False\n        Returned if less than two arguments are given, or `e` is\n        not relatively prime to the totient of the modulus.\n\n    Examples\n    ========\n\n    >>> from sympy.crypto.crypto import rsa_private_key\n\n    A private key of a two-prime RSA:\n\n    >>> p, q, e = 3, 5, 7\n    >>> rsa_private_key(p, q, e)\n    (15, 7)\n    >>> rsa_private_key(p, q, 30)\n    False\n\n    A private key of a multiprime RSA:\n\n    >>> primes = [2, 3, 5, 7, 11, 13]\n    >>> e = 7\n    >>> args = primes + [e]\n    >>> rsa_private_key(*args)\n    (30030, 823)\n\n    See Also\n    ========\n\n    rsa_public_key\n    encipher_rsa\n    decipher_rsa\n\n    References\n    ==========\n\n    .. [1] https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\n\n    .. [2] http://cacr.uwaterloo.ca/techreports/2006/cacr2006-16.pdf\n\n    .. [3] https://link.springer.com/content/pdf/10.1007%2FBFb0055738.pdf\n\n    .. [4] http://www.itiis.org/digital-library/manuscript/1381\n    \"\"\"\n    return _rsa_key(*args, public=False, private=True, **kwargs)\n",
+            "match": "(*args, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(p, 0)": {
+                    "delete": 1
+                },
+                "(totient, 0)": {
+                    "addKey": "totient='Euler'"
+                },
+                "(q, 1)": {
+                    "delete": 1
+                },
+                "(index, 1)": {
+                    "addKey": "index=0"
+                },
+                "(e, 2)": {
+                    "delete": 1
+                },
+                "(multipower, 2)": {
+                    "addKey": "multipower=False"
+                }
+            },
+            "targetOvPara": "(*args, **kwargs)"
+        }
+    ]
+}

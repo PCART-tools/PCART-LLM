@@ -1,0 +1,15 @@
+[
+  {
+    "(frame, 0)": {
+      "typeChange": "DataFrame"
+    },
+    "(id_vars, 1)": {},
+    "(value_vars, 2)": {},
+    "(var_name, 3)": {},
+    "(value_name, 4)": {},
+    "(col_level, 5)": {},
+    "(ignore_index, 6)": {
+      "addPos": "ignore_index=True"
+    }
+  }
+]

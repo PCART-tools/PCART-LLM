@@ -1,0 +1,78 @@
+{
+    "context": {
+        "callAPI": "Syntax.from_path('./example.py')",
+        "currentVersion": "11.0.0",
+        "targetVersion": "11.1.0",
+        "fileRelativePath": "rich.syntax.Syntax.from_path#1YY/from_pathYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/rich/rich.syntax.Syntax.from_path@11.0.0-11.1.0/rich.syntax.Syntax.from_path#1YY/from_pathYY.json",
+        "apiCall": "Syntax.from_path('./example.py')",
+        "oldVersion": "rich@11.0.0",
+        "newVersion": "rich@11.1.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "rich.syntax.Syntax.from_path",
+            "error": "",
+            "internalPath": "rich.syntax",
+            "docstring": "Construct a Syntax object from a file.\n\nArgs:\n    path (str): Path to file to highlight.\n    encoding (str): Encoding of file.\n    theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to \"emacs\".\n    dedent (bool, optional): Enable stripping of initial whitespace. Defaults to True.\n    line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.\n    start_line (int, optional): Starting number for line numbers. Defaults to 1.\n    line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.\n    highlight_lines (Set[int]): A set of line numbers to highlight.\n    code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.\n    tab_size (int, optional): Size of tabs. Defaults to 4.\n    word_wrap (bool, optional): Enable word wrapping of code.\n    background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.\n    indent_guides (bool, optional): Show indent guides. Defaults to False.\n\nReturns:\n    [Syntax]: A Syntax object that may be printed to the console",
+            "sourceCode": "    @classmethod\n    def from_path(\n        cls,\n        path: str,\n        encoding: str = \"utf-8\",\n        theme: Union[str, SyntaxTheme] = DEFAULT_THEME,\n        dedent: bool = False,\n        line_numbers: bool = False,\n        line_range: Optional[Tuple[int, int]] = None,\n        start_line: int = 1,\n        highlight_lines: Optional[Set[int]] = None,\n        code_width: Optional[int] = None,\n        tab_size: int = 4,\n        word_wrap: bool = False,\n        background_color: Optional[str] = None,\n        indent_guides: bool = False,\n    ) -> \"Syntax\":\n        \"\"\"Construct a Syntax object from a file.\n\n        Args:\n            path (str): Path to file to highlight.\n            encoding (str): Encoding of file.\n            theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to \"emacs\".\n            dedent (bool, optional): Enable stripping of initial whitespace. Defaults to True.\n            line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.\n            start_line (int, optional): Starting number for line numbers. Defaults to 1.\n            line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.\n            highlight_lines (Set[int]): A set of line numbers to highlight.\n            code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.\n            tab_size (int, optional): Size of tabs. Defaults to 4.\n            word_wrap (bool, optional): Enable word wrapping of code.\n            background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.\n            indent_guides (bool, optional): Show indent guides. Defaults to False.\n\n        Returns:\n            [Syntax]: A Syntax object that may be printed to the console\n        \"\"\"\n        with open(path, \"rt\", encoding=encoding) as code_file:\n            code = code_file.read()\n\n        lexer = None\n        lexer_name = \"default\"\n        try:\n            _, ext = os.path.splitext(path)\n            if ext:\n                extension = ext.lstrip(\".\").lower()\n                lexer = get_lexer_by_name(extension)\n                lexer_name = lexer.name\n        except ClassNotFound:\n            pass\n\n        if lexer is None:\n            try:\n                lexer_name = guess_lexer_for_filename(path, code).name\n            except ClassNotFound:\n                pass\n\n        return cls(\n            code,\n            lexer_name,\n            theme=theme,\n            dedent=dedent,\n            line_numbers=line_numbers,\n            line_range=line_range,\n            start_line=start_line,\n            highlight_lines=highlight_lines,\n            code_width=code_width,\n            tab_size=tab_size,\n            word_wrap=word_wrap,\n            background_color=background_color,\n            indent_guides=indent_guides,\n        )\n",
+            "match": "(path: str, encoding: str = 'utf-8', theme: Union[str, rich.syntax.SyntaxTheme] = 'monokai', dedent: bool = False, line_numbers: bool = False, line_range: Union[Tuple[int, int], NoneType] = None, start_line: int = 1, highlight_lines: Union[Set[int], NoneType] = None, code_width: Union[int, NoneType] = None, tab_size: int = 4, word_wrap: bool = False, background_color: Union[str, NoneType] = None, indent_guides: bool = False) -> 'Syntax'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "rich.syntax.Syntax.from_path",
+            "error": "",
+            "internalPath": "rich.syntax",
+            "docstring": "Construct a Syntax object from a file.\n\nArgs:\n    path (str): Path to file to highlight.\n    encoding (str): Encoding of file.\n    lexer (str | Lexer, optional): Lexer to use. If None, lexer will be auto-detected from path/file content.\n    theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to \"emacs\".\n    dedent (bool, optional): Enable stripping of initial whitespace. Defaults to True.\n    line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.\n    start_line (int, optional): Starting number for line numbers. Defaults to 1.\n    line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.\n    highlight_lines (Set[int]): A set of line numbers to highlight.\n    code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.\n    tab_size (int, optional): Size of tabs. Defaults to 4.\n    word_wrap (bool, optional): Enable word wrapping of code.\n    background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.\n    indent_guides (bool, optional): Show indent guides. Defaults to False.\n\nReturns:\n    [Syntax]: A Syntax object that may be printed to the console",
+            "sourceCode": "    @classmethod\n    def from_path(\n        cls,\n        path: str,\n        encoding: str = \"utf-8\",\n        lexer: Optional[Union[Lexer, str]] = None,\n        theme: Union[str, SyntaxTheme] = DEFAULT_THEME,\n        dedent: bool = False,\n        line_numbers: bool = False,\n        line_range: Optional[Tuple[int, int]] = None,\n        start_line: int = 1,\n        highlight_lines: Optional[Set[int]] = None,\n        code_width: Optional[int] = None,\n        tab_size: int = 4,\n        word_wrap: bool = False,\n        background_color: Optional[str] = None,\n        indent_guides: bool = False,\n    ) -> \"Syntax\":\n        \"\"\"Construct a Syntax object from a file.\n\n        Args:\n            path (str): Path to file to highlight.\n            encoding (str): Encoding of file.\n            lexer (str | Lexer, optional): Lexer to use. If None, lexer will be auto-detected from path/file content.\n            theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to \"emacs\".\n            dedent (bool, optional): Enable stripping of initial whitespace. Defaults to True.\n            line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.\n            start_line (int, optional): Starting number for line numbers. Defaults to 1.\n            line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.\n            highlight_lines (Set[int]): A set of line numbers to highlight.\n            code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.\n            tab_size (int, optional): Size of tabs. Defaults to 4.\n            word_wrap (bool, optional): Enable word wrapping of code.\n            background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.\n            indent_guides (bool, optional): Show indent guides. Defaults to False.\n\n        Returns:\n            [Syntax]: A Syntax object that may be printed to the console\n        \"\"\"\n        with open(path, \"rt\", encoding=encoding) as code_file:\n            code = code_file.read()\n\n        if not lexer:\n            lexer = cls.guess_lexer(path, code=code)\n\n        return cls(\n            code,\n            lexer,\n            theme=theme,\n            dedent=dedent,\n            line_numbers=line_numbers,\n            line_range=line_range,\n            start_line=start_line,\n            highlight_lines=highlight_lines,\n            code_width=code_width,\n            tab_size=tab_size,\n            word_wrap=word_wrap,\n            background_color=background_color,\n            indent_guides=indent_guides,\n        )\n",
+            "match": "(path: str, encoding: str = 'utf-8', lexer: Union[pygments.lexer.Lexer, str, NoneType] = None, theme: Union[str, rich.syntax.SyntaxTheme] = 'monokai', dedent: bool = False, line_numbers: bool = False, line_range: Union[Tuple[int, int], NoneType] = None, start_line: int = 1, highlight_lines: Union[Set[int], NoneType] = None, code_width: Union[int, NoneType] = None, tab_size: int = 4, word_wrap: bool = False, background_color: Union[str, NoneType] = None, indent_guides: bool = False) -> 'Syntax'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(path, 0)": {},
+                "(encoding, 1)": {},
+                "(lexer, 2)": {
+                    "addPos": "lexer=None"
+                },
+                "(theme, 2)": {
+                    "posChange": 3
+                },
+                "(dedent, 3)": {
+                    "posChange": 4
+                },
+                "(line_numbers, 4)": {
+                    "posChange": 5
+                },
+                "(line_range, 5)": {
+                    "posChange": 6
+                },
+                "(start_line, 6)": {
+                    "posChange": 7
+                },
+                "(highlight_lines, 7)": {
+                    "posChange": 8
+                },
+                "(code_width, 8)": {
+                    "posChange": 9
+                },
+                "(tab_size, 9)": {
+                    "posChange": 10
+                },
+                "(word_wrap, 10)": {
+                    "posChange": 11
+                },
+                "(background_color, 11)": {
+                    "posChange": 12
+                },
+                "(indent_guides, 12)": {
+                    "posChange": 13
+                }
+            },
+            "targetOvPara": "(path: str, encoding: str = 'utf-8', lexer: Union[pygments.lexer.Lexer, str, NoneType] = None, theme: Union[str, rich.syntax.SyntaxTheme] = 'monokai', dedent: bool = False, line_numbers: bool = False, line_range: Union[Tuple[int, int], NoneType] = None, start_line: int = 1, highlight_lines: Union[Set[int], NoneType] = None, code_width: Union[int, NoneType] = None, tab_size: int = 4, word_wrap: bool = False, background_color: Union[str, NoneType] = None, indent_guides: bool = False) -> 'Syntax'"
+        }
+    ]
+}

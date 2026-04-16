@@ -1,0 +1,16 @@
+[
+  {
+    "(G, 0)": {},
+    "(nodes, 1)": {
+      "posChange": 3,
+      "replace": "source='out'"
+    },
+    "(weighted, 2)": {
+      "delete": 1,
+      "replace": "target='out'"
+    },
+    "(weight, 4)": {
+      "addPos": "weight=None"
+    }
+  }
+]

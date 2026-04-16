@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/tensorflow/tf.contrib.data.make_csv_dataset@1.8.0-1.9.0/tf.contrib.data.make_csv_dataset#1NN",
+    "runCommand": "python make_csv_datasetNN.py",
+    "runFilePath": "",
+    "libName": "tensorflow",
+    "currentVersion": "1.8.0",
+    "targetVersion": "1.9.0",
+    "currentEnv": "/envs/tensorflow1.8.0",
+    "targetEnv": "/envs/tensorflow1.9.0"
+}

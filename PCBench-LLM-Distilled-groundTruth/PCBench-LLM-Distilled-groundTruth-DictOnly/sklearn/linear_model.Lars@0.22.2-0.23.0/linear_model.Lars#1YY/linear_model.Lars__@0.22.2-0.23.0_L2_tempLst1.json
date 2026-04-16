@@ -1,0 +1,34 @@
+[
+  {
+    "(fit_intercept, 0)": {
+      "pos2key": "fit_intercept"
+    },
+    "(verbose, 1)": {
+      "pos2key": "verbose"
+    },
+    "(normalize, 2)": {
+      "pos2key": "normalize"
+    },
+    "(precompute, 3)": {
+      "pos2key": "precompute"
+    },
+    "(n_nonzero_coefs, 4)": {
+      "pos2key": "n_nonzero_coefs"
+    },
+    "(eps, 5)": {
+      "pos2key": "eps"
+    },
+    "(copy_X, 6)": {
+      "pos2key": "copy_X"
+    },
+    "(fit_path, 7)": {
+      "pos2key": "fit_path"
+    },
+    "(jitter, 9)": {
+      "addKey": "jitter=None"
+    },
+    "(random_state, 10)": {
+      "addKey": "random_state=None"
+    }
+  }
+]

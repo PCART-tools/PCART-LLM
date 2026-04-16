@@ -1,0 +1,51 @@
+{
+    "context": {
+        "callAPI": "nx.average_clustering(G)",
+        "currentVersion": "1.5",
+        "targetVersion": "1.6",
+        "fileRelativePath": "average_clustering#1YY/average_clusteringYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/average_clustering@1.5-1.6/average_clustering#1YY/average_clusteringYY.json",
+        "apiCall": "nx.average_clustering(G)",
+        "oldVersion": "networkx@1.5",
+        "newVersion": "networkx@1.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.average_clustering",
+            "error": "",
+            "internalPath": "networkx.algorithms.cluster",
+            "docstring": "Compute average clustering coefficient.\n\nA clustering coefficient for the whole graph is the average, \n\n.. math::\n\n   C = \\frac{1}{n}\\sum_{v \\in G} c_v,\n   \nwhere `n` is the number of nodes in `G`.\n\nParameters\n----------\nG : graph\n   A networkx graph\nweighted : bool, optional\n   If True use weights on edges in computing clustering coefficients.\n\nReturns\n-------\nout : float\n   Average clustering\n\nExamples\n--------\n>>> G=nx.complete_graph(5)\n>>> print(nx.average_clustering(G))\n1.0\n\nNotes\n-----\nThis is a space saving routine; it might be faster\nto use clustering to get a list and then take the average.\n\nSelf loops are ignored.\n\nReferences\n----------\n.. [1] Generalizations of the clustering coefficient to weighted \n   complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n   K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n   http://jponnela.com/web_documents/a9.pdf",
+            "sourceCode": "def average_clustering(G,weighted=False):\n    r\"\"\"Compute average clustering coefficient.\n\n    A clustering coefficient for the whole graph is the average, \n\n    .. math::\n\n       C = \\frac{1}{n}\\sum_{v \\in G} c_v,\n       \n    where `n` is the number of nodes in `G`.\n\n    Parameters\n    ----------\n    G : graph\n       A networkx graph\n    weighted : bool, optional\n       If True use weights on edges in computing clustering coefficients.\n\n    Returns\n    -------\n    out : float\n       Average clustering\n    \n    Examples\n    --------\n    >>> G=nx.complete_graph(5)\n    >>> print(nx.average_clustering(G))\n    1.0\n\n    Notes\n    -----\n    This is a space saving routine; it might be faster\n    to use clustering to get a list and then take the average.\n\n    Self loops are ignored.\n\n    References\n    ----------\n    .. [1] Generalizations of the clustering coefficient to weighted \n       complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n       K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n       http://jponnela.com/web_documents/a9.pdf\n    \"\"\"\n    order=G.order()\n    s=sum(clustering(G,weighted=weighted).values())\n    return s/float(order)\n",
+            "match": "(G, weighted=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.average_clustering",
+            "error": "",
+            "internalPath": "networkx.algorithms.cluster",
+            "docstring": "Compute the average clustering coefficient for the graph G.\n\nThe clustering coefficient for the graph is the average, \n\n.. math::\n\n   C = \\frac{1}{n}\\sum_{v \\in G} c_v,\n   \nwhere `n` is the number of nodes in `G`.\n\nParameters\n----------\nG : graph\n\nnodes : container of nodes, optional (default=all nodes in G)\n   Compute average clustering for nodes in this container. \n\nweight : string or None, optional (default=None)\n   The edge attribute that holds the numerical value used as a weight.\n   If None, then each edge has weight 1.\n\ncount_zeros : bool (default=False)       \n   If False include only the nodes with nonzero clustering in the average.\n\nReturns\n-------\navg : float\n   Average clustering\n\nExamples\n--------\n>>> G=nx.complete_graph(5)\n>>> print(nx.average_clustering(G))\n1.0\n\nNotes\n-----\nThis is a space saving routine; it might be faster\nto use the clustering function to get a list and then take the average.\n\nSelf loops are ignored.\n\nReferences\n----------\n.. [1] Generalizations of the clustering coefficient to weighted \n   complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n   K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n   http://jponnela.com/web_documents/a9.pdf\n.. [2] Marcus Kaiser,  Mean clustering coefficients: the role of isolated \n   nodes and leafs on clustering measures for small-world networks.\n   http://arxiv.org/abs/0802.2512",
+            "sourceCode": "def average_clustering(G, nodes=None, weight=None, count_zeros=True):\n    r\"\"\"Compute the average clustering coefficient for the graph G.\n\n    The clustering coefficient for the graph is the average, \n\n    .. math::\n\n       C = \\frac{1}{n}\\sum_{v \\in G} c_v,\n       \n    where `n` is the number of nodes in `G`.\n\n    Parameters\n    ----------\n    G : graph\n\n    nodes : container of nodes, optional (default=all nodes in G)\n       Compute average clustering for nodes in this container. \n\n    weight : string or None, optional (default=None)\n       The edge attribute that holds the numerical value used as a weight.\n       If None, then each edge has weight 1.\n\n    count_zeros : bool (default=False)       \n       If False include only the nodes with nonzero clustering in the average.\n\n    Returns\n    -------\n    avg : float\n       Average clustering\n    \n    Examples\n    --------\n    >>> G=nx.complete_graph(5)\n    >>> print(nx.average_clustering(G))\n    1.0\n\n    Notes\n    -----\n    This is a space saving routine; it might be faster\n    to use the clustering function to get a list and then take the average.\n\n    Self loops are ignored.\n\n    References\n    ----------\n    .. [1] Generalizations of the clustering coefficient to weighted \n       complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n       K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n       http://jponnela.com/web_documents/a9.pdf\n    .. [2] Marcus Kaiser,  Mean clustering coefficients: the role of isolated \n       nodes and leafs on clustering measures for small-world networks.\n       http://arxiv.org/abs/0802.2512\n    \"\"\"\n    c=clustering(G,nodes,weight=weight).values()\n    if not count_zeros:\n        c = [v for v in c if v > 0]\n    return sum(c)/float(len(c))\n",
+            "match": "(G, nodes=None, weight=None, count_zeros=True)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(weighted, 1)": {
+                    "delete": 1,
+                    "replace": "nodes"
+                },
+                "(weight, 2)": {
+                    "addPos": "weight"
+                },
+                "(count_zeros, 3)": {
+                    "addPos": "count_zeros=True"
+                }
+            },
+            "targetOvPara": "(G, nodes=None, weight=None, count_zeros=True)"
+        }
+    ]
+}

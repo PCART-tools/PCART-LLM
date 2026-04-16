@@ -1,0 +1,22 @@
+[
+  {
+    "(n, 0)": {},
+    "(theta, 1)": {},
+    "(alpha, 2)": {
+      "delete": 1
+    },
+    "(dim, 3)": {
+      "posChange": 2
+    },
+    "(pos, 4)": {
+      "posChange": 3
+    },
+    "(weight, 5)": {
+      "posChange": 4
+    },
+    "(metric, 6)": {
+      "posChange": 5,
+      "replace": "p_dist=None"
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "(url, 0)": {},
+    "(method, 1)": {},
+    "(headers, 2)": {},
+    "(body, 3)": {},
+    "(auth_username, 4)": {},
+    "(auth_password, 5)": {},
+    "(connect_timeout, 6)": {
+      "posChange": 7,
+      "replace": "auth_mode=None"
+    },
+    "(request_timeout, 7)": {
+      "posChange": 8
+    },
+    "(if_modified_since, 8)": {
+      "posChange": 9
+    },
+    "(follow_redirects, 9)": {
+      "posChange": 10
+    },
+    "(max_redirects, 10)": {
+      "posChange": 11
+    },
+    "(user_agent, 11)": {
+      "posChange": 12
+    },
+    "(use_gzip, 12)": {
+      "posChange": 13
+    },
+    "(network_interface, 13)": {
+      "posChange": 14
+    },
+    "(streaming_callback, 14)": {
+      "posChange": 15
+    },
+    "(header_callback, 15)": {
+      "posChange": 16
+    },
+    "(prepare_curl_callback, 16)": {
+      "posChange": 17
+    },
+    "(proxy_host, 17)": {
+      "posChange": 18
+    },
+    "(proxy_port, 18)": {
+      "posChange": 19
+    },
+    "(proxy_username, 19)": {
+      "posChange": 20
+    },
+    "(proxy_password, 20)": {
+      "posChange": 21
+    },
+    "(allow_nonstandard_methods, 21)": {
+      "posChange": 22
+    },
+    "(validate_cert, 22)": {
+      "posChange": 23
+    },
+    "(ca_certs, 23)": {
+      "posChange": 24
+    },
+    "(allow_ipv6, 24)": {
+      "posChange": 25
+    },
+    "(client_key, 25)": {
+      "posChange": 26
+    },
+    "(client_cert, 26)": {
+      "posChange": 27
+    }
+  }
+]

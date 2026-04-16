@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/plotly/plotly.express.density_heatmap@4.2.1-4.3.0/plotly.express.density_heatmap#1YY",
+    "runCommand": "python density_heatmapYY.py",
+    "runFilePath": "",
+    "libName": "plotly",
+    "currentVersion": "4.2.1",
+    "targetVersion": "4.3.0",
+    "currentEnv": "/envs/plotly4.2.1",
+    "targetEnv": "/envs/plotly4.3.0"
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "(obj, 0)": {},
+    "(include, 1)": {},
+    "(exclude, 2)": {
+      "typeChange": "Optional[Union[SetIntStr,DictIntStrAny]]"
+    },
+    "(by_alias, 3)": {},
+    "(skip_defaults, 4)": {
+      "delete": 1
+    },
+    "(exclude_unset, 5)": {
+      "posChange": 4
+    },
+    "(exclude_defaults, 6)": {
+      "posChange": 5
+    },
+    "(exclude_none, 7)": {
+      "posChange": 6
+    },
+    "(custom_encoder, 8)": {
+      "posChange": 7
+    },
+    "(sqlalchemy_safe, 9)": {
+      "delete": 1
+    }
+  }
+]

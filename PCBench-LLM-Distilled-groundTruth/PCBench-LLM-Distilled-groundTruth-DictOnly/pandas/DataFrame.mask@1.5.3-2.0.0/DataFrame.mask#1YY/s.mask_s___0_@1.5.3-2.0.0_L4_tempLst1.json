@@ -1,0 +1,15 @@
+[
+  {
+    "(cond, 0)": {},
+    "(other, 1)": {},
+    "(inplace, 3)": {},
+    "(axis, 4)": {},
+    "(level, 5)": {},
+    "(errors, 6)": {
+      "delete": 1
+    },
+    "(try_cast, 7)": {
+      "delete": 1
+    }
+  }
+]

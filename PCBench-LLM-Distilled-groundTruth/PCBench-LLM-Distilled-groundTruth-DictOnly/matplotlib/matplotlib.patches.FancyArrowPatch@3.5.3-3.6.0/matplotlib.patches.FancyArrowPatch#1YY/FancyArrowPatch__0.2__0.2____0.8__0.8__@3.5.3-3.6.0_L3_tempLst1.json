@@ -1,0 +1,36 @@
+[
+  {
+    "(posA, 0)": {},
+    "(posB, 1)": {},
+    "(path, 2)": {
+      "pos2key": "path"
+    },
+    "(arrowstyle, 3)": {
+      "pos2key": "arrowstyle"
+    },
+    "(connectionstyle, 4)": {
+      "pos2key": "connectionstyle"
+    },
+    "(patchA, 5)": {
+      "pos2key": "patchA"
+    },
+    "(patchB, 6)": {
+      "pos2key": "patchB"
+    },
+    "(shrinkA, 7)": {
+      "pos2key": "shrinkA"
+    },
+    "(shrinkB, 8)": {
+      "pos2key": "shrinkB"
+    },
+    "(mutation_scale, 9)": {
+      "pos2key": "mutation_scale"
+    },
+    "(mutation_aspect, 10)": {
+      "pos2key": "mutation_aspect"
+    },
+    "(dpi_cor, 11)": {
+      "delete": 1
+    }
+  }
+]

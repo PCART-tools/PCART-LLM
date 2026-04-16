@@ -1,0 +1,16 @@
+[
+  {
+    "(a, 0)": {},
+    "(b, 1)": {},
+    "(trans, 2)": {},
+    "(lower, 3)": {},
+    "(unit_diagonal, 4)": {},
+    "(overwrite_b, 5)": {},
+    "(debug, 6)": {
+      "delete": 1
+    },
+    "(check_finite, 7)": {
+      "posChange": 6
+    }
+  }
+]

@@ -1,0 +1,17 @@
+--- PCART-original/Script/dynamicMatch.py	2026-04-15 21:36:13
++++ PCART-modified/Script/dynamicMatch.py	2026-04-15 21:36:13
+@@ -227,6 +227,14 @@
+         matchDict['internalPath']=internalPath
+     except:
+         pass
++    try:
++        matchDict['docstring']=inspect.getdoc(eval(api)) or ''
++    except:
++        pass
++    try:
++        matchDict['sourceCode']=inspect.getsource(eval(api)) or ''
++    except:
++        pass
+ except Exception as e:
+     matchDict['match']='nullptr'
+     matchDict['error']='sigError={}: {}'.format(type(e).__name__,e)

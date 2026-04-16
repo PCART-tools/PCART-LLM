@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "flask.json.load(text_file)",
+        "currentVersion": "2.2.5",
+        "targetVersion": "2.3.0",
+        "fileRelativePath": "flask.json.load#1YY/loadYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/flask/flask.json.load@2.2.5-2.3.0/flask.json.load#1YY/loadYY.json",
+        "apiCall": "flask.json.load(text_file)",
+        "oldVersion": "flask@2.2.5",
+        "newVersion": "flask@2.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "flask.json.load",
+            "error": "",
+            "internalPath": "flask.json.__init__",
+            "docstring": "Deserialize data as JSON read from a file.\n\nIf :data:`~flask.current_app` is available, it will use its\n:meth:`app.json.load() <flask.json.provider.JSONProvider.load>`\nmethod, otherwise it will use :func:`json.load`.\n\n:param fp: A file opened for reading text or UTF-8 bytes.\n:param kwargs: Arguments passed to the ``load`` implementation.\n\n.. versionchanged:: 2.2\n    Calls ``current_app.json.load``, allowing an app to override\n    the behavior.\n\n.. versionchanged:: 2.2\n    The ``app`` parameter will be removed in Flask 2.3.\n\n.. versionchanged:: 2.0\n    ``encoding`` will be removed in Flask 2.1. The file must be text\n    mode, or binary mode with UTF-8 bytes.",
+            "sourceCode": "def load(fp: t.IO[t.AnyStr], *, app: Flask | None = None, **kwargs: t.Any) -> t.Any:\n    \"\"\"Deserialize data as JSON read from a file.\n\n    If :data:`~flask.current_app` is available, it will use its\n    :meth:`app.json.load() <flask.json.provider.JSONProvider.load>`\n    method, otherwise it will use :func:`json.load`.\n\n    :param fp: A file opened for reading text or UTF-8 bytes.\n    :param kwargs: Arguments passed to the ``load`` implementation.\n\n    .. versionchanged:: 2.2\n        Calls ``current_app.json.load``, allowing an app to override\n        the behavior.\n\n    .. versionchanged:: 2.2\n        The ``app`` parameter will be removed in Flask 2.3.\n\n    .. versionchanged:: 2.0\n        ``encoding`` will be removed in Flask 2.1. The file must be text\n        mode, or binary mode with UTF-8 bytes.\n    \"\"\"\n    if app is not None:\n        import warnings\n\n        warnings.warn(\n            \"The 'app' parameter is deprecated and will be removed in\"\n            \" Flask 2.3. Call 'app.json.load' directly instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n    else:\n        app = current_app\n\n    if app:\n        return app.json.load(fp, **kwargs)\n\n    return _json.load(fp, **kwargs)\n",
+            "match": "(fp: 't.IO[t.AnyStr]', *, app: 'Flask | None' = None, **kwargs: 't.Any') -> 't.Any'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "flask.json.load",
+            "error": "",
+            "internalPath": "flask.json.__init__",
+            "docstring": "Deserialize data as JSON read from a file.\n\nIf :data:`~flask.current_app` is available, it will use its\n:meth:`app.json.load() <flask.json.provider.JSONProvider.load>`\nmethod, otherwise it will use :func:`json.load`.\n\n:param fp: A file opened for reading text or UTF-8 bytes.\n:param kwargs: Arguments passed to the ``load`` implementation.\n\n.. versionchanged:: 2.3\n    The ``app`` parameter was removed.\n\n.. versionchanged:: 2.2\n    Calls ``current_app.json.load``, allowing an app to override\n    the behavior.\n\n.. versionchanged:: 2.2\n    The ``app`` parameter will be removed in Flask 2.3.\n\n.. versionchanged:: 2.0\n    ``encoding`` will be removed in Flask 2.1. The file must be text\n    mode, or binary mode with UTF-8 bytes.",
+            "sourceCode": "def load(fp: t.IO[t.AnyStr], **kwargs: t.Any) -> t.Any:\n    \"\"\"Deserialize data as JSON read from a file.\n\n    If :data:`~flask.current_app` is available, it will use its\n    :meth:`app.json.load() <flask.json.provider.JSONProvider.load>`\n    method, otherwise it will use :func:`json.load`.\n\n    :param fp: A file opened for reading text or UTF-8 bytes.\n    :param kwargs: Arguments passed to the ``load`` implementation.\n\n    .. versionchanged:: 2.3\n        The ``app`` parameter was removed.\n\n    .. versionchanged:: 2.2\n        Calls ``current_app.json.load``, allowing an app to override\n        the behavior.\n\n    .. versionchanged:: 2.2\n        The ``app`` parameter will be removed in Flask 2.3.\n\n    .. versionchanged:: 2.0\n        ``encoding`` will be removed in Flask 2.1. The file must be text\n        mode, or binary mode with UTF-8 bytes.\n    \"\"\"\n    if current_app:\n        return current_app.json.load(fp, **kwargs)\n\n    return _json.load(fp, **kwargs)\n",
+            "match": "(fp: 't.IO[t.AnyStr]', **kwargs: 't.Any') -> 't.Any'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(fp, 0)": {},
+                "(app, 2)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(fp: 't.IO[t.AnyStr]', **kwargs: 't.Any') -> 't.Any'"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "(fit_intercept, 1)": {},
+    "(normalize, 2)": {
+      "delete": 1
+    },
+    "(copy_X, 3)": {},
+    "(n_jobs, 4)": {},
+    "(positive, 5)": {}
+  }
+]

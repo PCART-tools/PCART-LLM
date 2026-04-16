@@ -1,0 +1,21 @@
+[
+  {
+    "(status_code, 0)": {},
+    "(headers, 2)": {},
+    "(content, 3)": {},
+    "(text, 4)": {},
+    "(html, 5)": {},
+    "(json, 6)": {},
+    "(stream, 7)": {
+      "typeChange": "Union[httpx.SyncByteStream,httpx.AsyncByteStream]"
+    },
+    "(request, 8)": {},
+    "(ext, 9)": {
+      "rename": "extensions"
+    },
+    "(history, 10)": {},
+    "(on_close, 11)": {
+      "delete": 1
+    }
+  }
+]

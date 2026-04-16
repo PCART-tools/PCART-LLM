@@ -1,0 +1,38 @@
+[
+  {
+    "(filters, 0)": {},
+    "(kernel_size, 1)": {},
+    "(strides, 2)": {},
+    "(padding, 3)": {},
+    "(output_padding, 4)": {},
+    "(data_format, 5)": {},
+    "(activation, 6)": {
+      "posChange": 7,
+      "replace": "dilation_rate=(1,1)"
+    },
+    "(use_bias, 7)": {
+      "posChange": 8
+    },
+    "(kernel_initializer, 8)": {
+      "posChange": 9
+    },
+    "(bias_initializer, 9)": {
+      "posChange": 10
+    },
+    "(kernel_regularizer, 10)": {
+      "posChange": 11
+    },
+    "(bias_regularizer, 11)": {
+      "posChange": 12
+    },
+    "(activity_regularizer, 12)": {
+      "posChange": 13
+    },
+    "(kernel_constraint, 13)": {
+      "posChange": 14
+    },
+    "(bias_constraint, 14)": {
+      "posChange": 15
+    }
+  }
+]

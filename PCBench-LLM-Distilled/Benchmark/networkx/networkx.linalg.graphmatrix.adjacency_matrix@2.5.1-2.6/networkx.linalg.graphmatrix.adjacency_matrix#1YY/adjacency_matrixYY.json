@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/networkx/networkx.linalg.graphmatrix.adjacency_matrix@2.5.1-2.6/networkx.linalg.graphmatrix.adjacency_matrix#1YY",
+    "runCommand": "python adjacency_matrixYY.py",
+    "runFilePath": "",
+    "libName": "networkx",
+    "currentVersion": "2.5.1",
+    "targetVersion": "2.6",
+    "currentEnv": "/envs/networkx2.5.1",
+    "targetEnv": "/envs/networkx2.6"
+}

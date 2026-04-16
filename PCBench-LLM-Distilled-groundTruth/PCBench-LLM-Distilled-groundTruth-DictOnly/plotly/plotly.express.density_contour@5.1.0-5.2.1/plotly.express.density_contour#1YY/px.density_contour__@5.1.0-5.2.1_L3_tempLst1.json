@@ -1,0 +1,67 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(x, 1)": {},
+    "(y, 2)": {},
+    "(z, 3)": {},
+    "(color, 4)": {},
+    "(facet_row, 5)": {},
+    "(facet_col, 6)": {},
+    "(facet_col_wrap, 7)": {},
+    "(facet_row_spacing, 8)": {},
+    "(facet_col_spacing, 9)": {},
+    "(hover_name, 10)": {},
+    "(hover_data, 11)": {},
+    "(animation_frame, 12)": {},
+    "(animation_group, 13)": {},
+    "(category_orders, 14)": {},
+    "(labels, 15)": {},
+    "(orientation, 16)": {},
+    "(color_discrete_sequence, 17)": {},
+    "(color_discrete_map, 18)": {},
+    "(marginal_x, 19)": {},
+    "(marginal_y, 20)": {},
+    "(trendline, 21)": {},
+    "(trendline_color_override, 22)": {
+      "posChange": 23,
+      "replace": "trendline_options=None"
+    },
+    "(log_x, 23)": {
+      "posChange": 25
+    },
+    "(log_y, 24)": {
+      "posChange": 26,
+      "replace": "trendline_scope='trace'"
+    },
+    "(range_x, 25)": {
+      "posChange": 27
+    },
+    "(range_y, 26)": {
+      "posChange": 28
+    },
+    "(histfunc, 27)": {
+      "posChange": 29
+    },
+    "(histnorm, 28)": {
+      "posChange": 30
+    },
+    "(nbinsx, 29)": {
+      "posChange": 31
+    },
+    "(nbinsy, 30)": {
+      "posChange": 32
+    },
+    "(title, 31)": {
+      "posChange": 33
+    },
+    "(template, 32)": {
+      "posChange": 34
+    },
+    "(width, 33)": {
+      "posChange": 35
+    },
+    "(height, 34)": {
+      "posChange": 36
+    }
+  }
+]

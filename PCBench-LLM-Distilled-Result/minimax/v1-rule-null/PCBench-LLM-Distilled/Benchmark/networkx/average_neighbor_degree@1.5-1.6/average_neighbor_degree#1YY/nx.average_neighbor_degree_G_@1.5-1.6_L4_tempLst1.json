@@ -1,0 +1,58 @@
+{
+    "context": {
+        "callAPI": "nx.average_neighbor_degree(G)",
+        "currentVersion": "1.5",
+        "targetVersion": "1.6",
+        "fileRelativePath": "average_neighbor_degree#1YY/average_neighbor_degreeYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/average_neighbor_degree@1.5-1.6/average_neighbor_degree#1YY/average_neighbor_degreeYY.json",
+        "apiCall": "nx.average_neighbor_degree(G)",
+        "oldVersion": "networkx@1.5",
+        "newVersion": "networkx@1.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.average_neighbor_degree",
+            "error": "",
+            "internalPath": "networkx.algorithms.neighbor_degree",
+            "docstring": "Returns the average degree of the neighborhood of each node.\n\nThe average degree of a node `i` is\n\n.. math::\n\n    k_{nn,i} = \\frac{1}{|N(i)|} \\sum_{j \\in N(i)} k_j\n\nwhere `N(i)` are the neighbors of node `i` and `k_j` is\nthe degree of node `j` which belongs to `N(i)`. For weighted \ngraphs, an analogous measure can be defined [1]_,\n\n.. math::\n\n    k_{nn,i}^{w} = \\\\frac{1}{s_i} \\sum_{j \\in N(i)} w_{ij} k_j\n\nwhere `s_i` is the weighted degree of node `i`, `w_{ij}`\nis the weight of the edge that links `i` and `j` and\n`N(i)` are the neighbors of node `i`.\n\n\nParameters\n----------\nG : NetworkX graph\n\nnodes: list or iterable (optional)\n    Compute neighbor connectivity for these nodes. The default is all nodes.\n\nweighted: bool (default=False)\n    Compute weighted average nearest neighbors degree.\n\nReturns\n-------\nd: dict\n   A dictionary keyed by node with average neighbors degree value.\n\nExamples\n--------\n>>> G=nx.path_graph(4)\n>>> G.edge[0][1]['weight'] = 5\n>>> G.edge[2][3]['weight'] = 3\n>>> nx.average_neighbor_degree(G)\n{0: 2.0, 1: 1.5, 2: 1.5, 3: 2.0}\n>>> nx.average_neighbor_degree(G, weighted=True)\n{0: 2.0, 1: 1.1666666666666667, 2: 1.25, 3: 2.0}\n\n>>> G=nx.DiGraph()\n>>> G.add_path([0,1,2,3])\n>>> nx.average_neighbor_in_degree(G)\n{0: 1.0, 1: 1.0, 2: 1.0, 3: 0.0}\n>>> nx.average_neighbor_out_degree(G)\n{0: 1.0, 1: 1.0, 2: 0.0, 3: 0.0}\n\nNotes\n-----\nFor directed graphs you can also specify in-degree or out-degree \nby calling the relevant functions.  \n\nSee Also\n--------\naverage_neighbor_out_degree, average_neighbor_in_degree, \naverage_degree_connectivity \n\nReferences\n----------    \n.. [1] A. Barrat, M. Barthélemy, R. Pastor-Satorras, and A. Vespignani, \n   \"The architecture of complex weighted networks\". \n   PNAS 101 (11): 3747–3752 (2004).",
+            "sourceCode": "def average_neighbor_degree(G, nodes=None, weighted=False):\n    r\"\"\"Returns the average degree of the neighborhood of each node.\n\n    The average degree of a node `i` is\n\n    .. math::\n\n        k_{nn,i} = \\frac{1}{|N(i)|} \\sum_{j \\in N(i)} k_j\n\n    where `N(i)` are the neighbors of node `i` and `k_j` is\n    the degree of node `j` which belongs to `N(i)`. For weighted \n    graphs, an analogous measure can be defined [1]_,\n\n    .. math::\n\n        k_{nn,i}^{w} = \\\\frac{1}{s_i} \\sum_{j \\in N(i)} w_{ij} k_j\n\n    where `s_i` is the weighted degree of node `i`, `w_{ij}`\n    is the weight of the edge that links `i` and `j` and\n    `N(i)` are the neighbors of node `i`.\n\n\n    Parameters\n    ----------\n    G : NetworkX graph\n\n    nodes: list or iterable (optional)\n        Compute neighbor connectivity for these nodes. The default is all nodes.\n\n    weighted: bool (default=False)\n        Compute weighted average nearest neighbors degree.\n\n    Returns\n    -------\n    d: dict\n       A dictionary keyed by node with average neighbors degree value.\n\n    Examples\n    --------\n    >>> G=nx.path_graph(4)\n    >>> G.edge[0][1]['weight'] = 5\n    >>> G.edge[2][3]['weight'] = 3\n    >>> nx.average_neighbor_degree(G)\n    {0: 2.0, 1: 1.5, 2: 1.5, 3: 2.0}\n    >>> nx.average_neighbor_degree(G, weighted=True)\n    {0: 2.0, 1: 1.1666666666666667, 2: 1.25, 3: 2.0}\n\n    >>> G=nx.DiGraph()\n    >>> G.add_path([0,1,2,3])\n    >>> nx.average_neighbor_in_degree(G)\n    {0: 1.0, 1: 1.0, 2: 1.0, 3: 0.0}\n    >>> nx.average_neighbor_out_degree(G)\n    {0: 1.0, 1: 1.0, 2: 0.0, 3: 0.0}\n \n    Notes\n    -----\n    For directed graphs you can also specify in-degree or out-degree \n    by calling the relevant functions.  \n\n    See Also\n    --------\n    average_neighbor_out_degree, average_neighbor_in_degree, \n    average_degree_connectivity \n    \n    References\n    ----------    \n    .. [1] A. Barrat, M. Barthélemy, R. Pastor-Satorras, and A. Vespignani, \n       \"The architecture of complex weighted networks\". \n       PNAS 101 (11): 3747–3752 (2004).\n    \"\"\"\n    degree_method = G.degree\n    return _average_nbr_deg(G, degree_method, nodes=nodes, weighted=weighted)\n",
+            "match": "(G, nodes=None, weighted=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.average_neighbor_degree",
+            "error": "",
+            "internalPath": "networkx.algorithms.assortativity.neighbor_degree",
+            "docstring": "Returns the average degree of the neighborhood of each node.\n\nThe average degree of a node `i` is\n\n.. math::\n\n    k_{nn,i} = \\frac{1}{|N(i)|} \\sum_{j \\in N(i)} k_j\n\nwhere `N(i)` are the neighbors of node `i` and `k_j` is\nthe degree of node `j` which belongs to `N(i)`. For weighted \ngraphs, an analogous measure can be defined [1]_,\n\n.. math::\n\n    k_{nn,i}^{w} = \\frac{1}{s_i} \\sum_{j \\in N(i)} w_{ij} k_j\n\nwhere `s_i` is the weighted degree of node `i`, `w_{ij}`\nis the weight of the edge that links `i` and `j` and\n`N(i)` are the neighbors of node `i`.\n\n\nParameters\n----------\nG : NetworkX graph\n\nsource : string (\"in\"|\"out\")\n   Directed graphs only.\n   Use \"in\"- or \"out\"-degree for source node.  \n\ntarget : string (\"in\"|\"out\")\n   Directed graphs only.\n   Use \"in\"- or \"out\"-degree for target node.\n\nnodes : list or iterable, optional \n    Compute neighbor degree for specified nodes.  The default is\n    all nodes in the graph.\n\n\nweight : string or None, optional (default=None)\n   The edge attribute that holds the numerical value used as a weight.\n   If None, then each edge has weight 1.\n\nReturns\n-------\nd: dict\n   A dictionary keyed by node with average neighbors degree value.\n\nExamples\n--------\n>>> G=nx.path_graph(4)\n>>> G.edge[0][1]['weight'] = 5\n>>> G.edge[2][3]['weight'] = 3\n\n>>> nx.average_neighbor_degree(G)\n{0: 2.0, 1: 1.5, 2: 1.5, 3: 2.0}\n>>> nx.average_neighbor_degree(G, weight='weight')\n{0: 2.0, 1: 1.1666666666666667, 2: 1.25, 3: 2.0}\n\n>>> G=nx.DiGraph()\n>>> G.add_path([0,1,2,3])\n>>> nx.average_neighbor_degree(G, source='in', target='in')\n{0: 1.0, 1: 1.0, 2: 1.0, 3: 0.0}\n\n>>> nx.average_neighbor_degree(G, source='out', target='out')\n{0: 1.0, 1: 1.0, 2: 0.0, 3: 0.0}\n\nNotes\n-----\nFor directed graphs you can also specify in-degree or out-degree \nby passing keyword arguments.\n\nSee Also\n--------\naverage_degree_connectivity \n\nReferences\n----------    \n.. [1] A. Barrat, M. Barthélemy, R. Pastor-Satorras, and A. Vespignani, \n   \"The architecture of complex weighted networks\". \n   PNAS 101 (11): 3747–3752 (2004).",
+            "sourceCode": "def average_neighbor_degree(G, source='out', target='out',\n                            nodes=None, weight=None):\n    r\"\"\"Returns the average degree of the neighborhood of each node.\n\n    The average degree of a node `i` is\n\n    .. math::\n\n        k_{nn,i} = \\frac{1}{|N(i)|} \\sum_{j \\in N(i)} k_j\n\n    where `N(i)` are the neighbors of node `i` and `k_j` is\n    the degree of node `j` which belongs to `N(i)`. For weighted \n    graphs, an analogous measure can be defined [1]_,\n\n    .. math::\n\n        k_{nn,i}^{w} = \\frac{1}{s_i} \\sum_{j \\in N(i)} w_{ij} k_j\n\n    where `s_i` is the weighted degree of node `i`, `w_{ij}`\n    is the weight of the edge that links `i` and `j` and\n    `N(i)` are the neighbors of node `i`.\n\n\n    Parameters\n    ----------\n    G : NetworkX graph\n\n    source : string (\"in\"|\"out\")\n       Directed graphs only.\n       Use \"in\"- or \"out\"-degree for source node.  \n\n    target : string (\"in\"|\"out\")\n       Directed graphs only.\n       Use \"in\"- or \"out\"-degree for target node.\n\n    nodes : list or iterable, optional \n        Compute neighbor degree for specified nodes.  The default is\n        all nodes in the graph.\n\n\n    weight : string or None, optional (default=None)\n       The edge attribute that holds the numerical value used as a weight.\n       If None, then each edge has weight 1.\n\n    Returns\n    -------\n    d: dict\n       A dictionary keyed by node with average neighbors degree value.\n\n    Examples\n    --------\n    >>> G=nx.path_graph(4)\n    >>> G.edge[0][1]['weight'] = 5\n    >>> G.edge[2][3]['weight'] = 3\n\n    >>> nx.average_neighbor_degree(G)\n    {0: 2.0, 1: 1.5, 2: 1.5, 3: 2.0}\n    >>> nx.average_neighbor_degree(G, weight='weight')\n    {0: 2.0, 1: 1.1666666666666667, 2: 1.25, 3: 2.0}\n\n    >>> G=nx.DiGraph()\n    >>> G.add_path([0,1,2,3])\n    >>> nx.average_neighbor_degree(G, source='in', target='in')\n    {0: 1.0, 1: 1.0, 2: 1.0, 3: 0.0}\n\n    >>> nx.average_neighbor_degree(G, source='out', target='out')\n    {0: 1.0, 1: 1.0, 2: 0.0, 3: 0.0}\n \n    Notes\n    -----\n    For directed graphs you can also specify in-degree or out-degree \n    by passing keyword arguments.\n\n    See Also\n    --------\n    average_degree_connectivity \n    \n    References\n    ----------    \n    .. [1] A. Barrat, M. Barthélemy, R. Pastor-Satorras, and A. Vespignani, \n       \"The architecture of complex weighted networks\". \n       PNAS 101 (11): 3747–3752 (2004).\n    \"\"\"\n    source_degree = G.degree\n    target_degree = G.degree\n    if G.is_directed():\n        direction = {'out':G.out_degree,\n                     'in':G.in_degree}\n        source_degree = direction[source]\n        target_degree = direction[target]\n    return _average_nbr_deg(G, source_degree, target_degree, \n                            nodes=nodes, weight=weight)\n",
+            "match": "(G, source='out', target='out', nodes=None, weight=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(nodes, 1)": {
+                    "posChange": 3
+                },
+                "(source, 1)": {
+                    "addPos": "source='out'"
+                },
+                "(weighted, 2)": {
+                    "delete": 1,
+                    "replace": "target"
+                },
+                "(target, 2)": {
+                    "addPos": "target='out'"
+                },
+                "(nodes, 3)": {},
+                "(weight, 4)": {
+                    "addPos": "weight=None"
+                }
+            },
+            "targetOvPara": "(G, source='out', target='out', nodes=None, weight=None)"
+        }
+    ]
+}

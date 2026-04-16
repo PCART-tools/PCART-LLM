@@ -1,0 +1,28 @@
+[
+  {
+    "(name, 0)": {},
+    "(parent, 1)": {},
+    "(child, 2)": {},
+    "(coordinates, 3)": {},
+    "(speeds, 4)": {},
+    "(parent_joint_pos, 5)": {
+      "posChange": 12,
+      "replace": "parent_point=None"
+    },
+    "(child_joint_pos, 6)": {
+      "posChange": 13,
+      "replace": "child_point=None"
+    },
+    "(parent_axis, 7)": {},
+    "(child_axis, 8)": {},
+    "(parent_interframe, 9)": {
+      "addPos": "parent_interframe=None"
+    },
+    "(child_interframe, 10)": {
+      "addPos": "child_interframe=None"
+    },
+    "(joint_axis, 11)": {
+      "addPos": "joint_axis=None"
+    }
+  }
+]

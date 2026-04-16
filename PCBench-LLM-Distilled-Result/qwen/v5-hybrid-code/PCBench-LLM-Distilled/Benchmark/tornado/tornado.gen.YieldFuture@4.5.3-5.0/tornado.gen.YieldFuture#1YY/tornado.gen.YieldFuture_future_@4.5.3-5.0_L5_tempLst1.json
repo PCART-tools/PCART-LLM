@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "tornado.gen.YieldFuture(future)",
+        "currentVersion": "4.5.3",
+        "targetVersion": "5.0",
+        "fileRelativePath": "tornado.gen.YieldFuture#1YY/YieldFutureYY.py",
+        "lineNum": "5",
+        "config": "PCBench-LLM-Distilled/Benchmark/tornado/tornado.gen.YieldFuture@4.5.3-5.0/tornado.gen.YieldFuture#1YY/YieldFutureYY.json",
+        "apiCall": "tornado.gen.YieldFuture(future)",
+        "oldVersion": "tornado@4.5.3",
+        "newVersion": "tornado@5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "tornado.gen.YieldFuture",
+            "error": "",
+            "internalPath": "tornado.gen",
+            "docstring": "Base class for objects that may be yielded from the generator.\n\n.. deprecated:: 4.0\n   Use `Futures <.Future>` instead.",
+            "sourceCode": "class YieldFuture(YieldPoint):\n    def __init__(self, future, io_loop=None):\n        \"\"\"Adapts a `.Future` to the `YieldPoint` interface.\n\n        .. versionchanged:: 4.1\n           The ``io_loop`` argument is deprecated.\n        \"\"\"\n        self.future = future\n        self.io_loop = io_loop or IOLoop.current()\n\n    def start(self, runner):\n        if not self.future.done():\n            self.runner = runner\n            self.key = object()\n            runner.register_callback(self.key)\n            self.io_loop.add_future(self.future, runner.result_callback(self.key))\n        else:\n            self.runner = None\n            self.result_fn = self.future.result\n\n    def is_ready(self):\n        if self.runner is not None:\n            return self.runner.is_ready(self.key)\n        else:\n            return True\n\n    def get_result(self):\n        if self.runner is not None:\n            return self.runner.pop_result(self.key).result()\n        else:\n            return self.result_fn()\n",
+            "match": "(future, io_loop=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "tornado.gen.YieldFuture",
+            "match": {
+                "tornado.gen.YieldFuture": [
+                    "(self,future)"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(future, 0)": {},
+                "(io_loop, 1)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(self,future)"
+        }
+    ]
+}

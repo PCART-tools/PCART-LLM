@@ -1,0 +1,45 @@
+{
+    "context": {
+        "callAPI": "pd.Timestamp.fromordinal(737425)",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Timestamp.fromordinal#1YY/fromordinalYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/pandas/Timestamp.fromordinal@1.5.3-2.0.0/Timestamp.fromordinal#1YY/fromordinalYY.json",
+        "apiCall": "pd.Timestamp.fromordinal(737425)",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Timestamp.fromordinal",
+            "error": "",
+            "internalPath": "pandas.Timestamp.fromordinal",
+            "docstring": "Construct a timestamp from a a proleptic Gregorian ordinal.\n\nParameters\n----------\nordinal : int\n    Date corresponding to a proleptic Gregorian ordinal.\nfreq : str, DateOffset\n    Offset to apply to the Timestamp.\ntz : str, pytz.timezone, dateutil.tz.tzfile or None\n    Time zone for the Timestamp.\n\nNotes\n-----\nBy definition there cannot be any tz info on the ordinal itself.\n\nExamples\n--------\n>>> pd.Timestamp.fromordinal(737425)\nTimestamp('2020-01-01 00:00:00')",
+            "match": "(ordinal, freq=None, tz=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Timestamp.fromordinal",
+            "error": "",
+            "internalPath": "pandas.Timestamp.fromordinal",
+            "docstring": "Construct a timestamp from a a proleptic Gregorian ordinal.\n\nParameters\n----------\nordinal : int\n    Date corresponding to a proleptic Gregorian ordinal.\ntz : str, pytz.timezone, dateutil.tz.tzfile or None\n    Time zone for the Timestamp.\n\nNotes\n-----\nBy definition there cannot be any tz info on the ordinal itself.\n\nExamples\n--------\n>>> pd.Timestamp.fromordinal(737425)\nTimestamp('2020-01-01 00:00:00')",
+            "match": "(ordinal, tz=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(ordinal, 0)": {},
+                "(freq, 1)": {
+                    "delete": 1
+                },
+                "(tz, 2)": {
+                    "posChange": 1
+                }
+            },
+            "targetOvPara": "(ordinal, tz=None)"
+        }
+    ]
+}

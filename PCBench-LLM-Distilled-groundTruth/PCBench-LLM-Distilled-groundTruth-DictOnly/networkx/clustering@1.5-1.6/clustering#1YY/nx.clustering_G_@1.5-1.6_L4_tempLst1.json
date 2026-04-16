@@ -1,0 +1,10 @@
+[
+  {
+    "(G, 0)": {},
+    "(nodes, 1)": {},
+    "(weighted, 2)": {
+      "delete": 1,
+      "replace": "weight=None"
+    }
+  }
+]

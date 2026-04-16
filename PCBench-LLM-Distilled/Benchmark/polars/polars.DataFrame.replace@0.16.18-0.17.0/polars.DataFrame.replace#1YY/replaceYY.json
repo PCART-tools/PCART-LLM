@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.DataFrame.replace@0.16.18-0.17.0/polars.DataFrame.replace#1YY",
+    "runCommand": "python replaceYY.py",
+    "runFilePath": "",
+    "libName": "polars",
+    "currentVersion": "0.16.18",
+    "targetVersion": "0.17.0",
+    "currentEnv": "/envs/polars0.16.18",
+    "targetEnv": "/envs/polars0.17.0"
+}

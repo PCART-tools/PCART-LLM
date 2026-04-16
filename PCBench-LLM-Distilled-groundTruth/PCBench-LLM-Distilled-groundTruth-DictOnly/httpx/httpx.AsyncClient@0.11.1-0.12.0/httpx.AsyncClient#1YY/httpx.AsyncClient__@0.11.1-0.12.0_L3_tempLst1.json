@@ -1,0 +1,27 @@
+[
+  {
+    "(auth, 1)": {},
+    "(params, 2)": {},
+    "(headers, 3)": {},
+    "(cookies, 4)": {},
+    "(verify, 5)": {},
+    "(cert, 6)": {},
+    "(http2, 7)": {},
+    "(proxies, 8)": {},
+    "(timeout, 9)": {},
+    "(pool_limits, 10)": {
+      "typeChange": "httpx._config.PoolLimits"
+    },
+    "(max_redirects, 11)": {},
+    "(base_url, 12)": {},
+    "(dispatch, 13)": {
+      "typeChange": "httpx._dispatch.base.AsyncDispatcher"
+    },
+    "(app, 14)": {},
+    "(backend, 15)": {
+      "delete": 1
+    },
+    "(trust_env, 16)": {},
+    "(uds, 17)": {}
+  }
+]

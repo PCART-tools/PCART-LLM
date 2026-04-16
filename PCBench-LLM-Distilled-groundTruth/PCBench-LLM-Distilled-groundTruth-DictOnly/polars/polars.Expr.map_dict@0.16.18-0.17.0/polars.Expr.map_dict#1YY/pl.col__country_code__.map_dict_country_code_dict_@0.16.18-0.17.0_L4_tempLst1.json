@@ -1,0 +1,9 @@
+[
+  {
+    "(remapping, 0)": {},
+    "(default, 2)": {},
+    "(dtype, 3)": {
+      "rename": "return_dtype"
+    }
+  }
+]

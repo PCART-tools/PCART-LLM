@@ -1,0 +1,12 @@
+[
+  {
+    "(G, 0)": {},
+    "(weight, 1)": {},
+    "(resolution, 2)": {},
+    "(cutoff, 3)": {},
+    "(best_n, 4)": {},
+    "(n_communities, 5)": {
+      "delete": 1
+    }
+  }
+]

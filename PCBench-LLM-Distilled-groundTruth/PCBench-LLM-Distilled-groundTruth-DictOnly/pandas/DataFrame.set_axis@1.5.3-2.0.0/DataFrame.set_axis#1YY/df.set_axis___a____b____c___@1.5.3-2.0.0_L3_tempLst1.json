@@ -1,0 +1,12 @@
+[
+  {
+    "(labels, 0)": {},
+    "(axis, 2)": {},
+    "(inplace, 3)": {
+      "delete": 1
+    },
+    "(copy, 4)": {
+      "typeChange": "bool|None"
+    }
+  }
+]

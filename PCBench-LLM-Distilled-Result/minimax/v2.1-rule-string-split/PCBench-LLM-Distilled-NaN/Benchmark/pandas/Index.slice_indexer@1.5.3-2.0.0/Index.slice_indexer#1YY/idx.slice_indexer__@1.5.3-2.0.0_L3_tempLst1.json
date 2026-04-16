@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "idx.slice_indexer()",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Index.slice_indexer#1YY/slice_indexerYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/pandas/Index.slice_indexer@1.5.3-2.0.0/Index.slice_indexer#1YY/slice_indexerYY.json",
+        "apiCall": "idx.slice_indexer()",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Index.slice_indexer",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Compute the slice indexer for input labels and step.\n\nIndex needs to be ordered and unique.\n\nParameters\n----------\nstart : label, default None\n    If None, defaults to the beginning.\nend : label, default None\n    If None, defaults to the end.\nstep : int, default None\nkind : str, default None\n\n    .. deprecated:: 1.4.0\n\nReturns\n-------\nindexer : slice\n\nRaises\n------\nKeyError : If key does not exist, or key is not unique and index is\n    not ordered.\n\nNotes\n-----\nThis function assumes that the data is sorted, so use at your own peril\n\nExamples\n--------\nThis is a method on all index types. For example you can do:\n\n>>> idx = pd.Index(list('abcd'))\n>>> idx.slice_indexer(start='b', end='c')\nslice(1, 3, None)\n\n>>> idx = pd.MultiIndex.from_arrays([list('abcd'), list('efgh')])\n>>> idx.slice_indexer(start='b', end=('c', 'g'))\nslice(1, 3, None)",
+            "sourceCode": "    def slice_indexer(\n        self,\n        start: Hashable | None = None,\n        end: Hashable | None = None,\n        step: int | None = None,\n        kind=no_default,\n    ) -> slice:\n        \"\"\"\n        Compute the slice indexer for input labels and step.\n\n        Index needs to be ordered and unique.\n\n        Parameters\n        ----------\n        start : label, default None\n            If None, defaults to the beginning.\n        end : label, default None\n            If None, defaults to the end.\n        step : int, default None\n        kind : str, default None\n\n            .. deprecated:: 1.4.0\n\n        Returns\n        -------\n        indexer : slice\n\n        Raises\n        ------\n        KeyError : If key does not exist, or key is not unique and index is\n            not ordered.\n\n        Notes\n        -----\n        This function assumes that the data is sorted, so use at your own peril\n\n        Examples\n        --------\n        This is a method on all index types. For example you can do:\n\n        >>> idx = pd.Index(list('abcd'))\n        >>> idx.slice_indexer(start='b', end='c')\n        slice(1, 3, None)\n\n        >>> idx = pd.MultiIndex.from_arrays([list('abcd'), list('efgh')])\n        >>> idx.slice_indexer(start='b', end=('c', 'g'))\n        slice(1, 3, None)\n        \"\"\"\n        self._deprecated_arg(kind, \"kind\", \"slice_indexer\")\n\n        start_slice, end_slice = self.slice_locs(start, end, step=step)\n\n        # return a slice\n        if not is_scalar(start_slice):\n            raise AssertionError(\"Start slice bound is non-scalar\")\n        if not is_scalar(end_slice):\n            raise AssertionError(\"End slice bound is non-scalar\")\n\n        return slice(start_slice, end_slice, step)\n",
+            "match": "(start: 'Hashable | None' = None, end: 'Hashable | None' = None, step: 'int | None' = None, kind=<no_default>) -> 'slice'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Index.slice_indexer",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Compute the slice indexer for input labels and step.\n\nIndex needs to be ordered and unique.\n\nParameters\n----------\nstart : label, default None\n    If None, defaults to the beginning.\nend : label, default None\n    If None, defaults to the end.\nstep : int, default None\n\nReturns\n-------\nslice\n\nRaises\n------\nKeyError : If key does not exist, or key is not unique and index is\n    not ordered.\n\nNotes\n-----\nThis function assumes that the data is sorted, so use at your own peril\n\nExamples\n--------\nThis is a method on all index types. For example you can do:\n\n>>> idx = pd.Index(list('abcd'))\n>>> idx.slice_indexer(start='b', end='c')\nslice(1, 3, None)\n\n>>> idx = pd.MultiIndex.from_arrays([list('abcd'), list('efgh')])\n>>> idx.slice_indexer(start='b', end=('c', 'g'))\nslice(1, 3, None)",
+            "sourceCode": "    def slice_indexer(\n        self,\n        start: Hashable | None = None,\n        end: Hashable | None = None,\n        step: int | None = None,\n    ) -> slice:\n        \"\"\"\n        Compute the slice indexer for input labels and step.\n\n        Index needs to be ordered and unique.\n\n        Parameters\n        ----------\n        start : label, default None\n            If None, defaults to the beginning.\n        end : label, default None\n            If None, defaults to the end.\n        step : int, default None\n\n        Returns\n        -------\n        slice\n\n        Raises\n        ------\n        KeyError : If key does not exist, or key is not unique and index is\n            not ordered.\n\n        Notes\n        -----\n        This function assumes that the data is sorted, so use at your own peril\n\n        Examples\n        --------\n        This is a method on all index types. For example you can do:\n\n        >>> idx = pd.Index(list('abcd'))\n        >>> idx.slice_indexer(start='b', end='c')\n        slice(1, 3, None)\n\n        >>> idx = pd.MultiIndex.from_arrays([list('abcd'), list('efgh')])\n        >>> idx.slice_indexer(start='b', end=('c', 'g'))\n        slice(1, 3, None)\n        \"\"\"\n        start_slice, end_slice = self.slice_locs(start, end, step=step)\n\n        # return a slice\n        if not is_scalar(start_slice):\n            raise AssertionError(\"Start slice bound is non-scalar\")\n        if not is_scalar(end_slice):\n            raise AssertionError(\"End slice bound is non-scalar\")\n\n        return slice(start_slice, end_slice, step)\n",
+            "match": "(start: 'Hashable | None' = None, end: 'Hashable | None' = None, step: 'int | None' = None) -> 'slice'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(start, 0)": {},
+                "(end, 1)": {},
+                "(step, 2)": {},
+                "(kind, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(start: 'Hashable | None' = None, end: 'Hashable | None' = None, step: 'int | None' = None) -> 'slice'"
+        }
+    ]
+}

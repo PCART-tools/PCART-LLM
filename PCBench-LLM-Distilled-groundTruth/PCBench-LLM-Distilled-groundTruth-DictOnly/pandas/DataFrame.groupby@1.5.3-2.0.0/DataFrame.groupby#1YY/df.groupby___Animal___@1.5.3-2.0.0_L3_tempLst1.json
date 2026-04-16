@@ -1,0 +1,21 @@
+[
+  {
+    "(by, 0)": {},
+    "(axis, 1)": {},
+    "(level, 2)": {},
+    "(as_index, 3)": {},
+    "(sort, 4)": {},
+    "(group_keys, 5)": {
+      "typeChange": "bool"
+    },
+    "(squeeze, 6)": {
+      "delete": 1
+    },
+    "(observed, 7)": {
+      "posChange": 6
+    },
+    "(dropna, 8)": {
+      "posChange": 7
+    }
+  }
+]

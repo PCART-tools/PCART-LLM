@@ -1,0 +1,76 @@
+{
+    "context": {
+        "callAPI": "pd.Timestamp('2017-01-01T12')",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Timestamp#1YY/TimestampYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/Timestamp@1.5.3-2.0.0/Timestamp#1YY/TimestampYY.json",
+        "apiCall": "pd.Timestamp('2017-01-01T12')",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Timestamp",
+            "error": "",
+            "internalPath": "pandas._libs.tslibs.timestamps.cpython-38-x86_64-linux-gnu.so",
+            "docstring": "Pandas replacement for python datetime.datetime object.\n\nTimestamp is the pandas equivalent of python's Datetime\nand is interchangeable with it in most cases. It's the type used\nfor the entries that make up a DatetimeIndex, and other timeseries\noriented data structures in pandas.\n\nParameters\n----------\nts_input : datetime-like, str, int, float\n    Value to be converted to Timestamp.\nfreq : str, DateOffset\n    Offset which Timestamp will have.\ntz : str, pytz.timezone, dateutil.tz.tzfile or None\n    Time zone for time which Timestamp will have.\nunit : str\n    Unit used for conversion if ts_input is of type int or float. The\n    valid values are 'D', 'h', 'm', 's', 'ms', 'us', and 'ns'. For\n    example, 's' means seconds and 'ms' means milliseconds.\nyear, month, day : int\nhour, minute, second, microsecond : int, optional, default 0\nnanosecond : int, optional, default 0\ntzinfo : datetime.tzinfo, optional, default None\nfold : {0, 1}, default None, keyword-only\n    Due to daylight saving time, one wall clock time can occur twice\n    when shifting from summer to winter time; fold describes whether the\n    datetime-like corresponds  to the first (0) or the second time (1)\n    the wall clock hits the ambiguous time.\n\n    .. versionadded:: 1.1.0\n\nNotes\n-----\nThere are essentially three calling conventions for the constructor. The\nprimary form accepts four parameters. They can be passed by position or\nkeyword.\n\nThe other two forms mimic the parameters from ``datetime.datetime``. They\ncan be passed by either position or keyword, but not both mixed together.\n\nExamples\n--------\nUsing the primary calling convention:\n\nThis converts a datetime-like string\n\n>>> pd.Timestamp('2017-01-01T12')\nTimestamp('2017-01-01 12:00:00')\n\nThis converts a float representing a Unix epoch in units of seconds\n\n>>> pd.Timestamp(1513393355.5, unit='s')\nTimestamp('2017-12-16 03:02:35.500000')\n\nThis converts an int representing a Unix-epoch in units of seconds\nand for a particular timezone\n\n>>> pd.Timestamp(1513393355, unit='s', tz='US/Pacific')\nTimestamp('2017-12-15 19:02:35-0800', tz='US/Pacific')\n\nUsing the other two forms that mimic the API for ``datetime.datetime``:\n\n>>> pd.Timestamp(2017, 1, 1, 12)\nTimestamp('2017-01-01 12:00:00')\n\n>>> pd.Timestamp(year=2017, month=1, day=1, hour=12)\nTimestamp('2017-01-01 12:00:00')",
+            "match": "(ts_input=<object object at 0x7a47d22da860>, freq=None, tz=None, unit=None, year=None, month=None, day=None, hour=None, minute=None, second=None, microsecond=None, nanosecond=None, tzinfo=None, *, fold=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Timestamp",
+            "error": "",
+            "internalPath": "pandas._libs.tslibs.timestamps.cpython-38-x86_64-linux-gnu.so",
+            "docstring": "Pandas replacement for python datetime.datetime object.\n\nTimestamp is the pandas equivalent of python's Datetime\nand is interchangeable with it in most cases. It's the type used\nfor the entries that make up a DatetimeIndex, and other timeseries\noriented data structures in pandas.\n\nParameters\n----------\nts_input : datetime-like, str, int, float\n    Value to be converted to Timestamp.\nyear, month, day : int\nhour, minute, second, microsecond : int, optional, default 0\ntzinfo : datetime.tzinfo, optional, default None\nnanosecond : int, optional, default 0\ntz : str, pytz.timezone, dateutil.tz.tzfile or None\n    Time zone for time which Timestamp will have.\nunit : str\n    Unit used for conversion if ts_input is of type int or float. The\n    valid values are 'D', 'h', 'm', 's', 'ms', 'us', and 'ns'. For\n    example, 's' means seconds and 'ms' means milliseconds.\n\n    For float inputs, the result will be stored in nanoseconds, and\n    the unit attribute will be set as ``'ns'``.\nfold : {0, 1}, default None, keyword-only\n    Due to daylight saving time, one wall clock time can occur twice\n    when shifting from summer to winter time; fold describes whether the\n    datetime-like corresponds  to the first (0) or the second time (1)\n    the wall clock hits the ambiguous time.\n\n    .. versionadded:: 1.1.0\n\nNotes\n-----\nThere are essentially three calling conventions for the constructor. The\nprimary form accepts four parameters. They can be passed by position or\nkeyword.\n\nThe other two forms mimic the parameters from ``datetime.datetime``. They\ncan be passed by either position or keyword, but not both mixed together.\n\nExamples\n--------\nUsing the primary calling convention:\n\nThis converts a datetime-like string\n\n>>> pd.Timestamp('2017-01-01T12')\nTimestamp('2017-01-01 12:00:00')\n\nThis converts a float representing a Unix epoch in units of seconds\n\n>>> pd.Timestamp(1513393355.5, unit='s')\nTimestamp('2017-12-16 03:02:35.500000')\n\nThis converts an int representing a Unix-epoch in units of seconds\nand for a particular timezone\n\n>>> pd.Timestamp(1513393355, unit='s', tz='US/Pacific')\nTimestamp('2017-12-15 19:02:35-0800', tz='US/Pacific')\n\nUsing the other two forms that mimic the API for ``datetime.datetime``:\n\n>>> pd.Timestamp(2017, 1, 1, 12)\nTimestamp('2017-01-01 12:00:00')\n\n>>> pd.Timestamp(year=2017, month=1, day=1, hour=12)\nTimestamp('2017-01-01 12:00:00')",
+            "match": "(ts_input=<object object at 0x77985a474650>, year=None, month=None, day=None, hour=None, minute=None, second=None, microsecond=None, tzinfo=None, *, nanosecond=None, tz=None, unit=None, fold=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(ts_input, 0)": {},
+                "(freq, 1)": {
+                    "delete": 1
+                },
+                "(tz, 2)": {
+                    "pos2key": "tz"
+                },
+                "(unit, 3)": {
+                    "pos2key": "unit"
+                },
+                "(year, 4)": {
+                    "posChange": 1
+                },
+                "(month, 5)": {
+                    "posChange": 2
+                },
+                "(day, 6)": {
+                    "posChange": 3
+                },
+                "(hour, 7)": {
+                    "posChange": 4
+                },
+                "(minute, 8)": {
+                    "posChange": 5
+                },
+                "(second, 9)": {
+                    "posChange": 6
+                },
+                "(microsecond, 10)": {
+                    "posChange": 7
+                },
+                "(nanosecond, 11)": {
+                    "pos2key": "nanosecond"
+                },
+                "(tzinfo, 12)": {
+                    "posChange": 8
+                },
+                "(fold, 14)": {}
+            },
+            "targetOvPara": "(ts_input=<object object at 0x77985a474650>, year=None, month=None, day=None, hour=None, minute=None, second=None, microsecond=None, tzinfo=None, *, nanosecond=None, tz=None, unit=None, fold=None)"
+        }
+    ]
+}

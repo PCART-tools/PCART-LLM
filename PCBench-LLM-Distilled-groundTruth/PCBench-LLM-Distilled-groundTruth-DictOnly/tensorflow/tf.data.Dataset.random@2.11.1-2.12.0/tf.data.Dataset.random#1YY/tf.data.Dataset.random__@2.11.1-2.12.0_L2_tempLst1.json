@@ -1,0 +1,9 @@
+[
+  {
+    "(seed, 0)": {},
+    "(name, 1)": {
+      "posChange": 2,
+      "replace": "rerandomize_each_iteration=None"
+    }
+  }
+]

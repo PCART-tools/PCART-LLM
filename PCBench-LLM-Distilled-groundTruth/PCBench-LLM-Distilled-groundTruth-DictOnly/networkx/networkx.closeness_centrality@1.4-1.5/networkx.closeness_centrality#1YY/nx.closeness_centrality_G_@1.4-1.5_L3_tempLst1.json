@@ -1,0 +1,11 @@
+[
+  {
+    "(G, 0)": {},
+    "(v, 1)": {},
+    "(weighted_edges, 2)": {
+      "delete": 1,
+      "replace": "distance=None"
+    },
+    "(normalized, 3)": {}
+  }
+]

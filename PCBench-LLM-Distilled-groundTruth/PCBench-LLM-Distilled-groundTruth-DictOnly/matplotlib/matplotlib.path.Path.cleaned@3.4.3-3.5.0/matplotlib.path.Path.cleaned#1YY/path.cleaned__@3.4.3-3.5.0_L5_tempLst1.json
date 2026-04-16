@@ -1,0 +1,25 @@
+[
+  {
+    "(transform, 0)": {},
+    "(remove_nans, 1)": {},
+    "(clip, 2)": {},
+    "(quantize, 3)": {
+      "delete": 1
+    },
+    "(simplify, 4)": {
+      "pos2key": "simplify"
+    },
+    "(curves, 5)": {
+      "pos2key": "curves"
+    },
+    "(stroke_width, 6)": {
+      "pos2key": "stroke_width"
+    },
+    "(snap, 7)": {
+      "pos2key": "snap"
+    },
+    "(sketch, 8)": {
+      "pos2key": "sketch"
+    }
+  }
+]

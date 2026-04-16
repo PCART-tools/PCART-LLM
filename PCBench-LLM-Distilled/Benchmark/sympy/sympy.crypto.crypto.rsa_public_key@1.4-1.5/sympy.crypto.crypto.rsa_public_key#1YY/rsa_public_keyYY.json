@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/sympy/sympy.crypto.crypto.rsa_public_key@1.4-1.5/sympy.crypto.crypto.rsa_public_key#1YY",
+    "runCommand": "python rsa_public_keyYY.py",
+    "runFilePath": "",
+    "libName": "sympy",
+    "currentVersion": "1.4",
+    "targetVersion": "1.5",
+    "currentEnv": "/envs/sympy1.4",
+    "targetEnv": "/envs/sympy1.5"
+}

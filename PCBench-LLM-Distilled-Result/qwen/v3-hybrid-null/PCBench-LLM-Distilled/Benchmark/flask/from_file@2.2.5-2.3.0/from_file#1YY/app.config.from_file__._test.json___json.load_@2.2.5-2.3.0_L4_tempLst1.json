@@ -1,0 +1,48 @@
+{
+    "context": {
+        "callAPI": "app.config.from_file('./test.json', json.load)",
+        "currentVersion": "2.2.5",
+        "targetVersion": "2.3.0",
+        "fileRelativePath": "from_file#1YY/from_fileYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/flask/from_file@2.2.5-2.3.0/from_file#1YY/from_fileYY.json",
+        "apiCall": "app.config.from_file('./test.json', json.load)",
+        "oldVersion": "flask@2.2.5",
+        "newVersion": "flask@2.3.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "flask.Flask.config.from_file",
+            "error": "",
+            "internalPath": "flask.config",
+            "docstring": "Update the values in the config from a file that is loaded\nusing the ``load`` parameter. The loaded data is passed to the\n:meth:`from_mapping` method.\n\n.. code-block:: python\n\n    import json\n    app.config.from_file(\"config.json\", load=json.load)\n\n    import toml\n    app.config.from_file(\"config.toml\", load=toml.load)\n\n:param filename: The path to the data file. This can be an\n    absolute path or relative to the config root path.\n:param load: A callable that takes a file handle and returns a\n    mapping of loaded data from the file.\n:type load: ``Callable[[Reader], Mapping]`` where ``Reader``\n    implements a ``read`` method.\n:param silent: Ignore the file if it doesn't exist.\n:return: ``True`` if the file was loaded successfully.\n\n.. versionadded:: 2.0",
+            "sourceCode": "    def from_file(\n        self,\n        filename: str,\n        load: t.Callable[[t.IO[t.Any]], t.Mapping],\n        silent: bool = False,\n    ) -> bool:\n        \"\"\"Update the values in the config from a file that is loaded\n        using the ``load`` parameter. The loaded data is passed to the\n        :meth:`from_mapping` method.\n\n        .. code-block:: python\n\n            import json\n            app.config.from_file(\"config.json\", load=json.load)\n\n            import toml\n            app.config.from_file(\"config.toml\", load=toml.load)\n\n        :param filename: The path to the data file. This can be an\n            absolute path or relative to the config root path.\n        :param load: A callable that takes a file handle and returns a\n            mapping of loaded data from the file.\n        :type load: ``Callable[[Reader], Mapping]`` where ``Reader``\n            implements a ``read`` method.\n        :param silent: Ignore the file if it doesn't exist.\n        :return: ``True`` if the file was loaded successfully.\n\n        .. versionadded:: 2.0\n        \"\"\"\n        filename = os.path.join(self.root_path, filename)\n\n        try:\n            with open(filename) as f:\n                obj = load(f)\n        except OSError as e:\n            if silent and e.errno in (errno.ENOENT, errno.EISDIR):\n                return False\n\n            e.strerror = f\"Unable to load configuration file ({e.strerror})\"\n            raise\n\n        return self.from_mapping(obj)\n",
+            "match": "(filename: str, load: Callable[[IO[Any]], Mapping], silent: bool = False) -> bool",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "flask.Flask.config.from_file",
+            "error": "",
+            "internalPath": "flask.config",
+            "docstring": "Update the values in the config from a file that is loaded\nusing the ``load`` parameter. The loaded data is passed to the\n:meth:`from_mapping` method.\n\n.. code-block:: python\n\n    import json\n    app.config.from_file(\"config.json\", load=json.load)\n\n    import tomllib\n    app.config.from_file(\"config.toml\", load=tomllib.load, text=False)\n\n:param filename: The path to the data file. This can be an\n    absolute path or relative to the config root path.\n:param load: A callable that takes a file handle and returns a\n    mapping of loaded data from the file.\n:type load: ``Callable[[Reader], Mapping]`` where ``Reader``\n    implements a ``read`` method.\n:param silent: Ignore the file if it doesn't exist.\n:param text: Open the file in text or binary mode.\n:return: ``True`` if the file was loaded successfully.\n\n.. versionchanged:: 2.3\n    The ``text`` parameter was added.\n\n.. versionadded:: 2.0",
+            "sourceCode": "    def from_file(\n        self,\n        filename: str,\n        load: t.Callable[[t.IO[t.Any]], t.Mapping],\n        silent: bool = False,\n        text: bool = True,\n    ) -> bool:\n        \"\"\"Update the values in the config from a file that is loaded\n        using the ``load`` parameter. The loaded data is passed to the\n        :meth:`from_mapping` method.\n\n        .. code-block:: python\n\n            import json\n            app.config.from_file(\"config.json\", load=json.load)\n\n            import tomllib\n            app.config.from_file(\"config.toml\", load=tomllib.load, text=False)\n\n        :param filename: The path to the data file. This can be an\n            absolute path or relative to the config root path.\n        :param load: A callable that takes a file handle and returns a\n            mapping of loaded data from the file.\n        :type load: ``Callable[[Reader], Mapping]`` where ``Reader``\n            implements a ``read`` method.\n        :param silent: Ignore the file if it doesn't exist.\n        :param text: Open the file in text or binary mode.\n        :return: ``True`` if the file was loaded successfully.\n\n        .. versionchanged:: 2.3\n            The ``text`` parameter was added.\n\n        .. versionadded:: 2.0\n        \"\"\"\n        filename = os.path.join(self.root_path, filename)\n\n        try:\n            with open(filename, \"r\" if text else \"rb\") as f:\n                obj = load(f)\n        except OSError as e:\n            if silent and e.errno in (errno.ENOENT, errno.EISDIR):\n                return False\n\n            e.strerror = f\"Unable to load configuration file ({e.strerror})\"\n            raise\n\n        return self.from_mapping(obj)\n",
+            "match": "(filename: 'str', load: 't.Callable[[t.IO[t.Any]], t.Mapping]', silent: 'bool' = False, text: 'bool' = True) -> 'bool'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(filename, 0)": {},
+                "(load, 1)": {
+                    "typeChange": "t.Callable[[t.IO[t.Any]],t.Mapping]"
+                },
+                "(silent, 2)": {},
+                "(text, 3)": {
+                    "addPos": "text=True"
+                }
+            },
+            "targetOvPara": "(filename: 'str', load: 't.Callable[[t.IO[t.Any]], t.Mapping]', silent: 'bool' = False, text: 'bool' = True) -> 'bool'"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "(left, 0)": {},
+    "(right, 1)": {},
+    "(exact, 2)": {},
+    "(check_names, 3)": {},
+    "(check_less_precise, 4)": {
+      "delete": 1
+    },
+    "(check_exact, 5)": {
+      "posChange": 4
+    },
+    "(check_categorical, 6)": {
+      "posChange": 5
+    },
+    "(check_order, 7)": {
+      "posChange": 6
+    },
+    "(rtol, 8)": {
+      "posChange": 7
+    },
+    "(atol, 9)": {
+      "posChange": 8
+    },
+    "(obj, 10)": {
+      "posChange": 9
+    }
+  }
+]

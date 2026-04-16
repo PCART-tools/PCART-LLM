@@ -1,0 +1,21 @@
+[
+  {
+    "(data, 0)": {},
+    "(data_header, 1)": {},
+    "(group_header, 2)": {},
+    "(colors, 3)": {},
+    "(use_colorscale, 4)": {},
+    "(group_stats, 5)": {},
+    "(rugplot, 6)": {},
+    "(height, 7)": {
+      "posChange": 8,
+      "replace": "sort=False"
+    },
+    "(width, 8)": {
+      "posChange": 9
+    },
+    "(title, 9)": {
+      "posChange": 10
+    }
+  }
+]

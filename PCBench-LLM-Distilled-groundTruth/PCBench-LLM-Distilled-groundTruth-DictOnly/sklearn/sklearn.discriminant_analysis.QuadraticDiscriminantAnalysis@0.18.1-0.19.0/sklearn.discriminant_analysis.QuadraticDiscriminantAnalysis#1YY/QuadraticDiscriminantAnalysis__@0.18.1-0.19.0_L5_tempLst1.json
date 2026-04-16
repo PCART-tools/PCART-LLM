@@ -1,0 +1,11 @@
+[
+  {
+    "(priors, 0)": {},
+    "(reg_param, 1)": {},
+    "(store_covariances, 2)": {
+      "posChange": 4,
+      "replace": "store_covariance=False"
+    },
+    "(tol, 3)": {}
+  }
+]

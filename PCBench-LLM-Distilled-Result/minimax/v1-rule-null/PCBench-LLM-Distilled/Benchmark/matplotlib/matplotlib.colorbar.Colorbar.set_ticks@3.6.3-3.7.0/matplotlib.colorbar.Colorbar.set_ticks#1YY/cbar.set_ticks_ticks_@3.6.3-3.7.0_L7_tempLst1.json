@@ -1,0 +1,50 @@
+{
+    "context": {
+        "callAPI": "cbar.set_ticks(ticks)",
+        "currentVersion": "3.6.3",
+        "targetVersion": "3.7.0",
+        "fileRelativePath": "matplotlib.colorbar.Colorbar.set_ticks#1YY/set_ticksYY.py",
+        "lineNum": "7",
+        "config": "PCBench-LLM-Distilled/Benchmark/matplotlib/matplotlib.colorbar.Colorbar.set_ticks@3.6.3-3.7.0/matplotlib.colorbar.Colorbar.set_ticks#1YY/set_ticksYY.json",
+        "apiCall": "cbar.set_ticks(ticks)",
+        "oldVersion": "matplotlib@3.6.3",
+        "newVersion": "matplotlib@3.7.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.pyplot.colorbar.set_ticks",
+            "error": "",
+            "internalPath": "matplotlib._api.deprecation",
+            "docstring": "Set tick locations.\n\nParameters\n----------\nticks : list of floats\n    List of tick locations.\nlabels : list of str, optional\n    List of tick labels. If not set, the labels show the data value.\nminor : bool, default: False\n    If ``False``, set the major ticks; if ``True``, the minor ticks.\n**kwargs\n    `.Text` properties for the labels. These take effect only if you\n    pass *labels*. In other cases, please use `~.Axes.tick_params`.",
+            "sourceCode": "    @_api.delete_parameter(\"3.5\", \"update_ticks\")\n    def set_ticks(self, ticks, update_ticks=True, labels=None, *,\n                  minor=False, **kwargs):\n        \"\"\"\n        Set tick locations.\n\n        Parameters\n        ----------\n        ticks : list of floats\n            List of tick locations.\n        labels : list of str, optional\n            List of tick labels. If not set, the labels show the data value.\n        minor : bool, default: False\n            If ``False``, set the major ticks; if ``True``, the minor ticks.\n        **kwargs\n            `.Text` properties for the labels. These take effect only if you\n            pass *labels*. In other cases, please use `~.Axes.tick_params`.\n        \"\"\"\n        if np.iterable(ticks):\n            self._long_axis().set_ticks(ticks, labels=labels, minor=minor,\n                                        **kwargs)\n            self._locator = self._long_axis().get_major_locator()\n        else:\n            self._locator = ticks\n            self._long_axis().set_major_locator(self._locator)\n        self.stale = True\n",
+            "match": "(ticks, update_ticks=<deprecated parameter>, labels=None, *, minor=False, **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.pyplot.colorbar.set_ticks",
+            "error": "",
+            "internalPath": "matplotlib.colorbar",
+            "docstring": "Set tick locations.\n\nParameters\n----------\nticks : list of floats\n    List of tick locations.\nlabels : list of str, optional\n    List of tick labels. If not set, the labels show the data value.\nminor : bool, default: False\n    If ``False``, set the major ticks; if ``True``, the minor ticks.\n**kwargs\n    `.Text` properties for the labels. These take effect only if you\n    pass *labels*. In other cases, please use `~.Axes.tick_params`.",
+            "sourceCode": "    def set_ticks(self, ticks, *, labels=None, minor=False, **kwargs):\n        \"\"\"\n        Set tick locations.\n\n        Parameters\n        ----------\n        ticks : list of floats\n            List of tick locations.\n        labels : list of str, optional\n            List of tick labels. If not set, the labels show the data value.\n        minor : bool, default: False\n            If ``False``, set the major ticks; if ``True``, the minor ticks.\n        **kwargs\n            `.Text` properties for the labels. These take effect only if you\n            pass *labels*. In other cases, please use `~.Axes.tick_params`.\n        \"\"\"\n        if np.iterable(ticks):\n            self._long_axis().set_ticks(ticks, labels=labels, minor=minor,\n                                        **kwargs)\n            self._locator = self._long_axis().get_major_locator()\n        else:\n            self._locator = ticks\n            self._long_axis().set_major_locator(self._locator)\n        self.stale = True\n",
+            "match": "(ticks, *, labels=None, minor=False, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(ticks, 0)": {},
+                "(update_ticks, 1)": {
+                    "delete": 1
+                },
+                "(labels, 2)": {
+                    "pos2key": "labels"
+                },
+                "(minor, 3)": {
+                    "addKey": "minor=False"
+                }
+            },
+            "targetOvPara": "(ticks, *, labels=None, minor=False, **kwargs)"
+        }
+    ]
+}

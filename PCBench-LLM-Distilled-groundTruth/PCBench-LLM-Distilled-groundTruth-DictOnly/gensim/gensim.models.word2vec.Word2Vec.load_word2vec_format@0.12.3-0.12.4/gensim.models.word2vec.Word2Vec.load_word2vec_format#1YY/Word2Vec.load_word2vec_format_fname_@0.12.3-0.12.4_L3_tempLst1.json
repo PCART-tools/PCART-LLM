@@ -1,0 +1,16 @@
+[
+  {
+    "(fname, 0)": {},
+    "(fvocab, 1)": {},
+    "(binary, 2)": {},
+    "(norm_only, 3)": {
+      "delete": 1
+    },
+    "(encoding, 4)": {
+      "posChange": 3
+    },
+    "(unicode_errors, 5)": {
+      "posChange": 4
+    }
+  }
+]

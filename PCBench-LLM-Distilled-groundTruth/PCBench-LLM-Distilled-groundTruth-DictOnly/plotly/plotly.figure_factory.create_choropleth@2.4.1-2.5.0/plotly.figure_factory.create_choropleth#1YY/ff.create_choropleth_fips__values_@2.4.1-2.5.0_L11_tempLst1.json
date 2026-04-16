@@ -1,0 +1,40 @@
+[
+  {
+    "(fips, 0)": {},
+    "(values, 1)": {},
+    "(scope, 2)": {},
+    "(binning_endpoints, 3)": {},
+    "(colorscale, 4)": {},
+    "(order, 5)": {},
+    "(simplify_county, 6)": {},
+    "(simplify_state, 7)": {},
+    "(asp, 8)": {},
+    "(offline_mode, 9)": {
+      "delete": 1
+    },
+    "(show_hover, 10)": {
+      "posChange": 9
+    },
+    "(show_state_data, 11)": {
+      "posChange": 10
+    },
+    "(state_outline, 12)": {
+      "posChange": 11
+    },
+    "(county_outline, 13)": {
+      "posChange": 12
+    },
+    "(centroid_marker, 14)": {
+      "posChange": 13
+    },
+    "(round_legend_values, 15)": {
+      "posChange": 14
+    },
+    "(exponent_format, 16)": {
+      "posChange": 15
+    },
+    "(legend_title, 17)": {
+      "posChange": 16
+    }
+  }
+]

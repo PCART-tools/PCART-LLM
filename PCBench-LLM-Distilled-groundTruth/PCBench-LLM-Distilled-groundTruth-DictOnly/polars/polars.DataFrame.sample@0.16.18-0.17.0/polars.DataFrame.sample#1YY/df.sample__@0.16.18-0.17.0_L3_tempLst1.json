@@ -1,0 +1,11 @@
+[
+  {
+    "(n, 0)": {},
+    "(frac, 2)": {
+      "rename": "fraction"
+    },
+    "(with_replacement, 3)": {},
+    "(shuffle, 4)": {},
+    "(seed, 5)": {}
+  }
+]

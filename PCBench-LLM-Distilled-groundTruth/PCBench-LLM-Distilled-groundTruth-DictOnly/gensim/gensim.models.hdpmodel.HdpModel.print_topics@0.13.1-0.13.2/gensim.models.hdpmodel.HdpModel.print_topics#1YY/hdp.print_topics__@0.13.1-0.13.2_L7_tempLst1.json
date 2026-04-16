@@ -1,0 +1,10 @@
+[
+  {
+    "(topics, 0)": {
+      "rename": "num_topics"
+    },
+    "(topn, 1)": {
+      "rename": "num_words"
+    }
+  }
+]

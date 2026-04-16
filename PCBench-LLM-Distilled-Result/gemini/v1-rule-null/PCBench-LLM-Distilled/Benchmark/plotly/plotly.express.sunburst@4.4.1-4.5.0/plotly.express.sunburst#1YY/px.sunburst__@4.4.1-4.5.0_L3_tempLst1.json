@@ -1,0 +1,98 @@
+{
+    "context": {
+        "callAPI": "px.sunburst()",
+        "currentVersion": "4.4.1",
+        "targetVersion": "4.5.0",
+        "fileRelativePath": "plotly.express.sunburst#1YY/sunburstYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/plotly/plotly.express.sunburst@4.4.1-4.5.0/plotly.express.sunburst#1YY/sunburstYY.json",
+        "apiCall": "px.sunburst()",
+        "oldVersion": "plotly@4.4.1",
+        "newVersion": "plotly@4.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "plotly.express.sunburst",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    A sunburst plot represents hierarchial data as sectors laid out over\n    several levels of concentric rings.\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword\n    names) to be used. Array-like and dict are tranformed internally to a\n    pandas DataFrame. Optional: if missing, a DataFrame gets constructed\n    under the hood using the other arguments.\nnames: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used as\n    labels for sectors.\nvalues: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    set values associated to sectors.\nparents: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used as\n    parents in sunburst and treemap charts.\nids: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    set ids of sectors\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\ncolor_continuous_scale: list of str\n    Strings should define valid CSS-colors This list is used to build a\n    continuous color scale when the column denoted by `color` contains\n    numeric data. Various useful color scales are available in the\n    `plotly_express.colors` submodules, specifically\n    `plotly_express.colors.sequential`, `plotly_express.colors.diverging`\n    and `plotly_express.colors.cyclical`.\nrange_color: list of two numbers\n    If provided, overrides auto-scaling on the continuous color scale.\ncolor_continuous_midpoint: number (default `None`)\n    If set, computes the bounds of the continuous color scale to have the\n    desired midpoint. Setting this value is recommended when using\n    `plotly_express.colors.diverging` color scales as the inputs to\n    `color_continuous_scale`.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that\n    column are assigned colors by cycling through `color_discrete_sequence`\n    in the order described in `category_orders`, unless the value of\n    `color` is a key in `color_discrete_map`. Various useful color\n    sequences are available in the `plotly_express.colors` submodules,\n    specifically `plotly_express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns appear as extra data in\n    the hover tooltip.\ncustom_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns are extra data, to be used\n    in widgets or Dash callbacks for example. This data is not user-visible\n    but is included in events emitted by the figure (lasso selection etc.)\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The\n    keys of this dict should correspond to column names, and the values\n    should correspond to the desired label to be displayed.\ntitle: str\n    The figure title.\ntemplate: or dict or plotly.graph_objects.layout.Template instance\n    The figure template name or definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `600`)\n    The figure height in pixels.\nbranchvalues: str\n    'total' or 'remainder' Determines how the items in `values` are summed.\n    Whenset to 'total', items in `values` are taken to be valueof all its\n    descendants. When set to 'remainder', itemsin `values` corresponding to\n    the root and the branches:sectors are taken to be the extra part not\n    part of thesum of the values at their leaves.\nmaxdepth: int\n    Positive integer Sets the number of rendered sectors from any given\n    `level`. Set `maxdepth` to -1 to render all thelevels in the hierarchy.\n\nReturns\n-------\n    A `Figure` object.",
+            "sourceCode": "def sunburst(\n    data_frame=None,\n    names=None,\n    values=None,\n    parents=None,\n    ids=None,\n    color=None,\n    color_continuous_scale=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    labels={},\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n    branchvalues=None,\n    maxdepth=None,\n):\n    \"\"\"\n    A sunburst plot represents hierarchial data as sectors laid out over\n    several levels of concentric rings.\n    \"\"\"\n    if color_discrete_sequence is not None:\n        layout_patch = {\"sunburstcolorway\": color_discrete_sequence}\n    else:\n        layout_patch = {}\n    return make_figure(\n        args=locals(),\n        constructor=go.Sunburst,\n        trace_patch=dict(branchvalues=branchvalues, maxdepth=maxdepth),\n        layout_patch=layout_patch,\n    )\n",
+            "match": "(data_frame=None, names=None, values=None, parents=None, ids=None, color=None, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, color_discrete_sequence=None, color_discrete_map={}, hover_name=None, hover_data=None, custom_data=None, labels={}, title=None, template=None, width=None, height=None, branchvalues=None, maxdepth=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "plotly.express.sunburst",
+            "error": "",
+            "internalPath": "plotly.express._chart_types",
+            "docstring": "    A sunburst plot represents hierarchial data as sectors laid out over\n    several levels of concentric rings.\n    \nParameters\n----------\ndata_frame: DataFrame or array-like or dict\n    This argument needs to be passed for column names (and not keyword\n    names) to be used. Array-like and dict are tranformed internally to a\n    pandas DataFrame. Optional: if missing, a DataFrame gets constructed\n    under the hood using the other arguments.\nnames: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used as\n    labels for sectors.\nvalues: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    set values associated to sectors.\nparents: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used as\n    parents in sunburst and treemap charts.\npath: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects List of columns names or columns of a rectangular\n    dataframe defining the hierarchy of sectors, from root to leaves. An\n    error is raised if path AND ids or parents is passed\nids: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    set ids of sectors\ncolor: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like are used to\n    assign color to marks.\ncolor_continuous_scale: list of str\n    Strings should define valid CSS-colors This list is used to build a\n    continuous color scale when the column denoted by `color` contains\n    numeric data. Various useful color scales are available in the\n    `plotly.express.colors` submodules, specifically\n    `plotly.express.colors.sequential`, `plotly.express.colors.diverging`\n    and `plotly.express.colors.cyclical`.\nrange_color: list of two numbers\n    If provided, overrides auto-scaling on the continuous color scale.\ncolor_continuous_midpoint: number (default `None`)\n    If set, computes the bounds of the continuous color scale to have the\n    desired midpoint. Setting this value is recommended when using\n    `plotly.express.colors.diverging` color scales as the inputs to\n    `color_continuous_scale`.\ncolor_discrete_sequence: list of str\n    Strings should define valid CSS-colors. When `color` is set and the\n    values in the corresponding column are not numeric, values in that\n    column are assigned colors by cycling through `color_discrete_sequence`\n    in the order described in `category_orders`, unless the value of\n    `color` is a key in `color_discrete_map`. Various useful color\n    sequences are available in the `plotly.express.colors` submodules,\n    specifically `plotly.express.colors.qualitative`.\ncolor_discrete_map: dict with str keys and str values (default `{}`)\n    String values should define valid CSS-colors Used to override\n    `color_discrete_sequence` to assign a specific colors to marks\n    corresponding with specific values. Keys in `color_discrete_map` should\n    be values in the column denoted by `color`.\nhover_name: str or int or Series or array-like\n    Either a name of a column in `data_frame`, or a pandas Series or\n    array_like object. Values from this column or array_like appear in bold\n    in the hover tooltip.\nhover_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns appear as extra data in\n    the hover tooltip.\ncustom_data: list of str or int, or Series or array-like\n    Either names of columns in `data_frame`, or pandas Series, or\n    array_like objects Values from these columns are extra data, to be used\n    in widgets or Dash callbacks for example. This data is not user-visible\n    but is included in events emitted by the figure (lasso selection etc.)\nlabels: dict with str keys and str values (default `{}`)\n    By default, column names are used in the figure for axis titles, legend\n    entries and hovers. This parameter allows this to be overridden. The\n    keys of this dict should correspond to column names, and the values\n    should correspond to the desired label to be displayed.\ntitle: str\n    The figure title.\ntemplate: or dict or plotly.graph_objects.layout.Template instance\n    The figure template name or definition.\nwidth: int (default `None`)\n    The figure width in pixels.\nheight: int (default `600`)\n    The figure height in pixels.\nbranchvalues: str\n    'total' or 'remainder' Determines how the items in `values` are summed.\n    Whenset to 'total', items in `values` are taken to be valueof all its\n    descendants. When set to 'remainder', itemsin `values` corresponding to\n    the root and the branches:sectors are taken to be the extra part not\n    part of thesum of the values at their leaves.\nmaxdepth: int\n    Positive integer Sets the number of rendered sectors from any given\n    `level`. Set `maxdepth` to -1 to render all thelevels in the hierarchy.\n\nReturns\n-------\n    A `Figure` object.",
+            "sourceCode": "def sunburst(\n    data_frame=None,\n    names=None,\n    values=None,\n    parents=None,\n    path=None,\n    ids=None,\n    color=None,\n    color_continuous_scale=None,\n    range_color=None,\n    color_continuous_midpoint=None,\n    color_discrete_sequence=None,\n    color_discrete_map={},\n    hover_name=None,\n    hover_data=None,\n    custom_data=None,\n    labels={},\n    title=None,\n    template=None,\n    width=None,\n    height=None,\n    branchvalues=None,\n    maxdepth=None,\n):\n    \"\"\"\n    A sunburst plot represents hierarchial data as sectors laid out over\n    several levels of concentric rings.\n    \"\"\"\n    if color_discrete_sequence is not None:\n        layout_patch = {\"sunburstcolorway\": color_discrete_sequence}\n    else:\n        layout_patch = {}\n    if path is not None and (ids is not None or parents is not None):\n        raise ValueError(\n            \"Either `path` should be provided, or `ids` and `parents`.\"\n            \"These parameters are mutually exclusive and cannot be passed together.\"\n        )\n    if path is not None and branchvalues is None:\n        branchvalues = \"total\"\n    return make_figure(\n        args=locals(),\n        constructor=go.Sunburst,\n        trace_patch=dict(branchvalues=branchvalues, maxdepth=maxdepth),\n        layout_patch=layout_patch,\n    )\n",
+            "match": "(data_frame=None, names=None, values=None, parents=None, path=None, ids=None, color=None, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, color_discrete_sequence=None, color_discrete_map={}, hover_name=None, hover_data=None, custom_data=None, labels={}, title=None, template=None, width=None, height=None, branchvalues=None, maxdepth=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(data_frame, 0)": {},
+                "(names, 1)": {},
+                "(values, 2)": {},
+                "(parents, 3)": {},
+                "(path, 4)": {
+                    "addPos": "path=None"
+                },
+                "(ids, 4)": {
+                    "posChange": 5
+                },
+                "(color, 5)": {
+                    "posChange": 6
+                },
+                "(color_continuous_scale, 6)": {
+                    "posChange": 7
+                },
+                "(range_color, 7)": {
+                    "posChange": 8
+                },
+                "(color_continuous_midpoint, 8)": {
+                    "posChange": 9
+                },
+                "(color_discrete_sequence, 9)": {
+                    "posChange": 10
+                },
+                "(color_discrete_map, 10)": {
+                    "posChange": 11
+                },
+                "(hover_name, 11)": {
+                    "posChange": 12
+                },
+                "(hover_data, 12)": {
+                    "posChange": 13
+                },
+                "(custom_data, 13)": {
+                    "posChange": 14
+                },
+                "(labels, 14)": {
+                    "posChange": 15
+                },
+                "(title, 15)": {
+                    "posChange": 16
+                },
+                "(template, 16)": {
+                    "posChange": 17
+                },
+                "(width, 17)": {
+                    "posChange": 18
+                },
+                "(height, 18)": {
+                    "posChange": 19
+                },
+                "(branchvalues, 19)": {
+                    "posChange": 20
+                },
+                "(maxdepth, 20)": {
+                    "posChange": 21
+                }
+            },
+            "targetOvPara": "(data_frame=None, names=None, values=None, parents=None, path=None, ids=None, color=None, color_continuous_scale=None, range_color=None, color_continuous_midpoint=None, color_discrete_sequence=None, color_discrete_map={}, hover_name=None, hover_data=None, custom_data=None, labels={}, title=None, template=None, width=None, height=None, branchvalues=None, maxdepth=None)"
+        }
+    ]
+}

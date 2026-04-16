@@ -1,0 +1,35 @@
+[
+  {
+    "(n_clusters, 0)": {},
+    "(method, 1)": {
+      "pos2key": "method"
+    },
+    "(n_components, 2)": {
+      "pos2key": "n_components"
+    },
+    "(n_best, 3)": {
+      "pos2key": "n_best"
+    },
+    "(svd_method, 4)": {
+      "pos2key": "svd_method"
+    },
+    "(n_svd_vecs, 5)": {
+      "pos2key": "n_svd_vecs"
+    },
+    "(mini_batch, 6)": {
+      "pos2key": "mini_batch"
+    },
+    "(init, 7)": {
+      "pos2key": "init"
+    },
+    "(n_init, 8)": {
+      "pos2key": "n_init"
+    },
+    "(n_jobs, 9)": {
+      "pos2key": "n_jobs"
+    },
+    "(random_state, 10)": {
+      "pos2key": "random_state"
+    }
+  }
+]

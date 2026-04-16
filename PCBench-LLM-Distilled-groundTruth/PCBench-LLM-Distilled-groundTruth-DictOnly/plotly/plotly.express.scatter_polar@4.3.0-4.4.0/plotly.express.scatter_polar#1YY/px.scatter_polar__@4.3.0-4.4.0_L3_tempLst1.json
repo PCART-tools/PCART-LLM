@@ -1,0 +1,49 @@
+[
+  {
+    "(data_frame, 0)": {},
+    "(r, 1)": {},
+    "(theta, 2)": {},
+    "(color, 3)": {},
+    "(symbol, 4)": {},
+    "(size, 5)": {},
+    "(hover_name, 6)": {},
+    "(hover_data, 7)": {},
+    "(custom_data, 8)": {},
+    "(text, 9)": {},
+    "(animation_frame, 10)": {},
+    "(animation_group, 11)": {},
+    "(category_orders, 12)": {},
+    "(labels, 13)": {},
+    "(color_discrete_sequence, 14)": {},
+    "(color_discrete_map, 15)": {},
+    "(color_continuous_scale, 16)": {},
+    "(range_color, 17)": {},
+    "(color_continuous_midpoint, 18)": {},
+    "(symbol_sequence, 19)": {},
+    "(symbol_map, 20)": {},
+    "(opacity, 21)": {},
+    "(direction, 22)": {},
+    "(start_angle, 23)": {},
+    "(size_max, 24)": {},
+    "(range_r, 25)": {},
+    "(log_r, 26)": {
+      "posChange": 27,
+      "replace": "range_theta=None"
+    },
+    "(render_mode, 27)": {
+      "posChange": 28
+    },
+    "(title, 28)": {
+      "posChange": 29
+    },
+    "(template, 29)": {
+      "posChange": 30
+    },
+    "(width, 30)": {
+      "posChange": 31
+    },
+    "(height, 31)": {
+      "posChange": 32
+    }
+  }
+]

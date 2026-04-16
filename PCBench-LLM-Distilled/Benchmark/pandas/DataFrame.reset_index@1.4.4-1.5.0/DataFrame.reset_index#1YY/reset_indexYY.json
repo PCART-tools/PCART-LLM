@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/pandas/DataFrame.reset_index@1.4.4-1.5.0/DataFrame.reset_index#1YY",
+    "runCommand": "python reset_indexYY.py",
+    "runFilePath": "",
+    "libName": "pandas",
+    "currentVersion": "1.4.4",
+    "targetVersion": "1.5.0",
+    "currentEnv": "/envs/pandas1.4.4",
+    "targetEnv": "/envs/pandas1.5.0"
+}

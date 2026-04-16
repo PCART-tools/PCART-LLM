@@ -1,0 +1,11 @@
+[
+  {
+    "(G, 0)": {},
+    "(sources, 1)": {},
+    "(targets, 2)": {},
+    "(normalized, 3)": {},
+    "(weighted_edges, 4)": {
+      "rename": "weight"
+    }
+  }
+]

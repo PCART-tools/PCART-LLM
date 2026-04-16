@@ -1,0 +1,18 @@
+[
+  {
+    "(com, 0)": {},
+    "(span, 1)": {},
+    "(halflife, 2)": {},
+    "(alpha, 3)": {},
+    "(min_periods, 4)": {},
+    "(adjust, 5)": {},
+    "(ignore_na, 6)": {},
+    "(axis, 7)": {},
+    "(times, 8)": {
+      "typeChange": "str|np.ndarray|DataFrame|Series|None"
+    },
+    "(method, 9)": {
+      "addPos": "method='single'"
+    }
+  }
+]

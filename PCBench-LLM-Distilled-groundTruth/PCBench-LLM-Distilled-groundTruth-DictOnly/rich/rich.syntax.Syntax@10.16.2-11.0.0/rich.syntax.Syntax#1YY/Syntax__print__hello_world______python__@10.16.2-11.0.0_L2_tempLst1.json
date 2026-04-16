@@ -1,0 +1,19 @@
+[
+  {
+    "(code, 0)": {},
+    "(lexer_name, 1)": {
+      "rename": "lexer"
+    },
+    "(theme, 3)": {},
+    "(dedent, 4)": {},
+    "(line_numbers, 5)": {},
+    "(start_line, 6)": {},
+    "(line_range, 7)": {},
+    "(highlight_lines, 8)": {},
+    "(code_width, 9)": {},
+    "(tab_size, 10)": {},
+    "(word_wrap, 11)": {},
+    "(background_color, 12)": {},
+    "(indent_guides, 13)": {}
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/torch/torch.btrifact@1.0.1-1.1.0/torch.btrifact#1YY",
+    "runCommand": "python btrifactYY.py",
+    "runFilePath": "",
+    "libName": "torch",
+    "currentVersion": "1.0.1",
+    "targetVersion": "1.1.0",
+    "currentEnv": "/envs/torch1.0.1",
+    "targetEnv": "/envs/torch1.1.0"
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "(X, 0)": {},
+    "(cmap, 1)": {},
+    "(norm, 2)": {},
+    "(aspect, 3)": {
+      "pos2key": "aspect"
+    },
+    "(interpolation, 4)": {
+      "pos2key": "interpolation"
+    },
+    "(alpha, 5)": {
+      "pos2key": "alpha"
+    },
+    "(vmin, 6)": {
+      "pos2key": "vmin"
+    },
+    "(vmax, 7)": {
+      "pos2key": "vmax"
+    },
+    "(origin, 8)": {
+      "pos2key": "origin"
+    },
+    "(extent, 9)": {
+      "pos2key": "extent"
+    },
+    "(filternorm, 11)": {},
+    "(interpolation_stage, 11)": {
+      "addKey": "interpolation_stage=None"
+    },
+    "(filterrad, 12)": {},
+    "(resample, 13)": {},
+    "(url, 14)": {},
+    "(data, 15)": {}
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "(documents, 0)": {},
+    "(dm_mean, 1)": {
+      "posChange": 2,
+      "replace": "corpus_file=None"
+    },
+    "(dm, 2)": {
+      "posChange": 3
+    },
+    "(dbow_words, 3)": {
+      "posChange": 4
+    },
+    "(dm_concat, 4)": {
+      "posChange": 5
+    },
+    "(dm_tag_count, 5)": {
+      "posChange": 6
+    },
+    "(docvecs, 6)": {
+      "posChange": 7
+    },
+    "(docvecs_mapfile, 7)": {
+      "posChange": 8
+    },
+    "(comment, 8)": {
+      "posChange": 9
+    },
+    "(trim_rule, 9)": {
+      "posChange": 10
+    },
+    "(callbacks, 10)": {
+      "posChange": 11
+    }
+  }
+]

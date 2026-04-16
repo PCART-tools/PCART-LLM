@@ -1,0 +1,45 @@
+{
+    "context": {
+        "callAPI": "nx.closeness_vitality(G)",
+        "currentVersion": "1.4",
+        "targetVersion": "1.5",
+        "fileRelativePath": "closeness_vitality#1YY/closeness_vitalityYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/closeness_vitality@1.4-1.5/closeness_vitality#1YY/closeness_vitalityYY.json",
+        "apiCall": "nx.closeness_vitality(G)",
+        "oldVersion": "networkx@1.4",
+        "newVersion": "networkx@1.5",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.closeness_vitality",
+            "error": "",
+            "internalPath": "networkx.algorithms.vitality",
+            "docstring": "Compute closeness vitality for nodes.\n\nCloseness vitality at a node is the change in the sum of distances \nbetween all node pairs when excluding a that node.\n\nParameters\n----------\nG : graph\n  A networkx graph \n\nv : node, optional\n  Return only the value for node v.\n\nweighted_edges : bool, optional\n  Consider the edge weights in determining the shortest paths.\n  If False, all edge weights are considered equal.\n  \nReturns\n-------\nnodes : dictionary\n   Dictionary with nodes as keys and closeness vitality as the value.\n\nExamples\n--------\n>>> G=nx.cycle_graph(3)\n>>> nx.closeness_vitality(G)\n{0: 4.0, 1: 4.0, 2: 4.0}\n\nSee Also\n--------\ncloseness_centrality()\n\nNotes\n-----",
+            "sourceCode": "def closeness_vitality(G,v=None,weighted_edges=False):\n    \"\"\"Compute closeness vitality for nodes.\n\n    Closeness vitality at a node is the change in the sum of distances \n    between all node pairs when excluding a that node.\n\n    Parameters\n    ----------\n    G : graph\n      A networkx graph \n\n    v : node, optional\n      Return only the value for node v.\n\n    weighted_edges : bool, optional\n      Consider the edge weights in determining the shortest paths.\n      If False, all edge weights are considered equal.\n      \n    Returns\n    -------\n    nodes : dictionary\n       Dictionary with nodes as keys and closeness vitality as the value.\n\n    Examples\n    --------\n    >>> G=nx.cycle_graph(3)\n    >>> nx.closeness_vitality(G)\n    {0: 4.0, 1: 4.0, 2: 4.0}\n\n    See Also\n    --------\n    closeness_centrality()\n\n    Notes\n    -----\n    \"\"\"\n    if v is None:\n        nodes=G.nodes()\n    else:\n        nodes=[v]\n\n    wig=weiner_index(G,weighted_edges=weighted_edges)\n    closeness_vitality={}\n    for n in G:\n        # remove edges connected to node n and keep list of edges with data\n        # could remove node n but it doesn't count anyway\n        edges=G.edges(n,data=True)\n        if G.is_directed():\n            edges+=G.in_edges(n,data=True)\n        G.remove_edges_from(edges) \n        closeness_vitality[n]=wig-weiner_index(G,weighted_edges=weighted_edges)\n        # add edges and data back to graph\n        G.add_edges_from(edges)\n    if v is not None:\n        return closeness_vitality[v]\n    else:\n        return closeness_vitality\n",
+            "match": "(G, v=None, weighted_edges=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.closeness_vitality",
+            "error": "",
+            "internalPath": "networkx.algorithms.vitality",
+            "docstring": "Compute closeness vitality for nodes.\n\nCloseness vitality at a node is the change in the sum of distances \nbetween all node pairs when excluding a that node.\n\nParameters\n----------\nG : graph\n  A networkx graph \n\nv : node, optional\n  Return only the value for node v.\n\nweight : None, True or string, optional  \n  If None, edge weights are ignored.\n  If True, edge attribute 'weight' is used as weight of each edge.\n  Otherwise holds the name of the edge attribute used as weight.\n  \nReturns\n-------\nnodes : dictionary\n   Dictionary with nodes as keys and closeness vitality as the value.\n\nExamples\n--------\n>>> G=nx.cycle_graph(3)\n>>> nx.closeness_vitality(G)\n{0: 4.0, 1: 4.0, 2: 4.0}\n\nSee Also\n--------\ncloseness_centrality()\n\nNotes\n-----",
+            "sourceCode": "def closeness_vitality(G,v=None,weight=None):\n    \"\"\"Compute closeness vitality for nodes.\n\n    Closeness vitality at a node is the change in the sum of distances \n    between all node pairs when excluding a that node.\n\n    Parameters\n    ----------\n    G : graph\n      A networkx graph \n\n    v : node, optional\n      Return only the value for node v.\n\n    weight : None, True or string, optional  \n      If None, edge weights are ignored.\n      If True, edge attribute 'weight' is used as weight of each edge.\n      Otherwise holds the name of the edge attribute used as weight.\n      \n    Returns\n    -------\n    nodes : dictionary\n       Dictionary with nodes as keys and closeness vitality as the value.\n\n    Examples\n    --------\n    >>> G=nx.cycle_graph(3)\n    >>> nx.closeness_vitality(G)\n    {0: 4.0, 1: 4.0, 2: 4.0}\n\n    See Also\n    --------\n    closeness_centrality()\n\n    Notes\n    -----\n    \"\"\"\n    wig=weiner_index(G,weight)\n    closeness_vitality={}\n    for n in G:\n        # remove edges connected to node n and keep list of edges with data\n        # could remove node n but it doesn't count anyway\n        edges=G.edges(n,data=True)\n        if G.is_directed():\n            edges+=G.in_edges(n,data=True)\n        G.remove_edges_from(edges) \n        closeness_vitality[n]=wig-weiner_index(G,weight)\n        # add edges and data back to graph\n        G.add_edges_from(edges)\n    if v is not None:\n        return closeness_vitality[v]\n    else:\n        return closeness_vitality\n",
+            "match": "(G, v=None, weight=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(v, 1)": {},
+                "(weighted_edges, 2)": {
+                    "replace": "weight=None"
+                }
+            },
+            "targetOvPara": "(G, v=None, weight=None)"
+        }
+    ]
+}

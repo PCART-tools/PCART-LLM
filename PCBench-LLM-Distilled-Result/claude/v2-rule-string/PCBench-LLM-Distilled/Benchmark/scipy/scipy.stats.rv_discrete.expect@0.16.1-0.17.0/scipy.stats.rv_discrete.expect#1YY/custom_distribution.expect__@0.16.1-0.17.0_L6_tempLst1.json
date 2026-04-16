@@ -1,0 +1,109 @@
+{
+    "context": {
+        "callAPI": "custom_distribution.expect()",
+        "currentVersion": "0.16.1",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "scipy.stats.rv_discrete.expect#1YY/expectYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/scipy/scipy.stats.rv_discrete.expect@0.16.1-0.17.0/scipy.stats.rv_discrete.expect#1YY/expectYY.json",
+        "apiCall": "custom_distribution.expect()",
+        "oldVersion": "scipy@0.16.1",
+        "newVersion": "scipy@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "scipy.stats.rv_discrete.expect",
+            "match": {
+                "scipy._distn_infrastructure.rv_continuous.expect": [
+                    "(self,func=None,args=(),loc=0,scale=1,lb=None,ub=None,conditional=False,**kwds)"
+                ],
+                "scipy._distn_infrastructure.rv_discrete.expect": [
+                    "(self,func=None,args=(),loc=0,lb=None,ub=None,conditional=False)"
+                ],
+                "scipy._distn_infrastructure.rv_frozen.expect": [
+                    "(self,func=None,lb=None,ub=None,conditional=False,**kwds)"
+                ],
+                "scipy.stats._distn_infrastructure.rv_continuous.expect": [
+                    "(self,func=None,args=(),loc=0,scale=1,lb=None,ub=None,conditional=False,**kwds)"
+                ],
+                "scipy.stats._distn_infrastructure.rv_discrete.expect": [
+                    "(self,func=None,args=(),loc=0,lb=None,ub=None,conditional=False)"
+                ],
+                "scipy.stats._distn_infrastructure.rv_frozen.expect": [
+                    "(self,func=None,lb=None,ub=None,conditional=False,**kwds)"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "scipy.stats.rv_discrete.expect",
+            "error": "",
+            "internalPath": "scipy.stats._distn_infrastructure",
+            "docstring": "Calculate expected value of a function with respect to the distribution\nfor discrete distribution.\n\nParameters\n----------\nfunc : callable, optional\n    Function for which the expectation value is calculated.\n    Takes only one argument.\n    The default is the identity mapping f(k) = k.\nargs : tuple, optional\n    Shape parameters of the distribution.\nloc : float, optional\n    Location parameter.\n    Default is 0.\nlb, ub : int, optional\n    Lower and upper bound for the summation, default is set to the\n    support of the distribution, inclusive (``ul <= k <= ub``).\nconditional : bool, optional\n    If true then the expectation is corrected by the conditional\n    probability of the summation interval. The return value is the\n    expectation of the function, `func`, conditional on being in\n    the given interval (k such that ``ul <= k <= ub``).\n    Default is False.\nmaxcount : int, optional\n    Maximal number of terms to evaluate (to avoid an endless loop for\n    an infinite sum). Default is 1000.\ntolerance : float, optional\n    Absolute tolerance for the summation. Default is 1e-10.\nchunksize : int, optional\n    Iterate over the support of a distributions in chunks of this size.\n    Default is 32.\n\nReturns\n-------\nexpect : float\n    Expected value.\n\nNotes\n-----\nFor heavy-tailed distributions, the expected value may or may not exist,\ndepending on the function, `func`. If it does exist, but the sum converges\nslowly, the accuracy of the result may be rather low. For instance, for\n``zipf(4)``, accuracy for mean, variance in example is only 1e-5.\nincreasing `maxcount` and/or `chunksize` may improve the result, but may also\nmake zipf very slow.\n\nThe function is not vectorized.",
+            "sourceCode": "    def expect(self, func=None, args=(), loc=0, lb=None, ub=None,\n               conditional=False, maxcount=1000, tolerance=1e-10, chunksize=32):\n        \"\"\"\n        Calculate expected value of a function with respect to the distribution\n        for discrete distribution.\n\n        Parameters\n        ----------\n        func : callable, optional\n            Function for which the expectation value is calculated.\n            Takes only one argument.\n            The default is the identity mapping f(k) = k.\n        args : tuple, optional\n            Shape parameters of the distribution.\n        loc : float, optional\n            Location parameter.\n            Default is 0.\n        lb, ub : int, optional\n            Lower and upper bound for the summation, default is set to the\n            support of the distribution, inclusive (``ul <= k <= ub``).\n        conditional : bool, optional\n            If true then the expectation is corrected by the conditional\n            probability of the summation interval. The return value is the\n            expectation of the function, `func`, conditional on being in\n            the given interval (k such that ``ul <= k <= ub``).\n            Default is False.\n        maxcount : int, optional\n            Maximal number of terms to evaluate (to avoid an endless loop for\n            an infinite sum). Default is 1000.\n        tolerance : float, optional\n            Absolute tolerance for the summation. Default is 1e-10.\n        chunksize : int, optional\n            Iterate over the support of a distributions in chunks of this size.\n            Default is 32.\n\n        Returns\n        -------\n        expect : float\n            Expected value.\n\n        Notes\n        -----\n        For heavy-tailed distributions, the expected value may or may not exist,\n        depending on the function, `func`. If it does exist, but the sum converges\n        slowly, the accuracy of the result may be rather low. For instance, for\n        ``zipf(4)``, accuracy for mean, variance in example is only 1e-5.\n        increasing `maxcount` and/or `chunksize` may improve the result, but may also\n        make zipf very slow.\n\n        The function is not vectorized.\n\n        \"\"\"\n        if func is None:\n            def fun(x):\n                # loc and args from outer scope\n                return (x+loc)*self._pmf(x, *args)\n        else:\n            def fun(x):\n                # loc and args from outer scope\n                return func(x+loc)*self._pmf(x, *args)\n        # used pmf because _pmf does not check support in randint and there\n        # might be problems(?) with correct self.a, self.b at this stage maybe\n        # not anymore, seems to work now with _pmf\n\n        self._argcheck(*args)  # (re)generate scalar self.a and self.b\n        if lb is None:\n            lb = self.a\n        else:\n            lb = lb - loc   # convert bound for standardized distribution\n        if ub is None:\n            ub = self.b\n        else:\n            ub = ub - loc   # convert bound for standardized distribution\n        if conditional:\n            invfac = self.sf(lb-1, *args) - self.sf(ub, *args)\n        else:\n            invfac = 1.0\n\n        # short-circuit if the support size is small enough\n        if (ub - lb) <= chunksize:\n            supp = np.arange(lb, ub+1, self.inc)\n            vals = fun(supp)\n            return np.sum(vals) / invfac\n\n        # otherwise, iterate starting from median\n        x0 = self.ppf(0.5, *args)\n        if x0 < lb:\n            x0 = lb\n        if x0 > ub:\n            x0 = ub\n\n        count, tot = 0, 0.\n        # iterate over [x0, ub] inclusive\n        for x in _iter_chunked(x0, ub+1, chunksize=chunksize, inc=self.inc):\n            count += x.size\n            delta = np.sum(fun(x))\n            tot += delta\n            if abs(delta) < tolerance * x.size:\n                break\n            if count > maxcount:\n                warnings.warn('expect(): sum did not converge', RuntimeWarning)\n                return tot / invfac\n        \n        # iterate over [lb, x0)\n        for x in _iter_chunked(x0-1, lb-1, chunksize=chunksize, inc=-self.inc):\n            count += x.size\n            delta = np.sum(fun(x))\n            tot += delta\n            if abs(delta) < tolerance * x.size:\n                break\n            if count > maxcount:\n                warnings.warn('expect(): sum did not converge', RuntimeWarning)\n                break\n\n        return tot/invfac\n",
+            "match": "(func=None, args=(), loc=0, lb=None, ub=None, conditional=False, maxcount=1000, tolerance=1e-10, chunksize=32)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(func, 0)": {},
+                "(args, 1)": {},
+                "(loc, 2)": {},
+                "(scale, 3)": {
+                    "delete": 1
+                },
+                "(lb, 4)": {
+                    "posChange": 3
+                },
+                "(ub, 5)": {
+                    "posChange": 4
+                },
+                "(conditional, 6)": {
+                    "posChange": 5
+                },
+                "(maxcount, 6)": {
+                    "addPos": "maxcount=1000"
+                },
+                "(tolerance, 7)": {
+                    "addPos": "tolerance=1e-10"
+                },
+                "(chunksize, 8)": {
+                    "addPos": "chunksize=32"
+                }
+            },
+            "targetOvPara": "(func=None, args=(), loc=0, lb=None, ub=None, conditional=False, maxcount=1000, tolerance=1e-10, chunksize=32)"
+        },
+        {
+            "repairDict": {
+                "(func, 0)": {},
+                "(lb, 1)": {
+                    "posChange": 3
+                },
+                "(args, 1)": {
+                    "addPos": "args=()"
+                },
+                "(ub, 2)": {
+                    "posChange": 4
+                },
+                "(loc, 2)": {
+                    "addPos": "loc=0"
+                },
+                "(conditional, 3)": {
+                    "posChange": 5
+                },
+                "(maxcount, 6)": {
+                    "addPos": "maxcount=1000"
+                },
+                "(tolerance, 7)": {
+                    "addPos": "tolerance=1e-10"
+                },
+                "(chunksize, 8)": {
+                    "addPos": "chunksize=32"
+                }
+            },
+            "targetOvPara": "(func=None, args=(), loc=0, lb=None, ub=None, conditional=False, maxcount=1000, tolerance=1e-10, chunksize=32)"
+        }
+    ]
+}

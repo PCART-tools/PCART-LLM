@@ -1,0 +1,18 @@
+[
+  {
+    "(G, 0)": {},
+    "(normalized, 1)": {
+      "posChange": 2,
+      "replace": "k=None"
+    },
+    "(weight, 2)": {
+      "posChange": 3
+    },
+    "(endpoints, 3)": {
+      "posChange": 4
+    },
+    "(seed, 5)": {
+      "addPos": "seed=None"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "(n_clusters, 0)": {},
+    "(svd_method, 1)": {
+      "pos2key": "svd_method"
+    },
+    "(n_svd_vecs, 2)": {
+      "pos2key": "n_svd_vecs"
+    },
+    "(mini_batch, 3)": {
+      "pos2key": "mini_batch"
+    },
+    "(init, 4)": {
+      "pos2key": "init"
+    },
+    "(n_init, 5)": {
+      "pos2key": "n_init"
+    },
+    "(n_jobs, 6)": {
+      "pos2key": "n_jobs"
+    },
+    "(random_state, 7)": {
+      "pos2key": "random_state"
+    }
+  }
+]

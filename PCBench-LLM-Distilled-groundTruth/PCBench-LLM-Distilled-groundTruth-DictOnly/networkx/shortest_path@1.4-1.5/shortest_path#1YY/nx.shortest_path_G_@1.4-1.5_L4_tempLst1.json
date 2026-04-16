@@ -1,0 +1,10 @@
+[
+  {
+    "(G, 0)": {},
+    "(source, 1)": {},
+    "(target, 2)": {},
+    "(weighted, 3)": {
+      "rename": "weight"
+    }
+  }
+]

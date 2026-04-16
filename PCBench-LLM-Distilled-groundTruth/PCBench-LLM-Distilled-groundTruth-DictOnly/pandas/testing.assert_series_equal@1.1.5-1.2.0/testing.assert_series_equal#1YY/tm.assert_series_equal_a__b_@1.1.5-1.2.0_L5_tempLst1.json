@@ -1,0 +1,26 @@
+[
+  {
+    "(left, 0)": {},
+    "(right, 1)": {},
+    "(check_dtype, 2)": {},
+    "(check_index_type, 3)": {},
+    "(check_series_type, 4)": {},
+    "(check_less_precise, 5)": {},
+    "(check_names, 6)": {},
+    "(check_exact, 7)": {},
+    "(check_datetimelike_compat, 8)": {},
+    "(check_categorical, 9)": {},
+    "(check_category_order, 10)": {},
+    "(check_freq, 11)": {},
+    "(rtol, 12)": {
+      "posChange": 13,
+      "replace": "check_flags=True"
+    },
+    "(atol, 13)": {
+      "posChange": 14
+    },
+    "(obj, 14)": {
+      "posChange": 15
+    }
+  }
+]

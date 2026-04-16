@@ -1,0 +1,15 @@
+[
+  {
+    "(G, 0)": {},
+    "(weighted, 1)": {
+      "delete": 1,
+      "replace": "nodes=None"
+    },
+    "(weight, 2)": {
+      "addPos": "weight=None"
+    },
+    "(count_zeros, 3)": {
+      "addPos": "count_zeros=True"
+    }
+  }
+]

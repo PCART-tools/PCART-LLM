@@ -1,0 +1,13 @@
+[
+  {
+    "(low, 0)": {
+      "rename": "start"
+    },
+    "(high, 1)": {
+      "rename": "end"
+    },
+    "(step, 2)": {},
+    "(eager, 4)": {},
+    "(dtype, 5)": {}
+  }
+]

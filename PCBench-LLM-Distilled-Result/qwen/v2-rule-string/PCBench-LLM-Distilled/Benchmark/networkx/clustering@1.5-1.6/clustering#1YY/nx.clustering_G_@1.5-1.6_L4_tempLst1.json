@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "nx.clustering(G)",
+        "currentVersion": "1.5",
+        "targetVersion": "1.6",
+        "fileRelativePath": "clustering#1YY/clusteringYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/networkx/clustering@1.5-1.6/clustering#1YY/clusteringYY.json",
+        "apiCall": "nx.clustering(G)",
+        "oldVersion": "networkx@1.5",
+        "newVersion": "networkx@1.6",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "networkx.clustering",
+            "error": "",
+            "internalPath": "networkx.algorithms.cluster",
+            "docstring": "Compute the clustering coefficient for nodes.\n\nFor each node find the fraction of possible triangles that exist,\n\n.. math::\n\n  c_v = \\frac{2 T(v)}{deg(v)(deg(v)-1)}\n\nwhere `T(v)` is the number of triangles through node `v`.       \n\nParameters\n----------\nG : graph\n   A networkx graph\nnodes : container of nodes, optional\n   Limit to specified nodes. Default is entire graph.\nweighted : bool, optional\n   If True use weights on edges in computing clustering coefficients.\n    \nReturns\n-------\nout : float, dictionary or tuple of dictionaries\n   Clustering coefficient at specified nodes\n\nExamples\n--------\n>>> G=nx.complete_graph(5)\n>>> print(nx.clustering(G,0))\n1.0\n>>> print(nx.clustering(G))\n{0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}\n\n\nNotes\n-----\nSelf loops are ignored.\n\nReferences\n----------\n.. [1] Generalizations of the clustering coefficient to weighted \n   complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n   K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n   http://jponnela.com/web_documents/a9.pdf",
+            "sourceCode": "def clustering(G,nodes=None,weighted=False):\n    r\"\"\"Compute the clustering coefficient for nodes.\n\n    For each node find the fraction of possible triangles that exist,\n\n    .. math::\n\n      c_v = \\frac{2 T(v)}{deg(v)(deg(v)-1)}\n\n    where `T(v)` is the number of triangles through node `v`.       \n\n    Parameters\n    ----------\n    G : graph\n       A networkx graph\n    nodes : container of nodes, optional\n       Limit to specified nodes. Default is entire graph.\n    weighted : bool, optional\n       If True use weights on edges in computing clustering coefficients.\n        \n    Returns\n    -------\n    out : float, dictionary or tuple of dictionaries\n       Clustering coefficient at specified nodes\n\n    Examples\n    --------\n    >>> G=nx.complete_graph(5)\n    >>> print(nx.clustering(G,0))\n    1.0\n    >>> print(nx.clustering(G))\n    {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}\n\n\n    Notes\n    -----\n    Self loops are ignored.\n\n    References\n    ----------\n    .. [1] Generalizations of the clustering coefficient to weighted \n       complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n       K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n       http://jponnela.com/web_documents/a9.pdf\n    \"\"\"\n    if G.is_directed():\n        raise NetworkXError('Clustering algorithms are not defined',\n                            'for directed graphs.')\n    if weighted:\n        td_iter=_weighted_triangles_and_degree_iter\n    else:\n        td_iter=_triangles_and_degree_iter\n\n    clusterc={}\n\n    for v,d,t in td_iter(G,nodes):\n        if t==0:\n            clusterc[v]=0.0\n        else:\n            clusterc[v]=t/float(d*(d-1))\n\n    if nodes in G: \n        return list(clusterc.values())[0] # return single value\n    return clusterc\n",
+            "match": "(G, nodes=None, weighted=False)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "networkx.clustering",
+            "error": "",
+            "internalPath": "networkx.algorithms.cluster",
+            "docstring": "Compute the clustering coefficient for nodes.\n\nFor unweighted graphs the clustering of each node `u`\nis the fraction of possible triangles that exist,\nFor each node find the fraction of possible triangles that exist,\n\n.. math::\n\n  c_u = \\frac{2 T(u)}{deg(u)(deg(u)-1)},\n\nwhere `T(u)` is the number of triangles through node `u` and\n`deg(u)` is the degree of `u`.\n\nFor weighted graphs the clustering is defined\nas the geometric average of the subgraph edge weights [1]_,\n\n.. math::\n\n   c_u = \\frac{1}{deg(u)(deg(u)-1))}\n        \\sum_{uv} (\\hat{w}_{uv} \\hat{w}_{uw} \\hat{w}_{vw})^{1/3}.\n  \nThe edge weights `\\hat{w}_{uv}` are normalized by the maximum weight in the\nnetwork `\\hat{w}_{uv} = w_{uv}/\\max(w)`.\n\nThe value of `c_u` is assigned to 0 if `deg(u) < 2`.\n\nParameters\n----------\nG : graph\n\nnodes : container of nodes, optional (default=all nodes in G)\n   Compute clustering for nodes in this container. \n\nweight : string or None, optional (default=None)\n   The edge attribute that holds the numerical value used as a weight.\n   If None, then each edge has weight 1.\n\nReturns\n-------\nout : float, or dictionary\n   Clustering coefficient at specified nodes\n\nExamples\n--------\n>>> G=nx.complete_graph(5)\n>>> print(nx.clustering(G,0))\n1.0\n>>> print(nx.clustering(G))\n{0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}\n\nNotes\n-----\nSelf loops are ignored.\n\nReferences\n----------\n.. [1] Generalizations of the clustering coefficient to weighted \n   complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n   K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n   http://jponnela.com/web_documents/a9.pdf",
+            "sourceCode": "def clustering(G, nodes=None, weight=None):\n    r\"\"\"Compute the clustering coefficient for nodes.\n\n    For unweighted graphs the clustering of each node `u`\n    is the fraction of possible triangles that exist,\n    For each node find the fraction of possible triangles that exist,\n\n    .. math::\n\n      c_u = \\frac{2 T(u)}{deg(u)(deg(u)-1)},\n\n    where `T(u)` is the number of triangles through node `u` and\n    `deg(u)` is the degree of `u`.\n\n    For weighted graphs the clustering is defined\n    as the geometric average of the subgraph edge weights [1]_,\n\n    .. math::\n\n       c_u = \\frac{1}{deg(u)(deg(u)-1))}\n            \\sum_{uv} (\\hat{w}_{uv} \\hat{w}_{uw} \\hat{w}_{vw})^{1/3}.\n      \n    The edge weights `\\hat{w}_{uv}` are normalized by the maximum weight in the\n    network `\\hat{w}_{uv} = w_{uv}/\\max(w)`.\n\n    The value of `c_u` is assigned to 0 if `deg(u) < 2`.\n\n    Parameters\n    ----------\n    G : graph\n\n    nodes : container of nodes, optional (default=all nodes in G)\n       Compute clustering for nodes in this container. \n\n    weight : string or None, optional (default=None)\n       The edge attribute that holds the numerical value used as a weight.\n       If None, then each edge has weight 1.\n\n    Returns\n    -------\n    out : float, or dictionary\n       Clustering coefficient at specified nodes\n\n    Examples\n    --------\n    >>> G=nx.complete_graph(5)\n    >>> print(nx.clustering(G,0))\n    1.0\n    >>> print(nx.clustering(G))\n    {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}\n\n    Notes\n    -----\n    Self loops are ignored.\n\n    References\n    ----------\n    .. [1] Generalizations of the clustering coefficient to weighted \n       complex networks by J. Saramäki, M. Kivelä, J.-P. Onnela, \n       K. Kaski, and J. Kertész, Physical Review E, 75 027105 (2007).  \n       http://jponnela.com/web_documents/a9.pdf\n    \"\"\"\n    if G.is_directed():\n        raise NetworkXError('Clustering algorithms are not defined ',\n                            'for directed graphs.')\n    if weight is not None:\n        td_iter=_weighted_triangles_and_degree_iter(G,nodes,weight)\n    else:\n        td_iter=_triangles_and_degree_iter(G,nodes)\n\n    clusterc={}\n\n    for v,d,t in td_iter:\n        if t==0:\n            clusterc[v]=0.0\n        else:\n            clusterc[v]=t/float(d*(d-1))\n\n    if nodes in G: \n        return list(clusterc.values())[0] # return single value\n    return clusterc\n",
+            "match": "(G, nodes=None, weight=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(G, 0)": {},
+                "(nodes, 1)": {},
+                "(weighted, 2)": {
+                    "delete": 1,
+                    "replace": "weight=None"
+                }
+            },
+            "targetOvPara": "(G, nodes=None, weight=None)"
+        }
+    ]
+}

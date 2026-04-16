@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "pl.any('a')",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.any#1YY/anyYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.any@0.16.18-0.17.0/polars.any#1YY/anyYY.json",
+        "apiCall": "pl.any('a')",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.any",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Evaluate columnwise or elementwise with a bitwise OR operation.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [True, False, True],\n...         \"b\": [False, False, False],\n...         \"c\": [False, True, False],\n...     }\n... )\n>>> df\nshape: (3, 3)\n┌───────┬───────┬───────┐\n│ a     ┆ b     ┆ c     │\n│ ---   ┆ ---   ┆ ---   │\n│ bool  ┆ bool  ┆ bool  │\n╞═══════╪═══════╪═══════╡\n│ true  ┆ false ┆ false │\n│ false ┆ false ┆ true  │\n│ true  ┆ false ┆ false │\n└───────┴───────┴───────┘\n\nCompares the values (in binary format) and return true if any value in the column\nis true.\n\n>>> df.select(pl.any(\"*\"))\nshape: (1, 3)\n┌──────┬───────┬──────┐\n│ a    ┆ b     ┆ c    │\n│ ---  ┆ ---   ┆ ---  │\n│ bool ┆ bool  ┆ bool │\n╞══════╪═══════╪══════╡\n│ true ┆ false ┆ true │\n└──────┴───────┴──────┘",
+            "sourceCode": "def any(name: str | Sequence[str] | Sequence[Expr] | Expr) -> Expr:\n    \"\"\"\n    Evaluate columnwise or elementwise with a bitwise OR operation.\n\n    Examples\n    --------\n    >>> df = pl.DataFrame(\n    ...     {\n    ...         \"a\": [True, False, True],\n    ...         \"b\": [False, False, False],\n    ...         \"c\": [False, True, False],\n    ...     }\n    ... )\n    >>> df\n    shape: (3, 3)\n    ┌───────┬───────┬───────┐\n    │ a     ┆ b     ┆ c     │\n    │ ---   ┆ ---   ┆ ---   │\n    │ bool  ┆ bool  ┆ bool  │\n    ╞═══════╪═══════╪═══════╡\n    │ true  ┆ false ┆ false │\n    │ false ┆ false ┆ true  │\n    │ true  ┆ false ┆ false │\n    └───────┴───────┴───────┘\n\n    Compares the values (in binary format) and return true if any value in the column\n    is true.\n\n    >>> df.select(pl.any(\"*\"))\n    shape: (1, 3)\n    ┌──────┬───────┬──────┐\n    │ a    ┆ b     ┆ c    │\n    │ ---  ┆ ---   ┆ ---  │\n    │ bool ┆ bool  ┆ bool │\n    ╞══════╪═══════╪══════╡\n    │ true ┆ false ┆ true │\n    └──────┴───────┴──────┘\n\n    \"\"\"\n    if isinstance(name, str):\n        return col(name).any()\n    else:\n        return fold(lit(False), lambda a, b: a.cast(bool) | b.cast(bool), name).alias(\n            \"any\"\n        )\n",
+            "match": "(name: 'str | Sequence[str] | Sequence[Expr] | Expr') -> 'Expr'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.any",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Evaluate columnwise or elementwise with a bitwise OR operation.\n\nParameters\n----------\ncolumns\n    If given this function will apply a bitwise or on the columns.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"a\": [True, False, True],\n...         \"b\": [False, False, False],\n...         \"c\": [False, True, False],\n...     }\n... )\n>>> df\nshape: (3, 3)\n┌───────┬───────┬───────┐\n│ a     ┆ b     ┆ c     │\n│ ---   ┆ ---   ┆ ---   │\n│ bool  ┆ bool  ┆ bool  │\n╞═══════╪═══════╪═══════╡\n│ true  ┆ false ┆ false │\n│ false ┆ false ┆ true  │\n│ true  ┆ false ┆ false │\n└───────┴───────┴───────┘\n\nCompares the values (in binary format) and return true if any value in the column\nis true.\n\n>>> df.select(pl.any(\"*\"))\nshape: (1, 3)\n┌──────┬───────┬──────┐\n│ a    ┆ b     ┆ c    │\n│ ---  ┆ ---   ┆ ---  │\n│ bool ┆ bool  ┆ bool │\n╞══════╪═══════╪══════╡\n│ true ┆ false ┆ true │\n└──────┴───────┴──────┘",
+            "sourceCode": "def any(columns: str | Sequence[str] | Sequence[Expr] | Expr) -> Expr:\n    \"\"\"\n    Evaluate columnwise or elementwise with a bitwise OR operation.\n\n    Parameters\n    ----------\n    columns\n        If given this function will apply a bitwise or on the columns.\n\n    Examples\n    --------\n    >>> df = pl.DataFrame(\n    ...     {\n    ...         \"a\": [True, False, True],\n    ...         \"b\": [False, False, False],\n    ...         \"c\": [False, True, False],\n    ...     }\n    ... )\n    >>> df\n    shape: (3, 3)\n    ┌───────┬───────┬───────┐\n    │ a     ┆ b     ┆ c     │\n    │ ---   ┆ ---   ┆ ---   │\n    │ bool  ┆ bool  ┆ bool  │\n    ╞═══════╪═══════╪═══════╡\n    │ true  ┆ false ┆ false │\n    │ false ┆ false ┆ true  │\n    │ true  ┆ false ┆ false │\n    └───────┴───────┴───────┘\n\n    Compares the values (in binary format) and return true if any value in the column\n    is true.\n\n    >>> df.select(pl.any(\"*\"))\n    shape: (1, 3)\n    ┌──────┬───────┬──────┐\n    │ a    ┆ b     ┆ c    │\n    │ ---  ┆ ---   ┆ ---  │\n    │ bool ┆ bool  ┆ bool │\n    ╞══════╪═══════╪══════╡\n    │ true ┆ false ┆ true │\n    └──────┴───────┴──────┘\n\n    \"\"\"\n    if isinstance(columns, str):\n        return col(columns).any()\n    else:\n        return fold(\n            lit(False), lambda a, b: a.cast(bool) | b.cast(bool), columns\n        ).alias(\"any\")\n",
+            "match": "(columns: 'str | Sequence[str] | Sequence[Expr] | Expr') -> 'Expr'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(name, 0)": {
+                    "rename": "columns"
+                },
+                "(columns, 0)": {
+                    "addPos": "columns"
+                }
+            },
+            "targetOvPara": "(columns: 'str | Sequence[str] | Sequence[Expr] | Expr') -> 'Expr'"
+        }
+    ]
+}

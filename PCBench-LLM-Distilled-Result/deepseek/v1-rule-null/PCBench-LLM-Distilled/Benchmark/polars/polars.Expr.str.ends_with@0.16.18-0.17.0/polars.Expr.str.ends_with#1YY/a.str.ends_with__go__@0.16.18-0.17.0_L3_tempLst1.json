@@ -1,0 +1,89 @@
+{
+    "context": {
+        "callAPI": "a.str.ends_with('go')",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.Expr.str.ends_with#1YY/ends_withYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.Expr.str.ends_with@0.16.18-0.17.0/polars.Expr.str.ends_with#1YY/ends_withYY.json",
+        "apiCall": "a.str.ends_with('go')",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.col.str.ends_with",
+            "match": {
+                "polars.series.string.StringNameSpace.ends_with": [
+                    "(self,sub:str|Expr)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.ends_with": [
+                    "(self,sub:bytes)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.ends_with": [
+                    "(self,sub:str|Expr)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.ends_with": [
+                    "(self,sub:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        },
+        "newMatchDict": {
+            "format": "polars.col.str.ends_with",
+            "match": {
+                "polars.series.string.StringNameSpace.ends_with": [
+                    "(self,suffix:str|Expr)->Series"
+                ],
+                "polars.series.binary.BinaryNameSpace.ends_with": [
+                    "(self,suffix:bytes)->Series"
+                ],
+                "polars.expr.string.ExprStringNameSpace.ends_with": [
+                    "(self,suffix:str|Expr)->Expr"
+                ],
+                "polars.expr.binary.ExprBinaryNameSpace.ends_with": [
+                    "(self,suffix:bytes)->Expr"
+                ]
+            },
+            "matchMethod": "static"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "suffix"
+                },
+                "(suffix, 0)": {}
+            },
+            "targetOvPara": "(self,suffix:str|Expr)->Series"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "suffix"
+                },
+                "(suffix, 0)": {
+                    "addPos": "suffix"
+                }
+            },
+            "targetOvPara": "(self,suffix:bytes)->Series"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "suffix"
+                }
+            },
+            "targetOvPara": "(self,suffix:str|Expr)->Expr"
+        },
+        {
+            "repairDict": {
+                "(sub, 0)": {
+                    "rename": "suffix"
+                }
+            },
+            "targetOvPara": "(self,suffix:bytes)->Expr"
+        }
+    ]
+}

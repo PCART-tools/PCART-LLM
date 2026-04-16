@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "patches.Shadow(patch, 0.1, 0.1)",
+        "currentVersion": "3.4.3",
+        "targetVersion": "3.5.0",
+        "fileRelativePath": "matplotlib.patches.Shadow#1YY/ShadowYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled-NaN/Benchmark/matplotlib/matplotlib.patches.Shadow@3.4.3-3.5.0/matplotlib.patches.Shadow#1YY/ShadowYY.json",
+        "apiCall": "patches.Shadow(patch, 0.1, 0.1)",
+        "oldVersion": "matplotlib@3.4.3",
+        "newVersion": "matplotlib@3.5.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "matplotlib.patches.Shadow",
+            "error": "",
+            "internalPath": "matplotlib.patches",
+            "docstring": "A patch is a 2D artist with a face color and an edge color.\n\nIf any of *edgecolor*, *facecolor*, *linewidth*, or *antialiased*\nare *None*, they default to their rc params setting.",
+            "sourceCode": "class Shadow(Patch):\n    def __str__(self):\n        return \"Shadow(%s)\" % (str(self.patch))\n\n    @_api.delete_parameter(\"3.3\", \"props\")\n    @docstring.dedent_interpd\n    def __init__(self, patch, ox, oy, props=None, **kwargs):\n        \"\"\"\n        Create a shadow of the given *patch*.\n\n        By default, the shadow will have the same face color as the *patch*,\n        but darkened.\n\n        Parameters\n        ----------\n        patch : `.Patch`\n            The patch to create the shadow for.\n        ox, oy : float\n            The shift of the shadow in data coordinates, scaled by a factor\n            of dpi/72.\n        props : dict\n            *deprecated (use kwargs instead)* Properties of the shadow patch.\n        **kwargs\n            Properties of the shadow patch. Supported keys are:\n\n            %(Patch_kwdoc)s\n        \"\"\"\n        super().__init__()\n        self.patch = patch\n        # Note: when removing props, we can directly pass kwargs to _update()\n        # and remove self._props\n        if props is None:\n            color = .3 * np.asarray(colors.to_rgb(self.patch.get_facecolor()))\n            props = {\n                'facecolor': color,\n                'edgecolor': color,\n                'alpha': 0.5,\n            }\n        self._props = {**props, **kwargs}\n        self._ox, self._oy = ox, oy\n        self._shadow_transform = transforms.Affine2D()\n        self._update()\n\n    props = _api.deprecate_privatize_attribute(\"3.3\")\n\n    def _update(self):\n        self.update_from(self.patch)\n\n        # Place the shadow patch directly behind the inherited patch.\n        self.set_zorder(np.nextafter(self.patch.zorder, -np.inf))\n\n        self.update(self._props)\n\n    def _update_transform(self, renderer):\n        ox = renderer.points_to_pixels(self._ox)\n        oy = renderer.points_to_pixels(self._oy)\n        self._shadow_transform.clear().translate(ox, oy)\n\n    def get_path(self):\n        return self.patch.get_path()\n\n    def get_patch_transform(self):\n        return self.patch.get_patch_transform() + self._shadow_transform\n\n    def draw(self, renderer):\n        self._update_transform(renderer)\n        super().draw(renderer)\n",
+            "match": "(patch, ox, oy, props=<deprecated parameter>, **kwargs)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "matplotlib.patches.Shadow",
+            "error": "",
+            "internalPath": "matplotlib.patches",
+            "docstring": "A patch is a 2D artist with a face color and an edge color.\n\nIf any of *edgecolor*, *facecolor*, *linewidth*, or *antialiased*\nare *None*, they default to their rc params setting.",
+            "sourceCode": "class Shadow(Patch):\n    def __str__(self):\n        return \"Shadow(%s)\" % (str(self.patch))\n\n    @docstring.dedent_interpd\n    def __init__(self, patch, ox, oy, **kwargs):\n        \"\"\"\n        Create a shadow of the given *patch*.\n\n        By default, the shadow will have the same face color as the *patch*,\n        but darkened.\n\n        Parameters\n        ----------\n        patch : `.Patch`\n            The patch to create the shadow for.\n        ox, oy : float\n            The shift of the shadow in data coordinates, scaled by a factor\n            of dpi/72.\n        **kwargs\n            Properties of the shadow patch. Supported keys are:\n\n            %(Patch:kwdoc)s\n        \"\"\"\n        super().__init__()\n        self.patch = patch\n        self._ox, self._oy = ox, oy\n        self._shadow_transform = transforms.Affine2D()\n\n        self.update_from(self.patch)\n        color = .3 * np.asarray(colors.to_rgb(self.patch.get_facecolor()))\n        self.update({'facecolor': color, 'edgecolor': color, 'alpha': 0.5,\n                     # Place shadow patch directly behind the inherited patch.\n                     'zorder': np.nextafter(self.patch.zorder, -np.inf),\n                     **kwargs})\n\n    def _update_transform(self, renderer):\n        ox = renderer.points_to_pixels(self._ox)\n        oy = renderer.points_to_pixels(self._oy)\n        self._shadow_transform.clear().translate(ox, oy)\n\n    def get_path(self):\n        return self.patch.get_path()\n\n    def get_patch_transform(self):\n        return self.patch.get_patch_transform() + self._shadow_transform\n\n    def draw(self, renderer):\n        self._update_transform(renderer)\n        super().draw(renderer)\n",
+            "match": "(patch, ox, oy, **kwargs)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(patch, 0)": {},
+                "(ox, 1)": {},
+                "(oy, 2)": {},
+                "(props, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(patch, ox, oy, **kwargs)"
+        }
+    ]
+}

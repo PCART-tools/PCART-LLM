@@ -1,0 +1,59 @@
+{
+    "context": {
+        "callAPI": "Panel(None)",
+        "currentVersion": "2.3.1",
+        "targetVersion": "3.0.0",
+        "fileRelativePath": "Panel#1YY/PanelYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/rich/Panel@2.3.1-3.0.0/Panel#1YY/PanelYY.json",
+        "apiCall": "Panel(None)",
+        "oldVersion": "rich@2.3.1",
+        "newVersion": "rich@3.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "rich.panel.Panel",
+            "error": "",
+            "internalPath": "rich.panel",
+            "docstring": "A console renderable that draws a border around its contents.\n\nExample::\n    >>> console.print(Panel(\"Hello, World!\"))\n\nArgs:\n    renderable (RenderableType): A console renderable object.\n    box (Box, optional): A Box instance that defines the look of the border.\n        Defaults to box.ROUNDED.\n    expand (bool, optional): If True the panel will stretch to fill the console \n        width, otherwise it will be sized to fit the contents. Defaults to True.\n    style (str, optional): The style of the border. Defaults to \"none\".\n    width (Optional[int], optional): Optional width of panel. Defaults to None to auto-detect.\n    padding (Optional[PaddingDimensions]): Optional padding around renderable. Defaults to 0.",
+            "sourceCode": "class Panel(JupyterMixin):\n    \"\"\"A console renderable that draws a border around its contents.\n    \n    Example::\n        >>> console.print(Panel(\"Hello, World!\"))\n\n    Args:\n        renderable (RenderableType): A console renderable object.\n        box (Box, optional): A Box instance that defines the look of the border.\n            Defaults to box.ROUNDED.\n        expand (bool, optional): If True the panel will stretch to fill the console \n            width, otherwise it will be sized to fit the contents. Defaults to True.\n        style (str, optional): The style of the border. Defaults to \"none\".\n        width (Optional[int], optional): Optional width of panel. Defaults to None to auto-detect.\n        padding (Optional[PaddingDimensions]): Optional padding around renderable. Defaults to 0.\n    \"\"\"\n\n    def __init__(\n        self,\n        renderable: RenderableType,\n        box: Box = None,\n        expand: bool = True,\n        style: Union[str, Style] = \"none\",\n        width: Optional[int] = None,\n        padding: PaddingDimensions = 0,\n    ) -> None:\n        self.renderable = renderable\n        self.box = box\n        self.expand = expand\n        self.style = style\n        self.width = width\n        self.padding = padding\n\n    def __rich_console__(\n        self, console: Console, options: ConsoleOptions\n    ) -> RenderResult:\n        _padding = Padding.unpack(self.padding)\n        renderable = (\n            Padding(self.renderable, _padding) if any(_padding) else self.renderable\n        )\n        style = console.get_style(self.style)\n        width = (\n            options.max_width\n            if self.width is None\n            else min(self.width, options.max_width)\n        )\n        child_width = (\n            width - 2\n            if self.expand\n            else Measurement.get(console, renderable, width - 2).maximum\n        )\n        width = child_width + 2\n        child_options = options.update(width=child_width)\n        lines = console.render_lines(renderable, child_options)\n        box = SQUARE if console.legacy_windows else (self.box or ROUNDED)\n        line_start = Segment(box.mid_left, style)\n        line_end = Segment(f\"{box.mid_right}\\n\", style)\n        yield Segment(box.get_top([width - 2]), style)\n        yield Segment.line()\n        for line in lines:\n            yield line_start\n            yield from line\n            yield line_end\n        yield Segment(box.get_bottom([width - 2]), style)\n        yield Segment.line()\n\n    def __rich_measure__(self, console: \"Console\", max_width: int) -> Measurement:\n        width = Measurement.get(console, self.renderable, max_width - 2).maximum + 2\n        return Measurement(width, width)\n",
+            "match": "(renderable: Union[rich.console.ConsoleRenderable, rich.console.RichCast, str], box: rich.box.Box = None, expand: bool = True, style: Union[str, rich.style.Style] = 'none', width: Union[int, NoneType] = None, padding: Union[int, Tuple[int], Tuple[int, int], Tuple[int, int, int, int]] = 0) -> None",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "rich.panel.Panel",
+            "error": "",
+            "internalPath": "rich.panel",
+            "docstring": "A console renderable that draws a border around its contents.\n\nExample::\n    >>> console.print(Panel(\"Hello, World!\"))\n\nArgs:\n    renderable (RenderableType): A console renderable object.\n    box (Box, optional): A Box instance that defines the look of the border (see :ref:`appendix_box`.\n        Defaults to box.ROUNDED.\n    safe_box (bool, optional): Disable box characters that don't display on windows legacy terminal with *raster* fonts. Defaults to True.\n    expand (bool, optional): If True the panel will stretch to fill the console \n        width, otherwise it will be sized to fit the contents. Defaults to True.\n    style (str, optional): The style of the border. Defaults to \"none\".\n    width (Optional[int], optional): Optional width of panel. Defaults to None to auto-detect.\n    padding (Optional[PaddingDimensions]): Optional padding around renderable. Defaults to 0.",
+            "sourceCode": "class Panel(JupyterMixin):\n    \"\"\"A console renderable that draws a border around its contents.\n    \n    Example::\n        >>> console.print(Panel(\"Hello, World!\"))\n\n    Args:\n        renderable (RenderableType): A console renderable object.\n        box (Box, optional): A Box instance that defines the look of the border (see :ref:`appendix_box`.\n            Defaults to box.ROUNDED.\n        safe_box (bool, optional): Disable box characters that don't display on windows legacy terminal with *raster* fonts. Defaults to True.\n        expand (bool, optional): If True the panel will stretch to fill the console \n            width, otherwise it will be sized to fit the contents. Defaults to True.\n        style (str, optional): The style of the border. Defaults to \"none\".\n        width (Optional[int], optional): Optional width of panel. Defaults to None to auto-detect.\n        padding (Optional[PaddingDimensions]): Optional padding around renderable. Defaults to 0.\n    \"\"\"\n\n    def __init__(\n        self,\n        renderable: RenderableType,\n        box: Box = ROUNDED,\n        *,\n        safe_box: bool = True,\n        expand: bool = True,\n        style: Union[str, Style] = \"none\",\n        width: Optional[int] = None,\n        padding: PaddingDimensions = 0,\n    ) -> None:\n        self.renderable = renderable\n        self.box = box\n        self.safe_box = safe_box\n        self.expand = expand\n        self.style = style\n        self.width = width\n        self.padding = padding\n\n    def __rich_console__(\n        self, console: Console, options: ConsoleOptions\n    ) -> RenderResult:\n        _padding = Padding.unpack(self.padding)\n        renderable = (\n            Padding(self.renderable, _padding) if any(_padding) else self.renderable\n        )\n        style = console.get_style(self.style)\n        width = (\n            options.max_width\n            if self.width is None\n            else min(self.width, options.max_width)\n        )\n        child_width = (\n            width - 2\n            if self.expand\n            else Measurement.get(console, renderable, width - 2).maximum\n        )\n        width = child_width + 2\n        child_options = options.update(width=child_width)\n        lines = console.render_lines(renderable, child_options)\n        box = (\n            get_safe_box(self.box, console.legacy_windows)\n            if self.safe_box\n            else self.box\n        )\n        line_start = Segment(box.mid_left, style)\n        line_end = Segment(f\"{box.mid_right}\\n\", style)\n        yield Segment(box.get_top([width - 2]), style)\n        yield Segment.line()\n        for line in lines:\n            yield line_start\n            yield from line\n            yield line_end\n        yield Segment(box.get_bottom([width - 2]), style)\n        yield Segment.line()\n\n    def __rich_measure__(self, console: \"Console\", max_width: int) -> Measurement:\n        width = Measurement.get(console, self.renderable, max_width - 2).maximum + 2\n        return Measurement(width, width)\n",
+            "match": "(renderable: Union[rich.console.ConsoleRenderable, rich.console.RichCast, str], box: rich.box.Box = Box(...), *, safe_box: bool = True, expand: bool = True, style: Union[str, rich.style.Style] = 'none', width: Union[int, NoneType] = None, padding: Union[int, Tuple[int], Tuple[int, int], Tuple[int, int, int, int]] = 0) -> None",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(renderable, 0)": {},
+                "(box, 1)": {
+                    "typeChange": "rich.box.Box"
+                },
+                "(expand, 2)": {
+                    "pos2key": "expand"
+                },
+                "(style, 3)": {
+                    "pos2key": "style"
+                },
+                "(safe_box, 3)": {
+                    "addKey": "safe_box=True"
+                },
+                "(width, 4)": {
+                    "pos2key": "width"
+                },
+                "(padding, 5)": {
+                    "pos2key": "padding"
+                }
+            },
+            "targetOvPara": "(renderable: Union[rich.console.ConsoleRenderable, rich.console.RichCast, str], box: rich.box.Box = Box(...), *, safe_box: bool = True, expand: bool = True, style: Union[str, rich.style.Style] = 'none', width: Union[int, NoneType] = None, padding: Union[int, Tuple[int], Tuple[int, int], Tuple[int, int, int, int]] = 0) -> None"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "context": {
+        "callAPI": "pl.arg_where(pl.col('a') % 2 == 0)",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.arg_where#1YY/arg_whereYY.py",
+        "lineNum": "2",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.arg_where@0.16.18-0.17.0/polars.arg_where#1YY/arg_whereYY.json",
+        "apiCall": "pl.arg_where(pl.col('a') % 2 == 0)",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.arg_where",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Return indices where `condition` evaluates `True`.\n\nParameters\n----------\ncondition\n    Boolean expression to evaluate\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"a\": [1, 2, 3, 4, 5]})\n>>> df.select(\n...     [\n...         pl.arg_where(pl.col(\"a\") % 2 == 0),\n...     ]\n... ).to_series()\nshape: (2,)\nSeries: 'a' [u32]\n[\n    1\n    3\n]\n\nSee Also\n--------\nSeries.arg_true : Return indices where Series is True",
+            "sourceCode": "def arg_where(condition: Expr | Series, eager: bool = False) -> Expr | Series:\n    \"\"\"\n    Return indices where `condition` evaluates `True`.\n\n    Parameters\n    ----------\n    condition\n        Boolean expression to evaluate\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n\n    Examples\n    --------\n    >>> df = pl.DataFrame({\"a\": [1, 2, 3, 4, 5]})\n    >>> df.select(\n    ...     [\n    ...         pl.arg_where(pl.col(\"a\") % 2 == 0),\n    ...     ]\n    ... ).to_series()\n    shape: (2,)\n    Series: 'a' [u32]\n    [\n        1\n        3\n    ]\n\n    See Also\n    --------\n    Series.arg_true : Return indices where Series is True\n\n    \"\"\"\n    if eager:\n        if not isinstance(condition, pli.Series):\n            raise ValueError(\n                \"expected 'Series' in 'arg_where' if 'eager=True', got\"\n                f\" {type(condition)}\"\n            )\n        return condition.to_frame().select(arg_where(col(condition.name))).to_series()\n    else:\n        condition = expr_to_lit_or_expr(condition, str_to_lit=True)\n        return wrap_expr(py_arg_where(condition._pyexpr))\n",
+            "match": "(condition: 'Expr | Series', eager: 'bool' = False) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.arg_where",
+            "error": "",
+            "internalPath": "polars.functions.lazy",
+            "docstring": "Return indices where `condition` evaluates `True`.\n\nParameters\n----------\ncondition\n    Boolean expression to evaluate\neager\n    Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n    return an expression instead.\n\nExamples\n--------\n>>> df = pl.DataFrame({\"a\": [1, 2, 3, 4, 5]})\n>>> df.select(\n...     [\n...         pl.arg_where(pl.col(\"a\") % 2 == 0),\n...     ]\n... ).to_series()\nshape: (2,)\nSeries: 'a' [u32]\n[\n    1\n    3\n]\n\nSee Also\n--------\nSeries.arg_true : Return indices where Series is True",
+            "sourceCode": "def arg_where(condition: Expr | Series, *, eager: bool = False) -> Expr | Series:\n    \"\"\"\n    Return indices where `condition` evaluates `True`.\n\n    Parameters\n    ----------\n    condition\n        Boolean expression to evaluate\n    eager\n        Evaluate immediately and return a ``Series``. If set to ``False`` (default),\n        return an expression instead.\n\n    Examples\n    --------\n    >>> df = pl.DataFrame({\"a\": [1, 2, 3, 4, 5]})\n    >>> df.select(\n    ...     [\n    ...         pl.arg_where(pl.col(\"a\") % 2 == 0),\n    ...     ]\n    ... ).to_series()\n    shape: (2,)\n    Series: 'a' [u32]\n    [\n        1\n        3\n    ]\n\n    See Also\n    --------\n    Series.arg_true : Return indices where Series is True\n\n    \"\"\"\n    if eager:\n        if not isinstance(condition, pli.Series):\n            raise ValueError(\n                \"expected 'Series' in 'arg_where' if 'eager=True', got\"\n                f\" {type(condition)}\"\n            )\n        return condition.to_frame().select(arg_where(col(condition.name))).to_series()\n    else:\n        condition = expr_to_lit_or_expr(condition, str_to_lit=True)\n        return wrap_expr(py_arg_where(condition._pyexpr))\n",
+            "match": "(condition: 'Expr | Series', *, eager: 'bool' = False) -> 'Expr | Series'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(condition, 0)": {},
+                "(eager, 1)": {
+                    "pos2key": "eager"
+                }
+            },
+            "targetOvPara": "(condition: 'Expr | Series', *, eager: 'bool' = False) -> 'Expr | Series'"
+        }
+    ]
+}

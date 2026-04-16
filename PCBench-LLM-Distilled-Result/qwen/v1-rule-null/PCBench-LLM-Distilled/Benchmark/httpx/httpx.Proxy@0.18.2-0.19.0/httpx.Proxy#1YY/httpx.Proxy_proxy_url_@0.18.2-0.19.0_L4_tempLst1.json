@@ -1,0 +1,43 @@
+{
+    "context": {
+        "callAPI": "httpx.Proxy(proxy_url)",
+        "currentVersion": "0.18.2",
+        "targetVersion": "0.19.0",
+        "fileRelativePath": "httpx.Proxy#1YY/ProxyYY.py",
+        "lineNum": "4",
+        "config": "PCBench-LLM-Distilled/Benchmark/httpx/httpx.Proxy@0.18.2-0.19.0/httpx.Proxy#1YY/ProxyYY.json",
+        "apiCall": "httpx.Proxy(proxy_url)",
+        "oldVersion": "httpx@0.18.2",
+        "newVersion": "httpx@0.19.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "httpx.Proxy",
+            "error": "",
+            "internalPath": "httpx.__init__",
+            "docstring": "",
+            "match": "(url: Union[ForwardRef('URL'), str], *, headers: Union[ForwardRef('Headers'), Dict[str, str], Dict[bytes, bytes], Sequence[Tuple[str, str]], Sequence[Tuple[bytes, bytes]]] = None, mode: str = 'DEFAULT')",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "httpx.Proxy",
+            "error": "",
+            "internalPath": "httpx.__init__",
+            "docstring": "",
+            "match": "(url: Union[ForwardRef('URL'), str], *, headers: Union[ForwardRef('Headers'), Dict[str, str], Dict[bytes, bytes], Sequence[Tuple[str, str]], Sequence[Tuple[bytes, bytes]]] = None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(url, 0)": {},
+                "(headers, 2)": {},
+                "(mode, 3)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(url: Union[ForwardRef('URL'), str], *, headers: Union[ForwardRef('Headers'), Dict[str, str], Dict[bytes, bytes], Sequence[Tuple[str, str]], Sequence[Tuple[bytes, bytes]]] = None)"
+        }
+    ]
+}

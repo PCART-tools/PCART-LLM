@@ -1,0 +1,45 @@
+{
+    "context": {
+        "callAPI": "index.get_slice_bound(start, 'left')",
+        "currentVersion": "1.5.3",
+        "targetVersion": "2.0.0",
+        "fileRelativePath": "Index.get_slice_bound#1YY/get_slice_boundYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/pandas/Index.get_slice_bound@1.5.3-2.0.0/Index.get_slice_bound#1YY/get_slice_boundYY.json",
+        "apiCall": "index.get_slice_bound(start, 'left')",
+        "oldVersion": "pandas@1.5.3",
+        "newVersion": "pandas@2.0.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "pandas.Index.get_slice_bound",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Calculate slice bound that corresponds to given label.\n\nReturns leftmost (one-past-the-rightmost if ``side=='right'``) position\nof given label.\n\nParameters\n----------\nlabel : object\nside : {'left', 'right'}\nkind : {'loc', 'getitem'} or None\n\n    .. deprecated:: 1.4.0\n\nReturns\n-------\nint\n    Index of label.",
+            "sourceCode": "    def get_slice_bound(\n        self, label, side: Literal[\"left\", \"right\"], kind=no_default\n    ) -> int:\n        \"\"\"\n        Calculate slice bound that corresponds to given label.\n\n        Returns leftmost (one-past-the-rightmost if ``side=='right'``) position\n        of given label.\n\n        Parameters\n        ----------\n        label : object\n        side : {'left', 'right'}\n        kind : {'loc', 'getitem'} or None\n\n            .. deprecated:: 1.4.0\n\n        Returns\n        -------\n        int\n            Index of label.\n        \"\"\"\n        assert kind in [\"loc\", \"getitem\", None, no_default]\n        self._deprecated_arg(kind, \"kind\", \"get_slice_bound\")\n\n        if side not in (\"left\", \"right\"):\n            raise ValueError(\n                \"Invalid value for side kwarg, must be either \"\n                f\"'left' or 'right': {side}\"\n            )\n\n        original_label = label\n\n        # For datetime indices label may be a string that has to be converted\n        # to datetime boundary according to its resolution.\n        label = self._maybe_cast_slice_bound(label, side)\n\n        # we need to look up the label\n        try:\n            slc = self.get_loc(label)\n        except KeyError as err:\n            try:\n                return self._searchsorted_monotonic(label, side)\n            except ValueError:\n                # raise the original KeyError\n                raise err\n\n        if isinstance(slc, np.ndarray):\n            # get_loc may return a boolean array, which\n            # is OK as long as they are representable by a slice.\n            assert is_bool_dtype(slc.dtype)\n            slc = lib.maybe_booleans_to_slice(slc.view(\"u1\"))\n            if isinstance(slc, np.ndarray):\n                raise KeyError(\n                    f\"Cannot get {side} slice bound for non-unique \"\n                    f\"label: {repr(original_label)}\"\n                )\n\n        if isinstance(slc, slice):\n            if side == \"left\":\n                return slc.start\n            else:\n                return slc.stop\n        else:\n            if side == \"right\":\n                return slc + 1\n            else:\n                return slc\n",
+            "match": "(label, side: \"Literal[('left', 'right')]\", kind=<no_default>) -> 'int'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "pandas.Index.get_slice_bound",
+            "error": "",
+            "internalPath": "pandas.core.indexes.base",
+            "docstring": "Calculate slice bound that corresponds to given label.\n\nReturns leftmost (one-past-the-rightmost if ``side=='right'``) position\nof given label.\n\nParameters\n----------\nlabel : object\nside : {'left', 'right'}\n\nReturns\n-------\nint\n    Index of label.",
+            "sourceCode": "    def get_slice_bound(self, label, side: Literal[\"left\", \"right\"]) -> int:\n        \"\"\"\n        Calculate slice bound that corresponds to given label.\n\n        Returns leftmost (one-past-the-rightmost if ``side=='right'``) position\n        of given label.\n\n        Parameters\n        ----------\n        label : object\n        side : {'left', 'right'}\n\n        Returns\n        -------\n        int\n            Index of label.\n        \"\"\"\n\n        if side not in (\"left\", \"right\"):\n            raise ValueError(\n                \"Invalid value for side kwarg, must be either \"\n                f\"'left' or 'right': {side}\"\n            )\n\n        original_label = label\n\n        # For datetime indices label may be a string that has to be converted\n        # to datetime boundary according to its resolution.\n        label = self._maybe_cast_slice_bound(label, side)\n\n        # we need to look up the label\n        try:\n            slc = self.get_loc(label)\n        except KeyError as err:\n            try:\n                return self._searchsorted_monotonic(label, side)\n            except ValueError:\n                # raise the original KeyError\n                raise err\n\n        if isinstance(slc, np.ndarray):\n            # get_loc may return a boolean array, which\n            # is OK as long as they are representable by a slice.\n            assert is_bool_dtype(slc.dtype)\n            slc = lib.maybe_booleans_to_slice(slc.view(\"u1\"))\n            if isinstance(slc, np.ndarray):\n                raise KeyError(\n                    f\"Cannot get {side} slice bound for non-unique \"\n                    f\"label: {repr(original_label)}\"\n                )\n\n        if isinstance(slc, slice):\n            if side == \"left\":\n                return slc.start\n            else:\n                return slc.stop\n        else:\n            if side == \"right\":\n                return slc + 1\n            else:\n                return slc\n",
+            "match": "(label, side: \"Literal[('left', 'right')]\") -> 'int'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(label, 0)": {},
+                "(side, 1)": {},
+                "(kind, 2)": {
+                    "delete": 1
+                }
+            },
+            "targetOvPara": "(label, side: \"Literal[('left', 'right')]\") -> 'int'"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "(bbox, 0)": {},
+    "(cmap, 1)": {},
+    "(norm, 2)": {},
+    "(interpolation, 3)": {},
+    "(origin, 4)": {},
+    "(filternorm, 5)": {},
+    "(filterrad, 6)": {},
+    "(resample, 7)": {},
+    "(interp_at_native, 8)": {
+      "delete": 1
+    }
+  }
+]

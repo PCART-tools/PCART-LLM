@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/polars/polars.expr.str.strptime@0.17.15-0.18.0/polars.expr.str.strptime#1YY",
+    "runCommand": "python strptimeYY.py",
+    "runFilePath": "",
+    "libName": "polars",
+    "currentVersion": "0.17.15",
+    "targetVersion": "0.18.0",
+    "currentEnv": "/envs/polars0.17.15",
+    "targetEnv": "/envs/polars0.18.0"
+}

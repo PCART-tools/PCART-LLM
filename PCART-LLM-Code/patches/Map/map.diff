@@ -1,0 +1,15 @@
+--- PCART-original/Map/map.py	2026-04-15 21:36:13
++++ PCART-modified/Map/map.py	2026-04-15 21:36:13
+@@ -248,7 +248,11 @@
+         if 'internalPath' in dynamicMatchDict:
+             ans['internalPath']=dynamicMatchDict['internalPath']
+         else:
+-            ans['internalPath']=formatAPI 
++            ans['internalPath']=formatAPI
++        if 'docstring' in dynamicMatchDict:
++            ans['docstring']=dynamicMatchDict['docstring']
++        if 'sourceCode' in dynamicMatchDict:
++            ans['sourceCode']=dynamicMatchDict['sourceCode']
+     
+         if 'builtin' in dynamicMatchDict['error']: #这里的内置不一定是库的内置，有可能是python内置,如何区分?
+             ans['match']=fuzzymatch(formatAPI,libName,version,1) #目前只发现pytorch中把内置记录到了.pyi中

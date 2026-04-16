@@ -1,0 +1,10 @@
+[
+  {
+    "(min_val, 0)": {
+      "rename": "lower_bound"
+    },
+    "(max_val, 1)": {
+      "rename": "upper_bound"
+    }
+  }
+]

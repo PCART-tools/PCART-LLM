@@ -1,0 +1,11 @@
+[
+  {
+    "(doc_words, 0)": {},
+    "(alpha, 1)": {},
+    "(min_alpha, 2)": {},
+    "(epochs, 3)": {},
+    "(steps, 4)": {
+      "delete": 1
+    }
+  }
+]

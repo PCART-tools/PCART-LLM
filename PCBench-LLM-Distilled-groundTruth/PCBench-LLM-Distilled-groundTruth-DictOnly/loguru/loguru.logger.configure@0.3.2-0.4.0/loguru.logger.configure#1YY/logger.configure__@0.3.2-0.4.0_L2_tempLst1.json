@@ -1,0 +1,11 @@
+[
+  {
+    "(handlers, 1)": {},
+    "(levels, 2)": {},
+    "(extra, 3)": {},
+    "(patch, 4)": {
+      "rename": "patcher"
+    },
+    "(activation, 5)": {}
+  }
+]

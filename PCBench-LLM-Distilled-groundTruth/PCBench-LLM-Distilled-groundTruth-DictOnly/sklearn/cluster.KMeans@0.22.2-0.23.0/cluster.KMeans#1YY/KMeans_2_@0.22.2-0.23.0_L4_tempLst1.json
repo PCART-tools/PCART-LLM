@@ -1,0 +1,35 @@
+[
+  {
+    "(n_clusters, 0)": {},
+    "(init, 1)": {
+      "pos2key": "init"
+    },
+    "(n_init, 2)": {
+      "pos2key": "n_init"
+    },
+    "(max_iter, 3)": {
+      "pos2key": "max_iter"
+    },
+    "(tol, 4)": {
+      "pos2key": "tol"
+    },
+    "(precompute_distances, 5)": {
+      "pos2key": "precompute_distances"
+    },
+    "(verbose, 6)": {
+      "pos2key": "verbose"
+    },
+    "(random_state, 7)": {
+      "pos2key": "random_state"
+    },
+    "(copy_x, 8)": {
+      "pos2key": "copy_x"
+    },
+    "(n_jobs, 9)": {
+      "pos2key": "n_jobs"
+    },
+    "(algorithm, 10)": {
+      "pos2key": "algorithm"
+    }
+  }
+]

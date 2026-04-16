@@ -1,0 +1,28 @@
+[
+  {
+    "(damping, 0)": {
+      "pos2key": "damping"
+    },
+    "(max_iter, 1)": {
+      "pos2key": "max_iter"
+    },
+    "(convergence_iter, 2)": {
+      "pos2key": "convergence_iter"
+    },
+    "(copy, 3)": {
+      "pos2key": "copy"
+    },
+    "(preference, 4)": {
+      "pos2key": "preference"
+    },
+    "(affinity, 5)": {
+      "pos2key": "affinity"
+    },
+    "(verbose, 6)": {
+      "pos2key": "verbose"
+    },
+    "(random_state, 8)": {
+      "addKey": "random_state='warn'"
+    }
+  }
+]

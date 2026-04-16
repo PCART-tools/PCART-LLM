@@ -1,0 +1,39 @@
+[
+  {
+    "(file_pattern, 0)": {},
+    "(batch_size, 1)": {},
+    "(column_names, 2)": {},
+    "(column_defaults, 3)": {},
+    "(label_name, 4)": {},
+    "(field_delim, 5)": {
+      "posChange": 6,
+      "replace": "select_columns=None"
+    },
+    "(use_quote_delim, 6)": {
+      "posChange": 7
+    },
+    "(na_value, 7)": {
+      "posChange": 8
+    },
+    "(header, 8)": {
+      "posChange": 9
+    },
+    "(comment, 9)": {
+      "delete": 1
+    },
+    "(num_epochs, 10)": {},
+    "(shuffle, 11)": {},
+    "(shuffle_buffer_size, 12)": {},
+    "(shuffle_seed, 13)": {},
+    "(prefetch_buffer_size, 14)": {},
+    "(num_parallel_reads, 15)": {},
+    "(num_parallel_parser_calls, 16)": {},
+    "(sloppy, 17)": {},
+    "(default_float_type, 18)": {
+      "delete": 1
+    },
+    "(num_rows_for_inference, 19)": {
+      "posChange": 18
+    }
+  }
+]

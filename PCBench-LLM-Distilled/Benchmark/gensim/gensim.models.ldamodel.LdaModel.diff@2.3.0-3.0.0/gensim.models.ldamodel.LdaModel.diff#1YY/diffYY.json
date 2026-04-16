@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.ldamodel.LdaModel.diff@2.3.0-3.0.0/gensim.models.ldamodel.LdaModel.diff#1YY",
+    "runCommand": "python diffYY.py",
+    "runFilePath": "",
+    "libName": "gensim",
+    "currentVersion": "2.3.0",
+    "targetVersion": "3.0.0",
+    "currentEnv": "/envs/gensim2.3.0",
+    "targetEnv": "/envs/gensim3.0.0"
+}

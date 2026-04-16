@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/dask/dask.dataframe.repartition@1.2.2-2.0.0/dask.dataframe.repartition#1YY",
+    "runCommand": "python repartitionYY.py",
+    "runFilePath": "",
+    "libName": "dask",
+    "currentVersion": "1.2.2",
+    "targetVersion": "2.0.0",
+    "currentEnv": "/envs/dask1.2.2",
+    "targetEnv": "/envs/dask2.0.0"
+}

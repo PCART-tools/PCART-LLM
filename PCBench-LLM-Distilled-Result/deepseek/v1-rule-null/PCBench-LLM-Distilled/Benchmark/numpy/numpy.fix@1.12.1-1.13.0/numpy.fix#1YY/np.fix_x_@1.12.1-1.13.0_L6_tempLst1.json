@@ -1,0 +1,46 @@
+{
+    "context": {
+        "callAPI": "np.fix(x)",
+        "currentVersion": "1.12.1",
+        "targetVersion": "1.13.0",
+        "fileRelativePath": "numpy.fix#1YY/fixYY.py",
+        "lineNum": "6",
+        "config": "PCBench-LLM-Distilled/Benchmark/numpy/numpy.fix@1.12.1-1.13.0/numpy.fix#1YY/fixYY.json",
+        "apiCall": "np.fix(x)",
+        "oldVersion": "numpy@1.12.1",
+        "newVersion": "numpy@1.13.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "numpy.fix",
+            "error": "",
+            "internalPath": "numpy.lib.ufunclike",
+            "docstring": "Round to nearest integer towards zero.\n\nRound an array of floats element-wise to nearest integer towards zero.\nThe rounded values are returned as floats.\n\nParameters\n----------\nx : array_like\n    An array of floats to be rounded\ny : ndarray, optional\n    Output array\n\nReturns\n-------\nout : ndarray of floats\n    The array of rounded numbers\n\nSee Also\n--------\ntrunc, floor, ceil\naround : Round to given number of decimals\n\nExamples\n--------\n>>> np.fix(3.14)\n3.0\n>>> np.fix(3)\n3.0\n>>> np.fix([2.1, 2.9, -2.1, -2.9])\narray([ 2.,  2., -2., -2.])",
+            "sourceCode": "def fix(x, y=None):\n    \"\"\"\n    Round to nearest integer towards zero.\n\n    Round an array of floats element-wise to nearest integer towards zero.\n    The rounded values are returned as floats.\n\n    Parameters\n    ----------\n    x : array_like\n        An array of floats to be rounded\n    y : ndarray, optional\n        Output array\n\n    Returns\n    -------\n    out : ndarray of floats\n        The array of rounded numbers\n\n    See Also\n    --------\n    trunc, floor, ceil\n    around : Round to given number of decimals\n\n    Examples\n    --------\n    >>> np.fix(3.14)\n    3.0\n    >>> np.fix(3)\n    3.0\n    >>> np.fix([2.1, 2.9, -2.1, -2.9])\n    array([ 2.,  2., -2., -2.])\n\n    \"\"\"\n    x = nx.asanyarray(x)\n    y1 = nx.floor(x)\n    y2 = nx.ceil(x)\n    if y is None:\n        y = nx.asanyarray(y1)\n    y[...] = nx.where(x >= 0, y1, y2)\n    return y\n",
+            "match": "(x, y=None)",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "numpy.fix",
+            "error": "",
+            "internalPath": "numpy.lib.ufunclike",
+            "docstring": "Round to nearest integer towards zero.\n\nRound an array of floats element-wise to nearest integer towards zero.\nThe rounded values are returned as floats.\n\nParameters\n----------\nx : array_like\n    An array of floats to be rounded\ny : ndarray, optional\n    Output array\n\nReturns\n-------\nout : ndarray of floats\n    The array of rounded numbers\n\nSee Also\n--------\ntrunc, floor, ceil\naround : Round to given number of decimals\n\nExamples\n--------\n>>> np.fix(3.14)\n3.0\n>>> np.fix(3)\n3.0\n>>> np.fix([2.1, 2.9, -2.1, -2.9])\narray([ 2.,  2., -2., -2.])",
+            "sourceCode": "@_deprecate_out_named_y\ndef fix(x, out=None):\n    \"\"\"\n    Round to nearest integer towards zero.\n\n    Round an array of floats element-wise to nearest integer towards zero.\n    The rounded values are returned as floats.\n\n    Parameters\n    ----------\n    x : array_like\n        An array of floats to be rounded\n    y : ndarray, optional\n        Output array\n\n    Returns\n    -------\n    out : ndarray of floats\n        The array of rounded numbers\n\n    See Also\n    --------\n    trunc, floor, ceil\n    around : Round to given number of decimals\n\n    Examples\n    --------\n    >>> np.fix(3.14)\n    3.0\n    >>> np.fix(3)\n    3.0\n    >>> np.fix([2.1, 2.9, -2.1, -2.9])\n    array([ 2.,  2., -2., -2.])\n\n    \"\"\"\n    # promote back to an array if flattened\n    res = nx.asanyarray(nx.ceil(x, out=out))\n    res = nx.floor(x, out=res, where=nx.greater_equal(x, 0))\n\n    # when no out argument is passed and no subclasses are involved, flatten\n    # scalars\n    if out is None and type(res) is nx.ndarray:\n        res = res[()]\n    return res\n",
+            "match": "(x, out=None)",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(x, 0)": {},
+                "(y, 1)": {
+                    "delete": 1,
+                    "replace": "out"
+                },
+                "(out, 1)": {}
+            },
+            "targetOvPara": "(x, out=None)"
+        }
+    ]
+}

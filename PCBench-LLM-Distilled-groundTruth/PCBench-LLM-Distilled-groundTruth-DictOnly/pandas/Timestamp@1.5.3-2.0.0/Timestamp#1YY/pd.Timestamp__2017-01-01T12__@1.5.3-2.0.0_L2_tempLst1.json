@@ -1,0 +1,42 @@
+[
+  {
+    "(ts_input, 0)": {},
+    "(freq, 1)": {
+      "delete": 1
+    },
+    "(tz, 2)": {
+      "pos2key": "tz"
+    },
+    "(unit, 3)": {
+      "pos2key": "unit"
+    },
+    "(year, 4)": {
+      "posChange": 1
+    },
+    "(month, 5)": {
+      "posChange": 2
+    },
+    "(day, 6)": {
+      "posChange": 3
+    },
+    "(hour, 7)": {
+      "posChange": 4
+    },
+    "(minute, 8)": {
+      "posChange": 5
+    },
+    "(second, 9)": {
+      "posChange": 6
+    },
+    "(microsecond, 10)": {
+      "posChange": 7
+    },
+    "(nanosecond, 11)": {
+      "pos2key": "nanosecond"
+    },
+    "(tzinfo, 12)": {
+      "posChange": 8
+    },
+    "(fold, 14)": {}
+  }
+]

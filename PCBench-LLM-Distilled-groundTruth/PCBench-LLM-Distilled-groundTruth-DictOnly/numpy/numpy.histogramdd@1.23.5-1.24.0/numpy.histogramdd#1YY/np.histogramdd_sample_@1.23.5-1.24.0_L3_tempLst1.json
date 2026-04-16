@@ -1,0 +1,14 @@
+[
+  {
+    "(sample, 0)": {},
+    "(bins, 1)": {},
+    "(range, 2)": {},
+    "(normed, 3)": {
+      "delete": 1
+    },
+    "(weights, 4)": {},
+    "(density, 5)": {
+      "posChange": 3
+    }
+  }
+]

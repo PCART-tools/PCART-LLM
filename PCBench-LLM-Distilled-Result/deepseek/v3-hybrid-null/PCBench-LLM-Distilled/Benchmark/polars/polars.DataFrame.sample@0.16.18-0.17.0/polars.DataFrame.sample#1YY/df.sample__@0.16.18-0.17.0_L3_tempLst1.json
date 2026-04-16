@@ -1,0 +1,47 @@
+{
+    "context": {
+        "callAPI": "df.sample()",
+        "currentVersion": "0.16.18",
+        "targetVersion": "0.17.0",
+        "fileRelativePath": "polars.DataFrame.sample#1YY/sampleYY.py",
+        "lineNum": "3",
+        "config": "PCBench-LLM-Distilled/Benchmark/polars/polars.DataFrame.sample@0.16.18-0.17.0/polars.DataFrame.sample#1YY/sampleYY.json",
+        "apiCall": "df.sample()",
+        "oldVersion": "polars@0.16.18",
+        "newVersion": "polars@0.17.0",
+        "jsonPrefix": ".",
+        "oldMatchDict": {
+            "format": "polars.DataFrame.sample",
+            "error": "",
+            "internalPath": "polars.utils.decorators",
+            "docstring": "Sample from this DataFrame.\n\nParameters\n----------\nn\n    Number of items to return. Cannot be used with `frac`. Defaults to 1 if\n    `frac` is None.\nfrac\n    Fraction of items to return. Cannot be used with `n`.\nwith_replacement\n    Allow values to be sampled more than once.\nshuffle\n    If set to True, the order of the sampled rows will be shuffled. If\n    set to False (default), the order of the returned rows will be\n    neither stable nor fully random.\nseed\n    Seed for the random number generator. If set to None (default), a random\n    seed is generated using the ``random`` module.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.sample(n=2, seed=0)  # doctest: +IGNORE_RESULT\nshape: (2, 3)\n┌─────┬─────┬─────┐\n│ foo ┆ bar ┆ ham │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ str │\n╞═════╪═════╪═════╡\n│ 3   ┆ 8   ┆ c   │\n│ 2   ┆ 7   ┆ b   │\n└─────┴─────┴─────┘",
+            "sourceCode": "    @deprecate_nonkeyword_arguments(allowed_args=[\"self\", \"n\"])\n    def sample(\n        self,\n        n: int | None = None,\n        frac: float | None = None,\n        with_replacement: bool = False,\n        shuffle: bool = False,\n        seed: int | None = None,\n    ) -> Self:\n        \"\"\"\n        Sample from this DataFrame.\n\n        Parameters\n        ----------\n        n\n            Number of items to return. Cannot be used with `frac`. Defaults to 1 if\n            `frac` is None.\n        frac\n            Fraction of items to return. Cannot be used with `n`.\n        with_replacement\n            Allow values to be sampled more than once.\n        shuffle\n            If set to True, the order of the sampled rows will be shuffled. If\n            set to False (default), the order of the returned rows will be\n            neither stable nor fully random.\n        seed\n            Seed for the random number generator. If set to None (default), a random\n            seed is generated using the ``random`` module.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.sample(n=2, seed=0)  # doctest: +IGNORE_RESULT\n        shape: (2, 3)\n        ┌─────┬─────┬─────┐\n        │ foo ┆ bar ┆ ham │\n        │ --- ┆ --- ┆ --- │\n        │ i64 ┆ i64 ┆ str │\n        ╞═════╪═════╪═════╡\n        │ 3   ┆ 8   ┆ c   │\n        │ 2   ┆ 7   ┆ b   │\n        └─────┴─────┴─────┘\n\n        \"\"\"\n        if n is not None and frac is not None:\n            raise ValueError(\"cannot specify both `n` and `frac`\")\n\n        if seed is None:\n            seed = random.randint(0, 10000)\n\n        if n is None and frac is not None:\n            return self._from_pydf(\n                self._df.sample_frac(frac, with_replacement, shuffle, seed)\n            )\n\n        if n is None:\n            n = 1\n        return self._from_pydf(self._df.sample_n(n, with_replacement, shuffle, seed))\n",
+            "match": "(n: 'int | None' = None, *, frac: 'float | None' = None, with_replacement: 'bool' = False, shuffle: 'bool' = False, seed: 'int | None' = None) -> 'Self'",
+            "matchMethod": "dynamic"
+        },
+        "newMatchDict": {
+            "format": "polars.DataFrame.sample",
+            "error": "",
+            "internalPath": "polars.utils.decorators",
+            "docstring": "Sample from this DataFrame.\n\nParameters\n----------\nn\n    Number of items to return. Cannot be used with `fraction`. Defaults to 1 if\n    `fraction` is None.\nfraction\n    Fraction of items to return. Cannot be used with `n`.\nwith_replacement\n    Allow values to be sampled more than once.\nshuffle\n    If set to True, the order of the sampled rows will be shuffled. If\n    set to False (default), the order of the returned rows will be\n    neither stable nor fully random.\nseed\n    Seed for the random number generator. If set to None (default), a random\n    seed is generated using the ``random`` module.\n\nExamples\n--------\n>>> df = pl.DataFrame(\n...     {\n...         \"foo\": [1, 2, 3],\n...         \"bar\": [6, 7, 8],\n...         \"ham\": [\"a\", \"b\", \"c\"],\n...     }\n... )\n>>> df.sample(n=2, seed=0)  # doctest: +IGNORE_RESULT\nshape: (2, 3)\n┌─────┬─────┬─────┐\n│ foo ┆ bar ┆ ham │\n│ --- ┆ --- ┆ --- │\n│ i64 ┆ i64 ┆ str │\n╞═════╪═════╪═════╡\n│ 3   ┆ 8   ┆ c   │\n│ 2   ┆ 7   ┆ b   │\n└─────┴─────┴─────┘",
+            "sourceCode": "    @deprecated_alias(frac=\"fraction\")\n    def sample(\n        self,\n        n: int | None = None,\n        *,\n        fraction: float | None = None,\n        with_replacement: bool = False,\n        shuffle: bool = False,\n        seed: int | None = None,\n    ) -> Self:\n        \"\"\"\n        Sample from this DataFrame.\n\n        Parameters\n        ----------\n        n\n            Number of items to return. Cannot be used with `fraction`. Defaults to 1 if\n            `fraction` is None.\n        fraction\n            Fraction of items to return. Cannot be used with `n`.\n        with_replacement\n            Allow values to be sampled more than once.\n        shuffle\n            If set to True, the order of the sampled rows will be shuffled. If\n            set to False (default), the order of the returned rows will be\n            neither stable nor fully random.\n        seed\n            Seed for the random number generator. If set to None (default), a random\n            seed is generated using the ``random`` module.\n\n        Examples\n        --------\n        >>> df = pl.DataFrame(\n        ...     {\n        ...         \"foo\": [1, 2, 3],\n        ...         \"bar\": [6, 7, 8],\n        ...         \"ham\": [\"a\", \"b\", \"c\"],\n        ...     }\n        ... )\n        >>> df.sample(n=2, seed=0)  # doctest: +IGNORE_RESULT\n        shape: (2, 3)\n        ┌─────┬─────┬─────┐\n        │ foo ┆ bar ┆ ham │\n        │ --- ┆ --- ┆ --- │\n        │ i64 ┆ i64 ┆ str │\n        ╞═════╪═════╪═════╡\n        │ 3   ┆ 8   ┆ c   │\n        │ 2   ┆ 7   ┆ b   │\n        └─────┴─────┴─────┘\n\n        \"\"\"\n        if n is not None and fraction is not None:\n            raise ValueError(\"cannot specify both `n` and `fraction`\")\n\n        if seed is None:\n            seed = random.randint(0, 10000)\n\n        if n is None and fraction is not None:\n            return self._from_pydf(\n                self._df.sample_frac(fraction, with_replacement, shuffle, seed)\n            )\n\n        if n is None:\n            n = 1\n        return self._from_pydf(self._df.sample_n(n, with_replacement, shuffle, seed))\n",
+            "match": "(n: 'int | None' = None, *, fraction: 'float | None' = None, with_replacement: 'bool' = False, shuffle: 'bool' = False, seed: 'int | None' = None) -> 'Self'",
+            "matchMethod": "dynamic"
+        }
+    },
+    "listLabel": "tempLst1",
+    "repairLst": [
+        {
+            "repairDict": {
+                "(n, 0)": {},
+                "(frac, 2)": {
+                    "rename": "fraction"
+                },
+                "(with_replacement, 3)": {},
+                "(shuffle, 4)": {},
+                "(seed, 5)": {}
+            },
+            "targetOvPara": "(n: 'int | None' = None, *, fraction: 'float | None' = None, with_replacement: 'bool' = False, shuffle: 'bool' = False, seed: 'int | None' = None) -> 'Self'"
+        }
+    ]
+}

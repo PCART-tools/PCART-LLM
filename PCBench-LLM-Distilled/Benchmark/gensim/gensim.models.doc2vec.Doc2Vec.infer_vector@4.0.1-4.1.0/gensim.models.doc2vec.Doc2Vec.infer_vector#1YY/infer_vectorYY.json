@@ -1,0 +1,10 @@
+{
+    "projPath": "/Users/ganymede/Downloads/Workspace/EX/PCBench-LLM-Distilled-NaN/Benchmark/gensim/gensim.models.doc2vec.Doc2Vec.infer_vector@4.0.1-4.1.0/gensim.models.doc2vec.Doc2Vec.infer_vector#1YY",
+    "runCommand": "python infer_vectorYY.py",
+    "runFilePath": "",
+    "libName": "gensim",
+    "currentVersion": "4.0.1",
+    "targetVersion": "4.1.0",
+    "currentEnv": "/envs/gensim4.0.1",
+    "targetEnv": "/envs/gensim4.1.0"
+}
