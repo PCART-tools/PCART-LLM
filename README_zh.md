@@ -1,6 +1,6 @@
 # PCART-LLM
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录汇总了 PCART-LLM 相关的代码改动、评估数据集、期望结果、实验输出以及评估脚本。
 

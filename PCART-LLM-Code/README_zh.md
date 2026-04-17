@@ -1,6 +1,6 @@
 # PCART-LLM 说明
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录用于并排整理 `PCART` 原始实现与本地改动实现，方便后续逐文件对照、补充说明和人工审阅。
 

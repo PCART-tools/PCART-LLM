@@ -1,6 +1,6 @@
 # dynamicMatch.diff 说明
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录中的补丁文件是 [dynamicMatch.diff](./dynamicMatch.diff)。它描述的是 [PCART-original/Script/dynamicMatch.py](../../PCART-original/Script/dynamicMatch.py) 到 [PCART-modified/Script/dynamicMatch.py](../../PCART-modified/Script/dynamicMatch.py) 的差异。
 

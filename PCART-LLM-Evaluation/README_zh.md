@@ -1,6 +1,6 @@
 # PCART-LLM-Evaluation
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 该目录用于存放 PCART-LLM 实验评估过程中可独立运行的辅助脚本。
 

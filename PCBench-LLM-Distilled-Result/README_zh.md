@@ -1,6 +1,6 @@
 # Result
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 这个目录保存了不同模型在 `PCBench-LLM-Distilled` 数据集上的结果文件，以及对应的语义切分报告。
 

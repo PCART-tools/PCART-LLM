@@ -1,6 +1,6 @@
 # PCBench-LLM-Distilled-groundTruth
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 这个目录保存 `PCBench-LLM-Distilled` ground-truth 数据， `DictOnly` 版本。
 

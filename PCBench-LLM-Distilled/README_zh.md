@@ -1,6 +1,6 @@
 # PCBench-LLM-Distilled
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 用于评估 LLM Python API 兼容性检测能力的精简基准测试集。
 

@@ -1,6 +1,6 @@
 # map.diff 说明
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录中的补丁文件是 [map.diff](./map.diff)。它描述的是 [PCART-original/Map/map.py](../../PCART-original/Map/map.py) 到 [PCART-modified/Map/map.py](../../PCART-modified/Map/map.py) 的差异。
 

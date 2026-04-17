@@ -1,6 +1,6 @@
 # batch.diff 说明
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录中的补丁文件是 [batch.diff](./batch.diff)。它描述的是新增文件 [PCART-modified/Test/batch.py](../../PCART-modified/Test/batch.py) 的完整内容，因此补丁头会显示为从 `/dev/null` 新增。
 

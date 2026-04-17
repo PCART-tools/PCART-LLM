@@ -1,6 +1,6 @@
 # LLM/findDiffer 说明
 
-语言 / Language: **中文** | [English](README_en.md)
+语言 / Language: **中文** | [English](README.md)
 
 本目录保存的是本轮新增的基于 LLM 的 `findDiffer` 实现族对应的补丁文件，用于展示这些新增实现相对于“原始实现不存在该文件”这一基线的新增内容。由于这些文件在原始实现中不存在，所以对应的 `.diff` 文件补丁头会显示为从 `/dev/null` 新增。
 
