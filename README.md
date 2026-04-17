@@ -1,6 +1,6 @@
 # PCART-LLM
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory brings together the PCART-LLM code changes, evaluation dataset, ground-truth data, experiment outputs, and evaluation scripts.
 

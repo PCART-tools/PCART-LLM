@@ -1,6 +1,6 @@
 # PCART-LLM Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory organizes the original `PCART` implementation and the locally modified implementation side by side, making later file-by-file comparison, supplementary documentation, and manual review easier.
 

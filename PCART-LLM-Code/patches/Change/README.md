@@ -1,6 +1,6 @@
 # changeAnalyze.diff Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 The patch file in this directory is [changeAnalyze.diff](./changeAnalyze.diff). It describes the differences from [PCART-original/Change/changeAnalyze.py](../../PCART-original/Change/changeAnalyze.py) to [PCART-modified/Change/changeAnalyze.py](../../PCART-modified/Change/changeAnalyze.py).
 

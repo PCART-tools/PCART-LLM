@@ -1,6 +1,6 @@
 # Result
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory stores result files produced by different models on the `PCBench-LLM-Distilled` dataset, together with the corresponding semantic split reports.
 

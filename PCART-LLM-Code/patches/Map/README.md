@@ -1,6 +1,6 @@
 # map.diff Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 The patch file in this directory is [map.diff](./map.diff). It describes the differences from [PCART-original/Map/map.py](../../PCART-original/Map/map.py) to [PCART-modified/Map/map.py](../../PCART-modified/Map/map.py).
 

@@ -1,6 +1,6 @@
 # main.diff Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 The patch file in the root of this directory is [main.diff](./main.diff). It describes the differences from [PCART-original/main.py](../PCART-original/main.py) to [PCART-modified/main.py](../PCART-modified/main.py).
 

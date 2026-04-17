@@ -1,6 +1,6 @@
 # batch.diff Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 The patch file in this directory is [batch.diff](./batch.diff). It describes the complete content of the newly added file [PCART-modified/Test/batch.py](../../PCART-modified/Test/batch.py), so the patch header shows it as added from `/dev/null`.
 

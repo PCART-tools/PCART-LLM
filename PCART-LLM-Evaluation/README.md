@@ -1,6 +1,6 @@
 # PCART-LLM-Evaluation
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory contains standalone helper scripts used during the PCART-LLM experiment evaluation process.
 

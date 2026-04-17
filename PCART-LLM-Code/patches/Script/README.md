@@ -1,6 +1,6 @@
 # dynamicMatch.diff Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 The patch file in this directory is [dynamicMatch.diff](./dynamicMatch.diff). It describes the differences from [PCART-original/Script/dynamicMatch.py](../../PCART-original/Script/dynamicMatch.py) to [PCART-modified/Script/dynamicMatch.py](../../PCART-modified/Script/dynamicMatch.py).
 

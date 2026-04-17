@@ -1,6 +1,6 @@
 # PCBench-LLM-Distilled-groundTruth
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory stores the `DictOnly` version of the `PCBench-LLM-Distilled` ground-truth data.
 

@@ -1,6 +1,6 @@
 # PCBench-LLM-Distilled
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 A distilled benchmark dataset for evaluating LLM-based Python API compatibility detection.
 

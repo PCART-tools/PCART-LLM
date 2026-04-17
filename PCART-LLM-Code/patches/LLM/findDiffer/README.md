@@ -1,6 +1,6 @@
 # LLM/findDiffer Notes
 
-Language / 语言: [中文](README.md) | **English**
+Language / 语言: [中文](README_zh.md) | **English**
 
 This directory stores patch files for the newly added LLM-based `findDiffer` implementation family. These patches show the added content relative to the baseline where the original implementation did not contain these files. Because these files did not exist in the original implementation, the corresponding `.diff` patch headers show them as added from `/dev/null`.
 
