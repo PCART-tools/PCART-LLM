@@ -1,10 +1,10 @@
 # PCART-LLM
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-本目录汇总了 PCART-LLM 相关的代码改动、评估数据集、期望结果、实验输出以及评估脚本。
+This directory brings together the PCART-LLM code changes, evaluation dataset, ground-truth data, experiment outputs, and evaluation scripts.
 
-## 目录总览
+## Directory Overview
 
 ```text
 PCART-LLM/
@@ -15,10 +15,10 @@ PCART-LLM/
 └── PCBench-LLM-Distilled-Result/
 ```
 
-## 子目录说明
+## Subdirectory Description
 
-- [PCART-LLM-Code](./PCART-LLM-Code/)：保存 `PCART` 原始实现与本地改动实现的对照版本。该目录包含 `PCART-original/`、`PCART-modified/` 和 `patches/`，用于展示基于 LLM 的 `findDiffer` 改动、批量实验支持以及相对原始实现的补丁。
-- [PCBench-LLM-Distilled](./PCBench-LLM-Distilled/)：保存用于评估参数变更方法能力的API级测试集。当前 `Benchmark/` 目录包含 29 个库的 284 个保留样例，并附带样例清单与环境、配置生成脚本。
-- [PCBench-LLM-Distilled-groundTruth](./PCBench-LLM-Distilled-groundTruth/)：保存 `PCBench-LLM-Distilled` 的 `DictOnly` 版本 ground truth。该目录按 `library / api@version_range / sample` 层级组织 284 个 JSON 期望结果，用于与实验输出进行严格顺序比对。
-- [PCBench-LLM-Distilled-Result](./PCBench-LLM-Distilled-Result/)：保存不同模型或基线在 `PCBench-LLM-Distilled` 数据集上的实验结果。目录中包含 `claude/`、`deepseek/`、`gemini/`、`minimax/`、`qwen/` 和 `default/` 等结果分组，以及对应的语义切分报告。
-- [PCART-LLM-Evaluation](./PCART-LLM-Evaluation/)：保存独立运行的评估辅助脚本，包括结果 JSON 清理脚本和语义相关 / 语义不相关切分比对报告生成脚本。
+- [PCART-LLM-Code](./PCART-LLM-Code/): stores the side-by-side snapshots of the original `PCART` implementation and the locally modified implementation. It contains `PCART-original/`, `PCART-modified/`, and `patches/`, showing the LLM-based `findDiffer` changes, batch experiment support, and patches relative to the original implementation.
+- [PCBench-LLM-Distilled](./PCBench-LLM-Distilled/): stores the API-level test set for evaluating the capabilities of parameter-change methods. The current `Benchmark/` directory contains 284 retained samples from 29 libraries, together with the sample manifest and scripts for environment download and JSON configuration generation.
+- [PCBench-LLM-Distilled-groundTruth](./PCBench-LLM-Distilled-groundTruth/): stores the `DictOnly` ground truth for `PCBench-LLM-Distilled`. It organizes 284 expected-result JSON files by the `library / api@version_range / sample` hierarchy and is used for strict ordered comparison against experiment outputs.
+- [PCBench-LLM-Distilled-Result](./PCBench-LLM-Distilled-Result/): stores result files produced by different models or baselines on the `PCBench-LLM-Distilled` dataset. It includes result groups such as `claude/`, `deepseek/`, `gemini/`, `minimax/`, `qwen/`, and `default/`, together with the corresponding semantic split reports.
+- [PCART-LLM-Evaluation](./PCART-LLM-Evaluation/): stores standalone evaluation helper scripts, including the result JSON cleanup script and the semantic-related / semantic-unrelated split comparison report generator.

@@ -1,10 +1,10 @@
 # PCART-LLM-Evaluation
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-该目录用于存放 PCART-LLM 实验评估过程中可独立运行的辅助脚本。
+This directory contains standalone helper scripts used during the PCART-LLM experiment evaluation process.
 
-## 目录结构
+## Directory Structure
 
 ```text
 PCART-LLM-Evaluation/
@@ -15,71 +15,71 @@ PCART-LLM-Evaluation/
     └── compare_with_groundtruth.py
 ```
 
-## 脚本说明
+## Scripts
 
 ### clean_result_jsons.py
 
-`clean_result_jsons.py` 用于根据 manifest 文件清理实验结果目录中的 JSON 文件。脚本会递归扫描目标目录，仅保留 manifest 中列出的目标 JSON 文件，并识别出多余 JSON 文件。脚本始终保留 `.txt` 文件，因此不会删除实验日志或文本说明。
+`clean_result_jsons.py` cleans JSON files in an experiment result directory according to a manifest file. The script recursively scans the target directory, keeps only the target JSON files listed in the manifest, and identifies extra JSON files. It always preserves `.txt` files, so experiment logs and text notes will not be deleted.
 
-默认情况下，脚本只执行 dry-run 预览，不会真正删除文件。确认输出统计无误后，可添加 `--apply` 参数执行实际清理。
+By default, the script runs in dry-run mode and does not delete files. After confirming that the output statistics are correct, add the `--apply` option to perform the actual cleanup.
 
-预览将被清理的文件：
-
-```bash
-python Scripts/clean_result_jsons.py <要清理的结果目录> <manifest.json>
-```
-
-实际删除多余 JSON 文件：
+Preview the files that would be cleaned:
 
 ```bash
-python Scripts/clean_result_jsons.py <要清理的结果目录> <manifest.json> --apply
+python Scripts/clean_result_jsons.py <result-directory-to-clean> <manifest.json>
 ```
 
-当 manifest 中列出的部分 JSON 在结果目录中缺失，但仍确认需要删除多余 JSON 时：
+Delete the extra JSON files:
 
 ```bash
-python Scripts/clean_result_jsons.py <要清理的结果目录> <manifest.json> --allow-missing --apply
+python Scripts/clean_result_jsons.py <result-directory-to-clean> <manifest.json> --apply
 ```
 
-常用输出字段含义如下：
+When some JSON files listed in the manifest are missing from the result directory, but you still want to delete the extra JSON files:
 
-- `keep_listed`：manifest 中列出的应保留 JSON 数量
-- `actual_json`：目标目录中实际参与统计的 JSON 数量
-- `extra_json`：目标目录中未被 manifest 命中的多余 JSON 数量
-- `missing_json`：manifest 中列出但目标目录中缺失的 JSON 数量
-- `deleted_json`：实际删除的 JSON 数量
-- `remaining_json`：清理后剩余的 JSON 数量
-- `txt_count`：目标目录中的 TXT 文件数量
+```bash
+python Scripts/clean_result_jsons.py <result-directory-to-clean> <manifest.json> --allow-missing --apply
+```
+
+Common output fields:
+
+- `keep_listed`: number of JSON files listed in the manifest that should be kept
+- `actual_json`: number of JSON files actually counted in the target directory
+- `extra_json`: number of extra JSON files in the target directory that are not matched by the manifest
+- `missing_json`: number of JSON files listed in the manifest but missing from the target directory
+- `deleted_json`: number of JSON files actually deleted
+- `remaining_json`: number of JSON files remaining after cleanup
+- `txt_count`: number of TXT files in the target directory
 
 ### compare_with_groundtruth.py
 
-`compare_with_groundtruth.py` 用于生成 PCBench 结果的语义切分比对报告。脚本读取语义切分依据文件中的 `files.delete_or_rename` 字段，将命中的样例划分为“语义相关”样例，将未命中的预测 JSON 划分为“语义不相关”样例。随后，脚本分别将两个子集与 DictOnly ground truth 进行比对，并生成 Markdown 报告。
+`compare_with_groundtruth.py` generates a semantic split comparison report for PCBench results. The script reads the `files.delete_or_rename` field from the semantic split source file, classifies matched samples as "semantically related" samples, and classifies unmatched prediction JSON files as "semantically unrelated" samples. It then compares the two subsets separately against the DictOnly ground truth and generates a Markdown report.
 
-比对时，脚本会读取结果 JSON 中的 `repairLst[].repairDict` 作为预测结果，并与对应 ground truth JSON 中的期待修复结果进行严格一致性比较。最终报告会包含语义相关、语义不相关以及合并后的样例数、正确数、错误数和正确率，并列出错误样例及差异原因。
+During comparison, the script reads `repairLst[].repairDict` from each result JSON file as the prediction and strictly compares it with the expected repair result in the corresponding ground truth JSON file. The final report includes the sample count, correct count, error count, and accuracy for the semantically related subset, the semantically unrelated subset, and the merged result, and it lists the incorrect samples and reasons for each difference.
 
-使用默认 ground truth 路径：
-
-```bash
-python Scripts/compare_with_groundtruth.py <结果目录> <语义切分依据.json> <输出报告.md>
-```
-
-显式指定 ground truth 目录：
+Use the default ground truth path:
 
 ```bash
-python Scripts/compare_with_groundtruth.py <结果目录> <语义切分依据.json> <输出报告.md> --gt-root <groundtruth目录>
+python Scripts/compare_with_groundtruth.py <result-directory> <semantic-split-source.json> <output-report.md>
 ```
 
-参数说明：
+Specify the ground truth directory explicitly:
 
-- `<结果目录>`：待比对的实验结果目录，可以是实验根目录，也可以直接是 `Benchmark` 目录
-- `<语义切分依据.json>`：包含 `files.delete_or_rename` 字段的 manifest 文件，例如 `json_contains_delete_or_rename_report.json`
-- `<输出报告.md>`：生成的 Markdown 报告路径
-- `--gt-root`：可选参数，用于指定 DictOnly ground truth 目录；省略时使用脚本内置默认路径
+```bash
+python Scripts/compare_with_groundtruth.py <result-directory> <semantic-split-source.json> <output-report.md> --gt-root <groundtruth-directory>
+```
 
-## 使用建议
+Arguments:
 
-建议先使用 `clean_result_jsons.py` 对实验输出进行清理，确保结果目录中只保留需要统计的 JSON 文件；随后再使用 `compare_with_groundtruth.py` 生成语义切分比对报告。这样可以避免冗余结果文件影响统计口径，并保证最终报告中的样例集合与实验设置一致。
+- `<result-directory>`: experiment result directory to compare; this can be either the experiment root directory or the `Benchmark` directory directly
+- `<semantic-split-source.json>`: manifest file containing the `files.delete_or_rename` field, such as `json_contains_delete_or_rename_report.json`
+- `<output-report.md>`: path of the generated Markdown report
+- `--gt-root`: optional argument used to specify the DictOnly ground truth directory; when omitted, the built-in default path in the script is used
 
-## 注意
+## Usage Recommendation
 
-注意，`compare_with_groundtruth.py`工具不能支持带有随机变化默认值的参数的变更的对比，需要使用者自行修复。
+Use `clean_result_jsons.py` first to clean experiment outputs and make sure the result directory only keeps the JSON files that should be included in the statistics. Then use `compare_with_groundtruth.py` to generate the semantic split comparison report. This avoids redundant result files affecting the statistics and ensures that the sample set in the final report is consistent with the experiment setup.
+
+## Note
+
+Note that `compare_with_groundtruth.py` does not support comparing changes to parameters with randomly changing default values. Users need to fix those cases manually.

@@ -1,25 +1,25 @@
-# PCART-LLM 说明
+# PCART-LLM Notes
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-本目录用于并排整理 `PCART` 原始实现与本地改动实现，方便后续逐文件对照、补充说明和人工审阅。
+This directory organizes the original `PCART` implementation and the locally modified implementation side by side, making later file-by-file comparison, supplementary documentation, and manual review easier.
 
-## 基线信息
+## Baseline Information
 
-- 当前版本修改自`PCART-tools/PCART@defc6a4`。
-- `PCART-original/` 保存的是原始实现的抽取版本。
-- `PCART-modified/` 保存的是改动后的实现，以及本轮新增的重要模块。
+- The current version is modified from `PCART-tools/PCART@defc6a4`.
+- `PCART-original/` stores the extracted snapshot of the original implementation.
+- `PCART-modified/` stores the modified implementation and the important modules added in this round.
 
-## 代码改动总览
+## Code Change Overview
 
-- 在原有 `findDiffer` 规则分析链路之外，引入了 `LLM/findDiffer/` 模块，形成基于 LLM 的 `Rule` 与 `Hybrid` 两类差异分析实现，并进一步区分 `Null`、`String`、`Code` 三类语义输入方式。
-- 将 `findDiffer` 的调用上下文从 `main.py` 透传到 `Change/changeAnalyze.py`，使默认规则路径和 LLM 路径可以共用统一入口。
-- 在动态匹配阶段补采 `docstring` 与 `sourceCode`，为带语义信息的 LLM 版本提供输入材料。
-- 增加了 `findDiffer` 结果采集能力，包括 `repairLst` 落盘、按配置目录归档日志、额外保存报告等，便于调试与批量实验。
-- 新增 `Test/batch.py`，用于批量初始化与执行 Benchmark 配置，并支持进度续跑。
+- Introduced the `LLM/findDiffer/` module outside the original `findDiffer` rule-analysis path, forming two categories of LLM-based difference analysis implementations: `Rule` and `Hybrid`. These are further divided into three semantic input modes: `Null`, `String`, and `Code`.
+- Passed the invocation context of `findDiffer` from `main.py` into `Change/changeAnalyze.py`, allowing the default rule path and the LLM path to share a unified entry point.
+- Collected `docstring` and `sourceCode` during the dynamic matching stage to provide input material for LLM versions that use semantic information.
+- Added `findDiffer` result collection capabilities, including persisting `repairLst`, archiving logs by configuration directory, and saving additional reports, which helps debugging and batch experiments.
+- Added `Test/batch.py` for batch initialization and execution of Benchmark configurations, with support for resuming progress.
 
-## 目录说明
+## Directory Description
 
-- [PCART-original](./PCART-original): 原始实现快照，仅保留本轮确实被修改过的既有文件。
-- [PCART-modified](./PCART-modified): 改动后实现快照，包含修改文件与重要新增文件。
-- [patches](./patches): 与 `PCART-modified` 对应的补丁目录，使用 `.diff` 展示相对原始实现的改动。
+- [PCART-original](./PCART-original): snapshot of the original implementation, retaining only existing files that were actually modified in this round.
+- [PCART-modified](./PCART-modified): snapshot of the modified implementation, containing modified files and important newly added files.
+- [patches](./patches): patch directory corresponding to `PCART-modified`, using `.diff` files to show changes relative to the original implementation.

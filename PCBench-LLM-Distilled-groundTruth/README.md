@@ -1,21 +1,21 @@
 # PCBench-LLM-Distilled-groundTruth
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-这个目录保存 `PCBench-LLM-Distilled` ground-truth 数据， `DictOnly` 版本。
+This directory stores the `DictOnly` version of the `PCBench-LLM-Distilled` ground-truth data.
 
-## 当前目录结构
+## Current Directory Structure
 
 ### `PCBench-LLM-Distilled-groundTruth-DictOnly/`
 
-主数据目录，按 `library / api@version_range / sample` 的层级组织。
+The main data directory, organized by the `library / api@version_range / sample` hierarchy.
 
-当前统计：
+Current statistics:
 
-- 29 个库目录
-- 284 个 JSON 文件
+- 29 library directories
+- 284 JSON files
 
-每个 JSON 文件都是一个数组，数组中的每个元素是一个修复字典：
+Each JSON file is an array, and each element in the array is a repair dictionary:
 
 ```json
 [
@@ -25,27 +25,27 @@
 ]
 ```
 
-## 使用方式
+## Usage
 
-这个数据集适合只关心修复内容本身的场景。
+This dataset is suitable for scenarios that only care about the repair content itself.
 
-对比规则：
+Comparison rules:
 
-- 直接按 JSON 数组顺序逐项比较
-- 第 `i` 个元素对应第 `i` 个元素
+- Compare JSON arrays item by item in order.
+- The `i`-th element corresponds to the `i`-th element.
 
-也就是说，这个目录中的 ground truth 默认采用“按顺序比较”的方式。
+In other words, the ground truth in this directory uses "ordered comparison" by default.
 
-## 附带文件
+## Included Files
 
 - `multi_entry_files.txt`
-  记录了 8 个包含多个修复条目的样例，以及每个样例对应的条目数量。
+  Records 8 samples that contain multiple repair entries, together with the number of entries for each sample.
 - `Semantic-Related-contains_delete_or_rename.json`
-  记录语义相关样例中命中 `delete` 或 `rename` 的统计与文件清单，可用于后续分组分析。
+  Records statistics and the file list for semantic-related samples that hit `delete` or `rename`, which can be used for later grouped analysis.
 
-## 注意
+## Note
 
-本期望结果中，包含`aiohttp.ClientSession@1.3.5-2.0.0`，其中的这条表示变更为新增关键字参数，由于该参数默认值会发生变化，使用者要自行修复。
+This expected-result set includes `aiohttp.ClientSession@1.3.5-2.0.0`. The following entry represents a change that adds a keyword argument. Because the default value of this parameter changes randomly, users need to fix it manually.
 
 ```json
     "(json_serialize, 7)": {

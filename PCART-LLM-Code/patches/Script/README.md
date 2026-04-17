@@ -1,15 +1,15 @@
-# dynamicMatch.diff 说明
+# dynamicMatch.diff Notes
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-本目录中的补丁文件是 [dynamicMatch.diff](./dynamicMatch.diff)。它描述的是 [PCART-original/Script/dynamicMatch.py](../../PCART-original/Script/dynamicMatch.py) 到 [PCART-modified/Script/dynamicMatch.py](../../PCART-modified/Script/dynamicMatch.py) 的差异。
+The patch file in this directory is [dynamicMatch.diff](./dynamicMatch.diff). It describes the differences from [PCART-original/Script/dynamicMatch.py](../../PCART-original/Script/dynamicMatch.py) to [PCART-modified/Script/dynamicMatch.py](../../PCART-modified/Script/dynamicMatch.py).
 
-## 补丁覆盖内容
+## Patch Coverage
 
-- 在动态匹配成功时，新增提取 `inspect.getdoc(eval(api))` 与 `inspect.getsource(eval(api))` 的逻辑。
-- 将得到的 `docstring` 与 `sourceCode` 一并写入序列化后的 `matchDict`。
+- Adds logic to extract `inspect.getdoc(eval(api))` and `inspect.getsource(eval(api))` when dynamic matching succeeds.
+- Writes the resulting `docstring` and `sourceCode` into the serialized `matchDict`.
 
-## 补丁意义
+## Patch Significance
 
-- 让动态匹配阶段同时产出签名信息和语义辅助材料。
-- 为 `String` 与 `Code` 两类 LLM 差异分析实现提供稳定、近源的输入。
+- Allows the dynamic matching stage to output both signature information and semantic auxiliary material.
+- Provides stable, near-source input for the `String` and `Code` categories of LLM difference analysis implementations.

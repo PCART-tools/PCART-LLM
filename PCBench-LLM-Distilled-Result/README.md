@@ -1,31 +1,31 @@
 # Result
 
-语言 / Language: **中文** | [English](README_en.md)
+Language / 语言: [中文](README.md) | **English**
 
-这个目录保存了不同模型在 `PCBench-LLM-Distilled` 数据集上的结果文件，以及对应的语义切分报告。
+This directory stores result files produced by different models on the `PCBench-LLM-Distilled` dataset, together with the corresponding semantic split reports.
 
-## 目录说明
+## Directory Description
 
-- `claude/`、`deepseek/`、`gemini/`、`minimax/`、`qwen/`、`default/`：不同模型或基线的结果目录。
-- 每个二级目录对应一个实验版本，例如 `v1-rule-null`、`v4-hybrid-string`、`v5-hybrid-code`。
-- 每个实验目录下通常包含：
-  - `PCBench-LLM-Distilled/`：该实验版本对应的数据集结果目录。
-  - `semantic-split-report.md`：语义相关 / 语义不相关切分统计报告。
+- `claude/`, `deepseek/`, `gemini/`, `minimax/`, `qwen/`, and `default/`: result directories for different models or baselines.
+- Each second-level directory corresponds to an experiment version, such as `v1-rule-null`, `v4-hybrid-string`, or `v5-hybrid-code`.
+- Each experiment directory usually contains:
+  - `PCBench-LLM-Distilled/`: the dataset result directory for that experiment version.
+  - `semantic-split-report.md`: the semantic-related / semantic-unrelated split statistics report.
 
-## 当前命名约定
+## Current Naming Conventions
 
-- 报告文件统一命名为 `semantic-split-report.md`
-- 数据集目录统一命名为 `PCBench-LLM-Distilled`
-- 报告标题统一使用 `PCBench-LLM-Distilled 语义切分对比报告`
-- 报告说明中不再保留绝对路径
-- `Benchmark/**/*.json` 中的 `config` 字段已同步更新为 `PCBench-LLM-Distilled/...`
+- Report files are uniformly named `semantic-split-report.md`.
+- Dataset directories are uniformly named `PCBench-LLM-Distilled`.
+- Report titles uniformly use `PCBench-LLM-Distilled 语义切分对比报告`.
+- Absolute paths are no longer kept in report descriptions.
+- The `config` fields in `Benchmark/**/*.json` have been updated to `PCBench-LLM-Distilled/...`.
 
-## 当前规模
+## Current Scale
 
-- 共有 27 份 `semantic-split-report.md`
-- 共有 27 个 `PCBench-LLM-Distilled` 实验结果目录
+- There are 27 `semantic-split-report.md` files.
+- There are 27 `PCBench-LLM-Distilled` experiment result directories.
 
-## 使用建议
+## Usage Recommendations
 
-- 若继续批量重命名或替换内容，优先保持报告名、数据集目录名和 `config` 字段路径一致。
-- 若后续新增实验版本，建议沿用现有目录层级与命名风格，方便横向比较和批量处理。
+- If you continue batch renaming or replacing content, keep the report name, dataset directory name, and `config` field paths consistent.
+- If new experiment versions are added later, follow the existing directory hierarchy and naming style to make cross-version comparison and batch processing easier.
