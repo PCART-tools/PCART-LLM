@@ -12,6 +12,12 @@
   - `PCBench-LLM-Distilled/`：该实验版本对应的数据集结果目录。
   - `semantic-split-report.md`：语义相关 / 语义不相关切分统计报告。
 
+## 派生 CSV 文件
+
+- `exp_data.csv`：主要实验设置的总体正确率汇总。
+- `semantic_controlled_sample_data.csv`：语义相关 / 非语义相关受控对比的样例级数据。每行记录样例组别、综合正确率，以及三个复杂度特征（`total_params`、`changed_params`、`change_ops`），统计口径为 25 次实验运行，不包含 MiniMax `v1.1` 和 `v2.1`。
+- `semantic_controlled_feature_combinations.csv`：在语义相关和非语义相关样例中都出现的 13 个特征组合的聚合结果，用于共同特征组合下的受控对比图。
+
 ## 当前命名约定
 
 - 报告文件统一命名为 `semantic-split-report.md`

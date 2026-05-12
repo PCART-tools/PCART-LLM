@@ -12,6 +12,12 @@ This directory stores result files produced by different models on the `PCBench-
   - `PCBench-LLM-Distilled/`: the dataset result directory for that experiment version.
   - `semantic-split-report.md`: the semantic-related / semantic-unrelated split statistics report.
 
+## Derived CSV Files
+
+- `exp_data.csv`: overall accuracy summary for the main experiment settings.
+- `semantic_controlled_sample_data.csv`: sample-level data for the controlled semantic / non-semantic comparison. Each row records the sample group, combined accuracy, and three complexity features (`total_params`, `changed_params`, `change_ops`) across 25 experiment runs, excluding MiniMax `v1.1` and `v2.1`.
+- `semantic_controlled_feature_combinations.csv`: aggregate results for the 13 feature combinations that appear in both semantic-related and non-semantic samples. This file is used for the controlled feature-combination comparison figure.
+
 ## Current Naming Conventions
 
 - Report files are uniformly named `semantic-split-report.md`.
