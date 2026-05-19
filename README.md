@@ -22,3 +22,7 @@ PCART-LLM/
 - [PCBench-LLM-Distilled-groundTruth](./PCBench-LLM-Distilled-groundTruth/): stores the `DictOnly` ground truth for `PCBench-LLM-Distilled`. It organizes 284 expected-result JSON files by the `library / api@version_range / sample` hierarchy and is used for strict ordered comparison against experiment outputs.
 - [PCBench-LLM-Distilled-Result](./PCBench-LLM-Distilled-Result/): stores result files produced by different models or baselines on the `PCBench-LLM-Distilled` dataset. It includes result groups such as `claude/`, `deepseek/`, `gemini/`, `minimax/`, `qwen/`, and `default/`, together with the corresponding semantic split reports.
 - [PCART-LLM-Evaluation](./PCART-LLM-Evaluation/): stores standalone evaluation helper scripts, including the result JSON cleanup script and the semantic-related / semantic-unrelated split comparison report generator.
+
+## License
+
+PCART-LLM is licensed under the GNU Affero General Public License v3.0. See [LICENSE](./LICENSE) for details.
