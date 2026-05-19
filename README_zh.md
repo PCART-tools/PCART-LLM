@@ -22,3 +22,8 @@ PCART-LLM/
 - [PCBench-LLM-Distilled-groundTruth](./PCBench-LLM-Distilled-groundTruth/)：保存 `PCBench-LLM-Distilled` 的 `DictOnly` 版本 ground truth。该目录按 `library / api@version_range / sample` 层级组织 284 个 JSON 期望结果，用于与实验输出进行严格顺序比对。
 - [PCBench-LLM-Distilled-Result](./PCBench-LLM-Distilled-Result/)：保存不同模型或基线在 `PCBench-LLM-Distilled` 数据集上的实验结果。目录中包含 `claude/`、`deepseek/`、`gemini/`、`minimax/`、`qwen/` 和 `default/` 等结果分组，以及对应的语义切分报告。
 - [PCART-LLM-Evaluation](./PCART-LLM-Evaluation/)：保存独立运行的评估辅助脚本，包括结果 JSON 清理脚本和语义相关 / 语义不相关切分比对报告生成脚本。
+
+
+## 许可证
+
+PCART-LLM 采用 GNU Affero 通用公共许可证 v3.0 授权。详情请参见 [LICENSE](./LICENSE)。
